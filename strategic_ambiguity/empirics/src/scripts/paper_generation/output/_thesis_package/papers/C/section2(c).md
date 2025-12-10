@@ -54,7 +54,7 @@ E (Early Funding) → |ΔV| (Strategic Flexibility) → Y (Outcome)
 |:-----------|:---------------|:-----------------|
 | **E → |ΔV|** | RBV ignores commitment cost | Quantify lock-in (ρ = -0.117***) |
 | **|ΔV| measure** | Real Options lacks metric | |ΔV| = |V_L - V_E| |
-| **|ΔV| → Y** | Org Learning ignores capacity | Flexibility → 8.8× better outcomes |
+| **|ΔV| → Y** | Org Learning ignores capacity | Flexibility → **2.7×** better outcomes |
 
 ---
 
@@ -135,9 +135,9 @@ This validates the first link (E → |ΔV|) in our causal chain.
 | Link | Question | Hypothesis | Measure |
 |:-----|:---------|:-----------|:--------|
 | **E → |ΔV|** | Does funding lock you in? | H_supporting | ρ(E, |ΔV|) = -0.117*** |
-| **|ΔV| → Y** | Does flexibility pay off? | **H_cost** | Escape 3.32× vs Cage 0.38× |
+| **|ΔV| → Y** | Does flexibility pay off? | **H_cost** | Escape 2.16× vs Cage 0.80× |
 
-Everything else is supporting detail. The paper lives or dies on **H_cost: 8.8×**.
+Everything else is supporting detail. The paper lives or dies on **H_cost: 2.7×**.
 
 ---
 

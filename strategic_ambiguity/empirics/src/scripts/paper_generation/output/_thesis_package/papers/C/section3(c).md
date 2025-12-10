@@ -75,9 +75,9 @@ We split companies by median E and median |ΔV| (see [[fig3_cohort_analysis.png]
 | **High E** (Well-funded) | **Golden Cage** | Patient Capital |
 
 **Key Comparison**:
-- **Escape Velocity**: Low E, High |ΔV| → Y = 3.32×
-- **Golden Cage**: High E, Low |ΔV| → Y = 0.38×
-- **Ratio**: 8.8×
+- **Escape Velocity**: Low E, High |ΔV| → Y = 2.16×
+- **Golden Cage**: High E, Low |ΔV| → Y = 0.80×
+- **Ratio**: **2.7×** (Flexibility Gap)
 
 ---
 
@@ -168,8 +168,7 @@ Controlling for funding year cohort does not change results (p < 0.001 for all t
 | d|ΔV|/dE < 0 | ρ = -0.117*** | [[fig1_mechanism_3panel.png]] Panel A |
 | dY/d|ΔV| > 0 | Positive correlation | [[fig1_mechanism_3panel.png]] Panel B |
 | dY/dE < 0 | Combined (−) effect | [[fig1_mechanism_3panel.png]] Panel C |
-| **H_cost** | 8.8× gap | [[fig3_cohort_analysis.png]] |
-| Cost by decile | -2.5× average | [[fig2_cost_by_decile.png]] |
+| **H_cost** | **2.7× gap** | [[fig3_cohort_analysis.png]] |
 
 The mechanism chain **E → |ΔV| → Y** with (+)(−) = (−) is empirically validated.
 

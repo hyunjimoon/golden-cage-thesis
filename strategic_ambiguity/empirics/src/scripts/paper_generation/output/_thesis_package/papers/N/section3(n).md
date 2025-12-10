@@ -9,9 +9,9 @@
 ## ¶17. Data Context: Using 🦾C Results
 
 From 🦾C, we have:
-- **N = 180,860** technology ventures (2021-2025)
-- **Commitment Cost = -2.5×** per funding decile
-- **8.8× gap** (Escape Velocity vs Golden Cage)
+- **N = 123,906** technology ventures (2021-2025)
+- **Flexibility Gap = 2.7×** (Escape Velocity vs Golden Cage)
+- **ρ(E, |ΔV|) = -0.117*** (lock-in correlation)
 
 This provides our **C estimate**. Now we need **F** and industry-level **CR**.
 
@@ -22,7 +22,7 @@ This provides our **C estimate**. Now we need **F** and industry-level **CR**.
 ### From 🦾C Data
 | Variable | Definition | Source |
 |:---|:---|:---|
-| **C** | Commitment cost = -2.5× | 🦾C decile analysis |
+| **Flexibility Gap** | 2.7× (Escape vs Cage) | 🦾C cohort analysis |
 | **E decile** | Early funding level | PitchBook |
 | **\|ΔV\|** | Strategic flexibility | Vagueness change |
 
