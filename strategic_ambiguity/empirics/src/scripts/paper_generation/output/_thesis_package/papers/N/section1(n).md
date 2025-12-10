@@ -1,108 +1,111 @@
 # 🤹N: Promise Vendor — Optimal Number of Options
 ## Chapter 1: Introduction
 
-**Version:** 2.0 (Promise Vendor framing)
-**Core Contribution:** C, F 예측 방법론 (미래 → 현재)
+**Version:** 3.0 (D Redefined: Demand → Distribution of Viable Paths)
+**Core Contribution:** Reinterpretation of Newsvendor D for strategic context
+**R&R #4:** FATAL — 수학 기반 없으면 k* 공식 붕괴
 
 ---
 
 ## Abstract
 
-The newsvendor model optimizes inventory using **past demand data** to estimate costs. But startups have no past. How do they decide how many strategic options to maintain?
+The newsvendor model optimizes inventory against a **demand distribution** D. But for startups, "demand" has no meaning — there are no customers yet. We propose a **strategic reinterpretation**: D is not customer demand but the **Distribution of Viable Paths** — the probability distribution over how many strategic paths will prove viable ex post.
 
-We introduce the **Promise Vendor** model: entrepreneurs use **future promises** (strategic positioning vagueness V) to predict commitment costs (C) and flexibility costs (F), then optimize option count k*. Using 🦾C's commitment cost estimate (Cost = -2.5× per funding decile), we show that **FOMO is a rational Bayesian signal** — anxiety about missing alternatives reflects high perceived C.
+This reinterpretation preserves the mathematical structure while gaining strategic meaning:
+- **C_u** (underage cost) becomes **FOMO cost** — the penalty for missing a viable path
+- **C_o** (overage cost) becomes **Burn cost** — the waste from maintaining a dead-end option
+- **k*** (optimal inventory) becomes **optimal number of strategic options**
 
-$$k^* = F_D^{-1}\left(\frac{C}{C+F}\right)$$
+$$k^* = F_D^{-1}\left(\frac{C_u}{C_u + C_o}\right)$$
 
----
-
-## ¶1. Gospel (H₀): News Vendor — 과거가 현재를 결정
-
-> **The Newsvendor Gospel**: With historical demand data, we know underage cost (C_u) and overage cost (C_o). The optimal inventory q* = F⁻¹(C_u/(C_u+C_o)).
-
-This model assumes costs are **known** from past experience. The critical ratio CR = C_u/(C_u+C_o) is observable.
-
-**Problem**: Startups have no past. How do they estimate C and F?
+Where D ~ Poisson(λ) represents the distribution of viable paths, estimated from industry-level revealed viability data.
 
 ---
 
-## ¶2. Puzzle: 스타트업은 과거가 없다
+## ¶1. Gospel (H₀): News Vendor — "D = Demand"
 
-In the AV industry:
-- **Waymo**: High commitment (LiDAR-first), massive funding, locked in
-- **Tesla**: High commitment (vision-only), but different bet
-- **Comma.ai**: Low commitment, maintained flexibility, pivoted successfully
+> **The Newsvendor Gospel**: Given demand distribution D, find optimal inventory q* = F_D⁻¹(C_u/(C_u+C_o)).
 
-Traditional newsvendor logic cannot explain why low-resource Comma.ai outperformed billion-dollar Waymo. The costs C, F were **not known in advance** — they emerged from strategic choices.
+This model is elegant. But it assumes D is **customer demand** — how many units customers will buy.
 
-**The puzzle**: Without historical data, how do startups decide how many options (k) to maintain?
+**For startups, this assumption fails.** There are no customers yet. What is "demand"?
 
 ---
 
-## ¶3. RQ: 미래 약속으로 C, F를 예측할 수 있는가?
+## ¶2. Puzzle: 스타트업은 "수요"가 없다
 
-> **Research Question**: Can future promises (strategic positioning V) predict commitment and flexibility costs?
+In the AV industry (2016):
+- **Waymo**: Hedged across LiDAR, Vision, L2, L4 (k=5 options)
+- **Tesla**: Bet on Vision + Battery (k=2 options)
+- **Comma.ai**: Vision-only (k=1 option)
 
-From 🦾C, we know:
-- High early funding (E↑) → Lock-in → |ΔV|↓ → Y↓
-- **Commitment Cost = -2.5×** per decile (quantified!)
+Which k is optimal? The newsvendor can't answer because we don't know what "D" means for them.
 
-This suggests V → C is estimable. The question is: **How?**
+**The puzzle**: What should D represent when there's no demand data?
 
 ---
 
-## ¶4. Lens: Promise Vendor — 미래 → 현재
+## ¶3. RQ: D를 어떻게 재해석할 수 있는가?
 
-We propose the **Promise Vendor** model:
+> **Research Question**: Can we reinterpret the newsvendor's D to have strategic meaning for ventures with no past demand?
 
-| | News Vendor (H₀) | Promise Vendor (H₁) |
+From classical operations:
+- D = "how many customers will come?"
+- q* = "how much inventory to hold?"
+
+**Our reinterpretation**:
+- D = "how many strategic paths will prove viable?"
+- k* = "how many options to hold?"
+
+---
+
+## ¶4. Lens: D = Distribution of Viable Paths
+
+We propose the **Promise Vendor** model — a reinterpretation of newsvendor:
+
+| | Classical Newsvendor | Promise Vendor (Ours) |
 |:---|:---|:---|
-| **시간 방향** | 과거 → 현재 | **미래 → 현재** |
-| **입력** | 과거 수요 데이터 | **미래 약속 (V)** |
-| **C, F** | 알려진 값 | **V로부터 예측** |
+| **D means** | Customer demand | **Viable strategic paths** |
+| **Decision** | Inventory quantity q | **Option count k** |
+| **C_u (underage)** | Lost sale | **FOMO cost** (missed viable path) |
+| **C_o (overage)** | Unsold stock | **Burn cost** (wasted option) |
 
-**Mechanism**:
-```
-V (Vagueness/Promise) → Investor composition → σ (belief variance)
-    ↓
-Low V (precise promise) → Like-minded investors → σ↓ → C↑ (lock-in cost)
-High V (vague promise) → Diverse investors → σ maintained → F↑ (coordination cost)
-```
+This is a **mathematical isomorphism** — same formula, different interpretation:
+$$k^* = F_D^{-1}(CR) \quad \text{where } D = \text{Distribution of Viable Paths}$$
 
 ---
 
-## ¶5. Solution: FOMO = C↑ Signal
+## ¶5. Solution: The Promise Vendor Formula
 
 **Core Result**:
 
-$$k^* = F_D^{-1}\left(\frac{C}{C+F}\right)$$
+$$k^* = F_D^{-1}\left(\frac{C_u}{C_u + C_o}\right)$$
 
 Where:
-- **D** = Vagueness distribution (from ✌️U)
-- **C** = Commitment cost = -2.5× (from 🦾C)
-- **F** = Flexibility cost (coordination overhead)
+- **D** ~ Poisson(λ) = Distribution of viable paths (from industry data)
+- **C_u** = FOMO cost = penalty for missing a viable path
+- **C_o** = Burn cost = waste from maintaining dead-end option
 
-### FOMO as Bayesian Signal
+### FOMO as Bayesian C_u Signal
 
 ```
 FOMO 발동: "저것도 해야 할 것 같아"
     ↓
-옵션 +1 요구
+= High perceived C_u (cost of missing that path)
     ↓
-= Underage cost 높다고 인식
-    ↓
-= Commitment Cost (C) ↑
+= Bayesian update: λ might be higher
     ↓
 CR ↑ → k* ↑
 ```
 
-**Insight**: FOMO is not irrational. It's a **Bayesian signal that C is high**.
+**Insight**: FOMO is not irrational. It's a **Bayesian signal that C_u is high**.
 
-| CR Range | k* | Strategy | FOMO Level |
-|:---|:---:|:---|:---|
-| CR < 0.3 | Low | Commit early | Low (C is low) |
-| 0.3 < CR < 0.7 | Medium | Balanced | Moderate |
-| CR > 0.7 | High | Many options | High (C is high) |
+| Industry | λ | CR | k* | FOMO Level |
+|:---|:---:|:---:|:---:|:---|
+| **SaaS** | 0.9 | 0.25 | 1 | Low ("one path wins") |
+| **Hardware** | 1.1 | 0.50 | 1-2 | Moderate |
+| **Biotech** | 1.4 | 0.60 | 2 | High ("multiple modalities") |
+| **Deep-tech** | 1.8 | 0.85 | 3-4 | Very High ("nobody knows") |
 
 ---
 
@@ -110,11 +113,12 @@ CR ↑ → k* ↑
 
 | Paper | Focus | Gap We Fill |
 |:---|:---|:---|
-| Adner (2002) | Real options value | **When to exercise** (not how many) |
-| McGrath (1999) | Option thinking | **No cost estimation** method |
-| Kogut & Kulatilaka (2001) | Platform options | **Assumes known costs** |
+| Arrow (1958) | Newsvendor: optimal q* given D | **What is D for startups?** |
+| McGrath (1999) | Real options thinking | **No optimal k* formula** |
+| Adner (2002) | Option exercise timing | **How many options, not when** |
+| Kogut & Kulatilaka (2001) | Platform options | **Assumes known D** |
 
-**Our contribution**: Method to **predict** C, F from V (future promises).
+**Our contribution**: Reinterpret D as Distribution of Viable Paths — mathematical validity preserved, strategic meaning gained.
 
 ---
 
@@ -122,24 +126,24 @@ CR ↑ → k* ↑
 
 | Chapter | Content | Key Output |
 |:---|:---|:---|
-| [[chap2_theory]] | Promise Vendor model derivation | k* = F_D⁻¹(CR) |
-| [[chap3_empirics]] | C, F calibration from 🦾C data | CR by industry |
-| [[chap4_discussion]] | Three-paper integration | Unified framework |
+| [[chap2_theory]] | D reinterpretation + k* derivation | D = Viable Paths, k* = F_D⁻¹(CR) |
+| [[chap3_empirics]] | λ estimation by industry | Poisson λ from revealed viability |
+| [[chap4_discussion]] | Three-paper integration | V→D, E→C_u/C_o, k* synthesis |
 
 ---
 
 ## Connection to Trilogy
 
 ```
-✌️U → D (Vagueness distribution: which V levels succeed?)
+✌️U: V → D (Vagueness shapes the distribution of viable paths)
       ↓
-🦾C → C = -2.5× (Commitment cost: what's the lock-in penalty?)
+🦾C: E → C_u/C_o (Capital affects FOMO/Burn cost structure)
       ↓
-🤹N → k* = F_D⁻¹(C/(C+F)) (Optimal options: how many to hold?)
+🤹N: k* = F_D⁻¹(C_u/(C_u+C_o)) (Optimal options from D and costs)
 ```
 
-**Punchline**: *"FOMO는 C가 높다는 Bayesian signal. 불안은 생존 본능이다."*
+**Punchline**: *"D is not demand — it's the distribution of viable paths. The newsvendor formula works; the meaning is transformed."*
 
 ---
 
-*Ready for Theory development (¶8-16).*
+*Ready for Theory development (¶8-17).*

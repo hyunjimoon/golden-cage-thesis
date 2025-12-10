@@ -408,24 +408,97 @@
             opacity: 1;
         }
 
-        /* Source Badge */
-        .thumb-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
+        /* R&R Tag */
+        .rr-tag {
+            background: rgba(248, 113, 113, 0.1);
+            color: var(--critical-red);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 6px;
         }
 
-        .source-badge {
-            position: absolute;
-            bottom: 4px;
-            right: 4px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            font-size: 0.6rem;
-            padding: 2px 4px;
-            border-radius: 3px;
-            pointer-events: none;
-            font-family: 'JetBrains Mono', monospace;
+        /* 3-Part Redesign */
+        .section-label {
+            grid-column: span 12;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin: 40px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        /* Cases & Investors */
+        .card-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            grid-column: span 12;
+        }
+
+        .card-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            grid-column: span 12;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .case-success {
+            border-left: 4px solid var(--success-green);
+        }
+
+        .case-fail {
+            border-left: 4px solid var(--critical-red);
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .tag-success {
+            background: rgba(52, 211, 153, 0.1);
+            color: var(--success-green);
+        }
+
+        .tag-fail {
+            background: rgba(248, 113, 113, 0.1);
+            color: var(--critical-red);
+        }
+
+        .inv-analyst {
+            border-top: 4px solid var(--paper-c);
+        }
+
+        .inv-believer {
+            border-top: 4px solid var(--success-green);
         }
     </style>
 
@@ -436,7 +509,7 @@
         if (window.location.hostname.includes('html-preview')) {
             var base = document.createElement('base');
             // Point to the raw file location of this HTML file
-            base.href = 'https://raw.githubusercontent.com/hyunjimoon/tolzul/master/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/';
+            base.href = 'https://raw.githubusercontent.com/hyunjimoon/tolzul/main/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/';
             document.head.appendChild(base);
             console.log('Adjusted base URL for html-preview');
         }
@@ -457,11 +530,13 @@
 
 <body>
     <div class="container">
+        <div class="section-label" style="margin-top: 0">PART I: THE FINDINGS (Hook)</div>
 
         <div class="header-section">
             <div>
-                <div class="battle-title">4차 전투 · 수습(收拾)</div>
-                <div class="battle-meta">Prove It or Kill It <span style="opacity:0.3">|</span> R&R Response Sprint
+                <div class="battle-title">Phase 4: Synthesis & Resolution</div>
+                <div class="battle-meta">Hypothesis Verification <span style="opacity:0.3">|</span> Critical Review
+                    Response Sprint
                 </div>
             </div>
             <div class="countdown-badge mono">
@@ -499,7 +574,7 @@
                     </div>
                     <div
                         style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        이론적 기반</div>
+                        Theoretical Foundation</div>
                 </div>
 
                 <!-- D2 -->
@@ -520,7 +595,7 @@
                     </div>
                     <div
                         style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        매핑 & Caveat</div>
+                        Mapping & Caveats</div>
                 </div>
 
                 <!-- K Gate -->
@@ -528,7 +603,7 @@
                     style="width: 40px; background: linear-gradient(180deg, var(--critical-red), var(--accent-gold)); display: flex; align-items: center; justify-content: center; position: relative;">
                     <div
                         style="background: var(--bg-color); padding: 4px 6px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; color: var(--text-primary); border: 2px solid var(--text-primary);">
-                        K🔴</div>
+                        GATE</div>
                 </div>
 
                 <!-- D3 -->
@@ -549,7 +624,7 @@
                     </div>
                     <div
                         style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        실증 검증</div>
+                        Empirical Validation</div>
                 </div>
 
                 <!-- D4 -->
@@ -568,14 +643,14 @@
                     </div>
                     <div
                         style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        제출</div>
+                        Submission</div>
                 </div>
             </div>
 
             <!-- R&R Legend -->
             <div
                 style="display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--card-border); font-size: 0.75rem; color: var(--text-secondary);">
-                <span><strong style="color: var(--critical-red);">#4</strong> D 재정의</span>
+                <span><strong style="color: var(--critical-red);">#4</strong> Redefining D</span>
                 <span><strong style="color: var(--critical-red);">#5</strong> Asset Specificity</span>
                 <span><strong style="color: var(--accent-gold);">#1</strong> |ΔV| proxy</span>
                 <span><strong style="color: var(--accent-gold);">#2</strong> FOMO→Cu</span>
@@ -600,10 +675,13 @@
         </div>
 
 
+
         <div class="paper-card paper-u">
             <div class="card-header">
                 <div>
-                    <div class="paper-name">Paper U: Vague Promise</div>
+                    <div class="paper-name"><a href="../../output/_thesis_package/papers/U/toc(u).md"
+                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">Paper
+                            U: Vague Promise</a></div>
                     <div class="paper-target mono">E&I (MS)</div>
                 </div>
                 <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">U</div>
@@ -637,7 +715,7 @@
                 </div>
                 <div class="bottleneck-list">
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
                         <span style="flex-grow:1">Bolton s2 <-> V Mapping</span>
 
@@ -649,7 +727,7 @@
 
                     </div>
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
                         <span style="flex-grow:1">Refine Narrative Hook</span>
 
@@ -661,7 +739,7 @@
 
                     </div>
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-important"></div>
                         <span style="flex-grow:1">Clarify Contribution</span>
 
@@ -680,7 +758,9 @@
         <div class="paper-card paper-c">
             <div class="card-header">
                 <div>
-                    <div class="paper-name">Paper C: Commitment Trap</div>
+                    <div class="paper-name"><a href="../../output/_thesis_package/papers/C/toc(c).md"
+                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">Paper
+                            C: Commitment Trap</a></div>
                     <div class="paper-target mono">Strategy (SMJ/MS)</div>
                 </div>
                 <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">C</div>
@@ -714,7 +794,7 @@
                 </div>
                 <div class="bottleneck-list">
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
                         <span style="flex-grow:1">Position vs Nanda</span>
 
@@ -726,7 +806,7 @@
 
                     </div>
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
                         <span style="flex-grow:1">Formalize AOC</span>
 
@@ -738,7 +818,7 @@
 
                     </div>
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-important"></div>
                         <span style="flex-grow:1">Strengthen H3 Logic</span>
 
@@ -757,7 +837,9 @@
         <div class="paper-card paper-n">
             <div class="card-header">
                 <div>
-                    <div class="paper-name">Paper N: Promise Vendor</div>
+                    <div class="paper-name"><a href="../../output/_thesis_package/papers/N/toc(n).md"
+                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">Paper
+                            N: Promise Vendor</a></div>
                     <div class="paper-target mono">OM (MS)</div>
                 </div>
                 <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">N</div>
@@ -791,7 +873,7 @@
                 </div>
                 <div class="bottleneck-list">
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
                         <span style="flex-grow:1">CR Calibration</span>
 
@@ -803,7 +885,7 @@
 
                     </div>
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
                         <span style="flex-grow:1">Redefine Demand (D)</span>
 
@@ -815,7 +897,7 @@
 
                     </div>
 
-                    <div class="bottleneck-item" style="">
+                    <div class="bottleneck-item">
                         <div class="priority-dot dot-important"></div>
                         <span style="flex-grow:1">Delta V Proxy Caveat</span>
 
@@ -834,7 +916,7 @@
 
         <div class="dashboard-footer">
             <div class="tracker-panel">
-                <div class="panel-title">Active Bottlenecks</div>
+                <div class="panel-title">Critical Review Items (R&R)</div>
                 <table class="min-table">
                     <thead>
                         <tr>
@@ -851,7 +933,7 @@
                         <tr style="background: rgba(248, 113, 113, 0.05);">
                             <td class="mono" style="color: var(--critical-red); font-weight: 700">#4</td>
                             <td style="color: var(--paper-n); font-weight: 700">N</td>
-                            <td>D 재정의 (Demand → Distribution)</td>
+                            <td>Redefining D (Demand → Distribution)</td>
                             <td><span class="status-badge mono">G🟠</span></td>
                             <td class="mono" style="color: var(--critical-red)">D1</td>
                             <td>
@@ -983,6 +1065,111 @@
                 </div>
             </div>
         </div>
+
+        <!-- PART II -->
+        <div class="section-label">PART II: THE MECHANISM (How it works)</div>
+
+        <div style="grid-column: span 12; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="info-card">
+                <div style="font-weight: 700; font-size: 1.1rem;">The Golden Cage</div>
+                <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                    Money creates asset specificity. Increased investment leads to specialized assets, raising the cost
+                    of abandonment (AOC).
+                </div>
+                <!-- Placeholder for Diagram -->
+                <div
+                    style="height: 100px; background: rgba(0,0,0,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: monospace; color: var(--text-secondary);">
+                    [Capital] -> [Assets] -> [Lock-in]
+                </div>
+            </div>
+            <div class="info-card" style="border-color: var(--accent-gold);">
+                <div style="font-weight: 700; font-size: 1.1rem;">Strategies: Reliability vs. Commitment</div>
+                <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <strong>Ghemawat (1991)</strong> defines Strategy as "Commitment" (irreversible choice).
+                    Reliability (Quality) is a necessity, but Commitment (Sticky Assets) is a choice.
+                </div>
+                <div
+                    style="background: rgba(251, 191, 36, 0.1); color: var(--accent-gold); padding: 8px; border-radius: 6px; font-size: 0.85rem;">
+                    "Money is not experimentation. Money is concrete."
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">Headline Cases</div>
+        <div class="card-grid-3">
+            <!-- Tesla -->
+            <div class="info-card case-success">
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="font-weight: 700;">Tesla</div>
+                    <span class="card-tag tag-success">Believer</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Survived the "Production Hell" by sheer belief capital. Low V (Precision) in product, but High V
+                    (Ambiguity) in vision.
+                </div>
+            </div>
+
+            <!-- Better Place -->
+            <div class="info-card case-fail">
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="font-weight: 700;">Better Place</div>
+                    <span class="card-tag tag-fail">Commitment Trap</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Locked into battery swapping stations (High Asset Specificity) before verifying demand. Classic
+                    "Golden Cage".
+                </div>
+            </div>
+
+            <!-- Quibi -->
+            <div class="info-card case-fail">
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="font-weight: 700;">Quibi</div>
+                    <span class="card-tag tag-fail">Murky Middle</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Tried to be both "High Quality" (TV stars) and "High Tech" (Short form) but failed to engage either
+                    audience.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">Investor Styles</div>
+        <div class="card-grid-2">
+            <!-- Analyst -->
+            <div class="info-card inv-analyst">
+                <div style="font-weight: 700; color: var(--paper-c);">Analyst Exemplar: Sequoia</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Metrics-driven. "Show me the unit economics."
+                    <br><strong>Preference:</strong> Precision (Paper N).
+                </div>
+            </div>
+            <!-- Believer -->
+            <div class="info-card inv-believer">
+                <div style="font-weight: 700; color: var(--success-green);">Believer Exemplar: Founders Fund</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Thesis-driven. "What is the secret you know that others don't?"
+                    <br><strong>Preference:</strong> Ambiguity (Paper U).
+                </div>
+            </div>
+        </div>
+
+        <!-- PART III -->
+        <div class="section-label">PART III: THE FOUNDATION (Reference)</div>
+
+        <div
+            style="grid-column: span 12; display: flex; gap: 20px; justify-content: center; padding: 40px 0; opacity: 0.6;">
+            <a href="../../output/_thesis_package/papers/I/toc(i).md"
+                style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">📚
+                Literature Map</a>
+            <a href="../../output/_thesis_package/papers/U/section3(u).md"
+                style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">📜
+                Methodology</a>
+            <a href="../../output/%F0%9F%97%84%EF%B8%8FREGISTRY.md"
+                style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">🗄️
+                File Registry</a>
+        </div>
+
     </div>
 </body>
 

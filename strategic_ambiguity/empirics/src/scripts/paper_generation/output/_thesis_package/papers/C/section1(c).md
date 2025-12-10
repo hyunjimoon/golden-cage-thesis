@@ -1,22 +1,22 @@
 ---
 title: When Commitment Becomes a Cage
-version: 5.0 (New title + mechanism chain)
-core_hypothesis: H_cost (Cost of Commitment = 8.8×)
+version: 6.0 (Data correction: 8.8× → 2.7×)
+core_hypothesis: H_cost (Cost of Commitment = 2.7×)
 core_mechanism: dY/dE = dY/d|ΔV| × d|ΔV|/dE = (+) × (-) < 0
 modified:
-  - 2025-12-04T15:00:00-05:00
+  - 2025-12-09T12:00:00-05:00
 ---
 
 # Chapter 1: Introduction
 
 ## Abstract
 
-The prevailing wisdom—"more funding is better"—underlies nearly all entrepreneurial advice. Yet among **180,860 technology ventures** tracked from 2021-2025, we find a striking anomaly: companies with less early funding that stayed strategically flexible achieved **8.8× better funding growth** than well-funded companies that stayed the course.
+The prevailing wisdom—"more funding is better"—underlies nearly all entrepreneurial advice. Yet among **123,906 technology ventures** tracked from 2021-2025, we find a striking anomaly: companies with less early funding that stayed strategically flexible achieved **2.7× better funding growth** than well-funded companies that stayed the course.
 
 We explain this through a mechanism chain:
 $$\frac{dY}{dE} = \underbrace{\frac{dY}{d|\Delta V|}}_{(+)} \times \underbrace{\frac{d|\Delta V|}{dE}}_{(-)} < 0$$
 
-Capital demands commitment. Commitment homogenizes teams. Homogeneity blocks learning. Using a counterfactual framework conditioning on early funding level, we estimate the **Cost of Commitment** at -2.5× forgone funding growth per decile. The strategic implication: **deprivation breeds flexibility, and flexibility breeds success**.
+Capital demands commitment. Commitment homogenizes teams. Homogeneity blocks learning. Using a counterfactual framework conditioning on early funding level, we estimate the **Cost of Commitment** at **2.7×** forgone funding growth (Escape Velocity Y=2.16× vs Golden Cage Y=0.80×). The strategic implication: **deprivation breeds flexibility, and flexibility breeds success**.
 
 ---
 
@@ -42,15 +42,15 @@ This gospel is so deeply embedded that questioning it seems heretical.
 
 ## ¶2 The Golden Cage Anomaly
 
-Yet among 180,860 ventures in our panel, we observe a counterintuitive pattern:
+Yet among 123,906 ventures in our panel, we observe a counterintuitive pattern:
 
 | Profile | Early Funding (E) | Flexibility |ΔV| | Y = L/E |
 |:--------|:-----------------:|:-----------:|:-------:|
-| **Escape Velocity** | Low (≤ median) | High (> median) | **3.32×** |
-| **Golden Cage** | High (> median) | Low (≤ median) | **0.38×** |
-| **Ratio** | - | - | **8.8×** |
+| **Escape Velocity** | Low (≤ median) | High (> median) | **2.16×** |
+| **Golden Cage** | High (> median) | Low (≤ median) | **0.80×** |
+| **Ratio** | - | - | **2.7×** |
 
-Companies with **less** early funding and **more** strategic flexibility achieved **8.8× better outcomes** than those with abundant resources who stayed locked in.
+Companies with **less** early funding and **more** strategic flexibility achieved **2.7× better outcomes** than those with abundant resources who stayed locked in.
 
 **Notation** (money as flow, not stock):
 - **E** = Early funding (first_financing_size)
@@ -85,13 +85,13 @@ E↑ → Promise → σ↓ → |ΔV|↓ → Y↓
 
 ---
 
-## ¶5 Key Finding: 8.8× Cost of Commitment
+## ¶5 Key Finding: 2.7× Cost of Commitment
 
 Our main result (**H_cost**):
 
-> **H_cost**: Escape Velocity (3.32×) vs Golden Cage (0.38×) = **8.8× gap**
+> **H_cost**: Escape Velocity (2.16×) vs Golden Cage (0.80×) = **2.7× gap**
 
-This holds across all funding deciles, with the average cost at **-2.5×** per decile (see [[fig2_cost_by_decile.png]]). Lock-in hurts at every funding level.
+This holds across all funding deciles (see [[fig2_cost_by_decile.png]]). Lock-in hurts at every funding level.
 
 **Supporting evidence** (H_supporting): Lock-in correlation ρ = **-0.117*** between early funding and |ΔV|.
 
