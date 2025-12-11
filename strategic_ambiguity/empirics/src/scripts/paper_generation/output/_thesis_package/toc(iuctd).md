@@ -35,9 +35,16 @@ This dissertation follows the **Levels of Theoretical Explanation (LTE)** framew
 
 | ¶ | Role | First Sentence |
 |:-:|:-----|:---------------|
-| 4 | 📊 Layer 1 (WHAT) | **Paper U** documents robust patterns: ρ(V,L) = +0.024*** rejects signaling theory; Movement Principle dominates initial positioning. |
+| 4 | 📊 Layer 1 (WHAT) | **Paper M** documents robust patterns: multimodal growth distribution explained by Mover/Stayer decomposition; V → A → G chain. |
 | 5 | 🔗 Layer 2 (HOW) | **Paper C** traces the process: capital creates commitment (ρ(A,E) = −0.009***), commitment blocks movement, movement drives growth (ρ(G,A) = +0.044***). |
-| 6 | ⚙️ Layer 3 (WHY) | **Paper D** provides the generative mechanism: capital attracts homogeneous stakeholders, collapsing belief variance, disabling Bayesian updating—the Learning Trap. |
+| 6 | ⚙️ Layer 3 (WHY) | **Paper T** provides the generative mechanism: specific promises attract analyst-type investors who constrain adaptability, while vague promises attract believer-type investors who enable it—the Trap. |
+
+## 1.2.5 Methodological Approach: Process Theory over Causal Identification (2¶)
+
+| ¶ | Role | First Sentence |
+|:-:|:-----|:---------------|
+| 6.5a | 🔬 Limitation of Traditional Methods | We are skeptical of applying conventional causal methods (IV, RDD, DiD) to entrepreneurial strategy research due to the **intrinsic heterogeneity problem**—where treatment effects are fundamentally heterogeneous across firms and endogenously linked to managerial choice mechanisms (Dotson & Mackey, 2024). |
+| 6.5b | 🛤️ Alternative Path | Process theorizing, particularly computational modeling, provides an alternative path to causal explanation that does not rely on statistical causal identification (Kozlowski et al., in press; Cronin, 2025). Our dissertation embraces this LTE approach: Paper M documents WHAT patterns exist (layer 1), Paper C traces HOW processes unfold temporally (layer 2), and Paper T demonstrates WHY through **generative sufficiency** (layer 3). |
 
 ## 1.3 Contributions (2¶)
 
