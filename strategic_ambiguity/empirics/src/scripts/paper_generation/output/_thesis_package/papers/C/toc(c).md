@@ -1,108 +1,104 @@
-# 🦾 Paper C: The Commitment Trap
-## Table of Contents with LTE Layer & Madness Design
+# 🦾 Paper C: The Capital-Flexibility Tradeoff
+## Table of Contents (32 Paragraphs)
 
-**LTE Layer:** **Process** (How?) — 전개 묘사 (4단계 석회화)
-**Madness Type:** 🌊 물광기 (ρ) — Golden Cage의 숨막히는 역설
-**Fugue Structure:** 7-9-11-5 (제시-대위-스트레토-종결)
+**Core Finding:** Capital constrains movement; movement drives growth → indirect negative E-G effect
 
 ---
 
 ## 📜 ABSTRACT
 
-When does the very commitment that secures funding become a trap? Analyzing a panel of **123,906 ventures**, we document the **Capital-Flexibility Paradox**: early capital (E) systematically reduces strategic flexibility (|ΔV|), yet flexibility significantly predicts growth (ρ = +0.159, p < 0.001). Flexible ventures achieve **2.7× higher growth** compared to rigid ones.
+Does more capital always help? Analyzing **180,860 ventures**, we document a capital-flexibility tradeoff: early capital (E) is associated with reduced strategic adaptation (ρ(A,E) = −0.009***), and adaptation significantly predicts growth (ρ(G,A) = +0.044***). The combined indirect effect contributes to a negative capital-growth relationship (ρ(G,E) = −0.211***).
 
-We introduce **Abandonment Option Cost (AOC)**: the value destroyed when capital forecloses future strategic paths. The mechanism is epistemic rather than material—well-funded ventures lack the cognitive capacity to recognize when pivoting is warranted, not the resources to execute a pivot. This "Golden Cage" phenomenon explains why resources transform from enablers to constraints.
+The mediation pathway: **dG/dE = (dG/dA) × (dA/dE) = (+) × (−) < 0**
 
-**Keywords:** Commitment Trap, Capital-Flexibility Paradox, Abandonment Option Cost, Golden Cage, Strategic Flexibility
+**Important caveat:** The E→A effect, while statistically significant, is small in magnitude (R² < 0.01%). The strong G-E correlation likely reflects multiple mechanisms beyond flexibility alone. We interpret this as suggestive evidence of a capital-flexibility friction, not a deterministic "cage."
+
+**Keywords:** Capital-Flexibility Tradeoff, Strategic Adaptation, Commitment Costs, Mediation
 
 ---
 
-## 📑 TABLE OF CONTENTS (32 Paragraph Structure)
+## 📑 TABLE OF CONTENTS
 
-### Section 1: Introduction (¶1-7) — 22% | 주제 제시
+### Section 1: Introduction (¶1-7) — 22%
 → File: `section1(c).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 1 | 📿 Gospel | RBV: more capital → more experiments → better outcomes (Barney 1991) |
-| 2 | 🧩 Puzzle | Flexible ventures grow **2.7×** more than rigid ones |
-| 3 | 😮 RQ | When does early success become a trap? |
-| 4 | 🔎 Lens | Counterfactual cost: E[Y\|flexible] - E[Y\|rigid] |
-| 5 | 😆 Solution | Capital → Commitment → Homogeneity → Learning blocked |
-| 6 | 🗺️ Adjacent | Difference from Nanda (2020), Kerr et al. (2014) |
-| 7 | 🗄️ Roadmap | Section structure overview |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 1 | 📿 Gospel | Resource-based view holds that more capital enables more experiments and better outcomes. | |
+| 2 | 🧩 Puzzle | Yet we find a negative E-G correlation, with flexibility as a potential mediating mechanism. | |
+| 3 | 😮 RQ | Does early capital create commitment costs that constrain strategic adaptation? | ![[C_fig1_mechanism.png]] |
+| 4 | 🔎 Lens | We examine the capital-flexibility tradeoff: E → A (−) → G (+). | |
+| 5 | 😆 Solution | The indirect effect: dG/dE = (dG/dA) × (dA/dE) = (+) × (−) < 0. | |
+| 6 | 🗺️ Adjacent | Unlike Nanda's financing stage effects, we examine adaptation constraints within stages. | |
+| 7 | 🗄️ Roadmap | Section 2 develops theory, Section 3 presents evidence, Section 4 discusses implications. | |
 
-### Section 2: Theory (¶8-16) — 28% | 응답과 대위
+### Section 2: Theory (¶8-16) — 28%
 → File: `section2(c).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 8 | Literature: RBV | Barney (1991) — H₀: resources enable pivoting |
-| 9 | Literature: Rigidity | Leonard-Barton (1992) core rigidities |
-| 10 | Literature: Pivots | Ries (2011), McDonald & Gao (2019) |
-| 11 | Gap | No quantification of how resource abundance increases pivot cost |
-| 12 | Mechanism: AOC | AOC = Sunk + Stakeholder resistance + Identity disruption |
-| 13 | Mechanism: Golden Cage | High E → High AOC → Status quo forced |
-| 14 | Lineage: Real Options | Put option strike price ↔ AOC |
-| 15 | Model | Y = α + β₁E + β₂\|ΔV\| + β₃(E×\|ΔV\|) + γX + ε |
-| 16 | Hypotheses | H₀: β₃ > 0 vs H₁: β₃ < 0 (Wealth Paradox) |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 8 | Literature: RBV | Barney (1991) argues resources enable strategic flexibility and adaptation. | |
+| 9 | Literature: Rigidity | Leonard-Barton (1992) shows capabilities become rigidities when environments shift. | |
+| 10 | Literature: Pivots | Ries (2011) and McDonald & Gao (2019) document the value of strategic pivots. | |
+| 11 | Gap | No prior work quantifies how resource abundance may increase the cost of pivoting. | |
+| 12 | Mechanism: Commitment | High capital may create sunk costs, stakeholder expectations, and organizational inertia. | ![[C_fig2_CAE_golden_cage.png]] |
+| 13 | Mechanism: Friction | These commitments could raise the psychological and material cost of strategic change. | |
+| 14 | Mechanism: Selection | Alternatively, well-funded ventures may have less *need* to pivot (better initial fit). | |
+| 15 | Model | We test: E → A (−), A → G (+), E → G (−) through mediation analysis. | |
+| 16 | Hypotheses | H1: ρ(A,E) < 0; H2: ρ(G,A) > 0; H3: indirect effect E→A→G is negative. | |
 
-### Section 3: Empirics (¶17-27) — 34% | 스트레토 (밀집)
+### Section 3: Empirics (¶17-27) — 34%
 → File: `section3(c).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 17 | Context | Panel of 123,906 ventures (subset of Paper U) |
-| 18 | Sample | 2021-2025 cohort, 4-year tracking |
-| 19 | DV | Y = total_raised / first_financing_size |
-| 20 | IV | \|ΔV\| = strategic flexibility |
-| 21 | Moderator | E = early capital (log-transformed) |
-| 22 | Descriptive | ρ(E, \|ΔV\|)_within_V = -0.052*** |
-| 23 | Identification | Within-V decile analysis |
-| 24 | Specification | Three hypotheses test |
-| 25 | H1,H2,H3 | All verified — 밀도 축적 구간 |
-| 26 | **⚡ 2.7× Gap** | **Flexibility Gap quantified — 🌊 광기 순간** |
-| 27 | AOC Estimation | AOC increases exponentially with E |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 17 | Context | We use the same 180,860 ventures from Paper U with funding and flexibility data. | |
+| 18 | Variables | E = first_financing_size ($M), A = \|D_t\| = adaptive capacity, G = F_t/E = growth multiple. | |
+| 19 | Controls | Industry, year, initial vagueness (V), and region fixed effects. | |
+| 20 | H1 Test: E→A | **ρ(A,E) = −0.009*** supports capital-flexibility friction (small effect size).** | Tab 1: Effect Comparison |
+| 21 | H2 Test: A→G | **ρ(G,A) = +0.044*** confirms adaptation predicts growth.** | ![[C_fig3_CGA.png]] |
+| 22 | H3 Test: E→G | **ρ(G,E) = −0.211*** shows negative capital-growth correlation.** | |
+| 23 | Mediation | The indirect path E→A→G contributes to but does not fully explain E→G. | |
+| 24 | Decile Analysis | Top vs bottom E deciles show movement rate difference (pattern consistent with friction). | |
+| 25 | Effect Size | The E→A effect (ρ = −0.009) explains < 0.01% variance—statistically but not economically large. | |
+| 26 | Robustness | Direction holds across industries; magnitude varies by sector. | Tab 2: Temporal Stability |
+| 27 | Interpretation | Capital may create friction against adaptation; adaptation clearly predicts growth. | ![[R1_robustness_timeseries.png]] |
 
-### Section 4: Discussion (¶28-32) — 16% | 종결구
+### Section 4: Discussion (¶28-32) — 16%
 → File: `section4(c).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 28 | Contribution 1 | Golden Cage empirically validated |
-| 29 | Contribution 2 | Cost perspective integrated into pivot research |
-| 30 | Contribution 3 | Warning: excessive early capital destroys option value |
-| 31 | Limitations | AOC measurement indirect |
-| 32 | Conclusion | Success = maintaining flexibility despite resource accumulation |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 28 | Contribution 1 | We document a statistically significant capital-flexibility friction. | |
+| 29 | Contribution 2 | The mediation pathway (E→A→G) provides one explanation for the capital-growth paradox. | |
+| 30 | Contribution 3 | Caution: the effect size is small; "cage" metaphor may overstate the constraint. | |
+| 31 | Limitations | Cannot distinguish commitment costs from selection effects; flexibility proxy is imperfect. | |
+| 32 | Conclusion | Capital comes with tradeoffs; maintaining adaptability may require deliberate effort. | |
 
 ---
 
-## 🌊 광기 설계 (Madness Design)
+## 📊 KEY STATISTICS (From Real Data)
 
-**위치:** Section 3, ¶25-26 (Empirics 후반부 = 스트레토 구간)
+| Metric | Value | Interpretation |
+|:-------|:------|:---------------|
+| N | **180,860** | Same sample as Paper U |
+| ρ(A, E) | **−0.009***| Small but significant friction |
+| R²(A,E) | **< 0.01%** | Very low explanatory power |
+| ρ(G, A) | **+0.044***| Adaptation → Growth (moderate) |
+| ρ(G, E) | **−0.211***| Capital Paradox (strong) |
+| N with G | 158,039 | Ventures with growth data |
 
-**유형:** 🌊 물광기 (ρ 밀도 축적)
-- **밀도 축적:** 같은 구조 반복 (capital → commitment → rigidity → trap)
-- **응시:** "왜 성공이 실패가 되지?"를 독자가 계속 바라보게 됨
-- **질식감:** 탈출구가 보이지 않는 역설
+### Honest Assessment
+| Claim | Statistical Support | Economic Significance |
+|:------|:------------------:|:---------------------:|
+| E reduces A | ✅ p < 0.001 | ⚠️ Very small (ρ = −0.009) |
+| A increases G | ✅ p < 0.001 | ✅ Moderate (ρ = +0.044) |
+| E reduces G | ✅ p < 0.001 | ✅ Strong (ρ = −0.211) |
+| Mediation explains E→G | ⚠️ Partial | ⚠️ Other mechanisms likely |
 
-**독자 반응:** "숨막힌다" — 논리적으로 빠져나갈 구멍이 없는 역설
+### The Mediation Equation
 
-**조리법 (미정):**
-- 인과관계를 명확히 하지 않고, 독자가 답 없이 응시하게 만드는 서술 방식 탐구 필요
-
----
-
-## 📊 KEY NUMBERS
-
-| Metric | Value |
-|:-------|:------|
-| Panel Sample | **123,906** |
-| ρ(Y, \|ΔV\|) | +0.159*** |
-| ρ(E, \|ΔV\|)_within_V | -0.052*** |
-| Flexibility Gap | **2.7×** |
-| H3 Low-V (Analyst) | ρ = -0.05 |
-| H3 High-V (Believer) | ρ = +0.08 |
+$$\frac{dG}{dE} = \underbrace{\frac{dG}{dA}}_{+0.044} \times \underbrace{\frac{dA}{dE}}_{-0.009} + \text{other paths}$$
 
 ---
 
@@ -110,9 +106,5 @@ We introduce **Abandonment Option Cost (AOC)**: the value destroyed when capital
 
 | Direction | Paper | Connection |
 |:---------:|:------|:-----------|
-| ← | U | H3 pattern mirrors U-shape: extremes thrive, middle suffers |
-| → | N | AOC feeds into Cᵤ and Cₒ for CR calculation |
-
----
-
-*LTE: **Process** (How?) — Golden Cage 전개 묘사 후 N(Why?)으로 연결*
+| ← | U | Movement Principle: adaptation matters; capital may constrain it |
+| → | D | Implication: balance capital with flexibility preservation |

@@ -1,177 +1,34 @@
----
-title: When Commitment Becomes a Cage - Empirics
-version: 5.0 (E → |ΔV| → Y notation)
-core_test: 3-panel mechanism + cohort analysis
-modified:
-  - 2025-12-04T15:00:00-05:00
----
+W# Paper C: The Capital-Flexibility Tradeoff
+## Section 3: Empirics (¶56-63)
 
-# Chapter 3: Empirics — Testing the Mechanism Chain
+### ¶56. Data and Variables
 
-## ¶15. Data: Panel Construction
+We use the same PitchBook data as Paper U, comprising 180,860 technology ventures from 2021 to 2025. Our variables align with Paper U for consistency: early funding (E) measures first financing size; later success (L) indicates progression to Later Stage VC; vagueness (V) captures initial positioning breadth; directional change (D = V_T − V_0) measures signed positioning change; adaptive capacity (A = |D|) measures unsigned positioning change, our primary measure of strategic movement. This shared dataset enables direct comparison of effect sizes across papers: the Movement Principle (Paper U) versus the capital-flexibility friction (Paper C).
 
-### Primary Data: PitchBook Panel (2021-2025)
+### ¶57. Identification Strategy and Temporal Robustness
 
-| Attribute | Value |
-|:---|:---|
-| **Total N** | 180,860 technology ventures |
-| **Period** | 2021–2025 (4-year panel) |
-| **Industries** | Technology sector (all verticals) |
-| **Source** | PitchBook venture descriptions + financing |
+Our primary identification strategy relies on Spearman rank correlations to test hypothesized relationships: E-A for friction (H1), L-A for movement principle (H2), and mediation analysis for the indirect effect (H3). We acknowledge that our design is correlational: we document associations but cannot establish causation. However, we strengthen causal inference through temporal stability analysis across three distinct market regimes: post-COVID recovery (2023), AI boom (2024), and market maturation (2025). If our relationships were driven by omitted variables, selection effects, or spurious correlations, we would expect coefficient instability across these different conditions. Instead, all three hypothesized relationships maintain consistent signs and significance: H1 (capital-flexibility friction) shows ρ(A,E) = −0.007** (2023), −0.006* (2024), −0.009*** (2025); H2 (flexibility-growth) shows ρ(G,A) = +0.033*** to +0.044***; H3 (capital paradox) shows ρ(G,E) = −0.225*** to −0.211***. This temporal stability provides quasi-experimental evidence that our findings reflect stable structural relationships rather than period-specific confounds.
 
-### Variable Construction
+### ¶58. Results: H1 Test (Capital-Flexibility Friction)
 
-| Variable | Definition | Source |
-|:---|:---|:---|
-| **E** | Early funding (first_financing_size) | PitchBook |
-| **L** | Later funding = Total_2025 - E | PitchBook |
-| **Y** | L/E (funding growth ratio) | Computed |
-| **V_E** | Vagueness at 2021 (HybridVaguenessScorerV2) | Description |
-| **V_L** | Vagueness at 2025 | Description |
-| **|ΔV|** | |V_L - V_E| (strategic flexibility) | Computed |
+The Spearman correlation between early funding (E) and adaptive capacity (A) is ρ = −0.009 (p < 0.001). This negative correlation supports H1: higher early capital is associated with less strategic adaptation. However, the effect is economically small. The R² equivalent is less than 0.01%, meaning early funding explains almost none of the variance in adaptive capacity. For context, a 10% increase in early funding is associated with only a 0.09% decrease in adaptive capacity. We interpret this as suggestive evidence of friction rather than a strong constraint.
 
-See [[table1_descriptive.csv]] for descriptive statistics.
+### ¶59. Results: H2 Test (Movement Principle, Consistency Check)
 
----
+Replicating Paper U's finding, we confirm that adaptive capacity strongly predicts success. The Spearman correlation between adaptive capacity (A) and later success (L) is ρ = +0.056 (p < 0.001). More strikingly, ventures that moved (A > 0) succeed at 18.1% compared to 7.0% for stayers—the 2.6× Movement Principle effect. This confirms that the Movement Principle documented in Paper U holds in our analyses of the capital-flexibility relationship.
 
-## ¶16. Measure: Vagueness Score V
+### ¶60. Results: H3 Test (Mediation Analysis)
 
-We measure strategic positioning vagueness using **HybridVaguenessScorerV2** (0-100):
+The indirect effect E→A→L can be approximated as the product of the E→A and A→L correlations: (−0.009) × (+0.056) = −0.0005. This indirect effect is negative, consistent with H3, but extremely small. The direct E→L correlation is ρ = −0.211. The indirect effect through flexibility explains: |−0.0005| / |−0.211| = 0.24%, or less than 1% of the total E-L relationship. We conclude that flexibility friction exists but contributes minimally to explaining the Capital Paradox. Other mechanisms—market selection, overfunding effects, expectation management—likely explain the bulk of the E-L negative correlation.
 
-| V Score | Interpretation | Example |
-|:---|:---|:---|
-| V = 0-20 | Precise, verifiable | "AI chip for autonomous vehicles" |
-| V = 40-60 | Ambiguous middle | "Technology solutions for mobility" |
-| V = 80-100 | Vague, flexible | "Building the future of transportation" |
+### ¶61. Robustness: Alternative Movement Thresholds
 
-The scorer combines:
-1. **Semantic analysis**: Specificity of claims
-2. **Market definition**: Breadth vs. narrowness
-3. **Technology claims**: Verifiability
+We test robustness to alternative definitions of movement. Using A > 5 (moderate movement) instead of A > 0, the E-A correlation strengthens slightly to ρ = −0.011. Using A > 10 (substantial movement), the correlation further strengthens to ρ = −0.013. This pattern suggests that capital may more strongly constrain larger movements than small adjustments, though all effects remain small in magnitude. The direction is consistent across thresholds, supporting the qualitative finding of friction while confirming the small quantitative magnitude.
 
----
+### ¶62. Robustness: Industry Subsamples
 
-## ¶17. Measure: Strategic Flexibility |ΔV|
+We test whether the capital-flexibility friction varies by industry. In software, ρ(A,E) = −0.008; in hardware, ρ(A,E) = −0.012; in biotech, ρ(A,E) = −0.007. The friction is present across industries with consistently small magnitudes. Hardware shows slightly stronger friction, potentially reflecting the higher commitment costs of physical product development. However, all industry-specific effects remain economically small, suggesting that capital-flexibility friction is a general but weak phenomenon rather than an industry-specific strong effect.
 
-**|ΔV|** = |V_L - V_E| captures how much a company's strategic positioning changed:
+### ¶63. Effect Size Summary
 
-| |ΔV| | Interpretation |
-|:---|:---|
-| |ΔV| ≈ 0 | Strategy unchanged (locked in) |
-| |ΔV| > 20 | Moderate adaptation |
-| |ΔV| > 40 | Major strategic pivot |
-
-**⚠️ Important**: |ΔV| is a **learning outcome proxy**, not learning capacity. See [[feedback🪵(🦾c)]] F02 and [[chap4_discussion]] Limitation 5.
-
----
-
-## ¶18. Cohort Design: 2×2 Matrix
-
-We split companies by median E and median |ΔV| (see [[fig3_cohort_analysis.png]]):
-
-| | Low |ΔV| (Locked) | High |ΔV| (Flexible) |
-|:---|:---:|:---:|
-| **Low E** (Underfunded) | Struggle Zone | **Escape Velocity** |
-| **High E** (Well-funded) | **Golden Cage** | Patient Capital |
-
-**Key Comparison**:
-- **Escape Velocity**: Low E, High |ΔV| → Y = 2.16×
-- **Golden Cage**: High E, Low |ΔV| → Y = 0.80×
-- **Ratio**: **2.7×** (Flexibility Gap)
-
----
-
-## ¶19. Main Result: 3-Panel Mechanism Test
-
-See [[fig1_mechanism_3panel.png]] for the visual evidence:
-
-### Panel A: d|ΔV|/dE < 0
-
-**Finding**: Higher early funding correlates with lower strategic flexibility.
-
-| E Decile | Median |ΔV| | Trend |
-|:---|:---:|:---|
-| D1 (lowest E) | High | ↘ |
-| D5 | Medium | ↘ |
-| D10 (highest E) | Low | ↘ |
-
-**Correlation**: ρ(E, |ΔV|) = **-0.117*** (p < 0.001)
-
-### Panel B: dY/d|ΔV| > 0
-
-**Finding**: Higher strategic flexibility correlates with better outcomes.
-
-| |ΔV| Decile | Median Y | Trend |
-|:---|:---:|:---|
-| D1 (lowest |ΔV|) | Low | ↗ |
-| D5 | Medium | ↗ |
-| D10 (highest |ΔV|) | High | ↗ |
-
-**Correlation**: ρ(|ΔV|, Y) > 0 (p < 0.001)
-
-### Panel C: dY/dE < 0
-
-**Finding**: The combined effect—higher E leads to lower Y through the |ΔV| channel.
-
-$$\frac{dY}{dE} = \underbrace{\frac{dY}{d|\Delta V|}}_{(+)} \times \underbrace{\frac{d|\Delta V|}{dE}}_{(-)} = (+)(-) < 0$$
-
----
-
-## ¶20. Cost of Commitment by Decile
-
-See [[fig2_cost_by_decile.png]] and [[table2_cost_of_commitment.csv]]:
-
-$$\text{Cost}_d = E[Y | \text{Locked}, E_d] - E[Y | \text{Flexible}, E_d]$$
-
-| E Decile | Y (Locked) | Y (Flexible) | Cost | Significance |
-|:---|:---:|:---:|:---:|:---:|
-| D1 | 0.42× | 2.15× | -1.73× | *** |
-| D2 | 0.38× | 2.87× | -2.49× | *** |
-| D3 | 0.35× | 3.12× | -2.77× | *** |
-| ... | ... | ... | ... | ... |
-| D10 | 0.32× | 2.94× | -2.62× | *** |
-| **Average** | - | - | **-2.5×** | *** |
-
-**Key Result**: Lock-in hurts at **every** funding level. Average cost = -2.5× per decile.
-
----
-
-## ¶21. Robustness Checks
-
-### Alternative |ΔV| Measures
-
-| Measure | Correlation with |ΔV| | Main result preserved? |
-|:---|:---:|:---:|
-| Keyword change | r = 0.65 | Yes |
-| Market scope change | r = 0.58 | Yes |
-| Technology claim change | r = 0.72 | Yes |
-
-### Industry Subsamples
-
-| Industry | Escape vs Cage Ratio | Pattern |
-|:---|:---:|:---|
-| Software | 7.2× | U-shape confirmed |
-| Hardware | 9.1× | U-shape confirmed |
-| Biotech | 8.4× | U-shape confirmed |
-| Fintech | 8.9× | U-shape confirmed |
-
-### Funding Cohort Controls
-
-Controlling for funding year cohort does not change results (p < 0.001 for all tests).
-
----
-
-## ¶22. Summary: The Mechanism Chain is Real
-
-| Test | Result | Figure/Table |
-|:---|:---|:---|
-| d|ΔV|/dE < 0 | ρ = -0.117*** | [[fig1_mechanism_3panel.png]] Panel A |
-| dY/d|ΔV| > 0 | Positive correlation | [[fig1_mechanism_3panel.png]] Panel B |
-| dY/dE < 0 | Combined (−) effect | [[fig1_mechanism_3panel.png]] Panel C |
-| **H_cost** | **2.7× gap** | [[fig3_cohort_analysis.png]] |
-
-The mechanism chain **E → |ΔV| → Y** with (+)(−) = (−) is empirically validated.
-
----
-
-*"The black box is opened: E → |ΔV|↓ → Y↓. The mechanism is empirically real."*
+We summarize effect sizes to enable comparison. The Movement Principle (Paper U): 2.6× success advantage for movers over stayers—economically large. The capital-flexibility friction (Paper C): ρ = −0.009, R² < 0.01%—statistically significant but economically small. The mediation contribution: < 1% of E-L correlation explained—minor channel. The Capital Paradox (E-L correlation): ρ = −0.211—economically large but largely unexplained by flexibility friction. We conclude that while capital may constrain flexibility, this constraint is not the primary driver of the negative relationship between early capital and later success.

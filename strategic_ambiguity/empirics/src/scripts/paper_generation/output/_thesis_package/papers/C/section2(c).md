@@ -1,144 +1,34 @@
----
-title: When Commitment Becomes a Cage - Theory
-version: 5.0 (Mechanism chain: dY/dE = (+)(−))
-core_mechanism: E → |ΔV| → Y
-modified:
-  - 2025-12-04T15:00:00-05:00
----
+# Paper C: The Capital-Flexibility Tradeoff
+## Section 2: Theory (¶48-55)
 
-# Chapter 2: Theory
+### ¶48. The Resource-Based View and Its Assumptions
 
-## ¶8. Literature Gap 1: RBV Assumes Flexible Deployment
+The Resource-Based View (Barney, 1991) predicts that resources enable competitive advantage and improved outcomes. Applied to entrepreneurial contexts, this suggests that early funding provides runway, signals quality, and enables capability building. However, this prediction assumes resources can be deployed flexibly as conditions change. If resources come with constraints—stakeholder expectations, organizational commitments, sunk costs—then resource accumulation may simultaneously enable and constrain venture development. We examine whether this dual nature of resources creates tension between capital acquisition and strategic flexibility.
 
-The Resource-Based View (Barney 1991) predicts: **more resources → better outcomes**. Early funding (E) provides runway, signals quality, attracts talent.
+### ¶49. Real Options Theory and Commitment Costs
 
-**Gap**: This assumes resources are deployed flexibly. It ignores the **commitment constraints** accompanying resource acquisition—the promises made to secure funding become chains.
+Real options theory (McGrath, 1999; Kogut & Kulatilaka, 2001) establishes that preserving strategic alternatives has value under uncertainty, and that premature commitment destroys this value. Leonard-Barton (1992) documents how capabilities become rigidities when environments shift. Applying these insights to entrepreneurial finance suggests that capital acquisition may have hidden costs: each funding round may require promises, milestones, and strategic commitments that reduce future flexibility. The capital-flexibility tradeoff hypothesis proposes that these commitment costs partially offset the benefits of resource accumulation.
 
----
+### ¶50. Mechanisms: Why Might Capital Reduce Flexibility?
 
-## ¶9. Literature Gap 2: Real Options Lacks Empirical Measure
+Several mechanisms could link capital to reduced flexibility. First, stakeholder expectations: investors fund specific strategies and may resist pivots that diverge from stated plans. Second, organizational inertia: larger funded teams develop processes and structures that resist redirection. Third, sunk cost psychology: investments in specific directions create cognitive commitment that discourages strategic change. Fourth, selection effects: well-funded ventures may have less need to pivot because their initial strategies better fit market conditions. We note that our data cannot distinguish between these mechanisms; all would produce negative E-A correlation but differ in causal interpretation.
 
-Real options theory (McGrath 1999) establishes that **flexibility has value** under uncertainty. The "option to pivot" may be a startup's most valuable asset.
+### ¶51. Positioning Within the Categorical and Commitment Literature
 
-**Gap**: While option value is conceptually understood, there is no accepted **empirical measure** of strategic flexibility, nor estimates of the **cost of premature commitment**.
+Our work builds on two foundational streams. First, the categorical clarity literature: Zuckerman (1999) established that firms spanning multiple categories face valuation penalties from analysts who cannot easily evaluate them; Pontikes (2012) showed that ambiguous categories attract venture capital while deterring traditional investors; Hsu (2006) demonstrated that investor type moderates signaling effectiveness. We extend this literature by examining how capital—once acquired—constrains the category repositioning that these authors study. Second, Ghemawat's (1991) commitment framework establishes that strategic choices create path dependencies through "sticky factors" that resist change. We apply this insight to entrepreneurial capital: early funding creates not just financial resources but stakeholder expectations, milestone commitments, and organizational structures that may constrain future repositioning. The capital-flexibility tradeoff represents the intersection of these literatures: capital enables the resource acquisition that categorical ambiguity facilitates (Pontikes), but capital also creates the commitment constraints that Ghemawat identifies.
 
----
+### ¶52. Related Literature: Entrepreneurial Pivoting and Finance
 
-## ¶10. Literature Gap 3: Org Learning Ignores Capacity Reduction
+Research on entrepreneurial pivoting provides context for understanding adaptation. Ries (2011) popularized the pivot concept; McDonald and Gao (2019) document that strategic pivots are common and often associated with improved outcomes; Kirtley and O'Mahony (2023) examine how founders decide when to pivot versus persist. In entrepreneurial finance, Gompers and Lerner (2001) establish the traditional view that capital enables growth; more recent work identifies costs including hot-market mis-allocation (Nanda & Rhodes-Kropf, 2016) and changed early-stage patterns from lean startup practices (Ewens, Nanda, & Rhodes-Kropf, 2018). Our contribution examines whether capital constrains the pivoting that this literature identifies as valuable—the capital-flexibility tradeoff suggests that resources enabling initial experiments may simultaneously constrain subsequent strategic changes.
 
-Organizational learning (Levitt & March 1988) focuses on *what* organizations learn. Less attention on **learning capacity**—the ability to update beliefs when evidence contradicts current strategy.
+### ¶53. Hypotheses
 
-**Gap**: We lack understanding of how **resource accumulation reduces learning capacity**.
+We derive three hypotheses corresponding to links in our proposed mechanism chain. H1 (Friction): early capital is negatively associated with adaptive capacity, predicting ρ(A,E) < 0. H2 (Movement Principle): adaptive capacity predicts success, predicting ρ(L,A) > 0. This hypothesis is inherited from Paper U but tested here for consistency. H3 (Mediation): the indirect effect E→A→L contributes to the E→L relationship. We predict that the indirect effect (H1 × H2) is negative, consistent with flexibility as a partial mediator. We explicitly predict small effect sizes for H1, acknowledging that capital-flexibility friction may exist without being economically dominant.
 
----
+### ¶54. Alternative Mechanisms for the Capital Paradox
 
-## ¶11. Our Position: E → |ΔV| → Y
+The strong negative E-L correlation (ρ = −0.211***) requires explanation. We propose flexibility friction as one channel but acknowledge alternative mechanisms. Market selection: high-funded ventures may target crowded markets where competition is intense. Overfunding effects: excess capital may enable waste, delay hard decisions, or attract suboptimal team members. Expectation management: high funding creates high expectations that are harder to meet. Vintage effects: funding peaks may correlate with market tops, so highly-funded cohorts may face worse macro conditions. Our paper tests the flexibility channel while acknowledging it may explain only a portion of the Capital Paradox.
 
-We fill these gaps with a simple causal chain:
+### ¶55. Distinguishing Commitment Costs from Selection Effects
 
-```
-E (Early Funding) → |ΔV| (Strategic Flexibility) → Y (Outcome)
-        ↓                      ↓                        ↓
-   Lock-in effect         Adaptation capacity      L/E ratio
-```
-
-**New Notation** (money as flow, not stock):
-- **E** = Early funding (first_financing_size)
-- **L** = Later funding = Total_2025 - E
-- **V_E** = Vagueness at early stage (V_2021)
-- **V_L** = Vagueness at later stage (V_2025)
-- **|ΔV|** = |V_L - V_E| (strategic flexibility)
-- **Y** = L/E (later funding growth ratio)
-
-| This Paper | Literature Gap | Our Contribution |
-|:-----------|:---------------|:-----------------|
-| **E → |ΔV|** | RBV ignores commitment cost | Quantify lock-in (ρ = -0.117***) |
-| **|ΔV| measure** | Real Options lacks metric | |ΔV| = |V_L - V_E| |
-| **|ΔV| → Y** | Org Learning ignores capacity | Flexibility → **2.7×** better outcomes |
-
----
-
-## ¶12. Mechanism: The Chain Effect
-
-**Core Equation** (see [[fig1_mechanism_3panel.png]]):
-
-$$\frac{dY}{dE} = \underbrace{\frac{dY}{d|\Delta V|}}_{(+)} \times \underbrace{\frac{d|\Delta V|}{dE}}_{(-)} = (+)(-) < 0$$
-
-**Why does E reduce |ΔV|?**
-
-```
-High E (Early Funding)
-    ↓
-Specific Promise to Investors
-    ↓
-Like-minded Stakeholders Attracted
-(employees, partners, board who share the vision)
-    ↓
-τ↑ (Belief Precision Increases)
-Posterior: N(μ, σ²/τ) — more certain, not more accurate
-    ↓
-LC↓ (Learning Capacity Decreases)
-Weight on new evidence: 1/(1+τ) → 0
-    ↓
-Pivot Probability↓
-Threshold θ* = μ + kσ becomes unreachable as σ→0
-    ↓
-|ΔV|↓ (Strategic Flexibility Decreases)
-```
-
-**Key insight**: The trap is **epistemic**, not technical. Pivots become mathematically impossible when belief variance collapses—regardless of available resources.
-
-### The 3-Panel Evidence
-
-| Panel | Relationship | Finding | Interpretation |
-|:---|:---|:---|:---|
-| **(A)** | d|ΔV|/dE | < 0 | Funding reduces flexibility |
-| **(B)** | dY/d|ΔV| | > 0 | Flexibility increases outcomes |
-| **(C)** | dY/dE | < 0 | Combined: (+)(−) = (−) |
-
----
-
-## ¶13. H_cost: The Core Hypothesis
-
-From the mechanism, we derive:
-
-> **H_cost (Cost of Commitment)**: Conditioning on same early funding E, locked-in ventures underperform flexible ventures.
-
-$$\text{Cost} = E[Y | \text{Locked}, E] - E[Y | \text{Flexible}, E] < 0$$
-
-**Operationalization**:
-- Locked = |ΔV| ≤ median (low strategic change)
-- Flexible = |ΔV| > median (high strategic change)
-- E = Early funding level (matching variable)
-- Y = L/E = (Total_2025 - E) / E
-
-**Prediction**: Cost is negative across all funding deciles (see [[fig2_cost_by_decile.png]]). Lock-in hurts at every resource level.
-
----
-
-## ¶14. H_supporting: Lock-in Correlation
-
-As supporting evidence for the mechanism:
-
-> **H_supporting**: Early funding is negatively correlated with strategic flexibility.
-
-$$\text{Corr}(E, |ΔV|) < 0$$
-
-**Prediction**: ρ < 0, significant at p < 0.001.
-
-This validates the first link (E → |ΔV|) in our causal chain.
-
----
-
-## Summary: The Tight Chain
-
-| Link | Question | Hypothesis | Measure |
-|:-----|:---------|:-----------|:--------|
-| **E → |ΔV|** | Does funding lock you in? | H_supporting | ρ(E, |ΔV|) = -0.117*** |
-| **|ΔV| → Y** | Does flexibility pay off? | **H_cost** | Escape 2.16× vs Cage 0.80× |
-
-Everything else is supporting detail. The paper lives or dies on **H_cost: 2.7×**.
-
----
-
-*"dY/dE = dY/d|ΔV| × d|ΔV|/dE = (+)(−) < 0. The trap is epistemic."*
+A critical identification challenge is distinguishing commitment costs (capital causally reduces flexibility) from selection effects (ventures that receive more capital differ in ways that also predict less flexibility). Under commitment costs, interventions that preserve flexibility should improve outcomes. Under selection effects, the E-A correlation is spurious and intervention-irrelevant. Our correlational design cannot distinguish these interpretations. We present our findings as associations while acknowledging that causal interpretation requires either natural experiments or instruments that affect capital without directly affecting flexibility. This limitation bounds the policy implications of our findings.

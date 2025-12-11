@@ -1,104 +1,108 @@
-# ✌️ Paper U: Vague Promise and Venture Growth
-## Table of Contents with LTE Layer & Madness Design
+---
+modified:
+  - 2025-12-11T04:29:21-05:00
+---
+# ✌️ Paper U: When Vagueness Pays
+## Table of Contents (32 Paragraphs)
 
-**LTE Layer:** **Construct** (What?) — Pattern Discovery (β₂ > 0)
-**Madness Type:** 🔥 불광기 (Δf + ΔA) — U-shape의 극적 반전
-**Fugue Structure:** 7-9-11-5 (제시-대위-스트레토-종결)
+**Core Finding:** Non-monotonic V-L relationship rejects signaling theory; Movement Principle dominates
 
 ---
 
 ## 📜 ABSTRACT
 
-When is vagueness valuable despite signaling theory's precision prescription? Analyzing **408,784 technology ventures** across four industries, we document a robust **U-shaped relationship** between promise vagueness (V) and long-term survival. Contrary to the monotonic prediction of signaling theory, we find that both highly precise and highly vague promises outperform intermediate positioning—the "Murky Middle" shows the lowest survival rates.
+When is vagueness valuable despite signaling theory's precision prescription? Analyzing **180,860 technology ventures** (2021-2025), we reject the monotonic prediction: success rates vary non-monotonically across vagueness quartiles (Q1=12.3%, Q2=8.9%, Q3=16.0%, Q4=12.9%; Spearman ρ(V,L)=+0.024***, rejecting monotonic decrease).
 
-We propose an **audience segmentation mechanism**: "Analyst" investors verify precise claims (optimal at Low V), while "Believer" investors project their own vision onto abstract promises (optimal at High V). The Murky Middle fails because it is too vague for Analysts to verify yet too specific for Believers to project.
+However, our most striking finding is the **Movement Principle**: companies that repositioned succeed 2.6× more than those that stayed fixed (18.1% vs 7.0%). Initial positioning matters far less than whether firms adapted. The Q3 anomaly (highest success at 16.0%) is explained entirely by movement: Q3 has the highest movement rate (68%), and among stayers, Q3 shows the *lowest* success (6.6%).
 
-**Keywords:** Strategic Ambiguity, Signaling Theory, Audience Segmentation, U-Shape, Venture Growth
+**Keywords:** Strategic Ambiguity, Non-monotonic Pattern, Movement Principle, Adaptive Capacity
 
 ---
 
-## 📑 TABLE OF CONTENTS (32 Paragraph Structure)
+## 📑 TABLE OF CONTENTS
 
-### Section 1: Introduction (¶1-7) — 22% | 주제 제시
+### Section 1: Introduction (¶1-7) — 22%
 → File: `section1(u).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 1 | 📿 Gospel | Signaling Theory: precision reduces information asymmetry (Spence 1973) |
-| 2 | 🧩 Puzzle | U-shaped anomaly: 408,784 ventures, both extremes win |
-| 3 | 😮 RQ | When is vagueness valuable? |
-| 4 | 🔎 Lens | Audience segmentation: Analyst vs Believer |
-| 5 | 😆 Solution | Two pathways to success |
-| 6 | 🗺️ Adjacent | Difference from Guzman & Stern, Eisenberg |
-| 7 | 🗄️ Roadmap | Section structure overview |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 1 | 📿 Gospel | Signaling theory prescribes precision: clearer signals reduce information asymmetry and attract better partners. | |
+| 2 | 🧩 Puzzle | Yet our analysis of 180,860 ventures reveals a non-monotonic pattern that rejects this prediction. | |
+| 3 | 😮 RQ | When does vagueness become valuable, and why does movement matter more than initial positioning? | |
+| 4 | 🔎 Lens | We propose that vagueness creates strategic options, and exercising options—not holding them—drives success. | |
+| 5 | 😆 Solution | The key is movement: companies that adapted (A > 0) succeed 2.6× more than those that stayed fixed. | |
+| 6 | 🗺️ Adjacent | Unlike Guzman & Stern's quality signals, we examine how positioning flexibility enables adaptation. | |
+| 7 | 🗄️ Roadmap | Section 2 develops theory, Section 3 presents empirics, Section 4 discusses implications. | |
 
-### Section 2: Theory (¶8-16) — 28% | 응답과 대위
+### Section 2: Theory (¶8-16) — 28%
 → File: `section2(u).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 8 | Literature: Signaling | Spence (1973) — H₀: precision always helps |
-| 9 | Literature: Ambiguity | Eisenberg (1984) — strategic ambiguity functions |
-| 10 | Literature: Options | Bolton's s₂ ↔ V isomorphism |
-| 11 | Gap | Untested monotonic assumption |
-| 12 | Mechanism: Analyst | V↓ → Verification → Investment |
-| 13 | Mechanism: Believer | V↑ → Projection → Investment |
-| 14 | Lineage: Bolton | s₂ communicative reinterpretation |
-| 15 | Model | G = α + β₁V + β₂V² + γX + ε |
-| 16 | Hypotheses | H₀: β_GV < 0 vs H₁: β₂ > 0 |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 8 | Literature: Signaling | Spence (1973) established that costly signals credibly convey private information. | |
+| 9 | Literature: Ambiguity | Eisenberg (1984) identified strategic ambiguity as a tool for coalition-building. | |
+| 10 | Literature: Options | Real options theory suggests vagueness preserves strategic flexibility under uncertainty. | |
+| 11 | Gap | No prior work tests whether exercising strategic options matters more than initial positioning. | |
+| 12 | Mechanism: Options | Vague positioning creates "room to move"—a portfolio of strategic options. | |
+| 13 | Mechanism: Exercise | Options have value only when exercised; holding options without moving wastes them. | |
+| 14 | Mechanism: Movement | Adaptation (A = \|D\| > 0) signals learning and market validation, regardless of direction. | |
+| 15 | Model | We test H₀: monotonic decrease (signaling) vs H₁: non-monotonic + movement effect. | |
+| 16 | Hypotheses | H1: ρ(V,L) ≥ 0 (reject monotonic decrease); H2: L(moved) > L(stayed). | |
 
-### Section 3: Empirics (¶17-27) — 34% | 스트레토 (밀집)
+### Section 3: Empirics (¶17-27) — 34%
 → File: `section3(u).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 17 | Context | PitchBook 2021-2025 |
-| 18 | Sample | **N = 408,784** across 4 industries |
-| 19 | DV | G = Series B+ funding |
-| 20 | IV | V = market category breadth [0,1] |
-| 21 | Controls | Industry, year, funding, region FE |
-| 22 | Descriptive | Bimodal V distribution |
-| 23 | Identification | Coarsened exact matching |
-| 24 | Specification | Quartile + χ² test |
-| 25 | H₀ Test | β₁ ≈ 0, reject monotonic |
-| 26 | **⚡ U-Shape** | **β₂ > 0, χ² > 300 — 🔥 광기 순간** |
-| 27 | Mechanism | Mobileye, Tesla, Better Place cases |
+|  ¶  | Role             | First Sentence                                                                                       | Figures/Tables |
+| :-: | :--------------- | :--------------------------------------------------------------------------------------------------- | :------------- |
+| 17  | Context          | We analyze PitchBook data covering technology ventures from 2021 to 2025.                            | |
+| 18  | Sample           | Our final sample includes **N = 180,860** ventures with complete vagueness trajectories.             | Tab 1: Summary Stats |
+| 19  | DV: L            | Long-term success L = 1 if LastFinancingDealType == 'Later Stage VC' (11.5% base rate).              | ![[U_fig1_ULV.png]] |
+| 20  | IV: V            | Vagueness V ∈ [0, 100] measures initial positioning breadth in 2021.                                 | |
+| 21  | IV: D, A         | Directional change D = V_T − V_0 (signed), Adaptive capacity A = \|D\| (unsigned).                   | ![[U_fig2_UDV.png]] |
+| 22  | Descriptive      | 60% of companies show A = 0 (no movement), while 40% repositioned.                                   | ![[U_fig3_UAV.png]] |
+| 23  | **H1 Test**      | **Spearman ρ(V,L) = +0.024*** rejects monotonic decrease (p < 0.001).**                              | |
+| 24  | Quartile Pattern | Q1=12.3%, Q2=8.9%, Q3=16.0%, Q4=12.9%—non-monotonic, not U-shaped.                                   | ![[U_fig4_ULD.png]] |
+| 25  | **H2 Test**      | **Moved (18.1%) vs Stayed (7.0%) = 2.6× advantage—Movement Principle confirmed.**                    | Tab 2: Movement Decomp |
+| 26  | Q3 Anomaly       | Q3's high rate (16.0%) explained by highest movement rate (68%); among stayers, Q3 is lowest (6.6%). | ![[U_fig5_movement.png]] |
+| 27  | Interpretation   | Vagueness buys options; success requires using them—initial position matters less than adaptation.   | |
 
-### Section 4: Discussion (¶28-32) — 16% | 종결구
+### Section 4: Discussion (¶28-32) — 16%
 → File: `section4(u).md`
 
-| ¶ | Role | Key Content |
-|:-:|:-----|:------------|
-| 28 | Contribution 1 | Boundary conditions for signaling theory |
-| 29 | Contribution 2 | Robust U-shaped stylized fact |
-| 30 | Contribution 3 | "Choose playbook, not dial" |
-| 31 | Limitations | Vagueness measure, causality |
-| 32 | Conclusion | Strategic alignment determines success |
+| ¶ | Role | First Sentence | Figures/Tables |
+|:-:|:-----|:---------------|:---------------|
+| 28 | Contribution 1 | We reject signaling theory's monotonic prediction: precision does not always help. | |
+| 29 | Contribution 2 | The Movement Principle: exercising options matters more than which direction you move. | |
+| 30 | Contribution 3 | Practical guidance: secure flexibility early, then commit to adaptation. | |
+| 31 | Limitations | V measures positioning vagueness, not communication ambiguity; causality requires further work. | ![[R2_coefficient_evolution.png]] |
+| 32 | Conclusion | Strategic ambiguity is not weakness—it is the preservation of options that must be exercised. | |
 
 ---
 
-## 🔥 광기 설계 (Madness Design)
+## 📊 KEY STATISTICS (From Real Data)
 
-**위치:** Section 3, ¶26 (Empirics 후반부 = 스트레토 구간)
+| Metric | Value | Interpretation |
+|:-------|:------|:---------------|
+| N | **180,860** | Technology ventures 2021-2025 |
+| L base rate | **11.5%** | Reached Later Stage VC |
+| Spearman ρ(V,L) | **+0.024***| Rejects monotonic decrease |
+| Q1 (Precise) | 12.3% | |
+| Q2 (Low-Mid) | 8.9% | Lowest |
+| Q3 (High-Mid) | **16.0%** | Highest (movement effect) |
+| Q4 (Vague) | 12.9% | |
+| Stayed (A=0) | 7.0% | **Worst outcome** |
+| Moved (A>0) | 18.1% | **Best outcome** |
+| Move ratio | **2.6×** | **Movement Principle** |
 
-**유형:** 🔥 불광기 (Δf + ΔA)
-- **Δf (진동수):** 긴 방법론 → 짧은 선언 "양 극단이 산다. 중간이 죽는다."
-- **ΔA (진폭):** 대규모 데이터 (408,784 ventures, χ² > 300)
+### Movement Rate by Quartile
+| Quartile | % Moved | Success (Stayed) | Success (Moved) |
+|:---------|:-------:|:----------------:|:---------------:|
+| Q1 | 49% | 6.7% | 18.2% |
+| Q2 | 16% | 7.5% | 16.1% |
+| **Q3** | **68%** | 6.6% | **20.4%** |
+| Q4 | 58% | 5.9% | 18.1% |
 
-**독자 반응:** "압도된다" — 변동성과 규모의 동시 충격
-
----
-
-## 📊 KEY NUMBERS
-
-| Metric | Value |
-|:-------|:------|
-| Sample Size | **408,784** |
-| Q1 Survival (Precise) | 5.7% |
-| Q2 Survival (Murky) | 2.9% |
-| Q4 Survival (Vague) | 8.6% |
-| Murky Middle Penalty | 2.1-3.7pp |
-| χ² (Transportation) | 1430.9*** |
+**Q3 Anomaly Explanation:** Q3's 16.0% overall success comes from 68% movers × 20.4% = high aggregate. Among stayers only, Q3 is worst (6.6%).
 
 ---
 
@@ -106,9 +110,5 @@ We propose an **audience segmentation mechanism**: "Analyst" investors verify pr
 
 | Direction | Paper | Connection |
 |:---------:|:------|:-----------|
-| → | C | U-shape의 "왜 중간이 갇히나" 전개 |
-| → | N | V가 investor type distribution 결정 → k* 계산 |
-
----
-
-*LTE: **Construct** (What?) — 패턴 발견 완료 후 C(How?)와 N(Why?)로 연결*
+| → | C | Movement enabled by flexibility; Golden Cage constrains movement |
+| → | D | Movement Principle becomes central to Discussion |
