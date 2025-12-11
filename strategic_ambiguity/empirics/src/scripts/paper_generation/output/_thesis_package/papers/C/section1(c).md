@@ -1,120 +1,30 @@
----
-title: When Commitment Becomes a Cage
-version: 6.0 (Data correction: 8.8× → 2.7×)
-core_hypothesis: H_cost (Cost of Commitment = 2.7×)
-core_mechanism: dY/dE = dY/d|ΔV| × d|ΔV|/dE = (+) × (-) < 0
-modified:
-  - 2025-12-09T12:00:00-05:00
----
+# Paper C: The Capital-Flexibility Tradeoff
+## Section 1: Introduction (¶41-47)
 
-# Chapter 1: Introduction
+### ¶41. The Resource Advantage Prescription
 
-## Abstract
+The Resource-Based View holds that resource accumulation enables competitive advantage (Barney, 1991). Applied to entrepreneurship, this logic suggests that securing early capital provides runway for experimentation, signals venture quality to stakeholders, and attracts talent essential for growth. The prescription appears clear: raise capital early and use it to build competitive position. This view underpins both academic research on entrepreneurial finance (Gompers & Lerner, 2001) and practitioner advice emphasizing the importance of well-funded war chests. We formalize this conventional wisdom as our null hypothesis: early funding improves venture outcomes.
 
-The prevailing wisdom—"more funding is better"—underlies nearly all entrepreneurial advice. Yet among **123,906 technology ventures** tracked from 2021-2025, we find a striking anomaly: companies with less early funding that stayed strategically flexible achieved **2.7× better funding growth** than well-funded companies that stayed the course.
+### ¶42. The Capital Paradox
 
-We explain this through a mechanism chain:
-$$\frac{dY}{dE} = \underbrace{\frac{dY}{d|\Delta V|}}_{(+)} \times \underbrace{\frac{d|\Delta V|}{dE}}_{(-)} < 0$$
+Yet our data reveal a counterintuitive pattern: early capital is negatively correlated with later success. The Spearman correlation between early funding (E) and progression to Later Stage VC (L) is ρ = −0.211 (p < 0.001), a strong negative relationship. This Capital Paradox challenges the resource advantage prescription and motivates our investigation into potential mechanisms. If resources enable success, why do better-funded ventures show worse outcomes? We examine one potential channel: whether capital constrains the strategic adaptation that Paper U establishes as a key success predictor.
 
-Capital demands commitment. Commitment homogenizes teams. Homogeneity blocks learning. Using a counterfactual framework conditioning on early funding level, we estimate the **Cost of Commitment** at **2.7×** forgone funding growth (Escape Velocity Y=2.16× vs Golden Cage Y=0.80×). The strategic implication: **deprivation breeds flexibility, and flexibility breeds success**.
+### ¶43. Research Question
 
----
+This paper asks: does early capital create friction against strategic adaptation? Building on Paper U's Movement Principle—that adaptation predicts success 2.6× better than staying fixed—we examine whether early capital is associated with reduced adaptive capacity. If capital commits ventures to specific strategies, this commitment may reduce the flexibility that enables successful adaptation. We frame this as the capital-flexibility tradeoff: the resources that enable initial progress may simultaneously constrain future evolution.
 
-## Core Narrative (Gospel → Puzzle → Answer)
+### ¶44. The Capital-Flexibility Friction
 
-| | Gospel → Puzzle → Answer |
-|:---|:---|
-| **Gospel** | More 💰capital = more 🧪experiment = better 🧠learning |
-| **Puzzle** | Startups with higher E changed strategy less (|ΔV|↓) and grew less (Y↓) |
-| **Answer** | Capital requests commitment → commitment homogenizes team → homogeneity blocks learning |
+Our analysis reveals a statistically significant but economically small capital-flexibility friction. The Spearman correlation between early funding (E) and adaptive capacity (A) is ρ = −0.009 (p < 0.001). While this confirms that higher early capital is associated with less strategic adaptation, the effect explains less than 0.01% of variance in adaptation. The friction exists but is not economically large. This suggests that capital-flexibility tradeoffs, while real, are not the primary constraint on adaptation and do not fully explain the Capital Paradox.
 
----
+### ¶45. Honest Assessment of Effect Sizes
 
-## ¶1 The Resource Advantage Prescription
+We emphasize effect size interpretation throughout this paper. The capital-flexibility friction (ρ = −0.009) is statistically significant due to our large sample size (N = 180,860) but economically small. For comparison: the Movement Principle from Paper U shows a 2.6× effect (economically large), while our capital-flexibility friction contributes less than 1% to explaining the strong negative E-L correlation. We present this finding as suggestive evidence of a friction channel rather than a dominant mechanism. The Capital Paradox likely reflects multiple factors—market selection, overfunding effects, expectation management—beyond flexibility constraints alone.
 
-> **H₀ (Null):** More early funding → Better outcomes
+### ¶46. Contributions
 
-The Resource-Based View (Barney 1991) and entrepreneurial finance literature prescribe a clear path: secure resources early. Early funding provides runway, signals quality, attracts talent, and enables competitive moves. Founders celebrate mega-rounds; VCs compete for deals; success stories are told through capital accumulation.
+This paper offers two contributions. First, we document a statistically significant capital-flexibility friction, providing evidence that early capital may be associated with reduced strategic adaptation. This extends the Resource-Based View by identifying a potential dark side of resource accumulation: resources may constrain the flexibility required for successful adaptation. Second, we provide honest assessment of effect sizes, demonstrating that while the friction is real, it is economically small and does not explain the Capital Paradox alone. This contribution to research methodology emphasizes distinguishing statistical significance from economic significance.
 
-This gospel is so deeply embedded that questioning it seems heretical.
+### ¶47. Paper Structure
 
----
-
-## ¶2 The Golden Cage Anomaly
-
-Yet among 123,906 ventures in our panel, we observe a counterintuitive pattern:
-
-| Profile | Early Funding (E) | Flexibility |ΔV| | Y = L/E |
-|:--------|:-----------------:|:-----------:|:-------:|
-| **Escape Velocity** | Low (≤ median) | High (> median) | **2.16×** |
-| **Golden Cage** | High (> median) | Low (≤ median) | **0.80×** |
-| **Ratio** | - | - | **2.7×** |
-
-Companies with **less** early funding and **more** strategic flexibility achieved **2.7× better outcomes** than those with abundant resources who stayed locked in.
-
-**Notation** (money as flow, not stock):
-- **E** = Early funding (first_financing_size)
-- **L** = Later funding (Total_2025 - E)
-- **Y** = L/E (funding growth ratio)
-- **|ΔV|** = |V_L - V_E| (strategic flexibility)
-
-See [[fig3_cohort_analysis.png]] for the visual.
-
----
-
-## ¶3 Research Question
-
-> **RQ:** What is the cost of commitment—the forgone outcome from being locked into a strategy?
-
-We ask: holding early funding constant, how much do locked-in companies underperform flexible ones?
-
----
-
-## ¶4 Counterfactual Cost Framework
-
-We introduce a **Counterfactual Cost of Commitment** estimator:
-
-$$\text{Cost} = E[Y | \text{Locked}, E] - E[Y | \text{Flexible}, E]$$
-
-By conditioning on **same early funding level** (E), we isolate the effect of lock-in. This is not "late bloomers succeed" (대기만성)—it's "**deprivation → flexibility → success**" (결핍 → 유연성 → 성공).
-
-The mechanism is a **chain effect**:
-```
-E↑ → Promise → σ↓ → |ΔV|↓ → Y↓
-```
-
----
-
-## ¶5 Key Finding: 2.7× Cost of Commitment
-
-Our main result (**H_cost**):
-
-> **H_cost**: Escape Velocity (2.16×) vs Golden Cage (0.80×) = **2.7× gap**
-
-This holds across all funding deciles (see [[fig2_cost_by_decile.png]]). Lock-in hurts at every funding level.
-
-**Supporting evidence** (H_supporting): Lock-in correlation ρ = **-0.117*** between early funding and |ΔV|.
-
----
-
-## ¶6 Contributions (Three Parents)
-
-| Parent Literature | Gap | Our Contribution |
-|:------------------|:----|:-----------------|
-| **Entrepreneurial Finance** | Funding assumed unambiguously positive | Identify conditions where funding hurts |
-| **Real Options Theory** | Option value assumed but not measured | Provide measure (|ΔV|) and cost estimate |
-| **Organizational Learning** | Focus on what is learned, not capacity | Show how resources reduce learning capacity |
-
----
-
-## ¶7 Paper Roadmap
-
-| Section | Content |
-|:--------|:--------|
-| [[chap2_theory]] | Mechanism chain: dY/dE = (+)(−), H_cost derivation |
-| [[chap3_empirics]] | Panel data, cohort design, 3-panel mechanism test |
-| [[chap4_discussion]] | Implications, limitations, Bayesian hygiene |
-
----
-
-*"What got you funded prevents your growth. 결핍 → 유연성 → 성공."*
+The remainder of this paper proceeds as follows. Section 2 develops theoretical arguments for why capital might constrain flexibility, reviews related literature on commitment and adaptation, and derives testable hypotheses. Section 3 presents our empirical approach, describing variables, identification strategy, and results. Section 4 discusses implications, acknowledges limitations—particularly the inability to distinguish commitment costs from selection effects—and proposes future research directions.

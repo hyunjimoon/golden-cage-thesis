@@ -1,3 +1,7 @@
+---
+modified:
+  - 2025-12-11T04:31:05-05:00
+---
 # ☔️ Discussion - Table of Contents
 
 ## Chapter 5: Discussion and Conclusion
@@ -29,3 +33,14 @@ How this research aspires to ☔️protect entrepreneurs from the pain of the Go
 | **U** | Ventures trapped in Murky Middle | U-shaped insight reveals two viable channels |
 | **N** | One-size-fits-all advice fails | k* formula calibrates options to uncertainty |
 | **C** | Golden Cage destroys adaptability | Capital staging preserves strategic flexibility |
+
+### 📊 Figures and Tables
+
+| Section | Content | Figures/Tables |
+|:--------|:--------|:---------------|
+| Synthesis of Findings | Integration of Paper U and Paper C | Tab: Summary of Findings |
+| Movement Principle | Core contribution summary | Framework Figure (TikZ) |
+| Capital-Flexibility | Suggestive finding discussion | |
+| Practical Implications | Guidance for entrepreneurs/investors | |
+| Limitations | Correlational design caveats | |
+| Future Research | Causal identification needs | |
