@@ -65,3 +65,11 @@ Based on this session, here is the critique of the MFS View:
 1.  **Implement Tooltips**: I want to see the "Crimes" without opening the "Jail" (File).
 2.  **Active Verifiers**: Make K-U/C/N react to the files in their row.
 3.  **Fix the N-Intro**: That Red dot is an insult to the fleet.
+
+---
+
+## 4. Theoretical Insight (2024-12-14)
+
+**Core Principle**: "The primary value of initial positioning lies not in its optimality, but in the option value it preserves for future movement."
+
+**Implication**: This reframes strategic ambiguity from a constraint to a designed capability. Entrepreneurs don't fail to be precise—they strategically preserve optionality through vagueness.

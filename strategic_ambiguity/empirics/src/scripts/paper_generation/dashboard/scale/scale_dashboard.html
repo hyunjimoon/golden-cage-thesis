@@ -19,9 +19,14 @@
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
 
-            --paper-u: #facc15;
+            --paper-i: #a855f7;
+            /* Purple for Intro */
+            --paper-m: #facc15;
+            /* Gold for Movement */
             --paper-c: #94a3b8;
-            --paper-n: #60a5fa;
+            /* Slate for Commitment */
+            --paper-d: #60a5fa;
+            /* Blue for Discussion */
         }
 
         * {
@@ -38,7 +43,8 @@
         }
 
         .container {
-            max-width: 1600px;
+            max-width: 1800px;
+            /* Increased width for 4 cols */
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(12, 1fr);
@@ -112,6 +118,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
         }
 
         .cmd-btn:hover {
@@ -121,9 +128,9 @@
             transform: translateY(-1px);
         }
 
-        /* Paper Cards (Span 4 each) */
+        /* Paper Cards (Span 3 each for 4 cards) */
         .paper-card {
-            grid-column: span 4;
+            grid-column: span 3;
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
@@ -133,6 +140,14 @@
             gap: 20px;
             position: relative;
             overflow: hidden;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--text-secondary);
         }
 
         .paper-card::before {
@@ -144,16 +159,20 @@
             height: 4px;
         }
 
-        .paper-u::before {
-            background: var(--paper-u);
+        .paper-i::before {
+            background: var(--paper-i);
+        }
+
+        .paper-m::before {
+            background: var(--paper-m);
         }
 
         .paper-c::before {
             background: var(--paper-c);
         }
 
-        .paper-n::before {
-            background: var(--paper-n);
+        .paper-d::before {
+            background: var(--paper-d);
         }
 
         .card-header {
@@ -408,97 +427,24 @@
             opacity: 1;
         }
 
-        /* R&R Tag */
-        .rr-tag {
-            background: rgba(248, 113, 113, 0.1);
-            color: var(--critical-red);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-right: 6px;
+        /* Source Badge */
+        .thumb-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
 
-        /* 3-Part Redesign */
-        .section-label {
-            grid-column: span 12;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-            margin: 40px 0 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-label::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: var(--card-border);
-        }
-
-        /* Cases & Investors */
-        .card-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            grid-column: span 12;
-        }
-
-        .card-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            grid-column: span 12;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .case-success {
-            border-left: 4px solid var(--success-green);
-        }
-
-        .case-fail {
-            border-left: 4px solid var(--critical-red);
-        }
-
-        .card-tag {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 2px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            width: fit-content;
-        }
-
-        .tag-success {
-            background: rgba(52, 211, 153, 0.1);
-            color: var(--success-green);
-        }
-
-        .tag-fail {
-            background: rgba(248, 113, 113, 0.1);
-            color: var(--critical-red);
-        }
-
-        .inv-analyst {
-            border-top: 4px solid var(--paper-c);
-        }
-
-        .inv-believer {
-            border-top: 4px solid var(--success-green);
+        .source-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
         }
     </style>
 
@@ -509,12 +455,16 @@
         if (window.location.hostname.includes('html-preview')) {
             var base = document.createElement('base');
             // Point to the raw file location of this HTML file
-            base.href = 'https://raw.githubusercontent.com/hyunjimoon/tolzul/main/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/';
+            base.href = 'https://raw.githubusercontent.com/hyunjimoon/tolzul/master/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/dashboard/scale/';
             document.head.appendChild(base);
             console.log('Adjusted base URL for html-preview');
         }
 
         function copyPrompt(btn, text) {
+            // Prevent bubbling up to the card link
+            event.preventDefault();
+            event.stopPropagation();
+
             navigator.clipboard.writeText(text).then(() => {
                 const original = btn.innerHTML;
                 btn.innerHTML = '✅ Copied!';
@@ -530,238 +480,106 @@
 
 <body>
     <div class="container">
-        <div class="section-label" style="margin-top: 0">PART I: THE FINDINGS (Hook)</div>
 
         <div class="header-section">
             <div>
-                <div class="battle-title">Phase 4: Synthesis & Resolution</div>
-                <div class="battle-meta">Hypothesis Verification <span style="opacity:0.3">|</span> Critical Review
-                    Response Sprint
-                </div>
+                <div class="battle-title">Scale Control Tower</div>
+                <div class="battle-meta">_thesis_package <span style="opacity:0.3">|</span> I-M-C-D Structure</div>
             </div>
             <div class="countdown-badge mono">
-                DAY 1 / 4
-            </div>
-        </div>
-
-        <!-- 4D Sprint Timeline -->
-        <div
-            style="grid-column: span 12; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 24px; margin-bottom: 10px;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <span
-                    style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); font-weight: 700;">4-Day
-                    Sprint Timeline</span>
-                <span
-                    style="background: rgba(251, 191, 36, 0.2); color: var(--accent-gold); padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">M
-                    ⇄ G🟠</span>
-            </div>
-
-            <div style="display: flex; align-items: stretch; gap: 0; height: 80px;">
-                <!-- D1 -->
-                <div
-                    style="flex: 1; background: linear-gradient(135deg, rgba(248, 113, 113, 0.3), rgba(248, 113, 113, 0.1)); border: 2px solid var(--critical-red); border-radius: 8px 0 0 8px; padding: 12px; position: relative;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--critical-red);">D1 🔨</div>
-                            <div style="font-size: 0.75rem; color: var(--text-secondary);">Forging</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div
-                                style="font-size: 0.65rem; background: var(--critical-red); color: #000; padding: 1px 4px; border-radius: 3px; font-weight: 700;">
-                                R&R #4,#5</div>
-                            <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">FATAL</div>
-                        </div>
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        Theoretical Foundation</div>
-                </div>
-
-                <!-- D2 -->
-                <div
-                    style="flex: 1; background: rgba(251, 191, 36, 0.1); border: 1px solid var(--accent-gold); border-left: none; padding: 12px; position: relative;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--accent-gold);">D2 ⚙️</div>
-                            <div style="font-size: 0.75rem; color: var(--text-secondary);">Assembly</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div
-                                style="font-size: 0.65rem; background: var(--accent-gold); color: #000; padding: 1px 4px; border-radius: 3px; font-weight: 700;">
-                                R&R #1,#2</div>
-                            <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">IMPORTANT
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        Mapping & Caveats</div>
-                </div>
-
-                <!-- K Gate -->
-                <div
-                    style="width: 40px; background: linear-gradient(180deg, var(--critical-red), var(--accent-gold)); display: flex; align-items: center; justify-content: center; position: relative;">
-                    <div
-                        style="background: var(--bg-color); padding: 4px 6px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; color: var(--text-primary); border: 2px solid var(--text-primary);">
-                        GATE</div>
-                </div>
-
-                <!-- D3 -->
-                <div
-                    style="flex: 1; background: rgba(52, 211, 153, 0.1); border: 1px solid var(--success-green); border-left: none; padding: 12px; position: relative;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--success-green);">D3 🔍</div>
-                            <div style="font-size: 0.75rem; color: var(--text-secondary);">Inspection</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div
-                                style="font-size: 0.65rem; background: var(--success-green); color: #000; padding: 1px 4px; border-radius: 3px; font-weight: 700;">
-                                R&R #3</div>
-                            <div style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 2px;">VALIDATION
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        Empirical Validation</div>
-                </div>
-
-                <!-- D4 -->
-                <div
-                    style="flex: 1; background: rgba(96, 165, 250, 0.1); border: 1px solid var(--paper-n); border-left: none; border-radius: 0 8px 8px 0; padding: 12px; position: relative;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div>
-                            <div style="font-weight: 800; font-size: 1.1rem; color: var(--paper-n);">D4 📦</div>
-                            <div style="font-size: 0.75rem; color: var(--text-secondary);">Shipping</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div
-                                style="font-size: 0.65rem; background: var(--paper-n); color: #000; padding: 1px 4px; border-radius: 3px; font-weight: 700;">
-                                SUBMIT</div>
-                        </div>
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 8px; left: 12px; right: 12px; font-size: 0.7rem; color: var(--text-secondary);">
-                        Submission</div>
-                </div>
-            </div>
-
-            <!-- R&R Legend -->
-            <div
-                style="display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--card-border); font-size: 0.75rem; color: var(--text-secondary);">
-                <span><strong style="color: var(--critical-red);">#4</strong> Redefining D</span>
-                <span><strong style="color: var(--critical-red);">#5</strong> Asset Specificity</span>
-                <span><strong style="color: var(--accent-gold);">#1</strong> |ΔV| proxy</span>
-                <span><strong style="color: var(--accent-gold);">#2</strong> FOMO→Cu</span>
-                <span><strong style="color: var(--success-green);">#3</strong> Industry×Flex</span>
+                LIVE
             </div>
         </div>
 
 
         <div class="command-deck">
-            <button class="cmd-btn"
-                onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/_%F0%9F%A9%B8I/squad_prompts.md'">🎭
-                Prompts</button>
-            <button class="cmd-btn"
-                onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/%F0%9F%93%A2BULLETIN.md'">📢
-                Bulletin</button>
-            <button class="cmd-btn"
-                onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/%F0%9F%97%84%EF%B8%8FREGISTRY.md'">🗄️
-                Registry</button>
-            <button class="cmd-btn"
-                onclick="window.location.href='obsidian://open?vault=tolzul&file=Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/output/toc%28iucnd%29.md'">🗺️
-                Master TOC</button>
+            <a class="cmd-btn" href="../../output/_thesis_package/toc(iuctd).md">🗺️ Master TOC</a>
+            <a class="cmd-btn" href="../../output/🗄️REGISTRY.md">🗄️ Registry</a>
+            <a class="cmd-btn" href="../../output/📢BULLETIN.md">📢 Bulletin</a>
+            <a class="cmd-btn" href="../../output/_thesis_package/papers/I/toc(i).md">📜 Paper I TOC</a>
+            <a class="cmd-btn" href="../../output/_thesis_package/papers/M/toc(m).md">📜 Paper M TOC</a>
+            <a class="cmd-btn" href="../../output/_thesis_package/papers/C/toc(c).md">📜 Paper C TOC</a>
+            <a class="cmd-btn" href="../../output/_thesis_package/papers/D/toc(d).md">📜 Paper D TOC</a>
         </div>
 
 
-
-        <div class="paper-card paper-u">
+        <!-- PAPER I: INTRODUCTION -->
+        <a class="paper-card paper-i" href="../../output/_thesis_package/papers/I/toc(i).md">
             <div class="card-header">
                 <div>
-                    <div class="paper-name"><a href="../../output/_thesis_package/papers/U/toc(u).md"
-                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">Paper
-                            U: Vague Promise</a></div>
-                    <div class="paper-target mono">E&I (MS)</div>
+                    <div class="paper-name">Paper I: Introduction</div>
+                    <div class="paper-target mono">Overview</div>
                 </div>
-                <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">U</div>
+                <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">I</div>
             </div>
 
             <div class="progress-hero">
-                <div class="progress-val mono" style="color: var(--paper-u)">75%</div>
+                <div class="progress-val mono" style="color: var(--paper-i)">10%</div>
                 <div class="progress-bar-bg">
-                    <div class="progress-fill" style="width: 75%; background: var(--paper-u)"></div>
+                    <div class="progress-fill" style="width: 10%; background: var(--paper-i)"></div>
+                </div>
+            </div>
+
+            <div class="meta-grid">
+                <div class="metric-row">
+                    <span class="metric-label mono">FOCUS</span>
+                    <span class="metric-val mono">Framing</span>
+                </div>
+                <div class="bottleneck-list">
+                    <div class="bottleneck-item">
+                        <div class="priority-dot dot-important"></div>
+                        <span style="flex-grow:1">Link M & C</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- PAPER M: MOVEMENT (Formerly U) -->
+        <a class="paper-card paper-m" href="../../output/_thesis_package/papers/M/toc(m).md">
+            <div class="card-header">
+                <div>
+                    <div class="paper-name">Paper M: Movement</div>
+                    <div class="paper-target mono">Transportation</div>
+                </div>
+                <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">M</div>
+            </div>
+
+            <div class="progress-hero">
+                <div class="progress-val mono" style="color: var(--paper-m)">75%</div>
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" style="width: 75%; background: var(--paper-m)"></div>
                 </div>
             </div>
 
             <div class="visual-grid">
-                <div class="thumb-container"
-                    title="Source: hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Empirics_Later/run.py :: spec_curve_analysis()">
-                    <img src="../../output/_thesis_package/figures/complete_analysis.png" class="thumb-img">
-                    <div class="source-badge">src</div>
-                </div>
-
-                <div class="thumb-container"
-                    title="Source: hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Theory/run.py :: generate_voi_ro_tradeoff()">
-                    <img src="../../output/_thesis_package/figures/midV_trap_analysis.png" class="thumb-img">
-                    <div class="source-badge">src</div>
+                <!-- Using placeholder or existing visuals from output -->
+                <div class="thumb-container">
+                    <div
+                        style="background:#334155; width:100%; height:100%; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                        📊</div>
                 </div>
             </div>
 
             <div class="meta-grid">
                 <div class="metric-row">
                     <span class="metric-label mono">KEY METRIC</span>
-                    <span class="metric-val mono">1430.9***</span>
+                    <span class="metric-val mono">2.7x Mover Adv</span>
                 </div>
                 <div class="bottleneck-list">
-
                     <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
-                        <span style="flex-grow:1">Bolton s2 <-> V Mapping</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Quant): Map the Bolton (2002) parameter s2 (differentiation) to our Strategic Ambiguity measure V. Show that high s2 corresponds to low V (Precision) and low s2 corresponds to high V (Ambiguity).')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
+                        <span style="flex-grow:1">Mover/Stayer Plot</span>
                     </div>
-
-                    <div class="bottleneck-item">
-                        <div class="priority-dot dot-critical"></div>
-                        <span style="flex-grow:1">Refine Narrative Hook</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Commander): Refine the narrative hook for Paper U. Why is the &apos;Wealth Paradox&apos; surprising? Contrast the &apos;Resource-Based View&apos; (More Money = Better) with our &apos;Real Options&apos; view (More Money = Less Flexibility).')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
-                    </div>
-
-                    <div class="bottleneck-item">
-                        <div class="priority-dot dot-important"></div>
-                        <span style="flex-grow:1">Clarify Contribution</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Commander): Explicitly state the contribution of Paper U to the Entrepreneurship literature. How does this challenge the &apos;Lean Startup&apos; methodology?')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
-                    </div>
-
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="paper-card paper-c">
+        <!-- PAPER C: COMMITMENT TRAP -->
+        <a class="paper-card paper-c" href="../../output/_thesis_package/papers/C/toc(c).md">
             <div class="card-header">
                 <div>
-                    <div class="paper-name"><a href="../../output/_thesis_package/papers/C/toc(c).md"
-                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">Paper
-                            C: Commitment Trap</a></div>
-                    <div class="paper-target mono">Strategy (SMJ/MS)</div>
+                    <div class="paper-name">Paper C: Commitment</div>
+                    <div class="paper-target mono">Strategic Ambiguity</div>
                 </div>
                 <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">C</div>
             </div>
@@ -774,16 +592,10 @@
             </div>
 
             <div class="visual-grid">
-                <div class="thumb-container"
-                    title="Source: hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Theory/run.py :: generate_architecture_comparison()">
-                    <img src="../../output/_thesis_package/figures/fig1_mechanism_3panel.png" class="thumb-img">
-                    <div class="source-badge">src</div>
-                </div>
-
-                <div class="thumb-container"
-                    title="Source: hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Empirics_Early/run.py :: plot_h1_scatter()">
-                    <img src="../../output/_thesis_package/figures/fig2_cost_by_decile.png" class="thumb-img">
-                    <div class="source-badge">src</div>
+                <div class="thumb-container">
+                    <div
+                        style="background:#334155; width:100%; height:100%; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                        📉</div>
                 </div>
             </div>
 
@@ -793,225 +605,79 @@
                     <span class="metric-val mono">+0.159***</span>
                 </div>
                 <div class="bottleneck-list">
-
                     <div class="bottleneck-item">
                         <div class="priority-dot dot-critical"></div>
-                        <span style="flex-grow:1">Position vs Nanda</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Commander): Position Paper C against Nanda (2016). Explicitly argue that &apos;Money is not Experimentation; it is Concrete.&apos; Show that early funding increases Abandonment Option Cost (AOC).')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
+                        <span style="flex-grow:1">Nanda Position</span>
                     </div>
-
-                    <div class="bottleneck-item">
-                        <div class="priority-dot dot-critical"></div>
-                        <span style="flex-grow:1">Formalize AOC</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Quant): Formalize the Abandonment Option Cost (AOC). Define AOC = Value(Uncommitted) - Value(Committed). Show that AOC increases with Capital Intensity (E).')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
-                    </div>
-
-                    <div class="bottleneck-item">
-                        <div class="priority-dot dot-important"></div>
-                        <span style="flex-grow:1">Strengthen H3 Logic</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Commander): Strengthen the interpretation of Hypothesis 3. Why does the &apos;Commitment Trap&apos; lead to lower survival rates in the Mobility sector?')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
-                    </div>
-
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="paper-card paper-n">
+        <!-- PAPER D: DISCUSSION (Formerly N) -->
+        <a class="paper-card paper-d" href="../../output/_thesis_package/papers/D/toc(d).md">
             <div class="card-header">
                 <div>
-                    <div class="paper-name"><a href="../../output/_thesis_package/papers/N/toc(n).md"
-                            style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">Paper
-                            N: Promise Vendor</a></div>
-                    <div class="paper-target mono">OM (MS)</div>
+                    <div class="paper-name">Paper D: Discussion</div>
+                    <div class="paper-target mono">Synthesis</div>
                 </div>
-                <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">N</div>
+                <div class="mono" style="font-size: 2rem; opacity: 0.2; font-weight: 800">D</div>
             </div>
 
             <div class="progress-hero">
-                <div class="progress-val mono" style="color: var(--paper-n)">55%</div>
+                <div class="progress-val mono" style="color: var(--paper-d)">20%</div>
                 <div class="progress-bar-bg">
-                    <div class="progress-fill" style="width: 55%; background: var(--paper-n)"></div>
-                </div>
-            </div>
-
-            <div class="visual-grid">
-                <div class="thumb-container"
-                    title="Source: hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Empirics_Later/run.py :: plot_interaction()">
-                    <img src="../../output/_thesis_package/figures/fig_murky_middle_zone.png" class="thumb-img">
-                    <div class="source-badge">src</div>
-                </div>
-
-                <div class="thumb-container"
-                    title="Source: hacks/hack1/thesis_v1/⚙️process/2️⃣_PRODUCTION/Theory/run.py :: generate_voi_ro_tradeoff()">
-                    <img src="../../output/_thesis_package/figures/P3_cr_kstar_curve.png" class="thumb-img">
-                    <div class="source-badge">src</div>
+                    <div class="progress-fill" style="width: 20%; background: var(--paper-d)"></div>
                 </div>
             </div>
 
             <div class="meta-grid">
                 <div class="metric-row">
-                    <span class="metric-label mono">KEY METRIC</span>
-                    <span class="metric-val mono">TBD</span>
+                    <span class="metric-label mono">FOCUS</span>
+                    <span class="metric-val mono">Implications</span>
                 </div>
                 <div class="bottleneck-list">
-
-                    <div class="bottleneck-item">
-                        <div class="priority-dot dot-critical"></div>
-                        <span style="flex-grow:1">CR Calibration</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'J-Squad (Builder): Calibrate the Critical Ratio (CR) for AV vs Fleet sectors. Use &apos;Market Cap of Leader&apos; as a proxy for Cost of Underage (Cu) and &apos;Burn Rate&apos; for Cost of Overage (Co). Goal: Show CR_AV ~ 0.9 and CR_Fleet ~ 0.3.')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
-                    </div>
-
-                    <div class="bottleneck-item">
-                        <div class="priority-dot dot-critical"></div>
-                        <span style="flex-grow:1">Redefine Demand (D)</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Quant): Redefine Demand (D) in the context of &apos;Promise Vendor&apos;. Show that D is not just &apos;Customer Orders&apos; but &apos;Investor Belief&apos;. Verify the mathematical validity of this redefinition.')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
-                    </div>
-
                     <div class="bottleneck-item">
                         <div class="priority-dot dot-important"></div>
-                        <span style="flex-grow:1">Delta V Proxy Caveat</span>
-
-                        <button class="copy-btn-mini"
-                            onclick="copyPrompt(this, 'G-Squad (Commander): Explicitly state the limitations of using |Delta V| as a proxy for flexibility. Acknowledge that it captures &apos;Observed Pivot&apos; but not &apos;Latent Optionality&apos;.')"
-                            title="Copy Delegation Prompt">
-                            📋
-                        </button>
-
+                        <span style="flex-grow:1">Policy Recs</span>
                     </div>
-
                 </div>
             </div>
-        </div>
+        </a>
 
 
         <div class="dashboard-footer">
             <div class="tracker-panel">
-                <div class="panel-title">Critical Review Items (R&R)</div>
+                <div class="panel-title">Active Bottlenecks</div>
                 <table class="min-table">
                     <thead>
                         <tr>
-                            <th>R&R</th>
                             <th>PAPER</th>
                             <th>ISSUE</th>
                             <th>OWNER</th>
-                            <th>DUE</th>
                             <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- D1: FATAL (R&R #4, #5) -->
-                        <tr style="background: rgba(248, 113, 113, 0.05);">
-                            <td class="mono" style="color: var(--critical-red); font-weight: 700">#4</td>
-                            <td style="color: var(--paper-n); font-weight: 700">N</td>
-                            <td>Redefining D (Demand → Distribution)</td>
-                            <td><span class="status-badge mono">G🟠</span></td>
-                            <td class="mono" style="color: var(--critical-red)">D1</td>
+                        <tr>
+                            <td style="color: var(--paper-m); font-weight: 700">M</td>
+                            <td>Mover/Stayer Plot</td>
+                            <td><span class="status-badge mono">M</span></td>
                             <td>
                                 <button class="copy-btn"
-                                    onclick="copyPrompt(this, 'G-Squad (Quant): Redefine D from Newsvendor &apos;Demand&apos; to &apos;Distribution of Viable Paths&apos;. Prove mathematical validity: D_newsvendor P(Demand≤q)=F(q) ↔ D_ours P(Viable Path at V)=F(V). Show F remains CDF, V is continuous. Verify Bolton s2↔V consistency.')">
-                                    📋 Copy
+                                    onclick="copyPrompt(this, 'Visualize the 2.7x advantage of Movers vs Stayers.')">
+                                    📋 Prompt
                                 </button>
                             </td>
                         </tr>
 
-                        <tr style="background: rgba(248, 113, 113, 0.05);">
-                            <td class="mono" style="color: var(--critical-red); font-weight: 700">#5</td>
+                        <tr>
                             <td style="color: var(--paper-c); font-weight: 700">C</td>
-                            <td>Asset Specificity (Golden Cage)</td>
-                            <td><span class="status-badge mono">G🟠</span></td>
-                            <td class="mono" style="color: var(--critical-red)">D1</td>
+                            <td>Nanda Position</td>
+                            <td><span class="status-badge mono">C</span></td>
                             <td>
                                 <button class="copy-btn"
-                                    onclick="copyPrompt(this, 'G-Squad (Commander): Defeat the &apos;More Money = More Flexibility&apos; counterargument. Prove: Money → Sticky Assets → Lock-in. Reference Ghemawat (1991) Commitment Trap. Show mechanism: Capital → Assets → Epistemic Lock-in.')">
-                                    📋 Copy
-                                </button>
-                            </td>
-                        </tr>
-
-                        <!-- D2: IMPORTANT (R&R #1, #2) -->
-                        <tr>
-                            <td class="mono" style="color: var(--accent-gold); font-weight: 700">#1</td>
-                            <td style="color: var(--paper-n); font-weight: 700">N</td>
-                            <td>|ΔV| as proxy caveat</td>
-                            <td><span class="status-badge mono">G🟠</span></td>
-                            <td class="mono" style="color: var(--accent-gold)">D2</td>
-                            <td>
-                                <button class="copy-btn"
-                                    onclick="copyPrompt(this, 'G-Squad (Commander): State limitations of |ΔV| proxy. Acknowledge: captures &apos;Observed Pivot&apos; but not &apos;Latent Optionality&apos;. Add caveat: k ≠ |ΔV| but correlated. Frame §2 as theoretical contribution, §3 as proxy validation.')">
-                                    📋 Copy
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="mono" style="color: var(--accent-gold); font-weight: 700">#2</td>
-                            <td style="color: var(--paper-n); font-weight: 700">N</td>
-                            <td>FOMO → Cu (Ghemawat Frame)</td>
-                            <td><span class="status-badge mono">G🟠</span></td>
-                            <td class="mono" style="color: var(--accent-gold)">D2</td>
-                            <td>
-                                <button class="copy-btn"
-                                    onclick="copyPrompt(this, 'G-Squad (Quant): Map FOMO to Cu using Ghemawat (1991). FOMO = Fear of Omission Error = High perceived Cu. Type II orgs fear omission (miss next Uber) > commission (fund Theranos). Prove: Anxiety = Bayesian signal of Cu >> Co → High CR → High k*.')">
-                                    📋 Copy
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="mono" style="color: var(--accent-gold); font-weight: 700">-</td>
-                            <td style="color: var(--paper-u); font-weight: 700">U</td>
-                            <td>Bolton s2 ↔ V Mapping</td>
-                            <td><span class="status-badge mono">G🟠</span></td>
-                            <td class="mono" style="color: var(--accent-gold)">D2</td>
-                            <td>
-                                <button class="copy-btn"
-                                    onclick="copyPrompt(this, 'G-Squad (Quant): Map Bolton (2002) s2 (differentiation) to Strategic Ambiguity V. High s2 = Low V (Precision). Low s2 = High V (Ambiguity). Verify consistency with D redefinition.')">
-                                    📋 Copy
-                                </button>
-                            </td>
-                        </tr>
-
-                        <!-- D3: VALIDATION (R&R #3) -->
-                        <tr style="background: rgba(52, 211, 153, 0.05);">
-                            <td class="mono" style="color: var(--success-green); font-weight: 700">#3</td>
-                            <td style="color: var(--paper-c); font-weight: 700">C/N</td>
-                            <td>Industry × Flexibility Interaction</td>
-                            <td><span class="status-badge mono">G🟠</span></td>
-                            <td class="mono" style="color: var(--success-green)">D3</td>
-                            <td>
-                                <button class="copy-btn"
-                                    onclick="copyPrompt(this, 'G-Squad (Quant): Verify Industry×Flexibility interaction. Transportation ρ(|ΔV|,Y) ≈ +0.236 vs Software ρ < Transportation. Test interaction term significance (p<0.05). This proves U-shape is &apos;strategy&apos; not just &apos;phenomenon&apos;.')">
-                                    📋 Copy
+                                    onclick="copyPrompt(this, 'Position Paper C against Nanda (2016). Money is concrete, not experimentation.')">
+                                    📋 Prompt
                                 </button>
                             </td>
                         </tr>
@@ -1037,9 +703,9 @@
                             <span style="font-size: 1.2rem; margin-right: 8px">🐣</span> Draft
                         </div>
                         <div class="rally-bar-bg">
-                            <div class="rally-fill" style="width: 100%"></div>
+                            <div class="rally-fill" style="width: 80%"></div>
                         </div>
-                        <div class="mono" style="font-size: 0.75rem; color: var(--accent-gold)">100%</div>
+                        <div class="mono" style="font-size: 0.75rem; color: var(--accent-gold)">80%</div>
                     </div>
 
                     <div class="rally-item">
@@ -1065,111 +731,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- PART II -->
-        <div class="section-label">PART II: THE MECHANISM (How it works)</div>
-
-        <div style="grid-column: span 12; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-            <div class="info-card">
-                <div style="font-weight: 700; font-size: 1.1rem;">The Golden Cage</div>
-                <div style="color: var(--text-secondary); font-size: 0.9rem;">
-                    Money creates asset specificity. Increased investment leads to specialized assets, raising the cost
-                    of abandonment (AOC).
-                </div>
-                <!-- Placeholder for Diagram -->
-                <div
-                    style="height: 100px; background: rgba(0,0,0,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: monospace; color: var(--text-secondary);">
-                    [Capital] -> [Assets] -> [Lock-in]
-                </div>
-            </div>
-            <div class="info-card" style="border-color: var(--accent-gold);">
-                <div style="font-weight: 700; font-size: 1.1rem;">Strategies: Reliability vs. Commitment</div>
-                <div style="color: var(--text-secondary); font-size: 0.9rem;">
-                    <strong>Ghemawat (1991)</strong> defines Strategy as "Commitment" (irreversible choice).
-                    Reliability (Quality) is a necessity, but Commitment (Sticky Assets) is a choice.
-                </div>
-                <div
-                    style="background: rgba(251, 191, 36, 0.1); color: var(--accent-gold); padding: 8px; border-radius: 6px; font-size: 0.85rem;">
-                    "Money is not experimentation. Money is concrete."
-                </div>
-            </div>
-        </div>
-
-        <div class="section-label">Headline Cases</div>
-        <div class="card-grid-3">
-            <!-- Tesla -->
-            <div class="info-card case-success">
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="font-weight: 700;">Tesla</div>
-                    <span class="card-tag tag-success">Believer</span>
-                </div>
-                <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    Survived the "Production Hell" by sheer belief capital. Low V (Precision) in product, but High V
-                    (Ambiguity) in vision.
-                </div>
-            </div>
-
-            <!-- Better Place -->
-            <div class="info-card case-fail">
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="font-weight: 700;">Better Place</div>
-                    <span class="card-tag tag-fail">Commitment Trap</span>
-                </div>
-                <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    Locked into battery swapping stations (High Asset Specificity) before verifying demand. Classic
-                    "Golden Cage".
-                </div>
-            </div>
-
-            <!-- Quibi -->
-            <div class="info-card case-fail">
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="font-weight: 700;">Quibi</div>
-                    <span class="card-tag tag-fail">Murky Middle</span>
-                </div>
-                <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    Tried to be both "High Quality" (TV stars) and "High Tech" (Short form) but failed to engage either
-                    audience.
-                </div>
-            </div>
-        </div>
-
-        <div class="section-label">Investor Styles</div>
-        <div class="card-grid-2">
-            <!-- Analyst -->
-            <div class="info-card inv-analyst">
-                <div style="font-weight: 700; color: var(--paper-c);">Analyst Exemplar: Sequoia</div>
-                <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    Metrics-driven. "Show me the unit economics."
-                    <br><strong>Preference:</strong> Precision (Paper N).
-                </div>
-            </div>
-            <!-- Believer -->
-            <div class="info-card inv-believer">
-                <div style="font-weight: 700; color: var(--success-green);">Believer Exemplar: Founders Fund</div>
-                <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                    Thesis-driven. "What is the secret you know that others don't?"
-                    <br><strong>Preference:</strong> Ambiguity (Paper U).
-                </div>
-            </div>
-        </div>
-
-        <!-- PART III -->
-        <div class="section-label">PART III: THE FOUNDATION (Reference)</div>
-
-        <div
-            style="grid-column: span 12; display: flex; gap: 20px; justify-content: center; padding: 40px 0; opacity: 0.6;">
-            <a href="../../output/_thesis_package/papers/I/toc(i).md"
-                style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">📚
-                Literature Map</a>
-            <a href="../../output/_thesis_package/papers/U/section3(u).md"
-                style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">📜
-                Methodology</a>
-            <a href="../../output/%F0%9F%97%84%EF%B8%8FREGISTRY.md"
-                style="color: var(--text-secondary); text-decoration: none; border-bottom: 1px dashed var(--text-secondary);">🗄️
-                File Registry</a>
-        </div>
-
     </div>
 </body>
 

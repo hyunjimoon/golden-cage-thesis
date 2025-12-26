@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Operations Double Helix</title>
+    <style>
+        :root {
+            --moon-yin: #4A90E2;
+            /* Blue/Cool */
+            --fire-red: #E24A4A;
+            /* Red/Warm */
+            --water-black: #2C3E50;
+            /* Dark/Deep */
+            --wood-green: #27AE60;
+            /* Green/Growth */
+            --metal-white: #BDC3C7;
+            /* Silver/Sharp */
+            --earth-yellow: #F1C40F;
+            /* Yellow/Ground */
+            --sun-yang: #E67E22;
+            /* Orange/Bright */
+
+            --bg-color: #1a1a1a;
+            --text-color: #ecf0f1;
+
+            --explore-strand: linear-gradient(180deg, var(--moon-yin), var(--fire-red), var(--water-black));
+            --exploit-strand: linear-gradient(180deg, var(--metal-white), var(--earth-yellow), var(--sun-yang));
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background: #333;
+            border: 1px solid #555;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover,
+        button.active {
+            background: var(--wood-green);
+            border-color: var(--wood-green);
+        }
+
+        /* Infinity Loader/Symbol */
+        .infinity-container {
+            width: 60px;
+            height: 30px;
+        }
+
+        /* Container for the main view */
+        #visualization-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 40px;
+            perspective: 1000px;
+            /* 3D perspective */
+        }
+
+        /* --- LINEAR VIEW --- */
+        .linear-view {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            transition: all 0.5s ease;
+        }
+
+        .strand-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .strand-label {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #333;
+            border: 1px solid #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .operations-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .operation-card {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+        }
+
+        .operation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color, #fff);
+        }
+
+        .day-badge {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .op-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .op-sub {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        .sign-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-weight: bold;
+        }
+
+        .sign-plus {
+            color: var(--wood-green);
+        }
+
+        .sign-minus {
+            color: var(--fire-red);
+        }
+
+        .evaluate-section {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .evaluate-card {
+            width: 200px;
+            border-color: var(--wood-green);
+            box-shadow: 0 0 15px rgba(39, 174, 96, 0.2);
+        }
+
+        /* --- HELIX VIEW (3D) --- */
+        .helix-view {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            transform-style: preserve-3d;
+            animation: containerFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes containerFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .helix-structure {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: helixRotate 20s linear infinite;
+        }
+
+        .helix-structure.paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes helixRotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .dna-strand {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .dna-strand.explore {
+            background: var(--explore-strand);
+            transform: translateZ(100px);
+        }
+
+        .dna-strand.exploit {
+            background: var(--exploit-strand);
+            transform: translateZ(-100px);
+        }
+
+        /* Node positioning in 3D Helix */
+        .helix-node {
+            position: absolute;
+            left: 50%;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .helix-node .node-content {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--color);
+            padding: 10px;
+            border-radius: 8px;
+            transform: translateX(-50%) rotateY(0deg);
+            /* Counter-rotate later via JS if needed, or billboarding */
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 10px var(--color);
+        }
+
+        /* SVG Infinity Path Styles */
+        .infinity-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .feedback-loop-active .infinity-bg {
+            opacity: 0.3;
+        }
+
+        path.flow-line {
+            stroke-dasharray: 20;
+            animation: dash 3s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Bottom Feedback Panel */
+        footer {
+            background: #222;
+            padding: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .feedback-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #555;
+            transition: background 0.3s;
+        }
+
+        .status-dot.active {
+            background: var(--wood-green);
+            box-shadow: 0 0 10px var(--wood-green);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            <svg viewBox="0 0 100 50" class="infinity-container">
+                <path d="M25,25 C25,10 40,10 50,25 C60,40 75,40 75,25 C75,10 60,10 50,25 C40,40 25,40 25,25" fill="none"
+                    stroke="url(#header-grad)" stroke-width="4" />
+                <defs>
+                    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#4A90E2" />
+                        <stop offset="50%" stop-color="#27AE60" />
+                        <stop offset="100%" stop-color="#E67E22" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            Double Helix Ops
+        </h1>
+        <div class="view-controls">
+            <button id="btn-linear" class="active" onclick="setView('linear')">Linear Timeline</button>
+            <button id="btn-helix" onclick="setView('helix')">3D Helix</button>
+        </div>
+    </header>
+
+    <div id="visualization-container">
+
+        <!-- LINEAR VIEW -->
+        <div id="linear-view" class="linear-view">
+
+            <!-- Explore Strand -->
+            <div class="strand-section" style="border-left: 5px solid var(--moon-yin);">
+                <div class="strand-label" style="color: var(--moon-yin)">EXPLORE (Left Strand)</div>
+                <div class="operations-row">
+                    <!-- Moon -->
+                    <div class="operation-card" style="--color: var(--moon-yin); cursor:pointer;"
+                        onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/1기월문화🐢', '_self')">
+                        <span class="sign-badge sign-minus">−</span>
+                        <span class="day-badge">🌙 月</span>
+                        <div class="op-name">Acculturate</div>
+                        <div class="op-sub">ASB, VFA</div>
+                    </div>
+                    <!-- Fire -->
+                    <div class="operation-card" style="--color: var(--fire-red); cursor:pointer;"
+                        onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/2기화협력🐢', '_self')">
+                        <span class="day-badge">🔥 火</span>
+                        <div class="op-name">Collaborate</div>
+                        <div class="op-sub">Segment / Meditech</div>
+                    </div>
+                    <!-- Water -->
+                    <div class="operation-card" style="--color: var(--water-black); cursor:pointer;"
+                        onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/3승수전문🐅', '_self')">
+                        <span class="sign-badge sign-minus">−</span>
+                        <span class="day-badge">💧 水</span>
+                        <div class="op-name">Automate</div>
+                        <div class="op-sub">Professionalize / Tesla</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evaluate (Bridge) -->
+            <div class="evaluate-section">
+                <div class="operation-card evaluate-card" style="--color: var(--wood-green); cursor:pointer;"
+                    onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/4승목평가🐅', '_self')">
+                    <span class="sign-badge sign-plus">+</span>
+                    <span class="day-badge">🌳 木</span>
+                    <div class="op-name">EVALUATE</div>
+                    <div class="op-sub">"Highest Cost"<br>Roretech / ASB</div>
+                    <div style="margin-top:10px; font-size:1.5rem">♾️</div>
+                </div>
+            </div>
+
+            <!-- Exploit Strand -->
+            <div class="strand-section" style="border-right: 5px solid var(--sun-yang); flex-direction: row-reverse;">
+                <div class="strand-label" style="right: 20px; left: auto; color: var(--sun-yang)">EXPLOIT (Right Strand)
+                </div>
+                <div class="operations-row" style="flex-direction: row-reverse;">
+                    <!-- Sun -->
+                    <div class="operation-card" style="--color: var(--sun-yang); cursor:pointer;"
+                        onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/7결일복제👾', '_self')">
+                        <span class="sign-badge sign-plus">+</span>
+                        <span class="day-badge">☀️ 日</span>
+                        <div class="op-name">Replicate</div>
+                        <div class="op-sub">Scale / Operations</div>
+                    </div>
+                    <!-- Earth -->
+                    <div class="operation-card" style="--color: var(--earth-yellow); cursor:pointer;"
+                        onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/6전토플랫폼🐙', '_self')">
+                        <span class="day-badge">🏔️ 土</span>
+                        <div class="op-name">Platformize</div>
+                        <div class="op-sub">Capacitize</div>
+                    </div>
+                    <!-- Metal -->
+                    <div class="operation-card" style="--color: var(--metal-white); cursor:pointer;"
+                        onclick="window.open('obsidian://open?file=Balance/🎵 Weekly_Melody/5전금자본🐙', '_self')">
+                        <span class="sign-badge sign-plus">+</span>
+                        <span class="day-badge">⚙️ 金</span>
+                        <div class="op-name">Capitalize</div>
+                        <div class="op-sub">Harvest / Profit</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- HELIX VIEW -->
+        <div id="helix-view" class="helix-view hidden">
+            <div class="helix-structure">
+                <!-- 3D Nodes will be injected here by JS -->
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="feedback-status">
+            <span>Feedback Loop: </span>
+            <div id="status-dot" class="status-dot"></div>
+            <span id="status-text">Active (日 → 木 → 月)</span>
+        </div>
+        <div>
+            "DNA는 복제하며 진화한다. 우리의 Operations도 마찬가지다."
+        </div>
+    </footer>
+
+    <script>
+        // Data definition - Updated to map to /Balance/🎵 Weekly_Melody/ files
+        const ops = [
+            { id: 'moon', char: '🌙', name: 'Acculturate', color: 'var(--moon-yin)', type: 'explore', y: -200, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/1기월문화🐢' },
+            { id: 'fire', char: '🔥', name: 'Collaborate', color: 'var(--fire-red)', type: 'explore', y: -100, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/2기화협력🐢' },
+            { id: 'water', char: '💧', name: 'Automate', color: 'var(--water-black)', type: 'explore', y: 0, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/3승수전문🐅' },
+
+            { id: 'wood', char: '🌳', name: 'EVALUATE', color: 'var(--wood-green)', type: 'center', y: 0, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/4승목평가🐅' },
+
+            { id: 'metal', char: '⚙️', name: 'Capitalize', color: 'var(--metal-white)', type: 'exploit', y: 0, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/5전금자본🐙' }, // Connected to Water via Wood ideally, but visually
+            { id: 'earth', char: '🏔️', name: 'Platformize', color: 'var(--earth-yellow)', type: 'exploit', y: 100, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/6전토플랫폼🐙' },
+            { id: 'sun', char: '☀️', name: 'Replicate', color: 'var(--sun-yang)', type: 'exploit', y: 200, link: 'obsidian://open?file=Balance/🎵 Weekly_Melody/7결일복제👾' },
+        ];
+
+        function setView(view) {
+            const linear = document.getElementById('linear-view');
+            const helix = document.getElementById('helix-view');
+            const btnLinear = document.getElementById('btn-linear');
+            const btnHelix = document.getElementById('btn-helix');
+
+            if (view === 'linear') {
+                linear.classList.remove('hidden');
+                helix.classList.add('hidden');
+                btnLinear.classList.add('active');
+                btnHelix.classList.remove('active');
+            } else {
+                linear.classList.add('hidden');
+                helix.classList.remove('hidden');
+                btnLinear.classList.remove('active');
+                btnHelix.classList.add('active');
+                initHelix();
+            }
+        }
+
+        let helixInitialized = false;
+        function initHelix() {
+            if (helixInitialized) return;
+            const container = document.querySelector('.helix-structure');
+
+            ops.forEach((op, index) => {
+                const node = document.createElement('div');
+                node.className = 'helix-node';
+
+                // Calculate 3D position
+                // We want a double helix shape. 
+                // Explore strand: shift angle 0 to 180?
+                // Exploit strand: shift angle 180 to 360?
+
+                let angle = 0;
+                let y = op.y;
+                let radius = 150;
+
+                if (op.type === 'explore') {
+                    angle = (index * 45); // Spiral down?
+                    // Just hardcode angles for a nice visual
+                    if (op.id === 'moon') angle = 0;
+                    if (op.id === 'fire') angle = 45;
+                    if (op.id === 'water') angle = 90;
+                } else if (op.type === 'exploit') {
+                    if (op.id === 'metal') angle = 270; // Opposite water (90)
+                    if (op.id === 'earth') angle = 315;
+                    if (op.id === 'sun') angle = 360;
+                } else {
+                    // Wood is center
+                    radius = 0;
+                    angle = 0;
+                }
+
+                // Convert cylindrical to cartesian for visual offset styles (mostly done via transform)
+                // But strict CSS 3D uses rotateY and translateZ
+
+                // For the helix animation, the container rotates. We place items static relative to container.
+
+                node.style.transform = `translateY(${y}px) rotateY(${angle}deg) translateZ(${radius}px)`;
+
+                // Billboard effect: content needs to counter-rotate to face viewer? 
+                // Or just let it spin. User requested "Helix View", simple rotation is fine.
+
+                const content = document.createElement('div');
+                content.className = 'node-content';
+                content.style.setProperty('--color', op.color);
+                content.innerHTML = `<span style="font-size:1.5em">${op.char}</span> <span>${op.name}</span>`;
+
+                // Interaction: Click to open file
+                content.onclick = () => {
+                    if (op.link) window.open(op.link, '_self');
+                };
+                content.style.cursor = 'pointer';
+
+                // Counter rotation animation to keep text readable could be added here
+                content.style.animation = 'counterRotate 20s linear infinite reverse';
+
+                node.appendChild(content);
+
+                // Draw connections (simple lines? CSS is hard for 3D lines. We omit specific lines for this MVP 
+                // aside from the implied helix structure)
+            });
+
+            // Add a global counter-rotate keyframe style dynamically
+            const styleSheet = document.createElement("style");
+            styleSheet.innerText = `
+            @keyframes counterRotate {
+                0% { transform: rotateY(0deg); }
+                100% { transform: rotateY(-360deg); }
+            }
+        `;
+            document.head.appendChild(styleSheet);
+
+            helixInitialized = true;
+        }
+
+        // Feedback Loop Simulation
+        setInterval(() => {
+            const dot = document.getElementById('status-dot');
+            dot.classList.toggle('active');
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

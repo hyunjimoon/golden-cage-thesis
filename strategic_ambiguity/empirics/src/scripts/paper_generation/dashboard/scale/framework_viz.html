@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Ambiguity Framework</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --panel-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-sub: #7f8c8d;
+            --color-success: #0056b3;
+            /* Deep Blue */
+            --color-danger: #c0392b;
+            /* Soft Red */
+            --color-neutral: #95a5a6;
+            --stroke-width: 2.5px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: var(--panel-bg);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        /* Typography */
+        .panel-title {
+            font-size: 20px;
+            font-weight: 700;
+            fill: var(--text-main);
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .label-main {
+            font-size: 13px;
+            font-weight: 600;
+            fill: var(--text-main);
+            text-anchor: middle;
+        }
+
+        .label-sub {
+            font-size: 11px;
+            fill: var(--text-sub);
+            text-anchor: middle;
+        }
+
+        .axis-label {
+            font-size: 12px;
+            font-weight: 600;
+            fill: var(--text-main);
+        }
+
+        /* Boxes */
+        .node-box {
+            fill: #ffffff;
+            stroke: #bdc3c7;
+            stroke-width: 1.5px;
+            rx: 6;
+            /* Rounded corners */
+            filter: url(#softShadow);
+        }
+
+        .node-box.highlight-blue {
+            stroke: var(--color-success);
+            stroke-width: 2px;
+        }
+
+        .node-box.highlight-red {
+            stroke: var(--color-danger);
+            stroke-width: 2px;
+        }
+
+        .node-box.fill-blue {
+            fill: #f0f7ff;
+            stroke: var(--color-success);
+        }
+
+        .node-box.fill-red {
+            fill: #fff5f5;
+            stroke: var(--color-danger);
+        }
+
+        /* Lines */
+        .edge {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .edge.success {
+            stroke: var(--color-success);
+            stroke-width: var(--stroke-width);
+            marker-end: url(#arrow-success);
+        }
+
+        .edge.danger {
+            stroke: var(--color-danger);
+            stroke-width: var(--stroke-width);
+            marker-end: url(#arrow-danger);
+        }
+
+        .edge.neutral {
+            stroke: var(--color-neutral);
+            stroke-width: 2px;
+            marker-end: url(#arrow-neutral);
+        }
+
+        .edge.dashed {
+            stroke-dasharray: 6, 4;
+        }
+
+        /* Text Backgrounds (Halos) to prevent overlap */
+        .text-bg {
+            fill: white;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- ViewBox increased to ensure generous spacing -->
+        <svg viewBox="0 0 900 1150">
+
+            <!-- Definitions -->
+            <defs>
+                <!-- Soft Shadow Filter -->
+                <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                    <feOffset dx="2" dy="3" result="offsetblur" />
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.1" />
+                    </feComponentTransfer>
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+
+                <!-- Markers -->
+                <marker id="arrow-success" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                    <path d="M2,2 L10,6 L2,10" fill="none" stroke="#0056b3" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </marker>
+                <marker id="arrow-danger" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                    <path d="M2,2 L10,6 L2,10" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </marker>
+                <marker id="arrow-neutral" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                    <path d="M2,2 L8,5 L2,8" fill="none" stroke="#95a5a6" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </marker>
+            </defs>
+
+            <!-- ================================================= -->
+            <!-- PART M: The Movement Principle -->
+            <!-- ================================================= -->
+            <g transform="translate(50, 50)">
+                <text x="0" y="0" class="panel-title">Part M: The Movement Principle</text>
+
+                <g transform="translate(40, 60)">
+                    <!-- Axes -->
+                    <line x1="0" y1="250" x2="0" y2="0" stroke="#2c3e50" stroke-width="2"
+                        marker-end="url(#arrow-neutral)" />
+                    <text x="-15" y="10" class="axis-label" text-anchor="end">Survival (G)</text>
+
+                    <line x1="0" y1="250" x2="500" y2="250" stroke="#2c3e50" stroke-width="2"
+                        marker-end="url(#arrow-neutral)" />
+                    <text x="510" y="255" class="axis-label">Vagueness (V)</text>
+
+                    <!-- Graph Curve (Bezier) -->
+                    <path d="M 20 60 
+                         C 80 60, 120 220, 200 220 
+                         S 300 20, 360 20 
+                         S 450 100, 480 130" fill="none" stroke="#0056b3" stroke-width="4" stroke-linecap="round" />
+
+                    <!-- Annotations -->
+                    <!-- Specific -->
+                    <line x1="20" y1="60" x2="20" y2="30" stroke="#bdc3c7" stroke-dasharray="2,2" />
+                    <text x="20" y="20" class="label-sub">Specific (Analyst)</text>
+
+                    <!-- Q3 Peak -->
+                    <line x1="360" y1="20" x2="360" y2="-10" stroke="#0056b3" stroke-dasharray="2,2" />
+                    <text x="360" y="-25" class="label-main" fill="#0056b3" style="font-size: 14px;">Q3 Strategic
+                        Ambiguity</text>
+                    <text x="360" y="-10" class="label-sub" fill="#0056b3">Optimal Adaptation</text>
+
+                    <!-- Legend -->
+                    <g transform="translate(550, 80)">
+                        <rect x="-10" y="-15" width="220" height="100" fill="#f8f9fa" rx="8" />
+                        <text x="0" y="0" class="label-main" style="text-anchor: start;">Key Insights</text>
+                        <text x="0" y="25" class="label-sub" style="text-anchor: start; font-size: 12px;">• Vagueness is
+                            non-monotonic</text>
+                        <text x="0" y="45" class="label-sub" style="text-anchor: start; font-size: 12px;">• Q3 enables
+                            Adaptation (A)</text>
+                        <text x="0" y="65" class="label-sub" style="text-anchor: start; font-size: 12px;">• Movers >
+                            Stayers (2.6x)</text>
+                    </g>
+                </g>
+            </g>
+
+            <!-- ================================================= -->
+            <!-- PART C: The Capital Friction -->
+            <!-- ================================================= -->
+            <g transform="translate(50, 420)">
+                <text x="0" y="0" class="panel-title">Part C: The Capital Friction</text>
+
+                <g transform="translate(40, 60)">
+                    <!-- Nodes -->
+                    <!-- E -->
+                    <rect x="0" y="20" width="120" height="60" class="node-box" />
+                    <text x="60" y="45" class="label-main">Early Capital</text>
+                    <text x="60" y="62" class="label-sub">(E)</text>
+
+                    <!-- A -->
+                    <rect x="300" y="20" width="120" height="60" class="node-box" />
+                    <text x="360" y="45" class="label-main">Adaptation</text>
+                    <text x="360" y="62" class="label-sub">(A)</text>
+
+                    <!-- G -->
+                    <rect x="600" y="20" width="120" height="60" class="node-box" />
+                    <text x="660" y="45" class="label-main">Growth</text>
+                    <text x="660" y="62" class="label-sub">(G)</text>
+
+                    <!-- Edges -->
+                    <!-- E -> A (Red Friction) -->
+                    <line x1="120" y1="50" x2="290" y2="50" class="edge danger" />
+
+                    <rect x="155" y="30" width="100" height="35" class="text-bg" />
+                    <text x="205" y="42" class="label-sub" fill="#c0392b" font-weight="bold">Friction (ρ ≈ -0.01)</text>
+                    <text x="205" y="58" class="label-sub">Cognitive Rigidity</text>
+
+                    <!-- A -> G (Blue Driver) -->
+                    <line x1="420" y1="50" x2="590" y2="50" class="edge success" />
+
+                    <rect x="465" y="35" width="80" height="20" class="text-bg" />
+                    <text x="505" y="48" class="label-sub" fill="#0056b3" font-weight="bold">Driver (ρ > 0)</text>
+
+                    <!-- E -> G (Paradox - Dashed) -->
+                    <path d="M 60 80 Q 360 180 660 88" class="edge neutral dashed" />
+
+                    <rect x="310" y="120" width="100" height="20" class="text-bg" />
+                    <text x="360" y="135" class="label-sub" font-weight="bold">Observed Paradox (ρ < 0)</text>
+                </g>
+            </g>
+
+            <!-- ================================================= -->
+            <!-- PART T: The Learning Trap -->
+            <!-- ================================================= -->
+            <g transform="translate(50, 750)">
+                <text x="0" y="0" class="panel-title">Part T: The Learning Trap</text>
+
+                <g transform="translate(40, 50)">
+                    <!-- Root Node -->
+                    <rect x="0" y="125" width="120" height="60" class="node-box" />
+                    <text x="60" y="150" class="label-main">Promise Choice</text>
+                    <text x="60" y="167" class="label-sub">(V)</text>
+
+                    <!-- Branch Split Lines -->
+                    <path d="M 120 155 L 160 155 L 160 50 L 200 50" class="edge neutral" />
+                    <path d="M 120 155 L 160 155 L 160 260 L 200 260" class="edge neutral" />
+
+                    <!-- TOP TRACK (Analyst/Specific) -->
+                    <g>
+                        <!-- Analyst Node -->
+                        <rect x="200" y="20" width="120" height="60" class="node-box highlight-red" />
+                        <text x="260" y="45" class="label-main">Analyst Type</text>
+                        <text x="260" y="62" class="label-sub">(Specific)</text>
+
+                        <!-- Arrow to Variance -->
+                        <line x1="320" y1="50" x2="390" y2="50" class="edge danger" />
+                        <rect x="330" y="35" width="50" height="15" class="text-bg" />
+                        <text x="355" y="45" class="label-sub" fill="#c0392b">High E</text>
+
+                        <!-- Low Variance Node -->
+                        <rect x="400" y="20" width="120" height="60" class="node-box fill-red" />
+                        <text x="460" y="45" class="label-main">Belief Var ↓</text>
+                        <text x="460" y="62" class="label-sub">(σ² → 0)</text>
+
+                        <!-- Arrow to Trap -->
+                        <line x1="520" y1="50" x2="590" y2="50" class="edge danger" />
+
+                        <!-- Trap Node -->
+                        <rect x="600" y="20" width="120" height="60" class="node-box highlight-red" />
+                        <text x="660" y="45" class="label-main">Learning Trap</text>
+                        <text x="660" y="62" class="label-sub">(A → 0)</text>
+                    </g>
+
+                    <!-- BOTTOM TRACK (Believer/Vague) -->
+                    <g>
+                        <!-- Believer Node -->
+                        <rect x="200" y="230" width="120" height="60" class="node-box highlight-blue" />
+                        <text x="260" y="255" class="label-main">Believer Type</text>
+                        <text x="260" y="272" class="label-sub">(Vague)</text>
+
+                        <!-- Arrow to Variance -->
+                        <line x1="320" y1="260" x2="390" y2="260" class="edge success" />
+
+                        <!-- High Variance Node -->
+                        <rect x="400" y="230" width="120" height="60" class="node-box fill-blue" />
+                        <text x="460" y="255" class="label-main">Belief Var ↑</text>
+                        <text x="460" y="272" class="label-sub">(σ² > 0)</text>
+
+                        <!-- Arrow to Update -->
+                        <line x1="520" y1="260" x2="590" y2="260" class="edge success" />
+
+                        <!-- Update Node -->
+                        <rect x="600" y="230" width="120" height="60" class="node-box highlight-blue" />
+                        <text x="660" y="255" class="label-main">Bayesian Upd.</text>
+                        <text x="660" y="272" class="label-sub">(A ↑)</text>
+                    </g>
+
+                    <!-- CONVERGENCE: Venture Growth -->
+                    <!-- Positioned in the middle right (x=800, y=125) -->
+                    <rect x="800" y="115" width="120" height="80" class="node-box"
+                        style="fill: #f8f9fa; stroke-width: 2px;" />
+                    <text x="860" y="150" class="label-main" style="font-size: 14px;">Venture</text>
+                    <text x="860" y="170" class="label-main" style="font-size: 14px;">Growth</text>
+
+                    <!-- Path from Trap (Failure -> Low) -->
+                    <path d="M 720 50 L 760 50 L 800 130" class="edge neutral dashed"
+                        marker-end="url(#arrow-neutral)" />
+                    <!-- Label rotated -->
+                    <rect x="740" y="70" width="50" height="20" class="text-bg" transform="rotate(65, 765, 80)" />
+                    <text x="765" y="85" class="label-sub" transform="rotate(65, 765, 85)">Low</text>
+
+                    <!-- Path from Update (Success -> High) -->
+                    <path d="M 720 260 L 760 260 L 800 180" class="edge success" />
+                    <!-- Label rotated -->
+                    <rect x="740" y="220" width="50" height="20" class="text-bg" transform="rotate(-65, 765, 230)" />
+                    <text x="765" y="235" class="label-sub" fill="#0056b3" transform="rotate(-65, 765, 235)">High</text>
+
+                </g>
+            </g>
+
+        </svg>
+    </div>
+
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 modified:
   - 2025-12-06T06:11:47-05:00
 ---
-[[thesis_product_vision👁️]]
+[[thesis_prod uct_vision👁️ (nail)]]
 # 전라좌수군 견리사의 군령
 # Grand Synthesis: 기승전결 (起承轉結)
 

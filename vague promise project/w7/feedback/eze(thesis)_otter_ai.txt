@@ -1,0 +1,539 @@
+Eze Burts III  3:01  
+Think Hi, Angie, can you hear me? Okay? Um, hang on coming. Okay, yeah, hello, all right, yeah, I I've got my daughter here in the background, so you might hear a little bit of, he's got a she's got, I'm trying to keep her busy with my iPad, I see, but, but yeah, this is yeah, thanks. Thanks for setting aside some time.
+
+Angie.H Moon  3:58  
+Do you? Would you prefer me to turn off the video.
+
+Eze Burts III  4:04  
+Feel free, yeah, if you, if you feel comfortable, turn Yeah, you can, you can turn
+
+Angie.H Moon  4:10  
+it off. Oh, I see, yeah. I was curious about your preference for symmetric off video, oh,
+
+Eze Burts III  4:21  
+okay, yes, yeah, I think, yeah. I think for today, or at least for the next hour, just need to be off video until she's, uh, yeah, gonna take a nap by this time. But she, she's been, she's been full a lot of energy.
+
+Angie.H Moon  4:38  
+Okay, yeah, so
+
+Eze Burts III  4:40  
+you tell me more about your Could you tell me more about I guess the last time we were talking you were you were interested in quantum computing and looking for some ideas about commercializing. And it looks like the slides that you sent are more more about like growth, startup growth and getting strategic clarity, and maybe we could,
+
+Angie.H Moon  5:06  
+yeah, sure that's a good place to start. So I think in research, I view it like mapping different methodologies with phenomenas and I feel my interest for the quantum originates from the phenomena side or application side, and what I shared with you as a slide is more on a methodology side. So my point is it's just my methodology of how I would analyze the existing data to generate a very universal argument that startup cash or early funding can impede growth if the growth is measured by cash, does that make sense?
+
+Eze Burts III  6:08  
+Yeah, so like cash, like fundraising, or non dilutive cash, like grants, yeah, okay, okay,
+
+Angie.H Moon  6:15  
+but the types of funding may differ by industry, and that's where I would need your help if I go deep into the quantum industry. But for now, I am using pitch book data for early stage VCE and later stage Vc as a measure of early stage and later stage so the ratio of the two fund would be the growth, Okay?
+
+Eze Burts III  6:51  
+Sounds good, sounds good. And do you maybe we could? Could you maybe walk me through the slides and then just kind of share a little bit more about what your thoughts were on the on those, yeah, and I've got it, you don't need to share or present, but I because I've got it up on my my laptop here, yeah.
+
+Angie.H Moon  7:14  
+So I think, like moving forward, it's just a culture of meeting, and I feel it's more productive if we like share three or four agenda in advance. So that's why I asked. And I'm aware that this is your first day of free, freedom. So but for moving on, do you feel okay with sharing agenda in advance?
+
+Eze Burts III  7:38  
+I would Yes. I really like that idea. I think it would be, I think it would be helpful and make the collaboration more productive. I agree.
+
+Angie.H Moon  7:47  
+The reason is, I've been doing this research for like, two years, and it's a little I don't know where to start, like, what specific things to explain or share. So, like, given your some curiosity, that would make the conversation much more efficient. Okay, yeah, yeah.
+
+Eze Burts III  8:09  
+I like that. I like that idea. My maybe I'll share. It would be great to go into what you'd like to talk but maybe afterwards, there were one or two things that I wanted to run by you. One is I have a thesis outline, so it's kind of like a proposal that I've started to pass around to different faculty members to secure my Sloan advisor. I have a mechanical engineering advisor, but I don't have a Sloan advisor, which is what I need, and so maybe share that with you, and then get your thoughts and and, well, actually, I think that's probably the biggest, the biggest help, help that I would need, from your your standpoint,
+
+Angie.H Moon  8:52  
+that's having clear goal is really helpful. Thank you. And for me, it's running by you. The message I derive in the first page of the slide. So, um, so this is a little outdated, because I updated today, and what I explained to you previously as a cash paradox. To repeat one more time, it's like when the growth is measured by cash or the funds that you raised, pursuing cash may impede growth. So I wanted to run this statistical result by you, and I have some explanation, but I wonder whether it matches your observation. Yes, yep, okay, so I think it might be better for me to share the screen, if that's okay with you.
+
+Eze Burts III  9:56  
+Okay, yeah, I'm ready when you are okay.
+
+Angie.H Moon  10:02  
+Can you see the screen?
+
+Eze Burts III  10:04  
+I can Yes, the unwritten rules of growth, yeah.
+
+Angie.H Moon  10:09  
+So I will put on the left the updated structure of my thesis. So there are five modules I know it's a little messy, but I will make sure it's not too complicated. So there are the main body is three modules. So introduction starts with the cash paradox, like funding is used to help entrepreneur or the venture grow, but we observed the inverse relationship between the growth and the early funding. So why is that? And in the first module of my thesis, I am explaining a movement principle, which is the growth is positively correlated with the adaptation, and adaptation, I am measuring it by the change of the vagueness of the company description. So that's the first result, and the second one is now. So hold on,
+
+Angie.H Moon  11:33  
+yeah, just to make sure the cash paradox is a combination of this G growth by the adaptability and adaptability by early funding. In the sense that if we combine the two, then we can observe e by g. So I'm the paradox is we expect, the more early funding, the more money you have. You experience more and explore more, and you should grow more, but this is negative. So this is puzzling, and I'm analyzing it as two mechanism. First is the growth is positively correlated with adaptability, but the adaptability is negatively correlated with the early funding, which is intuitive in the sense that even though you are not fully exploring all the options, if you get a lot of early funding, then you stop exploring and then commit to that specific use case. Let's say you have some technology, for instance, in your case, okay, yeah, we talked about this last time of perhaps you might want to have more than two options in order to evaluate the value of whether your commitment is valuable or not. Yeah. So by the way, any questions and comments welcome as I go through,
+
+Eze Burts III  13:03  
+yeah, I think one of the main, I think the main thing is, even if somebody raises money, they're successfully with raising money, they have a lot of cash early. I think cash flow, the operating cash flow forecast, is a very important metric. So how do you and you have to estimate what will your cash burn be. And so that's one of the things, I think, from a from a from a BC finance standpoint, or, depending on what I'm assuming, that maybe this cash is coming in from a venture capital or some type of institutional funder.
+
+Angie.H Moon  13:37  
+Yeah, this limited to 2021 company. Like, sorry. Let me restart. So this data points are limited to all the companies that earned early stage VC in 2021
+
+Eze Burts III  13:56  
+Okay, okay, and so they, I think one of the main things that to take into account, or think or some of the key metric, is to understand what is, what? How will the cash be used in the operations, and then, what will the cash burn be? Because if you're burning cash, if you're spending cash, significantly before you're generating any other type of revenue or bringing some additional cash in that's going to put the the venture into a very peculiar position.
+
+Angie.H Moon  14:34  
+Yeah, but I think any activities might be interpreted as exploration. Might that be possible? The reason is, I can add, like, 100 more variables in this, but I was advised to make it simple but meaningful. Okay, so I agree with you that the operating cash flow, there can be many different types, but here I'm only tracking the early stage funding, how much they earned in 2021 and in 2024 or 2025 three or four years later they get, How much they get for the later stage funding. So
+
+Eze Burts III  15:24  
+I see, I see, okay, that makes sense. So growth, growth by adaptability,
+
+Angie.H Moon  15:33  
+yeah, so far so good. Yep, she is excited by my research, I'm so happy
+
+Eze Burts III  15:41  
+that gives me energy.
+
+Angie.H Moon  15:50  
+Yeah, so the second module is cash to growth, and this is very aggregated, and as you have validly raised concern, I go deeper into specific cases. So for instance, let me give you a clear example. Hold on Angie. Yeah. So on the right slide, these are some examples of four companies that have moved. So moved, meaning the vagueness core changed. So, for instance, in 2021 they were AI models for autonomous vehicles, drones and robots. But in 2025 their description is synthetic data, clouds for vision, AI. So you can sense that this became very vague, yeah. But the other
+
+Eze Burts III  16:52  
+that's a significant pivot for the first one, Sky and Jim.
+
+Angie.H Moon  16:56  
+Maybe there are several explanation like, for instance, I view it like this. So this is like system level solution, and this is product level solution, and the V. So what I'm measuring, what I defined as a is delta V, absolute value. So that means where you focus more from system to product, or you go from product to system level, that is, that has the same value of A so, for instance, in here sky engine, they became from precise to vague. So it's the second one, but line pull wave, like mm wave radar for drones, automobiles, Adas. It's a little broad with multiple use cases, and it became a little more specific after three years or four years for the high resolution radar for slam and traffic. Does that make sense? Yep, it does. Okay. Cool, cool. So my point of showing you this is there are two types among the movers. What I argued in the first module is movers growth, and in the SATCOM module, I'm explaining, oh, there are two types of movers, those that focus more, or what I'm calling zoom in, and the zoom out type exists as well. And among those stayers, there are also different types. One is they just stay in the same like lighters for cities transportation surveying. Lighters for cities transporting survey. They don't change at all, but they are in the similar level of vagueness, but they changed completely, like, rebrand themselves. That is also possible. Does that make sense? Yeah. Okay, yeah. So I'm calling them moving around versus tear, and I am processing the data for the second module. But ultimately, what I want to show is depending on whether there are the d, d is the delta V, without the absolute sign. So the smaller than zero means we are being small, like zooming in. So perhaps the two this DG over DA is what I call moving more effectively, in the sense that we move and that move was amazingly effective. So you grew by 10% whereas the second term dA over de is move more efficiently, meaning that you invested, let's say, $1 million and you moved a lot in terms of the V metric, then that's more of an effective efficiency rather than effectiveness, given that we are measuring the purpose of the funding is for growth. So I am separating this as effectiveness by efficiency, and I'm trying to elicit what is the sign for each of the efficiency and effectiveness for the zoom in type, move around type and zoom out type of movers, and also the Stayer type of movers. Does that generally make sense?
+
+Eze Burts III  20:37  
+It does. And then, and what? What data points would you plug into the DG over da, for example, or the DA over
+
+Angie.H Moon  20:47  
+that's a good question. So the data I have is the unit of the data is one company's time trajectory. So for them, if I compute DG over da, like I forgot how many, but it's more than 10,000 Yeah, eight, around 200,000 ventures, those are somewhat plotted against the D, G, Over, da, plots, did I answer your question?
+
+Eze Burts III  21:21  
+Yes? Thank you.
+
+Angie.H Moon  21:23  
+Yeah, sure. So perhaps, like, after I go through all this, I would really be thankful if you share some examples in quantum computing or any industry, or even the startup that you're currently working on, what would the zoom in or stay or move around or zoom out might look like, and also, what would the growth rate be measured as, or adaptability? Yeah, so on and so forth.
+
+Eze Burts III  21:50  
+Okay, Okay, sounds
+
+Angie.H Moon  21:52  
+good, yeah, let me just rush to the third one and then come back so the last one is about
+
+Angie.H Moon  22:06  
+the the g by v. So what this is, the title is trapped by commitment. And the curiosity here is I was expecting, the more precise the company description is, the more high, the more likely to grow they are. The reason is, if you have advanced technology, let's say like you are, like, for instance, the quantum computing you have developed your algorithm for superconductor and it's likely that your description of the company would be very specific. You have the technology that you developed, and based on the network that you have established, you would have specific application. So like signaling theory somehow prescribes that the more vaguer you become. The last growth you might experience because you it might signal you have not advanced technology. So that's just one null model, but the data shows like this, so there is a high peak. So at first it decreases, but there is an unexpected high peak in the vague area. So I'm trying to explain why this mono why this is not monotonically decrease. Does that question make sense?
+
+Eze Burts III  23:40  
+Tell me, so did you say that one more time? Why doesn't that not monetarily increase?
+
+Angie.H Moon  23:46  
+Yeah, why doesn't it decrease? Okay, okay. Is that, um, does that resonate with you in the sense that the vague, like, if I asked the VCs, they usually prefer a very specific company vision rather than a very vague vision. But does that? How does that sound to you?
+
+Eze Burts III  24:08  
+I think, well, as long as the vision is compelling, well, from it depends on who your audience is, but if it's an investor audience, the investor audience wants a very compelling vision. It can be vague, but it needs to be something that that really inspires and motivates people. But it can be vague if, but if it is like, for example, if you're if you're trying to recruit talent or very senior executive leadership to join the startup or join the company, then I think the vision should be very specific.
+
+Angie.H Moon  24:47  
+Oh, I see, I see, I also heard that there are two types of successful startups. One is technology, kind of push, so I have this amazing technology, whereas the other is more market based. I want this problem to be solved, and I have very deep knowledge, and this market is big enough, does that? What do you think about that
+
+Eze Burts III  25:15  
+you're referring to the technology push versus market pull,
+
+Angie.H Moon  25:19  
+kind of like that? Yeah, but it's an operations management concept, but I don't know whether it applies to startup.
+
+Eze Burts III  25:26  
+I think it does, and so I'll but I need to share with you upfront I have a different philosophy on this than somebody in the deep tech world would, yeah, so coming from University of Chicago, where I was leading the duality accelerator, we used to have this debate a lot, and I always, I always thought that market pull so you start, I believe that the approach to any startup, you begin with a customer need and preference, and then you design The products to solve a very specific customer problem. So I've always been on the market pool side, but but in the duality accelerator, most of our advisors were quantum physicists. They were scientists and researchers, and they're the debate was always, well, we you know what? What happens when the customer doesn't even know the problem that they're solving for their their the technological advancements or the scientific discoveries are way too early, but at some point they're going to proliferate, and companies are going to they will develop new capabilities and then seek to market them. And so we, we always had to strike the balance of technology push and market pull. But I would say people in the deep tech community, because the in many cases, the science and the technology is so nascent. It's so early stage. The debate is that there you need to continue figuring out ways to invest in the technology, so pushing the technology forward while waiting for the market to catch up making for waiting for consumer needs and preferences to catch up with, with understanding of the technology. Yeah, and I think quantum computing is, is, a perfect example of this. AI is as well.
+
+Angie.H Moon  27:23  
+I see I have one argument I need your test on as I was listening to your story. Sure. So, yeah, so I think, um, especially for very early stage and advanced technology, if you describe them using a technical word, the customers or the public don't get excited. So so the remedy there is you abstract or you make it vaguer. So for instance, AI like if like transformer technology, nobody knows what transformer is, for instance. So you make it as like a chain learning or AI solution, like innovative something like that. And quantum computing, like, rather than saying as a ion trap or a new neural something, make it as a computer that is like 1000 or million times faster something like that. So that is why I think my doubt, or my theory behind why this area succeeds is because they became vague and that somehow appealed to the customers, rather than being very specific. Your thought on that?
+
+Eze Burts III  28:42  
+I don't know so I definitely agree with you. There's so say, if you start to go into a lot of scientific jargon to describe a product or technology, you're going to lose an audience, especially an audience, a non technical audience or Yeah, but it's not about describing it more vaguely. It's more about describing it in a more relatable term. So instead of, let's say, going to give you an example of how quantum computing is described. So the superconducting qubits where you need the very, very powerful refrigerators that can can freeze qubits to very, very low temperature, sub zero temperatures, and keep it like that consistently. Nobody. It's very rare that somebody will understand superconducting qubits for the very first time when they hear that instead you would use, you know, and you don't even describe dilution refrigerators as the tool that you would use, that you would say, we have, we're developing some device that needs to be, you know, you would use more approachable language, like this is going to be, you're going to replicate the temperatures on the coldest parts of the universe, to, I don't know, to advance this technology. Instead of saying, I need a dilution refrigerator to help to to tune an air correct superconducting qubits.
+
+Angie.H Moon  30:10  
+Sorry, what was the part about the coldest part of the galaxy?
+
+Eze Burts III  30:15  
+Yeah, so like when we talk about, like the coldest parts, not even on Earth, but coldest parts of the Milky Way galaxy. That's the temperatures that you're replicating when you put something in a dilution refrigerator.
+
+Angie.H Moon  30:26  
+Wow, what a great wordplay. And
+
+Eze Burts III  30:29  
+it's and so it's not vague, it, but it describes what you're doing. Because you're, you're replicating those sub zero, I can't remember, is it like 10 Kelvin, I think is the, is the, is the, is the is the is the temperature measurement, but it's, but it's something that is like super, super freezing that we that most people can't even comprehend, and so you'll you. So instead of describing it with the technical jargon, you just describe it to how you would to a five year old or a grandparent who doesn't have education, educational background?
+
+Angie.H Moon  31:03  
+Yeah, I That example is helpful in the sense that I can update my vagueness major, because what is quoted right now is if two parts first is whether it includes some specific numbers. So for instance, compared to a company description saying, Oh, we reproduce two minus like 10k refrigerator, that would be very specific, whereas replicating coolest part of the galaxy that would be captured, a little vaguer. And the second part of the vagueness measure is the categorization. So whether the category is like, for instance, if the company description includes some word like platform or modular or some very vague words, then it increases the vagueness, because platform doesn't really mean anything.
+
+Eze Burts III  32:00  
+Yeah, yeah. I think that's the vague. I keep getting caught up on the vagueness term, because I understand, like, how you would describe industry or sector more vague, or maybe even a company, mission or vision. But when it comes to, I don't know. I'm not sure if that relates to the like the product. I think you instead of using the term vague to describe it, it's more,
+
+Eze Burts III  32:34  
+yeah, I think instead of it being more vague, it's just more making it more approachable, making it, make it, I guess putting it in lay person's terms, instead of making it more vague, I see,
+
+Angie.H Moon  32:45  
+um, just a quick question, is ambiguity better than vague? Is that more relatable?
+
+Eze Burts III  32:55  
+Ambiguity? Yeah, that one's ambiguity,
+
+Angie.H Moon  32:59  
+ambiguous, like literature on strategic ambiguity, meaning you are intentionally being ambiguous to attract different people, like, for instance, VCs has different optimum optimisms, and by being vague or ambiguous, you can get support from VCs that has different optimism, for instance, like superconductor versus trapped ion, like by somehow staying in the middle, you can be funded by both sides. That's a option related idea behind the vagueness or ambiguity.
+
+Eze Burts III  33:39  
+I think it's a slippery slope when you because I think, I think so, your ambiguity is still that's a synonym for being vague. I think it's more approachable. So I would say approachable. You know, it would be something that's more accessible. I think more approachable, accessible versus vague or ambiguous, I think is, are the terms that I would use?
+
+Angie.H Moon  34:05  
+Got it, got it. I would have to think about how
+
+Unknown Speaker  34:12  
+I got people coming in.
+
+Angie.H Moon  34:16  
+Okay, yeah, thanks for the input. And just to, like, wrap up my third module. So I was explaining G the growth by vagueness is unexpectedly showing the vague or approachable in your word, had a high peak, and I am investigating with two suspects. One is the vaguer companies are more effectively pivoting, or the way companies are more efficiently pivoting. So those are two hypotheses. Yeah, yeah. So that's the overall so just to summarize, we had three modules. And I started with g by e is negative, and I decomposed that into movement principle, the more like adaptive people grow. And second is but the early stage company, high early stage funding may impede the adaptability. And I dive deep into different types of adaptability, three types and one Stayer. And then I explain some mechanism of why sometimes it is bad even though, or let me put it this way, even though you have a very advanced technology, you might want to frame your company in a more vaguer way, because there is a benefit of adapting better better by efficient or effectively.
+
+Eze Burts III  36:01  
+Yeah, okay. I definitely agree that you have to adapt to grow. And I like the way that you put those, you know, those those two comparisons there growth versus adaptability. And I'll share, maybe I'll share an example or two, yeah, from startups, and then the but I'm still, still not thinking, I don't know the vague, the vague one is, I'm struggling with it because, and it is a slippery slope. If you're, if you're vague, because you're you may run into investors or people who do have a scientific background, and I think you want to be you want to be specific, but you just want to make this the specific language approachable and more accessible. So I would see, I see,
+
+Angie.H Moon  36:50  
+yeah, to just a side note, the vagueness that word I picked up from the 2025 organization science, which explained that if the founder has a rhetoric capital, like if they speak very well, then being vague attracts investors interest more. So that's like the
+
+Unknown Speaker  37:12  
+Okay, okay, that's
+
+Angie.H Moon  37:14  
+where the word originated. But I appreciate your concern.
+
+Eze Burts III  37:18  
+Yeah, I think it's more more, I think, more avoiding buzzwords, which is technical jargon, but like a lot of people will use, they'll overuse, but buzzwords, and I would also say, You know what? So here's in the startup pitches, well, maybe I'll pause before giving the feedback, because we actually walked through, walked a startup through this very example from you know, how they we needed, we convinced them they needed to pivot and be more adaptable based on some of the feedback they were getting in the market. And we helped them fine tune their pitch so that they could get more funding, and then funding from various sources. So maybe I'll pause there before I give that, give that example and just see what your what are they thought you might have.
+
+Angie.H Moon  38:10  
+Sorry, I didn't understand your question. I like your approach of the what you just suggested.
+
+Eze Burts III  38:17  
+Okay, okay. So, yeah, maybe so if you but did you finish going recapping everything the different modules?
+
+Angie.H Moon  38:25  
+Okay, yes. Do you want me to unshare the screen?
+
+Eze Burts III  38:30  
+I would say, if you could leave it up, because I'm I'd like to walk through the startup example using your your kind of, your methodology or your framework.
+
+Angie.H Moon  38:37  
+Of course, that would be very helpful. Thanks.
+
+Eze Burts III  38:40  
+Yeah, yeah. So there's a company called reorbital. Maybe I'll put it in my chat window and they are,
+
+Angie.H Moon  38:54  
+oh, sorry, let me, you know
+
+Eze Burts III  38:56  
+what, let me actually find their website, because that would be a better example,
+
+Angie.H Moon  39:02  
+I can put it right next.
+
+Eze Burts III  39:06  
+Oh yeah, there it is. That's the one. That's the one. So if you notice on their website, they're saying A S, A T systems, anti satellite systems. This is a complete pivot. So it's like that first example that you showed those startups, the movers. So when I first met reorbital in 2023 they were they had launched based on this concept of creating manufacturing in space. So they had, they actually had designed a prototype of a capsule that was going to be launched in the space and conduct 3d printing and advanced manufacturing for customers in space. And either, either the end user would be on the International Space Station, for example, or they would somehow take that product back down to earth and give it to customers here on Earth. So it's very complex. They they had had some indications that that, that SpaceX, that Blue Origin, and then also Richard Branson's company, I can't remember when his company installed hold on once i
+
+Eze Burts III  40:29  
+Hold on one second as you Give me a second
+
+Angie.H Moon  40:31  
+here, sure take your time. You
+
+Eze Burts III  40:59  
+okay, yep, so thanks for bearing with me, but, but ultimately, this was an advanced manufacturing company and there, and the reason why they're so focused on space is because they have their their CEO and most of their co founders had experience with either space technology or had worked at NASA. One had worked at Boeing, and so what they did was they applied to to the duality quantum computing program, and they were trying to and, you know, going back to this, this term vague that you're using, what they tried to do, they had a spray and pray approach. That's a term that we use where it's like they're going to apply to so many different accelerators and incubators, and they're just going to change their story and be really vague. So it ended up biting them because they ultimately were not so they were accepted into duality with this very vague description of how their product could be applied and how it remotely could be, could achieve like, could help companies who are on the quantum technology or quantum telecommunications path was going to, I guess, how it applied there. But ultimately it didn't apply. And they were exposed in one of their pitches, because they're because of it being so vague and it, and they, in many cases, the people in the quantum community, accuse them of being deceptive. And so first thing we had to do is we had to change their their overall pitch and their approach to just drop any, any type of reference to quantum computing altogether and just explain it for what it was. This is a advanced manufacturing company who wants to do manufacturing in space, and they want to create that capability for when the time comes when you know, clearly it's not here today, but they want to, at some point, be able to have that have that capability and enable it. And I think it was SpaceX that had shown some projections that they were working on this capability and that and so what reorbital did was they were trying to position themselves in the value chain as somebody who could become a supplier to SpaceX and other companies who are competing in that area, and then potentially be acquired by a company that that was developing that capability.
+
+Angie.H Moon  43:22  
+Oh, I see two quick question, sure. First is, is duality focusing on quantum technology only?
+
+Eze Burts III  43:31  
+Yes, duality was focused only on quantum computing technologies and quantum enabling technologies.
+
+Angie.H Moon  43:38  
+I see so this reorbital somehow faked into the duality and then rebranded themselves within there.
+
+Eze Burts III  43:45  
+So what they so yeah, under the definition of quantum enabling technology, they said that they're Yeah, they did. They faked their way into it. So they said that they were going to be quantum enablers. And they had a very specific use case. They even had quantum physicists from NASA give a letter of recommendation and share how this could be relevant to NASA's operations.
+
+Angie.H Moon  44:08  
+You know, as to be very honest, I when I first met the word enabling, I think there is no vaguer word than that.
+
+Eze Burts III  44:18  
+Yeah, yeah. So it is, yeah. It was very fascinating. And it was also a lesson learned, because we we made it very clear in future application cycles and and then also in the interview rounds, this is we Yes. There's an opportunity for quantum enable or quantum enabling technologies, but it's got to be based on quantum physics underpinning
+
+Angie.H Moon  44:47  
+I see, yeah, and the second question is, you mentioned the positioning position as supplier to SpaceX. And do you how do you feel about me defining this adaptability as how much you reposition.
+
+Eze Burts III  45:07  
+I think, I think it is very applicable defining defining it as I think I think of adaptability as pivoting to meet. And so this, this, once again, this goes back to the market pull concept as opposed to technology push. So they were pushing a technology, and ultimately the market was not being receptive. They could not ultimately, SpaceX decided they were going to develop internal capability instead of going externally to a supplier or a third party partner. And then you had a lot of funding dry up. The venture capital funding markets dried up shortly around the 2020 or 2022 and 2023 timeframe. And then another thing that you had was you there, the reason why they ultimately pivoted completely away from in space manufacturing to this anti satellite systems was because this was, it was based on customer discovery and customer pilot. So a customer said, We'll give you 180,000 for a pilot to build to develop this type of capability, as opposed to in space manufacturing. And so that adaptability, they adapted because there was going to be funding and technology development. They were this, this customer was going to going to give them funding and resources to continue developing along the the technology readiness level roadmap
+
+Angie.H Moon  46:43  
+I see, do you agree in that case? Perhaps, like Scott CERN always says you should choose the customer rather than letting customer choose you. So, for instance, reorbittal, the funding from the anti satellite was good. It turned out good, but perhaps it may have been a golden cage in the sense that they could have had better opportunities, but this, having a funding somehow locked them into that application.
+
+Eze Burts III  47:16  
+Yeah, that's that's a tough one. So in the reorbital example, they chose a customer, they chose SpaceX, like that was their top customer. And it didn't work out. It didn't pan out, yeah, yeah. But I do, I do agree with that. Though. I think ultimately you do, ideally, you would choose your own customer, identify all of their pain points. Yeah, I suppose, as opposed to letting sitting back and waiting for a customer to choose
+
+Angie.H Moon  47:42  
+you, yeah, but I am aware that it is very hard to say no to a funding, especially if your original plan didn't work out well, Yep,
+
+Eze Burts III  47:51  
+yeah, okay. And I have so many other examples like this too. In that same cohort of companies, riorbital was with. They were alongside Icarus Quantum. They also pivoted. Well they pivoted, I should say so. This company pivoted its entire technology platform. Now. Icarus pivoted its its market, its addressable market that it was initially targeting. But but this whole, see, this, this, so this marketing and branding that you see right here, defrosting the cryogenic bottleneck of quantum computers, that is, that's an example of the vagueness. So when we're you know the that next concept you were talking about. So what they do is they, they have now. So this, this founder, is a quantum physicist. He's worked in research environments his pretty much his entire career, and he is known for developing or conducting research on quantum dots. And I don't know if you know the MIT professor. Is it monkey? Let me see what his name is, but he's the Nobel laureate for quantum physics. Let me see what his name is. Moongi, something monkey, buendi. Let me see if I can find his name. Oh, he went upstairs.
+
+Angie.H Moon  49:24  
+Yep. Okay, yeah. Is it monkey bowendi?
+
+Eze Burts III  49:30  
+Yes, this that's the one, yep. So he's an MIT faculty, Yep, there we go. Industry faculty member and hit his Nobel Prize was awarded for quantum dots. So the founder of Icarus quantum, his research has been in quantum dots historically. And,
+
+Angie.H Moon  49:52  
+yeah, this was last year, right? Last year? Yes, yeah, okay.
+
+Eze Burts III  49:58  
+And he recently spoke on the panel at the quantum the launch of the quantum initiative at MIT. This was a week and a half ago,
+
+Angie.H Moon  50:05  
+last Monday. How was it?
+
+Eze Burts III  50:06  
+Yeah, it was great. I thought it was really nicely done, and it timed really well. It's at the end of the, you know, this the the international quantum year, the 100th year anniversary, or the of the advent of quantum mechanics. I thought they did a really, really nice job.
+
+Angie.H Moon  50:23  
+What was, was more surprising to you?
+
+Eze Burts III  50:27  
+Most surprising probably, the interconnectivity across the whole institute. So you know how, like in MIT, things are so decentralized? Yeah, they brought it's, it seems like this will. What they're doing is they've identified Dana Friedman as the lead director of the quantum initiative, Q MIT. So it's MIT, I think it's the quantum MIT, quantum initiative, and they're calling it Q MIT. So in addition to her leading that typically, like if they announce somebody's going to lead something like the MIT climate or sustainability initiative, it's still decentralized, but this one, Dana, the President and and the governor of Massachusetts, they all showed a unified front on how this is going To be one, centralized effort. Now the organizations may not be all under one hierarchy, but everybody is going to be in lockstep on how do you move forward with the quantum initiative at MIT? And so they had that was that was very surprising to me.
+
+Angie.H Moon  51:36  
+Thanks for sharing. I wanted to attend, but I didn't have the empty seat, I was on a wait list.
+
+Eze Burts III  51:42  
+Oh yeah, I heard that from a lot of people. Yeah, even some of the quantum researchers to
+
+Angie.H Moon  51:51  
+come back. So like you were explaining the career
+
+Eze Burts III  51:56  
+so Icarus, yeah. So what they've done is they've and initially they were targeting researchers. So like say, if you have a researcher in a lab in mechanical engineering or chemical engineering lab who needed some type of, some type of solution, they were marketing their product to them, but now it looks like they've completely changed. And you saw that rebranding. They're targeting data centers, and they're trying to jump on this wave of companies that have made announcements that they're going to invest billions, maybe hundreds of billions, of dollars, in data centers infrastructure over the next 10 years. So that's and this is also an example of the founder really, really was deep in the weeds on the technical jargon, like he is. He knows that stuff like the back of his hand. But when he started to pitch to potential partners, to investors, they just couldn't comprehend what he was doing. So this is a perfect example of, you know, after going through duality, and I think he went through another accelerator afterwards, pulad III. Money is his name. He's the founder and CEO. He's now able to and it's not speaking more vaguely. He's actually speaking more specific. And he's tackling a very specific challenge, and it is targeting the infrastructure of quantum data centers.
+
+Angie.H Moon  53:22  
+Do you know that company of the founder? You just mentioned
+
+Eze Burts III  53:28  
+that one? He's Icarus. So he's pull out. Is the He's the founder and CEO of this company, Icarus quantum that you're showing Yeah. So if you look at team, he should come up yet.
+
+Angie.H Moon  53:39  
+Pulad, oh, it's impressive. How you memorize all the founders name. It shows your passion.
+
+Eze Burts III  53:45  
+Oh, you know, that's the that's my favorite part. I think you know, because ultimately, startups are going to pivot a lot. So I think it's getting to know the founders, getting to know the team. And it starts there. I think you can have the greatest technology, the greatest scientific discovery, but if you don't have the right team assembled around it makes sense. That's That's why research and scientific discovery sit in the labs.
+
+Angie.H Moon  54:08  
+Yeah, thanks for teaching me something I see on the paper in real life. I always read that, but it's very hard to come by someone who implement or embody that.
+
+Eze Burts III  54:22  
+Yeah, my pleasure, my pleasure. Then in that cohort, I don't know if you have time for one more example or,
+
+Angie.H Moon  54:29  
+of course, but I am mindful of your time as well, and you wanted something to go over as well. So let's be quick, I guess,
+
+Eze Burts III  54:37  
+yeah, yeah, there's one. Let me see. Should I
+
+Angie.H Moon  54:46  
+just to summarize what we have so far, we covered the reorbital and Icarus, and I'm just curious whether you think Icarus is zoom in or zoom out.
+
+Eze Burts III  54:59  
+Case they are a zoom when it when it comes to moving like movers, I think this is, this is definitely, maybe you know what? This is, a reorbital. Is a big mover. So like they have completely shifted essentially everything. They've shifted their product platform, their technology and their addressable market. Icarus stopped short of pivoting their whole technology so they're still they've got the same product platform, the same technology underpinning, but they've just shifted their addressable markets and how they describe,
+
+Angie.H Moon  55:37  
+I see, I see exactly problems. So is it a fair summary that reorbital? They just change the vertical or the industry environment wholesale, whereas it occurs, they became much more vaguer in the sense that the founder is not communicating their technical jargon, but more on a vaguer term,
+
+Eze Burts III  55:58  
+I would definitely say so. Yeah, I would, I would say so, so
+
+Angie.H Moon  56:02  
+this is zoom out and reorbital. I would somewhat put it as moving around or, yep, okay, thanks.
+
+Eze Burts III  56:13  
+There's another one I'm trying to see because they maybe I can describe it.
+
+Angie.H Moon  56:19  
+Yeah, sure. Maybe you might have mentioned zoom in case as well. Like, do you remember, you might have touched slightly?
+
+Eze Burts III  56:27  
+I see, I think, one example of a zoom in so and, and I just want to make sure we're on the same page. So zoom in is really where they're not movers. They've essentially stayed in the in the same lane, stayed in the same space. Is that correct?
+
+Angie.H Moon  56:44  
+So they are starting from a very vague like AI for mobility innovation, but then they realize, oh, this does not work, so I need to be specialized. So like transformer for like AV in San Francisco, robot taxi, something like that.
+
+Eze Burts III  57:03  
+Yeah, I would say, yes. Here's a zoom in example. They're called Chi three photonics. And going to put a I'm going to put a link here, and then also I'm
+
+Unknown Speaker  57:24  
+okay, and then.
+
+Eze Burts III  57:32  
+So I think there should be a link to their website. I probably won't be able to get it quickly, but the founder's name is, is Johan yestan. So Dr yestan is from France. He's a French citizen. And then he moved to Canada and did some research in in the Montreal area for some time. And then he co founded a company with a gentleman named pIot who was working at one of the universities in not too far from Montreal. And so they, they launched chi three photonics, and it's
+
+Angie.H Moon  58:10  
+on the screen, okay,
+
+Eze Burts III  58:11  
+perfect, perfect, yep. So they, they have,
+
+Angie.H Moon  58:15  
+like, are these part of their solution? I don't know what each of the three is, let's see,
+
+Eze Burts III  58:24  
+this is, could you scroll up? Is that on the is that technology or products that you clicked on? Oh, this was, this is Suntech. So Suntech is an incubator. So that's, yeah, so you might want to go directly to their website, maybe even their LinkedIn.
+
+Angie.H Moon  58:46  
+I am aware of creative destruction lab, so trajectory for one startup to be funded by many different like sand tech and also creative destruction lab.
+
+Eze Burts III  59:00  
+Yep, they've been through, I think it's three or four accelerators or incubators, and before they came to duality, they were in Suntech. And,
+
+Angie.H Moon  59:16  
+yeah, I think they don't have a web page.
+
+Eze Burts III  59:19  
+What about on if you click on the LinkedIn profile, and then if you go to, if you go there to there, if you click about, it should be a website about.
+
+Angie.H Moon  59:32  
+It should
+
+Eze Burts III  59:33  
+be a web link. Yeah, right there, yeah. Oh, cool. There. It is. Perfect. Okay, yes. So this is a perfect example of how they were very broad and vague. And I think because Dr yestan, he realized this in his scientific journey, he realized that when he was talking to people who were lay persons or with a non technical background, he needed to adjust his communication style and how he speaks and so and I think it was a realization he came to either prior to Suntech, or when he was in in the Suntech, that ecosystem in Montreal, when he came to duality, he he was very self aware. He said, You know, if I'm going to continue to be CEO, after we continue scaling this company, we continue growing and we obtain funding, I need to adjust my leadership style. But he started. But one of the realizations that he had was he and I was looking to see on the internet if I could disclose this company, but I probably can't, because it's a it's a proprietary contract. But he he secured a customer pilot with a fortune 100 company, technology company, and it was initially a six month pilot, paid pilot, where they were going to develop or build upon their current product and deliver that to the customer. And my understanding is that was very successful. The company ended up purchasing this product, and they're also continue to purchase, like several other prototypes. I haven't talked with him in about a year, but my understanding the last time we spoke was that that was a successful pilot, and that they were able to deliver, not only to that fortune 100 company, but others as well. But what what you'll see is what he did on his website and with telling the story is he is gone. He has become very, very much more specific and and going into the modular, high performance hardware. So what he's saying is that, I think this would be a zoom in example, where he went from being very vague to be very, very specific and deciding that they're going to market to or target companies that know exactly what they need in this quantum networking, quantum telecommunication space. And so they're very specifically. What they're trying to do is so if you think about who is your cell phone provider, maybe like AT and T or Verizon, or whoever it may be, those big telecommunication companies have fiber networks all over the all over the world, all over the country and so for but but in order for quantum telecommunications to come to fruition, those companies, big telecommunications companies, are going to need to revamp all of their fiber networks, all the technology to enable quantum encrypted communication. And his company is bridging the gap. It's a key enabler to making that transition to quantum telecommunication networks.
+
+Angie.H Moon  1:02:48  
+What was, could you remind me, what was his original value proposition before targeting this quantum telecommunication network companies?
+
+Eze Burts III  1:02:56  
+I don't remember what the exact value proposition was, but I think it was, he was going to be, he was going to be developing hardware that would, these hard, these, these different modules that would, that would be installed. But now he's, he's, it looks like they're talking about, I think, on one page, that we're talking about both hardware and software enabling. Let me see,
+
+Angie.H Moon  1:03:31  
+yeah, because I sense that all the three examples we are covering, the technology rarely changes, but it's more like market side, zoom in and zoom out, or complete renewal,
+
+Eze Burts III  1:03:46  
+except for the reorbital I think the technology changed dramatically.
+
+Angie.H Moon  1:03:50  
+Oh, I see I thought it was advanced manufacturing from start to end.
+
+Eze Burts III  1:03:55  
+No, they were. They were advanced manufacturing up front. So enabling advanced manufacturing as a service. So if you think about if you needed to manufacture some type of specialized widget or some type of product, they would, they would provide that capability to you, deliver it to you. Now they're completely pivoted away from any type of advanced manufacturing it is, or manufacturing as a service. They're now partnering with with, and I'm not sure you'd have to look on the website to see what what's publicly disclosed, but they're working with customers to develop anti satellite capabilities now. So that is a that's an example of a complete shift of everything that they were doing, complete pivot away and they specifically adapted to, to the market, to the market and consumer needs that they were experiencing after doing their customer discovery.
+
+Angie.H Moon  1:05:00  
+Makes sense. Makes sense, yeah, I lacked knowledge in this field to know the difference between asat and the advanced manufacturing.
+
+Eze Burts III  1:05:10  
+Okay, yeah, okay, yeah. So they had nothing to do with satellites before it was all Yeah, it was all manufacturing, taking taking a advanced manufacturing capability from Earth into space.
+
+Angie.H Moon  1:05:23  
+That was their original valid proposition, right?
+
+Eze Burts III  1:05:31  
+Yep, that was the original idea, yeah.
+
+Angie.H Moon  1:05:34  
+Like the what I did understand was you said they had nothing to do with space from their start, but I thought their position was original position was SpaceX supplier. So I was a little
+
+Eze Burts III  1:05:47  
+so SpaceX supplier. So the so SpaceX, what they're doing is they, they're trying to become the go to provider of anything like when it comes to transporting humans into space, transporting product into space, and also taking on any kind of service or maintenance role for the International Space Station. So they've, they're trying to eclipse Boeing and Lockheed Martin, Northrop Grumman, and also other companies in China and Russia for that space and so in addition to that. So if, for example, if you need to enable somebody to stay on the International Space Station for up to a year at a time, then you would need to manufacture products for them, you know, tools or anything like, say, if something goes wrong on the space station, how do you get something to them quickly? It probably takes six months for you to launch, to schedule a launch to take a new a replacement product to them. So what they were doing is they were they wanted to become a supplier to SpaceX and provide a capability where if something was broken or went wrong or they need some kind of new part at the space station, they would be a provider. They would have an in space technology or in space manufacturing capability, with companies like SpaceX or others who are competing with them,
+
+Angie.H Moon  1:07:07  
+competing with them, being space access competitors,
+
+Eze Burts III  1:07:11  
+yes, yes. So and other competitors are like Blue Origin, I can't remember Richard Branson's. It's called Virgin something, Virgin Galactic. I think he decided that he would, he would discontinue that that company, though, but Virgin Galactic was a competitor at the time Boeing competes
+
+Angie.H Moon  1:07:33  
+galactic, okay, okay, that makes sense. Yeah.
+
+Angie.H Moon  1:07:43  
+They still do have a website, but maybe they are not maintaining it. Okay? Thank you very much.
+
+Eze Burts III  1:07:55  
+Eze, sure, sure, yep. Thank you. Do you mind if I send you the thesis, the thesis outline, and if you wouldn't mind maybe giving some giving some initial thoughts and feedback about how sure so
+
+Angie.H Moon  1:08:09  
+you would prefer offline rather than online,
+
+Eze Burts III  1:08:14  
+what works best for you, what's most convenient
+
+Angie.H Moon  1:08:17  
+for you. How long do you think it might take for maybe,
+
+Eze Burts III  1:08:21  
+maybe 15 minutes.
+
+Angie.H Moon  1:08:23  
+Yeah, I think online is better. Okay, okay, let me get pull it up. Sure. This is really productive. I always enjoy chatting with you.
+
+Eze Burts III  1:08:38  
+Likewise, likewise, yep,
+
+Angie.H Moon  1:08:42  
+I think we have complimentary skills
+
+Eze Burts III  1:08:46  
+for sure. Yeah, you definitely helped me. You You know, this is where, you know, I really like the way you're, you're, you've laid out your your methodology, your framework for your thesis, because I haven't gotten to that point yet. So I need to move from from this to that, and you'll see this is just very it's very high level.
+
+Angie.H Moon  1:09:11  
+It's okay. I will tell the fun story while you're preparing your share. So I like music a lot. Maybe you might have seen the viola here. Yes, one of my friend from NEC had a graduation recital, and the song she played was fantasy, 934, by her. So I thought, like long story short, I literally benchmark the structure of the fantasy and use that to structure my thesis. So it has four movements and it has 113 lines. So that's my plan.
+
+Eze Burts III  1:10:04  
+Wow, wow, that's that definitely, definitely is interesting. I'm probably you know what I'm going to share this share or, okay, here we go. Yeah, I'll share from from here.
+
+Angie.H Moon  1:10:28  
+Or if sharing is not comfortable, you can send me your thesis, and then I can share it in my computer. If that,
+
+Eze Burts III  1:10:40  
+yes, you have the rainbow colors. Is it showing on your on your end? Yeah, okay, all right, so let me see if I can turn it this way, and then zoom in. So proposed thesis title, so this is I want to figure out, how do we accelerate taking technologies from lab to market. So I've proposed this as bridging the gap between the lab and market, and I'm going to design a commercialization framework and show how we leverage innovation ecosystems to accelerate deep tech commercialization. And so there are several challenges I haven't really, I haven't really narrowed in, oh, not much game. What's wrong one second. Take your time.
+
+Eze Burts III  1:11:57  
+Okay, is it? Is it back up? I
+
+Eze Burts III  1:12:07  
+Angie, is it? Is it showing now?
+
+Angie.H Moon  1:12:10  
+Yeah, I can see it. Okay,
+
+Eze Burts III  1:12:12  
+okay, yeah. So what I'd like to do is I want to lay out that there are, there are some, some barriers to to commercialization, and they're both structural and ecosystem barriers. So I want to identify what are all the obstacles to commercialization. And ultimately, what that does is it causes technology to sit on the shelf in the labs. And so I want to examine those challenges. And I think artificial intelligence, nanotech and and quantum computing are some of the, some of the areas where I can, at least I I've had some experience in the past, and I can, and I can pull from, from those kind of, those, those real life use cases. And then also MIT has some, some very, some great expertise where I can, I can collaborate with researchers in labs to gather more information about their obstacles. So that's the thought here. But my, my goal, ultimately, is to identify, what are all the barriers, or what are a subset of barriers that maybe not, I don't want to do an exhaustive gathering of every single barrier, but what are the key barriers, and then develop some type of systems based framework that accelerates this, this transition and and and there's and I just listed a few. So some of the obstacles, I think the last time we met, I told you about team dynamics, but then there's also others, like unclear intellectual property, ownership, fragmented, stakeholder networks, incentives being misaligned. Maybe there's a lot of complexity in the in regulatory area. In fact, reorbital experienced a lot of complexity from a regulatory standpoint, and and then evaluate strategies to address them through innovation ecosystems and so, and I'll give you an example I think you're familiar with with let's see with Phil button and Fiona Murray's, are you familiar with with their research? Okay, yeah. So I'm going to take their innovation ecosystems framework and and show how do we map like once we address structural barriers, then there's ecosystem barriers. And I'm going to use their framework to show how a startup can once they identify and overcome any structural barriers there might be to taking technology or science from lab to market, then how do they effectively navigate an ecosystem to to achieve success? And so that's, that's initial, that's the initial thoughts that I have about it. But, but wanted to, wanted to see what is, and obviously this is just, you know, this is just a couple paragraphs of what I'm thinking about, but I would, if you were in my shoes, what would be some of the next steps you'd take?
+
+Angie.H Moon  1:15:33  
+So hold on. I'm just, first of all, I think I would go to chat GPT and then ask for some opinions, able to open the Hold on. I'll put it in the WhatsApp. What I have asked, Oh, I think so this may not be the optimal one, but usually I think when I am making a criteria, it's better to ask mutually exclusive and completely exhaustive criteria. And second, if each of the criteria maps to certain mathematical structure, because it gives more structure reasons. So that's, I think, perhaps, why the answer includes some, like, weird categories. But I think the barrier, misaligned incentive, fragmented networks, unclear IP ownership and regulatory complexity, like, how does the fourth sound to you.
+
+Eze Burts III  1:16:43  
+I think that's those sound. It's, it's definitely the I don't, I wouldn't say that those are the, the most prevalent, but those are the ones that, for sure, I think they're, they're clear barriers.
+
+Angie.H Moon  1:16:55  
+Yeah, I think it's just my experience and opinion. Having more than five is too much. And like, if I were in your shoes, I would choose, like, first order four, and then deep, much deeper into each of them. Okay, and making a like, full story of how each of the things interact with with each other. So for instance, in the first one node attributes that's misaligned, and Fiona Marais and Scott Stearns has a star shape ecosystem stakeholders, where The five players are entrepreneurs and venture capital and corporate and the government and the university. So perhaps you can dig deeper into how those five players incentives are misaligned. By the way, I will share you the transcript of today's meeting. So don't worry about Thank
+
+Eze Burts III  1:18:01  
+you. Thank you, of course,
+
+Angie.H Moon  1:18:05  
+and fragmented networks is all five of them should collaborate together, but perhaps they are siloed and unclear. IP ownership, maybe you might connect with like when corporates and the entrepreneur collaborate. It's very unclear who gets the ownership and who should be the solution provider. So perhaps that can help and regulatory complexity that's more on a government side. So if I were using this framework that I shared with you, I would first focus on first one and second one defining for the actors and what are the interactions? So here interactions are the edges, and then IP ownership and regulatory are some function of those nodes and the edges.
+
+Eze Burts III  1:18:53  
+So okay, and on, on these two, like what or which of these, which of these categories of barriers, really, you know based on your experience in your research, which ones come up most
+
+Angie.H Moon  1:19:10  
+often? That's a good question.
+
+Angie.H Moon  1:19:20  
+Really depends on which industry you're in. Like in transportation, regulatory complexity is huge, especially for AV, but I would it's not surprising that in like biotech, IP ownership is huge, and I don't know, like some computing, what do you think is most severe?
+
+Eze Burts III  1:19:51  
+Okay, and then also, what was the exact prompt that you gave the LLM, the chat GPT app? Because I I need to learn how to improve my prompting ability so I can, so I can generate something like this very quickly. It usually takes me several props.
+
+Angie.H Moon  1:20:09  
+Yeah, that's a good question. I will share the I just shared a prompt. So if you can get access to it, please let me know.
+
+Eze Burts III  1:20:18  
+Let me see I'm gonna click on it now. Sure
+
+Eze Burts III  1:20:26  
+oh, I need to download. So this is called Poe, yeah, okay,
+
+Angie.H Moon  1:20:31  
+okay, I might need to leave, but thank you very much.
+
+Eze Burts III  1:20:37  
+Yeah, thank you. Thank you very much. And yeah, I appreciate, your time and your insights. Sure. Looking forward to continuing the dialog same year. Okay, all right, we'll talk soon.

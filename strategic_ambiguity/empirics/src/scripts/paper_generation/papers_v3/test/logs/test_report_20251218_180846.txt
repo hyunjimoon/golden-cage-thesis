@@ -1,0 +1,45 @@
+Running data integrity tests...
+================================================================================
+DATA VALIDATION REPORT
+================================================================================
+Timestamp: 2025-12-18 18:09:00
+Data: thesis_panel_v3.nc
+
+CRITICAL: 0 FAILED / 15 PASSED
+ERROR: 0 FAILED / 7 PASSED
+WARNING: 0 FLAGGED / 4 PASSED
+INFO: 0 FLAGGED / 0 PASSED
+
+--------------------------------------------------------------------------------
+DETAILED RESULTS
+--------------------------------------------------------------------------------
+[PASS] T1.1 Company count consistency: Panel N matches source within 1%
+[PASS] T1.2 E values match first_financing_size: Max difference: 0.0
+[PASS] T1.3 V_0 values match vagueness source: Max difference: 0.0
+[PASS] T2.1 D = V_T - V_0: Formula verification
+[PASS] T2.2 A = |D|: Formula verification
+[PASS] T2.3 G = total_raised / E: Formula verification (with 1% tolerance for edge cases)
+[PASS] T2.4 L = "Later Stage VC" indicator: Match rate: 100.00%
+[PASS] T3.1 Stayer classification (A < 5): All stayers have A < 5
+[PASS] T3.2 Zoom-in classification: All zoom_in have A >= 5 AND D < -10
+[PASS] T3.3 Zoom-out classification: All zoom_out have A >= 5 AND D > 10
+[PASS] T3.4 Horizontal classification: All horizontal have A >= 5 AND -10 <= D <= 10 (excl. 134 NaN)
+[PASS] T3.5 Partition completeness: Sum of type counts equals N
+[PASS] T4.1 N after E filter: N within 500 of expected
+[PASS] T4.2 L base rate: L rate within 0.5pp of expected
+[PASS] T4.3 ρ(G, E): Correlation within tolerance
+[PASS] T4.4 ρ(G, A): Correlation within tolerance
+[PASS] T4.5 ρ(A, E): Correlation within tolerance
+[PASS] T5.1 V_0 range [0, 100]: Range: [7.5, 95.7]
+[PASS] T5.2 V_T range [0, 100]: Range: [12.8, 95.7]
+[PASS] T5.5 G positivity: Negative G values: 0
+[PASS] T5.6 L binary: Unique L values: {0, 1}
+[PASS] T6.1 No duplicate company_ids: Unique: 180994, Total: 180994
+[PASS] T8.4 No infinite G values: Infinite values: 0
+[PASS] T10.1 Mover success rate: Rate within 1.0pp
+[PASS] T10.2 Stayer success rate: Rate within 1.0pp
+[PASS] T10.4 Stayer proportion: Proportion within 2.0pp
+
+================================================================================
+OVERALL STATUS: PASS
+================================================================================
