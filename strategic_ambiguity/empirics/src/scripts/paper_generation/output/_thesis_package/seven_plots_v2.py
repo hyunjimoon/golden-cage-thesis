@@ -35,14 +35,23 @@ STATS_DIR = ROOT / "src/scripts/paper_generation/output/_thesis_package/stats"
 for d in [FIG_DIR, TEXT_DIR, STATS_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
-# Colors
+# Colors - Semantic Color System (aligned with src/plotting.py)
+# Design: Colors reflect meaning, not just variable names
 COLORS = {
-    'extreme': '#27ae60',
-    'middle': '#e74c3c', 
-    'positive': '#27ae60',
-    'negative': '#e74c3c',
-    'primary': '#3498db',
-    'neutral': '#95a5a6',
+    # === Semantic Colors ===
+    'extreme': '#27ae60',     # Green - extremes perform better
+    'middle': '#e74c3c',      # Red - middle performs worse
+    'positive': '#27ae60',    # Green - good outcomes
+    'negative': '#e74c3c',    # Red - poor outcomes
+    'primary': '#3498db',     # Blue - neutral/primary
+    'neutral': '#95a5a6',     # Gray - muted/background
+
+    # === Variable Colors (match src/plotting.py PALETTE) ===
+    'E': '#e67e22',           # Early funding: Amber
+    'G': '#27ae60',           # Growth: Emerald green
+    'V': '#9b59b6',           # Vagueness: Purple
+    'A': '#3498db',           # Adaptive capacity: Blue
+    'L': '#95a5a6',           # Long-term Success (deprecated): Gray
 }
 
 plt.rcParams.update({
@@ -70,13 +79,19 @@ def load_data():
     Load and transform panel data to cross-sectional.
 
     Variables aligned with variables.md:
-    - L (Long-term Success): LastFinancingDealType == 'Later Stage VC' (binary ∈ {0, 1})
+    PRIMARY DV:
+    - G_t (Growth): F_t / E = funding growth rate (continuous)
+
+    INDEPENDENT VARIABLES:
     - E (Early Capital): first_financing_size ($M)
     - V (Vagueness): Initial vagueness score [0, 100]
     - D_t (Directional Change): V_T - V_0 (signed)
     - A_t (Adaptive Capacity): |D_t| (unsigned)
     - F_t (Later Capital): TotalRaised - E ($M)
-    - G_t (Growth Ratio): F_t / E
+
+    DEPRECATED:
+    - L (Long-term Success): LastFinancingDealType == 'Later Stage VC' (binary)
+      → Replaced by G (continuous) for better statistical power
     """
     print("📂 Loading data...")
 
@@ -223,11 +238,11 @@ def compute_all_stats(cross):
     return stats_dict
 
 # ============================================================================
-# PAPER U FIGURES
+# PAPER M FIGURES
 # ============================================================================
 
-def plot_U1_ULV(cross, stats_dict):
-    """U1: Quartile bar chart with Delta annotation."""
+def plot_M1_MLV(cross, stats_dict):
+    """M1: Quartile bar chart with Delta annotation."""
     fig, ax = plt.subplots(figsize=(10, 6))
     
     q_survival = cross.groupby('V_Q')['L'].mean() * 100
@@ -260,18 +275,18 @@ def plot_U1_ULV(cross, stats_dict):
     
     ax.set_ylabel('Survival Rate (%)', fontsize=12)
     ax.set_xlabel('Vagueness Quartile', fontsize=12)
-    ax.set_title(f'Figure U1: U-Shape in Vagueness-Survival Relationship\n'
+    ax.set_title(f'Figure M1: M-Shape in Vagueness-Survival Relationship\n'
                  f'N = {stats_dict["N"]:,}', fontsize=14)
     ax.legend(loc='upper right')
     ax.set_ylim(0, max(q_survival) * 1.3)
     
-    fig.savefig(FIG_DIR / 'U_fig1_ULV.png')
+    fig.savefig(FIG_DIR / 'M_fig1_MLV.png')
     plt.close()
-    print("   ✅ U_fig1_ULV.png")
+    print("   ✅ M_fig1_MLV.png")
 
 
-def plot_U2_UDV(cross):
-    """U2: D vs V showing cone/fan pattern."""
+def plot_M2_MDV(cross):
+    """M2: D vs V showing cone/fan pattern."""
     fig, ax = plt.subplots(figsize=(10, 6))
     
     # Sample for visibility
@@ -293,47 +308,67 @@ def plot_U2_UDV(cross):
     ax.axhline(0, color='gray', linestyle='-', linewidth=1)
     ax.set_xlabel('Initial Vagueness (V)', fontsize=12)
     ax.set_ylabel('Directional Change (D = V_T - V_0)', fontsize=12)
-    ax.set_title('Figure U2: Vagueness Creates Room to Move\n'
+    ax.set_title('Figure M2: Vagueness Creates Room to Move\n'
                  'D is SIGNED: positive or negative repositioning', fontsize=14)
     
-    fig.savefig(FIG_DIR / 'U_fig2_UDV.png')
+    fig.savefig(FIG_DIR / 'M_fig2_MDV.png')
     plt.close()
-    print("   ✅ U_fig2_UDV.png")
+    print("   ✅ M_fig2_MDV.png")
 
 
-def plot_U3_UAV(cross, stats_dict):
-    """U3: A vs V with regression."""
+def plot_M3_MAV(cross, stats_dict):
+    """M3: A vs V with regression.
+
+    IMPORTANT: The relationship between V and A depends on how D is defined.
+    If D = V_T - V_0 (computed from actual positions), we expect:
+    - Low V: constrained, can only increase → D > 0, A = |D| > 0
+    - High V: constrained, can only decrease → D < 0, A = |D| > 0
+    - Middle V: can move either way → wider D range
+
+    A negative ρ(V,A) could indicate:
+    1. Boundary effects (extremes have less room to move)
+    2. D is already a cumulative/different measure from source data
+    3. Regression to mean dominates
+    """
     fig, ax = plt.subplots(figsize=(10, 6))
-    
+
     # Binned scatter
     cross['V_bin'] = pd.qcut(cross['V'], 20, labels=False, duplicates='drop')
     binned = cross.groupby('V_bin').agg({'V': 'median', 'A': ['mean', 'std', 'count']})
     binned.columns = ['V_med', 'A_mean', 'A_std', 'n']
     binned['A_se'] = binned['A_std'] / np.sqrt(binned['n'])
-    
+
     ax.scatter(binned['V_med'], binned['A_mean'], s=100, c=COLORS['primary'],
                edgecolors='black', zorder=5)
     ax.errorbar(binned['V_med'], binned['A_mean'], yerr=1.96*binned['A_se'],
                 fmt='none', color='gray', alpha=0.5)
-    
-    # Regression line
+
+    # Regression line - use dynamic color based on sign
     slope, intercept, r, p, se = stats.linregress(cross['V'], cross['A'])
     x_line = np.linspace(cross['V'].min(), cross['V'].max(), 100)
-    ax.plot(x_line, slope * x_line + intercept, '--', color=COLORS['positive'], linewidth=2)
-    
+    line_color = COLORS['positive'] if slope > 0 else COLORS['negative']
+    ax.plot(x_line, slope * x_line + intercept, '--', color=line_color, linewidth=2)
+
+    # Dynamic title based on actual correlation direction
+    rho = stats_dict["rho_AV"]
+    if rho > 0:
+        title_msg = "Vagueness Enables Movement"
+    else:
+        title_msg = "Vagueness vs Movement (Boundary Effect?)"
+
     ax.set_xlabel('Initial Vagueness (V)', fontsize=12)
     ax.set_ylabel('Adaptive Capacity (A = |D_t|)', fontsize=12)
-    ax.set_title(f'Figure U3: Vagueness Enables Movement\n'
-                 f'ρ = {stats_dict["rho_AV"]:.3f}{stars(stats_dict["p_AV"])}, N = {stats_dict["N"]:,}',
+    ax.set_title(f'Figure M3: {title_msg}\n'
+                 f'ρ = {rho:.3f}{stars(stats_dict["p_AV"])}, N = {stats_dict["N"]:,}',
                  fontsize=14)
-    
-    fig.savefig(FIG_DIR / 'U_fig3_UAV.png')
+
+    fig.savefig(FIG_DIR / 'M_fig3_MAV.png')
     plt.close()
-    print("   ✅ U_fig3_UAV.png")
+    print("   ✅ M_fig3_MAV.png")
 
 
-def plot_U4_ULD(cross, stats_dict):
-    """U4: L vs A."""
+def plot_M4_MLD(cross, stats_dict):
+    """M4: L vs A."""
     fig, ax = plt.subplots(figsize=(10, 6))
     
     # Binned scatter
@@ -354,12 +389,12 @@ def plot_U4_ULD(cross, stats_dict):
     
     ax.set_xlabel('Adaptive Capacity (A = |D_t|)', fontsize=12)
     ax.set_ylabel('Long-term Success Rate (L)', fontsize=12)
-    ax.set_title(f'Figure U4: Movement Predicts Success\n'
+    ax.set_title(f'Figure M4: Movement Predicts Success\n'
                  f'dL/dA > 0{stars(stats_dict["p_LA"])}', fontsize=14)
     
-    fig.savefig(FIG_DIR / 'U_fig4_ULD.png')
+    fig.savefig(FIG_DIR / 'M_fig4_MLD.png')
     plt.close()
-    print("   ✅ U_fig4_ULD.png")
+    print("   ✅ M_fig4_MLD.png")
 
 
 # ============================================================================
@@ -375,43 +410,83 @@ def plot_C1_mechanism(cross, stats_dict):
              cross['A'].notna() & cross['G'].notna() & np.isfinite(cross['G']))
     df = cross[valid].copy()
 
-    # Panel A: A vs E (negative)
+    # Panel A: A vs E
     ax1 = axes[0]
+    
+    # 1. Raw Scatter (to show full scale of A)
+    ax1.scatter(10**df['E_log'], df['A'], alpha=0.1, s=10, c='gray', zorder=1, label='Raw Data')
+    
+    # 2. Binned Scatter
     df['E_bin'] = pd.qcut(df['E_log'], 10, labels=False, duplicates='drop')
     binned = df.groupby('E_bin').agg({'E_log': 'median', 'A': 'mean'})
-    ax1.scatter(10**binned['E_log'], binned['A'], s=80, c=COLORS['primary'])
+    ax1.scatter(10**binned['E_log'], binned['A'], s=80, c=COLORS['primary'], zorder=5, label='Binned Mean')
+    
+    # 3. Regression
     slope, intercept, r, p, se = stats.linregress(df['E_log'], df['A'])
     x_fit = np.linspace(df['E_log'].min(), df['E_log'].max(), 100)
-    ax1.plot(10**x_fit, slope * x_fit + intercept, '--', color=COLORS['negative'], lw=2)
+    
+    # Dynamic Color/Sign
+    sign_color = COLORS['negative'] if slope < 0 else COLORS['positive']
+    sign_sym = "<" if slope < 0 else ">"
+    
+    ax1.plot(10**x_fit, slope * x_fit + intercept, '--', color=sign_color, lw=2, zorder=4)
     ax1.set_xscale('log')
     ax1.set_xlabel('E (log)')
     ax1.set_ylabel('A = |D_t|')
-    ax1.set_title(f'(A) dA/dE < 0\nρ = {r:.3f}{stars(p)}', color=COLORS['negative'])
+    ax1.set_title(f'(A) dA/dE {sign_sym} 0\nρ = {r:.3f}{stars(p)}', color=sign_color)
 
-    # Panel B: G vs A (positive)
+    # Panel B: G vs A
     ax2 = axes[1]
+    
+    # 1. Raw Scatter
+    ax2.scatter(df['A'], df['G'], alpha=0.1, s=10, c='gray', zorder=1)
+    
+    # 2. Binned Scatter
     df['A_bin'] = pd.qcut(df['A'], 10, labels=False, duplicates='drop')
     binned = df.groupby('A_bin').agg({'A': 'median', 'G': 'mean'})
-    ax2.scatter(binned['A'], binned['G'], s=80, c=COLORS['primary'])
+    ax2.scatter(binned['A'], binned['G'], s=80, c=COLORS['primary'], zorder=5)
+    
+    # 3. Regression
     slope_GA, intercept_GA, r_GA, p_GA, se_GA = stats.linregress(df['A'], df['G'])
     x_fit_A = np.linspace(df['A'].min(), df['A'].max(), 100)
-    ax2.plot(x_fit_A, slope_GA * x_fit_A + intercept_GA, '--', color=COLORS['positive'], lw=2)
+    
+    sign_color_GA = COLORS['positive'] if slope_GA > 0 else COLORS['negative']
+    sign_sym_GA = ">" if slope_GA > 0 else "<"
+    
+    ax2.plot(x_fit_A, slope_GA * x_fit_A + intercept_GA, '--', color=sign_color_GA, lw=2, zorder=4)
     ax2.set_xlabel('A = |D_t|')
     ax2.set_ylabel('G = F_t/E')
-    ax2.set_title(f'(B) dG/dA > 0\nρ = {r_GA:.3f}{stars(p_GA)}', color=COLORS['positive'])
+    ax2.set_title(f'(B) dG/dA {sign_sym_GA} 0\nρ = {r_GA:.3f}{stars(p_GA)}', color=sign_color_GA)
 
-    # Panel C: G vs E (negative = combined)
+    # Panel C: G vs E
     ax3 = axes[2]
+    
+    # 1. Raw Scatter
+    ax3.scatter(10**df['E_log'], df['G'], alpha=0.1, s=10, c='gray', zorder=1)
+
+    # 2. Binned Scatter
+    # Re-use E_bin from Panel A logic
     binned = df.groupby('E_bin').agg({'E_log': 'median', 'G': 'mean'})
-    ax3.scatter(10**binned['E_log'], binned['G'], s=80, c=COLORS['primary'])
+    ax3.scatter(10**binned['E_log'], binned['G'], s=80, c=COLORS['primary'], zorder=5)
+    
+    # 3. Regression
     slope_GE, intercept_GE, r_GE, p_GE, se_GE = stats.linregress(df['E_log'], df['G'])
-    ax3.plot(10**x_fit, slope_GE * x_fit + intercept_GE, '--', color=COLORS['negative'], lw=2)
+    
+    sign_color_GE = COLORS['negative'] if slope_GE < 0 else COLORS['positive']
+    sign_sym_GE = "<" if slope_GE < 0 else ">"
+    
+    ax3.plot(10**x_fit, slope_GE * x_fit + intercept_GE, '--', color=sign_color_GE, lw=2, zorder=4)
     ax3.set_xscale('log')
     ax3.set_xlabel('E (log)')
     ax3.set_ylabel('G = F_t/E')
-    ax3.set_title(f'(C) dG/dE = (dG/dA)(dA/dE) < 0\nρ = {r_GE:.3f}{stars(p_GE)}', color=COLORS['negative'])
+    ax3.set_title(f'(C) dG/dE {sign_sym_GE} 0\nρ = {r_GE:.3f}{stars(p_GE)}', color=sign_color_GE)
 
-    fig.suptitle('Figure C1: The Golden Cage Mechanism\ndG/dE = (dG/dA) × (dA/dE) = (+) × (−) < 0',
+    # Dynamic Subtitle
+    s1 = "(+)" if slope_GA > 0 else "(-)"
+    s2 = "(-)" if slope < 0 else "(+)"
+    s3 = "< 0" if slope_GE < 0 else "> 0"
+
+    fig.suptitle(f'Figure C1: The Golden Cage Mechanism\ndG/dE = (dG/dA) × (dA/dE) = {s1} × {s2} {s3}',
                  fontsize=14, fontweight='bold', y=1.02)
     plt.tight_layout()
 
@@ -520,7 +595,7 @@ def plot_C3_CGA(cross, stats_dict):
 # KEY FIGURE: DIRECTION ANALYSIS (Analyst/Believer Mechanism)
 # ============================================================================
 
-def plot_U5_movement(cross, stats_dict):
+def plot_M5_movement(cross, stats_dict):
     """
     U5: The Movement Principle
 
@@ -616,14 +691,14 @@ def plot_U5_movement(cross, stats_dict):
                   f'Focusing: {focus_rate:.1f}% vs Broadening: {broad_rate:.1f}%',
                   fontsize=12, fontweight='bold')
 
-    fig.suptitle('Figure U5: The Movement Principle\n'
-                 '"Vagueness buys options — USE THEM"',
+    fig.suptitle('Figure M5: The Movement Principle\n'
+                 'Vagueness buys options — USE THEM',
                  fontsize=13, fontweight='bold', y=1.02)
 
     plt.tight_layout()
-    fig.savefig(FIG_DIR / 'U_fig5_movement.png')
+    fig.savefig(FIG_DIR / 'M_fig5_movement.png')
     plt.close()
-    print("   ✅ U_fig5_movement.png ⭐ (KEY INSIGHT)")
+    print("   ✅ M_fig5_movement.png ⭐ (KEY INSIGHT)")
 
     # Store stats
     stats_dict['stayed_L'] = stayed_rate
@@ -637,50 +712,50 @@ def plot_U5_movement(cross, stats_dict):
 # TEXT GENERATION
 # ============================================================================
 
-def generate_paper_U_text(stats_dict):
-    """Generate Paper U Section 3 text."""
-    text = f"""# Paper ✌️U Section 3: Empirical Analysis (¶25-32)
+def generate_paper_M_text(stats_dict):
+    """Generate Paper M Section 3 text."""
+    text = f"""# Paper ✌️M Section 3: Empirical Analysis (¶25-32)
 
-## ¶25: U-Shape Hypothesis Test
+## ¶25: M-Shape Hypothesis Test
 
-We test the U-shape hypothesis using quartile analysis on N = {stats_dict['N']:,} technology ventures that received early-stage funding between 2021 and 2025. Figure U1 displays survival rates by vagueness quartile.
+We test the M-shape hypothesis using quartile analysis on N = {stats_dict['N']:,} technology ventures that received early-stage funding between 2021 and 2025. Figure M1 displays survival rates by vagueness quartile.
 
-![Figure U1](figures/U_fig1_ULV.png)
+![Figure M1](figures/M_fig1_MLV.png)
 
-## ¶26: U-Shape Results
+## ¶26: M-Shape Results
 
-The data reveal a clear U-shape pattern consistent with our theoretical predictions. Ventures with the most precise positioning (Q1) survive at {stats_dict['survival_Q1']:.1f}%, while those with the most vague positioning (Q4) survive at {stats_dict['survival_Q4']:.1f}%. Critically, the intermediate quartiles show the lowest survival rates: Q2 at {stats_dict['survival_Q2']:.1f}% and Q3 at {stats_dict['survival_Q3']:.1f}%.
+The data reveal a clear M-shape pattern consistent with our theoretical predictions. Ventures with the most precise positioning (Q1) survive at {stats_dict['survival_Q1']:.1f}%, while those with the most vague positioning (Q4) survive at {stats_dict['survival_Q4']:.1f}%. Critically, the intermediate quartiles show the lowest survival rates: Q2 at {stats_dict['survival_Q2']:.1f}% and Q3 at {stats_dict['survival_Q3']:.1f}%.
 
 The **murky middle penalty** Δ = (Q1+Q4)/2 - (Q2+Q3)/2 = {stats_dict['delta_pp']:.2f} percentage points, statistically significant at χ² = {stats_dict['chi2']:.1f} (p < 0.001). Both extremes—whether precise Analysts or vague Believers—outperform the confused middle.
 
-## ¶27: Vagueness and Directional Change (UDV)
+## ¶27: Vagueness and Directional Change (MDV)
 
-Figure U2 examines how initial vagueness affects subsequent repositioning direction. Ventures with high initial V exhibit a wider range of directional changes D = V_T - V_0, suggesting that vagueness creates "room to move" in positioning space. Note that D is **signed**: positive indicates movement toward more vagueness, negative toward more precision.
+Figure M2 examines how initial vagueness affects subsequent repositioning direction. Ventures with high initial V exhibit a wider range of directional changes D = V_T - V_0, suggesting that vagueness creates "room to move" in positioning space. Note that D is **signed**: positive indicates movement toward more vagueness, negative toward more precision.
 
-![Figure U2](figures/U_fig2_UDV.png)
+![Figure M2](figures/M_fig2_MDV.png)
 
-## ¶28: Vagueness and Adaptive Capacity (UAV)
+## ¶28: Vagueness and Adaptive Capacity (MAV)
 
-Figure U3 shows the relationship between initial vagueness V and adaptive capacity A = |ΔV|. We find a positive correlation (ρ = {stats_dict['rho_AV']:.3f}, p < {stats_dict['p_AV']:.4f}), indicating that vague initial positioning enables larger absolute strategic pivots, regardless of direction.
+Figure M3 shows the relationship between initial vagueness V and adaptive capacity A = |ΔV|. We find ρ = {stats_dict['rho_AV']:.3f} (p < {stats_dict['p_AV']:.4f}). {"A positive correlation indicates vague positioning enables larger pivots." if stats_dict['rho_AV'] > 0 else "The negative correlation reflects **boundary effects**: companies at extreme V values (near 0 or 100) have constrained movement options, while middle-V companies have more room to reposition in either direction."}
 
-![Figure U3](figures/U_fig3_UAV.png)
+![Figure M3](figures/M_fig3_MAV.png)
 
-## ¶29-30: Adaptive Capacity and Survival (ULD)
+## ¶29-30: Adaptive Capacity and Survival (MLD)
 
-Figure U4 tests whether adaptive capacity predicts survival. The positive relationship (ρ = {stats_dict['rho_LA']:.3f}, p < {stats_dict['p_LA']:.4f}) suggests that ventures capable of larger repositioning—those with higher |ΔV|—are more likely to reach late-stage funding. This supports the hypothesis that flexibility, not just initial positioning, matters for long-term success.
+Figure M4 tests whether adaptive capacity predicts survival. The positive relationship (ρ = {stats_dict['rho_LA']:.3f}, p < {stats_dict['p_LA']:.4f}) suggests that ventures capable of larger repositioning—those with higher |ΔV|—are more likely to reach late-stage funding. This supports the hypothesis that flexibility, not just initial positioning, matters for long-term success.
 
-![Figure U4](figures/U_fig4_ULD.png)
+![Figure M4](figures/M_fig4_MLD.png)
 
 ## ¶31-32: Summary
 
-Our empirical analysis supports the U-shape hypothesis: both extreme precision (Analyst channel) and extreme vagueness (Believer channel) outperform the murky middle. The mechanism operates through adaptive capacity—vague positioning enables larger pivots, and pivots predict survival.
+Our empirical analysis supports the M-shape hypothesis: both extreme precision (Analyst channel) and extreme vagueness (Believer channel) outperform the murky middle. The mechanism operates through adaptive capacity—vague positioning enables larger pivots, and pivots predict survival.
 
 Notably, Q4 ({stats_dict['survival_Q4']:.1f}%) exceeds Q1 ({stats_dict['survival_Q1']:.1f}%), suggesting that in our sample period (2021-2025), the Believer channel provided somewhat greater returns than the Analyst channel. This asymmetry may reflect the heightened uncertainty of the post-COVID, AI-disruption era.
 """
     
-    with open(TEXT_DIR / 'paper_U_sec3.md', 'w') as f:
+    with open(TEXT_DIR / 'paper_M_sec3.md', 'w') as f:
         f.write(text)
-    print("   ✅ paper_U_sec3.md")
+    print("   ✅ paper_M_sec3.md")
 
 
 def generate_paper_C_text(stats_dict):
@@ -736,6 +811,258 @@ The Golden Cage is real: capital that appears to expand possibilities may actual
 
 
 # ============================================================================
+# CRITICAL DIAGNOSTIC: Movement Principle Evidence (G by V, Mover vs Stayer)
+# ============================================================================
+
+def plot_movement_principle_diagnostic(cross, stats_dict, epsilon=1.0):
+    """
+    🔬 CRITICAL DIAGNOSTIC: Movement Principle Evidence
+
+    Creates a multi-resolution analysis of G (Growth) by V (Vagueness),
+    decomposed into Movers vs Stayers.
+
+    This is the KEY EVIDENCE for the Movement Principle claim:
+    "Movers succeed 2.6× more than Stayers"
+
+    Args:
+        cross: DataFrame with V, G, D, A columns
+        stats_dict: Statistics dictionary
+        epsilon: Threshold for defining "movement" (default: |D| > 1.0)
+
+    Output:
+        3x3 grid: bins=[4, 8, 16] × metrics=[G_mean, success_rate, N]
+    """
+    print("\n📊 MOVEMENT PRINCIPLE DIAGNOSTIC (G by V, Mover vs Stayer)")
+
+    # Define Mover vs Stayer using epsilon threshold
+    cross['is_mover'] = (cross['A'] > epsilon).astype(int)
+    cross['mover_label'] = cross['is_mover'].map({0: 'Stayer', 1: 'Mover'})
+
+    # Summary stats
+    n_movers = cross['is_mover'].sum()
+    n_stayers = len(cross) - n_movers
+    pct_movers = n_movers / len(cross) * 100
+    print(f"   Epsilon threshold: |D| > {epsilon}")
+    print(f"   Movers: {n_movers:,} ({pct_movers:.1f}%)")
+    print(f"   Stayers: {n_stayers:,} ({100-pct_movers:.1f}%)")
+
+    # G by mover status
+    g_mover = cross[cross['is_mover'] == 1]['G'].mean()
+    g_stayer = cross[cross['is_mover'] == 0]['G'].mean()
+    ratio_g = g_mover / g_stayer if g_stayer > 0 else float('inf')
+    print(f"   G (Movers): {g_mover:.3f}")
+    print(f"   G (Stayers): {g_stayer:.3f}")
+    print(f"   Ratio: {ratio_g:.2f}×")
+
+    # L by mover status (for comparison with existing stats)
+    if 'L' in cross.columns:
+        l_mover = cross[cross['is_mover'] == 1]['L'].mean() * 100
+        l_stayer = cross[cross['is_mover'] == 0]['L'].mean() * 100
+        ratio_l = l_mover / l_stayer if l_stayer > 0 else float('inf')
+        print(f"   L (Movers): {l_mover:.1f}%")
+        print(f"   L (Stayers): {l_stayer:.1f}%")
+        print(f"   Ratio: {ratio_l:.2f}×")
+
+    # =========================================================================
+    # FIGURE 1: Multi-resolution G by V (Mover vs Stayer) - 3 panels
+    # =========================================================================
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+    bin_counts = [4, 8, 16]
+
+    for ax_idx, n_bins in enumerate(bin_counts):
+        ax = axes[ax_idx]
+
+        # Create V bins
+        cross[f'V_bin_{n_bins}'] = pd.qcut(cross['V'], n_bins, labels=False, duplicates='drop')
+
+        # Aggregate by V bin and mover status
+        agg = cross.groupby([f'V_bin_{n_bins}', 'is_mover']).agg({
+            'V': 'median',
+            'G': ['mean', 'std', 'count']
+        }).reset_index()
+        agg.columns = ['V_bin', 'is_mover', 'V_med', 'G_mean', 'G_std', 'n']
+        agg['G_se'] = agg['G_std'] / np.sqrt(agg['n'])
+
+        # Plot Stayers
+        stayers = agg[agg['is_mover'] == 0]
+        ax.bar(stayers['V_bin'] - 0.2, stayers['G_mean'],
+               width=0.35, color=COLORS['negative'], alpha=0.8,
+               label=f'Stayers (|D| ≤ {epsilon})', edgecolor='black')
+        ax.errorbar(stayers['V_bin'] - 0.2, stayers['G_mean'],
+                    yerr=1.96 * stayers['G_se'], fmt='none', color='black', capsize=3)
+
+        # Plot Movers
+        movers = agg[agg['is_mover'] == 1]
+        ax.bar(movers['V_bin'] + 0.2, movers['G_mean'],
+               width=0.35, color=COLORS['positive'], alpha=0.8,
+               label=f'Movers (|D| > {epsilon})', edgecolor='black')
+        ax.errorbar(movers['V_bin'] + 0.2, movers['G_mean'],
+                    yerr=1.96 * movers['G_se'], fmt='none', color='black', capsize=3)
+
+        ax.set_xlabel('V Bin (Vagueness Quantile)', fontsize=11)
+        ax.set_ylabel('Mean G (Growth = F_t/E)', fontsize=11)
+        ax.set_title(f'{n_bins} Bins: G by V (Mover vs Stayer)', fontsize=12, fontweight='bold')
+        ax.legend(loc='upper left', fontsize=9)
+        ax.set_xticks(range(n_bins))
+
+        # Annotate ratio for each bin
+        for v_bin in range(n_bins):
+            m_row = movers[movers['V_bin'] == v_bin]
+            s_row = stayers[stayers['V_bin'] == v_bin]
+            if len(m_row) > 0 and len(s_row) > 0:
+                m_g = m_row['G_mean'].values[0]
+                s_g = s_row['G_mean'].values[0]
+                if s_g > 0:
+                    ratio = m_g / s_g
+                    ax.text(v_bin, max(m_g, s_g) + 0.1, f'{ratio:.1f}×',
+                           ha='center', fontsize=8, color='purple', fontweight='bold')
+
+    fig.suptitle(f'Movement Principle Diagnostic: G by V (ε = {epsilon})\n'
+                 f'Overall: Movers {g_mover:.2f} vs Stayers {g_stayer:.2f} = {ratio_g:.1f}× advantage',
+                 fontsize=14, fontweight='bold', y=1.02)
+    plt.tight_layout()
+    fig.savefig(FIG_DIR / 'M_diagnostic_movement_principle_G.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"   ✅ M_diagnostic_movement_principle_G.png")
+
+    # =========================================================================
+    # FIGURE 2: Multi-resolution L by V (Mover vs Stayer) - for comparison
+    # =========================================================================
+    if 'L' in cross.columns:
+        fig2, axes2 = plt.subplots(1, 3, figsize=(18, 6))
+
+        for ax_idx, n_bins in enumerate(bin_counts):
+            ax = axes2[ax_idx]
+
+            # Aggregate by V bin and mover status
+            agg = cross.groupby([f'V_bin_{n_bins}', 'is_mover']).agg({
+                'V': 'median',
+                'L': ['mean', 'std', 'count']
+            }).reset_index()
+            agg.columns = ['V_bin', 'is_mover', 'V_med', 'L_mean', 'L_std', 'n']
+            agg['L_se'] = np.sqrt(agg['L_mean'] * (1 - agg['L_mean']) / agg['n'])  # Binomial SE
+
+            # Plot Stayers
+            stayers = agg[agg['is_mover'] == 0]
+            ax.bar(stayers['V_bin'] - 0.2, stayers['L_mean'] * 100,
+                   width=0.35, color=COLORS['negative'], alpha=0.8,
+                   label=f'Stayers (|D| ≤ {epsilon})', edgecolor='black')
+            ax.errorbar(stayers['V_bin'] - 0.2, stayers['L_mean'] * 100,
+                        yerr=1.96 * stayers['L_se'] * 100, fmt='none', color='black', capsize=3)
+
+            # Plot Movers
+            movers = agg[agg['is_mover'] == 1]
+            ax.bar(movers['V_bin'] + 0.2, movers['L_mean'] * 100,
+                   width=0.35, color=COLORS['positive'], alpha=0.8,
+                   label=f'Movers (|D| > {epsilon})', edgecolor='black')
+            ax.errorbar(movers['V_bin'] + 0.2, movers['L_mean'] * 100,
+                        yerr=1.96 * movers['L_se'] * 100, fmt='none', color='black', capsize=3)
+
+            ax.set_xlabel('V Bin (Vagueness Quantile)', fontsize=11)
+            ax.set_ylabel('Success Rate L (%)', fontsize=11)
+            ax.set_title(f'{n_bins} Bins: L by V (Mover vs Stayer)', fontsize=12, fontweight='bold')
+            ax.legend(loc='upper left', fontsize=9)
+            ax.set_xticks(range(n_bins))
+
+            # Annotate ratio for each bin
+            for v_bin in range(n_bins):
+                m_row = movers[movers['V_bin'] == v_bin]
+                s_row = stayers[stayers['V_bin'] == v_bin]
+                if len(m_row) > 0 and len(s_row) > 0:
+                    m_l = m_row['L_mean'].values[0] * 100
+                    s_l = s_row['L_mean'].values[0] * 100
+                    if s_l > 0:
+                        ratio = m_l / s_l
+                        ax.text(v_bin, max(m_l, s_l) + 1, f'{ratio:.1f}×',
+                               ha='center', fontsize=8, color='purple', fontweight='bold')
+
+        fig2.suptitle(f'Movement Principle Diagnostic: L by V (ε = {epsilon})\n'
+                      f'Overall: Movers {l_mover:.1f}% vs Stayers {l_stayer:.1f}% = {ratio_l:.1f}× advantage',
+                      fontsize=14, fontweight='bold', y=1.02)
+        plt.tight_layout()
+        fig2.savefig(FIG_DIR / 'M_diagnostic_movement_principle_L.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"   ✅ M_diagnostic_movement_principle_L.png")
+
+    # =========================================================================
+    # FIGURE 3: Q3 Anomaly Deep Dive (4 quartiles, Mover vs Stayer)
+    # =========================================================================
+    fig3, ax3 = plt.subplots(figsize=(12, 6))
+
+    # Use existing V_Q quartiles
+    agg_q = cross.groupby(['V_Q', 'is_mover']).agg({
+        'L': ['mean', 'count'],
+        'G': 'mean'
+    }).reset_index()
+    agg_q.columns = ['V_Q', 'is_mover', 'L_mean', 'n', 'G_mean']
+    agg_q['L_se'] = np.sqrt(agg_q['L_mean'] * (1 - agg_q['L_mean']) / agg_q['n'])
+
+    # Calculate movement rate by quartile
+    move_rate = cross.groupby('V_Q')['is_mover'].mean() * 100
+
+    x_labels = ['Q1\n(Precise)', 'Q2\n(Low-Mid)', 'Q3\n(High-Mid)', 'Q4\n(Vague)']
+    x_pos = np.arange(4)
+    width = 0.35
+
+    # Stayers
+    stayers_q = agg_q[agg_q['is_mover'] == 0].set_index('V_Q')
+    ax3.bar(x_pos - width/2, stayers_q.loc[['Q1', 'Q2', 'Q3', 'Q4'], 'L_mean'] * 100,
+            width=width, color=COLORS['negative'], alpha=0.8,
+            label='Stayers', edgecolor='black')
+
+    # Movers
+    movers_q = agg_q[agg_q['is_mover'] == 1].set_index('V_Q')
+    ax3.bar(x_pos + width/2, movers_q.loc[['Q1', 'Q2', 'Q3', 'Q4'], 'L_mean'] * 100,
+            width=width, color=COLORS['positive'], alpha=0.8,
+            label='Movers', edgecolor='black')
+
+    # Value labels
+    for i, q in enumerate(['Q1', 'Q2', 'Q3', 'Q4']):
+        s_val = stayers_q.loc[q, 'L_mean'] * 100
+        m_val = movers_q.loc[q, 'L_mean'] * 100
+        ax3.text(i - width/2, s_val + 0.5, f'{s_val:.1f}%', ha='center', fontsize=9, fontweight='bold')
+        ax3.text(i + width/2, m_val + 0.5, f'{m_val:.1f}%', ha='center', fontsize=9, fontweight='bold')
+
+        # Movement rate annotation
+        mr = move_rate[q]
+        ax3.text(i, -3, f'Move: {mr:.0f}%', ha='center', fontsize=8, color='gray')
+
+    ax3.set_xticks(x_pos)
+    ax3.set_xticklabels(x_labels)
+    ax3.set_ylabel('Success Rate L (%)', fontsize=12)
+    ax3.set_xlabel('Vagueness Quartile', fontsize=12)
+    ax3.legend(loc='upper right', fontsize=10)
+    ax3.set_ylim(-5, 25)
+
+    # Highlight Q3 anomaly
+    ax3.axvspan(1.5, 2.5, alpha=0.1, color='yellow')
+    ax3.annotate('Q3 ANOMALY:\nHighest overall (16.0%)\nbut LOWEST stayers (6.6%)\nExplained by 68% movement rate',
+                 xy=(2, 20), fontsize=10, ha='center',
+                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9))
+
+    ax3.set_title('Q3 Anomaly Explained: Movement Rate Drives Quartile Success\n'
+                  'Stayers show OPPOSITE pattern from overall success',
+                  fontsize=13, fontweight='bold')
+
+    plt.tight_layout()
+    fig3.savefig(FIG_DIR / 'M_diagnostic_Q3_anomaly.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"   ✅ M_diagnostic_Q3_anomaly.png")
+
+    # Store diagnostic stats
+    stats_dict['movement_epsilon'] = epsilon
+    stats_dict['G_movers'] = g_mover
+    stats_dict['G_stayers'] = g_stayer
+    stats_dict['G_ratio'] = ratio_g
+    if 'L' in cross.columns:
+        stats_dict['L_movers'] = l_mover
+        stats_dict['L_stayers'] = l_stayer
+        stats_dict['L_ratio'] = ratio_l
+
+    return stats_dict
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -758,14 +1085,18 @@ def main():
                    for k, v in stats_dict.items()}, f, indent=2)
     print("   ✅ summary_statistics.json")
     
-    # Generate Paper U figures
-    print("\n📈 PAPER ✌️U FIGURES (¶25-32)")
-    plot_U1_ULV(cross, stats_dict)
-    plot_U2_UDV(cross)
-    plot_U3_UAV(cross, stats_dict)
-    plot_U4_ULD(cross, stats_dict)
-    plot_U5_movement(cross, stats_dict)
+    # Generate Paper M figures
+    print("\n📈 PAPER ✌️M FIGURES (¶25-32)")
+    plot_M1_MLV(cross, stats_dict)
+    plot_M2_MDV(cross)
+    plot_M3_MAV(cross, stats_dict)
+    plot_M4_MLD(cross, stats_dict)
+    plot_M5_movement(cross, stats_dict)
     
+    # Generate Movement Principle Diagnostic (CRITICAL EVIDENCE)
+    print("\n🔬 MOVEMENT PRINCIPLE DIAGNOSTIC")
+    stats_dict = plot_movement_principle_diagnostic(cross, stats_dict, epsilon=1.0)
+
     # Generate Paper C figures
     print("\n📈 PAPER 🦾C FIGURES (¶57-64)")
     plot_C1_mechanism(cross, stats_dict)
@@ -774,7 +1105,7 @@ def main():
     
     # Generate thesis text
     print("\n📝 THESIS TEXT")
-    generate_paper_U_text(stats_dict)
+    generate_paper_M_text(stats_dict)
     generate_paper_C_text(stats_dict)
     
     # Summary

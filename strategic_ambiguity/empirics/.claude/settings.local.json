@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(head:*)",
+      "Bash(python generate_figures_by_year.py:*)",
+      "Bash(python3:*)",
+      "Bash(/opt/homebrew/bin/python3:*)",
+      "Bash(conda run -n empirics python:*)",
+      "Bash(python:*)",
+      "Bash(pip3 list:*)",
+      "Bash(pip3 show:*)",
+      "Bash(python3.11 --version:*)",
+      "Bash(python3.11:*)",
+      "Bash(chmod:*)",
+      "Bash(open:*)",
+      "Bash(./run_thesis_pipeline.sh:*)",
+      "Bash(pandoc:*)",
+      "Bash(source:*)",
+      "Bash(conda activate:*)",
+      "Bash(conda info:*)",
+      "Bash(sort:*)",
+      "Bash(/opt/homebrew/bin/pip3 list:*)",
+      "Bash(/opt/homebrew/bin/pip3 show:*)",
+      "Bash(/opt/homebrew/bin/python3.11:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -6,7 +6,7 @@ role: Manufacturing/Build (MIT Framework)
 rally_point: RP2 (Scale Phase)
 modified:
   - 2025-12-08T06:50:09-05:00
-  - 2025-12-11T14:03:46-05:00
+  - 2025-12-12T11:30:46-05:00
 ---
 
 # ⚙️ G-Squad Engineering Handbook: The "Scale" Protocol
@@ -128,41 +128,3 @@ V = 0.5 × max(V_cat, V_conc) + 0.5 × mean(V_cat, V_conc), scaled to [0,1]
 3.  **[ ] Audit `assets.json`**: Verify every "Done" asset maps to a specific paragraph.
 
 **Signed**: 🟠 G-Squad Leader
-
----
-
-## 6. Process Innovation Philosophy (2025-12-11 추가)
-
-### Core Principle: Processify to Automate
-
-> **"경험이 누적돼 패턴화 (processify to automate)시키는 걸 자동화하는게 저희 process innovation의 골자니까요."**
-
-이 원칙은 전라좌수군 협업 시스템의 핵심 철학입니다:
-
-| Phase | Action | Example |
-|:------|:-------|:--------|
-| **1. Experience** | 개별 작업 수행 | j/k에게 task 배정 → 응답 수집 |
-| **2. Pattern Recognition** | 반복 패턴 식별 | "검증 요청 → 응답 형식 → 피드백 루프" |
-| **3. Processify** | 패턴을 프로세스로 문서화 | `collaborate(jgk).md` 응답 양식 표준화 |
-| **4. Automate** | 프로세스를 코드/템플릿으로 전환 | Task k-4 형식 → 재사용 가능한 검증 프로토콜 |
-
-### Implementation in This Thesis
-
-```
-Experience: Angie 피드백 → 개선점 식별
-    ↓
-Pattern: "인과 주장 문제" → "Dotson & Mackey 정당화" 패턴 발견
-    ↓
-Processify: toc(iuctd).md ¶6.5 + toc(t).md Section 1 문서화
-    ↓
-Automate: LTE Layer 3 시뮬레이션 코드 템플릿화
-```
-
-### Why This Matters
-
-1. **Scalability**: 108개 문단 생산을 "Art"에서 "Engineering"으로 전환
-2. **Consistency**: j/k 응답 품질의 표준화
-3. **Learning**: 실패/성공 패턴이 시스템에 누적됨
-4. **Transfer**: 다음 프로젝트에 재사용 가능한 지식 자산
-
-**Added**: 2025-12-11 by 🐅 g (04_G🟠)

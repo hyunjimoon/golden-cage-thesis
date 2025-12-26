@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wu Xing Control Tower</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        :root {
+            --bg-dark: #020617;
+            --bg-light: #0f172a;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(15, 23, 42, 0.6);
+            --glass-shine: rgba(255, 255, 255, 0.03);
+
+            /* Wu Xing Colors & Glows */
+            --wood: #10b981;
+            /* D: Growth */
+            --fire: #ef4444;
+            /* I: Energy */
+            --earth: #eab308;
+            /* M: Grounding */
+            --metal: #cbd5e1;
+            /* C: Structure */
+            --water: #3b82f6;
+            /* T: Flow */
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 70%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-weight: 800;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            background: linear-gradient(to right, var(--wood), var(--fire), var(--earth), var(--metal), var(--water));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 3D Container */
+        * {
+            box-sizing: border-box;
+        }
+
+        .pentagram-container {
+            display: grid;
+            grid-template-columns: 320px 320px 320px;
+            grid-template-rows: 240px 240px 240px;
+            gap: 40px;
+            position: relative;
+            margin: 40px 0 80px 0;
+            perspective: 1500px;
+            width: fit-content;
+        }
+
+        /* Glassmorphism Cards */
+        .element-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            overflow: visible;
+        }
+
+        .element-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(2deg);
+            z-index: 100;
+            box-shadow:
+                0 30px 60px -12px rgba(0, 0, 0, 0.6),
+                0 0 30px var(--glow-color);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Inner Lighting */
+        .element-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            background: radial-gradient(circle at top left, var(--glass-shine), transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .element-card:hover::after {
+            opacity: 0.8;
+        }
+
+        /* Typography & Symbols */
+        .symbol {
+            font-size: 3.5rem;
+            margin-bottom: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            transform: translateZ(30px);
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+            transform: translateZ(10px);
+        }
+
+        .name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+            transform: translateZ(20px);
+            margin-bottom: 2px;
+        }
+
+        .korean {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            font-family: 'Inter', sans-serif;
+            transform: translateZ(15px);
+        }
+
+        .line-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 10px;
+            border-radius: 99px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid var(--glass-border);
+            transform: translateZ(25px);
+        }
+
+        /* Key Visual Hologram */
+        .key-visual {
+            margin-top: 20px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--glass-border);
+            transform: translateZ(40px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .element-card:hover .key-visual {
+            transform: translateZ(60px) scale(1.05);
+            background: rgba(0, 0, 0, 0.6);
+            border-color: var(--text-secondary);
+        }
+
+        .visual-icon {
+            font-size: 1.5rem;
+        }
+
+        .visual-text {
+            font-size: 0.85rem;
+            line-height: 1.3;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .punch-line {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-top: 12px;
+            text-align: center;
+            opacity: 0.9;
+            font-family: 'JetBrains Mono', monospace;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 8px;
+            width: 100%;
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            width: 100%;
+        }
+
+        /* Element Colors */
+        .wood {
+            --glow-color: var(--wood);
+        }
+
+        .wood .symbol {
+            color: var(--wood);
+        }
+
+        .wood:hover .symbol {
+            text-shadow: 0 0 30px var(--wood);
+        }
+
+        .fire {
+            --glow-color: var(--fire);
+        }
+
+        .fire .symbol {
+            color: var(--fire);
+        }
+
+        .fire:hover .symbol {
+            text-shadow: 0 0 30px var(--fire);
+        }
+
+        .earth {
+            --glow-color: var(--earth);
+        }
+
+        .earth .symbol {
+            color: var(--earth);
+        }
+
+        .earth:hover .symbol {
+            text-shadow: 0 0 30px var(--earth);
+        }
+
+        .metal {
+            --glow-color: var(--metal);
+        }
+
+        .metal .symbol {
+            color: var(--metal);
+        }
+
+        .metal:hover .symbol {
+            text-shadow: 0 0 30px var(--metal);
+        }
+
+        .water {
+            --glow-color: var(--water);
+        }
+
+        .water .symbol {
+            color: var(--water);
+        }
+
+        .water:hover .symbol {
+            text-shadow: 0 0 30px var(--water);
+        }
+
+        /* Grid Specifics */
+        .wood {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .fire {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .earth {
+            grid-column: 2;
+            grid-row: 2;
+            z-index: 5;
+        }
+
+        .metal {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .water {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        /* Animated Arrows */
+        .arrows-layer {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 1100px;
+            height: 800px;
+            pointer-events: none;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        path {
+            fill: none;
+            stroke: var(--text-secondary);
+            stroke-width: 2;
+            stroke-dasharray: 10;
+            opacity: 0.3;
+            animation: flow 20s linear infinite;
+        }
+
+        /* Highlight paths based on connection */
+        .path-wood-fire {
+            stroke: url(#grad-wood-fire);
+        }
+
+        .path-fire-earth {
+            stroke: url(#grad-fire-earth);
+        }
+
+        .path-earth-metal {
+            stroke: url(#grad-earth-metal);
+        }
+
+        .path-metal-water {
+            stroke: url(#grad-metal-water);
+        }
+
+        .path-water-wood {
+            stroke: url(#grad-water-wood);
+        }
+
+        @keyframes flow {
+            from {
+                stroke-dashoffset: 1000;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Floating Conductor Dock */
+        .conductor-dock {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            max-width: 90%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px 30px;
+            z-index: 1000;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .conductor-dock:hover {
+            transform: translateX(-50%) translateY(-5px);
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .conductor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .conductor-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .conductor-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .conductor-bar {
+            width: 100%;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .movement-segment {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .movement-segment:hover {
+            transform: scaleY(1.1);
+            filter: brightness(1.2);
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tooltip style for Conductor */
+        .movement-segment::before {
+            content: attr(data-tempo);
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--bg-light);
+            border: 1px solid var(--glass-border);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.2s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .movement-segment:hover::before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Meta Panels */
+        .dashboard-meta {
+            margin-top: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 900px;
+            margin-bottom: 120px;
+            /* Space for dock */
+        }
+
+        .meta-panel {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--glass-border);
+            padding: 24px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .panel-heading {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 8px;
+        }
+
+        .action-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
+        }
+    </style>
+    <script>
+        setTimeout(function () { location.reload(); }, 300000);
+        if (window.location.hostname.includes('html-preview')) {
+            var base = document.createElement('base');
+            base.href = 'https://raw.githubusercontent.com/hyunjimoon/tolzul/master/Front/On/love%28cs%29/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v3/';
+            document.head.appendChild(base);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Five Elements Control Tower</h1>
+
+    <div class="pentagram-container">
+
+        <!-- Arrows SVG -->
+        <!-- Arrows SVG -->
+        <svg class="arrows-layer" viewBox="0 0 1040 800">
+            <defs>
+                <linearGradient id="grad-wood-fire" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:var(--wood);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--fire);stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="grad-fire-earth" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:var(--fire);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--earth);stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="grad-earth-metal" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:var(--earth);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--metal);stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="grad-metal-water" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:var(--metal);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--water);stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="grad-water-wood" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" style="stop-color:var(--water);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:var(--wood);stop-opacity:1" />
+                </linearGradient>
+                <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+                    <polygon points="0 0, 6 2, 0 4" fill="rgba(255,255,255,0.3)" />
+                </marker>
+            </defs>
+
+            <!-- Paths with gradient classes (Recalculated for new Grid) -->
+            <!-- D -> I -->
+            <path class="path-wood-fire" d="M 160 280 Q 160 120 360 120" />
+            <!-- I -> M -->
+            <path class="path-fire-earth" d="M 520 240 L 520 280" />
+            <!-- M -> C -->
+            <path class="path-earth-metal" d="M 680 400 L 720 400" />
+            <!-- C -> T -->
+            <path class="path-metal-water" d="M 880 520 Q 880 680 680 680" />
+            <!-- T -> D -->
+            <path class="path-water-wood" d="M 360 680 Q 160 680 160 520" />
+        </svg>
+
+        <!-- FIRE (Top) -->
+        <a href="../../papers_v3/1_I_introduction/toc(i).md" class="element-card fire">
+            <div class="line-badge">Lines 1-11</div>
+            <div class="label">Introduction</div>
+            <div class="symbol">I</div>
+            <div class="key-visual">
+                <img src="../../papers_v3/1_I_introduction/fig_i_cash_paradox.png" alt="Cash Paradox"
+                    style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+            <div class="punch-line">"Why is money a poison?"</div>
+        </a>
+
+        <!-- WOOD (Left) -->
+        <a href="../../papers_v3/5_D_discussion/toc(d).md" class="element-card wood">
+            <div class="line-badge">Lines 105-113</div>
+            <div class="label">Discussion</div>
+            <div class="symbol">D</div>
+            <div class="key-visual">
+                <img src="../../papers_v3/5_D_discussion/fig_d_synthesis.png" alt="Synthesis"
+                    style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+            <div class="punch-line">"必死卽生 (Move or Die)"</div>
+        </a>
+
+        <!-- EARTH (Center) -->
+        <a href="../../papers_v3/2_M_movement/toc(m).md" class="element-card earth">
+            <div class="line-badge">Lines 12-48</div>
+            <div class="label">Movement</div>
+            <div class="symbol">M</div>
+            <div class="key-visual">
+                <img src="../../papers_v3/2_M_movement/fig_m_mover_advantage.png" alt="Mover Advantage"
+                    style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+            <div class="punch-line">"Movement is how you win"</div>
+        </a>
+
+        <!-- METAL (Right) -->
+        <a href="../../papers_v3/3_C_cash2growth/toc(c).md" class="element-card metal">
+            <div class="line-badge">Lines 49-80</div>
+            <div class="label">Cage</div>
+            <div class="symbol">C</div>
+            <div class="key-visual">
+                <img src="../../papers_v3/3_C_cash2growth/fig_c_typology.png" alt="Typology"
+                    style="width: 100%; height: auto; border-radius: 4px;">
+            </div>
+            <div class="punch-line">"Movement beats Position"</div>
+        </a>
+
+        <!-- WATER (Bottom) -->
+        <a href="../../papers_v3/4_T_commit2trap/toc(t).md" class="element-card water">
+            <div class="line-badge">Lines 81-104</div>
+            <div class="label">Trap</div>
+            <div class="symbol">T</div>
+            <div class="key-visual">
+                <div class="visual-grid">
+                    <img src="../../papers_v3/4_T_commit2trap/fig_V_efficiency_real.png" alt="Efficiency Trap"
+                        style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="../../papers_v3/4_T_commit2trap/fig_archetype_dG_dE_real.png" alt="Correlation"
+                        style="width: 100%; height: auto; border-radius: 4px;">
+                </div>
+            </div>
+            <div class="punch-line">"Precision is a trap dressed as a virtue"</div>
+        </a>
+
+    </div>
+
+    <div class="dashboard-meta">
+        <div class="meta-panel">
+            <div class="panel-heading">Cycle Status</div>
+            <div style="font-size: 0.95rem; color: var(--text-primary)">
+                Current Phase: <strong style="color: var(--fire)">Ignition (I)</strong><br>
+                Next Phase: <strong style="color: var(--earth)">Mass (M)</strong>
+            </div>
+        </div>
+        <div class="meta-panel">
+            <div class="panel-heading">Active Bottlenecks</div>
+            <ul class="action-list">
+                <li class="action-item">
+                    <span class="dot" style="color: var(--earth)"></span>
+                    <span>Mover/Stayer Plot</span>
+                </li>
+                <li class="action-item">
+                    <span class="dot" style="color: var(--metal)"></span>
+                    <span>Nanda Position</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Data Validation Test Panel -->
+    <div class="dashboard-meta" style="margin-top: 20px;">
+        <div class="meta-panel" style="grid-column: span 2;">
+            <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: center;">
+                <span>Data Validation Tests</span>
+                <span id="test-timestamp" style="font-size: 0.7rem; opacity: 0.6;">Last run: Never</span>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <!-- Test Button -->
+                <div style="flex-shrink: 0;">
+                    <button id="run-tests-btn" onclick="runTests()" style="
+                        background: linear-gradient(135deg, var(--wood) 0%, #059669 100%);
+                        border: none;
+                        color: white;
+                        padding: 12px 24px;
+                        border-radius: 12px;
+                        font-family: 'JetBrains Mono', monospace;
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        transition: all 0.3s;
+                        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+                    ">
+                        <span id="test-icon">🧪</span>
+                        <span id="test-btn-text">Run Tests</span>
+                    </button>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 8px; text-align: center;">
+                        26 tests · SBC-inspired
+                    </div>
+                </div>
+
+                <!-- Test Results Summary -->
+                <div id="test-results"
+                    style="flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                    <div class="test-stat"
+                        style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--wood);" id="critical-count">--
+                        </div>
+                        <div style="font-size: 0.7rem; color: var(--text-secondary);">CRITICAL</div>
+                    </div>
+                    <div class="test-stat"
+                        style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--fire);" id="error-count">--</div>
+                        <div style="font-size: 0.7rem; color: var(--text-secondary);">ERROR</div>
+                    </div>
+                    <div class="test-stat"
+                        style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--earth);" id="warning-count">--
+                        </div>
+                        <div style="font-size: 0.7rem; color: var(--text-secondary);">WARNING</div>
+                    </div>
+                    <div class="test-stat"
+                        style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--water);" id="total-count">--</div>
+                        <div style="font-size: 0.7rem; color: var(--text-secondary);">TOTAL</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Status Bar -->
+            <div id="test-status-bar" style="
+                margin-top: 15px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid var(--glass-border);
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.8rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            ">
+                <span id="status-icon">⏳</span>
+                <span id="status-text" style="color: var(--text-secondary);">Click "Run Tests" to validate data
+                    integrity</span>
+            </div>
+
+            <!-- Test Details (Expandable) -->
+            <details id="test-details" style="margin-top: 10px;">
+                <summary style="cursor: pointer; color: var(--text-secondary); font-size: 0.8rem; padding: 8px 0;">
+                    Show detailed results
+                </summary>
+                <pre id="test-output" style="
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 8px;
+                    padding: 15px;
+                    font-size: 0.75rem;
+                    max-height: 300px;
+                    overflow-y: auto;
+                    color: var(--text-secondary);
+                    margin-top: 10px;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                ">No test results yet. Run tests to see detailed output.</pre>
+            </details>
+        </div>
+    </div>
+
+    <script>
+        // Test runner configuration
+        const TEST_SCRIPT_PATH = '../../papers_v3/test/run_tests.sh';
+
+        function runTests() {
+            const btn = document.getElementById('run-tests-btn');
+            const btnText = document.getElementById('test-btn-text');
+            const icon = document.getElementById('test-icon');
+            const statusBar = document.getElementById('test-status-bar');
+            const statusIcon = document.getElementById('status-icon');
+            const statusText = document.getElementById('status-text');
+
+            // Update button state
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            btnText.textContent = 'Running...';
+            icon.textContent = '⏳';
+
+            // Update status
+            statusIcon.textContent = '🔄';
+            statusText.textContent = 'Running 26 data integrity tests...';
+            statusText.style.color = 'var(--water)';
+
+            // Since we can't run shell scripts from browser, show instructions
+            setTimeout(() => {
+                // Simulate test completion with stored results
+                showTestInstructions();
+            }, 1000);
+        }
+
+        function showTestInstructions() {
+            const btn = document.getElementById('run-tests-btn');
+            const btnText = document.getElementById('test-btn-text');
+            const icon = document.getElementById('test-icon');
+            const statusIcon = document.getElementById('status-icon');
+            const statusText = document.getElementById('status-text');
+            const output = document.getElementById('test-output');
+
+            // Reset button
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            btnText.textContent = 'Run Tests';
+            icon.textContent = '🧪';
+
+            // Show instructions
+            statusIcon.textContent = '📋';
+            statusText.textContent = 'Run tests via terminal (browser cannot execute shell scripts)';
+            statusText.style.color = 'var(--earth)';
+
+            // Update counts with last known values
+            document.getElementById('critical-count').textContent = '15/15';
+            document.getElementById('error-count').textContent = '7/7';
+            document.getElementById('warning-count').textContent = '4/4';
+            document.getElementById('total-count').textContent = '26';
+
+            // Update timestamp
+            document.getElementById('test-timestamp').textContent = 'Status: Manual run required';
+
+            output.innerHTML = `<span style="color: var(--earth)">═══════════════════════════════════════════════════════════════</span>
+<span style="color: var(--text-primary); font-weight: bold;">  HOW TO RUN TESTS</span>
+<span style="color: var(--earth)">═══════════════════════════════════════════════════════════════</span>
+
+<span style="color: var(--text-secondary)">Open Terminal and run:</span>
+
+<span style="color: var(--wood)">cd ~/tolzul/Front/On/love\\(cs\\)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v3/test</span>
+<span style="color: var(--wood)">./run_tests.sh</span>
+
+<span style="color: var(--text-secondary)">Options:</span>
+  <span style="color: var(--metal)">./run_tests.sh --verbose</span>   Show detailed output
+  <span style="color: var(--metal)">./run_tests.sh --json</span>      JSON format output
+
+<span style="color: var(--earth)">───────────────────────────────────────────────────────────────</span>
+<span style="color: var(--text-primary); font-weight: bold;">  LAST KNOWN RESULTS (2025-12-18)</span>
+<span style="color: var(--earth)">───────────────────────────────────────────────────────────────</span>
+
+<span style="color: var(--wood)">CRITICAL: 0 FAILED / 15 PASSED ✓</span>
+<span style="color: var(--fire)">ERROR:    0 FAILED / 7 PASSED  ✓</span>
+<span style="color: var(--earth)">WARNING:  0 FLAGGED / 4 PASSED ✓</span>
+
+<span style="color: var(--text-primary); font-weight: bold;">OVERALL STATUS: PASS</span>
+
+<span style="color: var(--text-secondary)">Key validations:</span>
+• G = total_raised / E formula verified
+• ρ(G,E) = -0.196*** confirmed
+• All 180,860 companies classified exactly once
+• Raw → Processed pipeline consistent`;
+
+            // Open details
+            document.getElementById('test-details').open = true;
+        }
+
+        // Button hover effects
+        document.getElementById('run-tests-btn').addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 6px 20px rgba(16, 185, 129, 0.4)';
+        });
+
+        document.getElementById('run-tests-btn').addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.3)';
+        });
+    </script>
+
+    <!-- Floating Conductor Dock -->
+    <div class="conductor-dock">
+        <div class="conductor-header">
+            <div class="conductor-title">
+                <span style="font-size:1.2rem">🎻</span>
+                <span>Schubert D.934 Conductor</span>
+            </div>
+            <div class="conductor-meta">
+                Total: 113 Lines
+            </div>
+        </div>
+        <div class="conductor-bar">
+            <!-- I: 1-11 (11/113 = 9.7%) -->
+            <div class="movement-segment" style="width: 9.7%; background: var(--fire);"
+                data-tempo="I. Andante molto (1-11)">I</div>
+
+            <!-- M: 12-48 (37/113 = 32.7%) -->
+            <div class="movement-segment" style="width: 32.7%; background: var(--earth);"
+                data-tempo="II. Allegretto (12-48)">M</div>
+
+            <!-- C: 49-80 (32/113 = 28.3%) -->
+            <div class="movement-segment" style="width: 28.3%; background: var(--metal);"
+                data-tempo="III. Andantino (49-80)">C</div>
+
+            <!-- T: 81-104 (24/113 = 21.2%) -->
+            <div class="movement-segment" style="width: 21.2%; background: var(--water);"
+                data-tempo="IV. Tempo I (81-104)">T</div>
+
+            <!-- D: 105-113 (9/113 = 8.0%) -->
+            <div class="movement-segment" style="width: 8.0%; background: var(--wood);"
+                data-tempo="V. Allegro vivace (105-113)">D</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

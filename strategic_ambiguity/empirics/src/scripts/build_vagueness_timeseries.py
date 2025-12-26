@@ -89,13 +89,17 @@ def load_data_file(filepath: Path, year: int) -> pd.DataFrame:
     return df
 
 
-def compute_vagueness_scores(descriptions: pd.Series, batch_size: int = 500) -> np.ndarray:
+def compute_vagueness_scores(descriptions: pd.Series, keywords: pd.Series = None, batch_size: int = 500) -> np.ndarray:
     """
-    Compute vagueness scores for a series of descriptions.
+    Compute vagueness scores for a series of descriptions + keywords.
 
     Uses HybridVaguenessScorerV2 which combines:
     - Market entropy (breadth of market positioning)
     - Technology abstractness (specificity of tech claims)
+
+    UPDATE 2025-12-20: Now combines Description + Keywords for scoring.
+    Keywords containing concrete metrics (numbers, dates, units) will DECREASE V.
+    Keywords containing abstract buzzwords (platform, solution) will INCREASE V.
     """
     try:
         from vagueness_v2 import HybridVaguenessScorerV2
@@ -108,18 +112,26 @@ def compute_vagueness_scores(descriptions: pd.Series, batch_size: int = 500) -> 
 
     scores = np.full(len(descriptions), np.nan)
 
+    # Combine descriptions and keywords
+    if keywords is not None:
+        combined_texts = descriptions.fillna('') + ' ' + keywords.fillna('')
+        print("    Combining Description + Keywords for scoring")
+    else:
+        combined_texts = descriptions.fillna('')
+        print("    Using Description only (no Keywords provided)")
+
     # Process with progress bar
-    for i in tqdm(range(len(descriptions)), desc="    Scoring", leave=False):
-        desc = descriptions.iloc[i]
-        if pd.notna(desc) and isinstance(desc, str) and len(desc.strip()) > 10:
+    for i in tqdm(range(len(combined_texts)), desc="    Scoring", leave=False):
+        text = combined_texts.iloc[i]
+        if pd.notna(text) and isinstance(text, str) and len(text.strip()) > 10:
             if use_scorer:
                 try:
-                    scores[i] = scorer.score(desc)
+                    scores[i] = scorer.score(text)
                 except Exception:
                     scores[i] = np.nan
             else:
                 # Placeholder: normalized length (longer = more specific typically)
-                scores[i] = max(0, min(100, 100 - len(desc) / 50))
+                scores[i] = max(0, min(100, 100 - len(text) / 50))
 
     return scores
 
@@ -199,6 +211,7 @@ def build_timeseries_dataset(sample_size: int = None, full_panel_only: bool = Tr
     # Initialize arrays
     V = np.full((n_companies, n_years), np.nan)
     descriptions = np.full((n_companies, n_years), '', dtype=object)
+    keywords_arr = np.full((n_companies, n_years), '', dtype=object)  # NEW: Keywords array
     company_names = np.full(n_companies, '', dtype=object)
     total_raised = np.full((n_companies, n_years), np.nan)
     first_financing_size = np.full(n_companies, np.nan)
@@ -217,6 +230,10 @@ def build_timeseries_dataset(sample_size: int = None, full_panel_only: bool = Tr
                 # Description
                 desc = row.get('Description', '')
                 descriptions[i, j] = desc if pd.notna(desc) else ''
+
+                # Keywords (NEW)
+                kw = row.get('Keywords', '')
+                keywords_arr[i, j] = kw if pd.notna(kw) else ''
 
                 # Company name (take first non-empty)
                 if company_names[i] == '' and pd.notna(row.get('CompanyName')):
@@ -243,12 +260,13 @@ def build_timeseries_dataset(sample_size: int = None, full_panel_only: bool = Tr
                 fs = row.get('CompanyFinancingStatus', '')
                 financing_status[i, j] = fs if pd.notna(fs) else ''
 
-    # Step 5: Compute vagueness scores
-    print("\n[Step 5] Computing vagueness scores...")
+    # Step 5: Compute vagueness scores (now with Keywords)
+    print("\n[Step 5] Computing vagueness scores (Description + Keywords)...")
     for j, year in enumerate(years):
         print(f"\n  Year {year}:")
         year_descriptions = pd.Series(descriptions[:, j])
-        V[:, j] = compute_vagueness_scores(year_descriptions)
+        year_keywords = pd.Series(keywords_arr[:, j])
+        V[:, j] = compute_vagueness_scores(year_descriptions, year_keywords)
 
         valid = ~np.isnan(V[:, j])
         print(f"    Valid scores: {valid.sum():,} / {n_companies:,} ({valid.mean()*100:.1f}%)")

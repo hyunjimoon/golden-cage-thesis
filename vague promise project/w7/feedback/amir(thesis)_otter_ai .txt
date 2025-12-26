@@ -1,0 +1,190 @@
+Unknown Speaker  2:56  
+Here, yeah, hi, how long have you been playing viola?
+
+Angie.H Moon  3:00  
+I started violin when I was five, but I switched because I like the C string, but sadly, like C string, oh,
+
+Speaker 1  3:09  
+no, just snaps, yeah. What? What strings do you use? What branded strings do you use?
+
+Angie.H Moon  3:16  
+I don't know the brand. I'm not that expert. Maybe you're very expert.
+
+Speaker 1  3:21  
+I don't know how to I love the ally. It's just much warmer. Oh yeah, yeah. Sam is very, very comforting. But I can
+
+Angie.H Moon  3:38  
+only play. Oh wow, yeah, maybe we can. We promised last time to play tennis together, but we ended up not playing
+
+Speaker 1  3:48  
+together. Okay, all right, how's life? How was the deadline you had, you were going through? Is that a year now, to
+
+Angie.H Moon  3:56  
+be very honest, it didn't go like as optimally as planned. Okay, so Scott and Charlie recommended me to master out, and I'm trying to persuade. I'm on a persuasion challenge to let me stay in the program. And I don't, yeah, I guess, like, there are many different factors. I'm trying to, like, half of my time is doing the fault analysis on my path, and half of my time I'm trying to plan ahead. But part of the reason, I think, is and I'm not trying to, like, blame someone. But during the last summer, I was supposed to prepare my qualification exam, but I was so excited about the Bayesian entrepreneurship and like inviting Josh Tenenbaum, so I learned really a lot. And I'm not saying anything like it was the choice that I made, but I should have focused a little more on qualification exam. Yeah, that said. That maybe opportunities come from the crisis, so I'm trying really my best to make this work. Okay, yeah, so that's, did I answer your question of, how's my life?
+
+Speaker 1  5:12  
+I'm sorry it didn't go the way that you had. I imagine it did not go the way that you had won it, but I'm sure, as you said, they're usually, you know, opportunities that come out of these directions and disagreements, as you know, taking a page out of your book and rarely do anything. Does anything go as planned in academia? Oh, yeah. So for me, it was one way, and then for you, it's going to be another way. Scott was investing his time in audio and changing his work trajectory to entrepreneurship. So for you happen at this stage, and I'm sure you're gonna you're gonna figure out your path. I have a really, really packed day with a few things I want to make sure that we get the most out of the meeting today. What did you want to talk about?
+
+Angie.H Moon  6:18  
+Would you mind if I go through the My thesis plan, sure, yeah. So I was interested in measuring the vagueness, and where the vagueness comes from. Is the pitch book data as a company description and how many markets they are exploring around and so Scott has tested two and choose one idea. And like probabilistic thinking, is how many options you have, for instance. So I am focusing on four variables, which is so v is the vagueness. And with this fakeness as a Thanks for your advice. Like I always, I trained to think of empirical way. So do you remember last time? Yeah, okay, so the growth is dependent variable, and the data is from 2021 to 2024 and we have like three years, but this default is in three years. This is 2021 cohort, meaning they have received early stage BC in 2021 and this V is the measurement I am applying to 2021 company description. Okay, so the general idea is the vague, like the common wisdom is, and based on the interview I had with the investors, they like precise arguments because it is testable, and that aligns with the entrepreneurial finance in terms of specificity. So my point is, people think that the more precise it is, the growth they would have, or like what, the higher probability of long term growth they would have. But the data doesn't show it like that. The data looks like this, meaning there are like, two peaks where you either become very specific and succeed, or you become vague and succeed. So my whole thesis is around, oh, why? What causes that puzzle?
+
+Unknown Speaker  8:39  
+So for say, what's that with the puzzle? What is puzzling?
+
+Angie.H Moon  8:44  
+Puzzling because I was expecting the more precise it is, the more successful they would become, okay, but there is a peak in the vague area, okay.
+
+Speaker 1  8:56  
+So is that actual pattern of the data that? Yes, okay. And how do you measure vagueness,
+
+Angie.H Moon  9:03  
+the numbers of keywords and whether there are some specificity, but that's like less important,
+
+Speaker 1  9:09  
+okay, so what you find is that there is sort of bimodal distribution, where if you're not precise at all, you don't raise money if you're too precise, you don't raise money. There's somewhere in between. Okay, okay, that's interesting,
+
+Angie.H Moon  9:29  
+and I think this might be relevant with your paper on Angel investors, on BC, has different investing pattern. But my story here was this, people are more like analyst type of investors, and this type is more believer type of investors. A good example is Elon Musk's fan like they are all believers, like whatever he says or like there is some thing that they don't want to test, but always just believe what they are trying to say. Yeah, so that's my hypothesis. There are two types of investors, and ultimately I am trying to show that. Okay, so there is three layers, meaning, like, first I show the statistically robust pattern, and this is where my mail to you in advance came from. You're interested in startup prediction, which is a little different from causal identification. It's my opinion. But this is the first layer. There is a theory called LTE theory, which is you first show what, and then how, and then why. And the why part is you design a simulation and generate the pattern that you observe in the what layer. So that's how I organize my thesis, meaning, first statistic analysis, I define the vagueness measure and then show that the growth is like this, but this is just statistical. And then in the second step, I show a little more temporal precedence of the reason why the growth, or here the vagueness does not appear. But A stands for adaptiveness, which is measured by delta V, meaning V was I started very vague, but I explored and identified some beach head market, and then my vagueness in three years has become 20. So here the delta v, which is a is 80. So if there are like exploring well and keep focusing, then this a one and a two would keep increasing, right? So the second paper is on the early funding that you got in 2021 may harm your overall growth, because there is a mechanism that you are committing into some promises, they're very specific, because you need capital, and then that prevents you from adapting. So it's very in date data is very this is the has the strongest effect of if I plot with the adaptiveness and the growth is very strong, positive. And that's acceptable because, if you like, A is similar to learning. So the more you learn, the more growth that you are observing, is acceptable. But I think the overall pattern of the higher capital you have, the lower growth you can get. That's, I think, counterintuitive. So that's what I'm focusing in the second part. So combining this part and this part, I am trying to show that there are multiple ways to succeed. You either choose to become very specific or to be very vague, and both can work. But if you become vague or specific that would attract the analyst type of investors, whereas if you become vague, that would attract the believers, like you are selling your butterflies. So that leads to so that two factors, the vagueness and that led leads to the attraction of the investor type. That leads to the adaptiveness, meaning, if you have very specific promise, and you are attracting like minded people who are here to test that, then it's my hypothesis that adaptability would be a little lower, because your sigma would be very high, yeah, like minded people reinforcing each other. I think I got the overall picture. Okay, you're really fast. My three years in here, help me. Help me connect any feed that would be welcome.
+
+Speaker 1  14:04  
+I mean, it's, it's all. Everything you say is possible. What I would say is, really, I think you have to think about what you want to do with this if your intention is to do a PhD. And is this? Is this all a plan is used to be a persuasion plan? Yeah. Okay, so I think the way you would persuade at least Scott Stern, I don't know, probably also Charlie, but Charlie's from somewhat different field so, but the norms in business school are relatively the same. There's a very clear roadmap, at least, in terms of what how things should be when it comes to the life cycle of a graduate teacher. At students. And I'm not saying it's good, right? I actually have a critiques to it, but there's a certain this, this, this road has been taken, okay, many, many, many, many times, and especially by mentors like Scott, who have had many, many students. So they have a recipe on how to build a pipeline of successful graduate students, and with a little bit of a variation, all of them look somewhat similar. It starts with a home run paper like that's the ideal, and the home run paper's very clear in management and economics how it looks like. It's usually has an IV strategy, is fairly narrow, at least in the sense that what is the core concept or idea that it wants to convey. And it essentially has a hook that's interesting. It's relevant overall for an audience, meaning that you're not going after a research project that is so novel that you don't know who you're reading, who's your your your scholarly essentially, friends or audience that you're going to talk to. So it has to draw on some literature. Of course, the grad students you know, maybe break through inventions that came out of grad school were people doing fundamental, fundamental new work, okay, but that's really serendipitous and got very rare,
+
+Angie.H Moon  16:37  
+just to construct shared understanding the audience is based in entrepreneurship, all three of them, right? And it would be really helpful if you can share your evaluation of which of the three would so be close to home run paper, if there is right.
+
+Speaker 1  16:54  
+I mean, it a home run paper has at least, at least two of the three things that you talked about, which is the what and the why, which is these fine results and the mechanisms, but what is hard? And it's not a critique to use. It's generally something extremely difficult for grad students. It's part of training in grad school to learn how to think clearly, and it's actually life lifelong learning process, but especially in grad school, to how to chip away, okay, all of the different parts that are relevant and keep a narrow focus on like, essentially choose what you're going to study and how you're going to study. So my advice really would be, if you in terms of how you should like, if you had a meeting, we were sending a proposal to Scott and Charlie and say, Hey, I've got, I have something to present to you. It's really a research question, an empirical strategy, your data and your your sketch of your contributions. So I'm going to study the effect of one of the faculty at by the name Tim Simcoe, who's very famous in strategy. They're very influential, has this blog that he wrote years ago, that AJ shared with me, and I shared with my own students, that the best way to start, especially for for for a young researcher or new researcher, the best way to start a project is to formulate it in the in the In the form of the effective x and y. So be very clear, what's your dependent variable and what's your independent variable. So what I would do is make a compelling one pager on what is going to be a job market. Don't even think about this rotation, because this rotation is going to come out of a successful job market paper. And what Scott cares about is, of course, training your graduate students as a well rounded, successful scholars, but also that they can achieve a tenure track position once they graduate. That's maybe the litmus test of like, does it? Does it look like the student is going to have been applied six years or seven years? Does it look like that they're going to actually have in their job market paper that they can market themselves? And that job market paper, when you're going to 20 different universities, people have to be able to relate to it. If 90% of the audience is like, I have no idea what those constantly, then Scott thinks that, Oh, I agree with that. Student is not going to be
+
+Angie.H Moon  19:45  
+successful, yeah. So just for our productivity, like, if you're in my situation, and the due date for this is the first draft is due tomorrow, and, like, I should wrap up by the end of the. Year, um, how would you
+
+Unknown Speaker  20:03  
+approach this?
+
+Angie.H Moon  20:08  
+I'm sorry, first of all, yeah, this, this is really, yeah, it's very vague question. No, I know, yeah, but I really don't know what
+
+Speaker 1  20:15  
+situation I'm in. Grain of salt, because I have thought about your project deeply enough, I don't know the intricacies of where you are and your communication with your advisors, but just as an idea, the way I would think about this is a presentation or whatever is the one pager that says that defines or makes a proposal about who you are going to be as a scholar by the end of your PhD program, meaning that I am going to be an expert in understanding the consequences of heterogeneous beliefs in entrepreneurship, especially in how heterogeneous beliefs shape on most choices under uncertainty.
+
+Angie.H Moon  21:07  
+So may I yeah, I wish to be an expert in the trade off between the commitment and the flexibility entrepreneurship,
+
+Unknown Speaker  21:15  
+commitment and flexibility. May I add a little more make that a little bit more clear
+
+Angie.H Moon  21:23  
+in the sense that, yeah, so entrepreneurs need commitments to gain capital, but if they're in a very highly uncertain situation, they also need flexibility. So those two are conflicting with each other, right?
+
+Speaker 1  21:39  
+I mean, but no, I get like what you're saying. I'm saying in terms of clarity, what probably what you want to do is to make it crisper, like I I, by the end of my graduate studies, I intend to become an expert and in the yeah in the trade offs associated with entrepreneurial choice or commitment on your uncertainty. So I wouldn't into, I would, I would limit the scope of concepts or phenomena that you're like if it's about commitments, don't have flexibility. So that's sort of I'm saying to make it clear, what are the what are the benefits and costs associated with making choice on their uncertainty and limited information? So you're going to become an expert in that. But what you have is along the same same lines, but make it as digestible as possible. I see like my for example, I My intention is to become a world expert in understanding the the benefits and costs of early stage advice for startups like I gotta want to be the expert in the world about business, business advice, right? So that's like, yeah, gives an idea about who you're I mean, but that's only part of us, like 5% of it. But in terms of the paper itself, the next line should be something about my primary objective is, within three years, develop a draft of a complete draft of a job market paper poised to become one of the, you know, most influential job market paper's for the year that I go on market, and I intend to compete in the management and strategy, and I don't know whatever is the other field that Economics and Business Economics and strategy and job market, so that would be sort of operationally, what you're going to be focused on. I think if I were to guess where the concern comes from, it's that you're so extremely smart and you have such wide interest that is worried that you're going to be a 20 year PhD student, just because you want to do so many different things. So they may they may be wrong, they may be right, I don't know, but I think that they want to see focus.
+
+Angie.H Moon  24:18  
+Got it that's very helpful. Um, thanks for sharing the exact keywords that you're just saying like and also like one pager, that specificity really helps, right? Two. Last question, if you have time, Sure, thanks.
+
+Speaker 1  24:32  
+So I So, by the way, the rest of it should be a proposal without here's what I'm going to here, what I think I should study. I would like to study the effect of X and Y. Fill in the blank with your x and y the data. Here's the data, and then if you can in the time that you have an empirical identification strategy that would allow you to identify the cause of x and y, that would be fantastic.
+
+Angie.H Moon  24:59  
+So when people say identification strategy, is it limited to causal effects like IV and something like that, IV is one
+
+Speaker 1  25:07  
+way to or different is another one? RCT is another
+
+Angie.H Moon  25:12  
+one, because prediction is not like you wouldn't call prediction as identification strategy, right? No, but I was curious why you are interested in prediction.
+
+Speaker 1  25:22  
+I mean, I'm. It's one of my interests, but that that usually doesn't get published. And I have said, I have to form up sometimes prediction does, but it's very rare that in at least management, you would get published on the basis of prediction, because they're, that's the that's the job of machine learning scientists to figure out really good prediction.
+
+Unknown Speaker  25:47  
+How do you feel about that?
+
+Speaker 1  25:49  
+Well, I mean, I'm, I wish I could, I could do more prediction. And I'm like, why I do my research? Why learn? I always think about how this would be yet another signal in whatever prediction that I but I have to make sacrifices. That sacrifice is delaying your gratification for when you have tenure and you have more flexibility, you have enough projects in the pipeline that you can afford to focus on something else. Otherwise, we're going against changing the world order. Yeah, that's just not that isolate. Got it? Yeah?
+
+Angie.H Moon  26:25  
+Because I trust Jay Barney's judgments. And he said that people think causal inferences and strategy questions or choices are rigorous, but he disagrees with it, so I don't
+
+Speaker 1  26:40  
+Yeah, the kind of strategy research that he talks about is horrible. Like, the causal identification is horrible. The kind of causal identification that gets approval Scott Stern is good. So there are different strands of strategy researchers. I don't believe half of the corporate strategy literature, it's just, it's just garbage. But for those strategy scholars that come out of schools trained by people like my advisor, Scott, interesting. I know they're they're serious.
+
+Angie.H Moon  27:12  
+That's interesting. So he wouldn't give
+
+Speaker 1  27:14  
+you a thumbs up on an identification strategy if he didn't think it's it's convincing.
+
+Speaker 2  27:20  
+Yeah, yeah, okay, um,
+
+Angie.H Moon  27:26  
+explanation and prediction are two different concepts that are being converged in certain fields, but I feel strategy, or like at least Scott's language, it's two different word, so I should keep in mind when I'm communicating with it, yeah,
+
+Speaker 1  27:43  
+in the majority of scientific endeavor, even in hard sciences, causality is central, like the very few niche cases, the majority of the times you need to have results are meaningless without causal identification, most of The Times, but sometimes you don't care about causation. The outcome is such, such an important outcome, that prediction is really important, and that's all you care about. Some policy decisions, for example,
+
+Angie.H Moon  28:11  
+yeah, one of his paper's like startup quality prediction, right? Yeah. Okay. Last question is, I will trigger
+
+Speaker 1  28:23  
+also provided is inconsistent with alternative explanations, including financial incentives and selection. So it's very simple. I'm showing experimentation is experimentation skills are driven by experience, so experimentation skills something that is developed by Amir and by doing for angel investors, for angel investors. So angels are more likely to provide experimentation advice. That's for why. That's table two, right? That's punch one is the main effect. Punch two, that knocks out. What makes you win is showing why, right? So I find correlations, usually mechanisms. You don't have multiple layers of causality. You can't have like you have one causal result, but then the rest of it is showing it is that, and not these other 10 things. If that is only what will happen the paper. It's not good enough for a lot of further job market paper or for top journal. So you say, you need some causal results. But then, if you have a causal result, and then in a mechanism, you say, you know, I look at experienced and inexperienced angels and VCs, and I find that it's actually the result is only significant among the experienced investors. So I suspect this experience, but I don't know for sure, and I don't have a causal identification. Here is the best I can do. I'm going to look to see if the result is driven by financial incentives, meaning that startups that are that need experimentation. Advice, are investment ready? That's why investors want to work with them. It has nothing to do with experimentation. It's about the stage or it's about the fact that they have funding. They need funding, and mentors want to invest in them. So that's really it's multiple alternative explanations that I go through and say it's not those. It's that, but it's also not those.
+
+Angie.H Moon  30:23  
+So the mechanism you show, it's not those in their correlation.
+
+Speaker 1  30:28  
+They're all correlation, yes, but that that only you can get away with that because you have a causal result somewhere else. And it's also the fact that reference don't expect you to have like causal results for everything. You can't manipulate the amount of experience people have. You can't randomly assign experiences unreasonable to expect that you know you have causal identification.
+
+Angie.H Moon  30:57  
+So is it a fair understanding that this paper is mostly about correlation. But the smart thing is, you cross out every other,
+
+Speaker 1  31:08  
+oh, you're looking at a way older version. So if you look at the new version, this one didn't get published. With such rich data and tons of correlations and a million other alternatives, it didn't get published. So eventually I had to kill another paper, which was about the causal effect of mentoring on performance. So that was an entire paper that could have helped my tenure. I had to kill it and bring its results into this so that this one gets published.
+
+Angie.H Moon  31:37  
+You thought this was more surprising? I thought,
+
+Speaker 1  31:41  
+this is good enough. Like the data that I've collected is, is fantastic. Initially, the editor, Alfonso Amir, loved it. He said, This is going to get through. Yes, you don't have causal identification, but the value of the data that you bring and the insights are so much that, yeah, it's okay, it Jeffrey's Jeffrey didn't sign up on it. So eventually I have to kill a paper. And that's a lot of flaws. That's a huge sacrifice. I had to kill that paper during its results over here because I didn't have an instrument for the effective mentoring enterprise. So if you look at the published version, it's going to have the
+
+Angie.H Moon  32:24  
+performance effect. So the takeaway of the story is the publish you need some serious call identification,
+
+Speaker 1  32:31  
+at least if you, if you're if you want to be Scott stern grade graduate students, then that's the that's the quality expectation he has from grad students simulation like his paper was anchor. I wouldn't go down unless it's just some extraordinary simulation with magic that nobody has some some methodological innovation in simulation. He can do it because of the stage he is he is in. But I would not recommend simulation generally. I would not recommend it for
+
+Unknown Speaker  33:17  
+our graduate students, because
+
+Speaker 1  33:20  
+it sounds like, you know, you took a shortcut, essentially, unless your simulation, I don't know what simulation you're thinking about, if it's if it's something that is very insightful, then maybe, yeah,
+
+Angie.H Moon  33:31  
+I hope you can understand my situation, like I'm from system dynamics, and they're like, simulation happens, yeah, very hard to adjust to this new environment, and your guidance is
+
+Speaker 1  33:42  
+really helpful. Yeah, okay, you're welcome. All right, I gotta, I gotta go now. Yeah, you're welcome.
+
+Angie.H Moon  33:51  
+Is there any reason why you submitted your management science paper to business strategy, not entrepreneur
+
+Speaker 1  33:57  
+and innovation? Because, because Alfonso showed a lot of interest. He said, send it, send it
+
+Angie.H Moon  34:04  
+to me. Yeah, because most of the entrepreneurship paper I follow tend to be published in the business strategy. So I was curious, yeah, there's,
+
+Speaker 1  34:13  
+there's an overlap, there's also a lot of innovation stuff that gets published in entrepreneurship.
+
+Angie.H Moon  34:18  
+So if you were me, like, if this one of this happens to go to be submitted, like, would you start with the business strategy side? Is that closest to the base entrepreneurship,
+
+Speaker 1  34:28  
+it really depends who's the editor of the department editor at that point where the taste is, like the game of submission you're years away from so you don't have to worry about that. But when it comes to submission, you're going to talk to your mentors and your advisors and look up the editors, see what they're interested in right now, one of the department editors in the entrepreneurship group is Matt marks, so I feel very comfortable sending him a paper that we're working on with. Important that uses llms for codifying data, because he's he's interested in that, and that's the job of the editor. Like he gets, he gets elected to his job in order to bring his flavor of a search and essentially to promote his flavor what he thinks is important and should be done to that journal you have a lot of collaborators.
+
+Angie.H Moon  35:25  
+Well, it takes time. So yeah, I know how much effort you have put it in. So all right, good to see you. Thanks. Amir, bye.
+
+Transcribed by https://otter.ai
