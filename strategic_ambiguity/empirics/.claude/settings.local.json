@@ -23,7 +23,9 @@
       "Bash(sort:*)",
       "Bash(/opt/homebrew/bin/pip3 list:*)",
       "Bash(/opt/homebrew/bin/pip3 show:*)",
-      "Bash(/opt/homebrew/bin/python3.11:*)"
+      "Bash(/opt/homebrew/bin/python3.11:*)",
+      "Bash(cd:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

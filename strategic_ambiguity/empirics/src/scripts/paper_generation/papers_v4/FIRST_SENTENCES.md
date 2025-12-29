@@ -13,15 +13,15 @@
 
 ---
 
-## P1: The Funding Paradox (¶01-11)
+## I1: The Funding Paradox (¶01-11)
 
 | ¶ | First Sentence (Core Claim) |
 |:--|:----------------------------|
-| 01 | Strategy theory and investment practice share an implicit assumption: capital enables commitment... |
+| 01 | Strategy theory and investment practice share an implicit assumption: commitment attracts capital... |
 | 02 | **I find the opposite.** Ventures that raise more funding show *lower* growth rates. |
 | 03 | This paper explains why. The answer lies in movement. |
-| 04 | **The decomposition: dG/dE = (dG/dM) × (dM/dE).** |
-| 05 | I define three variables: E, M, G. |
+| 04 | **The decomposition: dG/dF = (dG/dM) × (dM/dF).** |
+| 05 | I define three variables: F, M, G. |
 | 06 | Movement is not pivoting randomly. It is disciplined repositioning. |
 | 07 | The null hypothesis comes from strategy theory. |
 | 08 | **My finding challenges this implicit assumption.** Movers outperform stayers 1.8×. |
@@ -77,13 +77,13 @@
 | ¶ | First Sentence (Core Claim) |
 |:--|:----------------------------|
 | 31 | Entrepreneurship is experimentation. Camuffo and colleagues formalized this. |
-| 32 | I test this assumption. If capital enables experimentation, then dM/dE > 0. |
-| 33 | **I find the opposite. Funding suppresses movement: dM/dE < 0.** |
+| 32 | I test this assumption. If capital enables experimentation, then dM/dF > 0. |
+| 33 | **I find the opposite. Funding suppresses movement: dM/dF < 0.** |
 | 34 | **This is not Camuffo-Nanda being wrong. It is Camuffo-Nanda being incomplete.** |
-| 35 | Capital creates commitment through three channels: psychological, structural, social. |
+| 35 | The mechanism operates in **two stages**: Selection → Capital → Lock-in. |
 | 36 | Consider the founder who raises $5M. |
 | 37 | **This extends experimental entrepreneurship.** Capital enables in principle; commitment impedes in practice. |
-| 38 | Heterogeneity supports this. dM/dE < 0 strongest when commitment strongest. |
+| 38 | Heterogeneity supports this. dM/dF < 0 strongest when commitment strongest. |
 | 39 | Module M5 tests the core claim. |
 
 ---
@@ -96,8 +96,8 @@
 | 41 | Using 408,697 ventures from PitchBook. |
 | 42 | **Core finding: +1 SD funding → 0.4 SD lower movement.** |
 | 43 | Causal identification uses funding shocks. |
-| 44 | Mechanism test: dM/dE < 0 effect is 2× stronger for commitment-heavy deals. |
-| 45 | Timing matters. Early-stage funding shows stronger dM/dE < 0. |
+| 44 | Mechanism test: dM/dF < 0 effect is 2× stronger for commitment-heavy deals. |
+| 45 | Timing matters. Early-stage funding shows stronger dM/dF < 0. |
 | 46 | The pattern is consistent with commitment constraining experimentation. |
 | 47 | **Summary: The Funding Trap is empirically confirmed.** |
 | 48 | The Camuffo-Nanda framework is now extended. |
@@ -156,7 +156,7 @@
 | 73 | **Both extremes trap ventures.** |
 | 74 | The unified trap equation: μ(1−μ) < ε/V captures both failures. |
 | 75 | **Funding accelerates both traps.** |
-| 76 | This completes the dM/dE < 0 mechanism. |
+| 76 | This completes the dM/dF < 0 mechanism. |
 | 77 | Data shows the pattern across industries. |
 | 78 | The stayer archetype has two origins. |
 | 79 | **Escape requires different prescriptions.** High-V: specificity. Low-V: diversity. |
@@ -242,16 +242,16 @@
 
 | ¶ | First Sentence (Core Claim) |
 |:--|:----------------------------|
-| 113 | **Contributions.** Layer 1: M = \|ΔV\|, dG/dM > 0, dM/dE < 0. Layer 2: decomposition. Layer 3: learning trap condition. **必死卽生, 必生卽死.** |
+| 113 | **Contributions.** Layer 1: M = \|ΔV\|, dG/dM > 0, dM/dF < 0. Layer 2: decomposition. Layer 3: learning trap condition. **必死卽生, 必生卽死.** |
 
 ---
 
 ## Quick Reference: 10 Key Sentences
 
 1. **¶02**: I find the opposite. Ventures that raise more funding show *lower* growth rates.
-2. **¶04**: The decomposition: dG/dE = (dG/dM) × (dM/dE).
+2. **¶04**: The decomposition: dG/dF = (dG/dM) × (dM/dF).
 3. **¶23**: Movers outperform stayers 1.8×.
-4. **¶33**: Funding suppresses movement: dM/dE < 0.
+4. **¶33**: Funding suppresses movement: dM/dF < 0.
 5. **¶34**: This is not Camuffo-Nanda being wrong. It is Camuffo-Nanda being incomplete.
 6. **¶52**: The learning condition: μ(1−μ) < ε/V.
 7. **¶60**: Vagueness preserves options but prevents learning.
