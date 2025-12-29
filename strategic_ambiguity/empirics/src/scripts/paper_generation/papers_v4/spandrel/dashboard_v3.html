@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통합관제센터 | Thesis D.934</title>
+    <style>
+        :root {
+            --bg-color: #0a0e14;
+            --card-bg: #131820;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --border-color: #21262d;
+
+            /* 오행 Colors - Consistent per Agent */
+            --fire-red: #ff6b6b;      /* I - Introduction */
+            --earth-yellow: #ffd43b;  /* M - Movement */
+            --metal-silver: #c9d1d9;  /* T - Traps */
+            --water-blue: #4dabf7;    /* E - Escape */
+            --wood-green: #69db7c;    /* C - Commit */
+
+            /* Darker variants for backgrounds */
+            --fire-bg: rgba(255, 107, 107, 0.08);
+            --earth-bg: rgba(255, 212, 59, 0.08);
+            --metal-bg: rgba(201, 209, 217, 0.08);
+            --water-bg: rgba(77, 171, 247, 0.08);
+            --wood-bg: rgba(105, 219, 124, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* === HEADER === */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(90deg, var(--fire-bg), var(--earth-bg), var(--metal-bg), var(--water-bg), var(--wood-bg));
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-left {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .header-center {
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .header-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 3px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-family: 'Times New Roman', serif;
+            font-size: 0.9rem;
+            color: var(--earth-yellow);
+        }
+
+        /* === MASTER EQUATION === */
+        .master-equation {
+            text-align: center;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .equation-main {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .equation-phrase {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 0.8rem;
+        }
+
+        .phrase-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* === LINEAR TIMELINE === */
+        .timeline {
+            display: flex;
+            align-items: stretch;
+            gap: 3px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .timeline-agent {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .agent-header {
+            text-align: center;
+            padding: 8px 5px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .agent-I .agent-header { background: var(--fire-bg); color: var(--fire-red); border-bottom: 3px solid var(--fire-red); }
+        .agent-M .agent-header { background: var(--earth-bg); color: var(--earth-yellow); border-bottom: 3px solid var(--earth-yellow); }
+        .agent-T .agent-header { background: var(--metal-bg); color: var(--metal-silver); border-bottom: 3px solid var(--metal-silver); }
+        .agent-E .agent-header { background: var(--water-bg); color: var(--water-blue); border-bottom: 3px solid var(--water-blue); }
+        .agent-C .agent-header { background: var(--wood-bg); color: var(--wood-green); border-bottom: 3px solid var(--wood-green); }
+
+        .agent-phrase {
+            font-size: 0.65rem;
+            opacity: 0.8;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .subagents {
+            display: flex;
+            gap: 2px;
+            padding: 8px 4px;
+            flex-wrap: nowrap;
+        }
+
+        .subagent {
+            flex: 1;
+            min-width: 50px;
+            padding: 10px 4px;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .subagent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .agent-I .subagent { background: var(--fire-bg); border-color: rgba(255, 107, 107, 0.3); }
+        .agent-M .subagent { background: var(--earth-bg); border-color: rgba(255, 212, 59, 0.3); }
+        .agent-T .subagent { background: var(--metal-bg); border-color: rgba(201, 209, 217, 0.3); }
+        .agent-E .subagent { background: var(--water-bg); border-color: rgba(77, 171, 247, 0.3); }
+        .agent-C .subagent { background: var(--wood-bg); border-color: rgba(105, 219, 124, 0.3); }
+
+        .agent-I .subagent:hover { border-color: var(--fire-red); }
+        .agent-M .subagent:hover { border-color: var(--earth-yellow); }
+        .agent-T .subagent:hover { border-color: var(--metal-silver); }
+        .agent-E .subagent:hover { border-color: var(--water-blue); }
+        .agent-C .subagent:hover { border-color: var(--wood-green); }
+
+        .subagent-id {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .agent-I .subagent-id { color: var(--fire-red); }
+        .agent-M .subagent-id { color: var(--earth-yellow); }
+        .agent-T .subagent-id { color: var(--metal-silver); }
+        .agent-E .subagent-id { color: var(--water-blue); }
+        .agent-C .subagent-id { color: var(--wood-green); }
+
+        .subagent-phrase {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            line-height: 1.2;
+        }
+
+        .subagent-para {
+            font-size: 0.5rem;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+
+        /* Arrow between agents */
+        .timeline-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            padding: 0 5px;
+        }
+
+        /* === TWO ROOMS VIEW === */
+        .rooms-container {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .room {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+        }
+
+        .room-problem {
+            border-color: var(--fire-red);
+            background: linear-gradient(135deg, var(--fire-bg), var(--earth-bg));
+        }
+
+        .room-solution {
+            border-color: var(--wood-green);
+            background: linear-gradient(135deg, var(--water-bg), var(--wood-bg));
+        }
+
+        .room-title {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .room-problem .room-title { color: var(--fire-red); }
+        .room-solution .room-title { color: var(--wood-green); }
+
+        .room-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .room-figure {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .room-figure:hover {
+            transform: scale(1.02);
+        }
+
+        .room-agents {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .room-agent-chip {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chip-I { background: var(--fire-bg); color: var(--fire-red); border: 1px solid var(--fire-red); }
+        .chip-M { background: var(--earth-bg); color: var(--earth-yellow); border: 1px solid var(--earth-yellow); }
+        .chip-T { background: var(--metal-bg); color: var(--metal-silver); border: 1px solid var(--metal-silver); }
+        .chip-E { background: var(--water-bg); color: var(--water-blue); border: 1px solid var(--water-blue); }
+        .chip-C { background: var(--wood-bg); color: var(--wood-green); border: 1px solid var(--wood-green); }
+
+        /* Door */
+        .door-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .door {
+            background: var(--card-bg);
+            border: 3px solid var(--water-blue);
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(77, 171, 247, 0.3);
+        }
+
+        .door-label {
+            font-size: 0.6rem;
+            color: var(--water-blue);
+            letter-spacing: 2px;
+        }
+
+        .door-id {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--water-blue);
+            margin: 5px 0;
+        }
+
+        .door-phrase {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        .door-arrow {
+            font-size: 1.5rem;
+            color: var(--water-blue);
+            margin: 8px 0;
+        }
+
+        /* === COMMAND PANEL === */
+        .command-panel {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .agent-status {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .agent-status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .agent-status-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--wood-green);
+        }
+
+        .status-indicator.pending { background: var(--earth-yellow); }
+        .status-indicator.blocked { background: var(--fire-red); }
+
+        .agent-status-progress {
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+
+        .agent-I .progress-fill { background: var(--fire-red); }
+        .agent-M .progress-fill { background: var(--earth-yellow); }
+        .agent-T .progress-fill { background: var(--metal-silver); }
+        .agent-E .progress-fill { background: var(--water-blue); }
+        .agent-C .progress-fill { background: var(--wood-green); }
+
+        .agent-status-tasks {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+
+        /* === CLAIMS REGISTRY === */
+        .claims-registry {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .claims-title {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .claims-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .claim-card {
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+
+        .claim-M { background: var(--earth-bg); border-left-color: var(--earth-yellow); }
+        .claim-T { background: var(--metal-bg); border-left-color: var(--metal-silver); }
+        .claim-E { background: var(--water-bg); border-left-color: var(--water-blue); }
+
+        .claim-header {
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .claim-M .claim-header { color: var(--earth-yellow); }
+        .claim-T .claim-header { color: var(--metal-silver); }
+        .claim-E .claim-header { color: var(--water-blue); }
+
+        .claim-equation {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .claim-phrase {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-motto {
+            color: var(--earth-yellow);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        /* === DETAIL PANEL (右側) === */
+        .detail-panel {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 400px;
+            height: 100vh;
+            background: var(--card-bg);
+            border-left: 1px solid var(--border-color);
+            transition: right 0.3s;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .detail-panel.open {
+            right: 0;
+        }
+
+        .detail-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .detail-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-id {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .detail-phrase {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        .detail-content {
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .detail-figure {
+            width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .detail-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Active subagent */
+        .subagent.active {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .agent-I .subagent.active { border-color: var(--fire-red); box-shadow: 0 0 15px rgba(255, 107, 107, 0.4); }
+        .agent-M .subagent.active { border-color: var(--earth-yellow); box-shadow: 0 0 15px rgba(255, 212, 59, 0.4); }
+        .agent-T .subagent.active { border-color: var(--metal-silver); box-shadow: 0 0 15px rgba(201, 209, 217, 0.4); }
+        .agent-E .subagent.active { border-color: var(--water-blue); box-shadow: 0 0 15px rgba(77, 171, 247, 0.4); }
+        .agent-C .subagent.active { border-color: var(--wood-green); box-shadow: 0 0 15px rgba(105, 219, 124, 0.4); }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            5 Agents | 17 Subagents
+        </div>
+        <div class="header-center">
+            <div class="header-title">통합관제센터</div>
+            <div class="header-subtitle">Thesis D.934 Command Center</div>
+        </div>
+        <div class="header-right">
+            dG/dE = (dG/dM)(dM/dE) < 0
+        </div>
+    </div>
+
+    <!-- MASTER EQUATION WITH PHRASES -->
+    <div class="master-equation">
+        <div class="equation-main">
+            <span style="color:var(--fire-red)">Funding Paradox</span> =
+            <span style="color:var(--earth-yellow)">Movement Helps</span> ×
+            <span style="color:var(--metal-silver)">Funding Traps</span>
+        </div>
+        <div class="equation-phrase">
+            <div class="phrase-item">
+                <span style="color:var(--fire-red)">dG/dE < 0</span>
+                <span style="color:var(--text-secondary)">돈 받으면 못 큰다</span>
+            </div>
+            <div class="phrase-item">
+                <span style="color:var(--earth-yellow)">dG/dM > 0</span>
+                <span style="color:var(--text-secondary)">움직이면 더 큰다</span>
+            </div>
+            <div class="phrase-item">
+                <span style="color:var(--metal-silver)">dM/dE < 0</span>
+                <span style="color:var(--text-secondary)">돈 받으면 못 움직인다</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINEAR TIMELINE -->
+    <div class="timeline">
+        <!-- I Agent -->
+        <div class="timeline-agent agent-I">
+            <div class="agent-header">
+                I 火
+                <div class="agent-phrase">Funding Paradox</div>
+            </div>
+            <div class="subagents">
+                <div class="subagent" onclick="openDetail('I1')" data-id="I1">
+                    <div class="subagent-id">I1</div>
+                    <div class="subagent-phrase">Paradox<br>Revealed</div>
+                    <div class="subagent-para">¶1-11</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-arrow">→</div>
+
+        <!-- M Agent -->
+        <div class="timeline-agent agent-M">
+            <div class="agent-header">
+                M 土
+                <div class="agent-phrase">Movement Matters</div>
+            </div>
+            <div class="subagents">
+                <div class="subagent" onclick="openDetail('M1')" data-id="M1">
+                    <div class="subagent-id">M1</div>
+                    <div class="subagent-phrase">Van den<br>Steen</div>
+                    <div class="subagent-para">¶12-18</div>
+                </div>
+                <div class="subagent" onclick="openDetail('M2')" data-id="M2">
+                    <div class="subagent-id">M2</div>
+                    <div class="subagent-phrase">Movers<br>Win</div>
+                    <div class="subagent-para">¶19-29</div>
+                </div>
+                <div class="subagent" onclick="openDetail('M3')" data-id="M3">
+                    <div class="subagent-id">M3</div>
+                    <div class="subagent-phrase">Bridge<br>Decomp</div>
+                    <div class="subagent-para">¶30</div>
+                </div>
+                <div class="subagent" onclick="openDetail('M4')" data-id="M4">
+                    <div class="subagent-id">M4</div>
+                    <div class="subagent-phrase">Camuffo<br>Nanda</div>
+                    <div class="subagent-para">¶31-38</div>
+                </div>
+                <div class="subagent" onclick="openDetail('M5')" data-id="M5">
+                    <div class="subagent-id">M5</div>
+                    <div class="subagent-phrase">Golden<br>Cage</div>
+                    <div class="subagent-para">¶39-48</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-arrow">→</div>
+
+        <!-- T Agent -->
+        <div class="timeline-agent agent-T">
+            <div class="agent-header">
+                T 金
+                <div class="agent-phrase">Funding Traps</div>
+            </div>
+            <div class="subagents">
+                <div class="subagent" onclick="openDetail('T1')" data-id="T1">
+                    <div class="subagent-id">T1</div>
+                    <div class="subagent-phrase">Coords<br>Defined</div>
+                    <div class="subagent-para">¶49-55</div>
+                </div>
+                <div class="subagent" onclick="openDetail('T2')" data-id="T2">
+                    <div class="subagent-id">T2</div>
+                    <div class="subagent-phrase">High-V<br>Trap</div>
+                    <div class="subagent-para">¶56-63</div>
+                </div>
+                <div class="subagent" onclick="openDetail('T3')" data-id="T3">
+                    <div class="subagent-id">T3</div>
+                    <div class="subagent-phrase">Low-V<br>Trap</div>
+                    <div class="subagent-para">¶64-72</div>
+                </div>
+                <div class="subagent" onclick="openDetail('T4')" data-id="T4">
+                    <div class="subagent-id">T4</div>
+                    <div class="subagent-phrase">Both<br>Extremes</div>
+                    <div class="subagent-para">¶73-80</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-arrow">→</div>
+
+        <!-- E Agent -->
+        <div class="timeline-agent agent-E">
+            <div class="agent-header">
+                E 水
+                <div class="agent-phrase">Escape Routes</div>
+            </div>
+            <div class="subagents">
+                <div class="subagent" onclick="openDetail('E1')" data-id="E1">
+                    <div class="subagent-id">E1</div>
+                    <div class="subagent-phrase">TEMPO<br>Door</div>
+                    <div class="subagent-para">¶81-86</div>
+                </div>
+                <div class="subagent" onclick="openDetail('E2')" data-id="E2">
+                    <div class="subagent-id">E2</div>
+                    <div class="subagent-phrase">Stayer<br>Paths</div>
+                    <div class="subagent-para">¶87-94</div>
+                </div>
+                <div class="subagent" onclick="openDetail('E3')" data-id="E3">
+                    <div class="subagent-id">E3</div>
+                    <div class="subagent-phrase">Mover<br>Paths</div>
+                    <div class="subagent-para">¶95-102</div>
+                </div>
+                <div class="subagent" onclick="openDetail('E4')" data-id="E4">
+                    <div class="subagent-id">E4</div>
+                    <div class="subagent-phrase">Agile vs<br>Forced</div>
+                    <div class="subagent-para">¶103-106</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-arrow">→</div>
+
+        <!-- C Agent -->
+        <div class="timeline-agent agent-C">
+            <div class="agent-header">
+                C 木
+                <div class="agent-phrase">Commit to Move</div>
+            </div>
+            <div class="subagents">
+                <div class="subagent" onclick="openDetail('C1')" data-id="C1">
+                    <div class="subagent-id">C1</div>
+                    <div class="subagent-phrase">Implica<br>tions</div>
+                    <div class="subagent-para">¶107-110</div>
+                </div>
+                <div class="subagent" onclick="openDetail('C2')" data-id="C2">
+                    <div class="subagent-id">C2</div>
+                    <div class="subagent-phrase">Limita<br>tions</div>
+                    <div class="subagent-para">¶111-112</div>
+                </div>
+                <div class="subagent" onclick="openDetail('C3')" data-id="C3">
+                    <div class="subagent-id">C3</div>
+                    <div class="subagent-phrase">Coda<br>→ I1</div>
+                    <div class="subagent-para">¶113</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TWO ROOMS VIEW -->
+    <div class="rooms-container">
+        <!-- PROBLEM ROOM -->
+        <div class="room room-problem">
+            <div class="room-title">PROBLEM ROOM — Why Stuck?</div>
+            <div class="room-content">
+                <img class="room-figure" src="../papers_v3/1_I_introduction/fig_i_cash_paradox.png"
+                     alt="Funding Paradox" onclick="window.open(this.src)">
+                <div class="room-agents">
+                    <span class="room-agent-chip chip-I" onclick="scrollToAgent('I')">I1 = M3</span>
+                    <span class="room-agent-chip chip-M" onclick="scrollToAgent('M')">M12</span>
+                    <span class="room-agent-chip chip-M" onclick="scrollToAgent('M')">M45</span>
+                    <span class="room-agent-chip chip-T" onclick="scrollToAgent('T')">T1234</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOOR -->
+        <div class="door-container">
+            <div class="door-arrow">→</div>
+            <div class="door" onclick="openDetail('E1')">
+                <div class="door-label">DOOR</div>
+                <div class="door-id">E1</div>
+                <div class="door-phrase">TEMPO</div>
+            </div>
+            <div class="door-arrow">→</div>
+        </div>
+
+        <!-- SOLUTION ROOM -->
+        <div class="room room-solution">
+            <div class="room-title">SOLUTION ROOM — How Escape?</div>
+            <div class="room-content">
+                <img class="room-figure" src="figures/C_fig1_prescription.png"
+                     alt="Commit to Move" onclick="window.open(this.src)">
+                <div class="room-agents">
+                    <span class="room-agent-chip chip-E" onclick="scrollToAgent('E')">E234</span>
+                    <span class="room-agent-chip chip-C" onclick="scrollToAgent('C')">C1</span>
+                    <span class="room-agent-chip chip-C" onclick="scrollToAgent('C')" style="opacity:0.5">C2</span>
+                    <span class="room-agent-chip chip-C" onclick="scrollToAgent('C')">C3→I1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMMAND PANEL: Agent Status (MS Reviewer Score) -->
+    <div class="command-panel">
+        <div class="agent-status agent-I">
+            <div class="agent-status-header">
+                <span class="agent-status-name" style="color:var(--fire-red)">I 火</span>
+                <span class="status-indicator"></span>
+            </div>
+            <div class="agent-status-progress">
+                <div class="progress-fill" style="width: 82%"></div>
+            </div>
+            <div class="agent-status-tasks">82% | Paradox clear</div>
+        </div>
+        <div class="agent-status agent-M">
+            <div class="agent-status-header">
+                <span class="agent-status-name" style="color:var(--earth-yellow)">M 土</span>
+                <span class="status-indicator pending"></span>
+            </div>
+            <div class="agent-status-progress">
+                <div class="progress-fill" style="width: 72%"></div>
+            </div>
+            <div class="agent-status-tasks">72% | Mechanism weak</div>
+        </div>
+        <div class="agent-status agent-T">
+            <div class="agent-status-header">
+                <span class="agent-status-name" style="color:var(--metal-silver)">T 金</span>
+                <span class="status-indicator pending"></span>
+            </div>
+            <div class="agent-status-progress">
+                <div class="progress-fill" style="width: 62%"></div>
+            </div>
+            <div class="agent-status-tasks">62% | Formalism unvalidated</div>
+        </div>
+        <div class="agent-status agent-E">
+            <div class="agent-status-header">
+                <span class="agent-status-name" style="color:var(--water-blue)">E 水</span>
+                <span class="status-indicator blocked"></span>
+            </div>
+            <div class="agent-status-progress">
+                <div class="progress-fill" style="width: 52%"></div>
+            </div>
+            <div class="agent-status-tasks">52% | Causal ID missing</div>
+        </div>
+        <div class="agent-status agent-C">
+            <div class="agent-status-header">
+                <span class="agent-status-name" style="color:var(--wood-green)">C 木</span>
+                <span class="status-indicator pending"></span>
+            </div>
+            <div class="agent-status-progress">
+                <div class="progress-fill" style="width: 63%"></div>
+            </div>
+            <div class="agent-status-tasks">63% | Repeats I</div>
+        </div>
+    </div>
+
+    <!-- CLAIMS REGISTRY -->
+    <div class="claims-registry">
+        <div class="claims-title">CLAIMS REGISTRY</div>
+        <div class="claims-grid">
+            <div class="claim-card claim-M">
+                <div class="claim-header">M: Movement</div>
+                <div class="claim-equation">dG/dM > 0</div>
+                <div class="claim-phrase">움직이면 더 잘 자란다<br>Movers: 1.8× survival rate</div>
+            </div>
+            <div class="claim-card claim-T">
+                <div class="claim-header">T: Traps</div>
+                <div class="claim-equation">dM/dE < 0</div>
+                <div class="claim-phrase">펀딩이 움직임을 억제한다<br>High-V & Low-V 양극단 함정</div>
+            </div>
+            <div class="claim-card claim-E">
+                <div class="claim-header">E: Escape</div>
+                <div class="claim-equation">Agile ≻ Forced</div>
+                <div class="claim-phrase">자발적 움직임이 위기 대응보다 낫다<br>Low E → voluntary | High E → crisis</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-motto">Commit to Movement, not to Promises</div>
+        <div>v3: 통합관제센터 | 5 Agents × 17 Subagents | Linear Flow + Two Rooms</div>
+    </div>
+
+    <!-- DETAIL PANEL -->
+    <div class="overlay" onclick="closeDetail()"></div>
+    <div class="detail-panel" id="detailPanel">
+        <button class="detail-close" onclick="closeDetail()">×</button>
+        <div class="detail-header">
+            <div class="detail-id" id="detailId">M1</div>
+            <div class="detail-phrase" id="detailPhrase">Van den Steen Framework</div>
+        </div>
+        <div class="detail-content" id="detailContent">
+            Loading...
+        </div>
+        <img class="detail-figure" id="detailFigure" style="display:none">
+        <div class="detail-meta" id="detailMeta">
+            ¶12-18 | Depends on: I1 | Claims: MOVEMENT.v1
+        </div>
+    </div>
+
+    <script>
+        // Subagent Data
+        const subagentData = {
+            'I1': {
+                phrase: 'Paradox Revealed — 역설의 발견',
+                content: `**The Funding Paradox**: Early capital (E) negatively correlates with venture growth (G).
+
+ρ(G, E) = -0.174*** (N = 180,860)
+
+This counterintuitive finding sets up the entire thesis: why does more money lead to less growth?`,
+                figure: '../papers_v3/1_I_introduction/fig_i_cash_paradox.png',
+                meta: '¶1-11 | Hub Node = M3 | Claims: PARADOX.v1',
+                agent: 'I'
+            },
+            'M1': {
+                phrase: 'Van den Steen Framework — 비전 이론',
+                content: `**Vision as Coordination Device**: Van den Steen (2017) shows vision enables coordination without formal contracts.
+
+Key insight: Vision's VALUE comes from its VAGUENESS — it allows interpretation while maintaining direction.`,
+                figure: null,
+                meta: '¶12-18 | Depends on: I1 | Claims: MOVEMENT.v1',
+                agent: 'M'
+            },
+            'M2': {
+                phrase: 'Movers Win — 움직이면 이긴다',
+                content: `**Movement Predicts Growth**: Ventures that reposition (change vagueness) outperform those that stay fixed.
+
+dG/dM > 0 where M = |ΔV|
+
+Survival rate: Movers 1.8× vs Stayers`,
+                figure: 'figures/M_fig5_killer_movement.png',
+                meta: '¶19-29 | Depends on: M1 | Claims: MOVEMENT.v1',
+                agent: 'M'
+            },
+            'M3': {
+                phrase: 'Bridge Decomposition — 분해의 다리',
+                content: `**The Keystone**: Decomposes the paradox into testable claims.
+
+dG/dE = (dG/dM) × (dM/dE) < 0
+
+M4-M5 test dM/dE < 0
+T1-T4 explain HOW funding traps`,
+                figure: null,
+                meta: '¶30 | Hub Node = I1 | Claims: PARADOX.v1, MOVEMENT.v1, FUNDING.v1',
+                agent: 'M'
+            },
+            'M4': {
+                phrase: 'Camuffo-Nanda Gap — 학습-실행 간극',
+                content: `**Learning vs Acting**: Camuffo et al. and Nanda/Rhodes-Kropf identify the gap between scientific learning and entrepreneurial action.
+
+This gap explains WHY funding suppresses movement.`,
+                figure: null,
+                meta: '¶31-38 | Depends on: M3 | Claims: FUNDING.v1',
+                agent: 'M'
+            },
+            'M5': {
+                phrase: 'Golden Cage — 황금 감옥',
+                content: `**Funding Suppresses Movement**: Capital commits founders to their funded vision.
+
+dM/dE < 0
+
+"Money buys commitment, not flexibility"
+λ = -0.102*** (one-tailed), ρ = -0.009`,
+                figure: 'figures/C_fig2_CAE_golden_cage.png',
+                meta: '¶39-48 | Depends on: M4 | Claims: FUNDING.v1',
+                agent: 'M'
+            },
+            'T1': {
+                phrase: 'Coordinates Defined — 좌표계 정의',
+                content: `**The (E, V) Space**: Define the coordinate system for traps.
+
+E = Early Capital ($M)
+V = Vagueness (0-6 scale)
+Trap = μ(1-μ) < ε/(V+1)`,
+                figure: null,
+                meta: '¶49-55 | Depends on: M5 | Claims: TRAP_DEF.v2',
+                agent: 'T'
+            },
+            'T2': {
+                phrase: 'High-V Trap — 고모호성 함정',
+                content: `**Too Vague to Learn**: High vagueness means too many interpretations → can't falsify → can't learn.
+
+μ(1-μ) < ε/(V+1) when V is large
+
+"Vision so broad it says nothing"`,
+                figure: 'figures/T_fig1_trap_mechanism.png',
+                meta: '¶56-63 | Depends on: T1 | Claims: HIGH_V_TRAP.v1',
+                agent: 'T'
+            },
+            'T3': {
+                phrase: 'Low-V Trap — 저모호성 함정',
+                content: `**Too Specific to Pivot**: Low vagueness means commitment is too strong → can't change → stuck.
+
+Funded specificity creates "golden handcuffs"
+
+"Promise so precise you can't adapt"`,
+                figure: null,
+                meta: '¶64-72 | Depends on: T1 | Claims: LOW_V_TRAP.v1',
+                agent: 'T'
+            },
+            'T4': {
+                phrase: 'Both Extremes Trap — 양극단 함정',
+                content: `**Synthesis**: Both High-V and Low-V extremes trap ventures.
+
+The safe zone is MIDDLE vagueness with the ability to MOVE.
+
+Funding pushes toward extremes.`,
+                figure: null,
+                meta: '¶73-80 | Depends on: T2, T3 | Claims: TRAP_DEF.v2',
+                agent: 'T'
+            },
+            'E1': {
+                phrase: 'TEMPO Door — 탈출구',
+                content: `**The Door Between Rooms**: TEMPO framework bridges problem → solution.
+
+T = Timing
+E = Evidence
+M = Movement
+P = Positioning
+O = Options`,
+                figure: null,
+                meta: '¶81-86 | Depends on: T4 | DOOR between rooms',
+                agent: 'E'
+            },
+            'E2': {
+                phrase: 'Stayer Paths — 머무는 자의 길',
+                content: `**Case Studies - Stayers**: Rubedos, Motional, TuSimple
+
+High E → stuck at current V → crisis or death
+
+Stayer pattern: commitment → rigidity → failure`,
+                figure: null,
+                meta: '¶87-94 | Depends on: E1 | Cases: Rubedos, Motional, TuSimple',
+                agent: 'E'
+            },
+            'E3': {
+                phrase: 'Mover Paths — 움직이는 자의 길',
+                content: `**Case Studies - Movers**: Sky Engine, Nuro
+
+Low/Med E → voluntary pivot → growth
+
+Mover pattern: flexibility → adaptation → success`,
+                figure: null,
+                meta: '¶95-102 | Depends on: E1 | Cases: Sky Engine, Nuro',
+                agent: 'E'
+            },
+            'E4': {
+                phrase: 'Agile vs Forced — 자발 vs 강제',
+                content: `**Two Escape Paths**:
+
+AGILE PATH: Low E → voluntary movement → better outcomes
+FORCED PATH: High E → crisis → forced pivot → worse outcomes
+
+"Choose to move before you're forced to"`,
+                figure: null,
+                meta: '¶103-106 | Depends on: E2, E3 | Claims: ESCAPE.v1',
+                agent: 'E'
+            },
+            'C1': {
+                phrase: 'Implications — 함의',
+                content: `**For Founders**: Commit to movement capacity, not to specific promises.
+
+**For Investors**: Fund the ability to pivot, not just the initial vision.
+
+"Commit to ADAPTATION, direction first and speed second"`,
+                figure: 'figures/C_fig1_prescription.png',
+                meta: '¶107-110 | Depends on: E4 | Claims: COMMITMENT.v1',
+                agent: 'C'
+            },
+            'C2': {
+                phrase: 'Limitations — 한계',
+                content: `**Study Limitations**:
+
+- Correlation ≠ causation
+- Single industry (AV)
+- Retrospective analysis
+- Survivor bias considerations`,
+                figure: null,
+                meta: '¶111-112 | Window in Solution Room',
+                agent: 'C'
+            },
+            'C3': {
+                phrase: 'Coda → I1 — 회귀',
+                content: `**The Loop Closes**: Return to the paradox with new understanding.
+
+"Commit to Movement, not to Promises"
+
+C3 → I1 completes the cycle.`,
+                figure: null,
+                meta: '¶113 | LOOP: C3 → I1',
+                agent: 'C'
+            }
+        };
+
+        function openDetail(id) {
+            const data = subagentData[id];
+            if (!data) return;
+
+            // Update panel content
+            document.getElementById('detailId').textContent = id;
+            document.getElementById('detailId').style.color = getAgentColor(data.agent);
+            document.getElementById('detailPhrase').textContent = data.phrase;
+            document.getElementById('detailContent').innerHTML = data.content.replace(/\n/g, '<br>');
+            document.getElementById('detailMeta').textContent = data.meta;
+
+            const figEl = document.getElementById('detailFigure');
+            if (data.figure) {
+                figEl.src = data.figure;
+                figEl.style.display = 'block';
+            } else {
+                figEl.style.display = 'none';
+            }
+
+            // Open panel
+            document.getElementById('detailPanel').classList.add('open');
+            document.querySelector('.overlay').classList.add('open');
+
+            // Highlight active subagent
+            document.querySelectorAll('.subagent').forEach(el => el.classList.remove('active'));
+            document.querySelector(`.subagent[data-id="${id}"]`)?.classList.add('active');
+        }
+
+        function closeDetail() {
+            document.getElementById('detailPanel').classList.remove('open');
+            document.querySelector('.overlay').classList.remove('open');
+            document.querySelectorAll('.subagent').forEach(el => el.classList.remove('active'));
+        }
+
+        function getAgentColor(agent) {
+            const colors = {
+                'I': 'var(--fire-red)',
+                'M': 'var(--earth-yellow)',
+                'T': 'var(--metal-silver)',
+                'E': 'var(--water-blue)',
+                'C': 'var(--wood-green)'
+            };
+            return colors[agent] || 'var(--text-primary)';
+        }
+
+        function scrollToAgent(agent) {
+            const el = document.querySelector(`.agent-${agent}`);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDetail();
+        });
+    </script>
+</body>
+</html>

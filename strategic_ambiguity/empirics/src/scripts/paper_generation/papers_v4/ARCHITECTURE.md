@@ -15,9 +15,9 @@ modified:
 
 | Module | Subtitle | LTE Role | Core Question |
 |:------:|:---------|:---------|:--------------|
-| **I** | The Funding Paradox | Puzzle | Why dG/dE < 0? |
+| **I** | The Funding Paradox | Puzzle | Why dG/dF < 0? |
 | **M** | What Moves, Grows | L1: WHAT | Statistical association |
-| **T** | When Commitment Traps | L2+L3: HOW/WHY | Trap conditions |
+| **V** | Vagueness Effects | L2+L3: HOW/WHY | VM (dM/dV) + VD (dD/dV) |
 | **E** | Who Moved? | Evidence: WHO | Escape paths |
 | **C** | Commit to Move | SO WHAT | Prescription |
 
@@ -27,7 +27,7 @@ modified:
 
 **Growth needs movement. Funding can trap it.**
 
-dG/dE < 0 = (dG/dM > 0) × (dM/dE < 0)
+dG/dF < 0 = (dG/dM > 0) × (dM/dF < 0)
 
 ---
 
@@ -61,11 +61,13 @@ $$\underbrace{\frac{dG}{dE} < 0}_{\text{Funding Paradox}} = \underbrace{\frac{dG
 
 | Symbol | Meaning |
 |:------:|:--------|
-| **G** | Growth (성과/성장) |
-| **E** | External funding / capital |
-| **M** | Movement (strategic adaptation, pivots, reconfiguration) |
+| **F** | Funding (log $, external capital raised) |
+| **M** | Movement (strategic adaptation, \|ΔV\|) |
+| **G** | Growth (Later Stage VC: C/D+) |
 | **V** | Vagueness (rank-normalized, 0-100 percentile) |
 | **D** | Direction (V_T - V_0, signed change in vagueness rank) |
+
+> **See**: `1_I_introduction/table_vars_def.md` for full variable definitions
 
 ---
 
@@ -100,15 +102,15 @@ Raw vagueness scores (V) cluster at 80-90 on a 0-100 composite scale:
 
 ---
 
-## 1. Surface Structure: 5 Modules × 113 Paragraphs (IMTEC)
+## 1. Surface Structure: 5 Modules × 113 Paragraphs (IMVEC)
 
 ```
-THESIS (113 paragraphs) — 5 MODULES (IMTEC)
+THESIS (113 paragraphs) — 5 MODULES (IMVEC)
 
-├── I  (1–11)     The Funding Paradox             [11]  hook + puzzle (dG/dE < 0)
-├── M  (12–48)    What Moves, Grows               [37]  movement principle (dG/dM > 0)
-├── T  (49–80)    When Commitment Traps           [32]  High-V & Low-V traps
-├── E  (81–104)   Who Moved?                      [24]  escape paths
+├── I  (1–11)     The Funding Paradox             [11]  hook + puzzle (dG/dF < 0)
+├── M  (12–48)    What Moves, Grows               [37]  MG (dG/dM) + MF (dM/dF)
+├── V  (49–80)    Vagueness Effects               [32]  VM (dM/dV) + VD (dD/dV)
+├── E  (81–104)   Who Moved?                      [24]  PAE escape paths
 └── C  (105–113)  Commit to Move                   [9]  prescription + coda
 ```
 
@@ -118,52 +120,52 @@ THESIS (113 paragraphs) — 5 MODULES (IMTEC)
 
 ### Count Signature
 - **I = 11** (1 submodule)
-- **M = 9 + 9 + 1 + 9 + 9 = 37** (5 submodules)
-- **T = 8 + 8 + 8 + 8 = 32** (4 submodules)
+- **M = 9 + 9 + 1 + 9 + 9 = 37** (5 submodules: MG1, MG2, Bridge, MF4, MF5)
+- **V = 8 + 8 + 8 + 8 = 32** (4 submodules: VM1, VM2, VD3, VD4)
 - **E = 6 + 6 + 6 + 6 = 24** (4 submodules)
-- **C = 4 + 4 + 1 = 9** (3 submodules)
+- **C = 4 + 3 + 2 = 9** (3 submodules)
 
 ### I — Introduction: Funding Paradox (1 submodule)
 
 | Submodule | Range | Count | Focus |
 |:---------:|:-----:|:-----:|:------|
-| **I1** | 1–11 | 11 | The puzzle: dG/dE < 0 |
+| **I1** | 1–11 | 11 | The puzzle: dG/dF < 0 |
 
-### M — Movement Matters (5 submodules)
+### M — Movement Module (5 submodules: MG + Bridge + MF)
 
-| Submodule | Range | Count | Focus |
-|:---------:|:-----:|:-----:|:------|
-| **M1** | 12–20 | 9 | Porter's null & construct (WHAT is movement?) |
-| **M2** | 21–29 | 9 | Movement principle evidence (dG/dM > 0) |
-| **M3** | 30 | 1 | **BRIDGE EQUATION** (the hinge) |
-| **M4** | 31–39 | 9 | Fund→Movement first pass (dM/dE < 0) |
-| **M5** | 40–48 | 9 | Strengthen, bound, handoff to T |
+| Submodule | Range | Count | Focus | Relationship |
+|:---------:|:-----:|:-----:|:------|:-------------|
+| **MG1** | 12–20 | 9 | Porter's null & construct (WHAT is movement?) | dG/dM |
+| **MG2** | 21–29 | 9 | Movement principle evidence | dG/dM > 0 |
+| **M3** | 30 | 1 | **BRIDGE EQUATION** (the hinge) | dG/dF = (dG/dM)(dM/dF) |
+| **MF4** | 31–39 | 9 | Camuffo/Nanda: Funding→Movement | dM/dF |
+| **MF5** | 40–48 | 9 | Strengthen, bound, handoff to V | dM/dF < 0 |
 
-### T — Funding Traps (4 submodules)
+### V — Vagueness Module (4 submodules: VM + VD)
 
-| Submodule | Range | Count | Focus |
-|:---------:|:-----:|:-----:|:------|
-| **T1** | 49–56 | 8 | **Coords**: What are traps? Process framing + learning condition |
-| **T2** | 57–64 | 8 | **High-V Trap**: Too vague → hard to reject/learn (unfalsifiable hypotheses) |
-| **T3** | 65–72 | 8 | **Low-V Trap**: Too specific → hard to pivot (commitment lock-in) |
-| **T4** | 73–80 | 8 | **Synthesis**: Both extremes trap; explains dM/dE < 0 |
+| Submodule | Range | Count | Focus | Relationship |
+|:---------:|:-----:|:-----:|:------|:-------------|
+| **VM1** | 49–56 | 8 | Learning trap condition: μ(1−μ) < ε/(V+1) | dM/dV |
+| **VM2** | 57–64 | 8 | **High-V Trap**: Too vague → unfalsifiable | dM/dV |
+| **VD3** | 65–72 | 8 | **Low-V Trap**: Too specific → echo chamber | dD/dV |
+| **VD4** | 73–80 | 8 | **Synthesis**: Both extremes trap; regime analysis | dD/dV |
 
 ### E — Escape Routes (4 submodules)
 
 | Submodule | Range | Count | Focus |
 |:---------:|:-----:|:-----:|:------|
-| **E1** | 81–86 | 6 | **Tempo**: Returns to funding paradox with new understanding |
-| **E2** | 87–92 | 6 | **Stayer Examples**: Stuck ventures (high failure case studies) |
-| **E3** | 93–98 | 6 | **Mover Examples**: Agile (Sky Engine) vs Forced (Nuro) strategies |
-| **E4** | 99–104 | 6 | **Synthesis**: Two paths to escape; Agile vs Forced |
+| **E1** | 81–86 | 6 | **Tempo**: Returns to funding paradox (M vs NM) |
+| **E2** | 87–92 | 6 | **Stayer Examples**: Non-Movers (high failure) |
+| **E3** | 93–98 | 6 | **PAE Framework**: Platformize→Acculturate→Evaluate |
+| **E4** | 99–104 | 6 | **Synthesis**: Escape paths (Agile vs Forced) |
 
 ### C — Commit to Movement (3 submodules)
 
 | Submodule | Range | Count | Focus |
 |:---------:|:-----:|:-----:|:------|
 | **C1** | 105–108 | 4 | Implications for entrepreneurs + investors |
-| **C2** | 109–112 | 4 | Limitations + new problems |
-| **C3** | 113 | 1 | **Coda**: Commit to Movement (returns to I1, M3) |
+| **C2** | 109–111 | 3 | Limitations + new problems |
+| **C3** | 112–113 | 2 | **Coda**: Commit to Movement (returns to I1, M3) |
 
 ---
 
@@ -189,11 +191,11 @@ GOVERNING NODES
 BRIDGE NODE
   M3 : connects
        (M1–M2 = Movement Principle, dG/dM>0)
-   with (M4–M5 + T1–T4 = Funding Traps, dM/dE<0)
+   with (MF4–MF5 + VM1–VD4 = Vagueness Effects, dM/dV + dD/dV)
 
 TEMPO RETURN
   E1 : returns to funding paradox
-       with new understanding after T module
+       with new understanding after V module
 
 SOLUTION BLOCK
   E2–E4 : escape examples + synthesis
@@ -209,16 +211,16 @@ CODA
 
 ```
 ACT A = 20  : I1 (11) + M1 (9)
-ACT B = 36  : M2 (9) + M3 (1) + M4 (9) + M5 (9) + T1 (8)
-ACT C = 42  : T2 (8) + T3 (8) + T4 (8) + E1 (6) + E2 (6) + E3 (6)
+ACT B = 36  : MG2 (9) + M3 (1) + MF4 (9) + MF5 (9) + VM1 (8)
+ACT C = 42  : VM2 (8) + VD3 (8) + VD4 (8) + E1 (6) + E2 (6) + E3 (6)
 ACT D = 15  : E4 (6) + C1 (4) + C2 (4) + C3 (1)
 ```
 
 | Act | Job |
 |:---:|:----|
 | A | Set puzzle, define movement |
-| B | Declare decomposition (M3), enter traps (T1) |
-| C | Expand High-V & Low-V traps (T2–T4), tempo return (E1–E3) |
+| B | Declare decomposition (M3), enter vagueness (VM1) |
+| C | Expand High-V & Low-V traps (VM2–VD4), tempo return (E1–E3) |
 | D | Synthesis (E4) + implications (C1) + contribution (C2–C3) |
 
 ---
@@ -229,7 +231,7 @@ ACT D = 15  : E4 (6) + C1 (4) + C2 (4) + C3 (1)
 |:------:|:---------:|:----------------|:--------|
 | **I** | — | — | State anomaly |
 | **M** | L1 (WHAT) | What relationships exist? | Link variables to predict outcomes |
-| **T** | L2+L3 (HOW/WHY) | How unfold + Why behave? | Specify sequence + generative drivers |
+| **V** | L2+L3 (HOW/WHY) | How unfold + Why behave? | Specify sequence + generative drivers |
 | **E** | Evidence (WHO) | — | Document transformation |
 | **C** | SO WHAT | — | Enable intervention |
 
@@ -245,7 +247,7 @@ ACT D = 15  : E4 (6) + C1 (4) + C2 (4) + C3 (1)
 | Audience | Module Focus | Prior | Target Posterior |
 |:---------|:------------:|:------|:-----------------|
 | **Strategy scholars** (Porter, Van den Steen) | M | "movement = noise" | "movement = disciplined capability" |
-| **Entrepreneurial finance** (Camuffo, Nanda) | T, E | "capital enables learning" | "capital can create learning traps" |
+| **Entrepreneurial finance** (Camuffo, Nanda) | V, E | "capital enables learning" | "capital can create learning traps" |
 | **Practitioners** (Founders, VCs) | C | "funding = validation" | "commit to movement, not promises" |
 
 ---
@@ -260,7 +262,7 @@ Internal structure within submodules:
 
 ---
 
-## 9. Learning Trap Mechanism (T2–T3)
+## 9. Learning Trap Mechanism (VM2–VD3)
 
 ### Why Both Extremes Trap
 
@@ -330,11 +332,11 @@ The thesis is written by a **Chief Architect** orchestrating 17 specialized sub-
 [Level 1: Problem Space Governor]
   M3 (Bridge)
   Input: M1+M2 outputs (dG/dM>0 established)
-  Output: Authorizes M4, M5, T1–T4
+  Output: Authorizes MF4, MF5, VM1–VD4
 
 [Level 2: Tempo Return]
   E1 (Tempo)
-  Input: Problem block (I+M+T)
+  Input: Problem block (I+M+V)
   Output: Returns to funding paradox with new understanding
 
 [Level 3: Solution Space Governor]
@@ -352,16 +354,16 @@ The thesis is written by a **Chief Architect** orchestrating 17 specialized sub-
 
 | Agent | ¶ Range | LTE Role | Mission | Mindset |
 |:-----:|:-------:|:--------:|:--------|:--------|
-| **I1** | 01–11 | Puzzle | State puzzle (dG/dE<0); define E/M/G; lock vocabulary | State anomaly |
+| **I1** | 01–11 | Puzzle | State puzzle (dG/dF<0); define E/M/G; lock vocabulary | State anomaly |
 | **M1** | 12–20 | L1 | Define Movement as disciplined capability | Link M→G: what predicts growth? |
 | **M2** | 21–29 | L1 | Show dG/dM>0 with evidence | Link M→G: evidence |
-| **M3** | 30 | Bridge | "Given dG/dM>0, test dM/dE" → Bridge Memo | Decompose the paradox |
+| **M3** | 30 | Bridge | "Given dG/dM>0, test dM/dF" → Bridge Memo | Decompose the paradox |
 | **M4** | 31–39 | L1 | Propose funding→movement mechanisms | Link E→M: what predicts movement? |
-| **M5** | 40–48 | L1 | Operationalize dM/dE; handoff to T | Link E→M: evidence |
-| **T1** | 49–56 | L2+L3 | Define traps + learning condition μ(1−μ) < ε/V | Sequence: when traps form |
-| **T2** | 57–64 | L2+L3 | **High-V trap**: too vague → hard to reject/learn | Driver: why unfalsifiable |
-| **T3** | 65–72 | L2+L3 | **Low-V trap**: too specific → hard to pivot | Driver: why lock-in |
-| **T4** | 73–80 | L2+L3 | **Synthesis**: both extremes trap; complete dM/dE < 0 | Generative mechanism |
+| **MF5** | 40–48 | L1 | Operationalize dM/dF; handoff to V | Link F→M: evidence |
+| **VM1** | 49–56 | L2+L3 | Define traps + learning condition μ(1−μ) < ε/(V+1) | Sequence: when traps form |
+| **VM2** | 57–64 | L2+L3 | **High-V trap**: too vague → hard to reject/learn | Driver: why unfalsifiable |
+| **VD3** | 65–72 | L2+L3 | **Low-V trap**: too specific → hard to pivot | Driver: why lock-in |
+| **VD4** | 73–80 | L2+L3 | **Synthesis**: both extremes trap; regime analysis | Generative mechanism |
 | **E1** | 81–86 | WHO | **Tempo**: return to funding paradox with new lens | Tempo return to I1 |
 | **E2** | 87–92 | WHO | **Stayer examples**: stuck ventures, high failure | Document: who stayed? |
 | **E3** | 93–98 | WHO | **Mover examples**: Agile (Sky) vs Forced (Nuro) | Document: who moved? |
@@ -375,8 +377,8 @@ The thesis is written by a **Chief Architect** orchestrating 17 specialized sub-
 ```
 1) I1 → Context Memo (definitions + lexicon lock)
 2) M1, M2 → Movement established (dG/dM>0)
-3) M3 → Bridge Memo (decomposition + test dM/dE)
-4) M4, M5, T1–T4 → Trap Memos (High-V and Low-V)
+3) M3 → Bridge Memo (decomposition + test dM/dF)
+4) MF4, MF5, VM1–VD4 → Vagueness Memos (High-V and Low-V traps)
 5) C2 → Boundary Memo (limitations first)
 6) E1 → Tempo return (funding paradox with new understanding)
 7) E2, E3, E4, C1 → Examples + implications
@@ -388,7 +390,7 @@ The thesis is written by a **Chief Architect** orchestrating 17 specialized sub-
 | Module | Voice | Core Stance | Forbidden |
 |:------:|:------|:------------|:----------|
 | **M** | Porter + Van den Steen | Movement = disciplined capability | Pivot hype |
-| **T** | Camuffo + Nanda | Entrepreneurship = experiments | "Capital is fuel" |
+| **V** | Camuffo + Nanda | Entrepreneurship = experiments | "Capital is fuel" |
 | **E** | Mobility sector lens | Tempo + escape mechanisms | New named frameworks |
 | **C** | Integrative contribution | Calibrated claims | Overclaiming |
 
@@ -431,7 +433,7 @@ This thesis argues for **provisional commitment**—and must be written with it.
 | Principle | Description | Implementation |
 |:----------|:------------|:---------------|
 | **Dynamic over Static** | Movement is a process, not a category | Use verbs: "What moves" not "The mover" |
-| **Association over Causation** | M shows correlation; T explains mechanism | M ≠ proof; T = mechanism |
+| **Association over Causation** | M shows correlation; V explains mechanism | M ≠ proof; V = mechanism |
 | **Prescription over Description** | C tells actors what to do | C = "Commit to Move" not "Movers succeeded" |
 
 ### Language Guidelines
@@ -452,7 +454,7 @@ This thesis argues for **provisional commitment**—and must be written with it.
 | Agent Type | LTE Role | Risk | Correction |
 |:-----------|:--------:|:-----|:-----------|
 | M-agents | L1 (WHAT) | Overclaim causality | Link variables to predict outcomes |
-| T-agents | L2+L3 (HOW/WHY) | Abstract mechanism | Specify sequence + generative drivers |
+| V-agents | L2+L3 (HOW/WHY) | Abstract mechanism | Specify sequence + generative drivers |
 | E-agents | WHO | Hero worship | Document transformation, not hero |
 | C-agents | SO WHAT | Preach | Enable intervention, not sermon |
 

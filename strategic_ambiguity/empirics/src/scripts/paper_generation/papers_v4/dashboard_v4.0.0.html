@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis D.934 v4.0.0 | 5 Variables | 5 Modules</title>
+    <style>
+        :root {
+            --bg-color: #0a0e14;
+            --card-bg: #131820;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --border-color: #21262d;
+            --fire-red: #ff6b6b;
+            --earth-yellow: #ffd43b;
+            --metal-silver: #c9d1d9;
+            --water-blue: #4dabf7;
+            --wood-green: #69db7c;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'SF Pro Display', -apple-system, sans-serif;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .header-equation {
+            font-family: 'Times New Roman', serif;
+            color: var(--earth-yellow);
+        }
+
+        .header-stats {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Progress Bar */
+        .overall-progress {
+            display: flex;
+            gap: 2px;
+            height: 8px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-segment {
+            transition: all 0.3s;
+        }
+
+        .progress-segment:hover {
+            filter: brightness(1.2);
+        }
+
+        /* Five Column Layout */
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            align-items: start;
+        }
+
+        .column-header {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .column-header.col-I { background: rgba(255, 107, 107, 0.15); color: var(--fire-red); }
+        .column-header.col-M { background: rgba(255, 212, 59, 0.15); color: var(--earth-yellow); }
+        .column-header.col-V { background: rgba(201, 209, 217, 0.15); color: var(--metal-silver); }
+        .column-header.col-E { background: rgba(77, 171, 247, 0.15); color: var(--water-blue); }
+        .column-header.col-C { background: rgba(105, 219, 124, 0.15); color: var(--wood-green); }
+
+        /* Subagent Card */
+        .subagent-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .subagent-card:hover {
+            border-color: var(--text-secondary);
+        }
+
+        .subagent-card.expanded {
+            border-width: 2px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+
+        .card-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-id {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .card-title {
+            font-size: 0.75rem;
+            margin-bottom: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-scholar {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-right {
+            text-align: right;
+            margin-left: 5px;
+        }
+
+        .card-para {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        .card-score {
+            font-size: 0.6rem;
+            margin-top: 2px;
+        }
+
+        /* Agent Colors */
+        .agent-I .card-id { color: var(--fire-red); }
+        .agent-I.expanded { border-color: var(--fire-red); }
+        .agent-M .card-id { color: var(--earth-yellow); }
+        .agent-M.expanded { border-color: var(--earth-yellow); }
+        .agent-V .card-id { color: var(--metal-silver); }
+        .agent-V.expanded { border-color: var(--metal-silver); }
+        .agent-E .card-id { color: var(--water-blue); }
+        .agent-E.expanded { border-color: var(--water-blue); }
+        .agent-C .card-id { color: var(--wood-green); }
+        .agent-C.expanded { border-color: var(--wood-green); }
+
+        /* Paragraph List */
+        .para-list {
+            display: none;
+            padding: 0 8px 8px;
+            border-top: 1px solid var(--border-color);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .subagent-card.expanded .para-list {
+            display: block;
+        }
+
+        .para-item {
+            display: flex;
+            gap: 5px;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            font-size: 0.65rem;
+        }
+
+        .para-item:last-child {
+            border-bottom: none;
+        }
+
+        .para-num {
+            color: var(--text-secondary);
+            min-width: 28px;
+            font-family: monospace;
+            font-size: 0.6rem;
+        }
+
+        .para-content {
+            flex: 1;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .para-role {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        /* Draft Button */
+        .draft-btn {
+            display: inline-block;
+            margin-top: 6px;
+            padding: 4px 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            font-size: 0.6rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .draft-btn:hover {
+            background: rgba(255,255,255,0.15);
+            color: var(--text-primary);
+        }
+
+        /* Figure Thumbnail */
+        .card-thumb {
+            width: 45px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 3px;
+            opacity: 0.8;
+            margin-left: 5px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card-thumb:hover {
+            opacity: 1;
+            transform: scale(1.5);
+            z-index: 10;
+        }
+
+        .card-header-with-thumb {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header-with-thumb .card-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Keystone highlight */
+        .keystone .card-header {
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .bridge .card-title {
+            color: var(--fire-red);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            padding: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Variable Panel */
+        .variable-panel {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .variable-header {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .variable-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .variable-card {
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            text-align: center;
+        }
+
+        .variable-symbol {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+        }
+
+        .variable-name {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+
+        .variable-card.var-F .variable-symbol { color: var(--fire-red); }
+        .variable-card.var-M .variable-symbol { color: var(--earth-yellow); }
+        .variable-card.var-G .variable-symbol { color: var(--wood-green); }
+        .variable-card.var-V .variable-symbol { color: var(--metal-silver); }
+        .variable-card.var-D .variable-symbol { color: var(--water-blue); }
+
+        /* Criteria Panel */
+        .criteria-panel {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .criteria-header {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .criteria-card {
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid;
+        }
+
+        .criteria-card.agent-I { border-left-color: var(--fire-red); }
+        .criteria-card.agent-M { border-left-color: var(--earth-yellow); }
+        .criteria-card.agent-V { border-left-color: var(--metal-silver); }
+        .criteria-card.agent-E { border-left-color: var(--water-blue); }
+        .criteria-card.agent-C { border-left-color: var(--wood-green); }
+
+        .criteria-agent {
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .criteria-card.agent-I .criteria-agent { color: var(--fire-red); }
+        .criteria-card.agent-M .criteria-agent { color: var(--earth-yellow); }
+        .criteria-card.agent-V .criteria-agent { color: var(--metal-silver); }
+        .criteria-card.agent-E .criteria-agent { color: var(--water-blue); }
+        .criteria-card.agent-C .criteria-agent { color: var(--wood-green); }
+
+        .criteria-scores {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+        }
+
+        .criteria-equation {
+            font-size: 0.7rem;
+            color: var(--earth-yellow);
+            margin-top: 8px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .criteria-action {
+            font-size: 0.65rem;
+            color: var(--text-primary);
+            margin-top: 5px;
+            line-height: 1.3;
+            padding: 5px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+        }
+
+        /* Expand All */
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .control-btn {
+            padding: 8px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .control-btn:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="header-title">The Funding Paradox v4.0.0</div>
+            <div class="header-stats" style="color:var(--fire-red);font-style:italic">"Commitment earns capital, then locks in"</div>
+        </div>
+        <div style="text-align:right">
+            <div class="header-equation">dG/dF = (dG/dM)(dM/dF) < 0</div>
+            <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:3px">5 Variables | 5 Modules | Two-Stage Mechanism</div>
+        </div>
+    </div>
+
+    <!-- 5 Variables Panel - Causal Diagram -->
+    <div class="variable-panel">
+        <div class="variable-header">5 VARIABLES - CAUSAL STRUCTURE</div>
+        <div style="position:relative; height:180px; margin:10px 0;">
+            <!-- Main causal path: F → M → G -->
+            <div style="position:absolute; top:20px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:0;">
+                <!-- F -->
+                <div style="text-align:center;">
+                    <div style="font-size:2.5rem; font-weight:700; color:var(--fire-red);">F</div>
+                    <div style="font-size:0.6rem; color:var(--text-secondary);">Funding</div>
+                </div>
+                <!-- MF arrow -->
+                <div style="display:flex; flex-direction:column; align-items:center; margin:0 5px;">
+                    <div style="font-size:0.65rem; color:var(--earth-yellow); font-weight:600;">MF</div>
+                    <div style="width:60px; height:3px; background:linear-gradient(90deg, var(--fire-red), var(--earth-yellow)); position:relative;">
+                        <div style="position:absolute; right:-5px; top:-4px; border:solid var(--earth-yellow); border-width:0 3px 3px 0; padding:5px; transform:rotate(-45deg);"></div>
+                    </div>
+                    <div style="font-size:0.55rem; color:var(--text-secondary);">dM/dF<0</div>
+                </div>
+                <!-- M -->
+                <div style="text-align:center;">
+                    <div style="font-size:2.5rem; font-weight:700; color:var(--earth-yellow);">M</div>
+                    <div style="font-size:0.6rem; color:var(--text-secondary);">Movement</div>
+                </div>
+                <!-- MG arrow -->
+                <div style="display:flex; flex-direction:column; align-items:center; margin:0 5px;">
+                    <div style="font-size:0.65rem; color:var(--wood-green); font-weight:600;">MG</div>
+                    <div style="width:60px; height:3px; background:linear-gradient(90deg, var(--earth-yellow), var(--wood-green)); position:relative;">
+                        <div style="position:absolute; right:-5px; top:-4px; border:solid var(--wood-green); border-width:0 3px 3px 0; padding:5px; transform:rotate(-45deg);"></div>
+                    </div>
+                    <div style="font-size:0.55rem; color:var(--text-secondary);">dG/dM>0</div>
+                </div>
+                <!-- G -->
+                <div style="text-align:center;">
+                    <div style="font-size:2.5rem; font-weight:700; color:var(--wood-green);">G</div>
+                    <div style="font-size:0.6rem; color:var(--text-secondary);">Growth</div>
+                </div>
+            </div>
+
+            <!-- V node (center bottom) -->
+            <div style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%);">
+                <div style="text-align:center;">
+                    <div style="font-size:2.5rem; font-weight:700; color:var(--metal-silver);">V</div>
+                    <div style="font-size:0.6rem; color:var(--text-secondary);">Vagueness</div>
+                </div>
+            </div>
+
+            <!-- VM arrow (V → M, diagonal up) -->
+            <svg style="position:absolute; top:50px; left:calc(50% - 30px); width:80px; height:70px; overflow:visible;">
+                <defs>
+                    <marker id="arrowVM" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#ffd43b"/>
+                    </marker>
+                </defs>
+                <line x1="40" y1="60" x2="40" y2="15" stroke="url(#vmGradient)" stroke-width="2" marker-end="url(#arrowVM)"/>
+                <defs>
+                    <linearGradient id="vmGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="#c9d1d9"/>
+                        <stop offset="100%" stop-color="#ffd43b"/>
+                    </linearGradient>
+                </defs>
+                <text x="55" y="40" fill="#ffd43b" font-size="11" font-weight="600">VM</text>
+            </svg>
+
+            <!-- D node (right of V) -->
+            <div style="position:absolute; bottom:10px; left:calc(50% + 100px);">
+                <div style="text-align:center;">
+                    <div style="font-size:2.5rem; font-weight:700; color:var(--water-blue);">D</div>
+                    <div style="font-size:0.6rem; color:var(--text-secondary);">Direction</div>
+                </div>
+            </div>
+
+            <!-- VD arrow (V → D, horizontal) -->
+            <svg style="position:absolute; bottom:30px; left:calc(50% + 25px); width:70px; height:30px; overflow:visible;">
+                <defs>
+                    <marker id="arrowVD" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#4dabf7"/>
+                    </marker>
+                </defs>
+                <line x1="5" y1="15" x2="55" y2="15" stroke="url(#vdGradient)" stroke-width="2" marker-end="url(#arrowVD)"/>
+                <defs>
+                    <linearGradient id="vdGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#c9d1d9"/>
+                        <stop offset="100%" stop-color="#4dabf7"/>
+                    </linearGradient>
+                </defs>
+                <text x="22" y="10" fill="#4dabf7" font-size="10" font-weight="600">VD</text>
+            </svg>
+        </div>
+
+        <!-- Legend -->
+        <div style="display:flex; justify-content:center; gap:20px; margin-top:10px; font-size:0.7rem; color:var(--text-secondary);">
+            <span><span style="color:var(--fire-red);">F</span> = log($)</span>
+            <span><span style="color:var(--earth-yellow);">M</span> = |ΔV|</span>
+            <span><span style="color:var(--wood-green);">G</span> = Series C/D+</span>
+            <span><span style="color:var(--metal-silver);">V</span> = [0,100]</span>
+            <span><span style="color:var(--water-blue);">D</span> = sign(ΔV)</span>
+        </div>
+    </div>
+
+    <!-- Overall Progress by Agent -->
+    <div class="overall-progress">
+        <div class="progress-segment" style="flex:11; background:var(--fire-red)" title="I: 11¶"></div>
+        <div class="progress-segment" style="flex:37; background:var(--earth-yellow)" title="M: MG+MF"></div>
+        <div class="progress-segment" style="flex:32; background:var(--metal-silver)" title="V: VM+VD"></div>
+        <div class="progress-segment" style="flex:24; background:var(--water-blue)" title="E: Motional"></div>
+        <div class="progress-segment" style="flex:9; background:var(--wood-green)" title="C: 9¶"></div>
+    </div>
+
+    <!-- STORY ARC -->
+    <div class="criteria-panel" style="background: linear-gradient(90deg, rgba(255,107,107,0.1) 0%, rgba(255,212,59,0.1) 25%, rgba(201,209,217,0.1) 50%, rgba(77,171,247,0.1) 75%, rgba(105,219,124,0.1) 100%);">
+        <div class="criteria-header" style="text-align:center;font-size:0.9rem;color:var(--text-primary)">
+            Story Arc: Paradox → Movement → Vagueness → Escape → Conclusion
+        </div>
+        <div style="text-align:center;font-size:0.75rem;color:var(--text-secondary);margin-top:8px">
+            <span style="color:var(--fire-red)">I: dG/dF < 0?</span> →
+            <span style="color:var(--earth-yellow)">M: dG/dM > 0, dM/dF < 0</span> →
+            <span style="color:var(--metal-silver)">V: How traps form</span> →
+            <span style="color:var(--water-blue)">E: How to escape</span> →
+            <span style="color:var(--wood-green)">C: Commit to Movement</span>
+        </div>
+    </div>
+
+    <!-- MODULE EQUATIONS -->
+    <div class="criteria-panel">
+        <div class="criteria-header">MODULE EQUATIONS & SUBAGENTS</div>
+        <div class="criteria-grid">
+            <div class="criteria-card agent-I">
+                <div class="criteria-agent">I</div>
+                <div class="criteria-scores">Introduction</div>
+                <div class="criteria-equation">dG/dF < 0</div>
+                <div class="criteria-action">I1: Funding Paradox</div>
+            </div>
+            <div class="criteria-card agent-M">
+                <div class="criteria-agent">M</div>
+                <div class="criteria-scores">Movement</div>
+                <div class="criteria-equation">(+) × (−) = (−)</div>
+                <div class="criteria-action">MG: dG/dM > 0<br>MF: dM/dF < 0</div>
+            </div>
+            <div class="criteria-card agent-V">
+                <div class="criteria-agent">V</div>
+                <div class="criteria-scores">Vagueness</div>
+                <div class="criteria-equation">μ(1−μ) < ε/V</div>
+                <div class="criteria-action">VM: dM/dV<br>VD: dD/dV</div>
+            </div>
+            <div class="criteria-card agent-E">
+                <div class="criteria-agent">E</div>
+                <div class="criteria-scores">Escape</div>
+                <div class="criteria-equation">Motional Case</div>
+                <div class="criteria-action">Platformize → Acculturate → Evaluate</div>
+            </div>
+            <div class="criteria-card agent-C">
+                <div class="criteria-agent">C</div>
+                <div class="criteria-scores">Conclusion</div>
+                <div class="criteria-equation">→ I1</div>
+                <div class="criteria-action">Commit to Movement</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔄 CONSISTENCY CHECK (Marr's Levels) -->
+    <div class="criteria-panel" style="border-left: 3px solid var(--water-blue);">
+        <div class="criteria-header">🔄 CONSISTENCY CHECK (Marr's Levels: 🗺️Dashboard ↔ 📝Document ↔ 💻Code)</div>
+        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:10px;">
+            <div style="padding:10px; background:rgba(77,171,247,0.1); border-radius:8px; text-align:center;">
+                <div style="font-size:1.5rem;">ℹ️</div>
+                <div style="font-weight:700; color:var(--water-blue);">Information</div>
+                <div style="font-size:0.65rem; color:var(--text-secondary);">Meta Level</div>
+                <div style="font-size:0.7rem; margin-top:5px;">"What new insight?"</div>
+                <div style="font-size:0.6rem; color:var(--earth-yellow); margin-top:5px;">→ CHANGELOG entry</div>
+            </div>
+            <div style="padding:10px; background:rgba(255,212,59,0.1); border-radius:8px; text-align:center;">
+                <div style="font-size:1.5rem;">🖥️</div>
+                <div style="font-weight:700; color:var(--earth-yellow);">Computation</div>
+                <div style="font-size:0.65rem; color:var(--text-secondary);">Computational Level</div>
+                <div style="font-size:0.7rem; margin-top:5px;">"What's I/O?"</div>
+                <div style="font-size:0.6rem; color:var(--earth-yellow); margin-top:5px;">→ Dashboard map</div>
+            </div>
+            <div style="padding:10px; background:rgba(105,219,124,0.1); border-radius:8px; text-align:center;">
+                <div style="font-size:1.5rem;">📑</div>
+                <div style="font-weight:700; color:var(--wood-green);">Algorithm</div>
+                <div style="font-size:0.65rem; color:var(--text-secondary);">Algorithmic Level</div>
+                <div style="font-size:0.7rem; margin-top:5px;">"What's the process?"</div>
+                <div style="font-size:0.6rem; color:var(--earth-yellow); margin-top:5px;">→ Thesis paragraphs</div>
+            </div>
+            <div style="padding:10px; background:rgba(201,209,217,0.1); border-radius:8px; text-align:center;">
+                <div style="font-size:1.5rem;">💻</div>
+                <div style="font-weight:700; color:var(--metal-silver);">Implementation</div>
+                <div style="font-size:0.65rem; color:var(--text-secondary);">Implementational Level</div>
+                <div style="font-size:0.7rem; margin-top:5px;">"How realized in code?"</div>
+                <div style="font-size:0.6rem; color:var(--earth-yellow); margin-top:5px;">→ Folder/file/var names</div>
+            </div>
+        </div>
+        <div style="margin-top:12px; padding:10px; background:rgba(255,255,255,0.03); border-radius:6px; font-size:0.7rem;">
+            <div style="color:var(--text-secondary); margin-bottom:8px;">Sync Status:</div>
+            <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:8px; text-align:center;">
+                <div><span style="color:var(--fire-red);">I</span><br>🗺️✓ 📝✓ 💻✓</div>
+                <div><span style="color:var(--earth-yellow);">M</span><br>🗺️✓ 📝✓ 💻✓</div>
+                <div><span style="color:var(--metal-silver);">V</span><br>🗺️✓ 📝✓ 💻✓</div>
+                <div><span style="color:var(--water-blue);">E</span><br>🗺️✓ 📝✓ 💻✓</div>
+                <div><span style="color:var(--wood-green);">C</span><br>🗺️✓ 📝✓ 💻✓</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🍾 BOTTLENECK IDENTIFICATION -->
+    <div class="criteria-panel" style="border-left: 3px solid var(--fire-red);">
+        <div class="criteria-header">🍾 BOTTLENECK IDENTIFICATION (LOOKS 20% + THINKS 50% + ACTS 30%)</div>
+        <div class="criteria-grid">
+            <div class="criteria-card agent-I">
+                <div class="criteria-agent">I (82%)</div>
+                <div class="criteria-scores">L:16 T:21 A:12</div>
+                <div style="font-size:0.7rem; color:var(--fire-red); margin-top:8px; font-weight:600;">🍾 Causality</div>
+                <div class="criteria-action">TODO: Strengthen correlation → causation argument</div>
+            </div>
+            <div class="criteria-card agent-M">
+                <div class="criteria-agent">M (75%)</div>
+                <div class="criteria-scores">L:15 T:19 A:11</div>
+                <div style="font-size:0.7rem; color:var(--fire-red); margin-top:8px; font-weight:600;">🍾 Mechanism</div>
+                <div class="criteria-action">TODO: WHY does movement help? Clarify channel</div>
+            </div>
+            <div class="criteria-card agent-V">
+                <div class="criteria-agent">V (68%)</div>
+                <div class="criteria-scores">L:14 T:17 A:10</div>
+                <div style="font-size:0.7rem; color:var(--fire-red); margin-top:8px; font-weight:600;">🍾 Validation</div>
+                <div class="criteria-action">TODO: Validate μ(1-μ) < ε/V empirically</div>
+            </div>
+            <div class="criteria-card agent-E">
+                <div class="criteria-agent">E (60%)</div>
+                <div class="criteria-scores">L:13 T:12 A:10</div>
+                <div style="font-size:0.7rem; color:var(--fire-red); margin-top:8px; font-weight:600;">🍾 Scope</div>
+                <div class="criteria-action">TODO: Focus on Motional case study only</div>
+            </div>
+            <div class="criteria-card agent-C">
+                <div class="criteria-agent">C (70%)</div>
+                <div class="criteria-scores">L:15 T:14 A:13</div>
+                <div style="font-size:0.7rem; color:var(--fire-red); margin-top:8px; font-weight:600;">🍾 Differentiation</div>
+                <div class="criteria-action">TODO: Make actionable (vs overlapping with I)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn" onclick="expandAll()">Expand All</button>
+        <button class="control-btn" onclick="collapseAll()">Collapse All</button>
+        <button class="control-btn" onclick="expandAgent('M')">M only</button>
+        <button class="control-btn" onclick="expandAgent('V')">V only</button>
+        <button class="control-btn" onclick="expandAgent('E')">E only</button>
+    </div>
+
+    <div class="columns">
+        <!-- COLUMN I -->
+        <div class="column">
+            <div class="column-header col-I">I · INTRODUCTION<br><span style="font-size:0.55rem;opacity:0.7">WHY F ≠ G?</span></div>
+
+            <!-- I1 -->
+            <div class="subagent-card agent-I keystone" data-agent="I">
+                <div class="card-header card-header-with-thumb" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">I1</div>
+                        <div class="card-title">The Funding Paradox</div>
+                        <div class="card-scholar">dG/dF = (dG/dM)(dM/dF) < 0</div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-para">¶1-11</div>
+                        <div class="card-score" style="color:var(--fire-red)">Keystone</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">¶01:</span><span class="para-content">Gospel: "Funding drives growth" (VC conventional wisdom)</span><span class="para-role">Gospel</span></div>
+                    <div class="para-item"><span class="para-num">¶02:</span><span class="para-content">Puzzle: Why dG/dF < 0? More funding → less growth</span><span class="para-role">Puzzle</span></div>
+                    <div class="para-item"><span class="para-num">¶03:</span><span class="para-content">Decomposition: dG/dF = (dG/dM)(dM/dF) < 0</span><span class="para-role">Decompose</span></div>
+                    <div class="para-item"><span class="para-num">¶04:</span><span class="para-content">dG/dM > 0: Movement drives growth</span><span class="para-role">M→G</span></div>
+                    <div class="para-item"><span class="para-num">¶05:</span><span class="para-content">dM/dF < 0: Funding suppresses movement</span><span class="para-role">F→M</span></div>
+                    <div class="para-item"><span class="para-num">¶06:</span><span class="para-content">Movement = |ΔV| = Strategic repositioning</span><span class="para-role">Define M</span></div>
+                    <div class="para-item"><span class="para-num">¶07:</span><span class="para-content">Mover vs Stayer: 18.0% vs 9.9% (1.8×)</span><span class="para-role">Evidence</span></div>
+                    <div class="para-item"><span class="para-num">¶08:</span><span class="para-content">Three types: stayer (D=0), zoom-in (D<0), zoom-out (D>0)</span><span class="para-role">Types</span></div>
+                    <div class="para-item"><span class="para-num">¶09:</span><span class="para-content">Traps at both V extremes (High-V, Low-V)</span><span class="para-role">Traps</span></div>
+                    <div class="para-item"><span class="para-num">¶10:</span><span class="para-content">Map: "Movement, not funding, drives growth"</span><span class="para-role">Map</span></div>
+                    <div class="para-item"><span class="para-num">¶11:</span><span class="para-content">Prescription: Commit to Movement</span><span class="para-role">Prescription</span></div>
+                    <button class="draft-btn" onclick="openFile('1_I_introduction/I1.md')">Open Draft</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN M -->
+        <div class="column">
+            <div class="column-header col-M">M · MOVEMENT<br><span style="font-size:0.55rem;opacity:0.7">WHAT grows?</span></div>
+
+            <!-- MG -->
+            <div class="subagent-card agent-M" data-agent="M">
+                <div class="card-header card-header-with-thumb" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">MG</div>
+                        <div class="card-title">Movement Principle</div>
+                        <div class="card-scholar">dG/dM > 0 | Porter, Ghemawat, Van den Steen</div>
+                    </div>
+                    <img class="card-thumb" src="figures/M_fig5_killer_movement.png" onclick="event.stopPropagation(); window.open(this.src)" title="dG/dM > 0">
+                    <div class="card-right">
+                        <div class="card-para">¶12-29</div>
+                        <div class="card-score" style="color:var(--earth-yellow)">Paper A</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">📿Null:</span><span class="para-content">Porter/Ghemawat/VdS: "Commitment to position creates competitive advantage"</span><span class="para-role">Gospel</span></div>
+                    <div class="para-item"><span class="para-num">🧩Puzzle:</span><span class="para-content">Why do Stayers (9.9%) underperform Movers (17.9%) if commitment creates value?</span><span class="para-role">Data Gap</span></div>
+                    <div class="para-item"><span class="para-num">🔍Lens:</span><span class="para-content">Trajectory analysis: M = |ΔV| predicts G, not static position</span><span class="para-role">Method</span></div>
+                    <div class="para-item"><span class="para-num">¶15:</span><span class="para-content">Extension: VdS's commitment value holds, but OBJECT of commitment matters (position → movement)</span><span class="para-role">Extension</span></div>
+                    <div class="para-item"><span class="para-num">¶16:</span><span class="para-content">M = |ΔV|: magnitude of change in strategic vagueness</span><span class="para-role">Define M</span></div>
+                    <div class="para-item"><span class="para-num">¶17:</span><span class="para-content">Movement = disciplined repositioning (Bayesian updating)</span><span class="para-role">Not random</span></div>
+                    <div class="para-item"><span class="para-num">¶18:</span><span class="para-content">Three types: stayers, zoom-in, zoom-out</span><span class="para-role">Types</span></div>
+                    <div class="para-item"><span class="para-num">¶19:</span><span class="para-content">If dG/dM > 0, VdS extends (commitment to what matters)</span><span class="para-role">Extension</span></div>
+                    <div class="para-item"><span class="para-num">¶20:</span><span class="para-content">Empirical question: Do movers outperform stayers?</span><span class="para-role">Setup</span></div>
+                    <div class="para-item"><span class="para-num">¶21:</span><span class="para-content">Data: 408,697 ventures from PitchBook (2010-2023)</span><span class="para-role">Data</span></div>
+                    <div class="para-item"><span class="para-num">¶22:</span><span class="para-content">V measure: description vagueness (0-100)</span><span class="para-role">Measure V</span></div>
+                    <div class="para-item"><span class="para-num">¶23:</span><span class="para-content">Core finding: movers 18.0% vs stayers 9.9% (1.8×)</span><span class="para-role">Result</span></div>
+                    <div class="para-item"><span class="para-num">¶24:</span><span class="para-content">Regression: 1SD↑ M → 7.3pp higher survival (p<0.001)</span><span class="para-role">Regression</span></div>
+                    <div class="para-item"><span class="para-num">¶25:</span><span class="para-content">Direction: zoom-in 17.5%, zoom-out 18.4%, stay 9.9%</span><span class="para-role">Direction</span></div>
+                    <div class="para-item"><span class="para-num">¶26:</span><span class="para-content">Challenges VdS scope, not mechanism</span><span class="para-role">Challenge</span></div>
+                    <div class="para-item"><span class="para-num">¶27:</span><span class="para-content">Robustness: cohort FE, propensity score matching</span><span class="para-role">Robustness</span></div>
+                    <div class="para-item"><span class="para-num">¶28:</span><span class="para-content">Alternative: M proxies for learning? That IS the mechanism</span><span class="para-role">Alternative</span></div>
+                    <div class="para-item"><span class="para-num">¶29:</span><span class="para-content">dG/dM > 0 established. Next: why does F suppress M?</span><span class="para-role">Setup MF</span></div>
+                    <button class="draft-btn" onclick="openFile('2_M_movement/MG.md')">Open Draft</button>
+                </div>
+            </div>
+
+            <!-- MF -->
+            <div class="subagent-card agent-M" data-agent="M">
+                <div class="card-header card-header-with-thumb" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">MF</div>
+                        <div class="card-title">The Golden Cage</div>
+                        <div class="card-scholar">dM/dF < 0 | Camuffo, Nanda</div>
+                    </div>
+                    <img class="card-thumb" src="figures/C_fig2_CAE_golden_cage.png" onclick="event.stopPropagation(); window.open(this.src)" title="dM/dF < 0">
+                    <div class="card-right">
+                        <div class="card-para">¶31-48</div>
+                        <div class="card-score" style="color:var(--earth-yellow)">Paper B</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">📿Null:</span><span class="para-content">Camuffo/Nanda: "Capital enables experimentation → learning → adaptation"</span><span class="para-role">Gospel</span></div>
+                    <div class="para-item"><span class="para-num">🧩Puzzle:</span><span class="para-content">Why dM/dF < 0? More funding → LESS movement (opposite of prediction)</span><span class="para-role">Data Gap</span></div>
+                    <div class="para-item"><span class="para-num">🔍Lens:</span><span class="para-content">Two-stage mechanism: (1) Commitment→Capital (2) Capital→Lock-in</span><span class="para-role">Method</span></div>
+                    <div class="para-item"><span class="para-num">¶34:</span><span class="para-content">Extension: Capital enables in PRINCIPLE, but commitment constrains in PRACTICE</span><span class="para-role">Extension</span></div>
+                    <div class="para-item"><span class="para-num">¶35:</span><span class="para-content">Two-stage: (1) Commitment→Capital (2) Capital→Lock-in</span><span class="para-role">Two-Stage</span></div>
+                    <div class="para-item"><span class="para-num">¶36:</span><span class="para-content">Founder with $5M: experiments that confirm, not challenge</span><span class="para-role">Example</span></div>
+                    <div class="para-item"><span class="para-num">¶37:</span><span class="para-content">Extension: Capital enables in principle, commitment constrains in practice</span><span class="para-role">Extension</span></div>
+                    <div class="para-item"><span class="para-num">¶38:</span><span class="para-content">Heterogeneity: dM/dF < 0 strongest with single-investor, milestones</span><span class="para-role">Hetero</span></div>
+                    <div class="para-item"><span class="para-num">¶40:</span><span class="para-content">Test dM/dF < 0: Regress M on log(F), controls</span><span class="para-role">Method</span></div>
+                    <div class="para-item"><span class="para-num">¶41:</span><span class="para-content">408,697 ventures from PitchBook</span><span class="para-role">Data</span></div>
+                    <div class="para-item"><span class="para-num">¶42:</span><span class="para-content">Core: 1SD↑ F → 0.4SD↓ M (p<0.001)</span><span class="para-role">Result</span></div>
+                    <div class="para-item"><span class="para-num">¶43:</span><span class="para-content">Causal ID: VC fund closure shock → affected ventures move MORE</span><span class="para-role">Causal</span></div>
+                    <div class="para-item"><span class="para-num">¶44:</span><span class="para-content">Mechanism: dM/dF < 0 is 2× stronger with commitment intensity</span><span class="para-role">Mechanism</span></div>
+                    <div class="para-item"><span class="para-num">¶45:</span><span class="para-content">Timing: Early-stage (Seed, A) shows stronger effect</span><span class="para-role">Timing</span></div>
+                    <div class="para-item"><span class="para-num">¶46:</span><span class="para-content">Pattern: Funded ventures confirm, not challenge</span><span class="para-role">Pattern</span></div>
+                    <div class="para-item"><span class="para-num">¶47:</span><span class="para-content">Summary: dM/dF < 0 confirmed</span><span class="para-role">Summary</span></div>
+                    <div class="para-item"><span class="para-num">¶48:</span><span class="para-content">Camuffo-Nanda extended. V module explains WHY</span><span class="para-role">Setup V</span></div>
+                    <button class="draft-btn" onclick="openFile('2_M_movement/MF.md')">Open Draft</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN V -->
+        <div class="column">
+            <div class="column-header col-V">V · VAGUENESS<br><span style="font-size:0.55rem;opacity:0.7">WHY trapped?</span></div>
+
+            <!-- VM -->
+            <div class="subagent-card agent-V" data-agent="V">
+                <div class="card-header card-header-with-thumb" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">VM</div>
+                        <div class="card-title">V → M: Twin Traps</div>
+                        <div class="card-scholar">μ(1−μ) < ε/V | Stern, GKSS</div>
+                    </div>
+                    <img class="card-thumb" src="figures/T_fig1_trap_mechanism.png" onclick="event.stopPropagation(); window.open(this.src)" title="Trap Mechanism">
+                    <div class="card-right">
+                        <div class="card-para">¶49-72</div>
+                        <div class="card-score" style="color:var(--metal-silver)">Paper C</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">📿Null:</span><span class="para-content">Stern/GKSS: "Precision enables hypothesis testing → learning → convergence"</span><span class="para-role">Gospel</span></div>
+                    <div class="para-item"><span class="para-num">🧩Puzzle:</span><span class="para-content">Why does maximum precision → learning STOPS? (μ(1-μ) < ε/V when V→0)</span><span class="para-role">Data Gap</span></div>
+                    <div class="para-item"><span class="para-num">🔍Lens:</span><span class="para-content">Mathematical proof: Echo chamber effect (belief homogenization)</span><span class="para-role">Method</span></div>
+                    <div class="para-item"><span class="para-num">¶52:</span><span class="para-content">Extension: Precision enables testing, but EXTREME precision creates trap</span><span class="para-role">Extension</span></div>
+                    <div class="para-item"><span class="para-num">¶53:</span><span class="para-content">Funding accelerates trap: flexibility trap (high-V) + commitment trap (low-V)</span><span class="para-role">F Effect</span></div>
+                    <div class="para-item"><span class="para-num">¶54:</span><span class="para-content">High-V signature: unfalsifiable hypotheses, vision alignment without movement</span><span class="para-role">High-V Sig</span></div>
+                    <div class="para-item"><span class="para-num">¶57:</span><span class="para-content">High-V mechanism: options preserved but learning blocked</span><span class="para-role">High-V Mech</span></div>
+                    <div class="para-item"><span class="para-num">¶58:</span><span class="para-content">High V lowers threshold but no specific prediction to test</span><span class="para-role">No Test</span></div>
+                    <div class="para-item"><span class="para-num">¶59:</span><span class="para-content">High-V founders attract believers (nothing concrete to disagree about)</span><span class="para-role">Selection</span></div>
+                    <div class="para-item"><span class="para-num">¶60:</span><span class="para-content">Flexibility paradox: Mobility V₀=78, 91% stayer, 5% survival</span><span class="para-role">Mobility</span></div>
+                    <div class="para-item"><span class="para-num">¶64:</span><span class="para-content">Escape high-V: Force specificity before funding</span><span class="para-role">Escape High</span></div>
+                    <div class="para-item"><span class="para-num">¶65:</span><span class="para-content">Low-V mechanism: precise promises → believers → can't pivot</span><span class="para-role">Low-V Mech</span></div>
+                    <div class="para-item"><span class="para-num">¶66:</span><span class="para-content">Two stages: Selection (Commitment→Capital) then Lock-in</span><span class="para-role">Two-Stage</span></div>
+                    <div class="para-item"><span class="para-num">¶67:</span><span class="para-content">Echo chamber: selection filters believers, lock-in silences doubters</span><span class="para-role">Echo</span></div>
+                    <div class="para-item"><span class="para-num">¶68:</span><span class="para-content">When everyone agrees, μ(1−μ) → 0. No evidence can update</span><span class="para-role">Homogenize</span></div>
+                    <div class="para-item"><span class="para-num">¶71:</span><span class="para-content">Danger: trap looks like success (hitting milestones)</span><span class="para-role">Danger</span></div>
+                    <div class="para-item"><span class="para-num">¶72:</span><span class="para-content">Escape low-V: Add a doubter before funding</span><span class="para-role">Escape Low</span></div>
+                    <button class="draft-btn" onclick="openFile('3_V_vagueness/VM.md')">Open Draft</button>
+                </div>
+            </div>
+
+            <!-- VD -->
+            <div class="subagent-card agent-V" data-agent="V">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">VD</div>
+                        <div class="card-title">V → D: Direction Patterns</div>
+                        <div class="card-scholar">D = sign(ΔV): Zoom-in vs Zoom-out</div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-para">¶73-80</div>
+                        <div class="card-score" style="color:var(--metal-silver)">Paper C</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">¶73:</span><span class="para-content">Both extremes trap: high-V (unfalsifiable) + low-V (lock-in)</span><span class="para-role">Both Trap</span></div>
+                    <div class="para-item"><span class="para-num">¶74:</span><span class="para-content">Unified: μ(1−μ) < ε/V captures both failures</span><span class="para-role">Unified</span></div>
+                    <div class="para-item"><span class="para-num">¶75:</span><span class="para-content">Funding accelerates both: high-V attracts vision investors, low-V attracts execution investors</span><span class="para-role">F Effect</span></div>
+                    <div class="para-item"><span class="para-num">¶76:</span><span class="para-content">dM/dF < 0 mechanism: funding selects for stakeholders who resist movement</span><span class="para-role">Complete</span></div>
+                    <div class="para-item"><span class="para-num">¶77:</span><span class="para-content">Industry pattern: Mobility V₀=78, 91% stayer, 5% survival</span><span class="para-role">Industry</span></div>
+                    <div class="para-item"><span class="para-num">¶78:</span><span class="para-content">Same stayer outcome (M≈0) from two origins</span><span class="para-role">Two Origins</span></div>
+                    <div class="para-item"><span class="para-num">¶79:</span><span class="para-content">Escape: High-V needs D<0 (zoom-in), Low-V needs D>0 (zoom-out)</span><span class="para-role">Escape Rx</span></div>
+                    <div class="para-item"><span class="para-num">¶80:</span><span class="para-content">dG/dF < 0 explained: (dG/dM > 0) × (dM/dF < 0)</span><span class="para-role">Explained</span></div>
+                    <button class="draft-btn" onclick="openFile('3_V_vagueness/VD.md')">Open Draft</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN E -->
+        <div class="column">
+            <div class="column-header col-E">E · ESCAPE<br><span style="font-size:0.55rem;opacity:0.7">HOW to escape?</span></div>
+
+            <!-- E_motional -->
+            <div class="subagent-card agent-E" data-agent="E">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">E</div>
+                        <div class="card-title">Motional Case Study</div>
+                        <div class="card-scholar">Low-V, High-F, Low-M → Escape?</div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-para">¶81-104</div>
+                        <div class="card-score" style="color:var(--water-blue)">Paper D</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">📿Null:</span><span class="para-content">Industry: "First mover + massive funding ($4B) → Win the market"</span><span class="para-role">Gospel</span></div>
+                    <div class="para-item"><span class="para-num">🧩Puzzle:</span><span class="para-content">Motional ($4B, first mover) is TRAPPED; Aurora (later, less $) is ESCAPING. Why?</span><span class="para-role">Data Gap</span></div>
+                    <div class="para-item"><span class="para-num">🔍Lens:</span><span class="para-content">Comparative case study: Low-V Trap vs Expectation Management</span><span class="para-role">Method</span></div>
+                    <div class="para-item"><span class="para-num">Rx1:</span><span class="para-content">PLATFORMIZE: OEM-only → Full-stack platform (diversify stakeholders)</span><span class="para-role">Structural</span></div>
+                    <div class="para-item"><span class="para-num">Rx2:</span><span class="para-content">ACCULTURATE: "Commit to Movement, not Position" (cultural protocol)</span><span class="para-role">Cultural</span></div>
+                    <div class="para-item"><span class="para-num">Rx3:</span><span class="para-content">EVALUATE: Bayesian dashboard (operational infrastructure)</span><span class="para-role">Operational</span></div>
+                    <div class="para-item"><span class="para-num">Compare:</span><span class="para-content">Agile (Sky Engine) vs Forced (Nuro) vs Aurora Model</span><span class="para-role">Comparison</span></div>
+                    <div class="para-item"><span class="para-num">Aurora:</span><span class="para-content">High F + expectation management → preserved ambiguity</span><span class="para-role">Aurora</span></div>
+                    <div class="para-item"><span class="para-num">Principle:</span><span class="para-content">"The more specific your funded vision, the more you need diverse stakeholders"</span><span class="para-role">Core</span></div>
+                    <button class="draft-btn" onclick="openFile('4_E_escape/E_motional.md')">Open Draft</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN C -->
+        <div class="column">
+            <div class="column-header col-C">C · CONCLUSION<br><span style="font-size:0.55rem;opacity:0.7">SO WHAT now?</span></div>
+
+            <!-- C1 -->
+            <div class="subagent-card agent-C" data-agent="C">
+                <div class="card-header card-header-with-thumb" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">C1</div>
+                        <div class="card-title">For Founders + Investors</div>
+                        <div class="card-scholar">"Fund movement, not positions"</div>
+                    </div>
+                    <img class="card-thumb" src="figures/C_fig1_prescription.png" onclick="event.stopPropagation(); window.open(this.src)" title="Prescription">
+                    <div class="card-right">
+                        <div class="card-para">¶105-108</div>
+                        <div class="card-score" style="color:var(--wood-green)">Rx</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">¶105:</span><span class="para-content">Founders: the discomfort you feel is real</span><span class="para-role">Validation</span></div>
+                    <div class="para-item"><span class="para-num">¶106:</span><span class="para-content">Hypothesis: internal compass ≠ external pitch</span><span class="para-role">Hypothesis</span></div>
+                    <div class="para-item"><span class="para-num">¶107:</span><span class="para-content">Investors: conviction alignment = risk</span><span class="para-role">For VCs</span></div>
+                    <div class="para-item"><span class="para-num">¶108:</span><span class="para-content">Fund movement, not positions</span><span class="para-role">Principle</span></div>
+                    <button class="draft-btn" onclick="openFile('5_C_commit/C1.md')">Open Draft</button>
+                </div>
+            </div>
+
+            <!-- C2 -->
+            <div class="subagent-card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">C2</div>
+                        <div class="card-title">Limitations</div>
+                        <div class="card-scholar">Correlation ≠ Causation, AV only</div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-para">¶109-111</div>
+                        <div class="card-score" style="color:var(--wood-green)">Limits</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">¶109:</span><span class="para-content">Limitation: correlation ≠ causation</span><span class="para-role">Causation</span></div>
+                    <div class="para-item"><span class="para-num">¶110:</span><span class="para-content">Limitation: single industry (AV focus)</span><span class="para-role">Industry</span></div>
+                    <div class="para-item"><span class="para-num">¶111:</span><span class="para-content">Limitation: survivor bias, retrospective</span><span class="para-role">Bias</span></div>
+                    <button class="draft-btn" onclick="openFile('5_C_commit/C2.md')">Open Draft</button>
+                </div>
+            </div>
+
+            <!-- C3 -->
+            <div class="subagent-card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-left">
+                        <div class="card-id">C3</div>
+                        <div class="card-title">Commit to Movement</div>
+                        <div class="card-scholar">Loop back → I1</div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-para">¶112-113</div>
+                        <div class="card-score" style="color:var(--wood-green)">Loop</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">¶112:</span><span class="para-content">Future: investor behavior change</span><span class="para-role">Future</span></div>
+                    <div class="para-item"><span class="para-num">¶113:</span><span class="para-content">Commit to Movement, not to Promises → I1</span><span class="para-role">Loop</span></div>
+                    <button class="draft-btn" onclick="openFile('5_C_commit/C3.md')">Open Draft</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="font-size:0.9rem;color:var(--earth-yellow);margin-bottom:5px">The Funding Paradox v4.0.0</div>
+        <div>"Commitment earns capital, then locks in"</div>
+        <div style="margin-top:5px;font-size:0.65rem;opacity:0.6">5 Variables (F,M,G,V,D) | 5 Modules (I,M,V,E,C) | Two-Stage Mechanism</div>
+    </div>
+
+    <script>
+        function toggleCard(header) {
+            const card = header.parentElement;
+            card.classList.toggle('expanded');
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.subagent-card').forEach(card => {
+                card.classList.add('expanded');
+            });
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.subagent-card').forEach(card => {
+                card.classList.remove('expanded');
+            });
+        }
+
+        function expandAgent(agent) {
+            collapseAll();
+            document.querySelectorAll(`.subagent-card[data-agent="${agent}"]`).forEach(card => {
+                card.classList.add('expanded');
+            });
+        }
+
+        function openFile(path) {
+            window.open(path, '_blank');
+        }
+    </script>
+</body>
+</html>

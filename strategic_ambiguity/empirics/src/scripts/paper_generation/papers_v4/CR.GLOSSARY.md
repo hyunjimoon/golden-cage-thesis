@@ -15,7 +15,7 @@
 
 | Var | Definition | Owner | Version |
 |:---:|:-----------|:-----:|:-------:|
-| E | External funding raised | P1 | v1 |
+| F | Funding raised (log $) | I1 | v2 |
 | M | Movement = \|ΔV\| | P1 | v1 |
 | G | Growth (Later Stage VC: C/D+) | P1 | v1 |
 
@@ -31,9 +31,9 @@
 
 | ID | Statement | Owner | Version | Dependents |
 |:---|:----------|:-----:|:-------:|:-----------|
-| CLAIM.PARADOX | dG/dE < 0 | P1 | v1 | All |
+| CLAIM.PARADOX | dG/dF < 0 | P1 | v1 | All |
 | CLAIM.MOVEMENT | dG/dM > 0 | M3 | v1 | M4,M5,T1-T4 |
-| CLAIM.FUNDING | dM/dE < 0 | M3 | v1 | T1-T4 |
+| CLAIM.FUNDING | dM/dF < 0 | M3 | v1 | T1-T4 |
 | CLAIM.TRAP_DEF | Trap = both low-V AND high-V | M3 | **v2** | T1-T4,E1-E4 |
 | CLAIM.ECHO | Low belief variance → trap | T3 | v1 | E3 |
 

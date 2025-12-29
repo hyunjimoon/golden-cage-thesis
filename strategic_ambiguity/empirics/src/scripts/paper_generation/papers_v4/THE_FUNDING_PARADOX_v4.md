@@ -11,11 +11,11 @@
 
 | Finding | Evidence | Implication |
 |:--------|:---------|:------------|
-| **dG/dE < 0** | Funding negatively correlates with growth | More money ≠ better outcomes |
+| **dG/dF < 0** | Funding negatively correlates with growth | More money ≠ better outcomes |
 | **dG/dM > 0** | Movers outperform stayers 1.8× | Movement predicts success |
-| **dM/dE < 0** | Funding suppresses repositioning | Capital creates commitment traps |
+| **dM/dF < 0** | Funding suppresses repositioning | Selection → Capital → Lock-in |
 
-**Core Equation**: `dG/dE = (dG/dM) × (dM/dE) < 0`
+**Core Equation**: `dG/dF = (dG/dM) × (dM/dF) < 0`
 
 ---
 
@@ -24,12 +24,12 @@
 ### Figure 1: The Funding Paradox Decomposition
 
 ```
-                    dG/dE < 0
+                    dG/dF < 0
                    (PARADOX)
                        │
            ┌──────────┴──────────┐
            │                     │
-      dG/dM > 0              dM/dE < 0
+      dG/dM > 0              dM/dF < 0
     (Movement helps)      (Funding traps)
            │                     │
     ┌──────┴──────┐       ┌──────┴──────┐
@@ -60,15 +60,15 @@
 
 # P: PARADOX (¶1-11)
 
-**¶01** Strategy theory and investment practice share an implicit assumption: capital enables commitment, commitment enables coordination, coordination enables growth. Van den Steen (2017) formalizes this logic—strategy creates value precisely because commitment is costly. Ghemawat (1991) concurs: irreversibility is not a bug but a feature. The more money you raise, the more credibly you commit, the better you should perform.
+**¶01** Strategy theory and investment practice share an implicit assumption: commitment attracts capital, capital enables coordination, coordination enables growth. Van den Steen (2017) formalizes this logic—strategy creates value precisely because commitment is costly. Ghemawat (1991) concurs: irreversibility is not a bug but a feature. The more credibly you commit, the more money you raise, the better you should perform.
 
-**¶02** I find the opposite. Ventures that raise more funding show *lower* growth rates. The correlation is robustly negative: ρ(G,E) = -0.196 (p < 0.001, N = 180,994). This is the Funding Paradox.
+**¶02** I find the opposite. Ventures that raise more funding show *lower* growth rates. The correlation is robustly negative: ρ(G,F) = -0.196 (p < 0.001, N = 180,994). This is the Funding Paradox.
 
-**¶03** This paper explains why. The answer lies in movement—the magnitude of strategic repositioning a venture undertakes. Movement predicts growth (dG/dM > 0), but funding suppresses movement (dM/dE < 0).
+**¶03** This paper explains why. The answer lies in movement—the magnitude of strategic repositioning a venture undertakes. Movement predicts growth (dG/dM > 0), but funding suppresses movement (dM/dF < 0).
 
-**¶04** The decomposition: dG/dE = (dG/dM) × (dM/dE). A positive times a negative yields the paradox.
+**¶04** The decomposition: dG/dF = (dG/dM) × (dM/dF). A positive times a negative yields the paradox.
 
-**¶05** I define three variables. E = external funding raised. M = movement, measured as |ΔV| where V is strategic vagueness. G = growth, operationalized as reaching Later Stage VC (Series C/D+).
+**¶05** I define three variables. F = funding raised (log $). M = movement, measured as |ΔV| where V is strategic vagueness. G = growth, operationalized as reaching Later Stage VC (Series C/D+).
 
 **¶06** Movement is not pivoting randomly. It is disciplined repositioning—zooming in (reducing vagueness) or zooming out (increasing vagueness) based on evidence.
 
@@ -128,11 +128,11 @@
 
 ## M3: Bridge (¶30)
 
-**¶30** The funding paradox decomposes into two testable claims. First, movement predicts growth: ventures that reposition outperform those that stay fixed. Second, funding suppresses movement: capital commits founders to their funded vision. Modules M4-M5 test the first claim; Modules T1-T4 explain the second. The decomposition dG/dE = (dG/dM)(dM/dE) structures what follows.
+**¶30** The funding paradox decomposes into two testable claims. First, movement predicts growth: ventures that reposition outperform those that stay fixed. Second, funding suppresses movement: capital commits founders to their funded vision. Modules M4-M5 test the first claim; Modules T1-T4 explain the second. The decomposition dG/dF = (dG/dM)(dM/dF) structures what follows.
 
 ## M4: Bayesian Gospel (¶31-39)
 
-**¶31** If movement helps (dG/dM > 0), why don't all ventures move? The answer lies in funding. External capital suppresses movement: dM/dE < 0. Think of it as golden handcuffs—the more capital you raise, the less freedom you have to change course. The very resource meant to enable growth becomes the constraint that prevents it.
+**¶31** If movement helps (dG/dM > 0), why don't all ventures move? The answer lies in funding. External capital suppresses movement: dM/dF < 0. Think of it as golden handcuffs—the more capital you raise, the less freedom you have to change course. The very resource meant to enable growth becomes the constraint that prevents it.
 
 **¶32** Camuffo and colleagues show that scientific experimentation improves venture outcomes. Nanda demonstrates that staged financing enables learning. Both assume funding facilitates adaptation.
 
@@ -142,9 +142,9 @@
 
 **¶35** Structurally, funding comes with expectations. Board seats, milestone agreements, and follow-on dependencies all anchor the venture to its funded position. Movement becomes costly.
 
-**¶36** This explains the paradox. Funding should help (more resources for experiments). But funding also constrains (commitment to funded vision). The constraint dominates: dM/dE < 0.
+**¶36** This explains the paradox. Funding should help (more resources for experiments). But funding also constrains (commitment to funded vision). The constraint dominates: dM/dF < 0.
 
-**¶37** The effect is not about funding amount alone. It's about funding structure. Ventures with "vision-aligned" investors show stronger dM/dE < 0. Those with "thesis-diverse" investors preserve movement capacity.
+**¶37** The effect is not about funding amount alone. It's about funding structure. Ventures with "vision-aligned" investors show stronger dM/dF < 0. Those with "thesis-diverse" investors preserve movement capacity.
 
 **¶38** Provisional commitment offers escape. Founders who frame their pitch as hypothesis-testing rather than vision-execution maintain movement capacity post-funding. The framing matters.
 
@@ -152,21 +152,21 @@
 
 ## M5: Empirics (¶40-48)
 
-**¶40** I test the Funding Trap hypothesis: does external capital reduce strategic movement? The relationship should be negative: dM/dE < 0.
+**¶40** I test the Funding Trap hypothesis: does external capital reduce strategic movement? The relationship should be negative: dM/dF < 0.
 
-**¶41** Using the same 408,697 ventures, I regress M (movement) on E (log funding), controlling for industry, cohort, and initial vagueness V₀.
+**¶41** Using the same 408,697 ventures, I regress M (movement) on F (log funding), controlling for industry, cohort, and initial vagueness V₀.
 
 **¶42** The core finding: a one-standard-deviation increase in funding predicts 0.4 standard deviations lower movement (p < 0.001). More money, less repositioning.
 
 **¶43** The effect is causal, not just correlational. Using funding shocks (unexpected VC fund closures) as instruments, the relationship strengthens. Exogenous funding reductions increase movement.
 
-**¶44** Heterogeneity reveals mechanism. The dM/dE < 0 effect is strongest for ventures with (a) single lead investors, (b) milestone-heavy term sheets, (c) founder-investor belief alignment.
+**¶44** Heterogeneity reveals mechanism. The dM/dF < 0 effect is strongest for ventures with (a) single lead investors, (b) milestone-heavy term sheets, (c) founder-investor belief alignment.
 
-**¶45** Conversely, dM/dE ≈ 0 for ventures with (a) syndicated rounds, (b) flexible milestones, (c) explicit pivot provisions. Funding structure moderates the trap.
+**¶45** Conversely, dM/dF ≈ 0 for ventures with (a) syndicated rounds, (b) flexible milestones, (c) explicit pivot provisions. Funding structure moderates the trap.
 
-**¶46** Timing matters. Early-stage funding (Seed, Series A) shows stronger dM/dE < 0 than later stages. Early commitment locks in trajectory before learning can accumulate.
+**¶46** Timing matters. Early-stage funding (Seed, Series A) shows stronger dM/dF < 0 than later stages. Early commitment locks in trajectory before learning can accumulate.
 
-**¶47** The Funding Trap is real. Capital suppresses the movement that predicts growth. This completes the paradox: dG/dE = (dG/dM > 0) × (dM/dE < 0) < 0.
+**¶47** The Funding Trap is real. Capital suppresses the movement that predicts growth. This completes the paradox: dG/dF = (dG/dM > 0) × (dM/dF < 0) < 0.
 
 **¶48** But why does funding suppress movement? Three mechanisms explain: commitment escalation, echo chambers, and false positive signals. Module T explores each.
 
@@ -176,7 +176,7 @@
 
 ## T1: Process Framing (¶49-56)
 
-**¶49** The Funding Trap (dM/dE < 0) operates through three mechanisms. Each explains why capital, intended to enable learning, instead suppresses the movement that learning would produce.
+**¶49** The Funding Trap (dM/dF < 0) operates through three mechanisms. Each explains why capital, intended to enable learning, instead suppresses the movement that learning would produce.
 
 **¶50** I frame traps as process failures, not outcome failures. A trap is a state where learning halts—where new evidence no longer updates beliefs or actions. The venture is stuck.
 
@@ -188,7 +188,7 @@
 
 **¶54** Each mechanism has distinct signature. Commitment traps show high founder confidence despite negative signals. Echo chamber traps show low team belief variance. Signal traps show metric obsession disconnected from learning.
 
-**¶55** The E×E matrix maps traps. First E = external funding level. Second E = epistemic diversity (belief variance). High funding + low diversity = maximum trap probability.
+**¶55** The F×D matrix maps traps. F = funding level. D = epistemic diversity (belief variance). High funding + low diversity = maximum trap probability.
 
 **¶56** Modules T2-T4 detail each mechanism. The goal: understand not just that traps exist, but why they form and how to escape.
 
@@ -339,7 +339,7 @@ The funding paradox affects $300B+ in annual VC investment. Every year, well-mea
 
 ## C3: Coda (¶113)
 
-**¶113** **Contributions.** This paper makes three contributions. *Layer 1 (Construct):* I introduce the Movement variable M = |ΔV| and establish two robust relationships—dG/dM > 0 (movers outperform 1.8×) and dM/dE < 0 (capital suppresses movement). *Layer 2 (Process):* I decompose the Funding Paradox as dG/dE = (dG/dM)(dM/dE) < 0, explaining why well-funded ventures underperform. *Layer 3 (Mechanism):* I derive the Learning Trap condition μ(1−μ) < ε/V, showing how funding triggers belief variance collapse through commitment escalation, echo chambers, and false signals. **Boundary conditions:** These findings hold when initial vagueness V₀ > 30, funding E > $1M, and in contexts where uncertainty exceeds coordination benefits. **Prescription:** Commit to movement, not to the promises that fund it. 必死卽生, 必生卽死.
+**¶113** **Contributions.** This paper makes three contributions. *Layer 1 (Construct):* I introduce the Movement variable M = |ΔV| and establish two robust relationships—dG/dM > 0 (movers outperform 1.8×) and dM/dF < 0 (capital suppresses movement). *Layer 2 (Process):* I decompose the Funding Paradox as dG/dF = (dG/dM)(dM/dF) < 0, explaining why well-funded ventures underperform. *Layer 3 (Mechanism):* I derive the Learning Trap condition μ(1−μ) < ε/V, showing how funding triggers belief variance collapse through commitment escalation, echo chambers, and false signals. **Boundary conditions:** These findings hold when initial vagueness V₀ > 30, funding F > $1M, and in contexts where uncertainty exceeds coordination benefits. **Prescription:** Commit to movement, not to the promises that fund it. 必死卽生, 必生卽死.
 
 ---
 
@@ -349,9 +349,9 @@ The funding paradox affects $300B+ in annual VC investment. Every year, well-mea
 
 | Equation | Meaning | Evidence |
 |:---------|:--------|:---------|
-| dG/dE < 0 | Funding hurts growth | Negative correlation in 408K ventures |
+| dG/dF < 0 | Funding hurts growth | Negative correlation in 408K ventures |
 | dG/dM > 0 | Movement helps growth | Movers 1.8× survival rate |
-| dM/dE < 0 | Funding suppresses movement | 0.4 SD decrease per SD funding |
+| dM/dF < 0 | Funding suppresses movement | 0.4 SD decrease per SD funding |
 
 ### Table 2: Three Trap Mechanisms
 

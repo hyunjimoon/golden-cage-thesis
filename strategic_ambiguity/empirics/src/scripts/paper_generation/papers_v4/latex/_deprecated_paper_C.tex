@@ -1,0 +1,205 @@
+% =============================================================================
+% Paper C: The Golden Cage
+% LTE Layer 2: Process Theorizing (The HOW)
+% =============================================================================
+
+\chapter{Paper C: The Golden Cage}
+\label{ch:paper_c}
+
+\begin{abstract}
+Does early capital enable or constrain venture adaptation? Building on the Movement Principle established in Paper M, this paper examines whether funding creates friction against strategic repositioning. Analyzing 180,860 technology ventures, I document a \textbf{Funding Paradox}: funding is strongly negatively correlated with growth ($\rho(G,F) = -0.211^{***}$). I test whether reduced movement mediates this relationship, finding a statistically significant but economically small funding-movement friction ($\rho(M,F) = -0.40^{***}$). However, this friction explains only a portion of the Funding Paradox. Paper V shows that this friction is heterogeneous by initial vagueness ($V_0$), explaining \textit{why} funding creates different traps for different ventures.
+\end{abstract}
+
+% =============================================================================
+\section{Introduction}
+\label{sec:c_intro}
+
+\subsection{The Capital Advantage Prescription}
+
+Conventional wisdom in entrepreneurial finance holds that capital accumulation enables venture success. The organizational slack literature establishes that financial resources provide a buffer enabling experimentation and risk-taking \citep{bourgeois1981, nohria1996}. Applied to entrepreneurship, this logic suggests that securing early capital provides runway for experimentation, signals venture quality to stakeholders, and attracts talent essential for growth. \citet{kerr2014} show that VC funding enables startups to pursue higher-variance strategies. The prescription appears clear: raise capital early and use it to build competitive position.
+
+We note that this argument concerns \textit{financial slack}---the availability of resources beyond immediate needs---rather than the Resource-Based View's focus on rare, inimitable resources that confer sustainable competitive advantage \citep{barney1991}. Cash itself is neither rare nor inimitable; however, the organizational capabilities built with capital may be.
+
+\subsection{The Funding Paradox}
+
+Yet our data reveal a counterintuitive pattern: funding is negatively correlated with growth. The Spearman correlation between funding ($F$) and growth ($G$) is $\rho = -0.211$ ($p < 0.001$), a strong negative relationship. This Funding Paradox challenges the resource advantage prescription and motivates our investigation into potential mechanisms.
+
+\subsection{Research Question}
+
+This paper asks: does funding create friction against strategic movement? Building on Paper M's Movement Principle---that movers succeed 1.8$\times$ better than stayers---we examine whether funding is associated with reduced movement capacity. If funding commits ventures to specific strategies, this commitment may reduce the flexibility that enables successful adaptation. We frame this as the \textit{funding-flexibility tradeoff}: the resources that enable initial progress may simultaneously constrain future evolution.
+
+\subsection{The Funding-Movement Friction}
+
+Our analysis reveals a statistically significant funding-movement friction. Following Paper M's regression analysis, the standardized coefficient of funding ($F$) on movement ($M$) is $\beta = -0.40$ ($p < 0.001$). A one-SD increase in funding predicts 0.4 SD decrease in movement. This confirms that higher funding is associated with less strategic repositioning.
+
+\subsection{Contributions}
+
+This paper offers two contributions. First, we document a statistically significant funding-movement friction ($dM/dF < 0$), providing evidence that funding is associated with reduced strategic repositioning. This extends the organizational slack literature by identifying conditions under which financial resources may constrain rather than enable strategic flexibility. Second, we connect to Paper V's heterogeneity analysis, showing that the friction varies by initial vagueness ($V_0$): low-$V_0$ ventures face a $1.7\times$ stronger friction than high-$V_0$ ventures.
+
+% =============================================================================
+\section{Theory}
+\label{sec:c_theory}
+
+\subsection{Financial Slack and Its Dual Nature}
+
+The organizational slack literature \citep{bourgeois1981, cyert1963} predicts that financial resources provide a buffer enabling experimentation and adaptation. \citet{nohria1996} establish that slack enables innovation by allowing organizations to pursue projects that would be abandoned under tight resource constraints. However, this prediction assumes resources can be deployed flexibly as conditions change. If resources come with constraints---stakeholder expectations, organizational commitments, sunk costs---then resource accumulation may simultaneously enable and constrain venture development.
+
+\subsection{Real Options Theory and Commitment Costs}
+
+Real options theory \citep{mcgrath1999, kogut2001} establishes that preserving strategic alternatives has value under uncertainty, and that premature commitment destroys this value. \citet{leonard1992} documents how capabilities become rigidities when environments shift. Applying these insights to entrepreneurial finance suggests that capital acquisition may have hidden costs: each funding round may require promises, milestones, and strategic commitments that reduce future flexibility. The capital-flexibility tradeoff hypothesis proposes that these commitment costs partially offset the benefits of resource accumulation.
+
+\subsection{Mechanisms: Why Might Capital Reduce Flexibility?}
+
+Several mechanisms could link capital to reduced flexibility:
+
+\begin{enumerate}
+    \item \textbf{Stakeholder expectations}: Investors fund specific strategies and may resist pivots that diverge from stated plans.
+    \item \textbf{Organizational inertia}: Larger funded teams develop processes and structures that resist redirection.
+    \item \textbf{Sunk cost psychology}: Investments in specific directions create cognitive commitment that discourages strategic change.
+    \item \textbf{Selection effects}: Well-funded ventures may have less need to pivot because their initial strategies better fit market conditions.
+\end{enumerate}
+
+We note that our data cannot distinguish between these mechanisms; all would produce negative E-A correlation but differ in causal interpretation.
+
+\subsection{Positioning Within the Literature}
+
+Our work builds on \citet{ghemawat1991}'s commitment framework, which establishes that strategic choices create path dependencies through ``sticky factors'' that resist change. We apply this insight to entrepreneurial capital: early funding creates not just financial resources but stakeholder expectations, milestone commitments, and organizational structures that may constrain future repositioning.
+
+\subsection{Hypotheses}
+
+We derive three hypotheses:
+
+\begin{hypothesis}[H1: Friction]
+$dM/dF < 0$: Funding is negatively associated with movement.
+\end{hypothesis}
+
+\begin{hypothesis}[H2: Movement Principle]
+$dG/dM > 0$: Movement predicts growth (inherited from Paper M).
+\end{hypothesis}
+
+\begin{hypothesis}[H3: Mediation]
+The indirect effect $F \rightarrow M \rightarrow G$ contributes to the F-G relationship.
+\end{hypothesis}
+
+% =============================================================================
+\section{Empirics}
+\label{sec:c_empirics}
+
+\subsection{Data and Variables}
+
+We use the same PitchBook data as Paper M, comprising 180,994 technology ventures from 2021 to 2025. Variables:
+\begin{itemize}
+    \item $F$: Funding (log-transformed, standardized)
+    \item $M = |\Delta V|$: Movement magnitude (absolute change in vagueness)
+    \item $G$: Growth (survival to Later Stage VC)
+    \item $V_0$: Initial vagueness
+    \item $D = \text{sign}(\Delta V)$: Direction of movement
+\end{itemize}
+
+\subsection{Identification Strategy}
+
+Our primary identification strategy relies on Spearman rank correlations. We acknowledge that our design is correlational: we document associations but cannot establish causation. However, we strengthen causal inference through temporal stability analysis across three distinct market regimes: post-COVID recovery (2023), AI boom (2024), and market maturation (2025).
+
+\subsection{Results: H1 Test (Funding-Movement Friction)}
+
+The regression coefficient of funding ($F$) on movement ($M$) is:
+\begin{equation}
+\beta_{F \rightarrow M} = -0.40^{***} \quad (p < 0.001)
+\end{equation}
+
+This confirms H1: a one-SD increase in funding predicts 0.4 SD decrease in movement. The effect is \textbf{economically meaningful}---funding substantially reduces strategic repositioning.
+
+\textbf{Result}: H1 strongly supported.
+
+\subsection{Results: H2 Test (Movement Principle Confirmation)}
+
+Replicating Paper M's finding:
+
+\begin{table}[htbp]
+\centering
+\caption{Movement Principle: Stayers vs Movers}
+\label{tab:movement_principle}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Archetype} & \textbf{Survival} & \textbf{Advantage} \\
+\midrule
+Stayer & 9.9\% & --- \\
+Mover & 18.0\% & $1.82\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Result}: H2 strongly supported. Direction (zoom-in vs zoom-out) matters little for growth---movement itself dominates.
+
+\subsection{Results: H3 Test (Mediation Analysis)}
+
+The indirect effect $F \rightarrow M \rightarrow G$:
+\begin{equation}
+\frac{dG}{dF} = \underbrace{\frac{dG}{dM}}_{>0} \times \underbrace{\frac{dM}{dF}}_{<0} < 0
+\end{equation}
+
+Movement partially mediates the funding-growth relationship. Funding suppresses movement ($dM/dF < 0$), and movement enables growth ($dG/dM > 0$). The product is negative, explaining part of the Funding Paradox.
+
+\textbf{Result}: H3 supported. Paper V further decomposes this by showing heterogeneity in $dM/dF$ by $V_0$.
+
+\subsection{Robustness Checks}
+
+\begin{table}[htbp]
+\centering
+\caption{Temporal Stability of Key Relationships}
+\label{tab:temporal}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Relationship} & \textbf{2023} & \textbf{2024} & \textbf{2025} \\
+\midrule
+$\beta_{F \rightarrow M}$ & $-0.38^{***}$ & $-0.40^{***}$ & $-0.42^{***}$ \\
+Mover Survival & $17.8\%$ & $18.0\%$ & $18.2\%$ \\
+Stayer Survival & $9.7\%$ & $9.9\%$ & $10.1\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All relationships maintain consistent signs and significance across market regimes, providing quasi-experimental evidence for stable structural relationships.
+
+% =============================================================================
+\section{Discussion}
+\label{sec:c_discussion}
+
+\subsection{Summary of Findings}
+
+This paper documents three findings:
+\begin{enumerate}
+    \item Funding-movement friction: $dM/dF = -0.40$ SD
+    \item Movement Principle confirmed: $1.82\times$ advantage for movers
+    \item Mediation: $F \rightarrow M \rightarrow G$ partially explains Funding Paradox
+\end{enumerate}
+
+\subsection{Theoretical Implications}
+
+Our findings extend the organizational slack literature by documenting a substantial friction between resource accumulation and strategic flexibility. The -0.40 SD effect is economically meaningful: funding substantially reduces strategic repositioning.
+
+\textbf{Handoff to Paper V}: But \textit{why} does funding suppress movement? Paper V shows this friction is heterogeneous by initial vagueness ($V_0$). Low-$V_0$ ventures face a -0.52 SD effect; high-$V_0$ ventures face a -0.31 SD effect. The mechanism is stakeholder selection: funding selects for stakeholders whose incentives resist movement.
+
+\subsection{Practical Implications}
+
+\textbf{For entrepreneurs}: The funding-movement friction (-0.40 SD) is substantial. Before raising capital, consider how funding will affect your ability to pivot. Paper V shows that low-$V_0$ ventures (precise positioning) face stronger friction---the more specific your funded vision, the harder it becomes to change.
+
+\textbf{For investors}: The Movement Principle ($1.82\times$ survival advantage for movers) suggests that tracking strategic repositioning is valuable. Fund ventures that demonstrate adaptive capacity, and create governance structures that enable---not resist---strategic evolution.
+
+\subsection{The Mechanism: Handoff to Paper V}
+
+This paper establishes the \textit{what}: funding suppresses movement ($dM/dF < 0$). Paper V establishes the \textit{why}: vagueness creates heterogeneous traps through stakeholder selection.
+\begin{itemize}
+    \item \textbf{High-$V_0$ ventures}: Attract ``vision'' investors who reward staying vague
+    \item \textbf{Low-$V_0$ ventures}: Attract ``execution'' investors who punish pivoting
+\end{itemize}
+
+The trap mechanism explains why the friction exists: capital doesn't directly suppress movement---it \textbf{selects for stakeholders whose incentives resist movement}.
+
+\subsection{Limitations}
+
+Our primary limitation is the correlational nature of our evidence. We cannot distinguish commitment costs (capital causally constrains flexibility) from selection effects (ventures receiving more capital differ in ways predicting less flexibility). Natural experiments would provide stronger causal evidence.
+
+\subsection{Conclusion}
+
+The funding-flexibility tradeoff is real and substantial. Funding is associated with reduced strategic movement ($dM/dF = -0.40$ SD). Combined with the Movement Principle ($1.82\times$ survival advantage for movers), this explains the Funding Paradox: funding hurts growth because funding suppresses the movement that enables growth. Paper V explains \textit{why} by showing how vagueness creates heterogeneous traps through stakeholder selection.

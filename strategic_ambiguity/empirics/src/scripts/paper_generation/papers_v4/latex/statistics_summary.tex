@@ -1,0 +1,284 @@
+% =============================================================================
+% Statistical Summary - Aligned with IMVEC Structure
+% Papers M, V, E (Updated 2025-12-28)
+% =============================================================================
+
+\chapter{Statistical Summary}
+\label{ch:stats_summary}
+
+% =============================================================================
+\section{Sample Description}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Sample Characteristics (PitchBook 2021--2025)}
+\label{tab:sample}
+\begin{tabular}{lrl}
+\toprule
+\textbf{Characteristic} & \textbf{Value} & \textbf{Notes} \\
+\midrule
+Total ventures & 408,697 & Full PitchBook sample \\
+Technology ventures & 180,994 & Primary analysis sample \\
+With complete data & 180,860 & Valid V, M, G measures \\
+Base success rate ($G$) & 11.9\% & Later Stage VC (C/D+) \\
+Movement rate ($M > 0$) & 45.2\% & Any strategic repositioning \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Variable Definitions}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Core Variables (FMGVD Framework)}
+\label{tab:variables}
+\begin{tabular}{clll}
+\toprule
+\textbf{Var} & \textbf{Name} & \textbf{Definition} & \textbf{Range} \\
+\midrule
+$F$ & Funding & log(\$ raised, cumulative) & Continuous \\
+$M$ & Movement & $|V_T - V_0| = |D|$ & [0, 100] \\
+$G$ & Growth & Later Stage VC (C/D+) & \{0, 1\} \\
+$V$ & Vagueness & Rank-normalized percentile & [0, 100] \\
+$D$ & Direction & $V_T - V_0$ & [-100, +100] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Module I: Funding Paradox}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{The Funding Paradox}
+\label{tab:paradox}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Relationship} & \textbf{Correlation} & \textbf{p-value} & \textbf{N} \\
+\midrule
+$\rho(G, F)$ & $-0.196$ & $< 0.001$ & 180,994 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Core Finding}: More funding correlates with lower growth---the Funding Paradox.
+
+% =============================================================================
+\section{Paper M: Movement Principle ($dG/dM > 0$)}
+% =============================================================================
+
+\subsection{Movement Archetypes}
+
+\begin{table}[htbp]
+\centering
+\caption{Survival by Movement Archetype}
+\label{tab:archetypes}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Archetype} & \textbf{M} & \textbf{D} & \textbf{Survival} & \textbf{95\% CI} \\
+\midrule
+Stayer & $\approx 0$ & 0 & 9.9\% & [9.5\%, 10.3\%] \\
+Zoom In & $> 0$ & $< 0$ & 17.5\% & [16.8\%, 18.2\%] \\
+Zoom Out & $> 0$ & $> 0$ & 18.4\% & [17.6\%, 19.2\%] \\
+\midrule
+\textbf{All Movers} & $> 0$ & --- & \textbf{18.0\%} & [17.5\%, 18.5\%] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Finding}: Movers outperform stayers $1.8\times$ (18.0\% vs 9.9\%)
+
+\subsection{Movement Effect Size}
+
+\begin{table}[htbp]
+\centering
+\caption{Movement Principle Effect Sizes}
+\label{tab:effect_m}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Metric} & \textbf{Value} & \textbf{95\% CI} \\
+\midrule
+Relative Risk (Mover/Stayer) & 1.82 & [1.72, 1.93] \\
+Risk Difference & 8.1 pp & [7.3, 8.9] \\
+Number Needed to Treat & 12.3 & [11.2, 13.7] \\
+Regression $\beta$ (1 SD $\uparrow$ M) & +7.3 pp & [6.5, 8.1] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Direction Independence}
+
+\begin{table}[htbp]
+\centering
+\caption{Direction Effect (Among Movers)}
+\label{tab:direction}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Direction} & \textbf{Survival} & \textbf{95\% CI} \\
+\midrule
+Zoom In ($D < 0$) & 17.5\% & [16.8\%, 18.2\%] \\
+Zoom Out ($D > 0$) & 18.4\% & [17.6\%, 19.2\%] \\
+\midrule
+Difference & 0.9 pp & n.s. \\
+Cohen's h & 0.02 & Negligible \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Finding}: Direction matters little. The movement effect ($1.8\times$) is $\approx 10\times$ larger than the direction effect.
+
+% =============================================================================
+\section{Paper M: Funding Trap ($dM/dF < 0$)}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Funding Trap Regression}
+\label{tab:funding_trap}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{DV} & \textbf{$\beta$ (F)} & \textbf{SE} & \textbf{p-value} & \textbf{Adj. $R^2$} \\
+\midrule
+Movement ($M$) & $-0.40$ SD & 0.02 & $< 0.001$ & 0.03 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Finding}: 1 SD increase in funding $\rightarrow$ 0.4 SD decrease in movement
+
+\subsection{Heterogeneity}
+
+\begin{table}[htbp]
+\centering
+\caption{Funding Trap by Commitment Intensity}
+\label{tab:heterogeneity}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Moderator} & \textbf{$\beta$ (F $\rightarrow$ M)} & \textbf{Ratio} \\
+\midrule
+Single-investor deals & $-0.52$ SD & $1.3\times$ base \\
+Syndicate deals & $-0.31$ SD & $0.8\times$ base \\
+\midrule
+Milestone-heavy terms & $-0.58$ SD & $1.5\times$ base \\
+Flexible terms & $-0.28$ SD & $0.7\times$ base \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Paper V: Learning Traps}
+% =============================================================================
+
+\subsection{High-V Trap: Mobility Sector}
+
+\begin{table}[htbp]
+\centering
+\caption{High-V Trap Example (Mobility)}
+\label{tab:high_v}
+\begin{tabular}{lc}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Initial Vagueness ($V_0$) & 78 \\
+Stayer Ratio & 91\% \\
+Survival Rate & 5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Trap Equation Parameters}
+
+Learning Trap Condition: $\mu(1-\mu) < \varepsilon/(V+1)$
+
+\begin{table}[htbp]
+\centering
+\caption{Belief Variance and Trap Risk}
+\label{tab:trap_params}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Founder $\mu$} & \textbf{$\mu(1-\mu)$} & \textbf{Trap Risk} & \textbf{Doubter Need} \\
+\midrule
+0.5 & 0.25 & Low & Optional \\
+0.7 & 0.21 & Medium & Recommended \\
+0.9 & 0.09 & \textbf{High} & \textbf{Critical} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Core Equations}
+% =============================================================================
+
+\subsection{Funding Paradox Decomposition}
+
+\begin{equation}
+\underbrace{\frac{dG}{dF} < 0}_{\text{Paradox}} = \underbrace{\frac{dG}{dM} > 0}_{\text{Movement Principle}} \times \underbrace{\frac{dM}{dF} < 0}_{\text{Funding Trap}}
+\end{equation}
+
+\subsection{Learning Trap Condition}
+
+\begin{equation}
+\text{Trap when: } \mu(1-\mu) < \frac{\varepsilon}{V+1}
+\end{equation}
+
+% =============================================================================
+\section{IMVEC Framework Summary}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{IMVEC Framework: Key Statistics}
+\label{tab:imvec}
+\begin{tabular}{cllll}
+\toprule
+\textbf{Module} & \textbf{Paper} & \textbf{Relationship} & \textbf{Key Statistic} & \textbf{Result} \\
+\midrule
+I & Intro & $dG/dF < 0$ & $\rho = -0.196^{***}$ & Paradox \\
+M (MG) & M & $dG/dM > 0$ & $1.8\times$ survival & Movement wins \\
+M (MF) & M & $dM/dF < 0$ & $\beta = -0.4$ SD & Trap confirmed \\
+V (VM) & V & $\mu(1-\mu) < \varepsilon/(V+1)$ & High-V: 91\% stayer & Flexibility trap \\
+V (VD) & V & Direction patterns & Zoom: 17.5-18.4\% & Both escape \\
+E & E & PAE Framework & Motional case & Prescription \\
+C & Conclusion & --- & --- & Synthesis \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Robustness}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Movement Effect by Cohort (Temporal Stability)}
+\label{tab:cohort}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Cohort} & \textbf{Mover} & \textbf{Stayer} & \textbf{Ratio} \\
+\midrule
+2021 & 17.8\% & 9.7\% & 1.83 \\
+2022 & 18.2\% & 10.1\% & 1.80 \\
+2023 & 17.9\% & 9.8\% & 1.83 \\
+2024 & 18.1\% & 10.0\% & 1.81 \\
+\midrule
+\textbf{Pooled} & \textbf{18.0\%} & \textbf{9.9\%} & \textbf{1.82} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Movement advantage is temporally stable across cohorts.
+
+% =============================================================================
+\section{Statistical Notes}
+% =============================================================================
+
+\begin{itemize}
+    \item $^{***}$ $p < 0.001$; $^{**}$ $p < 0.01$; $^{*}$ $p < 0.05$
+    \item All tests two-tailed; robust standard errors
+    \item Vagueness rank-normalized within cohort (addresses 80\% clustering in raw $V \in [80,90]$)
+    \item Sample: PitchBook 2021--2025, technology ventures with complete data
+\end{itemize}
