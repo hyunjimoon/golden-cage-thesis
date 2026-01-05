@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FUNDING PARADOX | v5.2.0</title>
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --card: #131820;
+            --border: #21262d;
+            --text: #e6edf3;
+            --muted: #7d8590;
+
+            /* Module colors */
+            --intro: #ff6b6b;
+            --repo: #ffd43b;
+            --breadth: #c9d1d9;
+            --conclude: #4dabf7;
+            --growth: #69db7c;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'SF Pro Display', -apple-system, sans-serif;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--card);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .header-title { font-size: 1.2rem; font-weight: 700; }
+        .header-equation { font-family: 'Times New Roman', serif; color: var(--repo); }
+        .header-stats { font-size: 0.75rem; color: var(--muted); }
+
+        /* Progress */
+        .progress-bar {
+            display: flex;
+            gap: 2px;
+            height: 6px;
+            margin-bottom: 15px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-segment { transition: all 0.3s; }
+        .progress-segment:hover { filter: brightness(1.3); }
+
+        /* Four Column Layout */
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            align-items: start;
+        }
+
+        .column-header {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--muted);
+            margin-bottom: 10px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .column-header.col-I { background: rgba(255, 107, 107, 0.15); color: var(--intro); }
+        .column-header.col-A { background: rgba(255, 212, 59, 0.15); color: var(--repo); }
+        .column-header.col-B { background: rgba(201, 209, 217, 0.15); color: var(--breadth); }
+        .column-header.col-C { background: rgba(77, 171, 247, 0.15); color: var(--conclude); }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .card:hover { border-color: var(--muted); }
+        .card.expanded { border-width: 2px; }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 12px;
+            cursor: pointer;
+        }
+
+        .card-main { flex: 1; min-width: 0; }
+
+        .card-id {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .agent-I .card-id { color: var(--intro); }
+        .agent-A .card-id { color: var(--repo); }
+        .agent-B .card-id { color: var(--breadth); }
+        .agent-C .card-id { color: var(--conclude); }
+
+        .card-title {
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-scholar {
+            font-size: 0.65rem;
+            color: var(--muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-thumb {
+            width: 50px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 4px;
+            opacity: 0.85;
+            margin-left: 8px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card-thumb:hover {
+            opacity: 1;
+            transform: scale(2);
+            z-index: 100;
+            position: relative;
+        }
+
+        .card-meta {
+            text-align: right;
+            margin-left: 8px;
+        }
+
+        .card-para {
+            font-size: 0.65rem;
+            color: var(--muted);
+            background: rgba(255,255,255,0.05);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        /* Expanded Content */
+        .para-list {
+            display: none;
+            padding: 0 10px 10px;
+            border-top: 1px solid var(--border);
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .card.expanded .para-list { display: block; }
+
+        .para-item {
+            display: flex;
+            gap: 6px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            font-size: 0.7rem;
+        }
+
+        .para-item:last-child { border-bottom: none; }
+
+        .para-num {
+            color: var(--muted);
+            min-width: 30px;
+            font-family: monospace;
+            font-size: 0.65rem;
+        }
+
+        .para-content {
+            flex: 1;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        /* Special row styles */
+        .para-item.gospel { background: rgba(255,107,107,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.puzzle { background: rgba(255,212,59,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.lens { background: rgba(77,171,247,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.map { background: rgba(105,219,124,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+
+        .para-item.gospel .para-num { color: var(--intro); }
+        .para-item.puzzle .para-num { color: var(--repo); }
+        .para-item.lens .para-num { color: var(--conclude); }
+        .para-item.map .para-num { color: var(--growth); }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.7rem;
+            padding: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .columns { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .columns { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="header-title">THE FUNDING PARADOX v5.2.0</div>
+            <div class="header-stats" style="color:var(--intro);font-style:italic">"자금이 성장을 가둔다"</div>
+        </div>
+        <div style="text-align:right">
+            <div class="header-equation">dG/dF = (dG/dA) × (dA/dF) < 0</div>
+            <div class="header-stats">3 Sections | 8 Cards | LTE Framework</div>
+        </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-bar">
+        <div class="progress-segment" style="flex:11; background:var(--intro)" title="I: 11¶"></div>
+        <div class="progress-segment" style="flex:37; background:var(--repo)" title="A: AG+FA"></div>
+        <div class="progress-segment" style="flex:24; background:var(--breadth)" title="B: BT"></div>
+        <div class="progress-segment" style="flex:28; background:var(--conclude)" title="C: C1-C4"></div>
+    </div>
+
+    <div class="columns">
+        <!-- COLUMN I -->
+        <div class="column">
+            <div class="column-header col-I">🔴 I · 서론<br><span style="font-size:0.55rem;opacity:0.7">WHY $ ≠ G?</span></div>
+
+            <!-- I1: 역설 -->
+            <div class="card agent-I" data-agent="I">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">I1 역설</div>
+                        <div class="card-title">The Funding Paradox</div>
+                        <div class="card-scholar">dG/dF = (dG/dA)(dA/dF) < 0</div>
+                    </div>
+                    <img class="card-thumb" src="figures/diagnostic_dGdE_by_archetype.png" onclick="event.stopPropagation(); window.open(this.src)" title="dG/dF < 0">
+                    <div class="card-meta">
+                        <div class="card-para">¶1-11</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"자본은 성장을 가능케 한다" — VC의 기본 가정 (Camuffo, Nanda)</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 dG/dF < 0 발견. 왜 자금↑이면 성장↓인가?</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">분해: dG/dF = (dG/dA)(dA/dF). 이해관계자 lock-in이 재포지셔닝 억제</span></div>
+                    <div class="para-item map"><span class="para-num">🗺️</span><span class="para-content">구성: I(역설)→A(무엇이?)→B(언제?)→C(처방)</span></div>
+                    <div class="para-item"><span class="para-num">¶05</span><span class="para-content">ρ(G,F) = −0.196*** (N = 180,994). 통계적으로 유의한 음의 상관관계</span></div>
+                    <div class="para-item"><span class="para-num">¶06</span><span class="para-content">A = |R| = 전략적 재포지셔닝의 크기</span></div>
+                    <div class="para-item"><span class="para-num">¶07</span><span class="para-content">Mover 17.9% vs Stayer 9.9% (1.8배 생존율 차이)</span></div>
+                    <div class="para-item"><span class="para-num">¶08</span><span class="para-content">세 유형: stayer (R=0), zoom-in (R<0), zoom-out (R>0)</span></div>
+                    <div class="para-item"><span class="para-num">¶11</span><span class="para-content">처방: "포지션이 아닌 움직임에 몰입하라"</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN A -->
+        <div class="column">
+            <div class="column-header col-A">🟡 A · 재포지셔닝<br><span style="font-size:0.55rem;opacity:0.7">WHAT grows?</span></div>
+
+            <!-- AG: 성장 -->
+            <div class="card agent-A" data-agent="A">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">AG 성장</div>
+                        <div class="card-title">Movement Principle</div>
+                        <div class="card-scholar">dG/dA > 0 | Porter, Van den Steen</div>
+                    </div>
+                    <img class="card-thumb" src="figures/M_fig5_killer_movement.png" onclick="event.stopPropagation(); window.open(this.src)" title="dG/dA > 0">
+                    <div class="card-meta">
+                        <div class="card-para">¶12-28</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"포지션 몰입이 경쟁우위 창출" — Porter, Ghemawat, Van den Steen</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 Stayer(9.9%)가 Mover(17.9%)보다 생존율 낮음. 왜?</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">궤적 분석: A = |R|이 G를 예측. 정적 포지션이 아님</span></div>
+                    <div class="para-item"><span class="para-num">¶15</span><span class="para-content">VdS 확장: 몰입 대상이 중요 (포지션→움직임)</span></div>
+                    <div class="para-item"><span class="para-num">¶17</span><span class="para-content">Movement = 베이지안 업데이트에 기반한 규율된 재포지셔닝</span></div>
+                    <div class="para-item"><span class="para-num">¶23</span><span class="para-content">핵심 발견: 1SD↑ A → 7.3pp 생존율 증가 (p<0.001)</span></div>
+                    <div class="para-item"><span class="para-num">¶25</span><span class="para-content">방향: zoom-in 17.5%, zoom-out 18.4%, stay 9.9%</span></div>
+                    <div class="para-item"><span class="para-num">¶28</span><span class="para-content">Learning channel이 dominant (signaling 아님)</span></div>
+                </div>
+            </div>
+
+            <!-- FA: 자금닻 -->
+            <div class="card agent-A" data-agent="A">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">FA 자금닻</div>
+                        <div class="card-title">The Funding Anchor</div>
+                        <div class="card-scholar">dA/dF < 0 | Ghemawat, Real Options</div>
+                    </div>
+                    <img class="card-thumb" src="figures/C_fig2_CAE_golden_cage.png" onclick="event.stopPropagation(); window.open(this.src)" title="dA/dF < 0">
+                    <div class="card-meta">
+                        <div class="card-para">¶29-48</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"자본이 실험→학습→적응 가능케 함" — Camuffo, Nanda</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 dA/dF < 0. 자금↑이면 움직임↓ (예측과 반대)</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">2단계 메커니즘: (1)약속→자본 (2)자본→Lock-in</span></div>
+                    <div class="para-item"><span class="para-num">¶35</span><span class="para-content">Ghemawat의 Lock-in/Lock-out: 비대칭적 작동</span></div>
+                    <div class="para-item"><span class="para-num">¶38</span><span class="para-content">Real Options 위반: 불확실성 높을 때 조기 commitment 강요</span></div>
+                    <div class="para-item"><span class="para-num">¶42</span><span class="para-content">핵심: 1SD↑ F → 0.4SD↓ A (p<0.001)</span></div>
+                    <div class="para-item"><span class="para-num">¶44</span><span class="para-content">이질성: 단일투자자, 마일스톤 있을 때 효과 2배</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN B -->
+        <div class="column">
+            <div class="column-header col-B">⚪ B · 전략폭<br><span style="font-size:0.55rem;opacity:0.7">WHEN trapped?</span></div>
+
+            <!-- BT: 학습함정 -->
+            <div class="card agent-B" data-agent="B">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">BT 학습함정</div>
+                        <div class="card-title">Learning Trap Condition</div>
+                        <div class="card-scholar">μ(1−μ) < ε/V | Stern, GKSS</div>
+                    </div>
+                    <img class="card-thumb" src="figures/T_fig1_trap_mechanism.png" onclick="event.stopPropagation(); window.open(this.src)" title="Trap Mechanism">
+                    <div class="card-meta">
+                        <div class="card-para">¶49-72</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"정밀함이 가설검증→학습→수렴 가능케 함" — Stern, GKSS</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 극단적 정밀함→학습 중단. 왜?</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">수학적 증명: 반향실 효과 (belief homogenization)</span></div>
+                    <div class="para-item"><span class="para-num">¶52</span><span class="para-content">함정 조건: μ(1−μ) < ε/V</span></div>
+                    <div class="para-item"><span class="para-num">¶57</span><span class="para-content">High-B 함정: 너무 모호 → 가설 반증 불가</span></div>
+                    <div class="para-item"><span class="para-num">¶65</span><span class="para-content">Low-B 함정: 너무 구체적 → 피벗 불가 (반향실)</span></div>
+                    <div class="para-item"><span class="para-num">¶68</span><span class="para-content">모두 동의하면 μ(1−μ)→0. 어떤 증거도 업데이트 불가</span></div>
+                </div>
+            </div>
+
+            <!-- BM: Sell × Deliver -->
+            <div class="card agent-B" data-agent="B">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">BM 병행확장</div>
+                        <div class="card-title">Sell × Deliver</div>
+                        <div class="card-scholar">Segment × Collaborate | Fine22</div>
+                    </div>
+                    <img class="card-thumb" src="figures/fig_BM_motional_strategy.png" onclick="event.stopPropagation(); window.open(this.src)" title="Parallel Scaling">
+                    <div class="card-meta">
+                        <div class="card-para">¶73-85</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"Operations 먼저, Marketing 나중" — 순차적 스케일링 가정</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 P(S∧D) = P(S)×P(D). 곱셈이면 병렬이 최적</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">Segment(Sell)와 Collaborate(Deliver) 동시 진행</span></div>
+                    <div class="para-item"><span class="para-num">¶77</span><span class="para-content">coordination cost = dA/dF < 0 메커니즘에 내재</span></div>
+                    <div class="para-item"><span class="para-num">¶81</span><span class="para-content">Motional 함정: B₀ << B*, 조정 불가</span></div>
+                    <div class="para-item"><span class="para-num">¶85</span><span class="para-content">Aurora 모델: 병렬 해동 (Segment + Collaborate)</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COLUMN C -->
+        <div class="column">
+            <div class="column-header col-C">🔵 C · 처방/결론<br><span style="font-size:0.55rem;opacity:0.7">SO WHAT now?</span></div>
+
+            <!-- C1: 한계 -->
+            <div class="card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">C1 한계</div>
+                        <div class="card-title">Fine22 Limitations</div>
+                        <div class="card-scholar">1 Case × 3 Tools 한정</div>
+                    </div>
+                    <img class="card-thumb" src="figures/C_fig1_prescription.png" onclick="event.stopPropagation(); window.open(this.src)" title="Fine22">
+                    <div class="card-meta">
+                        <div class="card-para">¶73-78</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"10 Tools로 스케일링 가능" — Fine (2022)</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 적용 한정적: 1 case × 3 tools 대응만</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">체계적 선택 기준 부재 → Funding Paradox 렌즈로 확장</span></div>
+                    <div class="para-item"><span class="para-num">¶74</span><span class="para-content">Fine22: 10 Tools 제시 (Platformize, Capitalize, Acculturate...)</span></div>
+                    <div class="para-item"><span class="para-num">¶75</span><span class="para-content">한계1: "언제 어떤 도구?" 선택 기준 미제시</span></div>
+                    <div class="para-item"><span class="para-num">¶76</span><span class="para-content">한계2: Phase별 적용 순서 미제시</span></div>
+                    <div class="para-item"><span class="para-num">¶77</span><span class="para-content">한계3: dG/dF < 0 역설과 연결 부재</span></div>
+                    <div class="para-item"><span class="para-num">¶78</span><span class="para-content">본 연구: Funding Paradox가 Tool 선택 맥락 제공</span></div>
+                </div>
+            </div>
+
+            <!-- C2: 확장 -->
+            <div class="card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">C2 확장</div>
+                        <div class="card-title">Phase × Tools Matrix</div>
+                        <div class="card-scholar">NFSC + 10 Tools 통합</div>
+                    </div>
+                    <img class="card-thumb" src="figures/M_G_by_V_direction_2025.png" onclick="event.stopPropagation(); window.open(this.src)" title="Matrix">
+                    <div class="card-meta">
+                        <div class="card-para">¶79-86</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"도구 선택은 맥락 무관" — 범용 처방 욕구</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 Funding Paradox가 맥락 제공: dG/dF < 0</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">NFSC × 10 Tools 매트릭스로 체계적 선택</span></div>
+                    <div class="para-item"><span class="para-num">¶80</span><span class="para-content">Nail 단계: Platformize, Standardize, Digitize (병렬 실험)</span></div>
+                    <div class="para-item"><span class="para-num">¶82</span><span class="para-content">전환점: μ(1−μ) < ε/V 일 때 Scale로 이행</span></div>
+                    <div class="para-item"><span class="para-num">¶84</span><span class="para-content">Scale 단계: Capitalize, Collaborate, Acculturate (통합 실행)</span></div>
+                    <div class="para-item"><span class="para-num">¶86</span><span class="para-content">세 질문과 연결: Q1(확장?), Q2(구축?), Q3(경쟁?)</span></div>
+                </div>
+            </div>
+
+            <!-- C3: 적용 -->
+            <div class="card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">C3 적용</div>
+                        <div class="card-title">Motional: 10 Tools 전체 적용</div>
+                        <div class="card-scholar">$4B Stayer → NFSC 처방</div>
+                    </div>
+                    <img class="card-thumb" src="figures/C_fig2_CAE_golden_cage.png" onclick="event.stopPropagation(); window.open(this.src)" title="Motional">
+                    <div class="card-meta">
+                        <div class="card-para">¶87-95</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿</span><span class="para-content">"$4B JV면 Scale 직행" — 현대+Aptiv</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩</span><span class="para-content">그런데 Mobility 91% stayer, 5% 생존. Nail 단계 생략이 문제</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍</span><span class="para-content">10 Tools 전체 매핑 → Option B (Modular Retreat)</span></div>
+                    <div class="para-item"><span class="para-num">¶88</span><span class="para-content">현재: L4 로보택시 Lock-in, 트럭킹/ADAS Lock-out</span></div>
+                    <div class="para-item"><span class="para-num">¶90</span><span class="para-content">Nail 처방: Modularize(SW분리), Digitize(시뮬), Standardize(API)</span></div>
+                    <div class="para-item"><span class="para-num">¶92</span><span class="para-content">전환 기준: 18개월 후 μ(1−μ) < ε/V 재평가</span></div>
+                    <div class="para-item"><span class="para-num">¶94</span><span class="para-content">Scale 처방: Collaborate(OEM), Capitalize(시리즈), Acculturate(문화)</span></div>
+                    <div class="para-item"><span class="para-num">¶95</span><span class="para-content">Fine22 확장: 1 case × 3 tools → 1 case × 10 tools 전체 적용</span></div>
+                </div>
+            </div>
+
+            <!-- C4: 결어 -->
+            <div class="card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">C4 결어</div>
+                        <div class="card-title">Commit to Movement</div>
+                        <div class="card-scholar">→ I1 회귀</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="card-para">¶96-98</div>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item"><span class="para-num">¶96</span><span class="para-content">기여: 자금역설 분해, 학습함정 식별, NFSC 프레임워크</span></div>
+                    <div class="para-item"><span class="para-num">¶97</span><span class="para-content">한계: 상관≠인과, 측정 방식, 일반화 가능성</span></div>
+                    <div class="para-item"><span class="para-num">¶98</span><span class="para-content">Commit to repositioning capability, not fixed positions</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="font-size:0.85rem;color:var(--repo);margin-bottom:5px">THE FUNDING PARADOX v5.2.0</div>
+        <div>dG/dF = (dG/dA)(dA/dF) < 0 | Layer 2+3 Process Theory</div>
+        <div style="margin-top:5px;font-size:0.6rem;opacity:0.7">Hyunji Moon · Layer 2+3 Process Theory</div>
+    </div>
+
+    <script>
+        function toggleCard(header) {
+            const card = header.parentElement;
+            card.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

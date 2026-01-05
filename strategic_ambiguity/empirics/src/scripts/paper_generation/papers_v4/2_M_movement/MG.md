@@ -44,7 +44,7 @@
 
 **¶27** Alternative explanations addressed with cohort fixed effects and propensity score matching. The movement premium persists.
 
-**¶28** Perhaps movement proxies for learning? This is not an alternative—it is the mechanism.
+**¶28** Two channels explain why repositioning predicts growth. The *learning channel* operates through information acquisition: movement reflects Bayesian updating based on market feedback, and ventures that reposition have extracted actionable signals from their experiments (Camuffo et al. 2020). The *signaling channel* operates through stakeholder coordination: movement communicates that founders prioritize evidence over ego, attracting investors who value adaptability and employees who seek learning environments (Spence 1973). Empirically distinguishing these channels is difficult because both predict dG/dM > 0, but several observations suggest the learning channel dominates. First, the survival premium persists after controlling for subsequent funding—if signaling were primary, movement should operate mainly through improved capital access. Second, zoom-in and zoom-out movements show similar survival rates despite opposite signaling implications (focus versus expansion); this symmetry is consistent with learning but not with a single signaling story. Third, the effect is strongest in high-uncertainty industries where information value is highest. While signaling likely amplifies the learning effect, the core mechanism appears to be that movers have learned something worth acting upon.
 
 **¶29** **The Movement Principle (dG/dM > 0) is established.** Module MF investigates why funding suppresses movement.
 
