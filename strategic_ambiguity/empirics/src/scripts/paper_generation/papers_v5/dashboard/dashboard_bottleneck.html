@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Quality Bottleneck Dashboard | I-A-B-C</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --muted: #7d8590;
+            --red: #ff6b6b;
+            --yellow: #ffd43b;
+            --green: #69db7c;
+            --blue: #4dabf7;
+            --white: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .header h1 { font-size: 1.4rem; margin-bottom: 8px; }
+        .header .subtitle { color: var(--muted); font-size: 0.85rem; }
+        .header .structure {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .card h2 {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Module Quality Grid - 4 modules */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .module-item {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 18px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .module-item:hover { transform: translateY(-2px); }
+        .module-item.bottleneck {
+            border-color: var(--red);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+        }
+        .module-item .emoji {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .module-item .label {
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-bottom: 3px;
+        }
+        .module-item .name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .module-item .score {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .module-item .bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .module-item .bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+
+        /* Bottleneck Alert */
+        .bottleneck-alert {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid var(--red);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .bottleneck-alert .title {
+            color: var(--red);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bottleneck-alert .reason {
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .bottleneck-alert .action {
+            font-size: 0.8rem;
+            color: var(--yellow);
+            padding: 8px 12px;
+            background: rgba(255, 212, 59, 0.1);
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* C Module Subsections */
+        .c-subsections {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .c-sub {
+            background: var(--bg);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+        .c-sub .c-name {
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+        .c-sub .c-score {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .c-sub .c-para {
+            font-size: 0.65rem;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+
+        /* Dependency Flow - 4 nodes */
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 10px;
+        }
+        .flow-node {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            position: relative;
+        }
+        .flow-node .flow-emoji { font-size: 1.2rem; }
+        .flow-node .flow-letter { font-size: 1rem; }
+        .flow-node.bottleneck {
+            box-shadow: 0 0 0 4px var(--red), 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+        .flow-arrow {
+            flex: 1;
+            height: 2px;
+            background: var(--border);
+            position: relative;
+            margin: 0 5px;
+        }
+        .flow-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -8px;
+            top: -10px;
+            color: var(--muted);
+            font-size: 1.2rem;
+        }
+        .flow-arrow.blocked {
+            background: var(--red);
+        }
+
+        /* Q×Tools Framework */
+        .q-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .q-card {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 3px solid;
+        }
+        .q-card.q1 { border-color: var(--red); }
+        .q-card.q2 { border-color: var(--yellow); }
+        .q-card.q3 { border-color: var(--green); }
+        .q-card .q-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .q-card.q1 .q-title { color: var(--red); }
+        .q-card.q2 .q-title { color: var(--yellow); }
+        .q-card.q3 .q-title { color: var(--green); }
+        .q-card .tools {
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+        .q-card .tool-item {
+            padding: 3px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .q-card .tool-item:last-child { border: none; }
+
+        /* Action Queue */
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 6px;
+            border-left: 3px solid;
+        }
+        .action-item.priority-1 { border-color: var(--red); }
+        .action-item.priority-2 { border-color: var(--yellow); }
+        .action-item.priority-3 { border-color: var(--green); }
+        .action-item .priority {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .action-item.priority-1 .priority { background: rgba(255,107,107,0.2); color: var(--red); }
+        .action-item.priority-2 .priority { background: rgba(255,212,59,0.2); color: var(--yellow); }
+        .action-item.priority-3 .priority { background: rgba(105,219,124,0.2); color: var(--green); }
+        .action-item .action-text {
+            flex: 1;
+            font-size: 0.85rem;
+        }
+        .action-item .module-tag {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            background: var(--border);
+            border-radius: 4px;
+            color: var(--muted);
+        }
+
+        /* Algorithm */
+        .algorithm-box {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+        .algorithm-box .highlight { color: var(--yellow); }
+        .algorithm-box .comment { color: var(--green); }
+
+        .full-width { grid-column: 1 / -1; }
+
+        /* Equation Display */
+        .equation-box {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3rem;
+        }
+        .equation-box .eq-main {
+            margin-bottom: 10px;
+        }
+        .equation-box .eq-explain {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-family: -apple-system, sans-serif;
+        }
+
+        /* NFSC Diagram */
+        .nfsc-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        .nfsc-phase {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            width: 150px;
+        }
+        .nfsc-phase.nail {
+            background: rgba(255, 212, 59, 0.1);
+            border: 1px solid var(--yellow);
+        }
+        .nfsc-phase.scale {
+            background: rgba(105, 219, 124, 0.1);
+            border: 1px solid var(--green);
+        }
+        .nfsc-phase .phase-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .nfsc-phase.nail .phase-title { color: var(--yellow); }
+        .nfsc-phase.scale .phase-title { color: var(--green); }
+        .nfsc-phase .phase-desc {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .nfsc-arrow {
+            font-size: 2rem;
+            color: var(--muted);
+        }
+        .nfsc-transition {
+            text-align: center;
+            padding: 10px;
+            background: rgba(77, 171, 247, 0.1);
+            border: 1px dashed var(--blue);
+            border-radius: 8px;
+        }
+        .nfsc-transition .trans-title {
+            font-size: 0.8rem;
+            color: var(--blue);
+            font-weight: 600;
+        }
+        .nfsc-transition .trans-desc {
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Thesis Quality Bottleneck Dashboard</h1>
+        <div class="subtitle">Theory of Constraints × NFSC Framework | Dec 31, 2024</div>
+        <div class="structure">
+            <span style="color: var(--red);">🔴I</span> →
+            <span style="color: var(--yellow);">🟡A</span> →
+            <span style="color: var(--white);">⚪B</span> →
+            <span style="color: var(--blue);">🔵C</span>
+        </div>
+    </div>
+
+    <div class="main-grid">
+        <!-- Bottleneck Alert -->
+        <div class="card full-width">
+            <div class="bottleneck-alert" id="bottleneckAlert">
+                <div class="title">
+                    <span>⚠️</span>
+                    <span>Current Bottleneck: <span id="bottleneckModule">🔵C (Conclusion)</span></span>
+                </div>
+                <div class="reason" id="bottleneckReason">
+                    C depends on A and B completion. E+C merged structure requires Q×Tools mapping (C2) and Motional integrative case (C3).
+                    Overall thesis quality capped at C's score (42%) regardless of other modules.
+                </div>
+                <div class="action" id="bottleneckAction">
+                    → Next Action: Write ¶85-91 (Q×Tools Mapping) connecting Fine's 10 tools to Q1/Q2/Q3
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Quality Scores -->
+        <div class="card">
+            <h2>Module Quality Scores (4 Modules)</h2>
+            <div class="module-grid" id="moduleGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Core Equation -->
+        <div class="card">
+            <h2>Core Equation</h2>
+            <div class="equation-box">
+                <div class="eq-main">dG/dF = (dG/dA) × (dA/dF) < 0</div>
+                <div class="eq-explain">
+                    Growth requires adaptability (dG/dA > 0),<br>
+                    but funding suppresses it (dA/dF < 0)
+                </div>
+            </div>
+        </div>
+
+        <!-- Dependency Flow -->
+        <div class="card full-width">
+            <h2>Dependency Flow (I → A → B → C)</h2>
+            <div class="flow-container" id="flowContainer">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- NFSC Framework -->
+        <div class="card full-width">
+            <h2>NFSC Framework: Nail with Flexibility, Scale with Commitment</h2>
+            <div class="nfsc-diagram">
+                <div class="nfsc-phase nail">
+                    <div class="phase-title">NAIL</div>
+                    <div class="phase-desc">
+                        Operationalize ambiguity<br>
+                        Low-cost learning<br>
+                        Maximize A (repositioning)
+                    </div>
+                </div>
+                <div class="nfsc-arrow">→</div>
+                <div class="nfsc-transition">
+                    <div class="trans-title">Transition Point</div>
+                    <div class="trans-desc">Dominant Design Confirmed</div>
+                </div>
+                <div class="nfsc-arrow">→</div>
+                <div class="nfsc-phase scale">
+                    <div class="phase-title">SCALE</div>
+                    <div class="phase-desc">
+                        Operationalize precision<br>
+                        High-volume execution<br>
+                        Deploy F after B converges
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- C Module Subsections -->
+        <div class="card">
+            <h2>🔵C Module Subsections (¶81-98)</h2>
+            <div class="c-subsections" id="cSubsections">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Q×Tools Framework -->
+        <div class="card">
+            <h2>Q×Tools Framework (C2 Content)</h2>
+            <div class="q-tools-grid">
+                <div class="q-card q1">
+                    <div class="q-title">Q1: HOW TO SCALE?</div>
+                    <div class="tools">
+                        <div class="tool-item">🛠️ Platformize</div>
+                        <div class="tool-item">🛠️ Capitalize</div>
+                    </div>
+                </div>
+                <div class="q-card q2">
+                    <div class="q-title">Q2: HOW TO BUILD?</div>
+                    <div class="tools">
+                        <div class="tool-item">🛠️ Acculturate</div>
+                        <div class="tool-item">🛠️ Professionalize</div>
+                        <div class="tool-item">🛠️ Processify</div>
+                        <div class="tool-item">🛠️ Collaborate</div>
+                        <div class="tool-item">🛠️ Automate</div>
+                        <div class="tool-item">🛠️ Evaluate</div>
+                    </div>
+                </div>
+                <div class="q-card q3">
+                    <div class="q-title">Q3: WHERE TO PLAY?</div>
+                    <div class="tools">
+                        <div class="tool-item">🛠️ Segment</div>
+                        <div class="tool-item">🛠️ Replicate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Queue -->
+        <div class="card">
+            <h2>Prioritized Action Queue</h2>
+            <div class="action-list" id="actionList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Algorithm -->
+        <div class="card">
+            <h2>Bottleneck Detection Algorithm</h2>
+            <div class="algorithm-box">
+                <span class="comment"># Theory of Constraints for I-A-B-C</span><br>
+                <span class="highlight">def</span> find_bottleneck(modules):<br>
+                &nbsp;&nbsp;<span class="comment"># Overall = min(I, A, B, C)</span><br>
+                &nbsp;&nbsp;overall = min(m.score <span class="highlight">for</span> m <span class="highlight">in</span> modules)<br>
+                <br>
+                &nbsp;&nbsp;<span class="comment"># C has 4 subsections</span><br>
+                &nbsp;&nbsp;C.score = min(C1, C2, C3, C4)<br>
+                <br>
+                &nbsp;&nbsp;<span class="comment"># Find constraint</span><br>
+                &nbsp;&nbsp;bottleneck = min(modules, key=score)<br>
+                <br>
+                &nbsp;&nbsp;<span class="comment"># ROI = system_gain / effort</span><br>
+                &nbsp;&nbsp;<span class="highlight">return</span> max_roi_action(bottleneck)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Module Data - 4 modules (E merged into C)
+        const modules = {
+            I: {
+                name: 'Introduction',
+                emoji: '🔴',
+                score: 72,
+                deps: [],
+                color: '#ff6b6b'
+            },
+            A: {
+                name: 'Repositioning',
+                emoji: '🟡',
+                score: 68,
+                deps: ['I'],
+                color: '#ffd43b'
+            },
+            B: {
+                name: 'Breadth',
+                emoji: '⚪',
+                score: 61,
+                deps: ['I', 'A'],
+                color: '#ffffff'
+            },
+            C: {
+                name: 'Conclusion',
+                emoji: '🔵',
+                score: 42,
+                deps: ['A', 'B'],
+                color: '#4dabf7',
+                subsections: {
+                    'C1': { name: 'NFSC Definition', para: '¶81-84', score: 55 },
+                    'C2': { name: 'Q×Tools', para: '¶85-91', score: 35 },
+                    'C3': { name: 'Integrative Case', para: '¶92-95', score: 40 },
+                    'C4': { name: 'Closure', para: '¶96-98', score: 38 }
+                }
+            }
+        };
+
+        const actions = [
+            { priority: 1, module: 'C', text: 'Write ¶85-91: Map Q1/Q2/Q3 to Fine\'s 10 tools' },
+            { priority: 1, module: 'C', text: 'Write ¶92-95: Motional as first 10-tool integrative case' },
+            { priority: 2, module: 'C', text: 'Write ¶81-84: Connect A+B variables to NFSC justification' },
+            { priority: 2, module: 'B', text: 'Strengthen BT/BD connection to NFSC transition' },
+            { priority: 3, module: 'C', text: 'Write ¶96-98: Limitations + 필사즉생 coda' },
+            { priority: 3, module: 'A', text: 'Add Ghemawat Lock-in/Lock-out to AF empirics' },
+        ];
+
+        function getScoreColor(score) {
+            if (score >= 70) return 'var(--green)';
+            if (score >= 50) return 'var(--yellow)';
+            return 'var(--red)';
+        }
+
+        function findBottleneck() {
+            return Object.keys(modules).reduce((a, b) =>
+                modules[a].score < modules[b].score ? a : b
+            );
+        }
+
+        function renderModules() {
+            const grid = document.getElementById('moduleGrid');
+            const bottleneck = findBottleneck();
+
+            grid.innerHTML = Object.entries(modules).map(([key, m]) => `
+                <div class="module-item ${key === bottleneck ? 'bottleneck' : ''}"
+                     onclick="selectModule('${key}')">
+                    <div class="emoji">${m.emoji}</div>
+                    <div class="label">${key}</div>
+                    <div class="name">${m.name}</div>
+                    <div class="score" style="color: ${getScoreColor(m.score)}">${m.score}%</div>
+                    <div class="bar">
+                        <div class="bar-fill" style="width: ${m.score}%; background: ${getScoreColor(m.score)}"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCSubsections() {
+            const container = document.getElementById('cSubsections');
+            const subs = modules.C.subsections;
+
+            container.innerHTML = Object.entries(subs).map(([key, s]) => `
+                <div class="c-sub">
+                    <div class="c-name">${key}: ${s.name}</div>
+                    <div class="c-score" style="color: ${getScoreColor(s.score)}">${s.score}%</div>
+                    <div class="c-para">${s.para}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderFlow() {
+            const container = document.getElementById('flowContainer');
+            const order = ['I', 'A', 'B', 'C'];
+            const bottleneck = findBottleneck();
+
+            let html = '';
+            order.forEach((key, i) => {
+                const m = modules[key];
+                const isBottleneck = key === bottleneck;
+                html += `
+                    <div class="flow-node ${isBottleneck ? 'bottleneck' : ''}"
+                         style="background: ${m.color}; color: ${key === 'B' ? '#000' : '#fff'};">
+                        <span class="flow-emoji">${m.emoji}</span>
+                        <span class="flow-letter">${key}</span>
+                    </div>
+                `;
+                if (i < order.length - 1) {
+                    const nextKey = order[i + 1];
+                    const blocked = modules[nextKey].score < m.score;
+                    html += `<div class="flow-arrow ${blocked ? 'blocked' : ''}"></div>`;
+                }
+            });
+            container.innerHTML = html;
+        }
+
+        function renderActions() {
+            const list = document.getElementById('actionList');
+            list.innerHTML = actions.map(a => `
+                <div class="action-item priority-${a.priority}">
+                    <span class="priority">P${a.priority}</span>
+                    <span class="action-text">${a.text}</span>
+                    <span class="module-tag">${a.module}</span>
+                </div>
+            `).join('');
+        }
+
+        function updateBottleneckAlert() {
+            const bottleneck = findBottleneck();
+            const m = modules[bottleneck];
+
+            document.getElementById('bottleneckModule').textContent = `${m.emoji}${bottleneck} (${m.name})`;
+
+            const reasons = {
+                'I': 'Introduction sets foundation for all modules. Low clarity blocks A, B, C.',
+                'A': 'Repositioning empirics (AG, AF) need Real Options + Lock-in integration.',
+                'B': 'Breadth traps need stronger NFSC transition point connection.',
+                'C': 'Conclusion (E+C merged) is the current bottleneck. C2 (Q×Tools) and C3 (Motional case) are lowest.'
+            };
+
+            const nextActions = {
+                'I': 'Strengthen core equation presentation',
+                'A': 'Complete AF with Ghemawat Lock-in mechanism',
+                'B': 'Connect BT/BD to NFSC framework',
+                'C': 'Write ¶85-91 (Q×Tools) mapping Fine\'s 10 tools to Q1/Q2/Q3'
+            };
+
+            document.getElementById('bottleneckReason').textContent = reasons[bottleneck];
+            document.getElementById('bottleneckAction').textContent = '→ Next Action: ' + nextActions[bottleneck];
+        }
+
+        function selectModule(key) {
+            console.log('Selected:', key, modules[key]);
+        }
+
+        // Initial render
+        renderModules();
+        renderCSubsections();
+        renderFlow();
+        renderActions();
+        updateBottleneckAlert();
+    </script>
+</body>
+</html>

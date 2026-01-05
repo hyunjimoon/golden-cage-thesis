@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruning Gut Feel Dashboard</title>
+    <style>
+        :root {
+            --keep: #4CAF50;
+            --cut: #f44336;
+            --maybe: #FF9800;
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --gold: #ffd700;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8b949e;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .gut-principle {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid var(--gold);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .gut-principle h2 {
+            color: var(--gold);
+            margin: 0 0 15px 0;
+        }
+
+        .principle-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .principle {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+
+        .principle-icon {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .principle-text {
+            font-size: 0.9em;
+        }
+
+        .matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 800px) {
+            .matrix { grid-template-columns: 1fr; }
+        }
+
+        .quadrant {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .quadrant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quadrant-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .quadrant-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        .item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid transparent;
+        }
+
+        .item.keep { border-left-color: var(--keep); }
+        .item.cut { border-left-color: var(--cut); }
+        .item.maybe { border-left-color: var(--maybe); }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .item-id {
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .item-decision {
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .item-content {
+            font-size: 0.85em;
+            color: #8b949e;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .item-reason {
+            font-size: 0.8em;
+            padding: 8px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+        }
+
+        .reason-label {
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .summary-bar {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .summary-title {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .bar-container {
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .bar-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .decision-log {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .log-title {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .log-entry {
+            display: flex;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .log-time {
+            color: #8b949e;
+            font-size: 0.85em;
+            min-width: 80px;
+        }
+
+        .log-action {
+            flex: 1;
+        }
+
+        .highlight {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pruning Gut Feel Dashboard</h1>
+    <p class="subtitle">Why Claude recommends these cuts for tomorrow's advisor review</p>
+
+    <div class="gut-principle">
+        <h2>Core Pruning Principles</h2>
+        <div class="principle-list">
+            <div class="principle">
+                <div class="principle-icon">🎯</div>
+                <div class="principle-text"><strong>Chain Test</strong><br>Does it support dG/dF decomposition?</div>
+            </div>
+            <div class="principle">
+                <div class="principle-icon">👨‍🏫</div>
+                <div class="principle-text"><strong>Advisor Test</strong><br>Would Charlie/Scott ask about this?</div>
+            </div>
+            <div class="principle">
+                <div class="principle-icon">⏱️</div>
+                <div class="principle-text"><strong>10-Min Test</strong><br>Essential for quick read?</div>
+            </div>
+            <div class="principle">
+                <div class="principle-icon">🔗</div>
+                <div class="principle-text"><strong>Orphan Test</strong><br>Referenced elsewhere?</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-bar">
+        <div class="summary-title">Content Distribution (19 paragraphs total)</div>
+        <div class="bar-container">
+            <div class="bar-segment" style="width: 63%; background: var(--keep);">KEEP 12</div>
+            <div class="bar-segment" style="width: 21%; background: var(--maybe);">MAYBE 4</div>
+            <div class="bar-segment" style="width: 16%; background: var(--cut);">CUT 3</div>
+        </div>
+    </div>
+
+    <div class="matrix">
+        <!-- Q1: Core Logic - KEEP -->
+        <div class="quadrant">
+            <div class="quadrant-header">
+                <span class="quadrant-title">Core Logic Chain</span>
+                <span class="quadrant-badge" style="background: var(--keep);">KEEP ALL</span>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">¶01-03 (Intro)</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"dG/dF = (dG/dA)(dA/dF) < 0"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> The thesis equation. Non-negotiable.
+                </div>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">¶12-15 (A1)</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"Repositioners outperform stayers 1.82×"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> First empirical pillar (dG/dA > 0). Scott will ask for this.
+                </div>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">¶31-42 (A2)</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"Funding suppresses repositioning: dA/dF < 0"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Second empirical pillar. Completes the paradox decomposition.
+                </div>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">¶49 (B1)</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"μ(1−μ) < ε × B"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Layer 3 (Why) contribution. Differentiates from pure correlation.
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2: Scholar Positioning - KEEP/MAYBE -->
+        <div class="quadrant">
+            <div class="quadrant-header">
+                <span class="quadrant-title">Scholar Positioning</span>
+                <span class="quadrant-badge" style="background: var(--maybe);">REVIEW</span>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">Van den Steen (¶15)</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"Commitment remains the essence; the object shifts"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> VVC-fixed. Now extends, doesn't attack. Scott will validate.
+                </div>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">Camuffo-Nanda (¶31)</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"Logic holds. I identify when the mechanism breaks"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> VVC-fixed. Proper scope framing.
+                </div>
+            </div>
+
+            <div class="item maybe">
+                <div class="item-header">
+                    <span class="item-id">Ghemawat Extension</span>
+                    <span class="item-decision" style="background: var(--maybe);">MAYBE</span>
+                </div>
+                <div class="item-content">"Lock-in and lock-out are flip sides"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Elegant but not essential. Keep if page budget allows.
+                </div>
+            </div>
+
+            <div class="item maybe">
+                <div class="item-header">
+                    <span class="item-id">LTE Framework Table</span>
+                    <span class="item-decision" style="background: var(--maybe);">MAYBE</span>
+                </div>
+                <div class="item-content">"L1 (What), L2 (How), L3 (Why)"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Methodological scaffolding. Scott may want it; Charlie may not care.
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3: Charlie-Specific - CUT/MAYBE -->
+        <div class="quadrant">
+            <div class="quadrant-header">
+                <span class="quadrant-title">Charlie-Specific Content</span>
+                <span class="quadrant-badge" style="background: var(--cut);">MOVE TO APPENDIX</span>
+            </div>
+
+            <div class="item cut">
+                <div class="item-header">
+                    <span class="item-id">OIL Mapping</span>
+                    <span class="item-decision" style="background: var(--cut);">CUT</span>
+                </div>
+                <div class="item-content">"τ = 1/B, V = G, i = |dA/dF|"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Technical translation. Useful for Charlie meeting, not for thesis body.
+                </div>
+            </div>
+
+            <div class="item cut">
+                <div class="item-header">
+                    <span class="item-id">Sell × Deliver</span>
+                    <span class="item-decision" style="background: var(--cut);">CUT</span>
+                </div>
+                <div class="item-content">"P(S|B) × P(D|B)"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Adds complexity without empirical test. Appendix material.
+                </div>
+            </div>
+
+            <div class="item maybe">
+                <div class="item-header">
+                    <span class="item-id">B* Formula</span>
+                    <span class="item-decision" style="background: var(--maybe);">MAYBE</span>
+                </div>
+                <div class="item-content">"B* = f(V, |dA/dF|)"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Nice prescription but theoretical. Depends on Charlie's Q2 feedback.
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4: Personal/Cultural - CUT -->
+        <div class="quadrant">
+            <div class="quadrant-header">
+                <span class="quadrant-title">Personal/Cultural</span>
+                <span class="quadrant-badge" style="background: var(--cut);">CUT FROM MAIN</span>
+            </div>
+
+            <div class="item cut">
+                <div class="item-header">
+                    <span class="item-id">Korean Aphorism</span>
+                    <span class="item-decision" style="background: var(--cut);">CUT</span>
+                </div>
+                <div class="item-content">"必死卽生, 必生卽死"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> Beautiful but alienates non-Korean readers. Defense day only.
+                </div>
+            </div>
+
+            <div class="item keep">
+                <div class="item-header">
+                    <span class="item-id">Prescription</span>
+                    <span class="item-decision" style="background: var(--keep);">KEEP</span>
+                </div>
+                <div class="item-content">"Commit to movement, not to the promises that fund it"</div>
+                <div class="item-reason">
+                    <span class="reason-label">GUT:</span> The English version captures it. Memorable, actionable.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="decision-log">
+        <div class="log-title">Decision Rationale Log</div>
+
+        <div class="log-entry">
+            <div class="log-time">Principle 1</div>
+            <div class="log-action">
+                <strong>Chain Test:</strong> If removing X breaks the dG/dF → dG/dA → dA/dF logic chain, <span class="highlight">KEEP</span>
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="log-time">Principle 2</div>
+            <div class="log-action">
+                <strong>Advisor Test:</strong> Charlie cares about operations (10 Tools). Scott cares about theory (Van den Steen). Content only one cares about → <span class="highlight">APPENDIX</span>
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="log-time">Principle 3</div>
+            <div class="log-action">
+                <strong>10-Min Test:</strong> If advisor skims in 10 min, will they miss this? If no → <span class="highlight">CUT</span>
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="log-time">Principle 4</div>
+            <div class="log-action">
+                <strong>VVC Check:</strong> Does it attack or extend scholars? Attack → <span class="highlight">REWRITE or CUT</span>
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="log-time">Tomorrow</div>
+            <div class="log-action">
+                <strong>Expected Cuts:</strong> OIL mapping, Sell×Deliver detail, Korean aphorism, B* formula (unless Charlie endorses)
+            </div>
+        </div>
+    </div>
+</body>
+</html>

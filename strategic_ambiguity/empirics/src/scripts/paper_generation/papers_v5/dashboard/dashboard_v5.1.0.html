@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FUNDING PARADOX | v5.3.0</title>
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --card: #131820;
+            --border: #21262d;
+            --text: #e6edf3;
+            --muted: #7d8590;
+            --intro: #ff6b6b;
+            --repo: #ffd43b;
+            --breadth: #c9d1d9;
+            --conclude: #4dabf7;
+            --growth: #69db7c;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'SF Pro Display', -apple-system, sans-serif;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--card);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+        }
+        .header-title { font-size: 1.2rem; font-weight: 700; }
+        .header-equation { font-family: 'Times New Roman', serif; color: var(--repo); }
+        .header-stats { font-size: 0.75rem; color: var(--muted); }
+        .progress-bar {
+            display: flex;
+            gap: 2px;
+            height: 6px;
+            margin-bottom: 15px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-segment { transition: all 0.3s; }
+        .progress-segment:hover { filter: brightness(1.3); }
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            align-items: start;
+        }
+        .column-header {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--muted);
+            margin-bottom: 10px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .column-header.col-I { background: rgba(255, 107, 107, 0.15); color: var(--intro); }
+        .column-header.col-A { background: rgba(255, 212, 59, 0.15); color: var(--repo); }
+        .column-header.col-B { background: rgba(201, 209, 217, 0.15); color: var(--breadth); }
+        .column-header.col-C { background: rgba(77, 171, 247, 0.15); color: var(--conclude); }
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+        .card:hover { border-color: var(--muted); }
+        .card.expanded { border-width: 2px; }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 12px;
+            cursor: pointer;
+        }
+        .card-main { flex: 1; min-width: 0; }
+        .card-id { font-weight: 700; font-size: 0.95rem; margin-bottom: 3px; }
+        .agent-I .card-id { color: var(--intro); }
+        .agent-A .card-id { color: var(--repo); }
+        .agent-B .card-id { color: var(--breadth); }
+        .agent-C .card-id { color: var(--conclude); }
+        .card-title { font-size: 0.8rem; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .card-scholar { font-size: 0.65rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .card-thumb {
+            width: 50px; height: 35px; object-fit: cover; border-radius: 4px;
+            opacity: 0.85; margin-left: 8px; border: 1px solid var(--border);
+            cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+        }
+        .card-thumb:hover { opacity: 1; transform: scale(2); z-index: 100; position: relative; }
+        .card-meta { text-align: right; margin-left: 8px; }
+        .card-para { font-size: 0.65rem; color: var(--muted); background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .card-chevron { color: var(--muted); font-size: 0.8rem; transition: transform 0.2s; margin-left: 6px; }
+        .card.expanded .card-chevron { transform: rotate(180deg); }
+        .para-list { display: none; padding: 0 10px 10px; border-top: 1px solid var(--border); max-height: 500px; overflow-y: auto; }
+        .card.expanded .para-list { display: block; }
+        .para-item { display: flex; gap: 6px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.7rem; }
+        .para-item:last-child { border-bottom: none; }
+        .para-num { color: var(--muted); min-width: 30px; font-family: monospace; font-size: 0.65rem; }
+        .para-content { flex: 1; color: var(--text); line-height: 1.4; }
+        .para-item.gospel { background: rgba(255,107,107,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.puzzle { background: rgba(255,212,59,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.lens { background: rgba(77,171,247,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.map { background: rgba(105,219,124,0.08); border-radius: 4px; margin: 3px 0; padding: 6px; }
+        .para-item.gospel .para-num { color: var(--intro); }
+        .para-item.puzzle .para-num { color: var(--repo); }
+        .para-item.lens .para-num { color: var(--conclude); }
+        .para-item.map .para-num { color: var(--growth); }
+        .sub-header { font-size: 0.6rem; color: var(--conclude); padding: 6px 8px; margin: 8px 0 4px 0; background: rgba(77,171,247,0.1); border-radius: 4px; letter-spacing: 0.5px; }
+        .footer { margin-top: 20px; text-align: center; color: var(--muted); font-size: 0.7rem; padding: 15px; border-top: 1px solid var(--border); }
+        @media (max-width: 1000px) { .columns { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .columns { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="header-title">THE FUNDING PARADOX v5.3.0</div>
+            <div class="header-stats" style="color:var(--intro);font-style:italic">"자금이 성장을 가둔다"</div>
+        </div>
+        <div style="text-align:right">
+            <div class="header-equation">dG/dF = (dG/dA) × (dA/dF) < 0</div>
+            <div class="header-stats">F → A → G, R, B | 4 Columns | 6 Cards</div>
+        </div>
+    </div>
+
+    <!-- CAUSAL DIAGRAM -->
+    <div style="background:var(--card); border-radius:12px; padding:20px; margin-bottom:15px; border:1px solid var(--border);">
+        <svg viewBox="0 0 400 140" style="width:100%; max-width:500px; display:block; margin:0 auto;">
+            <!-- Main Flow: F → A → G -->
+            <g transform="translate(50, 35)">
+                <!-- F node -->
+                <circle cx="0" cy="0" r="24" fill="none" stroke="#ff6b6b" stroke-width="3"/>
+                <text x="0" y="6" text-anchor="middle" fill="#ff6b6b" font-size="18" font-weight="700">F</text>
+                <!-- FA arrow -->
+                <line x1="28" y1="0" x2="92" y2="0" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrowRed)"/>
+                <text x="60" y="-8" text-anchor="middle" fill="#7d8590" font-size="9">FA</text>
+                <text x="60" y="15" text-anchor="middle" fill="#ff6b6b" font-size="8">dA/dF&lt;0</text>
+                <!-- A node -->
+                <circle cx="120" cy="0" r="24" fill="none" stroke="#ffd43b" stroke-width="3"/>
+                <text x="120" y="6" text-anchor="middle" fill="#ffd43b" font-size="18" font-weight="700">A</text>
+                <!-- AG arrow -->
+                <line x1="148" y1="0" x2="212" y2="0" stroke="#69db7c" stroke-width="2" marker-end="url(#arrowGreen)"/>
+                <text x="180" y="-8" text-anchor="middle" fill="#7d8590" font-size="9">AG</text>
+                <text x="180" y="15" text-anchor="middle" fill="#69db7c" font-size="8">dG/dA&gt;0</text>
+                <!-- G node -->
+                <circle cx="240" cy="0" r="24" fill="none" stroke="#69db7c" stroke-width="3"/>
+                <text x="240" y="6" text-anchor="middle" fill="#69db7c" font-size="18" font-weight="700">G</text>
+            </g>
+            <!-- Vertical: R → A -->
+            <g transform="translate(170, 70)">
+                <line x1="0" y1="45" x2="0" y2="8" stroke="#ffd43b" stroke-width="2" marker-end="url(#arrowYellow)"/>
+                <text x="12" y="30" fill="#7d8590" font-size="8">|R|=A</text>
+            </g>
+            <!-- Bottom: B₀ → R → B_T -->
+            <g transform="translate(95, 115)">
+                <circle cx="0" cy="0" r="16" fill="none" stroke="#c9d1d9" stroke-width="2"/>
+                <text x="0" y="4" text-anchor="middle" fill="#c9d1d9" font-size="11">B₀</text>
+                <line x1="20" y1="0" x2="52" y2="0" stroke="#c9d1d9" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+                <circle cx="75" cy="0" r="16" fill="none" stroke="#ffd43b" stroke-width="2"/>
+                <text x="75" y="4" text-anchor="middle" fill="#ffd43b" font-size="11" font-weight="600">R</text>
+                <line x1="95" y1="0" x2="127" y2="0" stroke="#c9d1d9" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+                <circle cx="150" cy="0" r="16" fill="none" stroke="#c9d1d9" stroke-width="2"/>
+                <text x="150" y="4" text-anchor="middle" fill="#c9d1d9" font-size="10">B<tspan baseline-shift="sub" font-size="7">T</tspan></text>
+            </g>
+            <!-- Arrow markers -->
+            <defs>
+                <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#ff6b6b"/></marker>
+                <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#ffd43b"/></marker>
+                <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#69db7c"/></marker>
+                <marker id="arrowGray" markerWidth="6" markerHeight="6" refX="5" refY="2.5" orient="auto"><path d="M0,0 L0,5 L5,2.5 z" fill="#c9d1d9"/></marker>
+            </defs>
+        </svg>
+        <!-- Legend -->
+        <div style="text-align:center; margin-top:10px; font-size:0.7rem; color:var(--muted);">
+            <span style="color:var(--intro);">F</span>=Funding → <span style="color:var(--repo);">A</span>=|R|=Absolute Repositioning → <span style="color:var(--growth);">G</span>=Growth | <span style="color:var(--breadth);">B</span>=Breadth, <span style="color:var(--repo);">R</span>=B<sub>T</sub>−B₀
+        </div>
+    </div>
+
+    <!-- Progress Bar with Labels -->
+    <div style="display:flex; margin-bottom:15px; font-size:0.65rem; gap:2px;">
+        <div style="flex:10; text-align:center;">
+            <div style="background:var(--intro); height:6px; border-radius:3px 0 0 3px;"></div>
+            <div style="color:var(--intro); margin-top:3px;">I</div>
+        </div>
+        <div style="flex:37; text-align:center;">
+            <div style="background:var(--repo); height:6px;"></div>
+            <div style="color:var(--repo); margin-top:3px;">A</div>
+        </div>
+        <div style="flex:47; text-align:center;">
+            <div style="background:var(--breadth); height:6px;"></div>
+            <div style="color:var(--breadth); margin-top:3px;">B</div>
+        </div>
+        <div style="flex:6; text-align:center;">
+            <div style="background:var(--conclude); height:6px; border-radius:0 3px 3px 0;"></div>
+            <div style="color:var(--conclude); margin-top:3px;">C</div>
+        </div>
+    </div>
+
+    <div class="columns">
+        <!-- COLUMN I -->
+        <div class="column">
+            <div class="column-header col-I">🔴 I · 서론<br><span style="font-size:0.55rem;opacity:0.7">WHY $ ≠ G?</span></div>
+            <div class="card agent-I" data-agent="I">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">I 역설</div>
+                        <div class="card-title">The Funding Paradox</div>
+                        <div class="card-scholar">dG/dF = (dG/dA)(dA/dF) < 0</div>
+                    </div>
+                    <img class="card-thumb" src="../figures/fig_I_stayer_vs_mover.png" onclick="event.stopPropagation(); window.open(this.src)" title="Stayer vs Mover">
+                    <div class="card-meta">
+                        <div class="card-para">¶01-10 (9)</div>
+                        <span class="card-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿¶01</span><span class="para-content">"몰입이 전략의 본질" — VdS, Ghemawat. $330B VC가 몰입한 창업자에게 투자</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩¶02</span><span class="para-content">그런데 dG/dF < 0. ρ(G,F) = −0.196*** (N=180,994)</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍¶03</span><span class="para-content">해답: 재포지셔닝. Mover 18.0% vs Stayer 9.9% (1.82×)</span></div>
+                    <div class="para-item"><span class="para-num">¶04</span><span class="para-content">변수: F(자금), G(성장), B(전략폭), R(재포지셔닝), A(|R|)</span></div>
+                    <div class="para-item"><span class="para-num">¶05</span><span class="para-content">분해: dG/dF = (dG/dA>0) × (dA/dF<0) < 0</span></div>
+                    <div class="para-item"><span class="para-num">¶06</span><span class="para-content">재개념화: "유연하게 못박고, 몰입하며 확장" (NFSC)</span></div>
+                    <div class="para-item map"><span class="para-num">🗺️¶07</span><span class="para-content">구조: A(L2 HOW)→B(L3 WHY)→C(Intervention). Cronin LTE</span></div>
+                    <div class="para-item"><span class="para-num">¶09</span><span class="para-content">처방: 포지션이 아닌 재포지셔닝 역량에 몰입</span></div>
+                    <div class="para-item"><span class="para-num">¶10</span><span class="para-content">기여: 인과(L1)가 아닌 메커니즘 분해(L2+L3)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN A -->
+        <div class="column">
+            <div class="column-header col-A">🟡 A · 재포지셔닝<br><span style="font-size:0.55rem;opacity:0.7">WHAT grows?</span></div>
+
+            <!-- AG -->
+            <div class="card agent-A" data-agent="A">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">AG 성장</div>
+                        <div class="card-title">Movement Principle</div>
+                        <div class="card-scholar">dG/dA > 0 | Porter, VdS</div>
+                    </div>
+                    <img class="card-thumb" src="../figures/fig_V_trajectories_by_archetype.png" onclick="event.stopPropagation(); window.open(this.src)" title="Trajectories">
+                    <div class="card-meta">
+                        <div class="card-para">¶12-29 (9)</div>
+                        <span class="card-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿¶12</span><span class="para-content">"몰입이 조정가치 창출" — VdS: 비가역성이 downstream 결정 조정</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩¶13</span><span class="para-content">그런데 재포지셔닝은 조정가치 파괴? 왜 Mover가 이기나?</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍¶15</span><span class="para-content">VdS 확장: 몰입 대상 전환 (포지션→재포지셔닝 역량)</span></div>
+                    <div class="para-item"><span class="para-num">¶16</span><span class="para-content">A = |R| = |B_T − B₀| (재포지셔닝 크기)</span></div>
+                    <div class="para-item"><span class="para-num">¶17</span><span class="para-content">규율된 재포지셔닝 = 베이지안 업데이트 기반 학습</span></div>
+                    <div class="para-item"><span class="para-num">¶21</span><span class="para-content">검증: 408,697 벤처, PitchBook 2021-2025</span></div>
+                    <div class="para-item"><span class="para-num">¶23</span><span class="para-content">핵심: Mover 18.0% vs Stayer 9.9% (1.82×)</span></div>
+                    <div class="para-item"><span class="para-num">¶24</span><span class="para-content">회귀: 1SD↑ A → 7.3pp 생존율↑ (p<0.001)</span></div>
+                    <div class="para-item"><span class="para-num">¶25</span><span class="para-content">방향: Zoom-in 17.5%, Zoom-out 18.4%</span></div>
+                    <div class="para-item map"><span class="para-num">🗺️¶29</span><span class="para-content">dG/dA > 0 확립. 다음: 왜 자금이 억제하나? (FA)</span></div>
+                </div>
+            </div>
+
+            <!-- FA -->
+            <div class="card agent-A" data-agent="A">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">FA 자금닻</div>
+                        <div class="card-title">Funding Anchor</div>
+                        <div class="card-scholar">dA/dF < 0 | Ghemawat</div>
+                    </div>
+                    <img class="card-thumb" src="../figures/C_fig2_CAE_golden_cage.png" onclick="event.stopPropagation(); window.open(this.src)" title="Golden Cage">
+                    <div class="card-meta">
+                        <div class="card-para">¶31-47 (9)</div>
+                        <span class="card-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿¶31</span><span class="para-content">"자본이 실험 가능케 함" — Camuffo, Nanda</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩¶33</span><span class="para-content">그런데 dA/dF < 0. 자금↑→움직임↓ (예측 반대)</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍¶35</span><span class="para-content">2단계: (1)몰입→자본 (2)자본→Lock-in</span></div>
+                    <div class="para-item"><span class="para-num">¶36</span><span class="para-content">$5M 투자 후: 비전 반증 실험은 관계 위협</span></div>
+                    <div class="para-item"><span class="para-num">¶40</span><span class="para-content">검증: A~F 회귀, 산업/코호트/B₀ 통제</span></div>
+                    <div class="para-item"><span class="para-num">¶42</span><span class="para-content">핵심: 1SD↑ F → 0.4SD↓ A (p<0.001)</span></div>
+                    <div class="para-item"><span class="para-num">¶43</span><span class="para-content">인과: 펀드 폐쇄 충격 → 영향 벤처 더 많이 재포지셔닝</span></div>
+                    <div class="para-item"><span class="para-num">¶44</span><span class="para-content">이질성: 단일투자자, 마일스톤 있을 때 효과 2×</span></div>
+                    <div class="para-item map"><span class="para-num">🗺️¶47</span><span class="para-content">dA/dF < 0 확인. 분해 완료: dG/dF = (+)(−) < 0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN B -->
+        <div class="column">
+            <div class="column-header col-B">⚪ B · 전략폭<br><span style="font-size:0.55rem;opacity:0.7">WHEN trapped?</span></div>
+
+            <!-- BT -->
+            <div class="card agent-B" data-agent="B">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">BT 함정</div>
+                        <div class="card-title">Learning Trap</div>
+                        <div class="card-scholar">μ(1−μ) < ε×B | Stern</div>
+                    </div>
+                    <img class="card-thumb" src="../figures/T_fig1_trap_mechanism.png" onclick="event.stopPropagation(); window.open(this.src)" title="Trap">
+                    <div class="card-meta">
+                        <div class="card-para">¶49-72</div>
+                        <span class="card-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿¶49</span><span class="para-content">"정밀함이 가설검증→학습 가능케 함" — Stern, GKSS</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩¶51</span><span class="para-content">그런데 양 극단에서 함정: High-B(모호), Low-B(구체)</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍¶52</span><span class="para-content">함정 조건: μ(1−μ) < ε×B. 신념분산 임계값 이하 시 학습 중단</span></div>
+                    <div class="para-item"><span class="para-num">¶50</span><span class="para-content">함정 = 과정 실패. 새 증거가 신념/행동 업데이트 못함</span></div>
+                    <div class="para-item"><span class="para-num">¶57</span><span class="para-content">High-B 함정: 옵션 유지→학습 불능. 반증할 가설 없음</span></div>
+                    <div class="para-item"><span class="para-num">¶60</span><span class="para-content">예: Mobility (B₀=78, 91% stayer, 5% 생존)</span></div>
+                    <div class="para-item"><span class="para-num">¶64</span><span class="para-content">탈출: 자금 전 구체성 강제 (zoom-in)</span></div>
+                    <div class="para-item"><span class="para-num">¶65</span><span class="para-content">Low-B 함정: 몰입 고착→pivot 불능. 배신감</span></div>
+                    <div class="para-item"><span class="para-num">¶67</span><span class="para-content">반향실: 선별이 신봉자 필터링, Lock-in이 의심자 침묵</span></div>
+                    <div class="para-item"><span class="para-num">¶68</span><span class="para-content">모두 동의→μ(1−μ)→0. 어떤 증거도 만장일치 업데이트 불가</span></div>
+                    <div class="para-item"><span class="para-num">¶71</span><span class="para-content">위험: 함정이 성공처럼 보임. 마일스톤 달성=진전 착각</span></div>
+                    <div class="para-item map"><span class="para-num">🗺️¶72</span><span class="para-content">탈출: 자금 전 신념 다양성. 반대자 추가→분산 보존</span></div>
+                </div>
+            </div>
+
+            <!-- BM -->
+            <div class="card agent-B" data-agent="B">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">BM 적용</div>
+                        <div class="card-title">Q×Tools Framework</div>
+                        <div class="card-scholar">Fine22 → NFSC 확장</div>
+                    </div>
+                    <img class="card-thumb" src="../figures/C_fig1_prescription.png" onclick="event.stopPropagation(); window.open(this.src)" title="NFSC">
+                    <div class="card-meta">
+                        <div class="card-para">¶73-95</div>
+                        <span class="card-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿¶74</span><span class="para-content">"10 Tools로 스케일링" — Fine (2022)</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩¶75</span><span class="para-content">그런데 1 case × 3 tools 한정. 선택 기준 부재</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍¶78</span><span class="para-content">NFSC × Q×Tools 매트릭스로 확장</span></div>
+
+                    <!-- NFSC DIAGRAM -->
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin:10px 0; padding:12px; background:rgba(0,0,0,0.3); border-radius:6px;">
+                        <div style="text-align:center; padding:10px 15px; background:rgba(255,212,59,0.15); border:1px solid var(--repo); border-radius:6px; flex:1;">
+                            <div style="color:var(--repo); font-weight:700; font-size:0.75rem;">NAIL</div>
+                            <div style="font-size:0.6rem; color:var(--muted); margin-top:4px;">Flexibility</div>
+                            <div style="font-size:0.55rem; color:var(--muted);">Value Prop 검증</div>
+                        </div>
+                        <div style="color:var(--muted); font-size:1.5rem; margin:0 8px;">→</div>
+                        <div style="text-align:center; padding:10px 12px; background:rgba(77,171,247,0.15); border:1px dashed var(--conclude); border-radius:6px;">
+                            <div style="color:var(--conclude); font-weight:600; font-size:0.65rem;">Transition</div>
+                            <div style="font-size:0.55rem; color:var(--muted);">μ→0 or 1</div>
+                        </div>
+                        <div style="color:var(--muted); font-size:1.5rem; margin:0 8px;">→</div>
+                        <div style="text-align:center; padding:10px 15px; background:rgba(105,219,124,0.15); border:1px solid var(--growth); border-radius:6px; flex:1;">
+                            <div style="color:var(--growth); font-weight:700; font-size:0.75rem;">SCALE</div>
+                            <div style="font-size:0.6rem; color:var(--muted); margin-top:4px;">Commitment</div>
+                            <div style="font-size:0.55rem; color:var(--muted);">Market+Ops 확장</div>
+                        </div>
+                    </div>
+
+                    <!-- Q×TOOLS FRAMEWORK -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:10px 0; padding:8px; background:rgba(0,0,0,0.3); border-radius:6px;">
+                        <!-- Q1 -->
+                        <div style="border-left:3px solid var(--repo); padding:6px 8px; background:rgba(255,212,59,0.08); border-radius:4px;">
+                            <div style="color:var(--repo); font-weight:700; font-size:0.65rem; margin-bottom:4px;">Q1: HOW TO SCALE?</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Platformize</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Capitalize</div>
+                        </div>
+                        <!-- Q2 -->
+                        <div style="border-left:3px solid var(--intro); padding:6px 8px; background:rgba(255,107,107,0.08); border-radius:4px;">
+                            <div style="color:var(--intro); font-weight:700; font-size:0.65rem; margin-bottom:4px;">Q2: HOW TO BUILD?</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Acculturate</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Professionalize</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Processify</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Collaborate</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Automate</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Evaluate</div>
+                        </div>
+                        <!-- Q3 -->
+                        <div style="border-left:3px solid var(--growth); padding:6px 8px; background:rgba(105,219,124,0.08); border-radius:4px;">
+                            <div style="color:var(--growth); font-weight:700; font-size:0.65rem; margin-bottom:4px;">Q3: WHERE TO PLAY?</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Segment</div>
+                            <div style="font-size:0.6rem; color:var(--muted);">🛠️ Replicate</div>
+                        </div>
+                    </div>
+
+                    <div class="sub-header">NFSC Phase (¶80-86)</div>
+                    <div class="para-item"><span class="para-num">¶80</span><span class="para-content">Nail: value proposition 검증 (flexibility)</span></div>
+                    <div class="para-item"><span class="para-num">¶82</span><span class="para-content">전환점: 학습 완료 (μ→0 or 1) 후 Scale</span></div>
+                    <div class="para-item"><span class="para-num">¶84</span><span class="para-content">Scale: market + operations 병렬 확장 (commitment)</span></div>
+
+                    <div class="sub-header">Motional $4B Case (¶88-95)</div>
+                    <div class="para-item"><span class="para-num">¶88</span><span class="para-content">현재: L4 Lock-in, Trucking/ADAS Lock-out</span></div>
+                    <div class="para-item"><span class="para-num">¶90</span><span class="para-content">Q2 처방: Uber/Lyft(배송), Hyundai(생산) 협업</span></div>
+                    <div class="para-item"><span class="para-num">¶92</span><span class="para-content">Q3 처방: Robotaxi vs Trucking, B2B vs B2C 세분화</span></div>
+                    <div class="para-item map"><span class="para-num">🗺️¶95</span><span class="para-content">Fine22 확장: 1×3 → Q×10 전체 적용</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN C -->
+        <div class="column">
+            <div class="column-header col-C">🔵 C · 결론<br><span style="font-size:0.55rem;opacity:0.7">SO WHAT?</span></div>
+            <div class="card agent-C" data-agent="C">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <div class="card-main">
+                        <div class="card-id">C 결어</div>
+                        <div class="card-title">Commit to Movement</div>
+                        <div class="card-scholar">→ I 회귀</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="card-para">¶96-98</div>
+                        <span class="card-chevron">▼</span>
+                    </div>
+                </div>
+                <div class="para-list">
+                    <div class="para-item gospel"><span class="para-num">📿¶96</span><span class="para-content">"포지션에 몰입하라" — 기존 처방</span></div>
+                    <div class="para-item puzzle"><span class="para-num">🧩¶97</span><span class="para-content">그런데 한계: 상관≠인과, 측정, 일반화</span></div>
+                    <div class="para-item lens"><span class="para-num">🔍¶98</span><span class="para-content">기여: 역설 분해, 함정 식별, NFSC. 움직임에 몰입</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="font-size:0.85rem;color:var(--repo);margin-bottom:5px">THE FUNDING PARADOX v5.3.0</div>
+        <div>dG/dF = (dG/dA)(dA/dF) < 0 | Layer 2+3 Process Theory</div>
+        <div style="margin-top:5px;font-size:0.6rem;opacity:0.7">Angie Moon · Cronin LTE Framework</div>
+    </div>
+
+    <script>
+        function toggleCard(header) {
+            const card = header.parentElement;
+            card.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
