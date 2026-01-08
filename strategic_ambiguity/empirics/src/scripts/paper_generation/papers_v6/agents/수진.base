@@ -1,17 +1,28 @@
----
 name: 수진
 role: Puzzle + Table
 virtue: 見
 virtue_meaning: Observe
 description: 데이터로 통념 뒤집기 / 이론 정리
-row: [P, T]
-paragraphs: [2, 4, 10, 11, 12, 13, 19, 20, 21]
-shared_paragraphs: [7, 16]
-
+row:
+  - P
+  - T
+paragraphs:
+  - 2
+  - 4
+  - 10
+  - 11
+  - 12
+  - 13
+  - 19
+  - 20
+  - 21
+shared_paragraphs:
+  - 7
+  - 16
 assignments:
   - para: 2
     column: I
-    topic: "ρ(F,G)=-0.196***"
+    topic: ρ(F,G)=-0.196***
     status: draft
   - para: 4
     column: I
@@ -53,18 +64,16 @@ assignments:
     topic: "Theory: G (growth mechanisms)"
     status: review
     open_question: Q1
-
 key_numbers:
   rho_FG:
     value: -0.196
     significance: "***"
     source: PitchBook
   N: 408784
-  mover_survival: 0.180
+  mover_survival: 0.18
   stayer_survival: 0.099
   mover_advantage: 1.82
-  learning_trap_formula: "μ(1−μ) < ε/B"
-
+  learning_trap_formula: μ(1−μ) < ε/B
 variables:
   C:
     name: Commitment
@@ -77,28 +86,56 @@ variables:
   A:
     name: Adaptability
     type: Capacity
-    definition: 구조적 적응 능력 (structural)
+    definition: "변화 능력의 총체 (A⊃B: 구조적+인지적)"
+    metaphor: 손이 자유로운가? + 눈이 열려있는가?
+    sub_dimensions:
+      structural: 거버넌스, 계약, 자원 배분 (Gilbert 2005)
+      cognitive: 주의 폭, 정신 모델 (Ocasio 1997)
   B:
     name: Breadth
     type: Scope
     definition: 인지적 전략 범위 (cognitive)
+    alias: V (Vagueness score, 0-100)
   R:
     name: Reposition
     type: Action
     definition: "|B_T - B_0|"
+    note: 방향 무관 - 넓어지든 좁아지든 움직임이 중요
+    examples:
+      - "Sky Engine: |89.1 - 28.4| = 60.7 (좁음→넓음, Mover)"
+      - "Linpowave: |31.9 - 88.1| = 56.3 (넓음→좁음, Mover)"
+      - "Surestar: |87.9 - 87.9| = 0.0 (Stayer)"
   G:
     name: Growth
     type: Outcome
-    definition: 후속 생존
-
+    definition: 후속 자금 / 초기 자금 (F_t/E)
+pending_tasks:
+  - task: Tab-Var에 B, R 예시 추가
+    examples_to_add:
+      - "B: Sky Engine V₀=28.4 ('AI for AV, drones, robots') → V_T=89.1 ('Synthetic data cloud for vision AI')"
+      - "R: 방향 무관 예시 - broadening(+60.7) vs narrowing(-56.3) 모두 Mover"
+    priority: high
+    status: pending
+critical_metaphor:
+  description: A의 두 하위 차원을 설명하는 핵심 비유
+  structural: 손이 자유로운가? (움직일 수 있나)
+  cognitive: 눈이 열려있는가? (볼 수 있나)
+  importance: 절대 삭제 금지 - 모든 버전에서 유지할 것
 theory_framework:
   name: LTE
   layers:
-    L1: {component: Commitment-Believers, para: 10}
-    L2a: {component: Funding dynamics, para: 11}
-    L2b: {component: Repositioning, para: 12}
-    L3: {component: Believers-Repositioning link, para: 13}
-
+    L1:
+      component: Commitment-Believers
+      para: 10
+    L2a:
+      component: Funding dynamics
+      para: 11
+    L2b:
+      component: Repositioning
+      para: 12
+    L3:
+      component: Believers-Repositioning link
+      para: 13
 references:
   empirical_data:
     - Front/On/love(cs)/strategic_ambiguity/empirics/data/
@@ -113,9 +150,121 @@ references:
   statistical_methods:
     - Space/Library/1논문용/textbook/regression-and-other-stories
     - Space/Library/1논문용/textbook/contents-bayesian-data-analysis
-
 writing_style:
   - Lead with data, not opinion
   - Tables for comparison
   - Equations for precision
   - "CARE: Crisp, Accessible, Reader-loving, Earned"
+filter:
+  by_output:
+    numbers:
+      critical:
+        - key: ρ(F,G)
+          value: -0.196***
+          use: ¶2 핵심 발견
+        - key: N
+          value: 408,784
+          use: 표본 크기
+        - key: Mover survival
+          value: 18.0%
+          use: ¶3 해답
+        - key: Stayer survival
+          value: 9.9%
+          use: ¶3 대조군
+        - key: Mover advantage
+          value: 1.82×
+          use: ¶3 효과 크기
+      supporting:
+        - key: λ (F→A)
+          value: -0.102***
+          use: Fig-CFR1
+        - key: 1SD effect
+          value: -0.4SD A per +1SD F
+          use: mechanism
+    formulas:
+      critical:
+        - name: Causal decomposition
+          formula: dG/dF = (dG/dR)(dR/dF) = (+)(−) < 0
+          para: 3
+        - name: Learning trap
+          formula: μ(1−μ) < ε/B
+          para: 10
+      supporting:
+        - name: Repositioning
+          formula: R = |B_T - B_0|
+          para: 4
+        - name: Growth
+          formula: G = F_t/E
+          para: 4
+    tables:
+      - name: Tab-Var
+        content: 6개 변수 정의 (C,F,A,B,R,G)
+        para: 4
+        status: review
+      - name: Tab-Theory
+        content: LTE 4 strands
+        para: 10-13
+        status: draft
+      - name: Tab-Mover
+        content: Mover vs Stayer 비교
+        para: 21
+        status: draft
+  by_priority:
+    P0_blocker:
+      - "Q1: A vs B 구분 — ¶4, ¶10-13, ¶19-21 전체 영향"
+      - "Q3: 직접 vs 매개효과 — ¶8 mechanism"
+    P1_critical:
+      - ρ(F,G) = -0.196*** — Introduction의 anchor
+      - Mover 1.82× — 해답의 정량적 증거
+      - Learning trap formula — CFR 이론의 핵심
+    P2_important:
+      - R examples (Sky Engine, Linpowave) — 직관적 이해
+      - A의 손/눈 메타포 — 기억에 남는 설명
+    P3_nice:
+      - Robustness checks — Fig-Rob
+      - Additional case examples
+  provides_to:
+    영지:
+      - data: ρ(F,G)=-0.196
+        for: Fig-I scatter plot
+      - data: Mover 18.0% vs Stayer 9.9%
+        for: Fig-ARG trajectories
+      - data: λ=-0.102***
+        for: Fig-CFR1 regression line
+      - data: μ(1−μ)<ε/B zones
+        for: Fig-CFR2 learning trap
+    찰리:
+      - data: Causal decomposition
+        for: ¶3 Solution 구조
+      - data: LTE framework
+        for: ¶6 Map structure
+    경린:
+      - data: When to commit formula
+        for: ¶25-26 CSCE timing
+  by_context:
+    writing:
+      focus:
+        - numbers.critical
+        - formulas.critical
+      avoid:
+        - supporting details until core is solid
+    reviewing:
+      focus:
+        - P0_blocker
+        - open_questions
+      check:
+        - A vs B consistency across paragraphs
+    presenting:
+      focus:
+        - key_numbers
+        - critical_metaphor
+      simplify:
+        - formulas → intuition
+quick_lookup:
+  one_liner: 자금↑ → 적응↓ → 성장↓ (ρ=-0.196***, N=408K)
+  core_finding: Movers survive 1.82× more than Stayers
+  mechanism: Golden Cage = 손 묶임(structural) + 눈 가림(cognitive)
+  prescription: Commit to repositioning, not to position
+views:
+  - type: table
+    name: Table

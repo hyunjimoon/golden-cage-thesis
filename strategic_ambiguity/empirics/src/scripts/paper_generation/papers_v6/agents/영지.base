@@ -6,9 +6,15 @@ virtue_meaning: See
 description: 데이터 시각화
 row: F
 paragraphs: []
-figures: [Fig-I, Fig-CFR, Fig-ARG, Fig-Rob]
+figures: [Fig-GC, Fig-I, Fig-CFR, Fig-ARG, Fig-Rob]
 
 assignments:
+  - figure: Fig-GC
+    column: I
+    type: metaphor
+    location: Chapter I opening / Thesis cover
+    status: selected
+    image_path: "versionA.png"
   - figure: Fig-I
     column: I
     x: F
@@ -34,6 +40,25 @@ assignments:
     status: draft
 
 figure_specs:
+  Fig_GC:
+    title: The Golden Cage
+    type: metaphor illustration
+    subject: "Blue canary (entrepreneur as sentinel) in gilded cage"
+    dual_constraints:
+      structural: "Wings bound (손이 묶임) — Can hands move?"
+      cognitive: "Eyes veiled (눈이 가려짐) — Can eyes see?"
+    caption_task:
+      status: pending
+      requirement: "짧고 강렬하게 눈/손 구속 차이 강조"
+      draft_options:
+        - "Wings bound, eyes veiled: the gilded trap."
+        - "Structural (wings) + Cognitive (eyes) = Golden Cage"
+        - "손이 묶이고 눈이 가려진 새장 — 황금이 만든 감옥"
+    color: "#d4a84b"
+    references:
+      - "Maeterlinck (1908) L'Oiseau Bleu"
+      - "Kim et al. (2007) Canary in coal mine"
+      - "Gilbert (2005) structural; Ocasio (1997) cognitive"
   Fig_I:
     title: Funding Paradox
     x_axis: "F (log scale)"
@@ -64,6 +89,32 @@ figure_specs:
       B: "F vs R (−)"
       C: "R vs G (+)"
     caption: "Decomposition holds: dG/dF = (dG/dR)(dR/dF)"
+  Fig_GB:
+    title: Strategic Ambiguity - Growth by Breadth
+    x_axis: "B (Breadth/Vagueness, 0-100)"
+    y_axis: "G (Growth)"
+    purpose: "전략적 모호성과 성장의 관계 시각화"
+    key_insight: "방향 무관 - 움직임(|ΔB|)이 중요"
+    examples_to_show:
+      - "Sky Engine: B₀=28.4 → B_T=89.1, G=215.9× (broadening)"
+      - "Linpowave: B₀=88.1 → B_T=31.9, G=N/A (narrowing)"
+    color: "#ffa502"
+    status: pending
+
+pending_tasks:
+  - task: "Fig-GC caption 작성"
+    description: "짧고 강렬한 caption으로 눈/손 구속 차이 강조"
+    priority: highest
+    status: pending
+    constraint: "현재 이미지 텍스트보다 더 짧게"
+    examples:
+      - "Wings bound, eyes veiled."
+      - "손 묶임 + 눈 가림 = 황금새장"
+  - task: "Fig-GB 생성 - Strategic Ambiguity 뒷받침"
+    description: "B(Breadth) vs G(Growth) scatter plot with movement arrows"
+    priority: high
+    status: pending
+    note: "방향(+/-)이 아닌 움직임의 크기(|ΔB|)가 핵심"
 
 color_semantics:
   C: {name: Commitment, color: Gold, hex: "#d4a84b"}
