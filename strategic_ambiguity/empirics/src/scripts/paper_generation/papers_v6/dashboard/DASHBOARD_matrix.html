@@ -23,13 +23,13 @@
             --trap: #e17055;   /* CFR Trap - coral */
             --escape: #74b9ff; /* ARG Escape - light blue */
             --P: #c9d1d9;      /* Prescription - gray */
-            /* Agent Colors */
-            --정하: #ff9f43;
-            --수진: #54a0ff;
-            --찰리: #5f27cd;
-            --영지: #00d2d3;
-            --스캇: #10ac84;
-            --경린: #ee5a24;
+            /* Agent Colors (요일별) */
+            --정하: #ffd43b;   /* 월 Monday - Yellow 🟡 */
+            --경린: #ff6b6b;   /* 화 Tuesday - Red 🔴 */
+            --찰리: #4dabf7;   /* 수 Wednesday - Blue 🔵 */
+            --수진: #69db7c;   /* 목 Thursday - Green 🟢 */
+            --영지: #e9ecef;   /* 금 Friday - White ⚪ */
+            --스캇: #da77f2;   /* 일 Sunday - Purple 🟣 */
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -138,6 +138,37 @@
         .expand-label { color: var(--muted); }
         .expand-strand { background: rgba(46,213,115,0.1); padding: 2px 4px; border-radius: 3px; margin: 2px 0; }
 
+        /* Figure Thumbnails - visible without expanding */
+        .cell-thumb {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            opacity: 0.9;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 4px;
+        }
+        .cell-thumb:hover {
+            opacity: 1;
+            transform: scale(2.8);
+            z-index: 100;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .cell-thumbs {
+            display: flex;
+            gap: 3px;
+            margin-top: 4px;
+            flex-wrap: wrap;
+        }
+        .cell-thumbs .cell-thumb {
+            width: 28px;
+            height: 20px;
+            margin-top: 0;
+        }
+
         .cell-agent {
             font-size: 0.6rem;
             font-weight: 600;
@@ -177,6 +208,7 @@
         .status.draft { background: #7d8590; }
         .status.review { background: #ff9800; }
         .status.done { background: #4caf50; }
+        .status.selected { background: #d4a84b; box-shadow: 0 0 4px #d4a84b; }
 
         /* Legend */
         .legend {
@@ -264,6 +296,7 @@
         <small>¶16-24</small>
         <span class="count">(9)</span>
         <div class="question">WHAT grows?</div>
+        <div style="font-size:0.4rem;opacity:0.6;margin-top:2px">vs Sustainable Position</div>
     </div>
     <div class="col-header P">
         P
@@ -279,32 +312,103 @@
     </div>
 
     <!-- G: Gospel -->
-    <div class="row-header">G Gospel<div class="row-agent">정하 (利)</div></div>
-    <div class="cell agent-정하"><span class="status draft"></span><div class="cell-agent">정하</div><div class="cell-para">¶1</div><div class="cell-topic">Cash=oxygen 통념</div></div>
-    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">정하+수진</div><div class="cell-para">¶7</div><div class="cell-topic">Capital-enables-learning</div></div>
-    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">정하+수진</div><div class="cell-para">¶16</div><div class="cell-topic">Commitment orthodoxy</div></div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린</div><div class="cell-para">¶25</div><div class="cell-topic">When to commit?</div></div>
+    <div class="row-header">G Gospel<div class="row-agent">정 (利)</div></div>
+    <div class="cell agent-정하"><span class="status draft"></span><div class="cell-agent">정</div><div class="cell-para">¶1</div><div class="cell-topic">Cash=oxygen 통념</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "자본은 실험을 가능케 한다. 이 전제 하에 매년 3,300억 달러의 미국 VC가 투입된다."</div>
+            <div class="expand-item" style="color:var(--정하)"><b>Gospel:</b> 더 많은 자금 = 더 나은 생존</div>
+        </div>
+    </div>
+    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--정하)">정</span>+<span style="color:var(--수진)">수</span></div><div class="cell-para">¶7</div><div class="cell-topic">Capital-enables-learning</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "자본은 실험을 가능케 한다. 실험은 학습을 가능케 한다. 학습은 재포지셔닝을 가능케 한다."</div>
+            <div class="expand-item" style="color:var(--수진)"><b>예측:</b> dR/dF > 0 (자금↑ → 재포지셔닝↑)</div>
+        </div>
+    </div>
+    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--정하)">정</span>+<span style="color:var(--수진)">수</span></div><div class="cell-para">¶16</div><div class="cell-topic">Sustainable Position</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "Porter(1996): 경쟁 우위는 독특한 포지션 선택과 트레이드오프를 요구한다."</div>
+            <div class="expand-item" style="color:var(--수진)"><b>정통론:</b> Sustainable position = irreversible commitment + competitive advantage</div>
+            <div class="expand-item" style="color:var(--muted)"><b>Scholars:</b> Porter, Ghemawat, Van den Steen</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경</div><div class="cell-para">¶25</div><div class="cell-topic">When to commit?</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "시장 규모 성장률 = 운영 역량 성장률"</div>
+            <div class="expand-item" style="color:var(--경린)"><b>딜레마:</b> 조기 약속 = 황금새장 vs 유연함 유지 = 신봉자 없음</div>
+        </div>
+    </div>
     <div class="cell empty">—</div>
 
     <!-- P: Puzzle -->
-    <div class="row-header">P Puzzle<div class="row-agent">수진 (見)</div></div>
-    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent">수진</div><div class="cell-para">¶2</div><div class="cell-topic">ρ(F,G)=−0.196***</div></div>
-    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">(¶7 shared)</div><div class="cell-para"></div><div class="cell-topic">dR/dF < 0 왜?</div></div>
-    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">(¶16 shared)</div><div class="cell-para"></div><div class="cell-topic">Movers 1.82×</div></div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">(¶25 shared)</div><div class="cell-para"></div><div class="cell-topic">Doubly-binded</div></div>
+    <div class="row-header">P Puzzle<div class="row-agent">수 (見)</div></div>
+    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent">수</div><div class="cell-para">¶2</div><div class="cell-topic">ρ(F,G)=−0.196***</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "PitchBook 408,784개 벤처 분석 결과, 초기 자금과 후속 생존 사이 음의 상관관계 발견"</div>
+            <div class="expand-item" style="color:var(--수진)"><b>Puzzle:</b> ρ(F,G) = -0.196*** — 자금이 많을수록 성장이 낮다?</div>
+            <div class="expand-item"><b>N:</b> 408,784 ventures | <b>Source:</b> PitchBook</div>
+        </div>
+    </div>
+    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--정하)">정</span>+<span style="color:var(--수진)">수</span></div><div class="cell-para">¶7</div><div class="cell-topic">dR/dF < 0 왜?</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "자본이 학습을 가능케 한다면, 왜 dR/dF < 0인가?"</div>
+            <div class="expand-item" style="color:var(--수진)"><b>Puzzle:</b> 통념의 예측(dR/dF > 0)과 현실의 불일치</div>
+        </div>
+    </div>
+    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--정하)">정</span>+<span style="color:var(--수진)">수</span></div><div class="cell-para">¶16</div><div class="cell-topic">Movers 1.82×</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "Movers (R≥10) 생존율 18.0% vs Stayers (R<10) 9.9%"</div>
+            <div class="expand-item" style="color:var(--수진)"><b>Puzzle:</b> Sustainable position이 최선이라면 왜 Movers가 더 성공하나?</div>
+            <div class="expand-item" style="color:var(--muted)"><b>Tension:</b> Irreversibility vs Adaptability</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--경린)">경</span>+<span style="color:var(--수진)">수</span></div><div class="cell-para">¶25</div><div class="cell-topic">Doubly-binded</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "조기 약속 = 황금새장 vs 유연함 유지 = 신봉자 없음"</div>
+            <div class="expand-item" style="color:var(--경린)"><b>Puzzle:</b> 창업자의 이중구속 딜레마</div>
+        </div>
+    </div>
     <div class="cell empty">—</div>
 
     <!-- S: Solution -->
-    <div class="row-header">S Solution<div class="row-agent">찰리 (思)</div></div>
-    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶3</div><div class="cell-topic">(+)×(−)=(−) 분해</div></div>
-    <div class="cell agent-찰리"><span class="status review"></span><div class="cell-agent">찰리</div><div class="cell-para">¶8</div><div class="cell-topic">Golden cage mechanism<br/><em style="font-size:0.45rem;color:var(--cage)">+Self-selection</em><br/><em style="font-size:0.4rem;color:#ff9800">⚠️Q3: 직접 vs 매개효과</em></div></div>
-    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶17</div><div class="cell-topic">Partial commitment</div></div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린+찰리</div><div class="cell-para">¶26</div><div class="cell-topic">4 Tools: CSCE<br/><em style="font-size:0.4rem">Market∥Ops growth</em></div></div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린</div><div class="cell-para">¶28</div><div class="cell-topic">Commit to reposition</div></div>
+    <div class="row-header">S Solution<div class="row-agent">찰 (思)</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰</div><div class="cell-para">¶3</div><div class="cell-topic">(+)×(−)=(−) 분해</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "dG/dF = (dG/dR)×(dR/dF) = (+)×(−) < 0"</div>
+            <div class="expand-item" style="color:var(--찰리)"><b>Solution:</b> 인과 분해 — 자금은 재포지셔닝을 억제하고, 재포지셔닝이 성장을 촉진</div>
+        </div>
+    </div>
+    <div class="cell agent-찰리"><span class="status review"></span><div class="cell-agent">찰</div><div class="cell-para">¶8</div><div class="cell-topic">Golden cage mechanism<br/><em style="font-size:0.45rem;color:var(--cage)">+Self-selection</em><br/><em style="font-size:0.4rem;color:#ff9800">⚠️Q3: 직접 vs 매개효과</em></div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "황금새장 = 손이 묶임(구조적) AND/OR 눈이 가려짐(인지적)"</div>
+            <div class="expand-item" style="color:var(--C)"><b>Solution:</b> 자금이 적응력(A)을 제약 → 재포지셔닝(R) 억제</div>
+            <div class="expand-item"><b>Mechanism:</b> Gilbert(2005) threat paradox + Ocasio(1997) attention</div>
+        </div>
+    </div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰</div><div class="cell-para">¶17</div><div class="cell-topic">Partial commitment</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "부분적 약속 = 전략적 모호성으로 적응 공간 확보"</div>
+            <div class="expand-item" style="color:var(--A)"><b>Solution:</b> Sustainable position paradox 해결책 = 부분 전념</div>
+            <div class="expand-item" style="color:var(--muted)"><b>Key:</b> Commit to repositioning capability, not fixed position</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--경린)">경</span>+<span style="color:var(--찰리)">찰</span></div><div class="cell-para">¶26</div><div class="cell-topic">4 Tools: CSCE<br/><em style="font-size:0.4rem">Market∥Ops growth</em></div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "시장 규모 성장률 = 운영 역량 성장률"</div>
+            <div class="expand-item" style="color:var(--경린)"><b>Solution:</b> Capitalize-Segment-Collaborate-Evaluate 도구</div>
+            <div class="expand-item"><b>Condition:</b> Market∥Ops 병렬 성장 시 약속 시점</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경</div><div class="cell-para">¶28</div><div class="cell-topic">Commit to reposition</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "포지션이 아닌 재포지셔닝에 전념하라"</div>
+            <div class="expand-item" style="color:var(--G)"><b>Solution:</b> 필사즉생(必死卽生) — 적응 역량에 투자</div>
+        </div>
+    </div>
 
     <!-- T: Table/Theory -->
-    <div class="row-header">T Table<div class="row-agent">수진 (見)</div></div>
-    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수진</div><div class="cell-para">¶4</div><div class="cell-topic">Variables (C,F,A,B,R,G)</div>
+    <div class="row-header">T Table<div class="row-agent">수 (見)</div></div>
+    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수</div><div class="cell-para">¶4</div><div class="cell-topic">Variables (C,F,A,B,R,G)</div>
         <div class="cell-expand">
             <div class="expand-item"><span class="v-C">C</span> Commitment: 운영적 약속</div>
             <div class="expand-item"><span class="v-F">F</span> Funding: 초기 자금</div>
@@ -316,7 +420,7 @@
             <div class="expand-item" style="color:#ff9800"><b>⚠️ Q1:</b> A vs B 구분 필요</div>
         </div>
     </div>
-    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수진</div><div class="cell-para">¶10-13</div><div class="cell-topic">Theory: C-B, F, R<br/><em style="font-size:0.45rem">μ(1−μ)<ε/B</em></div>
+    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수</div><div class="cell-para">¶10-13</div><div class="cell-topic">Theory: C-B, F, R<br/><em style="font-size:0.45rem">μ(1−μ)<ε/B</em></div>
         <div class="cell-expand">
             <div class="expand-strand"><b>Strand 1:</b> Capital-as-Enabler (F)</div>
             <div class="expand-strand"><b>Strand 2:</b> Learning Myopia (R)</div>
@@ -326,7 +430,7 @@
             <div class="expand-item" style="color:#ff9800"><b>⚠️ Q1,Q3:</b> A vs B, 매개 구조</div>
         </div>
     </div>
-    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수진</div><div class="cell-para">¶19-21</div><div class="cell-topic">Theory: A, R, G<br/><em style="font-size:0.45rem">Mover types</em></div>
+    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수</div><div class="cell-para">¶19-21</div><div class="cell-topic">Theory: A, R, G<br/><em style="font-size:0.45rem">Mover types</em></div>
         <div class="cell-expand">
             <div class="expand-strand"><b>Strand 5:</b> Commitment Value (A)</div>
             <div class="expand-strand"><b>Strand 6:</b> Pivot Dynamics (R→G)</div>
@@ -334,7 +438,7 @@
             <div class="expand-item" style="color:#ff9800"><b>⚠️ Q1:</b> Theorem 1에서 B 사용</div>
         </div>
     </div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">(¶26 shared)</div><div class="cell-para"></div><div class="cell-topic">Cap-Seg-Col-Eval</div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--경린)">경</span>+<span style="color:var(--찰리)">찰</span></div><div class="cell-para">¶26</div><div class="cell-topic">Cap-Seg-Col-Eval</div>
         <div class="cell-expand">
             <div class="expand-strand"><b>Strand 7:</b> Parallel Scaling (Tools)</div>
             <div class="expand-item"><b>C</b>apitalize: 전략적 모호성</div>
@@ -345,28 +449,166 @@
     </div>
     <div class="cell empty">—</div>
 
-    <!-- F: Figure -->
-    <div class="row-header">F Figure<div class="row-agent">영지 (見)</div></div>
-    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영지</div><div class="cell-para">Fig-I</div><div class="cell-topic">G by F scatter<br/><em style="font-size:0.45rem;color:var(--I)">ρ(F,G)=−0.196</em></div></div>
-    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영지</div><div class="cell-para">Fig-CFR</div><div class="cell-topic">R by F scatter<br/><em style="font-size:0.45rem;color:var(--cage)">dR/dF < 0</em></div></div>
-    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영지</div><div class="cell-para">Fig-FRG</div><div class="cell-topic">G by R scatter<br/><em style="font-size:0.45rem;color:var(--R)">dG/dR > 0</em><br/><em style="font-size:0.4rem;color:var(--muted)">+3-panel robust</em></div></div>
-    <div class="cell empty">—</div>
+    <!-- F: Figure — Option C: GC독립, Causal텍스트유지, 데이터차트만 2-panel -->
+    <div class="row-header">F Figure<div class="row-agent">영 (見)</div></div>
+    <!-- I Column: Fig-GC only (cover) — Causal은 본문 텍스트로 유지 -->
+    <div class="cell agent-영지"><span class="status selected"></span><div class="cell-agent">영</div><div class="cell-para">Fig-GC</div><div class="cell-topic">Golden Cage 🐦</div>
+        <img class="cell-thumb" src="../figures/images/Fig-GC_golden_cage_canary.png" onclick="event.stopPropagation(); window.open(this.src)" title="Golden Cage - Thesis Cover"/>
+        <div class="cell-expand">
+            <div class="expand-item" style="background:rgba(212,168,75,0.15);padding:4px;border-radius:3px;margin-bottom:4px">
+                <b>🐦 Fig-GC: The Golden Cage</b> ✅ selected
+            </div>
+            <div class="expand-item"><b>역할:</b> 황금새장 메타포 — 논문의 상징적 이미지</div>
+            <div class="expand-item" style="color:var(--A)"><b>구조적:</b> Wings bound (손이 묶임)</div>
+            <div class="expand-item" style="color:var(--B)"><b>인지적:</b> Eyes veiled (눈이 가려짐)</div>
+            <div class="expand-item" style="color:#ff9800"><b>⏳ Task:</b> Caption 작성 (짧고 강렬하게)</div>
+            <div class="expand-item" style="margin-top:6px;text-align:center">
+                <img src="../figures/images/Fig-GC_golden_cage_canary.png" style="max-width:100%;border-radius:4px;border:1px solid var(--border)" alt="Golden Cage"/>
+            </div>
+            <div class="expand-item" style="margin-top:4px;border-top:1px solid var(--border);padding-top:4px;color:var(--muted);font-size:0.7rem">
+                <b>Note:</b> Fig-Causal (¶5)은 본문 ASCII 다이어그램으로 충분
+            </div>
+        </div>
+    </div>
+    <!-- CFR Column: Fig-I (¶9) — 2-panel candidate with Fig-ARG -->
+    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영</div><div class="cell-para">Fig-I</div><div class="cell-topic">¶9 Funding Paradox</div>
+        <img class="cell-thumb" src="../figures/images/Fig-I_funding_paradox.png" onclick="event.stopPropagation(); window.open(this.src)" title="Funding Paradox - dG/dF < 0"/>
+        <div class="cell-expand">
+            <div class="expand-item" style="background:rgba(255,107,107,0.1);padding:3px;border-radius:3px">
+                <b>📊 Fig-I (¶9):</b> Funding Paradox
+            </div>
+            <div class="expand-item"><b>역할:</b> 핵심 발견 — 자금↑ 성장↓ 역설 제시</div>
+            <div class="expand-item"><b>Data:</b> Stayer 9.9% vs Mover 17.9%</div>
+            <div class="expand-item" style="margin-top:6px;text-align:center">
+                <img src="../figures/images/Fig-I_funding_paradox.png" style="max-width:100%;border-radius:4px;border:1px solid var(--border)" alt="Funding Paradox"/>
+            </div>
+            <div class="expand-item" style="color:#ff9800;margin-top:4px"><b>⚠️ 톤:</b> Dark theme — 다른 차트와 통일 필요</div>
+        </div>
+    </div>
+    <!-- ARG Column: Fig-ARG (¶14) + Fig-CFR 2-panel (¶21,22) -->
+    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영</div><div class="cell-para">Fig-ARG+CFR</div><div class="cell-topic">¶14,21,22</div>
+        <div class="cell-thumbs">
+            <img class="cell-thumb" src="../figures/images/Fig-ARG_mover_vs_stayer.png" onclick="event.stopPropagation(); window.open(this.src)" title="Mover vs Stayer Trajectories"/>
+            <img class="cell-thumb" src="../figures/images/Fig-CFR1_golden_cage.png" onclick="event.stopPropagation(); window.open(this.src)" title="Golden Cage Mechanism"/>
+        </div>
+        <div class="cell-expand">
+            <div class="expand-item" style="background:rgba(168,85,247,0.1);padding:3px;border-radius:3px;margin-bottom:3px">
+                <b>📊 Fig-ARG (¶14):</b> V Trajectories
+            </div>
+            <div class="expand-item"><b>역할:</b> Mover vs Stayer 시각적 대비</div>
+            <div class="expand-item" style="margin-top:6px;text-align:center">
+                <img src="../figures/images/Fig-ARG_mover_vs_stayer.png" style="max-width:100%;border-radius:4px;border:1px solid var(--border)" alt="Mover vs Stayer"/>
+            </div>
+            <div class="expand-item" style="margin-top:4px;border-top:1px solid var(--border);padding-top:4px;background:rgba(212,168,75,0.1);padding:3px;border-radius:3px">
+                <b>📊 Fig-CFR 2-panel (¶21+22):</b>
+            </div>
+            <div class="expand-item" style="margin-top:4px">
+                <img src="../figures/images/Fig-CFR1_golden_cage.png" style="max-width:100%;border-radius:3px;border:1px solid var(--border)" alt="CFR1 Golden Cage Mechanism"/>
+            </div>
+            <div class="expand-item" style="font-size:0.65rem;color:var(--muted)">Golden Cage Mechanism</div>
+        </div>
+    </div>
+    <!-- P Column: Fig-P1 + Fig-P2 (¶26-27) — NEW CSCE Framework -->
+    <div class="cell agent-영지"><span class="status review"></span><div class="cell-agent">영</div><div class="cell-para">Fig-P1,P2</div><div class="cell-topic">¶26-27 CSCE</div>
+        <div class="cell-thumbs">
+            <img class="cell-thumb" src="../figures/images/Fig-P1.png" onclick="event.stopPropagation(); window.open(this.src)" title="Fig-P1: Breadth Advantage"/>
+            <img class="cell-thumb" src="../figures/images/Fig-P2.png" onclick="event.stopPropagation(); window.open(this.src)" title="Fig-P2: Strategic Ambiguity"/>
+        </div>
+        <div class="cell-expand">
+            <div class="expand-item" style="background:rgba(255,107,107,0.15);padding:4px;border-radius:3px;margin-bottom:4px">
+                <b>📊 Fig-P1:</b> Breadth Advantage (¶27)
+            </div>
+            <div class="expand-item"><b>Conventional Wisdom:</b> Narrow(specific) → Better survival</div>
+            <div class="expand-item"><b>X:</b> B (Breadth, 0-100)</div>
+            <div class="expand-item"><b>Y:</b> Survival Rate</div>
+            <div class="expand-item" style="color:var(--수진)"><b>Finding:</b> 적절히 Broad한 positioning → Higher survival</div>
+            <div class="expand-item" style="color:var(--G)"><b>Key:</b> Narrow 통념에 반함 — 전략적 모호성의 가치</div>
+            <div class="expand-item" style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px;background:rgba(255,165,2,0.15);padding:4px;border-radius:3px">
+                <b>📊 Fig-P2:</b> Capitalize via Strategic Ambiguity (¶26) <span style="color:#ff9800">⏳NEW</span>
+            </div>
+            <div class="expand-item"><b>Solution:</b> CSCE 4 Tools</div>
+            <div class="expand-item"><b>X:</b> B (Breadth, 0-100)</div>
+            <div class="expand-item"><b>Y:</b> G (Growth)</div>
+            <div class="expand-item" style="color:var(--G)"><b>Shape:</b> Monotonic ↗ — B↑ → G↑ (precise보다 broad가 성장↑)</div>
+            <div class="expand-item"><b>Insight:</b> 모호함 → 투자자/고객이 각자 optimism 투영 가능</div>
+            <div class="expand-item" style="margin-top:6px;border-top:1px solid var(--border);padding-top:4px;font-size:0.7rem">
+                <b>CSCE Tools:</b><br/>
+                • <b>C</b>apitalize: Strategic Ambiguity (B↑→G↑)<br/>
+                • <b>S</b>egment: Robotaxi / B2B Fleet / Adjacent<br/>
+                • <b>C</b>ollaborate: Ops 역량 파트너십<br/>
+                • <b>E</b>valuate: Market∥Ops 균형점
+            </div>
+        </div>
+    </div>
+    <!-- C Column: empty (¶28-29 only, no figures) -->
     <div class="cell empty">—</div>
 
     <!-- M: Map -->
-    <div class="row-header">M Map<div class="row-agent">찰리 (思)</div></div>
-    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶6</div><div class="cell-topic">Thesis structure<br/>I→CFR→FRG→P→C</div></div>
-    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶9</div><div class="cell-topic">CFR module map<br/>LTE framework</div></div>
-    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶18</div><div class="cell-topic">FRG module map</div></div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">(¶26 shared)</div><div class="cell-para"></div><div class="cell-topic">Market∥Ops map</div></div>
-    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶29</div><div class="cell-topic">Limitations & Future</div></div>
+    <div class="row-header">M Map<div class="row-agent">찰 (思)</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰</div><div class="cell-para">¶6</div><div class="cell-topic">Thesis structure<br/>I→CFR→FRG→P→C</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "5개 챕터 구조: Introduction → CFR → ARG → Prescription → Conclusion"</div>
+            <div class="expand-item" style="color:var(--찰리)"><b>Map:</b> I(왜?) → CFR(어떻게 갇히나?) → ARG(무엇이 자라나?) → P(언제?) → C(그래서?)</div>
+        </div>
+    </div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰</div><div class="cell-para">¶9</div><div class="cell-topic">CFR module map<br/>LTE framework</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "LTE Framework = Layer 1 (C-B) → Layer 2 (F, R) → Layer 3 (BR)"</div>
+            <div class="expand-item" style="color:var(--C)"><b>Map:</b> Commitment-Believers → Funding dynamics → Believers-Repositioning</div>
+            <div class="expand-item"><b>Strands:</b> 1(Capital) + 2(Learning) + 3(Bayesian) + 4(Governance)</div>
+        </div>
+    </div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰</div><div class="cell-para">¶18</div><div class="cell-topic">FRG module map</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "A → R → G 인과 경로"</div>
+            <div class="expand-item" style="color:var(--A)"><b>Map:</b> Adaptability → Repositioning → Growth</div>
+            <div class="expand-item"><b>Strands:</b> 5(Commitment Value) + 6(Pivot Dynamics)</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--경린)">경</span>+<span style="color:var(--찰리)">찰</span></div><div class="cell-para">¶26</div><div class="cell-topic">Market∥Ops map</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "시장 규모 성장률 = 운영 역량 성장률 시 약속"</div>
+            <div class="expand-item" style="color:var(--경린)"><b>Map:</b> Market growth ∥ Operations growth → Commit timing</div>
+        </div>
+    </div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰</div><div class="cell-para">¶29</div><div class="cell-topic">Limitations & Future</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "한계: 단일 산업(AV), 상관관계 vs 인과"</div>
+            <div class="expand-item" style="color:var(--muted)"><b>Map:</b> Limitations → Extensions → Future research agenda</div>
+        </div>
+    </div>
 
     <!-- E: Example -->
-    <div class="row-header">E Example<div class="row-agent">스캇 (見)</div></div>
+    <div class="row-header">E Example<div class="row-agent">스 (見)</div></div>
     <div class="cell empty">—</div>
-    <div class="cell agent-스캇"><span class="status draft"></span><div class="cell-agent">스캇</div><div class="cell-para">¶14-15</div><div class="cell-topic">Segway, Theranos<br/>Nikola cases</div></div>
-    <div class="cell agent-스캇"><span class="status draft"></span><div class="cell-agent">스캇</div><div class="cell-para">¶22-24</div><div class="cell-topic">Tesla vs Better Place<br/>Robustness checks</div></div>
-    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린+스캇</div><div class="cell-para">¶27</div><div class="cell-topic">AV cases: Motional<br/>Aurora, Nuro, Waymo</div></div>
+    <div class="cell agent-스캇"><span class="status draft"></span><div class="cell-agent">스</div><div class="cell-para">¶14-15</div><div class="cell-topic">Segway, Theranos<br/>Nikola cases</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "Segway: $176M 투자 후 경직 → 피벗 실패"</div>
+            <div class="expand-item" style="color:var(--스캇)"><b>Example:</b> 황금새장의 대표 사례들</div>
+            <div class="expand-item"><b>Segway:</b> 과잉 자금 → 피벗 기회 상실</div>
+            <div class="expand-item"><b>Theranos:</b> 과대 약속 → 신뢰 붕괴</div>
+            <div class="expand-item"><b>Nikola:</b> 조기 전념 → 적응 실패</div>
+        </div>
+    </div>
+    <div class="cell agent-스캇"><span class="status draft"></span><div class="cell-agent">스</div><div class="cell-para">¶22-24</div><div class="cell-topic">Tesla vs Better Place<br/>Robustness checks</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "Tesla: 부분 전념으로 적응 공간 확보 → 성공"</div>
+            <div class="expand-item" style="color:var(--G)"><b>Example:</b> Mover의 성공 사례</div>
+            <div class="expand-item"><b>Tesla:</b> 전략적 모호성 + 재포지셔닝 → 생존</div>
+            <div class="expand-item"><b>Better Place:</b> 완전 전념 → 적응 실패 → 파산</div>
+            <div class="expand-item"><b>Robustness:</b> 산업, 시간, 규모별 검증</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent"><span style="color:var(--경린)">경</span>+<span style="color:var(--스캇)">스</span></div><div class="cell-para">¶27</div><div class="cell-topic">AV cases: Motional<br/>Aurora, Nuro, Waymo</div>
+        <div class="cell-expand">
+            <div class="expand-item"><b>핵심문장:</b> "자율주행 4개사 비교: 시장∥운영 성장 동기화"</div>
+            <div class="expand-item" style="color:var(--경린)"><b>Example:</b> CSCE 도구 적용 사례</div>
+            <div class="expand-item"><b>Waymo:</b> 알파벳 지원 → 점진적 확장</div>
+            <div class="expand-item"><b>Aurora:</b> 피벗 후 트럭 물류 집중</div>
+            <div class="expand-item"><b>Motional:</b> 파트너십(현대-앱티브) 활용</div>
+            <div class="expand-item"><b>Nuro:</b> 틈새 시장(배달) 선점</div>
+        </div>
+    </div>
     <div class="cell empty">—</div>
 </div>
 
@@ -374,12 +616,12 @@
 <div class="legend">
     <div class="legend-section">
         <strong>Agents:</strong>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--정하)"></div>정하 利</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--수진)"></div>수진 見</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--찰리)"></div>찰리 思</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--영지)"></div>영지 見</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--스캇)"></div>스캇 見</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--경린)"></div>경린 義</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--정하)"></div>정 利</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--수진)"></div>수 見</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--찰리)"></div>찰 思</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--영지)"></div>영 見</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--스캇)"></div>스 見</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--경린)"></div>경 義</div>
     </div>
     <div class="legend-divider"></div>
     <div class="legend-section">
