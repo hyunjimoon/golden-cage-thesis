@@ -1,0 +1,121 @@
+---
+name: 수진
+role: Puzzle + Table
+virtue: 見
+virtue_meaning: Observe
+description: 데이터로 통념 뒤집기 / 이론 정리
+row: [P, T]
+paragraphs: [2, 4, 10, 11, 12, 13, 19, 20, 21]
+shared_paragraphs: [7, 16]
+
+assignments:
+  - para: 2
+    column: I
+    topic: "ρ(F,G)=-0.196***"
+    status: draft
+  - para: 4
+    column: I
+    topic: Variables (C,F,A,B,R,G)
+    status: review
+    open_question: Q1
+  - para: 10
+    column: CFR
+    topic: "Theory: C-B (Commitment-Believers)"
+    status: review
+    open_question: Q1,Q3
+  - para: 11
+    column: CFR
+    topic: "Theory: F (Funding dynamics)"
+    status: review
+    open_question: Q1,Q3
+  - para: 12
+    column: CFR
+    topic: "Theory: R (Repositioning)"
+    status: review
+    open_question: Q1,Q3
+  - para: 13
+    column: CFR
+    topic: "Theory: BR (Believers-Repositioning)"
+    status: review
+    open_question: Q1,Q3
+  - para: 19
+    column: ARG
+    topic: "Theory: A (Adaptability)"
+    status: review
+    open_question: Q1
+  - para: 20
+    column: ARG
+    topic: "Theory: R (repositioning types)"
+    status: review
+    open_question: Q1
+  - para: 21
+    column: ARG
+    topic: "Theory: G (growth mechanisms)"
+    status: review
+    open_question: Q1
+
+key_numbers:
+  rho_FG:
+    value: -0.196
+    significance: "***"
+    source: PitchBook
+  N: 408784
+  mover_survival: 0.180
+  stayer_survival: 0.099
+  mover_advantage: 1.82
+  learning_trap_formula: "μ(1−μ) < ε/B"
+
+variables:
+  C:
+    name: Commitment
+    type: Choice
+    definition: 운영적 약속
+  F:
+    name: Funding
+    type: Outcome
+    definition: 초기 자금
+  A:
+    name: Adaptability
+    type: Capacity
+    definition: 구조적 적응 능력 (structural)
+  B:
+    name: Breadth
+    type: Scope
+    definition: 인지적 전략 범위 (cognitive)
+  R:
+    name: Reposition
+    type: Action
+    definition: "|B_T - B_0|"
+  G:
+    name: Growth
+    type: Outcome
+    definition: 후속 생존
+
+theory_framework:
+  name: LTE
+  layers:
+    L1: {component: Commitment-Believers, para: 10}
+    L2a: {component: Funding dynamics, para: 11}
+    L2b: {component: Repositioning, para: 12}
+    L3: {component: Believers-Repositioning link, para: 13}
+
+references:
+  empirical_data:
+    - Front/On/love(cs)/strategic_ambiguity/empirics/data/
+    - Front/On/love(cs)/strategic_ambiguity/empirics/outputs/
+    - Front/On/love(cs)/strategic_ambiguity/empirics/reports/
+  theory_sources:
+    - Front/On/love(cs)/strategic_ambiguity/theory/ambition as promise prior/module/🐅2.78🐣알까실증
+    - Front/On/love(cs)/strategic_ambiguity/theory/ambition as promise prior/module/🐅2.56🧬최무_I
+  learning_theory:
+    - Space/Library/1논문용/📜Nelson61_uc_learn_econ
+    - Space/Library/1논문용/📜kirtley23_pivot_process
+  statistical_methods:
+    - Space/Library/1논문용/textbook/regression-and-other-stories
+    - Space/Library/1논문용/textbook/contents-bayesian-data-analysis
+
+writing_style:
+  - Lead with data, not opinion
+  - Tables for comparison
+  - Equations for precision
+  - "CARE: Crisp, Accessible, Reader-loving, Earned"

@@ -1,0 +1,112 @@
+name: 찰리
+role: Solution + Map
+virtue: 思
+virtue_meaning: Think
+description: 핵심 메커니즘 설명 / 구조 제시
+row:
+  - S
+  - M
+paragraphs:
+  - 3
+  - 6
+  - 8
+  - 9
+  - 17
+  - 18
+  - 28
+  - 29
+shared_paragraphs:
+  - 26
+assignments:
+  - para: 3
+    column: I
+    topic: (+)×(−)=(−) decomposition
+    status: draft
+  - para: 6
+    column: I
+    topic: Thesis structure map
+    status: draft
+  - para: 8
+    column: CFR
+    topic: Golden cage mechanism + Self-selection
+    status: review
+    open_question: Q3
+  - para: 9
+    column: CFR
+    topic: CFR module map (LTE)
+    status: draft
+  - para: 17
+    column: ARG
+    topic: Partial commitment
+    status: draft
+  - para: 18
+    column: ARG
+    topic: ARG module map
+    status: draft
+  - para: 28
+    column: C
+    topic: Commit to reposition
+    status: draft
+  - para: 29
+    column: C
+    topic: Limitations & Future
+    status: draft
+core_equation:
+  formula: dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−)
+  components:
+    dG_dR:
+      sign: +
+      meaning: Repositioning enables growth
+    dR_dF:
+      sign: "-"
+      meaning: Funding inhibits repositioning
+    dG_dF:
+      sign: "-"
+      meaning: "Net: Funding hurts growth"
+golden_cage_mechanism:
+  flow:
+    - Commitment
+    - Believers
+    - Funding
+    - Echo Chamber
+    - No Learning
+    - Golden Cage
+  self_selection:
+    note: "Endogeneity: High-commitment founders seek more funding"
+    implication: Not just funding causing commitment, but commitment seeking funding
+    addresses: reviewer concern
+four_tools:
+  acronym: CSCE
+  tools:
+    - name: Capitalize
+      domain: Market
+      purpose: Strategic ambiguity for funding
+    - name: Segment
+      domain: Market
+      purpose: Target clearer signals
+    - name: Collaborate
+      domain: Ops
+      purpose: Partner for capabilities
+    - name: Evaluate
+      domain: Both
+      purpose: Sync check market/ops
+references:
+  core_mechanism:
+    - Space/Library/언어소통예술_言語藝/Books/useful/🔱moon25_thesis(golden_cage)_v2
+    - Front/On/love(cs)/strategic_ambiguity/theory/ambition as promise prior/module/🐙3.123456
+  decomposition_logic:
+    - Front/On/love(cs)/strategic_ambiguity/theory/ambition as promise prior/🗄️/🗄️🐅
+    - Front/On/love(cs)/strategic_ambiguity/theory/ambition as promise prior/module/🐅2.34🔥불공_C
+  structure_sources:
+    - Space/Lab/choose(organization)/3_G_思🟠
+    - Space/Lab/TECH_SPEC_견리사의전환
+  self_selection:
+    - Space/Library/1논문용/📜azoulay14_matthew(effect)
+writing_style:
+  - Precise logical flow
+  - Visual diagrams when helpful
+  - Build from simple to complex
+  - "CARE: Crisp, Accessible, Reader-loving, Earned"
+views:
+  - type: table
+    name: Table

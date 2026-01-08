@@ -1,0 +1,96 @@
+---
+name: 영지
+role: Figure
+virtue: 見
+virtue_meaning: See
+description: 데이터 시각화
+row: F
+paragraphs: []
+figures: [Fig-I, Fig-CFR, Fig-ARG, Fig-Rob]
+
+assignments:
+  - figure: Fig-I
+    column: I
+    x: F
+    y: G
+    slope: "-"
+    status: draft
+  - figure: Fig-CFR
+    column: CFR
+    x: F
+    y: R
+    slope: "-"
+    status: draft
+  - figure: Fig-ARG
+    column: ARG
+    x: R
+    y: G
+    slope: "+"
+    status: draft
+  - figure: Fig-Rob
+    column: ARG
+    type: 3-panel
+    slopes: ["-", "-", "+"]
+    status: draft
+
+figure_specs:
+  Fig_I:
+    title: Funding Paradox
+    x_axis: "F (log scale)"
+    y_axis: G (growth)
+    slope: Negative
+    color: "#ff6b6b"
+    caption: "ρ(F,G) = -0.196***, N = 408,784"
+  Fig_CFR:
+    title: Golden Cage Effect
+    x_axis: "F (log scale)"
+    y_axis: R (repositioning)
+    slope: "-0.4 SD per +1 SD F"
+    color: "#d4a84b"
+    caption: Well-funded ventures adapt less
+  Fig_ARG:
+    title: Mover Advantage
+    x_axis: R (repositioning)
+    y_axis: G (growth)
+    slope: Positive
+    colors: ["#a855f7", "#69db7c"]
+    highlight: "Movers (R>=10) vs Stayers (R<10)"
+    caption: "Movers 1.82× (18.0% vs 9.9%)"
+  Fig_Rob:
+    title: 3-Panel Robustness
+    layout: "1 row × 3 columns"
+    panels:
+      A: "F vs G (−)"
+      B: "F vs R (−)"
+      C: "R vs G (+)"
+    caption: "Decomposition holds: dG/dF = (dG/dR)(dR/dF)"
+
+color_semantics:
+  C: {name: Commitment, color: Gold, hex: "#d4a84b"}
+  F: {name: Funding, color: Blue, hex: "#4dabf7"}
+  A: {name: Adaptability, color: Teal, hex: "#2ed573"}
+  R: {name: Reposition, color: Purple, hex: "#a855f7"}
+  G: {name: Growth, color: Green, hex: "#69db7c"}
+  B: {name: Breadth, color: Orange, hex: "#ffa502"}
+  I: {name: Introduction, color: Red, hex: "#ff6b6b"}
+
+references:
+  data_sources:
+    - Front/On/love(cs)/strategic_ambiguity/empirics/data/
+    - Front/On/love(cs)/strategic_ambiguity/empirics/outputs/
+  figure_specs:
+    - papers_v6/figures/영지_figure_tasks
+  visualization:
+    - Space/Library/Maps/🚙thesis_vehicle
+
+care_checklist:
+  - "Crisp: One figure = one message"
+  - "Accessible: Colorblind-safe, readable at 50% zoom"
+  - "Reader-loving: Main insight obvious in 3 seconds"
+  - "Earned: Every element justifies existence"
+
+writing_style:
+  - Let data speak
+  - Minimal annotation
+  - Consistent color semantics
+  - Clear axis labels

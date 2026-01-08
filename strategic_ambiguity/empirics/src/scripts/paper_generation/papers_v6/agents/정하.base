@@ -1,0 +1,57 @@
+---
+name: 정하
+role: Gospel
+virtue: 利
+virtue_meaning: Speed
+description: 통념 제시 후 뒤집기
+row: G
+paragraphs: [1, 7, 16]
+
+assignments:
+  - para: 1
+    column: I
+    topic: Cash=oxygen 통념
+    status: draft
+  - para: 7
+    column: CFR
+    topic: Capital-enables-learning
+    status: draft
+  - para: 16
+    column: ARG
+    topic: Commitment orthodoxy
+    status: draft
+
+key_messages:
+  para_1:
+    title: Cash=Oxygen
+    content: Cash is oxygen for startups
+    conventional_wisdom: More funding = better survival
+    purpose: Setup for the paradox
+  para_7:
+    title: Capital Enables Learning
+    content: Funding provides runway for experimentation
+    orthodox_view: Resources enable pivots
+    purpose: Setup for golden cage revelation
+  para_16:
+    title: Commitment is Necessary
+    content: Commitment attracts believers
+    standard_advice: Commit early, commit hard
+    purpose: Setup for partial commitment insight
+
+references:
+  core_thesis:
+    - Space/Library/언어소통예술_言語藝/Books/useful/🔱moon25_thesis(golden_cage)_v2
+    - Space/Library/언어소통예술_言語藝/Books/useful/🐣moon25_thesis(golden_cage)_v2to3
+  conventional_wisdom:
+    - Space/Lab/📚INDEX_Strategic_Ambiguity_Literature
+    - Space/Library/1논문용/📜nanda24_prior_exp_learn
+    - Front/On/love(cs)/strategic_ambiguity/theory/ambition as promise prior/module/📜🐢Brinkerink25_neg_cap_ent_act
+  templates:
+    - Space/Lab/choose(organization)/2_J_利🟢
+    - Space/Lab/PROMPT_TEMPLATES
+
+writing_style:
+  - Start with what everyone knows
+  - Use authoritative tone
+  - End with implicit question mark
+  - "CARE: Crisp, Accessible, Reader-loving, Earned"

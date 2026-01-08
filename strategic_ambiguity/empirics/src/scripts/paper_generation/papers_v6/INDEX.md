@@ -1,12 +1,12 @@
-# papers_v6: Sail Edition
+# papers_v6: 벗7 Edition
 
-> **Phase**: Sail (속전속결) | **Structure**: I-RG-FR-P-C | **Date**: 2025-01-04
+> **Phase**: Thesis Completion | **Structure**: I-CFR-FRG-P-C | **Date**: 2025-01-07
 
 ---
 
 ## Core Thesis
 
-> **"Commitment attracts believers; believers provide funding; funding solidifies the echo chamber; echo chambers block learning."**
+> **"Commit to REPOSITION, not position."**
 
 ### Decomposition
 $$\frac{dG}{dF} = \underbrace{\frac{dG}{dR}}_{\text{(+)}} \times \underbrace{\frac{dR}{dF}}_{\text{(-)}} = (-)$$
@@ -15,79 +15,110 @@ $$\frac{dG}{dF} = \underbrace{\frac{dG}{dR}}_{\text{(+)}} \times \underbrace{\fr
 | Finding | Value |
 |:--------|:------|
 | Funding-Growth correlation | ρ = −0.196*** |
-| Sample size | N = 180,994 |
+| Sample size | N = 408,784 |
 | Mover advantage | 1.82× (18.0% vs 9.9%) |
 
 ---
 
-## Folder Structure
+## Folder Structure (Clean)
 
 ```
 papers_v6/
 ├── INDEX.md                    # 이 파일
-├── GLOSSARY.md                 # 용어 정의
-├── CORE_CONTRIBUTION.md        # 핵심 기여
-├── IMAGE_PROMPT_gemini.md      # 이미지 생성 프롬프트
+├── PROTOCOL.md                 # 작업 프로토콜
 │
-├── 1_I/I.md                    # Introduction (6 para) + Task commands
-├── 2_RG/RG.md                  # Repositioning-Growth (9 para) + Task commands
-├── 3_FR/FR.md                  # Funding-Repositioning (9 para) + Task commands
-├── 4_P/P.md                    # Prescribe (3 para) + Task commands
-├── 5_C/C.md                    # Conclusion (2 para) + Task commands
+├── 1_I/                        # Introduction (¶1-6)
+│   ├── 1_정하_gospel.md
+│   ├── 2_수진_puzzle.md
+│   ├── 3_찰리_sol.md
+│   ├── 4_수진_table.md
+│   ├── 5_영지_fig.md
+│   └── 6_찰리_map.md
 │
-└── figures/                    # Python figure scripts
-    ├── fig_I_stayer_vs_mover.py
-    ├── fig_BM_motional_strategy.py
-    └── C_fig1_prescription.py
+├── 2_CFR/                      # Commitment→Funding→Repositioning (¶7-15)
+│   ├── 7_정하수진_gospelpuzzle.md
+│   ├── 8_찰리_sol.md           # Self-selection endogeneity here
+│   ├── 9_찰리_map.md
+│   ├── 10_수진_theory_CB.md
+│   ├── 11_수진_theory_F.md
+│   ├── 12_수진_theory_R.md
+│   ├── 13_수진_theory_BR.md
+│   ├── 14_스캇_empirics_BR.md
+│   └── 15_스캇_empirics_case.md
+│
+├── 3_FRG/                      # Funding→Repositioning→Growth (¶16-24)
+│   ├── 16_정하수진_gospelpuzzle.md
+│   ├── 17_찰리_sol.md
+│   ├── 18_찰리_map.md
+│   ├── 19_수진_theory_CB.md
+│   ├── 20_수진_theory_R.md
+│   ├── 21_수진_theory_G.md
+│   ├── 22_수진_theory_RG.md
+│   ├── 23_스캇_empirics_RG.md
+│   └── 24_스캇_empirics_case.md
+│
+├── 4_P/                        # Prescription (¶25-27)
+│   ├── 25_경린_puz(P).md
+│   ├── 26_경린찰리_sol(P).md   # 4 Tools: CSCE
+│   └── 27_경린_map(P).md
+│
+├── 5_C/                        # Conclusion (¶28-29)
+│   ├── 28_현지찰리_summary.md
+│   └── 29_현지_contribution.md
+│
+├── dashboard/
+│   └── DASHBOARD_matrix.html   # 29-paragraph matrix view
+│
+├── figures/
+│   └── 영지_figure_tasks.md    # 4 figures spec
+│
+└── _archive/                   # Old v6 files (not reusable)
+    ├── agents/
+    ├── CORE_CONTRIBUTION.md
+    ├── GLOSSARY.md
+    ├── IMAGE_PROMPT_gemini.md
+    ├── THESIS_v6_INTEGRATED.md
+    ├── DASHBOARD_v6.html
+    └── *.py                    # Old figure scripts
 ```
 
 ---
 
-## Task Tool Workflow
+## 벗7 Agent Assignments
 
-각 module 파일에 Task tool 명령어가 내장되어 있음:
-
-```
-🟠c Task → GPS 구조 작성 (13 para)
-    ↓
-🟡g Task → TF 초안 생성 (11 para)
-    ↓
-🔴a Task → ME 작성 + 전체 검증 (5 para + verify)
-    ↓
-⚓d → 승인/수정
-```
-
-### 병렬 실행 예시
-
-```python
-# I, RG module 동시 작성
-Task(subagent_type="general-purpose", prompt="I module GPS...")
-Task(subagent_type="general-purpose", prompt="RG module GPS...")
-# → 자동 병렬 실행
-```
+| Agent | 덕목 | Role | Assigned Paragraphs |
+|:-----:|:----:|:-----|:--------------------|
+| **현지** | 統 | Coordinator | ¶28, ¶29 |
+| **정하** | 利 | Gospel | ¶1, ¶7, ¶16 |
+| **수진** | 見 | Puzzle + Table | ¶2, ¶4, ¶7, ¶10-13, ¶16, ¶19-22 |
+| **찰리** | 思 | Solution + Map | ¶3, ¶6, ¶8-9, ¶17-18, ¶26, ¶28 |
+| **영지** | 見 | Figure | ¶5 (4 figures: I, CFR, FRG, Rob) |
+| **스캇** | 見 | Example | ¶14-15, ¶23-24 |
+| **경린** | 義 | P Integration | ¶25, ¶26, ¶27 |
 
 ---
 
-## Module Overview (29 Paragraphs)
+## 4 Required Figures (영지)
 
-| Module | Para | Core Question | 🟠c | 🟡g | 🔴a |
-|:------:|:----:|:--------------|:---:|:---:|:---:|
-| **I** | 6 | Why dG/dF < 0? | 1-4 | 5-6 | verify |
-| **RG** | 9 | Why dG/dR > 0? | 7-10 | 11-14 | 15+verify |
-| **FR** | 9 | Why dR/dF < 0? | 16-20 | 21-23 | 24+verify |
-| **P** | 3 | When to commit? | 27 | — | 25-26+verify |
-| **C** | 2 | So what? | — | 28 | 29+verify |
+| Figure | X-axis | Y-axis | Slope | Message |
+|:-------|:-------|:-------|:------|:--------|
+| **Fig-I** | F | G | (−) | Funding Paradox |
+| **Fig-CFR** | F | R | (−) | Golden Cage Effect |
+| **Fig-FRG** | R | G | (+) | Mover Advantage |
+| **Fig-Rob** | 3-panel | — | (−)(−)(+) | Robustness |
 
 ---
 
-## Agent Roles (Task tool로 실행)
+## 4 Tools Framework (P Column)
 
-| Agent | Role | subagent_type | Paragraphs |
-|:-----:|:-----|:--------------|:----------:|
-| 🟠c | GPS 구조 설계 | general-purpose | 13 |
-| 🟡g | TF 초안 생성 | general-purpose | 11 |
-| 🔴a | ME + 검증 | general-purpose | 5 + all verify |
-| ⚓d | 방향 결정 | Human | 승인 |
+| Tool | Domain | Purpose |
+|:-----|:------:|:--------|
+| **Capitalize** | Market | 자금 확보 via strategic ambiguity |
+| **Segment** | Market | 시장 세분화 및 타겟 선정 |
+| **Collaborate** | Ops | 파트너십으로 capability 확장 |
+| **Evaluate** | Both | 진행 측정 및 균형 확인 |
+
+**Core Principle**: Grow market size AND operational capabilities **in parallel**.
 
 ---
 
@@ -95,39 +126,11 @@ Task(subagent_type="general-purpose", prompt="RG module GPS...")
 
 | Check | Standard |
 |:------|:---------|
-| Causal chain | Commitment → Believers → Funding → Echo Chamber |
-| Numbers | ρ=−0.196***, N=180,994, 1.82× |
-| One-sentence | 모든 module에서 동일 |
-| Can't not won't | Governance lock-in (not moral hazard) |
+| Core equation | dG/dF = (dG/dR)(dR/dF) = (+)(−) = (−) |
+| Numbers | ρ=−0.196***, N=408,784, 1.82× |
+| Self-selection | Endogeneity addressed in ¶8 |
+| CARE | Crisp, Accessible, Reader-loving, Earned |
 
 ---
 
-## Execution Order
-
-```
-Phase 1: 🟠c GPS (병렬)
-├── Task: I module GPS (para 1-4)
-├── Task: RG module GPS (para 7-10)
-├── Task: FR module GPS (para 16-20)
-└── Task: P module Balance (para 27)
-
-Phase 2: 🟡g TF (병렬)
-├── Task: I module TF (para 5-6)
-├── Task: RG module TF (para 11-14)
-├── Task: FR module TF (para 21-23)
-└── Task: C module Implications (para 28)
-
-Phase 3: 🔴a ME + Verify (병렬)
-├── Task: RG module ME (para 15)
-├── Task: FR module ME (para 24)
-├── Task: P module Prescription (para 25-26)
-├── Task: C module Summary (para 29)
-└── Task: 전체 검증
-
-Phase 4: ⚓d 승인
-└── Human review & approval
-```
-
----
-
-*필사즉생 — 속도와 정밀함이 우리를 살린다.*
+*필사즉생, 필생즉사 — Commit to ADAPTATION, direction first and speed second.*

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Cage | 벗7 Matrix (Day 7)</title>
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --card: #131820;
+            --border: #21262d;
+            --text: #e6edf3;
+            --muted: #7d8590;
+            /* Variable Colors - CFARRG */
+            --C: #d4a84b;      /* Commitment - golden/cage */
+            --F: #4dabf7;      /* Funding - blue */
+            --A: #2ed573;      /* Adaptability - teal green */
+            --R: #a855f7;      /* Reposition - purple */
+            --G: #69db7c;      /* Growth - green */
+            --B: #ffa502;      /* Breadth - orange */
+            /* Chapter Colors */
+            --I: #ff6b6b;      /* Introduction - red */
+            --trap: #e17055;   /* CFR Trap - coral */
+            --escape: #74b9ff; /* ARG Escape - light blue */
+            --P: #c9d1d9;      /* Prescription - gray */
+            /* Agent Colors */
+            --정하: #ff9f43;
+            --수진: #54a0ff;
+            --찰리: #5f27cd;
+            --영지: #00d2d3;
+            --스캇: #10ac84;
+            --경린: #ee5a24;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 16px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 { font-size: 1.3rem; color: var(--C); }
+        .subtitle { font-size: 0.7rem; color: var(--muted); }
+        .equation { font-family: 'Times New Roman', serif; font-size: 0.9rem; }
+        .v-C { color: var(--C); }
+        .v-F { color: var(--F); }
+        .v-A { color: var(--A); }
+        .v-R { color: var(--R); }
+        .v-G { color: var(--G); }
+        .v-B { color: var(--B); }
+
+        /* Matrix Grid */
+        .matrix {
+            display: grid;
+            grid-template-columns: 80px repeat(5, 1fr);
+            gap: 3px;
+            font-size: 0.65rem;
+        }
+
+        /* Column Headers */
+        .col-header {
+            background: var(--card);
+            padding: 8px 4px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 0.7rem;
+        }
+        .col-header.I { color: var(--I); }
+        .col-header.CFR { color: var(--cage); border: 2px solid var(--cage); }
+        .col-header.ARG { color: var(--A); }
+        .col-header.P { color: var(--P); }
+        .col-header.C { color: var(--G); }
+        .col-header small { display: block; font-size: 0.55rem; opacity: 0.7; margin-top: 2px; }
+        .col-header .count { font-size: 0.5rem; opacity: 0.6; }
+        .col-header .question { font-size: 0.5rem; color: var(--muted); margin-top: 2px; }
+
+        /* Row Headers */
+        .row-header {
+            background: var(--card);
+            padding: 6px;
+            font-weight: 600;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 0.65rem;
+        }
+        .row-header .row-agent {
+            font-size: 0.5rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        /* Cells */
+        .cell {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 5px 6px;
+            min-height: 50px;
+            transition: all 0.15s;
+            cursor: pointer;
+            position: relative;
+        }
+        .cell:hover { border-color: var(--muted); transform: translateY(-1px); }
+        .cell.empty { opacity: 0.3; cursor: default; }
+        .cell.empty:hover { transform: none; border-color: var(--border); }
+        .cell.expanded { border-color: var(--A); border-width: 2px; }
+
+        /* Expandable Content */
+        .cell-expand {
+            display: none;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid var(--border);
+            font-size: 0.5rem;
+            line-height: 1.4;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .cell.expanded .cell-expand { display: block; }
+        .expand-item {
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .expand-item:last-child { border-bottom: none; }
+        .expand-label { color: var(--muted); }
+        .expand-strand { background: rgba(46,213,115,0.1); padding: 2px 4px; border-radius: 3px; margin: 2px 0; }
+
+        .cell-agent {
+            font-size: 0.6rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .cell-para {
+            font-family: monospace;
+            font-size: 0.55rem;
+            color: var(--muted);
+        }
+        .cell-topic {
+            font-size: 0.5rem;
+            color: var(--text);
+            opacity: 0.85;
+            margin-top: 3px;
+            line-height: 1.3;
+        }
+
+        /* Agent color coding */
+        .agent-정하 .cell-agent { color: var(--정하); }
+        .agent-수진 .cell-agent { color: var(--수진); }
+        .agent-찰리 .cell-agent { color: var(--찰리); }
+        .agent-영지 .cell-agent { color: var(--영지); }
+        .agent-스캇 .cell-agent { color: var(--스캇); }
+        .agent-경린 .cell-agent { color: var(--경린); }
+        .agent-mixed .cell-agent { background: linear-gradient(90deg, var(--정하), var(--수진)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Status indicator */
+        .status {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .status.draft { background: #7d8590; }
+        .status.review { background: #ff9800; }
+        .status.done { background: #4caf50; }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+            padding: 10px;
+            background: var(--card);
+            border-radius: 6px;
+            font-size: 0.6rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .legend-section {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .legend-divider {
+            width: 1px;
+            height: 16px;
+            background: var(--border);
+            margin: 0 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+            color: var(--cage);
+            font-style: italic;
+            font-size: 0.75rem;
+        }
+        footer small {
+            display: block;
+            color: var(--muted);
+            font-style: normal;
+            margin-top: 4px;
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>Golden Cage | 벗7 Matrix</h1>
+        <span class="subtitle">Day 7 (2026-01-07) · v2→v3 Update</span>
+    </div>
+    <div class="equation">
+        d<span class="v-G">G</span>/d<span class="v-F">F</span> =
+        (d<span class="v-G">G</span>/d<span class="v-R">R</span>) ×
+        (d<span class="v-R">R</span>/d<span class="v-F">F</span>) = (+)(−) < 0
+    </div>
+</header>
+
+<div class="matrix">
+    <!-- Column Headers -->
+    <div></div>
+    <div class="col-header I">
+        <span class="v-I">I</span>
+        <small>¶1-6</small>
+        <span class="count">(6)</span>
+        <div class="question">WHY $ ≠ G?</div>
+    </div>
+    <div class="col-header CFR">
+        C→<span class="v-F">F</span>→<span class="v-R">R</span>
+        <small>¶7-15</small>
+        <span class="count">(9)</span>
+        <div class="question">HOW trapped?</div>
+    </div>
+    <div class="col-header ARG">
+        <span class="v-A">A</span>→<span class="v-R">R</span>→<span class="v-G">G</span>
+        <small>¶16-24</small>
+        <span class="count">(9)</span>
+        <div class="question">WHAT grows?</div>
+    </div>
+    <div class="col-header P">
+        P
+        <small>¶25-27</small>
+        <span class="count">(3)</span>
+        <div class="question">WHEN commit?</div>
+    </div>
+    <div class="col-header C">
+        C
+        <small>¶28-29</small>
+        <span class="count">(2)</span>
+        <div class="question">SO WHAT?</div>
+    </div>
+
+    <!-- G: Gospel -->
+    <div class="row-header">G Gospel<div class="row-agent">정하 (利)</div></div>
+    <div class="cell agent-정하"><span class="status draft"></span><div class="cell-agent">정하</div><div class="cell-para">¶1</div><div class="cell-topic">Cash=oxygen 통념</div></div>
+    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">정하+수진</div><div class="cell-para">¶7</div><div class="cell-topic">Capital-enables-learning</div></div>
+    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">정하+수진</div><div class="cell-para">¶16</div><div class="cell-topic">Commitment orthodoxy</div></div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린</div><div class="cell-para">¶25</div><div class="cell-topic">When to commit?</div></div>
+    <div class="cell empty">—</div>
+
+    <!-- P: Puzzle -->
+    <div class="row-header">P Puzzle<div class="row-agent">수진 (見)</div></div>
+    <div class="cell agent-수진"><span class="status draft"></span><div class="cell-agent">수진</div><div class="cell-para">¶2</div><div class="cell-topic">ρ(F,G)=−0.196***</div></div>
+    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">(¶7 shared)</div><div class="cell-para"></div><div class="cell-topic">dR/dF < 0 왜?</div></div>
+    <div class="cell agent-mixed"><span class="status draft"></span><div class="cell-agent">(¶16 shared)</div><div class="cell-para"></div><div class="cell-topic">Movers 1.82×</div></div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">(¶25 shared)</div><div class="cell-para"></div><div class="cell-topic">Doubly-binded</div></div>
+    <div class="cell empty">—</div>
+
+    <!-- S: Solution -->
+    <div class="row-header">S Solution<div class="row-agent">찰리 (思)</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶3</div><div class="cell-topic">(+)×(−)=(−) 분해</div></div>
+    <div class="cell agent-찰리"><span class="status review"></span><div class="cell-agent">찰리</div><div class="cell-para">¶8</div><div class="cell-topic">Golden cage mechanism<br/><em style="font-size:0.45rem;color:var(--cage)">+Self-selection</em><br/><em style="font-size:0.4rem;color:#ff9800">⚠️Q3: 직접 vs 매개효과</em></div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶17</div><div class="cell-topic">Partial commitment</div></div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린+찰리</div><div class="cell-para">¶26</div><div class="cell-topic">4 Tools: CSCE<br/><em style="font-size:0.4rem">Market∥Ops growth</em></div></div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린</div><div class="cell-para">¶28</div><div class="cell-topic">Commit to reposition</div></div>
+
+    <!-- T: Table/Theory -->
+    <div class="row-header">T Table<div class="row-agent">수진 (見)</div></div>
+    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수진</div><div class="cell-para">¶4</div><div class="cell-topic">Variables (C,F,A,B,R,G)</div>
+        <div class="cell-expand">
+            <div class="expand-item"><span class="v-C">C</span> Commitment: 운영적 약속</div>
+            <div class="expand-item"><span class="v-F">F</span> Funding: 초기 자금</div>
+            <div class="expand-item"><span class="v-A">A</span> Adaptability: 구조적 적응 능력</div>
+            <div class="expand-item"><span class="v-B">B</span> Breadth: 인지적 전략 범위</div>
+            <div class="expand-item"><span class="v-R">R</span> Reposition: |B_T - B_0|</div>
+            <div class="expand-item"><span class="v-G">G</span> Growth: 후속 생존</div>
+            <div class="expand-item" style="margin-top:4px;color:var(--A)"><b>A vs B:</b> A=structural, B=cognitive</div>
+            <div class="expand-item" style="color:#ff9800"><b>⚠️ Q1:</b> A vs B 구분 필요</div>
+        </div>
+    </div>
+    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수진</div><div class="cell-para">¶10-13</div><div class="cell-topic">Theory: C-B, F, R<br/><em style="font-size:0.45rem">μ(1−μ)<ε/B</em></div>
+        <div class="cell-expand">
+            <div class="expand-strand"><b>Strand 1:</b> Capital-as-Enabler (F)</div>
+            <div class="expand-strand"><b>Strand 2:</b> Learning Myopia (R)</div>
+            <div class="expand-strand"><b>Strand 3:</b> Bayesian Updating (C-B)</div>
+            <div class="expand-strand"><b>Strand 4:</b> Governance Rigidity (C-B)</div>
+            <div class="expand-item" style="margin-top:4px"><b>Learning Trap:</b> μ(1−μ) < ε/B</div>
+            <div class="expand-item" style="color:#ff9800"><b>⚠️ Q1,Q3:</b> A vs B, 매개 구조</div>
+        </div>
+    </div>
+    <div class="cell agent-수진"><span class="status review"></span><div class="cell-agent">수진</div><div class="cell-para">¶19-21</div><div class="cell-topic">Theory: A, R, G<br/><em style="font-size:0.45rem">Mover types</em></div>
+        <div class="cell-expand">
+            <div class="expand-strand"><b>Strand 5:</b> Commitment Value (A)</div>
+            <div class="expand-strand"><b>Strand 6:</b> Pivot Dynamics (R→G)</div>
+            <div class="expand-item" style="margin-top:4px"><b>Movers:</b> 18.0% vs Stayers: 9.9%</div>
+            <div class="expand-item" style="color:#ff9800"><b>⚠️ Q1:</b> Theorem 1에서 B 사용</div>
+        </div>
+    </div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">(¶26 shared)</div><div class="cell-para"></div><div class="cell-topic">Cap-Seg-Col-Eval</div>
+        <div class="cell-expand">
+            <div class="expand-strand"><b>Strand 7:</b> Parallel Scaling (Tools)</div>
+            <div class="expand-item"><b>C</b>apitalize: 전략적 모호성</div>
+            <div class="expand-item"><b>S</b>egment: 시장 세분화</div>
+            <div class="expand-item"><b>C</b>ollaborate: 파트너십</div>
+            <div class="expand-item"><b>E</b>valuate: 동기화 확인</div>
+        </div>
+    </div>
+    <div class="cell empty">—</div>
+
+    <!-- F: Figure -->
+    <div class="row-header">F Figure<div class="row-agent">영지 (見)</div></div>
+    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영지</div><div class="cell-para">Fig-I</div><div class="cell-topic">G by F scatter<br/><em style="font-size:0.45rem;color:var(--I)">ρ(F,G)=−0.196</em></div></div>
+    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영지</div><div class="cell-para">Fig-CFR</div><div class="cell-topic">R by F scatter<br/><em style="font-size:0.45rem;color:var(--cage)">dR/dF < 0</em></div></div>
+    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영지</div><div class="cell-para">Fig-FRG</div><div class="cell-topic">G by R scatter<br/><em style="font-size:0.45rem;color:var(--R)">dG/dR > 0</em><br/><em style="font-size:0.4rem;color:var(--muted)">+3-panel robust</em></div></div>
+    <div class="cell empty">—</div>
+    <div class="cell empty">—</div>
+
+    <!-- M: Map -->
+    <div class="row-header">M Map<div class="row-agent">찰리 (思)</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶6</div><div class="cell-topic">Thesis structure<br/>I→CFR→FRG→P→C</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶9</div><div class="cell-topic">CFR module map<br/>LTE framework</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶18</div><div class="cell-topic">FRG module map</div></div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">(¶26 shared)</div><div class="cell-para"></div><div class="cell-topic">Market∥Ops map</div></div>
+    <div class="cell agent-찰리"><span class="status draft"></span><div class="cell-agent">찰리</div><div class="cell-para">¶29</div><div class="cell-topic">Limitations & Future</div></div>
+
+    <!-- E: Example -->
+    <div class="row-header">E Example<div class="row-agent">스캇 (見)</div></div>
+    <div class="cell empty">—</div>
+    <div class="cell agent-스캇"><span class="status draft"></span><div class="cell-agent">스캇</div><div class="cell-para">¶14-15</div><div class="cell-topic">Segway, Theranos<br/>Nikola cases</div></div>
+    <div class="cell agent-스캇"><span class="status draft"></span><div class="cell-agent">스캇</div><div class="cell-para">¶22-24</div><div class="cell-topic">Tesla vs Better Place<br/>Robustness checks</div></div>
+    <div class="cell agent-경린"><span class="status draft"></span><div class="cell-agent">경린+스캇</div><div class="cell-para">¶27</div><div class="cell-topic">AV cases: Motional<br/>Aurora, Nuro, Waymo</div></div>
+    <div class="cell empty">—</div>
+</div>
+
+<!-- Legend -->
+<div class="legend">
+    <div class="legend-section">
+        <strong>Agents:</strong>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--정하)"></div>정하 利</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--수진)"></div>수진 見</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--찰리)"></div>찰리 思</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--영지)"></div>영지 見</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--스캇)"></div>스캇 見</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--경린)"></div>경린 義</div>
+    </div>
+    <div class="legend-divider"></div>
+    <div class="legend-section">
+        <strong>Status:</strong>
+        <div class="legend-item"><div class="legend-dot" style="background:#7d8590"></div>Draft (초안)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff9800"></div>Review (검토중)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4caf50"></div>Done (완료)</div>
+    </div>
+    <div class="legend-divider"></div>
+    <span style="color:var(--muted)">Total: 29¶ = 6+9+9+3+2</span>
+</div>
+
+<!-- Evaluation Metrics -->
+<div class="legend" style="margin-top:8px;flex-direction:column;align-items:flex-start;">
+    <div style="margin-bottom:6px;"><strong>📊 Evaluation Metrics (Day 7)</strong></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;width:100%;font-size:0.55rem;">
+        <div style="background:rgba(125,133,144,0.2);padding:6px;border-radius:4px;">
+            <b style="color:#7d8590">Draft</b>: 내용 존재 + Agent 배정<br/>
+            <span style="color:var(--muted)">Criterion: 텍스트 작성됨</span>
+        </div>
+        <div style="background:rgba(255,152,0,0.2);padding:6px;border-radius:4px;">
+            <b style="color:#ff9800">Review</b>: Advisor 질문 or 검토 필요<br/>
+            <span style="color:var(--muted)">Criterion: Q1-Q3 관련 ¶</span>
+        </div>
+        <div style="background:rgba(76,175,80,0.2);padding:6px;border-radius:4px;">
+            <b style="color:#4caf50">Done</b>: Advisor 승인 완료<br/>
+            <span style="color:var(--muted)">Criterion: 수정 불필요</span>
+        </div>
+    </div>
+    <div style="margin-top:6px;color:var(--muted);font-size:0.5rem;">
+        Current: Draft 23 | Review 6 (¶4, ¶8, ¶10-13, ¶20) | Done 0 — Awaiting Q1-Q3 advisor input
+    </div>
+</div>
+
+<footer>
+    "Commit to repositioning, not to position." — 必死卽生
+    <small>Columns: I(what) → CFR(how:trap) → ARG(how:grow) → P(so what) → C(limit)</small>
+</footer>
+
+<script>
+function toggleCell(cell) {
+    if (cell.classList.contains('empty')) return;
+    cell.classList.toggle('expanded');
+}
+document.querySelectorAll('.cell').forEach(cell => {
+    cell.addEventListener('click', () => toggleCell(cell));
+});
+</script>
+</body>
+</html>
