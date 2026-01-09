@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T16:26:31-05:00
+  - 2026-01-09T17:10:09-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -17,13 +17,11 @@ Draft for Committee Review — January 7, 2026
 
 ## Abstract
 
-More funding, less growth. Analyzing 180,994 ventures (PitchBook, 2021–2025), I find that early-stage funding correlates negatively with later-stage survival (ρ = −0.174, p < 0.001). This contradicts the resource logic: capital funds experiments, experiments drive learning, learning produces growth.
+Early-stage funding correlates negatively with venture growth. Analyzing 180,994 ventures (PitchBook, 2021–2025), I find ρ(Funding, Growth) = −0.196 (p < 0.001)—contradicting the resource logic that capital enables learning-driven growth. I decompose this paradox: funding suppresses repositioning (ρ = −0.087), yet repositioning drives growth (Movers outperform Stayers by 1.81×). The product is negative.
 
-The paradox resolves through decomposition. Repositioning drives growth: ventures that adapt—"Movers"—outperform those that hold position—"Stayers"—by 1.82×. Yet funding suppresses repositioning. The product is negative: dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−).
+The mechanism is governance, not incentives. Securing capital requires operational commitments that attract like-minded investors who filter skeptics from governance. This belief homogeneity eliminates the signal diversity learning requires. I term this the *golden cage*: founders cannot recognize when to pivot because their boards lack advocates for alternatives.
 
-Why does funding suppress adaptation? I identify a governance mechanism: the *golden cage*. Securing capital requires operational commitments. Commitments attract like-minded investors. Like-minded investors filter out skeptics. Without skeptics, disconfirming signals lack advocates. The venture loses capacity to learn when learning matters most.
-
-The implication: commit to *reposition*, not to position.
+The contribution is threefold: (1) I document a negative funding-growth correlation at scale; (2) I identify governance homogeneity—not moral hazard—as the binding constraint; (3) I distinguish vision-level commitment (preserves flexibility) from operational commitment (forecloses it). The prescription: commit to *reposition*, not to position.
 
 **Keywords:** entrepreneurial strategy, venture capital, strategic flexibility, pivoting, governance
 
@@ -45,6 +43,7 @@ The implication: commit to *reposition*, not to position.
 | Table 2 | Three Strategic Archetypes | ¶20 |
 | Table 3 | The Mover Advantage (Success Rates) | ¶21 |
 | Table 4 | Tesla vs. Better Place Comparison | ¶24 |
+| Table 5 | Autonomous Vehicle Companies — Commitment Strategies | ¶27 |
 
 ---
 
@@ -52,7 +51,7 @@ The implication: commit to *reposition*, not to position.
 
 ### [¶1] The Capital-as-Oxygen Premise
 
-Capital is oxygen for startups. This premise shapes $330 billion in annual U.S. venture investment. The logic seems unassailable: capital funds experiments, experiments generate learning, learning drives growth. More capital should mean more growth.
+Capital is oxygen for startups—or so the $330 billion U.S. venture capital industry assumes. The logic appears unassailable: capital funds experiments, experiments generate learning, learning drives growth. More capital should mean more growth. This paper challenges that assumption.
 
 ### [¶2] The Empirical Puzzle
 
@@ -74,6 +73,8 @@ The product of a positive and a negative is negative. Funding suppresses what en
 
 ### [¶4] Variables and Causal Structure
 
+**Table 1: Variables and Causal Structure**
+
 | Symbol | Variable | Type | Definition |
 |:------:|:---------|:-----|:-----------|
 | **C** | Commitment | Choice | Operational promises to stakeholders |
@@ -89,11 +90,7 @@ The product of a positive and a negative is negative. Funding suppresses what en
 
 ### [¶5] The Golden Cage Mechanism
 
-Why does funding suppress repositioning? The answer lies in governance, not motivation.
-
-I term this mechanism the *golden cage*. Securing capital requires operational commitments. Commitments attract investors who believe in that specific approach. Believers filter out skeptics. The resulting board exhibits belief homogeneity. Without skeptics, disconfirming signals lack advocates. The venture loses capacity to recognize when pivoting would be optimal.
-
-The constraint is structural. Founders *cannot* pivot—not that they *will not*. Governance imposes rigidity.
+Why does funding suppress repositioning? The answer lies in governance, not motivation. I term this mechanism the *golden cage*: securing capital requires operational commitments → commitments attract investors who believe in that specific approach → believers filter out skeptics → the resulting board exhibits belief homogeneity → without skeptics, disconfirming signals lack advocates → the venture loses capacity to recognize when pivoting would be optimal. The constraint is structural—founders *cannot* pivot, not that they *will not*—because governance imposes rigidity.
 
 ### [¶6] Structure
 
@@ -123,89 +120,45 @@ The puzzle sharpens: the resource *intended* to enable flexibility *suppresses* 
 
 <a id="fig:capital_paradox"></a>
 
-![**Figure 1:** The Capital Paradox. Higher early funding correlates with lower repositioning magnitude (N = 180,994, ρ = −0.196, p < 0.001).](figures/Fig-I_capital_paradox.png)
+![](figures/Fig-I_capital_paradox.png)
+
+**Figure 1:** The Capital Paradox. Higher early funding correlates with lower repositioning magnitude (N = 180,994, ρ = −0.196, p < 0.001).
 
 ### [¶9] The Golden Cage Mechanism
 
-*This section develops the mechanism through four theoretical layers. First, I establish that operational commitment attracts like-minded investors—a selection effect, not persuasion (¶9-10). Second, I show how this selection produces governance homogeneity that structurally blocks learning (¶10-11). Third, I integrate these dynamics using Van den Steen's (2010) rational sorting model and Eisenberg's (1984) strategic ambiguity framework (¶11). Finally, I formalize the learning trap condition and distinguish this structural mechanism from moral hazard explanations (¶12-13).*
+The golden cage forms through a four-step sequence: commitment attracts believers, believers filter skeptics, homogeneity eliminates signals, and signal loss prevents learning. Each step follows logically from the previous, creating a trap that is structural rather than motivational.
 
-Funding requires commitment. Commitment operates through governance. Governance constrains adaptation.
+Securing capital requires specific operational commitments—production architecture choices, go-to-market sequences, milestone definitions (Gompers & Lerner, 2001; Hellmann & Puri, 2002). Investors who fund a venture believe these specific commitments will succeed; vague operational plans do not secure investment. Note the distinction: *vague operations* don't secure funding, but *vague vision* can—if accompanied by strong cultural alignment. Tesla secured funding with broad vision ("sustainable transport") because investor-founder cultural alignment substituted for operational specificity. Once commitment attracts believers, those believers systematically exclude skeptics who see alternative paths. The resulting board composition reflects shared belief in the committed direction. This filtering is not conspiratorial but rational: why would an investor who believes in battery swapping fund a company if the board includes members advocating charging infrastructure?
 
-**Step 1: Commitment attracts believers.**
+### [¶10] Governance Homogeneity and Signal Loss
 
-Securing capital requires specific operational commitments—production architecture choices, go-to-market sequences, milestone definitions (Gompers & Lerner, 2001; Hellmann & Puri, 2002). Investors who fund a venture believe these specific commitments will succeed. Vague operational plans do not secure investment.
+Governance homogeneity eliminates the signal diversity that learning requires. Without skeptics on the board, disconfirming signals lack advocates (Cyert & March, 1963). Market feedback indicating problems with the committed approach has no champion in governance discussions. The venture loses capacity to recognize when pivoting would be optimal—learning cessation becomes structural, not motivational.
 
-Note the distinction: *vague operations* don't secure funding, but *vague vision* can—if accompanied by strong cultural alignment. Tesla secured funding with broad vision ("sustainable transport") because investor-founder cultural alignment substituted for operational specificity.
-
-**Step 2: Believers filter skeptics.**
-
-Investors who believe in a specific operational approach systematically exclude skeptics who see alternative paths. The resulting board composition reflects shared belief in the committed direction.
-
-This filtering is not conspiratorial. It follows from rational investor behavior. Why would an investor who believes in battery swapping fund a company if the board includes members advocating charging infrastructure?
-
-### [¶10] Governance Homogeneity
-
-**Step 3: Homogeneity eliminates signals.**
-
-Without skeptics on the board, disconfirming signals lack advocates (Cyert & March, 1963). Market feedback indicating problems with the committed approach has no champion in governance discussions.
-
-*Understanding the data-generating process (DGP)*: The observed correlation between funding and rigidity reflects **selection**, not treatment. What does this mean?
-
-- **Treatment effect** would mean: "Receiving funding *causes* founders to become rigid."
-- **Selection effect** means: "Rigid founders are more likely to *receive* funding."
-
-I claim selection. Investors do not *cause* founders to become rigid; rather, the funding process *selects* founder-investor pairs who share beliefs about the committed approach. Founders with strong conviction attract investors who share that conviction—a matching process that produces correlation without direct causation.
-
-*Why does this distinction matter for the thesis?* Because either way, the core finding holds: **high funding correlates with low flexibility, and low flexibility correlates with low growth.** Whether funding causes rigidity (treatment) or merely co-occurs with it (selection), the practical implication is identical—well-funded ventures are systematically less adaptable. The golden cage forms regardless of which causal arrow dominates.
-
-March (1991) identifies this dynamic in organizational learning. "Reason inhibits foolishness; learning and imitation inhibit experimentation." Belief convergence is efficient for exploitation but destructive for exploration.
-
-**Step 4: No signals means no learning.**
-
-The venture loses capacity to recognize when pivoting would be optimal. Learning cessation is structural—governance eliminates the signal diversity that learning requires.
+Understanding the data-generating process clarifies the mechanism. The observed correlation between funding and rigidity reflects *selection*, not treatment: investors do not *cause* founders to become rigid; rather, the funding process *selects* founder-investor pairs who share beliefs about the committed approach. Founders with strong conviction attract investors who share that conviction—a matching process that produces correlation without direct causation. Why does this distinction matter? Because either way, the core finding holds: high funding correlates with low flexibility, and low flexibility correlates with low growth. Whether funding causes rigidity (treatment) or merely co-occurs with it (selection), the practical implication is identical—well-funded ventures are systematically less adaptable. The golden cage forms regardless of which causal arrow dominates. March (1991) identifies this dynamic in organizational learning: "Reason inhibits foolishness; learning and imitation inhibit experimentation." Belief convergence is efficient for exploitation but destructive for exploration.
 
 ### [¶11] Theory Integration
 
-I term this dynamic the "golden cage." The mechanism is NOT agency-theoretic. Founders are not shirking; investors are not monitoring failures. Rather, both parties are *rational* yet collectively trapped.
+The golden cage mechanism is *not* agency-theoretic. Founders are not shirking; investors are not monitoring failures. Rather, both parties are rational yet collectively trapped. Van den Steen (2010) provides the theoretical foundation: entrepreneurs who pursue a venture are, by definition, more optimistic about it—a selection effect, not bias. Crucially, this is a sorting equilibrium: investors who choose to fund also share this optimism, because pessimistic investors self-select out. The result is belief homogeneity without any party behaving irrationally. Everyone is Bayesian; everyone is trapped.
 
-Van den Steen (2010) provides the theoretical foundation: entrepreneurs who pursue a venture are, by definition, more optimistic about it—a selection effect, not bias. Crucially, this is a **sorting equilibrium**: investors who choose to fund also share this optimism, because pessimistic investors self-select out. The result is belief homogeneity *without any party behaving irrationally*. Everyone is Bayesian; everyone is trapped.
-
-Eisenberg (1984) completes the mechanism through "strategic ambiguity." Early-stage ventures necessarily communicate with some vagueness—the future is genuinely uncertain. This ambiguity enables "unified diversity": stakeholders project their own interpretations onto vague visions. Initial ambiguity *attracts* diverse believers who each see their preferred interpretation. But this same mechanism traps the venture later: any pivot threatens *someone's* projected interpretation, and that someone now sits on the board.
-
-The cage is structural, not motivational. The distinction matters: if founders *will not* pivot (moral hazard), then monitor harder. If founders *cannot* pivot (structural constraint), then redesign governance.
+Eisenberg (1984) completes the mechanism through "strategic ambiguity." Early-stage ventures necessarily communicate with some vagueness—the future is genuinely uncertain. This ambiguity enables "unified diversity": stakeholders project their own interpretations onto vague visions. Initial ambiguity attracts diverse believers who each see their preferred interpretation. But this same mechanism traps the venture later: any pivot threatens *someone's* projected interpretation, and that someone now sits on the board. The cage is structural, not motivational—a distinction that matters for intervention. If founders *will not* pivot (moral hazard), then monitor harder. If founders *cannot* pivot (structural constraint), then redesign governance.
 
 <a id="fig:golden_cage_mechanism"></a>
 
-![**Figure 2:** The Golden Cage Mechanism. As early capital (F) increases, strategic repositioning (R) decreases, controlling for industry fixed effects.](figures/Fig-CFR1_golden_cage.png)
+![](figures/Fig-CFR1_golden_cage.png)
+
+**Figure 2:** The Golden Cage Mechanism. As early capital (F) increases, strategic repositioning (R) decreases, controlling for industry fixed effects.
 
 ### [¶12] Formal Condition for Learning Cessation
 
-Building on Levinthal & March's (1993) insight that successful organizations become "myopic" through competency traps, I formalize the conditions under which learning ceases, connecting Van den Steen's sorting equilibrium to a precise learning trap condition.
+Building on Levinthal & March's (1993) insight that successful organizations become "myopic" through competency traps, I formalize when learning ceases. **Theorem 1 (Learning Trap):** Learning ceases when μ(1 - μ) < ε / B, where μ = probability of success (belief), ε = expected belief shift from a signal, and B = strategic breadth. This condition connects directly to Van den Steen's sorting equilibrium, which produces high μ (shared optimism) and low B (narrow strategic focus). Van den Steen shows that matched founder-investor pairs converge toward μ → 1, while the operational commitments required for funding narrow B. Both forces push the inequality toward satisfaction—learning cessation becomes *endogenous* to the funding process itself.
 
-**Theorem 1 (Learning Trap).** Learning ceases when:
-
-**μ(1 - μ) < ε / B**
-
-where μ = probability of success (belief), ε = expected belief shift from a signal, and B = strategic breadth.
-
-**Connection to Van den Steen's Sorting**: The sorting equilibrium produces high μ (shared optimism) and low B (narrow strategic focus). Van den Steen shows that matched founder-investor pairs converge toward μ → 1, while the operational commitments required for funding narrow B. Both forces push the inequality toward satisfaction—learning cessation becomes *endogenous* to the funding process itself.
-
-**Interpretation.** When belief certainty is high (μ approaches 0 or 1), the left side approaches zero. When strategic breadth is narrow (small B), the right side increases. Both conditions—high certainty and narrow focus—characterize well-funded ventures with specific operational commitments.
-
-The venture cannot update beliefs even when updating would be optimal. The trap is cognitive-structural, not motivational (Levinthal & March, 1993; Nelson & Winter, 1982).
+The interpretation is straightforward: when belief certainty is high (μ approaches 0 or 1), the left side approaches zero; when strategic breadth is narrow (small B), the right side increases. Both conditions—high certainty and narrow focus—characterize well-funded ventures with specific operational commitments. The venture cannot update beliefs even when updating would be optimal. The trap is cognitive-structural, not motivational (Levinthal & March, 1993; Nelson & Winter, 1982).
 
 ### [¶13] Alternative Explanation: Moral Hazard
 
-One might argue that well-funded founders simply don't *want* to pivot—capital insulates them from consequences. This moral hazard explanation implies that monitoring should increase with funding.
+One might argue that well-funded founders simply don't *want* to pivot—capital insulates them from consequences. This moral hazard explanation implies that monitoring should increase with funding. My mechanism differs fundamentally: founders *cannot* pivot because governance constrains adaptation. This is not "won't"—it is "can't." Bolton et al. (2024) illuminate this distinction: investor protection mechanisms (board seats, milestone gates, information rights) designed to mitigate moral hazard paradoxically *create* structural rigidity. The very contracts intended to align incentives become the cage's bars. Contractual governance substitutes monitoring for flexibility, producing what I term *contractual rigidity*.
 
-My mechanism differs fundamentally: founders *cannot* pivot because governance constrains adaptation. This is not "won't"—it is "can't." Bolton et al. (2024) illuminate this distinction: investor protection mechanisms (board seats, milestone gates, information rights) designed to mitigate moral hazard paradoxically *create* structural rigidity. The very contracts intended to align incentives become the cage's bars. Contractual governance substitutes monitoring for flexibility, producing what I term *contractual rigidity*.
-
-The distinction matters for intervention:
-
-- If moral hazard ("won't"): monitor founders more closely.
-- If structural constraint ("can't"): redesign governance to preserve signal diversity.
-
-The evidence favors the structural explanation. Founders of failed well-funded ventures frequently express regret at not pivoting earlier—suggesting motivation was not the constraint. They wanted to adapt; governance prevented it.
+The distinction matters for intervention: if moral hazard ("won't"), monitor founders more closely; if structural constraint ("can't"), redesign governance to preserve signal diversity. The evidence favors the structural explanation. Founders of failed well-funded ventures frequently express regret at not pivoting earlier—suggesting motivation was not the constraint. They wanted to adapt; governance prevented it.
 
 ### [¶14] CFR Summary
 
@@ -217,13 +170,7 @@ Funding inhibits repositioning through the golden cage mechanism. Operational co
 
 ### [¶15] Case Evidence: Segway
 
-Segway raised over $100 million committed to a specific production architecture: a gyroscopic two-wheel platform as the solution for personal transportation. This was not a vague vision problem—the vision ("revolutionize personal transportation") was appropriately broad. The cage formed through operational lock-in:
-
-- **Production commitment**: $100 million invested in gyroscopic manufacturing, proprietary battery systems, dedicated assembly lines.
-- **Governance homogeneity**: Celebrity investors (Jeff Bezos, John Doerr) all believed in the two-wheel form factor.
-- **Signal blindness**: When market feedback indicated warehouse logistics and campus security as viable applications—requiring different form factors—no governance voice advocated pivoting.
-
-The pivot to warehouse logistics (Segway Robotics) occurred only after near-failure, years delayed by the golden cage.
+Segway raised over $100 million committed to a specific production architecture: a gyroscopic two-wheel platform as the solution for personal transportation. This was not a vague vision problem—the vision ("revolutionize personal transportation") was appropriately broad. The cage formed through operational lock-in. Production commitment locked $100 million into gyroscopic manufacturing, proprietary battery systems, and dedicated assembly lines. Governance homogeneity followed: celebrity investors including Jeff Bezos and John Doerr all believed in the two-wheel form factor. When market feedback indicated warehouse logistics and campus security as viable applications—requiring different form factors—no governance voice advocated pivoting. The pivot to warehouse logistics (Segway Robotics) occurred only after near-failure, years delayed by the golden cage.
 
 *I have established that early funding creates structural rigidity (dR/dF < 0). But is this rigidity a fatal flaw or a disciplined focus? Section III answers this by quantifying the survival premium of repositioning in uncertain markets.*
 
@@ -231,7 +178,7 @@ The pivot to warehouse logistics (Segway Robotics) occurred only after near-fail
 
 ## III. Adaptability Drives Growth (ARG)
 
-*If the Golden Cage (Section II) prevents repositioning, the cost of that constraint depends on the value of adaptability. Here, I demonstrate that "Movers" outperform "Stayers" by 1.82× (dG/dR > 0), suggesting that the rigidity identified in Section II is not a safety feature, but is associated with suppressed survival rates.*
+*Section II established that funding suppresses repositioning. But does this rigidity matter? Only if repositioning drives growth. This section demonstrates that "Movers" outperform "Stayers" by 1.81× (17.8% vs. 9.9% later-stage survival), suggesting that funding-induced rigidity is not disciplined focus—it is growth suppression.*
 
 ### [¶16] The Commitment Orthodoxy
 
@@ -245,11 +192,7 @@ McGrath (1999) articulates this logic through real options reasoning. Entreprene
 
 ### [¶18] Partial Commitment
 
-*This section establishes the value of repositioning through three steps. First, I resolve the commitment-flexibility tension through McGrath's (1999) "partial commitment" concept (¶18). Second, I develop and test the hypothesis that Movers outperform Stayers (¶19-21). Third, I demonstrate robustness and present case evidence contrasting Tesla's adaptive success with Better Place's rigid failure (¶22-24).*
-
-The resolution lies in *partial* commitment. McGrath (1999) distinguishes commitment to *direction* from commitment to *destination*. Direction commitment preserves flexibility; destination commitment forecloses it.
-
-Operationally, partial commitment means prioritizing platform capabilities deployable across multiple strategies over segment-specific capabilities tied to one approach. Commit to foundations that multiple futures can leverage.
+The resolution lies in *partial* commitment (McGrath, 1999). The key distinction is commitment to *direction* versus commitment to *destination*: direction commitment preserves flexibility; destination commitment forecloses it. Operationally, partial commitment means prioritizing platform capabilities deployable across multiple strategies over segment-specific capabilities tied to one approach. Commit to foundations that multiple futures can leverage.
 
 ### [¶19] Hypothesis: Repositioning and Survival
 
@@ -279,6 +222,8 @@ I test H2 by categorizing ventures according to observed strategic change.
 
 **Why Median as Threshold?** Among ventures that moved at all (N = 72,943), I use the median (R = 0.5) as the noise floor. This choice excludes minor fluctuations—potentially attributable to description updates rather than strategic repositioning—while capturing the upper half as *substantial strategic shifts*. The median is distribution-robust and avoids arbitrary cutoffs.
 
+**Table 2: Three Strategic Archetypes**
+
 | Archetype | Criteria | N | Interpretation |
 |:----------|:---------|--:|:---------------|
 | **Zoom-in** | ΔB < 0 and R > 0.5 | 15,902 | Focus narrowing with substantial movement |
@@ -293,6 +238,8 @@ I test H2 by categorizing ventures according to observed strategic change.
 
 **Results.** The performance differential is substantial:
 
+**Table 3: The Mover Advantage (Success Rates)**
+
 | Archetype | Criteria | N | G (Success Rate) |
 |:----------|:---------|--:|:----------------:|
 | Stayers | R ≤ 0.5 | 144,605 | 9.9% |
@@ -304,15 +251,13 @@ Movers outperform Stayers by a factor of **1.81×** (17.8% vs. 9.9%). Both zoom-
 
 <a id="fig:mover_stayer_trajectories"></a>
 
-![**Figure 3:** Mover vs. Stayer Trajectories (2021-2025). Movers (left/center) exhibit dynamic breadth adjustment, while Stayers (right) remain static. Movers show significantly higher survival rates.](figures/Fig-ARG_mover_vs_stayer.png)
+![](figures/Fig-ARG_mover_vs_stayer.png)
+
+**Figure 3:** Mover vs. Stayer Trajectories (2021-2025). Movers (left/center) exhibit dynamic breadth adjustment, while Stayers (right) remain static. Movers show significantly higher survival rates.
 
 ### [¶22] Robustness
 
-The positive repositioning-growth relationship survives multiple specifications:
-
-- **Industry fixed effects** account for sector-specific repositioning norms.
-- **Alternative operationalizations** using changes in product category, customer segment, and technology platform yield similar results.
-- **Continuous measurement** using repositioning magnitude (R) rather than binary Mover/Stayer classification yields consistent positive coefficients.
+The positive repositioning-growth relationship survives multiple specifications. Industry fixed effects account for sector-specific repositioning norms, ensuring the Mover advantage is not an artifact of certain industries favoring adaptation. Alternative operationalizations using changes in product category, customer segment, and technology platform yield similar results, suggesting the finding is robust to measurement choices. Continuous measurement using repositioning magnitude (R) rather than binary Mover/Stayer classification yields consistent positive coefficients, confirming that the relationship holds across the full distribution of strategic change.
 
 ### [¶23] ARG Summary
 
@@ -331,6 +276,8 @@ The golden cage is not a safety feature. It is associated with suppressed growth
 Better Place raised $850 million committed to battery swapping as THE solution for electric vehicle adoption. This operational commitment attracted investors who believed in battery swapping. When market feedback indicated charging infrastructure might dominate, no board members advocated pivoting. The company liquidated in 2013.
 
 Tesla committed to a *mission*—"accelerating sustainable transport"—not a product. This vision-level commitment preserved operational flexibility. Tesla pivoted across vehicle segments (Roadster to Model S to Model 3), business models (retail to direct sales), and adjacent markets (energy storage, solar). The company leads the electric vehicle market.
+
+**Table 4: Tesla vs. Better Place Comparison**
 
 | Dimension | Tesla | Better Place |
 |:----------|:------|:-------------|
@@ -359,29 +306,15 @@ This skill can be learned. Vision-level pitches ("accelerating sustainable trans
 
 ### [¶26] Two-Phase Framework
 
-Commit after signals clarify, not before (Van Mieghem, 1998). Industry clockspeed varies—timing calibrates to sector dynamics (Fine, 1998). A two-phase framework operationalizes this logic.
+Commit after signals clarify, not before (Van Mieghem, 1998). Industry clockspeed varies—timing calibrates to sector dynamics (Fine, 1998). A two-phase framework operationalizes this logic. In Phase 1 (Explore), when uncertainty is high, preserve optionality by segmenting across markets (maintaining presence until signals clarify winners), collaborating for capabilities through partnerships that allow substitution without restructuring, and following a 70/30 heuristic—70% platform capabilities, 30% segment-specific. In Phase 2 (Exploit), after signals clarify, commit to scaling by replicating to new geographies and adjacent markets, processifying ad-hoc practices into repeatable systems, and inverting the heuristic to 30/70—30% platform, 70% segment-specific. The transition triggers when one segment shows clearer signals than alternatives, the platform achieves minimum deployment across segments, and partnerships demonstrate repeatable value.
 
-**Phase 1: Explore.** When uncertainty is high, preserve optionality:
-
-- *Segment* across markets. Maintain presence until signals clarify winners. Autonomous vehicles: robotaxi (high uncertainty), trucking (medium), last-mile (lower).
-- *Collaborate* for capabilities. Partner for distribution, manufacturing, software. Design interfaces that allow substitution without restructuring.
-- **70/30 heuristic:** 70% platform capabilities, 30% segment-specific.
-
-**Phase 2: Exploit.** After signals clarify, commit to scaling:
-
-- *Replicate* to new geographies and adjacent markets.
-- *Processify* ad-hoc practices into repeatable systems.
-- **30/70 heuristic:** 30% platform, 70% segment-specific.
-
-**Transition trigger:** (1) One segment shows clearer signals than alternatives; (2) platform achieves minimum deployment across segments; (3) partnerships demonstrate repeatable value.
-
-**The Identity Barrier.** Why do founders fail at Phase 1? Zuzul and Tripsas (2020) identify the obstacle: **identity inertia**. "Revolutionary" founders define themselves through a fixed vision—battery swapping *is* the future. This identity blocks pivoting even when markets demand it. "Discoverer" founders define themselves through exploration—learning *is* the mission. This identity accommodates redirection.
-
-The practical implication: cultivate a discoverer identity. Treat exploration as core to your entrepreneurial self-concept, not deviation from a fixed vision. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
+Why do founders fail at Phase 1? Zuzul and Tripsas (2020) identify the obstacle: *identity inertia*. "Revolutionary" founders define themselves through a fixed vision—battery swapping *is* the future. This identity blocks pivoting even when markets demand it. "Discoverer" founders define themselves through exploration—learning *is* the mission. This identity accommodates redirection. The practical implication: cultivate a discoverer identity. Treat exploration as core to your entrepreneurial self-concept, not deviation from a fixed vision. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
 
 ### [¶27] Case Illustration: Autonomous Vehicles
 
 L4 autonomous vehicles illustrate the two-phase framework in action:
+
+**Table 5: Autonomous Vehicle Companies — Commitment Strategies**
 
 | Company | Commitment Level | Phase | Outcome |
 |:--------|:-----------------|:------|:--------|
@@ -402,7 +335,7 @@ The contrast: destination commitments attract believers but foreclose adaptation
 
 ### [¶28] Commit to Reposition
 
-More funding correlates with less growth. I decompose this paradox: funding correlates negatively with repositioning, and repositioning correlates positively with growth. The golden cage mechanism explains why: operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
+This paper documents a paradox and identifies its mechanism. More funding correlates with less growth (ρ = −0.196). The decomposition reveals why: funding suppresses repositioning (ρ = −0.087), yet repositioning drives growth (1.81× Mover advantage). The golden cage mechanism explains the first link—operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
 **For Founders.** Commit to *reposition*, not position. Design governance that preserves skeptical voices before funding eliminates them. Prioritize platform capabilities over segment-specific capabilities until market signals clarify. The venture that adapts survives; the venture locked in position fails.
 
