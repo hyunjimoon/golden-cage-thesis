@@ -1,7 +1,7 @@
 ---
 modified:
   - 2026-01-09T11:00:20-05:00
-  - 2026-01-09T17:24:27-05:00
+  - 2026-01-09T17:27:03-05:00
 ---
 ### 📋 [Action_Items.md] D-1 Parallel Operations Log
 
@@ -587,12 +587,41 @@ between funding and rigidity reflects **selection**, not treatment. What does th
 
 ---
 
-*Updated: 2026-01-10 08:30*
+### **Issue #022: Surgical Scalpel - Nuancing the Capital Paradox**
+
+> _From Sledgehammer to Scalpel: Capital is oxygen, but oxygen comes with strings._
+
+- **Assignee:** @Scott (Cli 2) + @김완 (Gemini)
+
+- **Priority:** 🎯 **P0 (Advisor Feedback)**
+
+- **Status:** ✅ **RESOLVED** (2026-01-10 08:45)
+
+- **Problem:** 자본이 성장을 저해한다는 주장이 너무 단정적(Sledgehammer). 1차 효과(자본=산소)를 인정하지 않으면 학계 반발 예상.
+
+- **Solution (Surgical Scalpel):**
+    - [x] **Abstract**: "Capital is oxygen—but oxygen comes with strings attached" + "second-order cost" 프레이밍
+    - [x] **¶1**: "This paper does not challenge the premise; it identifies a *second-order effect*"
+    - [x] **¶2**: "Capital comes with strings" + "what strings come attached, and when do they bind?"
+    - [x] **¶7**: "A second-order paradox emerges" (tragic → second-order)
+    - [x] **¶8**: "This does not indict capital itself" + Ghemawat(1991) 인용
+
+- **Key Reframing:**
+    - ❌ "Capital is toxic" → ✅ "Capital is oxygen, but strings attached"
+    - ❌ "Capital causes rigidity" → ✅ "Conditions attached to capital impose second-order costs"
+    - ❌ "Funding contradicts growth" → ✅ "First-order benefit vs second-order cost"
+
+- **Ghemawat Integration:** "Commitment creates value through credibility—but forecloses alternatives"
+
+---
+
+*Updated: 2026-01-10 08:45*
+*Issue #022: Surgical Scalpel RESOLVED.*
 *Issue #021: CE Framework Integration RESOLVED + COMPRESSED.*
 *Issue #020: Sentence Quality Enhancement RESOLVED.*
 *Issue #019: Paragraph Flow Integration RESOLVED.*
 *Issue #018: Advisor Summary Document CREATED.*
-*Operation Noun Budget: ¶25-27 CARE Score 31→38 ACHIEVED.*
 *Statistics Accuracy: Issue #017 RESOLVED.*
 *All sections now at 34/40+. D-1 War Room FULLY OPERATIONAL.*
-*Figures: 5, Tables: 4 (Table 5 삭제)*
+*Figures: 5, Tables: 4*
+*Tone: Sledgehammer → Surgical Scalpel*

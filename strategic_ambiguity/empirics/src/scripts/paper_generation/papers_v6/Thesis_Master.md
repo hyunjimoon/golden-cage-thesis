@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T17:24:06-05:00
+  - 2026-01-09T17:26:12-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -17,9 +17,9 @@ Draft for Committee Review — January 7, 2026
 
 ## Abstract
 
-Early-stage funding correlates negatively with venture growth. Analyzing 180,994 ventures (PitchBook, 2021–2025), I find ρ(Funding, Growth) = −0.196 (p < 0.001)—contradicting the resource logic that capital enables learning-driven growth. I decompose this paradox: funding suppresses repositioning (ρ = −0.087), yet repositioning drives growth (Movers outperform Stayers by 1.81×). The product is negative.
+Capital is oxygen for startups—but oxygen comes with strings attached. Analyzing 180,994 ventures (PitchBook, 2021–2025), I find ρ(Funding, Growth) = −0.196 (p < 0.001). This does not indict capital; ventures need capital to survive. Rather, I identify a *second-order cost*: funding suppresses repositioning (ρ = −0.087), yet repositioning drives growth (Movers outperform Stayers by 1.81×). The product is negative.
 
-The mechanism is governance, not incentives. Securing capital requires operational commitments that attract like-minded investors who filter skeptics from governance. This belief homogeneity eliminates the signal diversity learning requires. I term this the *golden cage*: founders cannot recognize when to pivot because their boards lack advocates for alternatives.
+The mechanism is governance, not incentives. Securing capital requires operational commitments that attract like-minded investors who filter skeptics from governance. This belief homogeneity eliminates the signal diversity learning requires. I term this the *golden cage*: founders *cannot* pivot—not that they *will not*—because their boards lack advocates for alternatives.
 
 The contribution is threefold: (1) I document a negative funding-growth correlation at scale; (2) I identify governance homogeneity—not moral hazard—as the binding constraint; (3) I distinguish vision-level commitment (preserves flexibility) from operational commitment (forecloses it). The prescription: commit to *reposition*, not to position.
 
@@ -52,15 +52,15 @@ The contribution is threefold: (1) I document a negative funding-growth correlat
 
 ### [¶1] The Capital-as-Oxygen Premise
 
-Capital is oxygen for startups—or so the $330 billion U.S. venture capital industry assumes. The logic appears unassailable: capital funds experiments, experiments generate learning, learning drives growth. More capital should mean more growth. This paper challenges that assumption.
+Capital is oxygen for startups. This premise is correct—without capital, ventures cannot fund the experiments that generate learning and drive growth. The $330 billion U.S. venture capital industry operates on this logic, and the logic is sound as far as it goes. This paper does not challenge the premise; it identifies a *second-order effect* that the premise obscures.
 
 ### [¶2] The Empirical Puzzle
 
-The data say otherwise. Analyzing 180,994 ventures (PitchBook, 2021–2025), I find:
+Capital comes with strings. Analyzing 180,994 ventures (PitchBook, 2021–2025), I find a troubling correlation:
 
 **ρ(Funding, Growth) = −0.196 (p < 0.001)**
 
-Early-stage funding correlates *negatively* with later-stage survival. Well-funded ventures convert resources to growth less efficiently—not more.
+Early-stage funding correlates *negatively* with later-stage survival. This does not mean capital is toxic—ventures need capital to survive. Rather, it suggests that the *conditions attached to capital* impose costs that can outweigh direct benefits. The puzzle is not "why is capital bad?" but "what strings come attached, and when do they bind?"
 
 ### [¶3] The Decomposition
 
@@ -107,7 +107,7 @@ Capital is *intended* to enable learning. This premise underlies $330 billion in
 
 In this view, entrepreneurship is a rigorous scientific experiment (Camuffo et al., 2020), and venture capital functions as the necessary endowment to execute these tests (Kerr, Nanda, & Rhodes-Kropf, 2014). Capital pays for hypothesis formation and market validation. Entrepreneurs trained in scientific method—forming hypotheses, designing tests, updating beliefs—pivot more readily and perform better.
 
-**A tragic paradox emerges.** This very resource, intended to facilitate discovery, *constrains* learning by imposing structural rigidities. The capital meant to pay for experiments becomes the barrier to updating their results. How? The next section reveals the mechanism.
+**A second-order paradox emerges.** Capital itself enables discovery—this remains true. But the *conditions attached* to capital constrain learning by imposing structural rigidities. The funding that pays for experiments comes bundled with governance structures that can prevent founders from updating based on experimental results. The paradox is not capital versus learning; it is first-order benefit versus second-order cost. How does this tension resolve? The next section reveals the mechanism.
 
 ### [¶8] The Empirical Contradiction
 
@@ -115,9 +115,9 @@ The data confirm the paradox. Analyzing 180,994 ventures from PitchBook (2021–
 
 **ρ = −0.196 (p < 0.001)**
 
-This contradicts resource-based theory (Barney, 1991; Penrose, 1959). More capital should buy more options (Trigeorgis, 1996). Instead, well-funded ventures exhibit systematically lower conversion rates from resources to growth. The correlation persists across industry sectors.
+This does not indict capital itself. Resource-based theory is correct: capital buys options (Barney, 1991; Trigeorgis, 1996). The puzzle is why well-funded ventures *fail to exercise* these options. Ghemawat (1991) observed that commitment creates value through credibility—but acknowledged the flip side: commitment forecloses alternatives. The negative correlation reflects not capital's toxicity but its *second-order cost*: the governance structures and operational commitments attached to funding constrain the flexibility capital was meant to enable.
 
-The puzzle sharpens: the resource *intended* to enable flexibility *suppresses* it. Capital pays for experiments—yet capital-rich ventures experiment less. The next sections reveal the mechanism.
+The puzzle sharpens: capital buys options, but the strings attached prevent founders from exercising them. The next sections reveal the mechanism.
 
 <a id="fig:capital_paradox"></a>
 
