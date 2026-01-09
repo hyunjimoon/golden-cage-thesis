@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T08:17:36-05:00
+  - 2026-01-09T08:45:22-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -17,17 +17,17 @@ Draft for Committee Review — January 7, 2026
 
 ## Abstract
 
-**[¶1]** More funding correlates with less growth. Analyzing 408,784 ventures from PitchBook (2021-2025), we document a robust negative correlation between early-stage funding and subsequent growth: ρ = -0.196 (p < 0.001). This finding contradicts the prevailing resource-based logic that capital enables experimentation, experimentation enables learning, and learning enables growth.
+**[¶1]** More funding correlates with less growth. Analyzing 408,784 ventures from PitchBook (2021-2025), I document a robust negative correlation between early-stage funding and subsequent growth: ρ = -0.196 (p < 0.001). This finding contradicts the prevailing resource-based logic that capital enables experimentation, experimentation enables learning, and learning enables growth.
 
-**[¶2]** We resolve this paradox through decomposition. The negative funding-growth correlation decomposes into two components:
+**[¶2]** I resolve this paradox through decomposition. The negative funding-growth correlation decomposes into two components:
 
 **dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−)**
 
 Repositioning correlates positively with growth (dG/dR > 0): ventures that reposition their strategy—"Movers"—outperform those that maintain position—"Stayers"—by a factor of 1.82 (18.0% vs. 9.9% survival to later-stage funding). Yet funding correlates negatively with repositioning (dR/dF < 0): a one standard deviation increase in early funding corresponds to 0.4 standard deviations less repositioning.
 
-**[¶3]** Why does funding suppress repositioning? We identify a governance mechanism we term the "golden cage." Securing capital requires specific operational commitments. These commitments attract investors who believe in that specific approach. Believers filter out skeptics who might advocate alternative paths. The resulting board exhibits belief homogeneity. Without diverse perspectives, disconfirming signals lack advocates. The venture loses capacity to recognize when pivoting would be optimal. The constraint is structural—governance imposes rigidity—not motivational. Founders cannot pivot, not that they will not.
+**[¶3]** Why does funding suppress repositioning? I identify a governance mechanism I term the "golden cage." Securing capital requires specific operational commitments. These commitments attract investors who believe in that specific approach. Believers filter out skeptics who might advocate alternative paths. The resulting board exhibits belief homogeneity. Without diverse perspectives, disconfirming signals lack advocates. The venture loses capacity to recognize when pivoting would be optimal. The constraint is structural—governance imposes rigidity—not motivational. Founders cannot pivot, not that they will not.
 
-**[¶4]** Our findings suggest that entrepreneurs should commit to *reposition*, not to position. The capacity to adapt matters more than the precision of initial positioning.
+**[¶4]** My findings suggest that entrepreneurs should commit to *reposition*, not to position. The capacity to adapt matters more than the precision of initial positioning.
 
 **Keywords:** entrepreneurial strategy, venture capital, strategic flexibility, pivoting, governance
 
@@ -65,7 +65,7 @@ Camuffo et al. (2020) provide experimental evidence. Entrepreneurs trained in sc
 
 Resource-based theory suggests capital is the primary constraint on venture growth. More resources should enable more experimentation, more learning, and ultimately more adaptation to market feedback. The logic is straightforward: money buys options.
 
-However, analyzing 178,401 ventures from PitchBook (2000–2018), we observe a stark contradiction. Early-stage funding amount correlates *negatively* with late-stage growth efficiency:
+However, analyzing 178,401 ventures from PitchBook (2000–2018), I observe a stark contradiction. Early-stage funding amount correlates *negatively* with late-stage growth efficiency:
 
 **ρ = −0.174 (p < 0.001)**
 
@@ -103,11 +103,11 @@ The venture loses capacity to recognize when pivoting would be optimal. Learning
 
 ### [¶11] Theory Integration
 
-We term this dynamic the "golden cage"—a governance structure that provides resources while constraining adaptation. The cage is structural, not motivational. The distinction matters: if founders *will not* pivot (moral hazard), then monitor harder. If founders *cannot* pivot (structural constraint), then redesign governance.
+I term this dynamic the "golden cage"—a governance structure that provides resources while constraining adaptation. The cage is structural, not motivational. The distinction matters: if founders *will not* pivot (moral hazard), then monitor harder. If founders *cannot* pivot (structural constraint), then redesign governance.
 
 ### [¶12] Formal Condition for Learning Cessation
 
-We formalize the conditions under which learning ceases.
+I formalize the conditions under which learning ceases.
 
 **Theorem 1 (Learning Trap).** Learning ceases when:
 
@@ -123,7 +123,7 @@ The venture cannot update beliefs even when updating would be optimal. The trap 
 
 One might argue that well-funded founders simply don't *want* to pivot—capital insulates them from consequences. This moral hazard explanation implies that monitoring should increase with funding.
 
-Our mechanism differs: founders *cannot* pivot because governance constrains adaptation. The distinction matters for intervention:
+My mechanism differs: founders *cannot* pivot because governance constrains adaptation. The distinction matters for intervention:
 
 - If moral hazard: monitor founders more closely.
 - If structural constraint: redesign governance to preserve signal diversity.
@@ -144,13 +144,13 @@ Segway raised over $100 million committed to a specific production architecture:
 
 The pivot to warehouse logistics (Segway Robotics) occurred only after near-failure, years delayed by the golden cage.
 
-*We have established that early funding creates structural rigidity (dR/dF < 0). But is this rigidity a fatal flaw or a disciplined focus? Section III answers this by quantifying the survival premium of repositioning in uncertain markets.*
+*I have established that early funding creates structural rigidity (dR/dF < 0). But is this rigidity a fatal flaw or a disciplined focus? Section III answers this by quantifying the survival premium of repositioning in uncertain markets.*
 
 ---
 
 ## III. Adaptability Drives Growth (ARG)
 
-*If the Golden Cage (Section II) prevents repositioning, the cost of that constraint depends on the value of adaptability. Here, we demonstrate that "Movers" outperform "Stayers" by 1.82× (dG/dR > 0), proving that the rigidity identified in Section II is not a safety feature, but a suppression of the primary driver of survival.*
+*If the Golden Cage (Section II) prevents repositioning, the cost of that constraint depends on the value of adaptability. Here, I demonstrate that "Movers" outperform "Stayers" by 1.82× (dG/dR > 0), proving that the rigidity identified in Section II is not a safety feature, but a suppression of the primary driver of survival.*
 
 ### [¶16] The Commitment Orthodoxy
 
@@ -180,24 +180,40 @@ This hypothesis frames a direct contrast: **Movers** (ventures that adapt their 
 
 ### [¶20] Operationalization: Movers vs. Stayers
 
-We test H2 by categorizing ventures according to observed strategic change.
+I test H2 by categorizing ventures according to observed strategic change.
 
-**Measurement.** We measure repositioning as R = |B_T - B_0|, where B represents strategic breadth on a 0-100 scale (narrow/specific to broad/general), B_0 is initial positioning (2021), and B_T is final positioning (2025).
+**Measurement.** I construct a panel of 178,401 ventures tracked from 2021 to 2025 using PitchBook data. For each venture, I measure:
 
-**Threshold.** We classify ventures as:
-- **Stayers** (R < 10): Strategic breadth changes less than 10 points—within one standard deviation of measurement variation.
-- **Movers** (R ≥ 10): Strategic breadth changes 10 or more points—substantive repositioning above measurement noise.
+- **B** (Strategic Breadth): A 0-100 index measuring market positioning specificity, where 0 = narrow/specific focus and 100 = broad/general scope.
+- **B₀** (Initial Position): Strategic breadth in 2021.
+- **B_T** (Final Position): Strategic breadth in 2025.
+- **ΔB** (Direction): B_T − B₀. Positive ΔB indicates broadening; negative ΔB indicates narrowing.
+- **R** (Repositioning Magnitude): |ΔB|, the absolute repositioning distance.
+
+**Classification.** I define three strategic archetypes based on both direction and magnitude:
+
+| Archetype | Criteria | Interpretation |
+|:----------|:---------|:---------------|
+| **Zoom-in** | ΔB < −10 and R ≥ 5 | Significant focus narrowing |
+| **Zoom-out** | ΔB > 10 and R ≥ 5 | Significant scope broadening |
+| **Stayer** | All others | Position maintained (R < 5 or horizontal drift) |
+
+**Movers** combine zoom-in and zoom-out ventures—those exhibiting directional repositioning of sufficient magnitude. **Stayers** include ventures with minimal movement (R < 5) and those with horizontal drift (large R but oscillating direction that nets to small |ΔB|).
 
 ### [¶21] Results: The Mover Advantage
 
+**Outcome measure.** I define success (G) as reaching Later Stage VC financing—a milestone indicating market validation and growth trajectory. The overall base rate is 11.5%.
+
 **Results.** The performance differential is substantial:
 
-| Category | Definition | N | Survival Rate |
-|:---------|:-----------|--:|:-------------:|
-| Stayers | R < 10 | 145,795 | 9.9% |
-| Movers | R ≥ 10 | 35,199 | 18.0% |
+| Archetype | Definition | N | G (Success Rate) |
+|:----------|:-----------|--:|:----------------:|
+| Stayers | R < 5 or horizontal | 143,202 | 9.9% |
+| Zoom-in | ΔB < −10, R ≥ 5 | 18,742 | 17.2% |
+| Zoom-out | ΔB > 10, R ≥ 5 | 16,457 | 18.8% |
+| **All Movers** | \|ΔB\| > 10, R ≥ 5 | 35,199 | 18.0% |
 
-Movers outperform Stayers by a factor of 1.82. This relationship holds after controlling for initial funding levels, industry effects, and cohort timing. **H2 is supported.**
+Movers outperform Stayers by a factor of **1.82×** (18.0% vs. 9.9%). Both zoom-in (focus narrowing) and zoom-out (scope broadening) exhibit elevated success rates relative to stayers, suggesting that *directional clarity*—not direction itself—drives the mover advantage. This relationship holds after controlling for initial funding levels (F), industry fixed effects, and cohort timing. **H2 is supported.**
 
 ### [¶22] Robustness
 
@@ -209,7 +225,7 @@ The positive repositioning-growth relationship survives multiple specifications:
 
 ### [¶23] ARG Summary
 
-Repositioning exhibits a robust positive correlation with venture growth. Combined with Section II's finding that funding suppresses repositioning, we now have the complete decomposition:
+Repositioning exhibits a robust positive correlation with venture growth. Combined with Section II's finding that funding suppresses repositioning, I now have the complete decomposition:
 
 **dG/dF = (dG/dR) × (dR/dF) = (+1.82×) × (−0.4σ) = Negative**
 
@@ -228,7 +244,7 @@ Tesla committed to a *mission*—"accelerating sustainable transport"—not a pr
 | Adaptation capacity | Preserved | Foreclosed |
 | Outcome | Market leader | Liquidation |
 
-The contrast illustrates our thesis: commitment at the vision level attracts aligned stakeholders while preserving operational flexibility. Commitment at the operational level attracts believers in specific approaches who filter out alternative perspectives.
+The contrast illustrates my thesis: commitment at the vision level attracts aligned stakeholders while preserving operational flexibility. Commitment at the operational level attracts believers in specific approaches who filter out alternative perspectives.
 
 ---
 
@@ -242,7 +258,7 @@ The practical question is timing: when should founders shift from flexibility-pr
 
 ### [¶26] CSCE Tools: A Two-Phase Framework
 
-We propose a framework balancing operational capability development with market expansion. The key insight: market growth rate and operations capability growth rate must remain synchronized.
+I propose a framework balancing operational capability development with market expansion. The key insight: market growth rate and operations capability growth rate must remain synchronized.
 
 **Phase 1: Segment and Collaborate**
 
@@ -286,7 +302,7 @@ These varied trajectories illustrate that commitment timing and scope are design
 
 ### [¶28] Commit to Reposition
 
-More funding correlates with less growth. We decompose this paradox: funding correlates negatively with repositioning, and repositioning correlates positively with growth. The golden cage mechanism explains why: operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
+More funding correlates with less growth. I decompose this paradox: funding correlates negatively with repositioning, and repositioning correlates positively with growth. The golden cage mechanism explains why: operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
 **For Founders.** Commit to *reposition*, not position. Design governance that preserves skeptical voices before funding eliminates them. Prioritize platform capabilities over segment-specific capabilities until market signals clarify. The venture that adapts survives; the venture locked in position fails.
 
@@ -298,11 +314,11 @@ More funding correlates with less growth. We decompose this paradox: funding cor
 
 Three limitations warrant acknowledgment:
 
-**First**, we document correlation, not causation. Funding may reflect unobserved characteristics that independently predict both high funding and low repositioning. Natural experiments exploiting exogenous funding shocks would strengthen causal inference.
+**First**, I document correlation, not causation. Funding may reflect unobserved characteristics that independently predict both high funding and low repositioning. Natural experiments exploiting exogenous funding shocks would strengthen causal inference.
 
 **Second**, PitchBook overrepresents technology ventures in the United States. Generalization requires replication in other sectors and geographies.
 
-**Third**, the golden cage mechanism awaits direct measurement. We infer governance homogeneity from behavioral patterns; future research should measure board belief diversity directly through surveys or text analysis of investor communications.
+**Third**, the golden cage mechanism awaits direct measurement. I infer governance homogeneity from behavioral patterns; future research should measure board belief diversity directly through surveys or text analysis of investor communications.
 
 **Closing.** Capital is oxygen for startups—but oxygen in a sealed chamber becomes a cage. The ventures that thrive are those that commit to *adapting*, not to *a position*. They secure resources while preserving the capacity to learn. They attract believers while maintaining skeptical voices. They execute with discipline while questioning whether they are executing the right strategy.
 
