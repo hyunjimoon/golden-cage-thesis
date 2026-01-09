@@ -197,9 +197,10 @@ class StrategicVaguenessScorerV3:
         H_norm = self._compute_market_entropy(text or "")
         _, abs_score = self._compute_tech_abstractness(text or "")
 
-        # Legacy composite (scaled to 0-100):
-        #   Higher when OPTIONALITY is low AND ABSTRACTNESS is high.
-        composite = 100.0 * (0.5 * (1.0 - H_norm) + 0.5 * (abs_score / 100.0))
+        # Composite Strategic Breadth (scaled to 0-100):
+        #   Higher when OPTIONALITY is HIGH (broad market) AND ABSTRACTNESS is high.
+        #   B = 0.5 * H_norm + 0.5 * (abstractness/100)
+        composite = 100.0 * (0.5 * H_norm + 0.5 * (abs_score / 100.0))
 
         return {
             "V_market_entropy": float(H_norm),        # [0,1]

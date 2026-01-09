@@ -1,17 +1,18 @@
-# Canonical Registry (CR.GLOSSARY) - v6.1 (Option B Aligned)
+# Canonical Registry (CR.GLOSSARY) - v6.2 (Option A: v2 Pipeline)
 
 > **Purpose:** Translation Dictionary between Python code and Thesis text
 > **Last Updated:** 2026-01-09
+> **Pipeline:** vagueness_v2.py (HybridVaguenessScorerV2) — **DO NOT CHANGE**
 
 ---
 
 ## 1. Variable Mapping (Code ↔ Text)
 
-| Thesis Variable | Definition | Code Variable (Legacy) | Measurement Method (Updated) |
+| Thesis Variable | Definition | Code Variable (Legacy) | Measurement Method (v2) |
 |:---:|:---|:---|:---|
 | **F** | **Funding** (Early-stage Capital) | `log_raised_usd` / `funding_total` / `E` | Log(Total Raised USD up to Series A) |
-| **R** | **Repositioning** (Strategic Shift) | `pivot_magnitude` / `sim_score` / `M` | $1 - \text{CosineSim}(\text{SBERT}(D_t), \text{SBERT}(D_0))$ |
-| **B** | **Strategic Breadth** | `breadth_score` / `specificity` / `V` | $100 \times (1 - \text{AvgCosineSim}(\text{Keywords}, \text{Lexicon}))$ |
+| **R** | **Repositioning** (Strategic Shift) | `pivot_magnitude` / `M` | $\|B_T - B_0\|$ (Absolute change in Strategic Breadth) |
+| **B** | **Strategic Breadth** | `V` / `V_composite` | Dictionary-based Vague Terminology Density (Abstract terms + Concreteness deficit) |
 | **G** | **Growth** (Performance) | `late_stage_success` / `L` / `GrowthRate` | Survival to Series C+ OR IPO/M&A |
 | **C** | **Commitment** | `commitment_level` | (Qualitative/Dummy) Operational Lock-in |
 | **A** | **Adaptability** | N/A (Latent) | Latent capacity suppressed by Governance |
