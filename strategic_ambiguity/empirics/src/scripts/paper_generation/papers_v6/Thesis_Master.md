@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T17:10:09-05:00
+  - 2026-01-09T17:18:02-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -34,6 +34,8 @@ The contribution is threefold: (1) I document a negative funding-growth correlat
 | [Figure 1](#fig:capital_paradox) | The Capital Paradox | ¶8 |
 | [Figure 2](#fig:golden_cage_mechanism) | The Golden Cage Mechanism | ¶11 |
 | [Figure 3](#fig:mover_stayer_trajectories) | Mover vs. Stayer Trajectories | ¶21 |
+| [Figure 4](#fig:mobility_survival) | Industry Risk Profiles | ¶25 |
+| [Figure 5](#fig:capitalize_strategic_ambig) | The Strategic Ambiguity Sweet Spot | ¶26 |
 
 ## List of Tables
 
@@ -43,7 +45,7 @@ The contribution is threefold: (1) I document a negative funding-growth correlat
 | Table 2 | Three Strategic Archetypes | ¶20 |
 | Table 3 | The Mover Advantage (Success Rates) | ¶21 |
 | Table 4 | Tesla vs. Better Place Comparison | ¶24 |
-| Table 5 | Autonomous Vehicle Companies — Commitment Strategies | ¶27 |
+| Table 5 | Growth Typology (Scale-it Framework) | ¶27 |
 
 ---
 
@@ -290,44 +292,55 @@ The contrast illustrates my thesis: commitment at the vision level attracts alig
 
 ---
 
-## IV. Prescription: When to Commit (P)
+## IV. Prescription: Capitalize and Evaluate (P)
 
-### [¶25] When to Commit
+### [¶25] The Double Bind
 
-The golden cage forms through premature commitment. But when is commitment *not* premature?
+The golden cage is most lethal where it is most common: high-commitment industries. Mobility ventures face the harshest environment—a 5.3% survival rate to Series C+, the lowest among all sectors I examine (Figure 4). This is not coincidence. Mobility demands both massive fixed-asset investment (commitment) and rapid adaptation to shifting regulatory, technological, and consumer landscapes (flexibility). The double bind: commit to build infrastructure, yet remain flexible to pivot when signals change.
 
-Adner and Levinthal (2004) establish the boundary: real options logic applies when uncertainty resolves through learning. Van Mieghem (1998) formalizes the rule: commit when signals and capability converge. Commit too early—option value dies. Commit too late—scale economies vanish.
+<a id="fig:mobility_survival"></a>
 
-The practical translation: **Commit to Reposition, Not Position.** Lock in the *capacity* to adapt, not a specific direction. This preserves exploration while building infrastructure for exploitation (March, 1991).
+![](figures/Fig-C_mobility_survival.png)
 
-How do founders commit to repositioning while attracting capital? Petty et al. (2023) identify the critical skill: **rhetorical human capital**—signaling competence through vision-level language rather than operational specificity. Founders who master strategic ambiguity attract aligned investors without foreclosing adaptation.
+**Figure 4:** Industry Risk Profiles. Mobility ventures exhibit the lowest survival rate (5.3%) among all sectors, reflecting the double bind of high commitment requirements and high uncertainty. Quantum (12.3%) and MedTech (9.0%) fare better due to either longer development cycles or clearer regulatory pathways.
 
-This skill can be learned. Vision-level pitches ("accelerating sustainable transport") attract believers in direction. Operational pitches ("battery swapping infrastructure") attract believers in destination. Direction preserves flexibility; destination forecloses it. The founder's choice of commitment level—not commitment itself—determines whether the golden cage forms.
+How do founders escape this bind? Two tools emerge from my analysis: **Capitalize** (strategic ambiguity) and **Evaluate** (the Scale-it Framework). Together, these constitute the CE Framework for navigating the golden cage.
 
-### [¶26] Two-Phase Framework
+### [¶26] Tool 1: Capitalize (Strategic Ambiguity)
 
-Commit after signals clarify, not before (Van Mieghem, 1998). Industry clockspeed varies—timing calibrates to sector dynamics (Fine, 1998). A two-phase framework operationalizes this logic. In Phase 1 (Explore), when uncertainty is high, preserve optionality by segmenting across markets (maintaining presence until signals clarify winners), collaborating for capabilities through partnerships that allow substitution without restructuring, and following a 70/30 heuristic—70% platform capabilities, 30% segment-specific. In Phase 2 (Exploit), after signals clarify, commit to scaling by replicating to new geographies and adjacent markets, processifying ad-hoc practices into repeatable systems, and inverting the heuristic to 30/70—30% platform, 70% segment-specific. The transition triggers when one segment shows clearer signals than alternatives, the platform achieves minimum deployment across segments, and partnerships demonstrate repeatable value.
+Strategic ambiguity is not vagueness—it is precision about direction combined with flexibility about destination. My data reveal a striking non-linearity: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%). The optimal point is not the extremes but the middle-upper range (Figure 5).
 
-Why do founders fail at Phase 1? Zuzul and Tripsas (2020) identify the obstacle: *identity inertia*. "Revolutionary" founders define themselves through a fixed vision—battery swapping *is* the future. This identity blocks pivoting even when markets demand it. "Discoverer" founders define themselves through exploration—learning *is* the mission. This identity accommodates redirection. The practical implication: cultivate a discoverer identity. Treat exploration as core to your entrepreneurial self-concept, not deviation from a fixed vision. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
+<a id="fig:capitalize_strategic_ambig"></a>
 
-### [¶27] Case Illustration: Autonomous Vehicles
+![](figures/Fig-C_capitalize_strategic_ambig.png)
 
-L4 autonomous vehicles illustrate the two-phase framework in action:
+**Figure 5:** The Strategic Ambiguity Sweet Spot. Q3 (Moderate Broad) positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning. Right panel shows industry heterogeneity: Mobility exhibits U-shape (extremes outperform middle), while Software shows inverted-U (moderate breadth optimal).
 
-**Table 5: Autonomous Vehicle Companies — Commitment Strategies**
+Why does Q3 dominate? Eisenberg's (1984) "unified diversity" mechanism provides the answer. Moderate breadth enables stakeholders to project their preferred interpretations onto the venture's vision—investors see their thesis confirmed, partners see synergies, employees see career paths. This projection attracts diverse believers without committing to any single operational path. Maximally broad positioning (Q4) fails because it provides insufficient anchor for projection; stakeholders cannot see themselves in an unbounded vision. Narrow positioning (Q1-Q2) fails because it forecloses the projection mechanism entirely—stakeholders either believe in exactly that approach or they don't.
 
-| Company | Commitment Level | Phase | Outcome |
-|:--------|:-----------------|:------|:--------|
-| **Motional** | Destination ("L4 robotaxi only") | Phase 2 early | High coordination, low optionality |
-| **Aurora** | Direction ("autonomy platform") | Phase 1 maintained | Multi-segment optionality preserved |
-| **Nuro** | Forced pivot | Phase 2 by constraint | Capital pressure narrowed scope |
-| **Waymo** | Internal diversification | Phase 1 within firm | Robotaxi + trucking maintained |
+The practical translation: **Capitalize on strategic ambiguity by committing to direction, not destination.** Tesla's "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition—each projecting their interpretation. Better Place's "battery swapping infrastructure" attracted only believers in that specific mechanism. When battery swapping failed, Better Place had no projection diversity to draw upon.
 
-**Motional** illustrates the thesis directly. The JV committed to L4 robotaxi—the highest autonomy level for the most demanding use case. This attracted parent company alignment. The governance structure—a board with shared robotaxi vision—enables coordination but filters alternative perspectives. As market signals evolve toward trucking or last-mile applications, the strategic question sharpens: can Motional pivot without restructuring its governance?
+### [¶27] Tool 2: Evaluate (Scale-it Framework)
 
-**Aurora** executed the 70/30 heuristic. Platform-first development preserved optionality across robotaxi, trucking, and delivery. Partnerships with OEMs and logistics companies enable segment exploration without premature commitment.
+Capitalizing on ambiguity attracts resources; evaluating growth paths deploys them. The Scale-it Framework operationalizes this deployment through two dimensions: **Segment** (market selection) and **Collaborate** (capability building).
 
-The contrast: destination commitments attract believers but foreclose adaptation. Direction commitments preserve flexibility but require coordinating diverse stakeholders. Commitment level is a design choice with material consequences.
+**Scale = Segment × Collaborate**
+
+Three growth types emerge from this multiplication:
+
+**Table 5: Growth Typology (Scale-it Framework)**
+
+| Type | Pattern | Strategy | Example |
+|:-----|:--------|:---------|:--------|
+| **Type A** | Market-first | Expand segments, fixed capabilities | Geographic expansion before product diversification |
+| **Type B** | Capability-first | Deepen capabilities, fixed segments | Technology platform before market expansion |
+| **Type C** | Parallel Growth | Synchronized expansion of both | Segment and collaborate grow together |
+
+**Type C (Parallel Growth)** characterizes ventures that escape the golden cage. They neither over-commit to market segments (Type A's rigidity) nor over-invest in capabilities without market validation (Type B's resource drain). Instead, they calibrate segment expansion to capability development, and vice versa.
+
+The two-phase heuristic operationalizes Type C. In Phase 1 (Explore), follow the 70/30 rule: 70% platform capabilities deployable across segments, 30% segment-specific. Segment across markets through partnerships that allow substitution without restructuring. In Phase 2 (Exploit), invert to 30/70 once signals clarify. The transition triggers when one segment shows clearer signals than alternatives and partnerships demonstrate repeatable value.
+
+Why do founders fail at Phase 1? Zuzul and Tripsas (2020) identify the obstacle: *identity inertia*. "Revolutionary" founders define themselves through a fixed vision—battery swapping *is* the future. This identity blocks pivoting even when markets demand it. "Discoverer" founders define themselves through exploration—learning *is* the mission. The practical implication: cultivate a discoverer identity. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
 
 ---
 

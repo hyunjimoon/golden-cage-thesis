@@ -1,7 +1,7 @@
 ---
 modified:
   - 2026-01-09T11:00:20-05:00
-  - 2026-01-09T17:10:26-05:00
+  - 2026-01-09T17:18:46-05:00
 ---
 ### 📋 [Action_Items.md] D-1 Parallel Operations Log
 
@@ -556,10 +556,39 @@ between funding and rigidity reflects **selection**, not treatment. What does th
 
 ---
 
-*Updated: 2026-01-10 00:20*
+### **Issue #021: CE Framework Integration (¶25-27 전면 개편)**
+
+> _Prescription. Capitalize + Evaluate = Escape the Golden Cage._
+
+- **Assignee:** @Scott (Cli 2) + @김완 (Gemini)
+
+- **Priority:** ✍️ **P1 (CARE/Structure)**
+
+- **Status:** ✅ **RESOLVED** (2026-01-10 08:20)
+
+- **Problem:** ¶25-27이 abstract "When to Commit" 프레임에서 실증 데이터(Fig-C_*)와 단절되어 있었음
+
+- **Solution (CE Framework):**
+    - [x] **¶25 The Double Bind**: Mobility 5.3% 생존율 데이터 제시 + Figure 4 배치
+    - [x] **¶26 Tool 1: Capitalize**: Q3 Sweet Spot (16.0%) 데이터 + Figure 5 배치
+    - [x] **¶27 Tool 2: Evaluate**: Scale-it Framework (Segment × Collaborate) + Type A/B/C 분류
+    - [x] **Front Matter**: Figure 4-5, Table 5 업데이트
+
+- **New Artifacts:**
+    - Figure 4: Industry Risk Profiles (¶25)
+    - Figure 5: Strategic Ambiguity Sweet Spot (¶26)
+    - Table 5: Growth Typology (Scale-it Framework) (¶27)
+
+- **Key Insight:** Strategic Ambiguity is not vagueness—it is precision about direction combined with flexibility about destination.
+
+---
+
+*Updated: 2026-01-10 08:20*
+*Issue #021: CE Framework Integration RESOLVED.*
 *Issue #020: Sentence Quality Enhancement RESOLVED.*
 *Issue #019: Paragraph Flow Integration RESOLVED.*
 *Issue #018: Advisor Summary Document CREATED.*
 *Operation Noun Budget: ¶25-27 CARE Score 31→38 ACHIEVED.*
 *Statistics Accuracy: Issue #017 RESOLVED.*
 *All sections now at 34/40+. D-1 War Room FULLY OPERATIONAL.*
+*Figures: 3→5, Tables: 5 (maintained)*
