@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T09:10:08-05:00
+  - 2026-01-09T10:05:43-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -17,7 +17,7 @@ Draft for Committee Review — January 7, 2026
 
 ## Abstract
 
-**[¶1]** More funding correlates with less growth. Analyzing 178,401 ventures from PitchBook (2021-2025), I document a robust negative correlation between early-stage funding and subsequent growth: ρ = −0.174 (p < 0.001). This finding contradicts the prevailing resource-based logic that capital enables experimentation, experimentation enables learning, and learning enables growth.
+**[¶1]** More funding correlates with less growth. Analyzing 180,994 ventures from PitchBook (2021-2025), I document a robust negative correlation between early-stage funding and subsequent growth: ρ = −0.174 (p < 0.001). This finding contradicts the prevailing resource-based logic that capital enables experimentation, experimentation enables learning, and learning enables growth.
 
 **[¶2]** I resolve this paradox through decomposition. The negative funding-growth correlation decomposes into two components:
 
@@ -65,7 +65,7 @@ Camuffo et al. (2020) provide experimental evidence. Entrepreneurs trained in sc
 
 Resource-based theory suggests capital is the primary constraint on venture growth. More resources should enable more experimentation, more learning, and ultimately more adaptation to market feedback. The logic is straightforward: money buys options.
 
-However, analyzing 178,401 ventures from PitchBook (2000–2018), I observe a stark contradiction. Early-stage funding amount correlates *negatively* with late-stage growth efficiency:
+However, analyzing 180,994 ventures from PitchBook (2000–2018), I observe a stark contradiction. Early-stage funding amount correlates *negatively* with late-stage growth efficiency:
 
 **ρ = −0.174 (p < 0.001)**
 
@@ -150,7 +150,7 @@ The pivot to warehouse logistics (Segway Robotics) occurred only after near-fail
 
 ## III. Adaptability Drives Growth (ARG)
 
-*If the Golden Cage (Section II) prevents repositioning, the cost of that constraint depends on the value of adaptability. Here, I demonstrate that "Movers" outperform "Stayers" by 1.82× (dG/dR > 0), proving that the rigidity identified in Section II is not a safety feature, but a suppression of the primary driver of survival.*
+*If the Golden Cage (Section II) prevents repositioning, the cost of that constraint depends on the value of adaptability. Here, I demonstrate that "Movers" outperform "Stayers" by 1.82× (dG/dR > 0), suggesting that the rigidity identified in Section II is not a safety feature, but is associated with suppressed survival rates.*
 
 ### [¶16] The Commitment Orthodoxy
 
@@ -170,7 +170,7 @@ Operationally, partial commitment means prioritizing platform capabilities deplo
 
 ### [¶19] Hypothesis: Repositioning and Survival
 
-While Section II demonstrated that funded ventures are structurally less likely to reposition, the performance implication of this rigidity depends on the environmental value of adaptation. If repositioning does not matter for survival, the golden cage is merely a constraint without consequence. But if adaptation drives growth, then funding-induced rigidity becomes a fatal flaw.
+While Section II demonstrated that funded ventures are structurally less likely to reposition, the performance implication of this rigidity depends on the environmental value of adaptation. If repositioning does not matter for survival, the golden cage is merely a constraint without consequence. But if adaptation is associated with growth, then funding-induced rigidity becomes a costly constraint.
 
 In high-uncertainty environments—where technological trajectories remain contested and customer preferences are still forming—static efficiency matters less than dynamic adaptation. The venture that executes perfectly on a mistaken strategy fails; the venture that iterates toward product-market fit survives. Early-stage markets reward learning, not precision.
 
@@ -182,7 +182,7 @@ This hypothesis frames a direct contrast: **Movers** (ventures that adapt their 
 
 I test H2 by categorizing ventures according to observed strategic change.
 
-**Measurement.** I construct a panel of 178,401 ventures tracked from 2021 to 2025 using PitchBook data. For each venture, I measure:
+**Measurement.** I construct a panel of 180,994 ventures tracked from 2021 to 2025 using PitchBook data. For each venture, I measure:
 
 - **B** (Strategic Breadth): A 0-100 index measuring market positioning specificity, where 0 = narrow/specific focus and 100 = broad/general scope.
 - **B₀** (Initial Position): Strategic breadth in 2021.
@@ -190,15 +190,17 @@ I test H2 by categorizing ventures according to observed strategic change.
 - **ΔB** (Direction): B_T − B₀. Positive ΔB indicates broadening; negative ΔB indicates narrowing.
 - **R** (Repositioning Magnitude): |ΔB|, the absolute repositioning distance.
 
-**Classification.** I define three strategic archetypes based on both direction and magnitude:
+**Classification.** I define three strategic archetypes using conditional quantile thresholds. Because 59.6% of ventures show no strategic change (ΔB = 0), I calculate the movement threshold from non-zero movers only:
 
 | Archetype | Criteria | Interpretation |
 |:----------|:---------|:---------------|
-| **Zoom-in** | ΔB < −10 and R ≥ 5 | Significant focus narrowing |
-| **Zoom-out** | ΔB > 10 and R ≥ 5 | Significant scope broadening |
-| **Stayer** | All others | Position maintained (R < 5 or horizontal drift) |
+| **Zoom-in** | ΔB < 0 and R > Median* | Focus narrowing with significant movement |
+| **Zoom-out** | ΔB > 0 and R > Median* | Scope broadening with significant movement |
+| **Stayer** | R ≤ Median* | Position maintained (including ΔB = 0) |
 
-**Movers** combine zoom-in and zoom-out ventures—those exhibiting directional repositioning of sufficient magnitude. **Stayers** include ventures with minimal movement (R < 5) and those with horizontal drift (large R but oscillating direction that nets to small |ΔB|).
+*Median calculated from non-zero movements only (M > 0), threshold = 0.5.
+
+**Movers** are ventures whose repositioning magnitude exceeds the median of those who moved at all. **Stayers** include both no-change ventures (59.6%) and small-movement ventures below the threshold.
 
 ### [¶21] Results: The Mover Advantage
 
@@ -208,12 +210,12 @@ I test H2 by categorizing ventures according to observed strategic change.
 
 | Archetype | Definition | N | G (Success Rate) |
 |:----------|:-----------|--:|:----------------:|
-| Stayers | R < 5 or horizontal | 143,202 | 9.9% |
-| Zoom-in | ΔB < −10, R ≥ 5 | 18,742 | 17.2% |
-| Zoom-out | ΔB > 10, R ≥ 5 | 16,457 | 18.8% |
-| **All Movers** | \|ΔB\| > 10, R ≥ 5 | 35,199 | 18.0% |
+| Stayers | R ≤ Median(non-zero M) | 144,605 | 9.9% |
+| Zoom-in | ΔB < 0, R > Median | 15,902 | 17.1% |
+| Zoom-out | ΔB > 0, R > Median | 20,487 | 18.4% |
+| **All Movers** | R > Median(non-zero M) | 36,389 | 17.8% |
 
-Movers outperform Stayers by a factor of **1.82×** (18.0% vs. 9.9%). Both zoom-in (focus narrowing) and zoom-out (scope broadening) exhibit elevated success rates relative to stayers, suggesting that *directional clarity*—not direction itself—drives the mover advantage. This relationship holds after controlling for initial funding levels (F), industry fixed effects, and cohort timing. **H2 is supported.**
+Movers outperform Stayers by a factor of **1.81×** (17.8% vs. 9.9%). Both zoom-in (focus narrowing) and zoom-out (scope broadening) exhibit elevated success rates relative to stayers, suggesting that *directional clarity*—not direction itself—is associated with the mover advantage. This relationship holds after controlling for initial funding levels (F), industry fixed effects, and cohort timing. **H2 is supported.**
 
 ### [¶22] Robustness
 
@@ -229,7 +231,7 @@ Repositioning exhibits a robust positive correlation with venture growth. Combin
 
 **dG/dF = (dG/dR) × (dR/dF) = (+1.82×) × (−0.4σ) = Negative**
 
-The golden cage is not a safety feature. It is a growth suppressor.
+The golden cage is not a safety feature. It is associated with suppressed growth.
 
 ### [¶24] Case Evidence: Tesla vs. Better Place
 
