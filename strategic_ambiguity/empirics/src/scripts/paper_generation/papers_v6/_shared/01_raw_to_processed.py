@@ -114,15 +114,21 @@ def build_panel(vag, feat, require_G=True, industry_filter=None):
     panel['D'] = panel['V_T'] - panel['V_0']
     panel['M'] = panel['D'].abs()
 
-    # Step 2e: Classify mover types (3 archetypes: stayer, zoom_in, zoom_out)
-    # Note: horizontal (M>=5 but |D|<=10) merged into stayer
+    # Step 2e: Classify mover types using QUANTILE-BASED thresholds (no magic numbers)
+    # Movers = top 25% of |D| (i.e., D > Q75 or D < Q25)
+    D_q75 = panel['D'].quantile(0.75)  # threshold for zoom_out (broadening)
+    D_q25 = panel['D'].quantile(0.25)  # threshold for zoom_in (narrowing)
+    M_q50 = panel['M'].quantile(0.50)  # minimum movement (median as noise floor)
+
+    print(f"     Quantile thresholds: D_q25={D_q25:.1f}, D_q75={D_q75:.1f}, M_q50={M_q50:.1f}")
+
     def classify_mover(row):
-        if row['D'] < -10 and row['M'] >= 5:
+        if row['D'] < D_q25 and row['M'] >= M_q50:
             return 'zoom_in'
-        elif row['D'] > 10 and row['M'] >= 5:
+        elif row['D'] > D_q75 and row['M'] >= M_q50:
             return 'zoom_out'
         else:
-            return 'stayer'  # includes M<5 and horizontal movers
+            return 'stayer'
 
     panel['mover_type'] = panel.apply(classify_mover, axis=1)
     panel['moved'] = (panel['mover_type'] != 'stayer').astype(int)

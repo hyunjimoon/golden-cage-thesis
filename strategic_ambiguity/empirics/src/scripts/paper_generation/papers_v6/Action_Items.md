@@ -1,86 +1,157 @@
 ---
 modified:
-  - 2026-01-09T09:08:22-05:00
+  - 2026-01-09T09:18:13-05:00
 ---
-# 🛡️ Operation: Promise Precision (FINAL)
-**Commander:** @Jeonha (전하)
-**Status:** 🚨 DEFCON 1 (Execution Phase)
+### 📋 [Action_Items.md] D-1 Operations Log (Issue Tracked)
 
----
+COMMANDER: @Jeonha
 
-## 🎭 Persona Mapping
-* **@Jeonha:** Decision Maker.
-* **@Charlie:** Code Repair & Text Rewriting.
-* **@Sujin:** Stats Rigor & Robustness.
-* **@Gyeongrin:** Sanity Check & Risk Monitor.
+STATUS: 🚨 DEFCON 1
+
+CURRENT FOCUS: fix: #001 (In Progress)
 
 ---
 
-## 🚨 PRIORITY 0: EXISTENTIAL THREATS (Fix or Die)
+## 🚨 PRIORITY 0: EXISTENTIAL THREATS (Must Fix)
 
-- [ ] 🚨 **[Ethics] Method Truth Alignment (Option A)**
-    - **Trigger:** Fraud Risk (Code=Entropy, Text=SBERT)
-    - **Assignee:** @Charlie
-    - **Action:**
-        1. **Text:** Replace all mentions of "SBERT/Embedding" with "Keyword-based Shannon Entropy".
-        2. **Defense:** "We proxy strategic vagueness using the distributional entropy of market keywords."
-    - **Validator:** @Gyeongrin (Check for residual "embedding" terms).
+### **Issue #001: Method Truth Alignment (SBERT $\to$ Entropy)**
 
-- [ ] 🚨 **[Consistency] Number Sync (Abstract vs Body)**
-    - **Trigger:** Claude identified $N=408k$ vs $178k$ mismatch.
-    - **Assignee:** @Sujin
-    - **Action:**
-        1. Align Abstract numbers to the **Analytical Sample** ($N=178,401$).
-        2. Align Correlations to $\rho = -0.174$ (or whatever the final calc is).
-    - **Rule:** "Do not sell the raw N if the regression uses the filtered N."
+> _Fraud Risk Removal. Code must match Text._
 
-- [ ] 🚨 **[Logic] Formula Direction Flip**
-    - **Trigger:** DeepSeek/Gemini confirmed High Entropy != High Vagueness in current code.
-    - **Assignee:** @Charlie
-    - **Code Change:**
-      ```python
-      # vagueness_v3.py
-      # OLD: vagueness = 0.5 * (1 - H_norm) + ...
-      # NEW: vagueness = 0.5 * H_norm + 0.5 * (abstractness/100)
-      ```
-    - **Validator:** @Gyeongrin (Verify `vagueness_v3.py`).
+- **Assignee:** @Charlie
+    
+- **Status:** 🟡 In Progress (Glossary updated, checking Thesis text...)
+    
+- **Action Module:**
+    
+    - [x] **Trigger:** `CR.GLOSSARY.md` mismatch found.
+        
+    - [ ] **Extract:** Replace "SBERT/Cosine" with "Shannon Entropy" in `Thesis_Master.md`.
+        
+    - [ ] **Verify:** (@Gyeongrin) Ensure no "embedding" keywords remain.
+        
+    - [ ] **Verdict:** (@Jeonha) Commit `fix: #001 text alignment`.
+        
 
-## 🛡 PRIORITY 1: STATISTICAL DEFENSE
+### **Issue #002: Formula Direction Flip ($1-H \to H$)**
 
-- [ ] 🚨 **[Robustness] Kill Magic Numbers**
-    - **Trigger:** "Why 10?" attack.
-    - **Assignee:** @Sujin
-    - **Code Change:**
-      ```python
-      # 01_raw_to_processed.py
-      threshold = df['D'].abs().quantile(0.75) # Dynamic
-      panel['mover_type'] = np.where(panel['M'] > threshold, 'mover', 'stayer')
-      ```
+> _Logic Repair. Narrow Market $\neq$ High Vagueness._
 
-- [ ] **[Causality] Tone Down Language**
-    - **Assignee:** @Sujin
-    - **Action:** Rewrite ¶22. Change "Funding causes rigidity" to "Funding is negatively associated with subsequent repositioning."
+- **Assignee:** @Charlie
+    
+- **Status:** 🔴 Todo
+    
+- **Action Module:**
+    
+    - [ ] **Trigger:** `vagueness_v3.py` logic error identified.
+        
+    - [ ] **Extract:** Change code to `vagueness = 0.5 * H_norm`.
+        
+    - [ ] **Verify:** (@Gyeongrin) Sign Flip Test (Correlation direction check).
+        
+    - [ ] **Verdict:** (@Jeonha) Commit `fix: #002 flip formula`.
+        
+
+### **Issue #003: Number Sync (Abstract vs Body)**
+
+> _Consistency. N=408k vs 178k._
+
+- **Assignee:** @Sujin
+    
+- **Status:** 🔴 Todo
+    
+- **Action Module:**
+    
+    - [ ] **Trigger:** Claude reported discrepancy.
+        
+    - [ ] **Extract:** Update Abstract to use Analytical Sample ($N=178,401$).
+        
+    - [ ] **Verify:** (@Gyeongrin) Check Abstract, Table 1, and Conclusion match.
+        
+    - [ ] **Verdict:** (@Jeonha) Commit `fix: #003 number sync`.
+        
+
+---
+
+## 🛡 PRIORITY 1: STATISTICAL DEFENSE (Methodology)
+
+### **Issue #004: Kill Magic Numbers (Thresholds)**
+
+> _Robustness. Why 10? Why 5?_
+
+- **Assignee:** @Sujin
+    
+- **Status:** 🔴 Todo
+    
+- **Action Module:**
+    
+    - [ ] **Trigger:** Arbitrary thresholds in `01_raw_to_processed.py`.
+        
+    - [ ] **Extract:** Implement `quantile(0.75)` dynamic threshold.
+        
+    - [ ] **Verify:** (@Gyeongrin) Check if Mover/Stayer ratio remains reasonable.
+        
+    - [ ] **Verdict:** (@Jeonha) Commit `feat: #004 dynamic thresholds`.
+        
+
+### **Issue #005: Causal Language Softening**
+
+> _Tone. "Causes" $\to$ "Associated with"._
+
+- **Assignee:** @Scott
+    
+- **Status:** 🔴 Todo
+    
+- **Action Module:**
+    
+    - [ ] **Trigger:** Lack of strong IV (Instrumental Variable).
+        
+    - [ ] **Extract:** Rewrite ¶22 and Conclusion.
+        
+    - [ ] **Verify:** (@Gyeongrin) Scan for forbidden words ("proves", "causes").
+        
+    - [ ] **Verdict:** (@Jeonha) Commit `docs: #005 soften claims`.
+        
+
+---
 
 ## 🧥 PRIORITY 2: NARRATIVE STRUCTURE
 
-- [ ] **[Flow] Definition Injection (¶3-5)**
-    - **Assignee:** @Scott
-    - **Action:** Insert: "We define Vagueness ($B$) as market entropy. Repositioning ($R$) is the magnitude of change in $B$." in the Introduction.
+### **Issue #006: Definition Injection (Front-loading)**
 
+> _Readability. Define B & R in Intro._
+
+- **Assignee:** @Scott
+    
+- **Status:** 🔴 Todo
+    
+- **Action Module:**
+    
+    - [ ] **Trigger:** Definitions appear too late (¶20).
+        
+    - [ ] **Extract:** Add clear definitions to Introduction (¶3-5).
+        
+    - [ ] **Verify:** (@Gyeongrin) Readability flow check.
+        
+    - [ ] **Verdict:** (@Jeonha) Commit `docs: #006 intro definitions`.
 ---
+
+
+
+
 ---
 
 ## Thesis Structure (Thesis_Master.md)
 
-| Section | Lines | Content |
-|:--------|------:|:--------|
-| Abstract | 10-24 | Paradox + Decomposition + Mechanism |
-| I. Introduction | 28-79 | Wisdom → Puzzle → Resolution → Mechanism → Contributions |
-| II. Repositioning Drives Growth | 82-144 | Orthodoxy → Exception → Movers/Stayers → Tesla/BP |
-| III. Funding Inhibits Repositioning | 148-229 | Theory → Contradiction → Mechanism → Segway |
-| IV. Prescription | 233-279 | Two-Phase → AV Cases |
-| V. Conclusion | 283-311 | Summary → Implications → Limitations |
-| References | 315-329 | 7 citations |
+| Section                             |   Lines | Content                                                  |
+| :---------------------------------- | ------: | :------------------------------------------------------- |
+| Abstract                            |   10-24 | Paradox + Decomposition + Mechanism                      |
+| I. Introduction                     |   28-79 | Wisdom → Puzzle → Resolution → Mechanism → Contributions |
+| II. Repositioning Drives Growth     |  82-144 | Orthodoxy → Exception → Movers/Stayers → Tesla/BP        |
+| III. Funding Inhibits Repositioning | 148-229 | Theory → Contradiction → Mechanism → Segway              |
+| IV. Prescription                    | 233-279 | Two-Phase → AV Cases                                     |
+| V. Conclusion                       | 283-311 | Summary → Implications → Limitations                     |
+| References                          | 315-329 | 7 citations                                              |
 
 ---
 

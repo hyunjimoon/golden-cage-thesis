@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T08:45:22-05:00
+  - 2026-01-09T09:10:08-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -17,7 +17,7 @@ Draft for Committee Review — January 7, 2026
 
 ## Abstract
 
-**[¶1]** More funding correlates with less growth. Analyzing 408,784 ventures from PitchBook (2021-2025), I document a robust negative correlation between early-stage funding and subsequent growth: ρ = -0.196 (p < 0.001). This finding contradicts the prevailing resource-based logic that capital enables experimentation, experimentation enables learning, and learning enables growth.
+**[¶1]** More funding correlates with less growth. Analyzing 178,401 ventures from PitchBook (2021-2025), I document a robust negative correlation between early-stage funding and subsequent growth: ρ = −0.174 (p < 0.001). This finding contradicts the prevailing resource-based logic that capital enables experimentation, experimentation enables learning, and learning enables growth.
 
 **[¶2]** I resolve this paradox through decomposition. The negative funding-growth correlation decomposes into two components:
 
