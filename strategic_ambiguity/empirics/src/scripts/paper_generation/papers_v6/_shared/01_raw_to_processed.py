@@ -114,19 +114,28 @@ def build_panel(vag, feat, require_G=True, industry_filter=None):
     panel['D'] = panel['V_T'] - panel['V_0']
     panel['M'] = panel['D'].abs()
 
-    # Step 2e: Classify mover types using QUANTILE-BASED thresholds (no magic numbers)
-    # Movers = top 25% of |D| (i.e., D > Q75 or D < Q25)
-    D_q75 = panel['D'].quantile(0.75)  # threshold for zoom_out (broadening)
-    D_q25 = panel['D'].quantile(0.25)  # threshold for zoom_in (narrowing)
-    M_q50 = panel['M'].quantile(0.50)  # minimum movement (median as noise floor)
+    # Step 2e: Classify mover types using CONDITIONAL QUANTILE thresholds
+    # Fix for zero-inflation: >60% of D=0, so unconditional quantiles collapse to 0
+    # Solution: Calculate threshold from NON-ZERO movements only
+    nonzero_M = panel[panel['M'] > 0]['M']
+    M_threshold = nonzero_M.quantile(0.50)  # Median of movers (significant movement threshold)
 
-    print(f"     Quantile thresholds: D_q25={D_q25:.1f}, D_q75={D_q75:.1f}, M_q50={M_q50:.1f}")
+    # Stats for diagnostics
+    n_zero = (panel['M'] == 0).sum()
+    n_nonzero = (panel['M'] > 0).sum()
+
+    print(f"     Zero-inflation: {n_zero:,} ({n_zero/len(panel)*100:.1f}%) have M=0")
+    print(f"     Non-zero movers: {n_nonzero:,} ({n_nonzero/len(panel)*100:.1f}%)")
+    print(f"     Conditional threshold: M > {M_threshold:.1f} (median of non-zero M)")
 
     def classify_mover(row):
-        if row['D'] < D_q25 and row['M'] >= M_q50:
+        # Zoom-in: Negative direction AND magnitude > threshold
+        if row['D'] < 0 and row['M'] > M_threshold:
             return 'zoom_in'
-        elif row['D'] > D_q75 and row['M'] >= M_q50:
+        # Zoom-out: Positive direction AND magnitude > threshold
+        elif row['D'] > 0 and row['M'] > M_threshold:
             return 'zoom_out'
+        # Stayer: Small movement (includes D=0 and noise)
         else:
             return 'stayer'
 
@@ -295,7 +304,7 @@ def save_to_netcdf(panel, output_path):
     ds['E'].attrs['description'] = 'Early funding (M USD)'
     ds['G'].attrs['description'] = 'Growth rate (continuous, from GrowthRate)'
     ds['L'].attrs['description'] = 'Success = Later Stage VC (11.5% base)'
-    ds['moved'].attrs['description'] = 'Binary: moved (M >= 5)'
+    ds['moved'].attrs['description'] = 'Binary: moved (M >= median, D in top/bottom 25%)'
     ds['mover_type'].attrs['description'] = 'zoom_in/zoom_out/stayer (3 archetypes)'
     ds['quartile_V0'].attrs['description'] = 'Quartile of initial V'
 

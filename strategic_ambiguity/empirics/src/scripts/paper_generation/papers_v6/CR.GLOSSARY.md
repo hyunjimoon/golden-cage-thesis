@@ -41,14 +41,16 @@
 
 ---
 
-## 3. Thresholds (Strict Definition)
+## 3. Thresholds (Conditional Quantile Definition)
+
+> **Zero-inflation fix:** 59.6% have M=0, so median calculated from non-zero M only (threshold = 0.5)
 
 | Category | Code Condition | Thesis Condition | Interpretation |
 |:---------|:---------------|:-----------------|:---------------|
-| **Stayers** | `M < 5` or horizontal | R < 5 | Strategic breadth within noise |
-| **Movers** | `D < -10` or `D > 10` AND `M >= 5` | R ≥ 15 | Significant semantic shift (≥1 SD) |
-| **Zoom-in** | `D < -10` AND `M >= 5` | ΔB < -10, R ≥ 5 | Focus narrowing |
-| **Zoom-out** | `D > 10` AND `M >= 5` | ΔB > 10, R ≥ 5 | Scope broadening |
+| **Stayers** | `M <= M_threshold` | R ≤ Median(non-zero M) | No/small movement (incl. ΔB=0) |
+| **Movers** | `M > M_threshold` | R > Median(non-zero M) | Significant strategic shift |
+| **Zoom-in** | `D < 0` AND `M > M_threshold` | ΔB < 0, R > Median | Focus narrowing |
+| **Zoom-out** | `D > 0` AND `M > M_threshold` | ΔB > 0, R > Median | Scope broadening |
 | **Golden Cage** | High E + Low M | High F + Low R | Well-funded Stayers |
 
 ---
