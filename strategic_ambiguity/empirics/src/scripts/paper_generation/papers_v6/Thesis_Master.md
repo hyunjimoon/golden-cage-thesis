@@ -2,7 +2,7 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T17:18:02-05:00
+  - 2026-01-09T17:24:06-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -45,7 +45,6 @@ The contribution is threefold: (1) I document a negative funding-growth correlat
 | Table 2 | Three Strategic Archetypes | ¶20 |
 | Table 3 | The Mover Advantage (Success Rates) | ¶21 |
 | Table 4 | Tesla vs. Better Place Comparison | ¶24 |
-| Table 5 | Growth Typology (Scale-it Framework) | ¶27 |
 
 ---
 
@@ -294,53 +293,33 @@ The contrast illustrates my thesis: commitment at the vision level attracts alig
 
 ## IV. Prescription: Capitalize and Evaluate (P)
 
-### [¶25] The Double Bind
+### [¶25] The Double Bind and the CE Framework
 
-The golden cage is most lethal where it is most common: high-commitment industries. Mobility ventures face the harshest environment—a 5.3% survival rate to Series C+, the lowest among all sectors I examine (Figure 4). This is not coincidence. Mobility demands both massive fixed-asset investment (commitment) and rapid adaptation to shifting regulatory, technological, and consumer landscapes (flexibility). The double bind: commit to build infrastructure, yet remain flexible to pivot when signals change.
+The golden cage is most lethal in capital-intensive industries. Mobility ventures face the harshest environment—a 5.3% survival rate to Series C+, the lowest among all sectors (Figure 4). This reflects a double bind: massive fixed-asset investment demands commitment, yet shifting regulatory and technological landscapes demand flexibility. To resolve this contradiction, I propose the **CE Framework**—redefining "when to commit" not as a binary choice but as the dynamic operation of two tools: **Capitalize** and **Evaluate**.
 
 <a id="fig:mobility_survival"></a>
 
 ![](figures/Fig-C_mobility_survival.png)
 
-**Figure 4:** Industry Risk Profiles. Mobility ventures exhibit the lowest survival rate (5.3%) among all sectors, reflecting the double bind of high commitment requirements and high uncertainty. Quantum (12.3%) and MedTech (9.0%) fare better due to either longer development cycles or clearer regulatory pathways.
+**Figure 4:** Industry Risk Profiles. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty. Quantum (12.3%) and MedTech (9.0%) fare better due to longer development cycles or clearer regulatory pathways.
 
-How do founders escape this bind? Two tools emerge from my analysis: **Capitalize** (strategic ambiguity) and **Evaluate** (the Scale-it Framework). Together, these constitute the CE Framework for navigating the golden cage.
+### [¶26] Tool 1: Capitalize via Strategic Ambiguity
 
-### [¶26] Tool 1: Capitalize (Strategic Ambiguity)
-
-Strategic ambiguity is not vagueness—it is precision about direction combined with flexibility about destination. My data reveal a striking non-linearity: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%). The optimal point is not the extremes but the middle-upper range (Figure 5).
+Capitalizing on uncertainty requires **strategic ambiguity**—precision about direction combined with flexibility about destination. Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow (Q1: 12.3%, Q2: 8.9%) and maximally broad (Q4: 12.9%) positioning (Figure 5). This aligns with Eisenberg's (1984) "unified diversity" mechanism: when founders commit to direction rather than destination, diverse stakeholders project their preferred interpretations onto the venture's vision. Tesla's "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition—each projecting their thesis. Better Place's "battery swapping infrastructure" attracted only believers in that specific mechanism; when it failed, no projection diversity remained.
 
 <a id="fig:capitalize_strategic_ambig"></a>
 
 ![](figures/Fig-C_capitalize_strategic_ambig.png)
 
-**Figure 5:** The Strategic Ambiguity Sweet Spot. Q3 (Moderate Broad) positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning. Right panel shows industry heterogeneity: Mobility exhibits U-shape (extremes outperform middle), while Software shows inverted-U (moderate breadth optimal).
+**Figure 5:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
 
-Why does Q3 dominate? Eisenberg's (1984) "unified diversity" mechanism provides the answer. Moderate breadth enables stakeholders to project their preferred interpretations onto the venture's vision—investors see their thesis confirmed, partners see synergies, employees see career paths. This projection attracts diverse believers without committing to any single operational path. Maximally broad positioning (Q4) fails because it provides insufficient anchor for projection; stakeholders cannot see themselves in an unbounded vision. Narrow positioning (Q1-Q2) fails because it forecloses the projection mechanism entirely—stakeholders either believe in exactly that approach or they don't.
+### [¶27] Tool 2: Evaluate via Scale-it Framework
 
-The practical translation: **Capitalize on strategic ambiguity by committing to direction, not destination.** Tesla's "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition—each projecting their interpretation. Better Place's "battery swapping infrastructure" attracted only believers in that specific mechanism. When battery swapping failed, Better Place had no projection diversity to draw upon.
-
-### [¶27] Tool 2: Evaluate (Scale-it Framework)
-
-Capitalizing on ambiguity attracts resources; evaluating growth paths deploys them. The Scale-it Framework operationalizes this deployment through two dimensions: **Segment** (market selection) and **Collaborate** (capability building).
+Capitalizing attracts resources; evaluating deploys them. The Scale-it Framework operationalizes deployment through synchronized growth of **Segment** (market selection) and **Collaborate** (capability building):
 
 **Scale = Segment × Collaborate**
 
-Three growth types emerge from this multiplication:
-
-**Table 5: Growth Typology (Scale-it Framework)**
-
-| Type | Pattern | Strategy | Example |
-|:-----|:--------|:---------|:--------|
-| **Type A** | Market-first | Expand segments, fixed capabilities | Geographic expansion before product diversification |
-| **Type B** | Capability-first | Deepen capabilities, fixed segments | Technology platform before market expansion |
-| **Type C** | Parallel Growth | Synchronized expansion of both | Segment and collaborate grow together |
-
-**Type C (Parallel Growth)** characterizes ventures that escape the golden cage. They neither over-commit to market segments (Type A's rigidity) nor over-invest in capabilities without market validation (Type B's resource drain). Instead, they calibrate segment expansion to capability development, and vice versa.
-
-The two-phase heuristic operationalizes Type C. In Phase 1 (Explore), follow the 70/30 rule: 70% platform capabilities deployable across segments, 30% segment-specific. Segment across markets through partnerships that allow substitution without restructuring. In Phase 2 (Exploit), invert to 30/70 once signals clarify. The transition triggers when one segment shows clearer signals than alternatives and partnerships demonstrate repeatable value.
-
-Why do founders fail at Phase 1? Zuzul and Tripsas (2020) identify the obstacle: *identity inertia*. "Revolutionary" founders define themselves through a fixed vision—battery swapping *is* the future. This identity blocks pivoting even when markets demand it. "Discoverer" founders define themselves through exploration—learning *is* the mission. The practical implication: cultivate a discoverer identity. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
+Ventures that escape the golden cage exhibit **Parallel Growth**—neither over-committing to market segments (rigidity) nor over-investing in capabilities without validation (resource drain). They calibrate segment expansion to capability development, and vice versa. Zuzul and Tripsas (2020) identify the obstacle to this calibration: *identity inertia*. "Revolutionary" founders define themselves through fixed visions; "Discoverer" founders define themselves through exploration. The practical implication: cultivate a discoverer identity. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
 
 ---
 
