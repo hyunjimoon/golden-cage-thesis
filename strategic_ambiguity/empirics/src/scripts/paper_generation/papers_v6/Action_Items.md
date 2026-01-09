@@ -1,7 +1,7 @@
 ---
 modified:
   - 2026-01-09T11:00:20-05:00
-  - 2026-01-09T16:27:16-05:00
+  - 2026-01-09T16:38:35-05:00
 ---
 ### 📋 [Action_Items.md] D-1 Parallel Operations Log
 
@@ -352,6 +352,9 @@ STATUS: 🟢 OPERATIONAL (29-Paragraph Tactical Map Deployed)
 | #012 | Theorem 1 Source | ✅ |
 | #014 | Bolton(2024) Reframe | ✅ |
 | #015 | Local Limits Injection | ✅ |
+| #016 | Reader-Friendliness Sweep | 🔴 |
+| #017 | Statistics Accuracy | ✅ |
+| #018 | Advisor Summary Document | ✅ |
 
 ---
 
@@ -463,7 +466,26 @@ between funding and rigidity reflects **selection**, not treatment. What does th
 
 ---
 
-*Updated: 2026-01-09 17:00*
+### **Issue #018: Advisor Summary Document**
+
+> _Communication. English summary for committee review._
+
+- **Assignee:** @Scott (Cli 2)
+
+- **Priority:** 📄 **P1 (Documentation)**
+
+- **Status:** ✅ **RESOLVED** (2026-01-09 17:15)
+
+- **Deliverable:** `ISSUE_SUMMARY.md`
+  - All 17 issues documented in English
+  - CARE Score summary by section
+  - Key statistics verified
+  - Team contribution attribution
+
+---
+
+*Updated: 2026-01-09 17:15*
+*Issue #018: Advisor Summary Document CREATED.*
 *Operation Noun Budget: ¶25-27 CARE Score 31→38 ACHIEVED.*
 *Statistics Accuracy: Issue #017 RESOLVED.*
 *All sections now at 34/40+. D-1 War Room FULLY OPERATIONAL.*
