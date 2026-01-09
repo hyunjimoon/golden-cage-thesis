@@ -470,17 +470,18 @@
             </div>
         </div>
     </div>
-    <!-- CFR Column: Fig-I (¶9) — 2-panel candidate with Fig-ARG -->
-    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영</div><div class="cell-para">Fig-I</div><div class="cell-topic">¶9 Funding Paradox</div>
-        <img class="cell-thumb" src="../figures/images/Fig-I_funding_paradox.png" onclick="event.stopPropagation(); window.open(this.src)" title="Funding Paradox - dG/dF < 0"/>
+    <!-- CFR Column: Fig-I (¶8-9) — Empirical Puzzle -->
+    <div class="cell agent-영지"><span class="status draft"></span><div class="cell-agent">영</div><div class="cell-para">Fig-I</div><div class="cell-topic">¶8-9 Capital Paradox</div>
+        <img class="cell-thumb" src="../figures/images/Fig-I_capital_paradox.png" onclick="event.stopPropagation(); window.open(this.src)" title="Capital Paradox - ρ(G,E) = -0.174***"/>
         <div class="cell-expand">
             <div class="expand-item" style="background:rgba(255,107,107,0.1);padding:3px;border-radius:3px">
-                <b>📊 Fig-I (¶9):</b> Funding Paradox
+                <b>📊 Fig-I (¶8-9):</b> The Capital Paradox
             </div>
-            <div class="expand-item"><b>역할:</b> 핵심 발견 — 자금↑ 성장↓ 역설 제시</div>
-            <div class="expand-item"><b>Data:</b> Stayer 9.9% vs Mover 17.9%</div>
+            <div class="expand-item"><b>역할:</b> Empirical Puzzle — 자금↑ 성장↓ 역설 제시</div>
+            <div class="expand-item"><b>Core:</b> <span style="color:var(--I)">ρ(G,E) = -0.174***</span>, N=178,786</div>
+            <div class="expand-item"><b>Insight:</b> Higher early funding → Lower growth multiples</div>
             <div class="expand-item" style="margin-top:6px;text-align:center">
-                <img src="../figures/images/Fig-I_funding_paradox.png" style="max-width:100%;border-radius:4px;border:1px solid var(--border)" alt="Funding Paradox"/>
+                <img src="../figures/images/Fig-I_capital_paradox.png" style="max-width:100%;border-radius:4px;border:1px solid var(--border)" alt="Funding Paradox"/>
             </div>
             <div class="expand-item" style="color:#ff9800;margin-top:4px"><b>⚠️ 톤:</b> Dark theme — 다른 차트와 통일 필요</div>
         </div>
@@ -653,6 +654,200 @@
     </div>
     <div style="margin-top:6px;color:var(--muted);font-size:0.5rem;">
         Current: Draft 23 | Review 6 (¶4, ¶8, ¶10-13, ¶20) | Done 0 — Awaiting Q1-Q3 advisor input
+    </div>
+</div>
+
+<!-- 🚒 Fire Truck Agent Visualization -->
+<div class="firetruck-section" style="margin-top:16px;padding:16px;background:var(--card);border-radius:8px;border:1px solid var(--border);">
+    <h3 style="font-size:0.9rem;color:var(--C);margin-bottom:12px;">🚒 벗7 Fire Truck — Agent × Paragraph Mapping</h3>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <!-- Fire Truck SVG -->
+        <div style="position:relative;">
+            <svg viewBox="0 0 400 280" style="width:100%;max-width:400px;">
+                <!-- Ladder (찰리+현지) -->
+                <g id="ladder">
+                    <rect x="180" y="10" width="120" height="12" rx="2" fill="#333" transform="rotate(25, 180, 10)"/>
+                    <rect x="175" y="5" width="130" height="12" rx="2" fill="#444" transform="rotate(25, 175, 5)"/>
+                    <!-- Water effect -->
+                    <path d="M290 -10 Q300 -20, 295 -35 Q290 -25, 285 -40" stroke="#74b9ff" stroke-width="3" fill="none" transform="rotate(25, 175, 5)"/>
+                </g>
+
+                <!-- Cab Body -->
+                <rect x="30" y="80" width="180" height="90" rx="8" fill="#e74c3c"/>
+                <!-- Window -->
+                <rect x="40" y="90" width="70" height="50" rx="4" fill="rgba(255,255,255,0.3)"/>
+                <!-- Yellow stripe -->
+                <rect x="30" y="155" width="180" height="8" fill="#f1c40f"/>
+
+                <!-- Truck Body -->
+                <rect x="210" y="70" width="150" height="100" rx="4" fill="#c0392b"/>
+                <!-- Fire logo -->
+                <circle cx="285" cy="120" r="25" fill="rgba(0,0,0,0.3)"/>
+                <text x="285" y="128" text-anchor="middle" font-size="28" fill="#f39c12">🔥</text>
+
+                <!-- Chassis -->
+                <rect x="20" y="170" width="350" height="30" rx="4" fill="#555"/>
+                <!-- Holes -->
+                <circle cx="60" cy="185" r="6" fill="#333"/>
+                <circle cx="90" cy="185" r="6" fill="#333"/>
+                <circle cx="120" cy="185" r="6" fill="#333"/>
+                <circle cx="150" cy="185" r="6" fill="#333"/>
+                <circle cx="180" cy="185" r="6" fill="#333"/>
+
+                <!-- Wheels -->
+                <circle cx="80" cy="220" r="35" fill="#333"/>
+                <circle cx="80" cy="220" r="25" fill="#444"/>
+                <circle cx="80" cy="220" r="8" fill="#222"/>
+
+                <circle cx="300" cy="220" r="35" fill="#333"/>
+                <circle cx="300" cy="220" r="25" fill="#444"/>
+                <circle cx="300" cy="220" r="8" fill="#222"/>
+
+                <!-- Brake light -->
+                <circle cx="350" cy="130" r="12" fill="#ff6b6b" opacity="0.8"/>
+
+                <!-- Agent Labels -->
+                <!-- Team A: Cab -->
+                <g font-size="10" font-weight="bold">
+                    <!-- 수진 CFR (left) -->
+                    <circle cx="55" cy="115" r="15" fill="#69db7c" opacity="0.9"/>
+                    <text x="55" y="118" text-anchor="middle" fill="#000" font-size="9">수진</text>
+                    <text x="55" y="145" text-anchor="middle" fill="#69db7c" font-size="7">CFR</text>
+
+                    <!-- 정하 (center) -->
+                    <circle cx="150" cy="120" r="18" fill="#ffd43b" opacity="0.9"/>
+                    <text x="150" y="123" text-anchor="middle" fill="#000" font-size="10">정하</text>
+                    <text x="150" y="100" text-anchor="middle" fill="#ffd43b" font-size="8">🔥</text>
+
+                    <!-- 수진 ARG (right of cab) -->
+                    <circle cx="95" cy="115" r="15" fill="#69db7c" opacity="0.9"/>
+                    <text x="95" y="118" text-anchor="middle" fill="#000" font-size="9">수진</text>
+                    <text x="95" y="145" text-anchor="middle" fill="#69db7c" font-size="7">ARG</text>
+                </g>
+
+                <!-- Team B: Ladder -->
+                <g font-size="10" font-weight="bold">
+                    <rect x="230" y="40" width="55" height="22" rx="4" fill="#4dabf7" opacity="0.9"/>
+                    <text x="257" y="54" text-anchor="middle" fill="#000" font-size="9">찰리+현지</text>
+                </g>
+
+                <!-- Team C: Wheels + Brake -->
+                <g font-size="10" font-weight="bold">
+                    <!-- 스캇 on wheel -->
+                    <text x="80" y="223" text-anchor="middle" fill="#da77f2" font-size="10" font-weight="bold">스캇</text>
+
+                    <!-- 경린 on brake -->
+                    <text x="350" y="133" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">경린</text>
+                </g>
+
+                <!-- 영지 (headlight) -->
+                <circle cx="35" cy="130" r="8" fill="#e9ecef"/>
+                <text x="35" y="150" text-anchor="middle" fill="#e9ecef" font-size="7">영지</text>
+            </svg>
+        </div>
+
+        <!-- Paragraph Mapping Table -->
+        <div style="font-size:0.6rem;">
+            <table style="width:100%;border-collapse:collapse;">
+                <tr style="background:rgba(255,255,255,0.05);">
+                    <th style="padding:6px;text-align:left;border-bottom:1px solid var(--border);">Team</th>
+                    <th style="padding:6px;text-align:left;border-bottom:1px solid var(--border);">Agent</th>
+                    <th style="padding:6px;text-align:left;border-bottom:1px solid var(--border);">담당 ¶</th>
+                    <th style="padding:6px;text-align:left;border-bottom:1px solid var(--border);">암기코드</th>
+                </tr>
+                <!-- Team A -->
+                <tr style="background:rgba(105,219,124,0.1);">
+                    <td rowspan="4" style="padding:6px;border-bottom:1px solid var(--border);color:#69db7c;font-weight:bold;">A<br/>🚗 CAB</td>
+                    <td style="padding:4px;color:var(--수진);">수진(CFR)</td>
+                    <td style="padding:4px;font-family:monospace;">2,4,5,9,13</td>
+                    <td style="padding:4px;color:var(--muted);">이사오구십삼</td>
+                </tr>
+                <tr style="background:rgba(105,219,124,0.1);">
+                    <td style="padding:4px;color:var(--정하);">정하</td>
+                    <td style="padding:4px;font-family:monospace;">1,7,16</td>
+                    <td style="padding:4px;color:var(--muted);">일칠십육</td>
+                </tr>
+                <tr style="background:rgba(105,219,124,0.1);">
+                    <td style="padding:4px;color:var(--수진);">수진(ARG)</td>
+                    <td style="padding:4px;font-family:monospace;">18,20</td>
+                    <td style="padding:4px;color:var(--muted);">십팔이십</td>
+                </tr>
+                <tr style="background:rgba(105,219,124,0.1);">
+                    <td style="padding:4px;border-bottom:1px solid var(--border);color:var(--영지);">영지</td>
+                    <td style="padding:4px;border-bottom:1px solid var(--border);font-family:monospace;">5,8-9,14(×2),21,22,26</td>
+                    <td style="padding:4px;border-bottom:1px solid var(--border);color:var(--muted);">오팔구십사이일이이이육</td>
+                </tr>
+                <!-- Team B -->
+                <tr style="background:rgba(77,171,247,0.1);">
+                    <td rowspan="2" style="padding:6px;border-bottom:1px solid var(--border);color:#4dabf7;font-weight:bold;">B<br/>🪜 LADDER</td>
+                    <td style="padding:4px;color:var(--찰리);">찰리</td>
+                    <td style="padding:4px;font-family:monospace;">3,10,21,22,26</td>
+                    <td style="padding:4px;color:var(--muted);">삼십이일이이이육</td>
+                </tr>
+                <tr style="background:rgba(77,171,247,0.1);">
+                    <td style="padding:4px;border-bottom:1px solid var(--border);color:var(--정하);">현지</td>
+                    <td style="padding:4px;border-bottom:1px solid var(--border);font-family:monospace;">6,11,25,28</td>
+                    <td style="padding:4px;border-bottom:1px solid var(--border);color:var(--muted);">육십일이오이팔</td>
+                </tr>
+                <!-- Team C -->
+                <tr style="background:rgba(218,119,242,0.1);">
+                    <td rowspan="2" style="padding:6px;color:#da77f2;font-weight:bold;">C<br/>🛞 GROUND</td>
+                    <td style="padding:4px;color:var(--스캇);">스캇</td>
+                    <td style="padding:4px;font-family:monospace;">15,23,27</td>
+                    <td style="padding:4px;color:var(--muted);">십오이삼이칠</td>
+                </tr>
+                <tr style="background:rgba(218,119,242,0.1);">
+                    <td style="padding:4px;color:var(--경린);">경린</td>
+                    <td style="padding:4px;font-family:monospace;">14,17,24,29</td>
+                    <td style="padding:4px;color:var(--muted);">십사십칠이사이구</td>
+                </tr>
+            </table>
+
+            <!-- Quick Reference -->
+            <div style="margin-top:12px;padding:8px;background:rgba(212,168,75,0.1);border-radius:4px;font-size:0.55rem;">
+                <strong style="color:var(--C);">🔑 암기 순서 (앞→뒤):</strong><br/>
+                <div style="margin-top:4px;font-family:monospace;">
+                    <span style="color:var(--수진);">좌센서:</span> 2-4-5-9-13 →
+                    <span style="color:var(--정하);">엔진:</span> 1-7-16 →
+                    <span style="color:var(--수진);">우센서:</span> 18-20<br/>
+                    <span style="color:var(--찰리);">사다리:</span> 3-10-21-22-26 + <span style="color:var(--정하);">6-11-25-28</span><br/>
+                    <span style="color:var(--스캇);">바퀴:</span> 15-23-27 →
+                    <span style="color:var(--경린);">브레이크:</span> 14-17-24-29
+                </div>
+            </div>
+
+            <!-- 영지 Figure Mapping -->
+            <div style="margin-top:8px;padding:8px;background:rgba(250,177,160,0.15);border-radius:4px;font-size:0.5rem;border-left:3px solid var(--영지);">
+                <strong style="color:var(--영지);">🔦 영지 Figure→¶ 매핑 (8 Figures):</strong>
+                <div style="margin-top:4px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+                    <span>Fig-GC (Cover) → 황금새장</span>
+                    <span>Fig-Causal (¶5) → 인과다이어그램</span>
+                    <span>Fig-I (¶8-9) → 자본역설</span>
+                    <span>Fig-ARG (¶14) → 이동자vs정주자</span>
+                    <span>Fig-GB (¶14) → 전략적모호성</span>
+                    <span>Fig-CFR1 (¶21) → 황금새장메커니즘</span>
+                    <span>Fig-CFR2 (¶22) → 학습덫공식</span>
+                    <span>Fig-P (¶26) → CSCE도구</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Synergy Description -->
+    <div style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:0.55rem;">
+        <div style="padding:8px;background:rgba(105,219,124,0.1);border-radius:4px;border-left:3px solid #69db7c;">
+            <strong style="color:#69db7c;">Team A: INPUT/SENSING</strong><br/>
+            데이터(수진) → 시각화(영지) → 설득(정하)
+        </div>
+        <div style="padding:8px;background:rgba(77,171,247,0.1);border-radius:4px;border-left:3px solid #4dabf7;">
+            <strong style="color:#4dabf7;">Team B: STRATEGY</strong><br/>
+            추론(찰리) → 통합(현지)
+        </div>
+        <div style="padding:8px;background:rgba(218,119,242,0.1);border-radius:4px;border-left:3px solid #da77f2;">
+            <strong style="color:#da77f2;">Team C: GROUNDING</strong><br/>
+            사례(스캇) → 검증(경린)
+        </div>
     </div>
 </div>
 

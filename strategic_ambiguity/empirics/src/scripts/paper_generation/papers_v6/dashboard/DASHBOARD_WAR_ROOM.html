@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚔️ D-1 WAR ROOM: Operation Golden Cage</title>
+    <style>
+        :root {
+            --bg: #0a0e14;
+            --card: #131820;
+            --border: #21262d;
+            --text: #e6edf3;
+            --muted: #7d8590;
+            /* Status Colors */
+            --missing: #ff4757;
+            --polish: #ffa502;
+            --draft: #57606a;
+            --done: #2ed573;
+            /* Variable Colors */
+            --C: #d4a84b;
+            --F: #4dabf7;
+            --R: #a855f7;
+            --G: #69db7c;
+            /* Squad Colors (Bone-Flesh-Skin-Soul) */
+            --bone: #4dabf7;    /* Logic - Blue */
+            --flesh: #ff6b6b;   /* Data - Red */
+            --skin: #a855f7;    /* Story - Purple */
+            --soul: #ffa502;    /* Voice - Yellow */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 12px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            background: linear-gradient(90deg, rgba(255,71,87,0.2), rgba(212,168,75,0.2));
+            border: 1px solid var(--missing);
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 1.4rem;
+            color: var(--missing);
+            text-shadow: 0 0 10px rgba(255,71,87,0.5);
+        }
+        .countdown {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--missing);
+            font-family: monospace;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .equation {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* Kill List Section */
+        .kill-list {
+            margin-bottom: 16px;
+        }
+        .kill-header {
+            font-size: 0.9rem;
+            color: var(--missing);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .kill-header::before {
+            content: "🎯";
+        }
+        .kill-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .kill-card {
+            background: var(--card);
+            border: 2px solid var(--missing);
+            border-radius: 8px;
+            padding: 12px;
+            animation: blink-border 1.5s infinite;
+            position: relative;
+        }
+        @keyframes blink-border {
+            0%, 100% { border-color: var(--missing); box-shadow: 0 0 10px rgba(255,71,87,0.3); }
+            50% { border-color: #ff6b81; box-shadow: 0 0 20px rgba(255,71,87,0.6); }
+        }
+        .kill-card .para {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--missing);
+        }
+        .kill-card .title {
+            font-size: 0.8rem;
+            color: var(--text);
+            margin: 4px 0;
+        }
+        .kill-card .squad {
+            font-size: 0.65rem;
+            color: var(--muted);
+            padding: 2px 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .kill-card .status {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 0.6rem;
+            color: var(--missing);
+            background: rgba(255,71,87,0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Squads Section (4 Squads: Bone-Flesh-Skin-Soul) */
+        .squads {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .squad {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 10px;
+            border-left: 4px solid;
+        }
+        .squad.bone { border-color: var(--bone); background: rgba(77,171,247,0.08); }
+        .squad.flesh { border-color: var(--flesh); background: rgba(255,107,107,0.08); }
+        .squad.skin { border-color: var(--skin); background: rgba(168,85,247,0.08); }
+        .squad.soul { border-color: var(--soul); background: rgba(255,165,2,0.08); }
+        .squad-header {
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .squad.bone .squad-header { color: var(--bone); }
+        .squad.flesh .squad-header { color: var(--flesh); }
+        .squad.skin .squad-header { color: var(--skin); }
+        .squad.soul .squad-header { color: var(--soul); }
+        .squad-agents {
+            font-size: 0.65rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+        .squad-zone {
+            font-size: 0.55rem;
+            color: var(--muted);
+            margin-top: 4px;
+            font-family: monospace;
+        }
+        .squad-role {
+            font-size: 0.55rem;
+            color: var(--text);
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        /* Matrix Grid */
+        .matrix-section {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid var(--border);
+        }
+        .matrix-header {
+            font-size: 0.85rem;
+            color: var(--C);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .matrix {
+            display: grid;
+            grid-template-columns: 60px repeat(5, 1fr);
+            gap: 2px;
+            font-size: 0.55rem;
+        }
+
+        /* Column Headers */
+        .col-header {
+            background: rgba(255,255,255,0.05);
+            padding: 6px 4px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 0.65rem;
+        }
+        .col-header small { display: block; font-size: 0.5rem; opacity: 0.6; margin-top: 2px; }
+        .col-header.I { color: #ff6b6b; }
+        .col-header.CFR { color: var(--C); }
+        .col-header.ARG { color: var(--R); }
+        .col-header.P { color: var(--muted); }
+        .col-header.C { color: var(--G); }
+
+        /* Row Headers */
+        .row-header {
+            background: rgba(255,255,255,0.03);
+            padding: 4px;
+            font-weight: 600;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 0.55rem;
+        }
+
+        /* Cells */
+        .cell {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 4px;
+            min-height: 36px;
+            font-size: 0.5rem;
+            position: relative;
+        }
+        .cell.empty { opacity: 0.2; }
+        .cell .para { font-family: monospace; font-weight: bold; }
+        .cell .topic { color: var(--muted); margin-top: 2px; line-height: 1.2; }
+
+        /* Status Classes */
+        .cell.missing {
+            border: 2px solid var(--missing);
+            background: rgba(255,71,87,0.1);
+            animation: blink-cell 2s infinite;
+        }
+        @keyframes blink-cell {
+            0%, 100% { background: rgba(255,71,87,0.1); }
+            50% { background: rgba(255,71,87,0.25); }
+        }
+        .cell.missing .para { color: var(--missing); }
+
+        .cell.polish {
+            border: 2px solid var(--polish);
+            background: rgba(255,165,2,0.08);
+        }
+        .cell.polish .para { color: var(--polish); }
+
+        .cell.draft {
+            border: 1px solid var(--draft);
+        }
+        .cell.draft .para { color: var(--draft); }
+
+        .cell.done {
+            border: 1px solid var(--done);
+            background: rgba(46,213,115,0.08);
+        }
+        .cell.done .para { color: var(--done); }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            padding: 8px 12px;
+            background: var(--card);
+            border-radius: 6px;
+            font-size: 0.6rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 12px;
+            color: var(--C);
+            font-style: italic;
+            font-size: 0.75rem;
+        }
+        footer small {
+            display: block;
+            color: var(--muted);
+            font-style: normal;
+            margin-top: 4px;
+            font-size: 0.55rem;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--done) 0%, var(--polish) 50%, var(--missing) 100%);
+            width: 85%;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div>
+        <h1>⚔️ D-1 WAR ROOM: Operation Golden Cage</h1>
+        <div class="equation">
+            d<span style="color:var(--G)">G</span>/d<span style="color:var(--F)">F</span> =
+            (d<span style="color:var(--G)">G</span>/d<span style="color:var(--R)">R</span>) ×
+            (d<span style="color:var(--R)">R</span>/d<span style="color:var(--F)">F</span>) = (+)(−) < 0
+        </div>
+    </div>
+    <div class="countdown">T-24:00:00</div>
+</header>
+
+<!-- KILL LIST: Updated Status -->
+<div class="kill-list">
+    <div class="kill-header">CRITICAL TARGETS — STATUS UPDATE</div>
+    <div class="kill-cards">
+        <div class="kill-card" style="border-color:var(--done);animation:none;">
+            <span class="status" style="background:rgba(46,213,115,0.3);color:var(--done);">✅ FILLED</span>
+            <div class="para" style="color:var(--done);">¶8</div>
+            <div class="title">Empirical Contradiction</div>
+            <div class="squad">🥩 DATA (@Sujin)</div>
+        </div>
+        <div class="kill-card" style="border-color:var(--done);animation:none;">
+            <span class="status" style="background:rgba(46,213,115,0.3);color:var(--done);">✅ FILLED</span>
+            <div class="para" style="color:var(--done);">¶12</div>
+            <div class="title">Formal Condition (μ(1−μ) < ε/B)</div>
+            <div class="squad">🦴 LOGIC (@Charlie)</div>
+        </div>
+        <div class="kill-card" style="border-color:var(--done);animation:none;">
+            <span class="status" style="background:rgba(46,213,115,0.3);color:var(--done);">✅ FILLED</span>
+            <div class="para" style="color:var(--done);">¶19</div>
+            <div class="title">Hypothesis: R → G</div>
+            <div class="squad">🗣️ SOUL (@Jeongha)</div>
+        </div>
+    </div>
+</div>
+
+<!-- SQUADS: Bone-Flesh-Skin-Soul -->
+<div class="squads">
+    <div class="squad bone">
+        <div class="squad-header">🦴 LOGIC (Bone)</div>
+        <div class="squad-agents">@Charlie</div>
+        <div class="squad-zone">¶5-6 (Model), ¶9-13 (CFR Mech)</div>
+        <div class="squad-role">Structure, Causal Chains, Formal Logic</div>
+    </div>
+    <div class="squad flesh">
+        <div class="squad-header">🥩 DATA (Flesh)</div>
+        <div class="squad-agents">@Sujin</div>
+        <div class="squad-zone">¶8 (Puzzle), ¶14, ¶19-23 (Results)</div>
+        <div class="squad-role">ρ = −0.174, Regression, Empirical Proof</div>
+    </div>
+    <div class="squad skin">
+        <div class="squad-header">🧥 STORY (Skin)</div>
+        <div class="squad-agents">@Scott</div>
+        <div class="squad-zone">¶7, ¶15 (Segway), ¶24, ¶25-27</div>
+        <div class="squad-role">Cases, Examples, Consulting Tools</div>
+    </div>
+    <div class="squad soul">
+        <div class="squad-header">🗣️ SOUL (Voice)</div>
+        <div class="squad-agents">@Jeongha</div>
+        <div class="squad-zone">¶1-4 (Hook), ¶16-18, ¶28-29</div>
+        <div class="squad-role">Persuasion, Narrative Arc, "Why it matters"</div>
+    </div>
+</div>
+
+<!-- MATRIX -->
+<div class="matrix-section">
+    <div class="matrix-header">
+        <span>📊 Paragraph Status Matrix (29¶)</span>
+        <span style="font-size:0.6rem;color:var(--muted);">Missing: 0 | Polish: 8 | Draft: 16 | Done: 5</span>
+    </div>
+
+    <div class="matrix">
+        <!-- Column Headers -->
+        <div></div>
+        <div class="col-header I">I<small>¶1-6</small></div>
+        <div class="col-header CFR">CFR<small>¶7-15</small></div>
+        <div class="col-header ARG">ARG<small>¶16-24</small></div>
+        <div class="col-header P">P<small>¶25-27</small></div>
+        <div class="col-header C">C<small>¶28-29</small></div>
+
+        <!-- G: Gospel -->
+        <div class="row-header">G<br/>Gospel</div>
+        <div class="cell polish"><div class="para">¶1</div><div class="topic">Cash=oxygen</div></div>
+        <div class="cell draft"><div class="para">¶7</div><div class="topic">Capital-enables</div></div>
+        <div class="cell draft"><div class="para">¶16</div><div class="topic">Sustainable Pos</div></div>
+        <div class="cell draft"><div class="para">¶25</div><div class="topic">When commit?</div></div>
+        <div class="cell empty">—</div>
+
+        <!-- P: Puzzle -->
+        <div class="row-header">P<br/>Puzzle</div>
+        <div class="cell polish"><div class="para">¶2</div><div class="topic">ρ(F,G)=−0.174</div></div>
+        <div class="cell done"><div class="para">¶8</div><div class="topic">Empirical Contradiction</div></div>
+        <div class="cell draft"><div class="para">¶17</div><div class="topic">Movers 1.82×</div></div>
+        <div class="cell draft"><div class="para">¶26</div><div class="topic">Doubly-binded</div></div>
+        <div class="cell empty">—</div>
+
+        <!-- S: Solution -->
+        <div class="row-header">S<br/>Solution</div>
+        <div class="cell polish"><div class="para">¶3</div><div class="topic">(+)×(−)=(−)</div></div>
+        <div class="cell draft"><div class="para">¶9</div><div class="topic">Golden cage mech</div></div>
+        <div class="cell draft"><div class="para">¶18</div><div class="topic">Partial commit</div></div>
+        <div class="cell draft"><div class="para">¶27</div><div class="topic">CSCE Tools</div></div>
+        <div class="cell polish"><div class="para">¶28</div><div class="topic">Commit to repos</div></div>
+
+        <!-- T: Table/Theory -->
+        <div class="row-header">T<br/>Table</div>
+        <div class="cell polish"><div class="para">¶4</div><div class="topic">Variables</div></div>
+        <div class="cell draft"><div class="para">¶10-11</div><div class="topic">Theory strands</div></div>
+        <div class="cell done"><div class="para">¶19</div><div class="topic">Hypothesis H2</div></div>
+        <div class="cell empty">—</div>
+        <div class="cell empty">—</div>
+
+        <!-- F: Figure/Formula -->
+        <div class="row-header">F<br/>Figure</div>
+        <div class="cell polish"><div class="para">¶5</div><div class="topic">Causal diagram</div></div>
+        <div class="cell done"><div class="para">¶12</div><div class="topic">μ(1−μ)<ε/B</div></div>
+        <div class="cell draft"><div class="para">¶20-21</div><div class="topic">Mover types</div></div>
+        <div class="cell empty">—</div>
+        <div class="cell empty">—</div>
+
+        <!-- M: Map -->
+        <div class="row-header">M<br/>Map</div>
+        <div class="cell polish"><div class="para">¶6</div><div class="topic">Thesis structure</div></div>
+        <div class="cell draft"><div class="para">¶13-14</div><div class="topic">LTE framework</div></div>
+        <div class="cell draft"><div class="para">¶22-23</div><div class="topic">Cases + robust</div></div>
+        <div class="cell empty">—</div>
+        <div class="cell polish"><div class="para">¶29</div><div class="topic">Limits & Future</div></div>
+
+        <!-- E: Example -->
+        <div class="row-header">E<br/>Example</div>
+        <div class="cell empty">—</div>
+        <div class="cell draft"><div class="para">¶15</div><div class="topic">Segway/Theranos</div></div>
+        <div class="cell draft"><div class="para">¶24</div><div class="topic">Tesla vs BP</div></div>
+        <div class="cell empty">—</div>
+        <div class="cell empty">—</div>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--missing);"></div> Missing (0)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--polish);"></div> Polish (8)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--draft);"></div> Draft (16)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--done);"></div> Done (5)</div>
+    <span style="color:var(--muted);margin-left:12px;">|</span>
+    <span style="color:var(--muted);margin-left:8px;font-size:0.55rem;">29¶ = 6(I) + 9(CFR) + 9(ARG) + 3(P) + 2(C)</span>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    "必生卽死 必死卽生" — 살려고 하면 죽고, 죽으려고 하면 산다
+    <small>D-1 Emergency Protocol | Core: dG/dF = (dG/dR)(dR/dF) = (+)(−) < 0 | Mechanism: Structural, not Motivational</small>
+</footer>
+
+<script>
+// Countdown timer
+function updateCountdown() {
+    const now = new Date();
+    const deadline = new Date();
+    deadline.setHours(deadline.getHours() + 24);
+    const diff = deadline - now;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.querySelector('.countdown').textContent =
+        `T-${String(hours).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+}
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
