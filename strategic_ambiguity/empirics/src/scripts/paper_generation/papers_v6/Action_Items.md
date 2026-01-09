@@ -540,7 +540,23 @@ between funding and rigidity reflects **selection**, not treatment. What does th
 
 ---
 
-*Updated: 2026-01-10 00:10*
+## 📚 ManSci/SMJ Reading Conventions (우리 후손이 이 산을 다시 넘지 않도록)
+
+학술지 논문 작성 시 적용할 7가지 원칙:
+
+| # | Convention | Description | Example |
+|:--|:-----------|:------------|:--------|
+| 1 | **First sentence = paragraph thesis** | 첫 문장이 문단의 핵심 주장 | "Funding inhibits repositioning through the golden cage mechanism." |
+| 2 | **One idea per paragraph** | 문단당 하나의 아이디어 | ¶9 = mechanism, ¶10 = DGP, ¶11 = theory |
+| 3 | **Active voice for claims** | 주장에는 능동태 사용 | "I find", "I document", "I term" |
+| 4 | **Mechanism before finding** | 발견 전에 메커니즘 설명 | CFR (왜) → ARG (무엇) 순서 |
+| 5 | **Effect sizes with interpretation** | 효과 크기와 해석 함께 | "ρ = −0.196 (p < 0.001)", "1.81× (17.8% vs 9.9%)" |
+| 6 | **Hedging calibrated to evidence** | 증거에 맞는 표현 수준 | "correlates with" ≠ "causes" |
+| 7 | **Contribution signposted explicitly** | 기여를 명시적으로 표시 | "The contribution is threefold: (1)...(2)...(3)..." |
+
+---
+
+*Updated: 2026-01-10 00:20*
 *Issue #020: Sentence Quality Enhancement RESOLVED.*
 *Issue #019: Paragraph Flow Integration RESOLVED.*
 *Issue #018: Advisor Summary Document CREATED.*
