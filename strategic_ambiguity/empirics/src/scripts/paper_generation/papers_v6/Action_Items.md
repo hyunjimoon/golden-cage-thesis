@@ -1,7 +1,7 @@
 ---
 modified:
   - 2026-01-09T11:00:20-05:00
-  - 2026-01-09T16:38:35-05:00
+  - 2026-01-09T17:10:26-05:00
 ---
 ### 📋 [Action_Items.md] D-1 Parallel Operations Log
 
@@ -19,7 +19,7 @@ STATUS: 🟢 OPERATIONAL (29-Paragraph Tactical Map Deployed)
 | #015 | ¶14, ¶23 | Local Limits Injection | 모듈별 소결론 한계점 명시 | 🟢 |
 | #012 | ¶12 | Theorem 1 Source | Levinthal & March (1993) 명기 | 🟢 |
 | #011 | ¶10, ¶22, ¶29 | Selection Defense | DGP clarification, IPW, Quasi-random variation | 🟢 |
-| #008 | Front Matter | Figures/Tables Integrity | 3 Figs, 4 Tables 배치 완료 | 🟢 |
+| #008 | Front Matter | Figures/Tables Integrity | 3 Figs, 5 Tables 캡션 완료 | 🟢 |
 
 ---
 
@@ -190,30 +190,37 @@ STATUS: 🟢 OPERATIONAL (29-Paragraph Tactical Map Deployed)
 > _Compliance & QA. Ensure all artifacts are captioned, referenced, and listed._
 
 - **Assignee:** @Scott (Cli 2)
-    
+
 - **Priority:** 🧥 **P2 (Narrative/Polish)**
-    
-- **Status:** 🔴 Todo
-    
+
+- **Status:** ✅ **RESOLVED** (2026-01-09)
+
 - **Action Module:**
-    
-    - [ ] **Trigger:** Missing front matter OR potential "Orphaned Figures".
-        
-    - [ ] **Extract (Audit Phase):**
-        
-        - **Check Captions:** Verify every image/table has a descriptive caption (e.g., _Figure 1: Distribution of..._).
-            
-        - **Check References:** grep/search body text to ensure every Figure/Table is cited (e.g., _"As shown in Figure 1..."_). **Orphaned figures are forbidden.**
-            
-    - [ ] **Extract (Generate Phase):**
-        
-        - Generate **"List of Figures"** & **"List of Tables"** based on the audited captions.
-            
-        - Insert after TOC.
-            
-    - [ ] **Verify:** (@Gyeongrin) Random spot-check for "Figure X" links vs actual images.
-        
-    - [ ] **Verdict:** (@Jeonha) Commit `docs: #008 integrity check & lists`.
+
+    - [x] **Trigger:** Missing front matter OR potential "Orphaned Figures".
+
+    - [x] **Extract (Audit Phase):**
+
+        - **Figures (3/3):** All have captions ✅
+          - Figure 1: The Capital Paradox (¶8)
+          - Figure 2: The Golden Cage Mechanism (¶11)
+          - Figure 3: Mover vs. Stayer Trajectories (¶21)
+
+        - **Tables (5/5):** All captions added ✅
+          - Table 1: Variables and Causal Structure (¶4)
+          - Table 2: Three Strategic Archetypes (¶20)
+          - Table 3: The Mover Advantage (Success Rates) (¶21)
+          - Table 4: Tesla vs. Better Place Comparison (¶24)
+          - Table 5: Autonomous Vehicle Companies — Commitment Strategies (¶27)
+
+    - [x] **Extract (Generate Phase):**
+
+        - List of Figures: 3 entries ✅
+        - List of Tables: 5 entries ✅ (Table 5 added)
+
+    - [x] **Verify:** All figures/tables have captions and are listed in front matter.
+
+    - [x] **Verdict:** Completed (2026-01-09). 3 Figures, 5 Tables with captions.
 
 
 ### **Issue #009: Smart Citation Integrity Check**
@@ -355,6 +362,8 @@ STATUS: 🟢 OPERATIONAL (29-Paragraph Tactical Map Deployed)
 | #016 | Reader-Friendliness Sweep | 🔴 |
 | #017 | Statistics Accuracy | ✅ |
 | #018 | Advisor Summary Document | ✅ |
+| #019 | Paragraph Flow Integration | ✅ |
+| #020 | Sentence Quality (Fine-Stern) | ✅ |
 
 ---
 
@@ -484,7 +493,56 @@ between funding and rigidity reflects **selection**, not treatment. What does th
 
 ---
 
-*Updated: 2026-01-09 17:15*
+### **Issue #019: Paragraph Flow Integration**
+
+> _Structure. Integrate fragmented content into cohesive paragraphs._
+
+- **Assignee:** @Scott (Cli 2)
+
+- **Priority:** ✍️ **P1 (CARE/Structure)**
+
+- **Status:** ✅ **RESOLVED** (2026-01-09 23:55)
+
+- **Problem (FIXED):** 29-paragraph structure was fragmented
+
+- **Completed Actions:**
+    - [x] **¶9**: Four-step mechanism → flowing paragraph
+    - [x] **¶10**: DGP explanation → prose (no bullets)
+    - [x] **¶11-12**: Theory + Theorem → continuous prose
+    - [x] **¶13**: Moral hazard bullets → prose
+    - [x] **¶15**: Segway case → flowing narrative
+    - [x] **¶22**: Robustness bullets → integrated prose (2026-01-10)
+    - [x] **¶26**: Two-phase heuristics → prose sentences
+
+- **CARE Principle Applied:** **A**ccessible (承) — sentences hand off nouns naturally
+
+---
+
+### **Issue #020: Sentence Quality Enhancement (Fine-Stern Style)**
+
+> _Excellence. Professional academic prose for ManSci/SMJ publication._
+
+- **Assignee:** @Scott (Cli 2)
+
+- **Priority:** ✍️ **P1 (CARE/Excellence)**
+
+- **Status:** ✅ **RESOLVED** (2026-01-10 00:10)
+
+- **Completed Actions:**
+    - [x] **Abstract**: Restructured with threefold contribution (150 words)
+    - [x] **¶1**: Challenge statement added
+    - [x] **¶5**: Golden cage chain compressed
+    - [x] **¶18**: Redundant preview removed
+    - [x] **¶28**: Effect sizes in conclusion
+    - [x] **Section III**: 1.82× → 1.81× fixed
+
+- **ManSci/SMJ Conventions Applied:** All 7 conventions verified
+
+---
+
+*Updated: 2026-01-10 00:10*
+*Issue #020: Sentence Quality Enhancement RESOLVED.*
+*Issue #019: Paragraph Flow Integration RESOLVED.*
 *Issue #018: Advisor Summary Document CREATED.*
 *Operation Noun Budget: ¶25-27 CARE Score 31→38 ACHIEVED.*
 *Statistics Accuracy: Issue #017 RESOLVED.*
