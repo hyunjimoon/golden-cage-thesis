@@ -2,10 +2,33 @@
 modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
-  - 2026-01-09T17:26:12-05:00
+  - 2026-01-09T20:47:35-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
+# q
+1. cash vs capital vs resource?
+2. 1. Evidence: Founders of failed well-funded ventures frequently express regret not pivoting, proving motivation was not the constraint. -> fanduel
+3. mover disaggregation
+	1. option1: stayer vs focusing vs broadening ![[Pasted image 20260109194106.png]]
+	2. option2: mover vs stayer
+4. "tesla: vertical integration" -> broadening?? pivoting vs strategic reorientation vs vertical integration (btw )
+5. include or exclude mobility case in P
+
+
+# issues
+
+1. ![[Pasted image 20260109193207.png]]
+2. ### [¶15] Case Evidence: Segway -> patented tech, losing out 
+3.  [[📜Terwiesch09_innov_tourn]]'s segway
+4. para28
+	1. add luca - disagreement predicts success
+	2. ![[Pasted image 20260109201750.png]]
+5. ![[Pasted image 20260109202006.png]]
+6. tesla: vertical integration VS wholesale to direct sale
+7. replace ![](figures/Fig-ARG_mover_vs_stayer.png)with ![[Pasted image 20260109202602.png]]
+8. par.22: add ![[Pasted image 20260109203005.png]]
+9. remove the right panel![[Pasted image 20260109204717.png]]
 # The Golden Cage: How Early Funding Suppresses Venture Growth
 
 **Hyunji Moon**
@@ -159,7 +182,7 @@ The interpretation is straightforward: when belief certainty is high (μ approac
 
 One might argue that well-funded founders simply don't *want* to pivot—capital insulates them from consequences. This moral hazard explanation implies that monitoring should increase with funding. My mechanism differs fundamentally: founders *cannot* pivot because governance constrains adaptation. This is not "won't"—it is "can't." Bolton et al. (2024) illuminate this distinction: investor protection mechanisms (board seats, milestone gates, information rights) designed to mitigate moral hazard paradoxically *create* structural rigidity. The very contracts intended to align incentives become the cage's bars. Contractual governance substitutes monitoring for flexibility, producing what I term *contractual rigidity*.
 
-The distinction matters for intervention: if moral hazard ("won't"), monitor founders more closely; if structural constraint ("can't"), redesign governance to preserve signal diversity. The evidence favors the structural explanation. Founders of failed well-funded ventures frequently express regret at not pivoting earlier—suggesting motivation was not the constraint. They wanted to adapt; governance prevented it.
+The distinction matters for intervention: if moral hazard ("won't"), monitor founders more closely; if structural constraint ("can't"), redesign governance to preserve signal diversity. The evidence favors the structural explanation. Founders of failed well-funded ventures frequently express regret at not pivoting earlier—suggesting motivation was not the constraint. They wanted to adapt; governance prevented it. Kirtley and O'Mahony (2023) demonstrate that pivoting is inherently gradual—a process of "letting go" of prior commitments rather than a sudden epiphany—requiring founders to cognitively disengage from existing strategies before embracing new ones. The golden cage amplifies this friction: governance homogeneity removes the skeptical voices that would accelerate "letting go," making the already-slow pivot process even slower until market windows close.
 
 ### [¶14] CFR Summary
 
@@ -201,7 +224,7 @@ While Section II demonstrated that funded ventures are structurally less likely 
 
 In high-uncertainty environments—where technological trajectories remain contested and customer preferences are still forming—static efficiency matters less than dynamic adaptation (Ries, 2011; Blank, 2013). The venture that executes perfectly on a mistaken strategy fails; the venture that iterates toward product-market fit survives. Early-stage markets reward learning, not precision.
 
-**Hypothesis 2 (H2):** *Ventures that exhibit greater strategic repositioning magnitude will exhibit higher rates of survival and growth compared to those that maintain their initial position.*
+**Hypothesis :** *Ventures with higher repositioning will exhibit higher rates of growth compared to those that maintain their initial position.*
 
 This hypothesis frames a direct contrast: **Movers** (ventures that adapt their strategic breadth by ≥10 points) versus **Stayers** (ventures that maintain position within measurement noise). If H2 holds, the rigidity documented in Section II is not disciplined focus—it is growth suppression.
 
@@ -222,6 +245,8 @@ I test H2 by categorizing ventures according to observed strategic change.
 **Why Conditional Quantile?** The distribution of strategic change exhibits severe zero-inflation: 59.6% of ventures show no movement (ΔB = 0). An unconditional threshold (e.g., overall median or arbitrary cutoff like ±10) would collapse to zero, classifying all non-zero movements as "significant"—conflating measurement noise with genuine strategic shifts. The conditional approach calculates thresholds from the non-zero subset only, ensuring meaningful discrimination.
 
 **Why Median as Threshold?** Among ventures that moved at all (N = 72,943), I use the median (R = 0.5) as the noise floor. This choice excludes minor fluctuations—potentially attributable to description updates rather than strategic repositioning—while capturing the upper half as *substantial strategic shifts*. The median is distribution-robust and avoids arbitrary cutoffs.
+
+**Semantic Interpretation.** The R > 0.5 threshold captures *qualified movement*: strategic shifts that reflect deliberate repositioning rather than cosmetic rewording. Pure description updates—adding buzzwords, refining taglines—produce low R because they alter surface text without changing market positioning. Qualified movers exhibit "precision in direction, flexibility in destination": they commit to a trajectory (narrowing or broadening) while preserving optionality about endpoints. This is strategic ambiguity in action—movement substantial enough to signal learning, yet not so radical as to indicate prior strategic incoherence.
 
 **Table 2: Three Strategic Archetypes**
 
@@ -250,6 +275,7 @@ I test H2 by categorizing ventures according to observed strategic change.
 
 Movers outperform Stayers by a factor of **1.81×** (17.8% vs. 9.9%). Both zoom-in (focus narrowing) and zoom-out (scope broadening) exhibit elevated success rates relative to stayers, suggesting that *directional clarity*—not direction itself—is associated with the mover advantage. This relationship holds after controlling for initial funding levels (F), industry fixed effects, and cohort timing. **H2 is supported.**
 
+![[Pasted image 20260109202602.png]]
 <a id="fig:mover_stayer_trajectories"></a>
 
 ![](figures/Fig-ARG_mover_vs_stayer.png)
@@ -291,7 +317,7 @@ The contrast illustrates my thesis: commitment at the vision level attracts alig
 
 ---
 
-## IV. Prescription: Capitalize and Evaluate (P)
+ ## IV. Prescription: Capitalize and Evaluate (P)
 
 ### [¶25] The Double Bind and the CE Framework
 
@@ -318,6 +344,8 @@ Capitalizing on uncertainty requires **strategic ambiguity**—precision about d
 Capitalizing attracts resources; evaluating deploys them. The Scale-it Framework operationalizes deployment through synchronized growth of **Segment** (market selection) and **Collaborate** (capability building):
 
 **Scale = Segment × Collaborate**
+
+This synchronization principle echoes Fine's (1998) 3D-CE insight: product, process, and supply chain must evolve in parallel—misalignment in any dimension creates vulnerability. Hayes and Wheelwright (1979) formalized this as the process-product diagonal: ventures succeed when process maturity matches product standardization. **The golden cage is off-diagonal failure.** Better Place locked process (battery-swap infrastructure) while product remained fluid—a rigid process serving an unvalidated product. Tesla stayed on-diagonal: flexible processes (contract manufacturing, then Fremont) matched evolving products (Roadster to Model S to Model 3).
 
 Ventures that escape the golden cage exhibit **Parallel Growth**—neither over-committing to market segments (rigidity) nor over-investing in capabilities without validation (resource drain). They calibrate segment expansion to capability development, and vice versa. Zuzul and Tripsas (2020) identify the obstacle to this calibration: *identity inertia*. "Revolutionary" founders define themselves through fixed visions; "Discoverer" founders define themselves through exploration. The practical implication: cultivate a discoverer identity. Identity flexibility enables strategic flexibility. The golden cage traps founders who cannot separate self from strategy.
 
@@ -389,9 +417,13 @@ Grimes, M. G. (2018). The pivot: How founders respond to feedback through idea a
 
 Hellmann, T., & Puri, M. (2002). Venture capital and the professionalization of start-up firms: Empirical evidence. *Journal of Finance*, 57(1), 169-197.
 
+Hayes, R. H., & Wheelwright, S. C. (1979). The dynamics of process-product life cycles. *Harvard Business Review*, 57(2), 127-136.
+
 Jensen, M. C., & Meckling, W. H. (1976). Theory of the firm: Managerial behavior, agency costs and ownership structure. *Journal of Financial Economics*, 3(4), 305-360.
 
 Kerr, W. R., Nanda, R., & Rhodes-Kropf, M. (2014). Entrepreneurship as experimentation. *Journal of Economic Perspectives*, 28(3), 25-48.
+
+Kirtley, J., & O'Mahony, S. (2023). What is a pivot? Explaining when and how entrepreneurial firms decide to make strategic change and pivot. *Strategic Management Journal*, 44(1), 197-230.
 
 Levinthal, D. A., & March, J. G. (1993). The myopia of learning. *Strategic Management Journal*, 14(S2), 95-112.
 

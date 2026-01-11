@@ -94,6 +94,8 @@ vagueness_diagnosis.txt
 *.pkl
 *.csv
 *.nc
+# Exception: Allow NC files in _shared/data for advisor review
+!src/scripts/paper_generation/papers_v6/_shared/data/*.nc
 
 # Paper generation output (regenerated files)
 src/scripts/paper_generation/output/
