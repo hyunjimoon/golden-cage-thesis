@@ -1,0 +1,233 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f9fa" />
+  
+  <!-- Title Banner -->
+  <rect x="0" y="0" width="1200" height="70" fill="#2c3e50" />
+  <text x="600" y="35" font-family="Georgia, serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">The Ring of Truth: An Inquiry into How We Know What We Know</text>
+  <text x="600" y="58" font-family="Arial" font-size="14" text-anchor="middle" fill="#bdc3c7">Philip &amp; Phylis Morrison (1987) | MIT Physics | PBS Series Companion</text>
+  
+  <!-- Defs for arrows and gradients -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff3e0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffe0b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcdd2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e1bee7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 🐢 낭만거북: 패러독스 + 기존 문헌 (초록) - Top Left -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="20" y="85" width="575" height="385" rx="12" fill="url(#greenGrad)" stroke="#4caf50" stroke-width="3" />
+  <text x="307" y="115" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2e7d32">🐢 낭만거북: The Paradox of Knowing</text>
+  
+  <!-- Problem Box -->
+  <rect x="40" y="130" width="250" height="150" rx="8" fill="#ffffff" stroke="#81c784" stroke-width="2" />
+  <text x="165" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">💜 Problem</text>
+  <text x="165" y="180" font-family="Arial" font-size="12" text-anchor="middle">"How do we KNOW</text>
+  <text x="165" y="198" font-family="Arial" font-size="12" text-anchor="middle">what we know?"</text>
+  <text x="165" y="225" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">Science claims certainty,</text>
+  <text x="165" y="242" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">but evidence is always</text>
+  <text x="165" y="259" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">indirect &amp; incomplete</text>
+  
+  <!-- Solution Box -->
+  <rect x="325" y="130" width="250" height="150" rx="8" fill="#ffffff" stroke="#81c784" stroke-width="2" />
+  <text x="450" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">💚 Solution</text>
+  <text x="450" y="180" font-family="Arial" font-size="12" text-anchor="middle">"The Ring of Truth"</text>
+  <text x="450" y="198" font-family="Arial" font-size="12" text-anchor="middle">= Coherence across methods</text>
+  <text x="450" y="225" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">Multiple independent lines</text>
+  <text x="450" y="242" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">of evidence converging</text>
+  <text x="450" y="259" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">→ Truth "rings" clear</text>
+  
+  <!-- Arrow -->
+  <path d="M 290 205 L 325 205" stroke="#2e7d32" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- Literature Brick -->
+  <rect x="40" y="295" width="535" height="160" rx="8" fill="#ffffff" stroke="#a5d6a7" stroke-width="1" />
+  <text x="55" y="318" font-family="Arial" font-size="13" font-weight="bold" fill="#2e7d32">🧱 Literature Brick (50-Year Genealogy)</text>
+  <text x="55" y="342" font-family="Arial" font-size="11" fill="#333">• Popper (1959): Falsification - Science grows by eliminating errors</text>
+  <text x="55" y="360" font-family="Arial" font-size="11" fill="#333">• Kuhn (1962): Paradigm shifts - Truth is theory-laden</text>
+  <text x="55" y="378" font-family="Arial" font-size="11" fill="#333">• Lakatos (1978): Research programmes - Progressive vs degenerating</text>
+  <text x="55" y="396" font-family="Arial" font-size="11" fill="#333">• Hacking (1983): Representing &amp; Intervening - Experiments create entities</text>
+  <text x="55" y="420" font-family="Arial" font-size="10" fill="#666">📚 Must Read: Sagan's "The Demon-Haunted World" (1995) - Parallel PBS popularization</text>
+  <text x="55" y="440" font-family="Arial" font-size="10" fill="#1b5e20" font-style="italic">🎯 For Your Paper: τ(precision)의 "ring" - 약속의 진실성이 증거의 수렴에서 나온다</text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 🐅 세련호랑: 프레임워크 + 이론 구축 (주황) - Top Right -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="605" y="85" width="575" height="385" rx="12" fill="url(#orangeGrad)" stroke="#ff9800" stroke-width="3" />
+  <text x="892" y="115" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#e65100">🐅 세련호랑: The Framework</text>
+  
+  <!-- 6 Episodes Structure -->
+  <rect x="625" y="130" width="535" height="130" rx="8" fill="#ffffff" stroke="#ffb74d" stroke-width="2" />
+  <text x="892" y="155" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">🧭 6-Episode Epistemological Journey</text>
+  
+  <!-- Episode boxes -->
+  <rect x="635" y="168" width="80" height="45" rx="4" fill="#fff8e1" stroke="#ffa726" />
+  <text x="675" y="186" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold">1. Perception</text>
+  <text x="675" y="200" font-family="Arial" font-size="8" text-anchor="middle">Senses deceive</text>
+  
+  <rect x="725" y="168" width="80" height="45" rx="4" fill="#fff8e1" stroke="#ffa726" />
+  <text x="765" y="186" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold">2. Galileo</text>
+  <text x="765" y="200" font-family="Arial" font-size="8" text-anchor="middle">Telescope truth</text>
+  
+  <rect x="815" y="168" width="80" height="45" rx="4" fill="#fff8e1" stroke="#ffa726" />
+  <text x="855" y="186" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold">3. Mapping</text>
+  <text x="855" y="200" font-family="Arial" font-size="8" text-anchor="middle">Navigation</text>
+  
+  <rect x="905" y="168" width="80" height="45" rx="4" fill="#fff8e1" stroke="#ffa726" />
+  <text x="945" y="186" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold">4. Geology</text>
+  <text x="945" y="200" font-family="Arial" font-size="8" text-anchor="middle">Deep time</text>
+  
+  <rect x="995" y="168" width="80" height="45" rx="4" fill="#fff8e1" stroke="#ffa726" />
+  <text x="1035" y="186" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold">5. Astro</text>
+  <text x="1035" y="200" font-family="Arial" font-size="8" text-anchor="middle">Cosmic scale</text>
+  
+  <rect x="1085" y="168" width="68" height="45" rx="4" fill="#fff8e1" stroke="#ffa726" />
+  <text x="1119" y="186" font-family="Arial" font-size="9" text-anchor="middle" font-weight="bold">6. Quantum</text>
+  <text x="1119" y="200" font-family="Arial" font-size="8" text-anchor="middle">Uncertainty</text>
+  
+  <!-- Connecting arrows -->
+  <path d="M 715 190 L 725 190" stroke="#e65100" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 805 190 L 815 190" stroke="#e65100" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 895 190 L 905 190" stroke="#e65100" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 985 190 L 995 190" stroke="#e65100" stroke-width="1" marker-end="url(#arrow)" />
+  <path d="M 1075 190 L 1085 190" stroke="#e65100" stroke-width="1" marker-end="url(#arrow)" />
+  
+  <text x="892" y="245" font-family="Arial" font-size="10" text-anchor="middle" fill="#bf360c">Progressive Revelation: From sensory limits → universal laws</text>
+  
+  <!-- Core Thesis -->
+  <rect x="625" y="270" width="260" height="115" rx="8" fill="#ffffff" stroke="#ffb74d" stroke-width="2" />
+  <text x="755" y="295" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">🗺️ Core Thesis</text>
+  <text x="755" y="318" font-family="Arial" font-size="11" text-anchor="middle">Scientific truth has a "ring"</text>
+  <text x="755" y="336" font-family="Arial" font-size="11" text-anchor="middle">when multiple methods</text>
+  <text x="755" y="354" font-family="Arial" font-size="11" text-anchor="middle">independently converge</text>
+  <text x="755" y="375" font-family="Arial" font-size="10" text-anchor="middle" fill="#bf360c" font-weight="bold">Coherence = Confidence</text>
+  
+  <!-- Method Box -->
+  <rect x="900" y="270" width="260" height="115" rx="8" fill="#ffffff" stroke="#ffb74d" stroke-width="2" />
+  <text x="1030" y="295" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#e65100">🧠 Methodology</text>
+  <text x="1030" y="318" font-family="Arial" font-size="11" text-anchor="middle">Historical case studies +</text>
+  <text x="1030" y="336" font-family="Arial" font-size="11" text-anchor="middle">Hands-on demonstrations +</text>
+  <text x="1030" y="354" font-family="Arial" font-size="11" text-anchor="middle">Visual evidence</text>
+  <text x="1030" y="375" font-family="Arial" font-size="10" text-anchor="middle" fill="#bf360c" font-weight="bold">"Show, don't just tell"</text>
+  
+  <!-- Contribution -->
+  <rect x="625" y="395" width="535" height="60" rx="8" fill="#fff8e1" stroke="#ffc107" stroke-width="1" />
+  <text x="640" y="418" font-family="Arial" font-size="12" font-weight="bold" fill="#e65100">📐 Contribution vs Existing:</text>
+  <text x="640" y="438" font-family="Arial" font-size="10" fill="#333">Popper: "Falsify!" → Morrison: "Converge!" | Kuhn: "Paradigms shift" → Morrison: "Methods persist"</text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 🐙 절절문어: 증거 + 사례 연구 (빨강) - Bottom Left -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="20" y="480" width="575" height="400" rx="12" fill="url(#redGrad)" stroke="#f44336" stroke-width="3" />
+  <text x="307" y="510" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#c62828">🐙 절절문어: The Evidence</text>
+  
+  <!-- Case Study 1: Galileo -->
+  <rect x="40" y="525" width="260" height="130" rx="8" fill="#ffffff" stroke="#ef9a9a" stroke-width="2" />
+  <text x="170" y="548" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#c62828">Case 1: Galileo's Telescope</text>
+  <text x="170" y="570" font-family="Arial" font-size="10" text-anchor="middle">💜 Paradox: How trust a new instrument</text>
+  <text x="170" y="587" font-family="Arial" font-size="10" text-anchor="middle">that shows things never seen before?</text>
+  <text x="170" y="610" font-family="Arial" font-size="10" text-anchor="middle">💚 Ring: Moon craters consistent</text>
+  <text x="170" y="627" font-family="Arial" font-size="10" text-anchor="middle">across different telescopes, observers</text>
+  <text x="170" y="645" font-family="Arial" font-size="9" text-anchor="middle" fill="#c62828">📊 Multiple independent confirmations</text>
+  
+  <!-- Case Study 2: Navigation -->
+  <rect x="315" y="525" width="260" height="130" rx="8" fill="#ffffff" stroke="#ef9a9a" stroke-width="2" />
+  <text x="445" y="548" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#c62828">Case 2: Longitude Problem</text>
+  <text x="445" y="570" font-family="Arial" font-size="10" text-anchor="middle">💜 Paradox: Ships lost at sea</text>
+  <text x="445" y="587" font-family="Arial" font-size="10" text-anchor="middle">despite "best" astronomical methods</text>
+  <text x="445" y="610" font-family="Arial" font-size="10" text-anchor="middle">💚 Ring: Harrison's clock worked</text>
+  <text x="445" y="627" font-family="Arial" font-size="10" text-anchor="middle">across all ocean conditions</text>
+  <text x="445" y="645" font-family="Arial" font-size="9" text-anchor="middle" fill="#c62828">📊 Practical performance = truth test</text>
+  
+  <!-- Case Study 3: Spectra -->
+  <rect x="40" y="665" width="260" height="110" rx="8" fill="#ffffff" stroke="#ef9a9a" stroke-width="2" />
+  <text x="170" y="688" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#c62828">Case 3: Stellar Spectra</text>
+  <text x="170" y="710" font-family="Arial" font-size="10" text-anchor="middle">💜 How know star composition</text>
+  <text x="170" y="727" font-family="Arial" font-size="10" text-anchor="middle">from just light?</text>
+  <text x="170" y="750" font-family="Arial" font-size="10" text-anchor="middle">💚 Lab spectra match stellar spectra</text>
+  <text x="170" y="767" font-family="Arial" font-size="9" text-anchor="middle" fill="#c62828">📊 Cross-domain convergence</text>
+  
+  <!-- Evidence Pattern Summary -->
+  <rect x="315" y="665" width="260" height="110" rx="8" fill="#ffffff" stroke="#e57373" stroke-width="2" />
+  <text x="445" y="688" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#c62828">🔴(💜,💚) Tradeoff Pattern</text>
+  <text x="445" y="715" font-family="Arial" font-size="11" text-anchor="middle">Precision ↔ Accessibility</text>
+  <text x="445" y="738" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">Technical rigor risks alienation</text>
+  <text x="445" y="758" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">Simplification risks distortion</text>
+  <text x="445" y="768" font-family="Arial" font-size="9" text-anchor="middle" fill="#c62828" font-weight="bold">Morrison balance: Visual demonstration</text>
+  
+  <!-- Applications -->
+  <rect x="40" y="785" width="535" height="80" rx="8" fill="#ffebee" stroke="#ef5350" stroke-width="1" />
+  <text x="55" y="805" font-family="Arial" font-size="12" font-weight="bold" fill="#c62828">💸 3 Applications for Entrepreneurial Promises:</text>
+  <text x="55" y="825" font-family="Arial" font-size="10" fill="#333">1. 투자자 Due Diligence: 다중 증거선의 수렴 요구 (기술/시장/팀 일치)</text>
+  <text x="55" y="842" font-family="Arial" font-size="10" fill="#333">2. 고객 신뢰 구축: "Ring"이 울리는 약속 = 말과 행동의 일관성</text>
+  <text x="55" y="859" font-family="Arial" font-size="10" fill="#333">3. 피봇 정당화: 새 방향도 기존 증거와 "ring"이 맞아야 함</text>
+  
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- 👾 똘똘외계: 통합 + 미래 함의 (보라) - Bottom Right -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="605" y="480" width="575" height="400" rx="12" fill="url(#purpleGrad)" stroke="#9c27b0" stroke-width="3" />
+  <text x="892" y="510" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#6a1b9a">👾 똘똘외계: Integration &amp; Future</text>
+  
+  <!-- Mirror Diagram -->
+  <rect x="625" y="525" width="535" height="150" rx="8" fill="#ffffff" stroke="#ce93d8" stroke-width="2" />
+  <text x="892" y="548" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">🔮 Epistemological Mirror: Two Complementary Questions</text>
+  
+  <!-- Left mirror -->
+  <rect x="640" y="565" width="240" height="95" rx="6" fill="#e8f5e9" stroke="#4caf50" stroke-width="1" />
+  <text x="760" y="588" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2e7d32">Ring of Truth (Morrison)</text>
+  <text x="760" y="608" font-family="Arial" font-size="11" text-anchor="middle">"How do we KNOW?"</text>
+  <text x="760" y="628" font-family="Arial" font-size="10" text-anchor="middle" fill="#555">Knowledge Acquisition</text>
+  <text x="760" y="648" font-family="Arial" font-size="10" text-anchor="middle" fill="#1b5e20">🧠 Evidence → Theory → Truth</text>
+  
+  <!-- Right mirror -->
+  <rect x="905" y="565" width="240" height="95" rx="6" fill="#fff3e0" stroke="#ff9800" stroke-width="1" />
+  <text x="1025" y="588" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">What Not To Think (Phillips)</text>
+  <text x="1025" y="608" font-family="Arial" font-size="11" text-anchor="middle">"How NOT think?"</text>
+  <text x="1025" y="628" font-family="Arial" font-size="10" text-anchor="middle" fill="#555">Possibility Filtering</text>
+  <text x="1025" y="648" font-family="Arial" font-size="10" text-anchor="middle" fill="#e65100">🧭 Sample → Evaluate → Decide</text>
+  
+  <!-- Double arrow between mirrors -->
+  <text x="892" y="618" font-family="Arial" font-size="24" text-anchor="middle" fill="#6a1b9a">⟷</text>
+  
+  <!-- Synthesis Box -->
+  <rect x="625" y="685" width="260" height="115" rx="8" fill="#ffffff" stroke="#ba68c8" stroke-width="2" />
+  <text x="755" y="708" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#6a1b9a">🧍‍♀️🌏 Agent-World Synthesis</text>
+  <text x="755" y="730" font-family="Arial" font-size="10" text-anchor="middle">Morrison: 🧠 Scientist mode</text>
+  <text x="755" y="748" font-family="Arial" font-size="10" text-anchor="middle">"Verify through convergence"</text>
+  <text x="755" y="770" font-family="Arial" font-size="10" text-anchor="middle">Phillips: 🧭 Decision mode</text>
+  <text x="755" y="788" font-family="Arial" font-size="10" text-anchor="middle">"Sample probable &amp; valuable first"</text>
+  
+  <!-- Future Box -->
+  <rect x="900" y="685" width="260" height="115" rx="8" fill="#ffffff" stroke="#ba68c8" stroke-width="2" />
+  <text x="1030" y="708" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle" fill="#6a1b9a">🚀 Future Research Agenda</text>
+  <text x="1030" y="730" font-family="Arial" font-size="10" text-anchor="middle">H1: 다중 증거선 약속이</text>
+  <text x="1030" y="748" font-family="Arial" font-size="10" text-anchor="middle">단일 증거선보다 펀딩 ↑</text>
+  <text x="1030" y="770" font-family="Arial" font-size="10" text-anchor="middle">H2: "Ring" 일관성 높으면</text>
+  <text x="1030" y="788" font-family="Arial" font-size="10" text-anchor="middle">피봇 후 생존율 ↑</text>
+  
+  <!-- For Your Paper Summary -->
+  <rect x="625" y="810" width="535" height="55" rx="8" fill="#f3e5f5" stroke="#ab47bc" stroke-width="2" />
+  <text x="640" y="832" font-family="Arial" font-size="12" font-weight="bold" fill="#6a1b9a">🎯 For Your Paper: Strategic Ambiguity의 "Ring"</text>
+  <text x="640" y="852" font-family="Arial" font-size="10" fill="#333">τ(precision)가 낮아도 다중 이해관계자 해석이 수렴하면 = "Ring of Truth" → 신뢰 형성</text>
+  
+  <!-- Footer -->
+  <rect x="0" y="880" width="1200" height="20" fill="#34495e" />
+  <text x="600" y="894" font-family="Arial" font-size="10" text-anchor="middle" fill="#ecf0f1">현지의 포스터 시스템 v4.1 | 4-Animal Framework | 30초 이해, 평생 기억</text>
+</svg>
