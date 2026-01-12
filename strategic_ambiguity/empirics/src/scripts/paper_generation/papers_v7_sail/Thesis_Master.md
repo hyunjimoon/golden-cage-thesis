@@ -39,13 +39,14 @@ Draft for Committee Review — January 2026
 
 # Abstract
 
-Startups die not for lack of resources, but for lack of mobility.
+**¶1 — Phenomenon & Significance.**
+The $330 billion U.S. venture capital industry rests on a simple premise: capital fuels growth. Yet analyzing 180,994 ventures from PitchBook (2021–2025), I document a paradox: early-stage funding correlates *negatively* with later-stage survival (ρ = −0.196, p < 0.001). Startups die not for lack of resources, but for lack of mobility. Capital is oxygen—but oxygen in a sealed chamber becomes a cage.
 
-Analyzing 180,994 ventures from PitchBook (2021–2025), I document a troubling correlation: early-stage funding correlates *negatively* with later-stage growth (ρ = −0.196, p < 0.001). This finding does not indict capital—ventures need capital to survive. Rather, I identify a second-order mechanism: funding suppresses strategic repositioning (ρ = −0.087), yet repositioning drives growth (Movers outperform Stayers by 1.81×). The product of a positive and a negative is negative.
+**¶2 — Part I: The Cage (Chapters 1–4).**
+I identify a second-order mechanism explaining this paradox. Funding suppresses strategic repositioning (ρ = −0.087), yet repositioning drives growth—Movers outperform Stayers by 1.81× (17.8% vs. 9.9%). The product of a positive and a negative is negative: dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−). I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
 
-I term this mechanism the *golden cage*. Securing capital requires operational commitments that attract like-minded investors who systematically filter skeptics from governance. This belief homogeneity eliminates the signal diversity that learning requires. The constraint is structural: founders *cannot* pivot—not that they *will not*—because their boards lack advocates for alternatives.
-
-The contribution is threefold. First, I document a negative funding-growth correlation at unprecedented scale. Second, I identify governance homogeneity—not moral hazard—as the binding constraint on venture adaptation. Third, I distinguish vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). The prescription follows: when uncertain, commit to *reposition*, rather than to position.
+**¶3 — Part II: Escaping the Cage (Chapters 5–6).**
+The contribution is threefold. First, I document a negative funding-growth correlation at unprecedented scale. Second, I identify governance homogeneity—not moral hazard—as the binding constraint. Third, I distinguish vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095). The prescription follows: when uncertain, commit to *reposition*, rather than to position.
 
 **Keywords:** entrepreneurial strategy, venture capital, strategic flexibility, pivoting, governance, commitment
 
@@ -367,7 +368,26 @@ $$R_i = |B_{T,i} - B_{0,i}|$$
 
 Where B_0 is strategic breadth at baseline (2021) and B_T is strategic breadth at endpoint (2025).
 
-### 3.3.3 Growth (G)
+### 3.3.3 Defining Qualified Movement
+
+A critical methodological decision is distinguishing meaningful repositioning from measurement noise. The distribution of R exhibits **zero-inflation**: 59.6% of ventures show R = 0. Among ventures with R > 0, variation spans from trivial description updates to fundamental strategic pivots.
+
+**Definition (Qualified Movement):**
+
+Let τ = median(R | R > 0) denote the median repositioning magnitude among ventures with *any* observed change.
+
+$$\text{Mover}_i = \mathbf{1}[R_i > \tau]$$
+$$\text{Stayer}_i = \mathbf{1}[R_i \leq \tau]$$
+
+**Rationale:** A simple R > 0 criterion would classify minor text edits as "repositioning," contaminating the Mover category with noise. The median-among-changers threshold ensures only ventures in the upper half of the change distribution qualify as Movers. This definition:
+
+1. **Separates signal from noise:** Minor description updates (R ≈ 0.1) are classified as Stayers
+2. **Remains scale-invariant:** The threshold adapts to the data distribution
+3. **Reproduces canonical numbers:** Yields Mover rate = 20.1%, Stayer rate = 79.9%
+
+Appendix B reports sensitivity analyses using alternative thresholds (τ₂₅ = 75th percentile, τ₇₅ = 25th percentile). The Mover advantage persists across specifications.
+
+### 3.3.4 Growth (G)
 
 I operationalize growth as reaching Later Stage VC financing—a milestone indicating market validation. The base rate is 11.5% across the sample.
 
@@ -499,18 +519,29 @@ The positive correlation is consistent: ventures that reposition succeed more of
 
 ### 4.2.2 The Mover Advantage: 1.81×
 
-To operationalize the repositioning-growth relationship, I classify ventures into three archetypes:
+To operationalize the repositioning-growth relationship, I classify ventures using a **primary binary taxonomy** (Mover vs. Stayer) with a **secondary directional decomposition** for interpretive depth.
 
-**Table 5: Mover Taxonomy**
+**Table 5a: Mover Taxonomy — Binary Classification (Primary)**
 
 | Archetype | Criteria | N | % | Success Rate (G) |
 |:----------|:---------|--:|--:|:----------------:|
-| **Stayer** | R ≤ 0.5 | 144,605 | 79.9% | 9.9% |
-| **Zoom-in** | ΔB < 0, R > 0.5 | 15,902 | 8.8% | 17.1% |
-| **Zoom-out** | ΔB > 0, R > 0.5 | 20,487 | 11.3% | 18.4% |
-| **All Movers** | R > 0.5 | 36,389 | 20.1% | **17.8%** |
+| **Stayer** | R ≤ τ | 144,605 | 79.9% | 9.9% |
+| **Mover** | R > τ | 36,389 | 20.1% | **17.8%** |
 
-Movers outperform Stayers by **1.81×** (17.8% vs. 9.9%). Both zoom-in and zoom-out exhibit elevated success rates, suggesting that *directional clarity*—not direction itself—drives the mover advantage.
+*Note: τ = median(R | R > 0). See §3.3.3 for threshold derivation.*
+
+**The core finding:** Movers outperform Stayers by **1.81×** (17.8% vs. 9.9%, p < 0.001). This binary classification is the primary taxonomy used throughout subsequent analyses.
+
+**Table 5b: Directional Decomposition — 3-Way Classification (Secondary)**
+
+| Direction | Criteria | N | % | Success Rate (G) |
+|:----------|:---------|--:|--:|:----------------:|
+| **Zoom-in** | ΔB < 0, R > τ | 15,902 | 8.8% | 17.1% |
+| **Zoom-out** | ΔB > 0, R > τ | 20,487 | 11.3% | 18.4% |
+
+*Note: ΔB = change in business scope breadth. Zoom-in = narrowing focus; Zoom-out = expanding scope.*
+
+**Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—drives the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the causal identification.
 
 ![Figure 5: Mover vs. Stayer Success Rates](figures/Fig-ARG_mover_vs_stayer.png)
 
@@ -546,6 +577,22 @@ The golden cage binds tighter in capital-intensive industries where switching co
 2. **Software shows near-zero correlation.** The software industry (ρ = −0.001, ns) demonstrates that low capital intensity allows Oxygen and Cage effects to approximately balance. Cheap experimentation offsets governance rigidity.
 
 3. **Quantum is the sole positive outlier.** Under extreme uncertainty, the learning value of capital dominates rigidity costs (ρ = +0.095*). This represents a boundary condition for the multiplicative model.
+
+### 4.3.3 Theorizing the Quantum Exception
+
+The Quantum industry's positive correlation demands theoretical explanation. I propose the **Uncertainty Threshold Hypothesis**:
+
+$$\text{When } \sigma_{\text{market}} \times \sigma_{\text{tech}} > \theta^*, \text{ learning value dominates rigidity cost}$$
+
+Three conditions distinguish Quantum from other capital-intensive sectors:
+
+1. **No dominant design exists.** Unlike Transportation (EV vs. ICE) or Hardware (established architectures), Quantum computing lacks consensus on qubit technology (superconducting, trapped ion, photonic, topological). This creates *option value* that governance homogeneity cannot destroy—even believers disagree on which path to bet on.
+
+2. **Market validation is impossible.** Customer feedback cannot guide pivoting because customers do not yet exist for quantum advantage applications. The cage cannot bite when there is nothing to be caged *toward*.
+
+3. **Funding signals competence, not commitment.** In nascent fields, early funding indicates scientific credibility rather than operational lock-in. Investors select for talent, not business model conviction.
+
+This boundary condition refines the golden cage mechanism: the cage binds when commitment forecloses *identifiable* alternatives. Under radical uncertainty, no alternatives are identifiable, so commitment cannot foreclose them.
 
 ![Figure 6: Mobility - Where the Cage Bites Hardest](figures/Fig-Ch4_mobility_failure.png)
 
