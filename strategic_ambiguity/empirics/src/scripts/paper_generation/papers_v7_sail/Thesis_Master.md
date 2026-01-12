@@ -59,19 +59,17 @@ The contribution is threefold. First, I document a negative funding-growth corre
 
 # Table of Contents
 
-## PART I: MECHANISM AND MEASUREMENT
-*Why Funding Creates the Golden Cage*
+## PART I: The Cage — Theory and Evidence
 
-- [Chapter 1: The Paradox — More Capital, Less Growth](#chapter-1-introduction)
-- [Chapter 2: The Golden Cage — Learning vs. Rigidity](#chapter-2-theory--hypotheses)
-- [Chapter 3: Data and Identification — 180,994 Ventures](#chapter-3-empirical-strategy)
+- [Chapter 1: Introduction](#chapter-1-introduction)
+- [Chapter 2: The Golden Cage Mechanism](#chapter-2-the-golden-cage-mechanism)
+- [Chapter 3: Data and Identification](#chapter-3-data-and-identification)
+- [Chapter 4: Where the Cage Bites](#chapter-4-where-the-cage-bites)
 
-## PART II: EVIDENCE AND DESIGN
-*How Strategic Ambiguity Enables Escape*
+## PART II: Escaping the Golden Cage
 
-- [Chapter 4: Where the Cage Bites — Movers vs. Stayers](#chapter-4-results)
-- [Chapter 5: Designing the Exit — Commit to Direction, Not Destination](#chapter-5-discussion)
-- [Chapter 6: Conclusion — Commit to Reposition, Not to Position](#chapter-6-conclusion)
+- [Chapter 5: Designing for Strategic Flexibility](#chapter-5-designing-for-strategic-flexibility)
+- [Chapter 6: Conclusion](#chapter-6-conclusion)
 
 - [References](#references)
 - [Appendices](#appendices)
@@ -107,8 +105,7 @@ The contribution is threefold. First, I document a negative funding-growth corre
 
 ---
 
-# CHAPTER 1: THE PARADOX
-## More Capital, Less Growth
+# CHAPTER 1: INTRODUCTION
 
 > *"What's the puzzle?"*
 > **Core Equation**: dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−)
@@ -159,8 +156,7 @@ The thesis proceeds as follows. **Chapter 2** develops the theoretical foundatio
 
 ---
 
-# CHAPTER 2: THE GOLDEN CAGE
-## Learning vs. Rigidity — Two Forces in Collision
+# CHAPTER 2: THE GOLDEN CAGE MECHANISM
 
 > *"Why does it happen?"*
 > **Key Insight**: Founders *cannot* pivot—not that they *will not*—because governance lacks advocates for alternatives.
@@ -296,8 +292,7 @@ Three testable hypotheses follow: H1 predicts negative funding-growth correlatio
 
 ---
 
-# CHAPTER 3: EMPIRICAL STRATEGY
-## Data and Identification — 180,994 Ventures
+# CHAPTER 3: DATA AND IDENTIFICATION
 
 > *"How do we test it?"*
 > **Key Numbers**: N = 180,994, Mover Rate = 20.1%, Base Success Rate = 11.5%
@@ -436,7 +431,6 @@ Key sample characteristics: 20.1% of ventures qualify as "Movers" (R > 0.5), whi
 ---
 
 # CHAPTER 4: WHERE THE CAGE BITES
-## Movers vs. Stayers — 180,994 Ventures, One Brutal Pattern
 
 > *"Where does it bite?"*
 > **Key Numbers**: ρ = −0.196***, Mover Advantage = 1.81×, Mobility Survival = 5.3%
@@ -622,8 +616,7 @@ The golden cage binds tightest in:
 
 ---
 
-# CHAPTER 5: DESIGNING THE EXIT
-## Commit to Direction, Not Destination — Flipping (−) to (+)
+# CHAPTER 5: DESIGNING FOR STRATEGIC FLEXIBILITY
 
 > *"How to design around it?"*
 > **Key Insight**: Vision commitment preserves flexibility; operational commitment forecloses it.
@@ -736,8 +729,7 @@ The prescription is clear: design governance for adaptation *before* funding eli
 
 ---
 
-# CHAPTER 6: COMMIT TO REPOSITION, NOT TO POSITION
-## Move to Grow — The Prescription
+# CHAPTER 6: CONCLUSION
 
 > *"So what?"*
 > **Final Equation**: When uncertain, commit to *reposition*, rather than to position.
