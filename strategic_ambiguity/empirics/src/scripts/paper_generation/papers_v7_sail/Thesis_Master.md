@@ -23,7 +23,7 @@ industry_correlations_verified:
 modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
-  - 2026-01-12T11:01:20-05:00
+  - 2026-01-12T11:24:57-05:00
 ---
 
 
@@ -86,14 +86,15 @@ The contribution is threefold. First, I document a negative funding-growth corre
 | Figure | Title                                         | Chapter |
 | :----: | :-------------------------------------------- | :-----: |
 |   1    | The Funding-Growth Paradox                    |  Ch.1   |
-|   2    | The Golden Cage Mechanism                     |  Ch.2   |
-|   3    | Sample Construction Flowchart                 |  Ch.3   |
-|   4    | CER Pattern: Funding Suppresses Repositioning |  Ch.4   |
-|   5    | Mover vs. Stayer Success Rates (1.81×)        |  Ch.4   |
-|   6    | Mobility: Where the Cage Bites Hardest        |  Ch.4   |
-|   7    | Temporal Robustness (2020-2025)               |  Ch.4   |
-|   8    | The Strategic Ambiguity Sweet Spot            |  Ch.5   |
-|        |                                               |         |
+|   2    | The Mediation Structure (DAG)                 |  Ch.1   |
+|   3    | The Golden Cage Mechanism                     |  Ch.2   |
+|   4    | Sample Construction Flowchart                 |  Ch.3   |
+|   5    | CER Pattern: Funding Suppresses Repositioning |  Ch.4   |
+|   6    | Mover vs. Stayer Success Rates (1.81×)        |  Ch.4   |
+|   7    | Industry Heterogeneity ρ(E,G)                 |  Ch.4   |
+|   8    | Mobility: Where the Cage Bites Hardest        |  Ch.4   |
+|   9    | Temporal Robustness (2020-2025)               |  Ch.4   |
+|  10    | The Strategic Ambiguity Sweet Spot            |  Ch.5   |
 
 # List of Tables
 
@@ -139,6 +140,10 @@ $$\frac{dG}{dF} = \underbrace{\frac{dG}{dR}}_{\text{Learning Premium }(+)} \time
 
 The product of a positive and a negative is negative. Funding suppresses what enables growth—not because capital is harmful, but because commitment attracts like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires.
 
+![Figure 2: Mediation Structure](figures/Fig-I_mediation_dag.png)
+
+**Figure 2:** The Mediation Structure. Early Cash and Growth are measured variables; Commitment and Flexibility are latent. Commitment increases Early Cash but decreases Flexibility. Flexibility increases Growth. The negative correlation between Early Cash and Growth (dashed line) emerges from this multiplicative mediation: (+) × (−) = (−).
+
 ## 1.2 Research Questions and Chapter Overview
 
 This thesis addresses three interconnected questions, each corresponding to a thesis part:
@@ -151,7 +156,7 @@ This thesis addresses three interconnected questions, each corresponding to a th
 
 **Part II: Escaping the Cage (Chapters 5-6)**
 
-3. **The Design Question (Chapter 5):** *What* can founders and investors do about it? I develop a prescriptive framework distinguishing vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). The **Strategic Ambiguity Sweet Spot** (Figure 8) shows that moderate positioning breadth achieves 16.0% survival—higher than both narrow and maximally broad positioning.
+3. **The Design Question (Chapter 5):** *What* can founders and investors do about it? I develop a prescriptive framework distinguishing vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). The **Strategic Ambiguity Sweet Spot** (Figure 10) shows that moderate positioning breadth achieves 16.0% survival—higher than both narrow and maximally broad positioning.
 
 ## 1.3 Contribution Preview
 
@@ -237,9 +242,9 @@ $$C \rightarrow E \rightarrow A\downarrow \rightarrow R\downarrow \rightarrow G\
 
 Where C = Commitment, E = Early funding, A = Adaptability (governance-permitted change capacity), R = Repositioning, G = Growth.
 
-![Figure 2: The Golden Cage Mechanism](figures/Fig-CFR1_golden_cage.png)
+![Figure 3: The Golden Cage Mechanism](figures/Fig-CFR1_golden_cage.png)
 
-**Figure 2:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
+**Figure 3:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
 ### 2.5.1 Formal Condition for Learning Cessation
 
@@ -305,7 +310,7 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
 3. **Observation window:** Minimum 24 months observable history (reduces to 198,234)
 4. **Data completeness:** Non-missing values for core variables (reduces to 180,994)
 
-**Figure 3:** [Sample Construction Flowchart — to be generated]
+**Figure 4:** [Sample Construction Flowchart — to be generated]
 
 ### 3.2.2 Supplementary Data
 
@@ -460,9 +465,9 @@ The data confirm H2: funding suppresses repositioning.
 
 The negative correlation is robust across specifications. Well-funded ventures reposition less.
 
-![Figure 4: CER Pattern](figures/Fig-GC_golden_cage_canary.png)
+![Figure 5: CER Pattern](figures/Fig-GC_golden_cage_canary.png)
 
-**Figure 4:** CER Pattern. As early funding (E) increases, strategic repositioning (R) decreases, controlling for industry fixed effects.
+**Figure 5:** CER Pattern. As early funding (E) increases, strategic repositioning (R) decreases, controlling for industry fixed effects.
 
 ### 4.1.2 Interpretation
 
@@ -513,9 +518,9 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 
 **Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—drives the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the causal identification.
 
-![Figure 5: Mover vs. Stayer Success Rates](figures/Fig-ARG_mover_vs_stayer.png)
+![Figure 6: Mover vs. Stayer Success Rates](figures/Fig-ARG_mover_vs_stayer.png)
 
-**Figure 5:** Mover vs. Stayer Success Rates. Movers (left) exhibit significantly higher survival rates than Stayers (right), a 1.81× advantage.
+**Figure 6:** Mover vs. Stayer Success Rates. Movers (left) exhibit significantly higher survival rates than Stayers (right), a 1.81× advantage.
 
 ## 4.3 Industry Heterogeneity: Where the Cage Bites Hardest
 
@@ -536,9 +541,9 @@ The golden cage binds tighter in capital-intensive industries where switching co
 
 *Note: E = first_financing_size (M USD), G = growth (binary: Series B+ achievement). Data verified from PitchBook (2021-2025).*
 
-![Figure 6a: Industry ρ(E,G) Correlations](figures/Fig_4_industry_heterogeneity_rho.png)
+![Figure 7: Industry ρ(E,G) Correlations](figures/Fig_4_industry_heterogeneity_rho.png)
 
-**Figure 6a:** Industry-level ρ(E,G) correlations. Capital-intensive sectors (Hardware, Transportation) show strongest negative correlations consistent with the multiplicative model. Quantum is the sole positive outlier—under extreme uncertainty, learning value dominates rigidity costs.
+**Figure 7:** Industry-level ρ(E,G) correlations. Capital-intensive sectors (Hardware, Transportation) show strongest negative correlations consistent with the multiplicative model. Quantum is the sole positive outlier—under extreme uncertainty, learning value dominates rigidity costs.
 
 **Key findings:**
 
@@ -564,9 +569,9 @@ Three conditions distinguish Quantum from other capital-intensive sectors:
 
 This boundary condition refines the golden cage mechanism: the cage binds when commitment forecloses *identifiable* alternatives. Under radical uncertainty, no alternatives are identifiable, so commitment cannot foreclose them.
 
-![Figure 6: Mobility - Where the Cage Bites Hardest](figures/Fig-Ch4_mobility_failure.png)
+![Figure 8: Mobility - Where the Cage Bites Hardest](figures/Fig-Ch4_mobility_failure.png)
 
-**Figure 6:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
+**Figure 8:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
 ### 4.3.2 The Triple Vulnerability
 
@@ -594,9 +599,9 @@ These three vulnerabilities interact: capital intensity demands commitment, but 
 
 All specifications yield consistent results. The golden cage is not a COVID artifact or cohort effect.
 
-![Figure 7: Temporal Robustness](figures/R1_robustness_timeseries.png)
+![Figure 9: Temporal Robustness](figures/R1_robustness_timeseries.png)
 
-**Figure 7:** Temporal Robustness. The funding-repositioning relationship remains stable across cohort years and market conditions.
+**Figure 9:** Temporal Robustness. The funding-repositioning relationship remains stable across cohort years and market conditions.
 
 ### 4.4.2 Survival Bias Conditioning (TR-02)
 
@@ -646,11 +651,11 @@ This chapter develops prescriptive implications from the golden cage mechanism. 
 
 The golden cage forms when operational commitment attracts homogeneous believers. The first design principle is to preserve heterogeneity through **strategic ambiguity**—precision about direction combined with flexibility about destination.
 
-Figure 8 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
+Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
 
-![Figure 8: The Strategic Ambiguity Sweet Spot](figures/Fig-Ch5_capitalize_evaluate.png)
+![Figure 10: The Strategic Ambiguity Sweet Spot](figures/Fig-Ch5_capitalize_evaluate.png)
 
-**Figure 8:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
+**Figure 10:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
 
 ### 5.2.1 The Tesla-Better Place Contrast
 
