@@ -23,7 +23,7 @@ industry_correlations_verified:
 modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
-  - 2026-01-12T10:33:29-05:00
+  - 2026-01-12T10:41:59-05:00
 ---
 
 
@@ -151,10 +151,6 @@ This thesis makes three contributions to the literature on entrepreneurial strat
 
 **Third, I introduce a theoretical distinction between vision-level and operational commitment.** Vision commitment—"accelerating sustainable transport"—preserves strategic flexibility by accommodating multiple implementation paths. Operational commitment—"battery swapping infrastructure"—forecloses alternatives by binding resources to specific mechanisms. This distinction explains heterogeneity in outcomes among well-funded ventures: Tesla's vision commitment enabled pivots across segments and business models, while Better Place's operational commitment prevented adaptation when market feedback favored charging over swapping. The practical implication is that founders and investors can capture the credibility benefits of commitment while preserving the flexibility benefits of ambiguity—but only by committing at the right level of abstraction.
 
-## 1.4 Roadmap
-
-The thesis proceeds as follows. **Chapter 2** develops the theoretical foundation—how commitment creates a golden cage through belief homogeneity—and derives three testable hypotheses. **Chapter 3** describes the empirical strategy: data sources, variable operationalization, and identification approach. **Chapter 4** presents results for both CFR and FRG patterns, with attention to industry heterogeneity and robustness. **Chapter 5** develops prescriptive implications: how to capitalize on strategic ambiguity and evaluate commitment-flexibility tradeoffs. **Chapter 6** concludes with contributions, limitations, and directions for future research.
-
 ---
 
 # CHAPTER 2: THE GOLDEN CAGE MECHANISM
@@ -245,14 +241,6 @@ $$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
 
 Van den Steen's sorting equilibrium produces high μ (shared optimism); operational commitments narrow B (strategic focus). Both forces push the inequality toward satisfaction—learning cessation becomes *endogenous* to the funding process itself.
 
-### 2.5.2 Alternative Explanation: Moral Hazard
-
-One might argue that well-funded founders simply do not *want* to pivot—capital insulates them from consequences. This moral hazard explanation implies that monitoring should increase with funding.
-
-My mechanism differs fundamentally: founders *cannot* pivot because governance constrains adaptation. This is not "won't"—it is "can't." Bolton et al. (2024) illuminate this distinction: investor protection mechanisms (board seats, milestone gates, information rights) designed to mitigate moral hazard paradoxically *create* structural rigidity. The very contracts intended to align incentives become the cage's bars.
-
-Evidence favors the structural explanation. Founders of failed well-funded ventures frequently express regret at not pivoting earlier—suggesting motivation was not the constraint. They wanted to adapt; governance prevented it. Kirtley and O'Mahony (2023) demonstrate that pivoting is inherently gradual—a process of "letting go" of prior commitments—requiring founders to cognitively disengage from existing strategies before embracing new ones. The golden cage amplifies this friction.
-
 ## 2.6 Real Options Foundation
 
 The golden cage mechanism operates against the backdrop of real options theory. McGrath (1999) articulates the entrepreneurial implications: initiatives are options, not commitments. Failure enables "falling forward"—learning that informs subsequent attempts.
@@ -269,31 +257,17 @@ From the golden cage mechanism, I derive three testable hypotheses:
 
 $$H_1: \frac{dG}{dF} < 0$$
 
-This is the headline paradox. Capital buys options, but the governance structures attached prevent founders from exercising them.
-
 **Hypothesis 2 (Funding-Repositioning):** *Early-stage funding correlates negatively with strategic repositioning.*
 
 $$H_2: \frac{dR}{dF} < 0$$
-
-This is the mechanism: the golden cage constrains adaptation. Well-funded ventures cannot reposition because governance lacks skeptical voices.
 
 **Hypothesis 3 (Repositioning-Growth):** *Strategic repositioning correlates positively with growth.*
 
 $$H_3: \frac{dG}{dR} > 0$$
 
-This is the consequence: repositioning enables survival in uncertain markets. The ventures that adapt thrive; those locked in position fail.
-
 Together, these hypotheses complete the decomposition:
 
 $$\frac{dG}{dF} = \frac{dG}{dR} \times \frac{dR}{dF} = (+) \times (-) = (-)$$
-
-## 2.8 Conclusion
-
-This chapter developed the golden cage mechanism—a theoretical framework explaining why early-stage funding suppresses venture growth through governance homogeneity rather than moral hazard. The key insight is structural: founders *cannot* pivot because their boards lack advocates for alternatives, not because they *will not* pivot due to reduced incentives.
-
-The mechanism operates through four steps: (1) commitment attracts believers, (2) believers filter skeptics, (3) homogeneity eliminates signals, and (4) signal loss prevents learning. The formal condition for learning cessation (Theorem 1) shows how the funding process endogenously produces the conditions that prevent belief updating.
-
-Three testable hypotheses follow: H1 predicts negative funding-growth correlation, H2 predicts negative funding-repositioning correlation, and H3 predicts positive repositioning-growth correlation. The product of these effects—(+) × (−) = (−)—explains the funding-growth paradox. Chapter 3 develops the empirical strategy to test these hypotheses.
 
 ---
 
@@ -305,20 +279,6 @@ Three testable hypotheses follow: H1 predicts negative funding-growth correlatio
 ## 3.1 Introduction
 
 This chapter describes the empirical strategy for testing the golden cage hypotheses. I construct a panel of 180,994 U.S. ventures from PitchBook (2021–2025), operationalize strategic repositioning through text-based measurement, and develop a multi-layer identification strategy that addresses selection concerns.
-
-### 3.1.1 Contributions
-
-The empirical contributions are threefold:
-
-1. **Scale**: I provide population-level evidence across 180,994 ventures—an order of magnitude larger than prior studies of venture pivoting.
-
-2. **Measurement**: I develop a dictionary-based approach to measuring strategic repositioning that can be applied at scale without manual coding.
-
-3. **Identification**: I articulate a multi-layer defense against selection concerns, treating selection as part of the mechanism rather than a confound to be eliminated.
-
-### 3.1.2 Related Work
-
-Prior empirical work on venture adaptation has relied on small samples (Kirtley & O'Mahony, 2023; N = 78), qualitative methods (Grimes, 2018), or narrow industry focus. I complement this work with broad-based quantitative evidence while acknowledging the trade-off: scale enables generalization but limits causal identification.
 
 ## 3.2 Data Sources and Sample Construction
 
@@ -383,13 +343,7 @@ Let τ = median(R | R > 0) denote the median repositioning magnitude among ventu
 $$\text{Mover}_i = \mathbf{1}[R_i > \tau]$$
 $$\text{Stayer}_i = \mathbf{1}[R_i \leq \tau]$$
 
-**Rationale:** A simple R > 0 criterion would classify minor text edits as "repositioning," contaminating the Mover category with noise. The median-among-changers threshold ensures only ventures in the upper half of the change distribution qualify as Movers. This definition:
-
-1. **Separates signal from noise:** Minor description updates (R ≈ 0.1) are classified as Stayers
-2. **Remains scale-invariant:** The threshold adapts to the data distribution
-3. **Reproduces canonical numbers:** Yields Mover rate = 20.1%, Stayer rate = 79.9%
-
-Appendix B reports sensitivity analyses using alternative thresholds (τ₂₅ = 75th percentile, τ₇₅ = 25th percentile). The Mover advantage persists across specifications.
+**Rationale:** A simple R > 0 criterion would classify minor text edits as "repositioning," contaminating the Mover category with noise. The median-among-changers threshold ensures only ventures in the upper half of the change distribution qualify as Movers—separating signal from noise. Appendix B reports sensitivity analyses using alternative thresholds; the Mover advantage persists across specifications.
 
 ### 3.3.4 Growth (G)
 
@@ -675,18 +629,6 @@ The golden cage binds tightest in:
 ## 5.1 Introduction
 
 This chapter develops prescriptive implications from the golden cage mechanism. If funding suppresses repositioning through governance homogeneity, how can founders and investors design commitment structures that preserve adaptation capacity?
-
-### 5.1.1 Contributions
-
-The prescriptive contributions are twofold:
-
-1. **Capitalize Framework**: I articulate how strategic ambiguity—precision about direction combined with flexibility about destination—can preserve governance heterogeneity while still attracting capital.
-
-2. **Governance Design Principles**: I develop five principles for designing governance structures that preserve the signal diversity required for organizational learning.
-
-### 5.1.2 Related Work
-
-This chapter builds on the strategic management literature on commitment (Ghemawat, 1991), the entrepreneurship literature on pivoting (Kirtley & O'Mahony, 2023), and the governance literature on board composition (Bolton et al., 2024). I integrate these streams to develop actionable guidance for navigating the commitment-flexibility paradox.
 
 ## 5.2 Capitalize: Strategic Ambiguity as Resource
 
