@@ -1,0 +1,38 @@
+============================================================
+THESIS PANEL SUMMARY REPORT
+============================================================
+Generated: 2026-01-11 19:01:15.055091
+
+[1] Sample Size
+    N = 168,011
+
+[2] Success Rate (L = Later Stage VC)
+    L = 1: 18,398 (11.0%)
+
+[3] Movement Classification
+    stayer: 159,609 (95.0%)
+    zoom_out: 5,012 (3.0%)
+    zoom_in: 3,390 (2.0%)
+
+[4] Success by Mover Type
+    Movers: 12.2%
+    Stayers: 10.9%
+    Advantage: 1.12x
+
+[5] Key Correlations (n=127,480)
+    ρ(G, log(E)) = +0.0158 *** (Funding Paradox)
+    ρ(R, log(E)) = -0.0381 *** (Fund→Cage)
+    ρ(G, R)      = +0.0911 *** (Reposition→Growth)
+
+[6] Variable Statistics
+    E: mean=40.24, median=1.04, std=376.74
+    K: mean=93.84, median=3.33, std=1073.08
+    G: mean=8.28, median=1.45, std=15.80
+    B_0: mean=76.04, median=75.00, std=11.20
+    R: mean=3.66, median=0.00, std=7.22
+
+[7] K >= E Validation (Cumulative Funding)
+    Valid: 140,813 (96.4%)
+    Violations: 5,303
+
+============================================================
