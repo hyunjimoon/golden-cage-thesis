@@ -23,7 +23,7 @@ industry_correlations_verified:
 modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
-  - 2026-01-12T10:55:21-05:00
+  - 2026-01-12T11:01:20-05:00
 ---
 
 
@@ -102,7 +102,7 @@ The contribution is threefold. First, I document a negative funding-growth corre
 | 1 | Variable Definitions and Causal Structure | Ch.3 |
 | 2 | Descriptive Statistics (N = 180,994) | Ch.3 |
 | 3 | CER Analysis: Funding → Repositioning | Ch.4 |
-| 4 | ERG Analysis: Repositioning → Growth | Ch.4 |
+| 4 | FRG Analysis: Repositioning → Growth | Ch.4 |
 | 5 | Mover Taxonomy: Stayer / Zoom-in / Zoom-out | Ch.4 |
 | 6 | Industry Breakdown: Survival Rates by Sector | Ch.4 |
 | 7 | Robustness Tests: Alternative Specifications | Ch.4 |
@@ -147,7 +147,7 @@ This thesis addresses three interconnected questions, each corresponding to a th
 
 1. **The Mechanism Question (Chapter 2):** *Why* does funding suppress repositioning? I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism—the *golden cage*. The main technical contribution is **Theorem 1 (Learning Trap)**, which formalizes conditions under which organizational learning ceases endogenously through the funding process.
 
-2. **The Evidence Question (Chapters 3-4):** *How* do we test this mechanism at scale? Using 180,994 ventures, I operationalize strategic repositioning through dictionary-based text analysis and document both the CER pattern (Commitment → Early funding → Repositioning↓) and the ERG pattern (Early funding → Repositioning↓ → Growth↓). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095).
+2. **The Evidence Question (Chapters 3-4):** *How* do we test this mechanism at scale? Using 180,994 ventures, I operationalize strategic repositioning through dictionary-based text analysis and document both the CER pattern (Commitment → Early funding → Repositioning↓) and the FRG pattern (Flexibility → Repositioning → Growth↑). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095).
 
 **Part II: Escaping the Cage (Chapters 5-6)**
 
@@ -416,7 +416,7 @@ This chapter described the empirical strategy for testing the golden cage hypoth
 
 The identification strategy employs four layers of defense: (1) treating selection as mechanism rather than confound, (2) longitudinal fixed-window analysis to address survival bias, (3) conditioning on observable characteristics, and (4) proposing future quasi-experimental approaches for causal identification.
 
-Key sample characteristics: 20.1% of ventures qualify as "Movers" (R > 0.5), while 79.9% are "Stayers." The base success rate (reaching Later Stage VC) is 11.5%. Chapter 4 presents the empirical results.
+Key sample characteristics: 20.1% of ventures qualify as "Movers" (R > τ), while 79.9% are "Stayers" (see §3.3.3 for threshold derivation). The base success rate (reaching Later Stage VC) is 11.5%. Chapter 4 presents the empirical results.
 
 ---
 
@@ -427,7 +427,7 @@ Key sample characteristics: 20.1% of ventures qualify as "Movers" (R > 0.5), whi
 
 ## 4.1 Introduction
 
-This chapter presents the empirical results testing the golden cage hypotheses. I document both the CER pattern (Funding → Repositioning↓) and the ERG pattern (Repositioning → Growth↑), demonstrating that the product of these effects explains the funding-growth paradox.
+This chapter presents the empirical results testing the golden cage hypotheses. I document both the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that the product of these effects explains the funding-growth paradox.
 
 ### 4.1.1 Contributions
 
@@ -471,13 +471,13 @@ The CER pattern is consistent with the golden cage mechanism. Higher funding cor
 - More homogeneous governance (believers attracted, skeptics filtered)
 - Less capacity to recognize when pivoting is optimal
 
-## 4.2 ERG Analysis: Funding → Repositioning → Growth
+## 4.3 FRG Analysis: Flexibility → Repositioning → Growth
 
 ### 4.2.1 Main Finding
 
 The data confirm H3: repositioning correlates with growth.
 
-**Table 4: ERG Analysis — Repositioning → Growth**
+**Table 4: FRG Analysis — Repositioning → Growth**
 
 | Specification | ρ(G, R) | SE | p-value | N |
 |:--------------|--------:|---:|--------:|--:|
