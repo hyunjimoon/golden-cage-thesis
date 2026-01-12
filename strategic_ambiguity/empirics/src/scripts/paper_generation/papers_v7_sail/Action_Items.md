@@ -12,8 +12,8 @@ modified:
 # 📋 Action Items: Ring-of-Truth (RoT) Framework
 
 > **Target**: RoT 60% → 85% (+25%)
-> **Current**: 67% (baseline 60% + 7% earned for DGP/selection explanation)
-> **Gap**: 18% remaining
+> **Current**: 75% (baseline 60% + 7% DGP + 8% Industry Heterogeneity)
+> **Gap**: 10% remaining
 
 ---
 
@@ -23,10 +23,10 @@ modified:
 |:------|:--:|:----------|:------:|
 | **#TR-01 Magnitude** | +5% | #041, #042 | 🔴 TODO |
 | **#TR-02 Survival Bias** | +10% | #043, #044 | 🔴 TODO |
-| **#TR-03 Universality** | +8% | #045, #046 | 🔴 TODO |
+| **#TR-03 Universality** | +8% | #045, #046 | ✅ DONE |
 | **#TR-04 Alternative Story** | +7% | #011, #022 | ✅ DONE |
 | **#LR-01 Citation Quality** | +3% | 8 citations | 🔴 TODO |
-| **TOTAL** | +33% | — | 🟡 In Progress |
+| **TOTAL** | +33% | — | 🟡 In Progress (15% earned) |
 
 ---
 
@@ -62,35 +62,30 @@ suggesting the effect is not driven by survivor selection."
 
 ---
 
-### 🎟️ **Issue #TR-03: Universality - Industry Heterogeneity (+8%)**
+### 🎟️ **Issue #TR-03: Universality - Industry Heterogeneity (+8%)** ✅
 
 > _Second highest impact. Show effect varies by sector._
 
 - **Priority:** 🚨 **P0 (Existential)**
-- **Status:** 🔴 **TODO**
-- **Affected:** Table 5, ¶25 (Figure 4)
+- **Status:** ✅ **DONE** (2026-01-12)
+- **Affected:** Table 6, Figure 6a, Ch.4.3
 
-**Problem:** Current thesis claims universal effect but lacks industry-level evidence. Committee: "Does this hold in software vs hardware?"
+**Completed:**
+- [x] **Extract:** Verified industry correlations from PitchBook data
+- [x] **Create:** Table 6 + Figure 6a (Fig_4_industry_heterogeneity_rho.png)
+- [x] **Add:** Industry interpretation to Ch.4.3
 
-**Solution:**
-```markdown
-**Industry Heterogeneity Table (Table 5):**
-| Sector | N | ρ(F,R) | ρ(R,G) | Mover Adv |
-|:-------|--:|:------:|:------:|:---------:|
-| Software | 45,234 | -0.08 | +0.15 | 1.92× |
-| Hardware | 12,456 | -0.12 | +0.09 | 1.45× |
-| Pharma | 8,234 | -0.15 | +0.05 | 1.23× |
-| Transportation | 3,456 | -0.11 | +0.18 | 2.14× |
+**Final Results (Verified ρ(E,G)):**
+| Sector | N | ρ(E,G) | Sig |
+|:-------|--:|:------:|:---:|
+| Hardware | 50,390 | −0.108 | *** |
+| Transportation | 154,148 | −0.101 | *** |
+| Pharma | 56,947 | −0.079 | *** |
+| MedTech | 29,493 | −0.053 | *** |
+| Software | 226,896 | −0.001 | (ns) |
+| Quantum | 1,144 | +0.095 | * |
 
-**Interpretation:** Golden Cage binds tighter in hardware/pharma
-(higher switching costs) but mover advantage is largest in
-software/transportation (faster clockspeed).
-```
-
-**Action Module:**
-- [ ] **Extract:** Industry-level statistics from data
-- [ ] **Create:** Table 5 markdown file
-- [ ] **Add:** Industry interpretation to ¶25
+**Key Finding:** Capital-intensive industries show strongest negative correlations. Quantum is sole positive outlier (learning value dominates under extreme uncertainty).
 
 ---
 
@@ -277,10 +272,10 @@ opportunity."
 | Issue | Description | RoT Impact | Status |
 |:-----:|:------------|:----------:|:------:|
 | #023 | Terminology Unification | C-Check | 🔴 TODO |
-| #024 | Mover Disaggregation | — | 🟡 PENDING |
+| #024 | Mover Disaggregation | — | ✅ DONE |
 | #025 | Vertical Integration Clarification | — | 🔴 TODO |
 | #026 | FanDuel Evidence | Evidence | 🟡 DELEGATED |
-| #028 | Qualified Movement Definition | M-Check | 🔴 TODO |
+| #028 | Qualified Movement Definition | M-Check | ✅ DONE |
 | #029 | Color Figure Upgrade | V-Check | 🔴 TODO |
 | #030 | Robustness Graph | +2% TR-02 | 🔴 TODO |
 | #031 | Remove Right Panel | V-Check | 🔴 TODO |
@@ -333,12 +328,12 @@ opportunity."
 | Milestone | RoT | Gap to 85% |
 |:----------|:---:|:----------:|
 | Baseline | 60% | -25% |
-| **Current** (DGP + 2nd-order) | **67%** | -18% |
-| + Magnitude | 72% | -13% |
-| + Survival Bias | 82% | -3% |
-| + Universality | **90%** | ✅ Exceeded |
+| + DGP + 2nd-order | 67% | -18% |
+| **+ Universality (TR-03)** | **75%** | **-10%** |
+| + Survival Bias (TR-02) | 85% | ✅ Target |
+| + Magnitude (TR-01) | 90% | ✅ Exceeded |
 
-**Target achievable with Sprint 1 completion.**
+**현재: 75% | TR-02 완료 시 목표 달성**
 
 ---
 
@@ -373,10 +368,10 @@ opportunity."
 
 ---
 
-*Updated: 2026-01-12 09:30*
+*Updated: 2026-01-12 10:15*
 *Framework: Ring-of-Truth (RoT) 60% → 85%*
-*Current: 67% | Target: 85% | Gap: 18%*
-*Sprint 1 (+26%) will exceed target.*
+*Current: 75% | Target: 85% | Gap: 10%*
+*TR-02 (Survival Bias) 완료 시 목표 달성*
 
 ---
 
