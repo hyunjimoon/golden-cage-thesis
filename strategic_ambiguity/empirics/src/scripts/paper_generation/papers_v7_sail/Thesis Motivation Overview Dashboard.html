@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>🎮 GOLDEN CAGE — Quest to 85%</title>
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --panel: #101a33;
+    --panel2: #0f1730;
+    --text: #e6edf3;
+    --muted: #9aa4b2;
+    --line: rgba(255,255,255,0.08);
+    --good: #2ed573;
+    --warn: #ffa502;
+    --bad: #ff4757;
+    --blue: #70a1ff;
+    --purple: #a29bfe;
+    --gold: #ffd700;
+    --xp-bar: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    background: radial-gradient(ellipse 120% 80% at 20% -10%, rgba(102,126,234,0.25), transparent 50%),
+                radial-gradient(ellipse 100% 60% at 80% 110%, rgba(243,144,251,0.15), transparent 50%),
+                var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  a { color: var(--blue); }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 18px 60px; }
+
+  /* Hero Banner */
+  .hero {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 24px 28px;
+    border: 2px solid rgba(102,126,234,0.4);
+    background: linear-gradient(135deg, rgba(16,26,51,0.95), rgba(15,23,48,0.85));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(102,126,234,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .hero-left h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #fff 0%, #a29bfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-left .subtitle {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 14px;
+    max-width: 500px;
+  }
+  .hero-right {
+    text-align: right;
+  }
+  .level-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,165,0,0.1));
+    border: 1px solid rgba(255,215,0,0.4);
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .level-badge .icon { font-size: 20px; }
+  .streak-counter {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .streak-counter span { color: var(--good); font-weight: 700; }
+
+  /* XP Progress Section */
+  .xp-section {
+    margin-top: 20px;
+    padding: 20px 24px;
+    border: 1px solid var(--line);
+    background: rgba(16,26,51,0.9);
+    border-radius: 16px;
+  }
+  .xp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .xp-header h2 {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .xp-stats {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+  }
+  .xp-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .xp-stats .stat-value {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .xp-stats .stat-value.current { color: var(--good); }
+  .xp-stats .stat-value.target { color: var(--gold); }
+  .xp-stats .stat-value.gap { color: var(--bad); }
+  .xp-stats .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .xp-bar-container {
+    position: relative;
+    height: 28px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 99px;
+    border: 1px solid var(--line);
+    overflow: visible;
+  }
+  .xp-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: var(--xp-bar);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(102,126,234,0.5);
+  }
+  .xp-milestone {
+    position: absolute;
+    top: -8px;
+    transform: translateX(-50%);
+  }
+  .xp-milestone .marker {
+    width: 4px;
+    height: 44px;
+    border-radius: 2px;
+  }
+  .xp-milestone .label {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    white-space: nowrap;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.6);
+  }
+  .xp-milestone.current .marker { background: var(--good); }
+  .xp-milestone.current .label { color: var(--good); }
+  .xp-milestone.target .marker { background: var(--gold); }
+  .xp-milestone.target .label { color: var(--gold); }
+  .xp-milestone.projected .marker { background: var(--purple); }
+  .xp-milestone.projected .label { color: var(--purple); }
+  .xp-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* Quest Board */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  @media (max-width: 1000px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(16,26,51,0.85);
+    padding: 18px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .card h2 {
+    margin: 0 0 14px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h2 .badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: rgba(255,255,255,0.08);
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* Quest Items */
+  .quest-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .quest-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(15,23,48,0.6);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .quest-item:hover {
+    border-color: rgba(102,126,234,0.4);
+    background: rgba(102,126,234,0.08);
+  }
+  .quest-item.completed {
+    border-color: rgba(46,213,115,0.3);
+    background: rgba(46,213,115,0.05);
+  }
+  .quest-item.active {
+    border-color: rgba(255,165,2,0.5);
+    background: rgba(255,165,2,0.08);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,165,2,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(255,165,2,0); }
+  }
+  .quest-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .quest-icon.epic { background: linear-gradient(135deg, rgba(162,155,254,0.3), rgba(240,147,251,0.2)); }
+  .quest-icon.rare { background: linear-gradient(135deg, rgba(112,161,255,0.3), rgba(102,126,234,0.2)); }
+  .quest-icon.common { background: rgba(255,255,255,0.08); }
+  .quest-icon.done { background: rgba(46,213,115,0.2); }
+  .quest-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .quest-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .quest-meta {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+  }
+  .quest-reward {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  .reward-xp {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+  .reward-xp.gold { color: var(--gold); }
+  .quest-status {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+  .quest-status.todo { background: rgba(255,71,87,0.2); color: var(--bad); }
+  .quest-status.progress { background: rgba(255,165,2,0.2); color: var(--warn); }
+  .quest-status.done { background: rgba(46,213,115,0.2); color: var(--good); }
+
+  /* Achievement Section */
+  .achievements {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .achievement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: rgba(15,23,48,0.6);
+    font-size: 12px;
+  }
+  .achievement.unlocked {
+    border-color: rgba(255,215,0,0.4);
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.05));
+  }
+  .achievement.locked {
+    opacity: 0.5;
+    filter: grayscale(0.8);
+  }
+  .achievement .icon { font-size: 18px; }
+  .achievement .name { font-weight: 600; }
+
+  /* Progress Ring */
+  .progress-ring {
+    width: 120px;
+    height: 120px;
+    position: relative;
+  }
+  .progress-ring svg {
+    transform: rotate(-90deg);
+  }
+  .progress-ring .bg {
+    fill: none;
+    stroke: rgba(255,255,255,0.08);
+    stroke-width: 10;
+  }
+  .progress-ring .progress {
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .progress-ring .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .progress-ring .percent {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .progress-ring .label {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  th {
+    text-align: left;
+    color: var(--muted);
+    font-weight: 600;
+    background: rgba(15,23,48,0.8);
+    position: sticky;
+    top: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  th.center, td.center { text-align: center; }
+  code {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 2px 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    color: var(--purple);
+  }
+
+  /* Chapter Structure */
+  .chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .chapter-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: rgba(15,23,48,0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .chapter-item:hover {
+    border-color: rgba(102,126,234,0.3);
+    background: rgba(102,126,234,0.05);
+  }
+  .chapter-num {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(162,155,254,0.2));
+    color: var(--purple);
+  }
+  .chapter-content {
+    flex: 1;
+  }
+  .chapter-title {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .chapter-question {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .chapter-progress {
+    width: 60px;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .chapter-progress-fill {
+    height: 100%;
+    background: var(--good);
+    border-radius: 99px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 24px;
+    padding: 16px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .footer .motto {
+    font-size: 14px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  /* Animations */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="50%" stop-color="#764ba2"/>
+      <stop offset="100%" stop-color="#f093fb"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-left">
+      <h1>THE GOLDEN CAGE</h1>
+      <div class="subtitle">
+        Quest to reach <strong>Ring of Truth 85%</strong> and defend your thesis before the Committee.
+        <br>Every issue resolved brings you closer to victory.
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="level-badge">
+        <span class="icon">⚔️</span>
+        <span>SAIL PHASE</span>
+      </div>
+      <div class="streak-counter">
+        Issues Resolved: <span>15/28</span> | Time: <span>명량 D-Day</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- XP Progress Bar -->
+  <div class="xp-section">
+    <div class="xp-header">
+      <h2>📊 Ring of Truth Progress</h2>
+      <div class="xp-stats">
+        <div class="stat">
+          <div class="stat-value current">78%</div>
+          <div class="stat-label">Current</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value target">85%</div>
+          <div class="stat-label">Target</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value gap">7%</div>
+          <div class="stat-label">Gap</div>
+        </div>
+      </div>
+    </div>
+    <div class="xp-bar-container">
+      <div class="xp-bar-fill" style="width: 78%;"></div>
+      <div class="xp-milestone current" style="left: 78%;">
+        <div class="marker"></div>
+        <div class="label">Current 78%</div>
+      </div>
+      <div class="xp-milestone target" style="left: 85%;">
+        <div class="marker"></div>
+        <div class="label">Target 85%</div>
+      </div>
+      <div class="xp-milestone projected" style="left: 90%;">
+        <div class="marker"></div>
+        <div class="label">Stretch 90%</div>
+      </div>
+    </div>
+    <div class="xp-labels">
+      <span>0% (Baseline 60%)</span>
+      <span>50%</span>
+      <span>100% (Perfect Truth)</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- P0 Quests (Existential) -->
+    <div class="card" style="border: 2px solid rgba(255,71,87,0.5);">
+      <h2>🚨 P0 Quests <span class="badge" style="background: var(--bad); color: white;">Existential (+18%)</span></h2>
+      <div class="quest-list">
+        <div class="quest-item active">
+          <div class="quest-icon epic">🛡️</div>
+          <div class="quest-content">
+            <div class="quest-title">TR-02: Survival Bias Defense</div>
+            <div class="quest-meta">
+              <span>Ch.4</span>
+              <span>Year 3+ 조건부 분석 → Mover Adv 유지 증명</span>
+            </div>
+          </div>
+          <div class="quest-reward">
+            <div class="reward-xp gold">+10% RoT</div>
+            <div class="quest-status progress">IN PROGRESS</div>
+          </div>
+        </div>
+
+        <div class="quest-item">
+          <div class="quest-icon epic">🗺️</div>
+          <div class="quest-content">
+            <div class="quest-title">TR-03: Industry Heterogeneity</div>
+            <div class="quest-meta">
+              <span>Ch.4</span>
+              <span>산업×단계×창업자 테이블 (Table 5)</span>
+            </div>
+          </div>
+          <div class="quest-reward">
+            <div class="reward-xp gold">+8% RoT</div>
+            <div class="quest-status todo">TODO</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 16px; padding: 12px; background: rgba(255,71,87,0.1); border-radius: 8px; font-size: 12px;">
+        <strong style="color: var(--bad);">🎯 P0 완료 시:</strong> RoT 67% → 85% (목표 달성)
+      </div>
+    </div>
+
+    <!-- P1 Quests (Committee Defense) -->
+    <div class="card" style="border: 2px solid rgba(255,165,2,0.5);">
+      <h2>⚔️ P1 Quests <span class="badge" style="background: var(--warn); color: white;">Committee (+5% + Gate)</span></h2>
+      <div class="quest-list">
+        <div class="quest-item">
+          <div class="quest-icon rare">📊</div>
+          <div class="quest-content">
+            <div class="quest-title">TR-01: Magnitude Context</div>
+            <div class="quest-meta">
+              <span>Ch.4</span>
+              <span>ρ=-0.196 → 1σ shift = 4-6% 성공률 차이</span>
+            </div>
+          </div>
+          <div class="quest-reward">
+            <div class="reward-xp">+5% RoT</div>
+            <div class="quest-status todo">TODO</div>
+          </div>
+        </div>
+
+        <div class="quest-item">
+          <div class="quest-icon common">📝</div>
+          <div class="quest-content">
+            <div class="quest-title">G-01: H-Check (Hypothesis)</div>
+            <div class="quest-meta">
+              <span>Ch.2</span>
+              <span>H₀ 명시 (Funding → Growth positive)</span>
+            </div>
+          </div>
+          <div class="quest-reward">
+            <div class="quest-status todo">GATE</div>
+          </div>
+        </div>
+
+        <div class="quest-item">
+          <div class="quest-icon common">🔬</div>
+          <div class="quest-content">
+            <div class="quest-title">G-05: E-Check (Methodology)</div>
+            <div class="quest-meta">
+              <span>Ch.3</span>
+              <span>Data source + Variable + Identification 심화</span>
+            </div>
+          </div>
+          <div class="quest-reward">
+            <div class="quest-status todo">GATE</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 16px; padding: 12px; background: rgba(255,165,2,0.1); border-radius: 8px; font-size: 12px;">
+        <strong style="color: var(--warn);">⚔️ P1 완료 시:</strong> RoT 85% → 90% (Stretch) + Committee Gate Pass
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Chapter Progress -->
+    <div class="card">
+      <h2>📚 Chapter Progress</h2>
+      <div class="chapter-list">
+        <div class="chapter-item">
+          <div class="chapter-num">1</div>
+          <div class="chapter-content">
+            <div class="chapter-title">INTRODUCTION</div>
+            <div class="chapter-question">"What's the puzzle?"</div>
+          </div>
+          <div class="chapter-progress"><div class="chapter-progress-fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">2</div>
+          <div class="chapter-content">
+            <div class="chapter-title">THEORY & HYPOTHESES</div>
+            <div class="chapter-question">"Why does it happen?"</div>
+          </div>
+          <div class="chapter-progress"><div class="chapter-progress-fill" style="width: 85%;"></div></div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">3</div>
+          <div class="chapter-content">
+            <div class="chapter-title">EMPIRICAL STRATEGY</div>
+            <div class="chapter-question">"How do we test it?"</div>
+          </div>
+          <div class="chapter-progress"><div class="chapter-progress-fill" style="width: 70%;"></div></div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">4</div>
+          <div class="chapter-content">
+            <div class="chapter-title">RESULTS</div>
+            <div class="chapter-question">"Where does it bite?"</div>
+          </div>
+          <div class="chapter-progress"><div class="chapter-progress-fill" style="width: 75%;"></div></div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">5</div>
+          <div class="chapter-content">
+            <div class="chapter-title">DISCUSSION</div>
+            <div class="chapter-question">"How to design around it?"</div>
+          </div>
+          <div class="chapter-progress"><div class="chapter-progress-fill" style="width: 80%;"></div></div>
+        </div>
+        <div class="chapter-item">
+          <div class="chapter-num">6</div>
+          <div class="chapter-content">
+            <div class="chapter-title">CONCLUSION</div>
+            <div class="chapter-question">"So what?"</div>
+          </div>
+          <div class="chapter-progress"><div class="chapter-progress-fill" style="width: 85%;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats & Inventory -->
+    <div class="card">
+      <h2>📦 Inventory (Canonical Numbers)</h2>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Value</th><th class="center">Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🎯 Funding-Growth ρ</td>
+            <td><code>−0.196***</code></td>
+            <td class="center" style="color: var(--good);">✅ Locked</td>
+          </tr>
+          <tr>
+            <td>📊 Sample Size N</td>
+            <td><code>180,994</code></td>
+            <td class="center" style="color: var(--good);">✅ Locked</td>
+          </tr>
+          <tr>
+            <td>⚡ Mover Advantage</td>
+            <td><code>1.81× (17.8% vs 9.9%)</code></td>
+            <td class="center" style="color: var(--good);">✅ Locked</td>
+          </tr>
+          <tr>
+            <td>🔗 Funding-Repositioning ρ</td>
+            <td><code>−0.087***</code></td>
+            <td class="center" style="color: var(--good);">✅ Locked</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top: 20px;">🎯 Next Actions</h2>
+      <div class="quest-list">
+        <div class="quest-item active">
+          <div class="quest-icon epic">1</div>
+          <div class="quest-content">
+            <div class="quest-title">Complete TR-02 (Survival Bias)</div>
+            <div class="quest-meta">67% → 77% | Unlocks: Year 3+ Table</div>
+          </div>
+        </div>
+        <div class="quest-item">
+          <div class="quest-icon rare">2</div>
+          <div class="quest-content">
+            <div class="quest-title">Complete TR-03 (Heterogeneity)</div>
+            <div class="quest-meta">77% → 85% | Unlocks: 🏆 Target Reached</div>
+          </div>
+        </div>
+        <div class="quest-item">
+          <div class="quest-icon common">3</div>
+          <div class="quest-content">
+            <div class="quest-title">Stretch: TR-01 (Magnitude)</div>
+            <div class="quest-meta">85% → 90% | Unlocks: 👑 Excellence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🚨 비상계엄 시뮬레이터 -->
+  <div class="card" style="grid-column: 1 / -1; margin-top: 16px; border: 2px solid rgba(255,71,87,0.5); background: linear-gradient(135deg, rgba(255,71,87,0.1), rgba(16,26,51,0.95));">
+    <h2>🚨 비상계엄 시뮬레이터 <span class="badge" style="background: var(--bad); color: white;">3시간 집중작전</span></h2>
+
+    <div style="display: flex; gap: 24px; margin: 20px 0; flex-wrap: wrap;">
+      <!-- 타이머 -->
+      <div style="text-align: center; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 12px; min-width: 200px;">
+        <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;">남은 시간</div>
+        <div id="timer" style="font-size: 48px; font-weight: 800; font-family: var(--mono); color: var(--bad);">03:00:00</div>
+        <div style="margin-top: 8px;">
+          <button onclick="startSimulation()" style="padding: 8px 16px; background: var(--good); border: none; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; margin-right: 8px;">▶ 시작</button>
+          <button onclick="resetSimulation()" style="padding: 8px 16px; background: var(--muted); border: none; border-radius: 6px; color: white; font-weight: 600; cursor: pointer;">↺ 리셋</button>
+        </div>
+      </div>
+
+      <!-- RoT 실시간 예측 -->
+      <div style="flex: 1; min-width: 300px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+          <span style="color: var(--muted);">RoT 진행률</span>
+          <span id="rot-display" style="font-weight: 700; color: var(--purple);">67% → 85%</span>
+        </div>
+        <div style="height: 24px; background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; position: relative;">
+          <div id="rot-bar" style="height: 100%; width: 67%; background: linear-gradient(90deg, var(--good), var(--purple)); transition: width 0.5s; border-radius: 12px;"></div>
+          <div style="position: absolute; left: 85%; top: 0; bottom: 0; width: 2px; background: var(--gold);"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 4px;">
+          <span>60% (Baseline)</span>
+          <span>85% (Target)</span>
+          <span>100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 타임라인 -->
+    <div style="margin-top: 24px;">
+      <h3 style="font-size: 14px; margin-bottom: 12px; color: var(--gold);">📅 3시간 작전 타임라인</h3>
+      <div id="timeline" style="display: flex; flex-direction: column; gap: 8px;">
+
+        <div class="timeline-item" data-hour="0" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; background: rgba(255,165,2,0.15); border-left: 4px solid var(--warn);">
+          <div style="width: 80px; font-family: var(--mono); font-weight: 700; color: var(--warn);">00:00</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">🔥 P0 #TR-02: Survival Bias 착수</div>
+            <div style="font-size: 12px; color: var(--muted);">Year 3+ 조건부 분석 테이블 생성</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 12px; color: var(--purple);">+5% RoT</div>
+            <div id="status-0" style="font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(255,165,2,0.3); color: var(--warn);">진행중</div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-hour="1" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.03); border-left: 4px solid var(--muted);">
+          <div style="width: 80px; font-family: var(--mono); font-weight: 700; color: var(--muted);">01:00</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">🗺️ P0 #TR-03: Industry Heterogeneity</div>
+            <div style="font-size: 12px; color: var(--muted);">산업별 이질성 테이블 (Table 5) 생성</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 12px; color: var(--purple);">+4% RoT</div>
+            <div id="status-1" style="font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.1); color: var(--muted);">대기</div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-hour="2" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.03); border-left: 4px solid var(--muted);">
+          <div style="width: 80px; font-family: var(--mono); font-weight: 700; color: var(--muted);">02:00</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">📊 P1 #TR-01: Magnitude Context</div>
+            <div style="font-size: 12px; color: var(--muted);">효과크기 해석 + 벤치마크 비교</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 12px; color: var(--purple);">+2% RoT</div>
+            <div id="status-2" style="font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.1); color: var(--muted);">대기</div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-hour="2.5" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.03); border-left: 4px solid var(--muted);">
+          <div style="width: 80px; font-family: var(--mono); font-weight: 700; color: var(--muted);">02:30</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">📝 P1 #G-01 + #G-05: Gate Compliance</div>
+            <div style="font-size: 12px; color: var(--muted);">H₀ 명시 + Methodology 심화</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 12px; color: var(--purple);">Gate Pass</div>
+            <div id="status-3" style="font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.1); color: var(--muted);">대기</div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-hour="3" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; background: rgba(255,215,0,0.1); border-left: 4px solid var(--gold);">
+          <div style="width: 80px; font-family: var(--mono); font-weight: 700; color: var(--gold);">03:00</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600;">🏆 목표 달성: RoT 85%+</div>
+            <div style="font-size: 12px; color: var(--muted);">Committee Ready 상태 진입</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 18px;">🎖️</div>
+            <div id="status-4" style="font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(255,215,0,0.2); color: var(--gold);">목표</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔄 Agent 교체용 컨텍스트 패킷 -->
+    <div style="margin-top: 24px; padding: 16px; background: rgba(162,155,254,0.1); border: 1px solid rgba(162,155,254,0.3); border-radius: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h3 style="margin: 0; font-size: 14px; color: var(--purple);">🔄 Agent 교체용 컨텍스트 패킷</h3>
+        <button onclick="copyContextPacket()" id="copy-btn" style="padding: 8px 16px; background: var(--purple); border: none; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+          <span>📋</span> <span id="copy-text">Copy Prompt</span>
+        </button>
+      </div>
+      <div style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">새 Agent 투입 시 아래 프롬프트를 복사하여 전달</div>
+      <div id="context-packet" style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px; font-family: var(--mono); font-size: 11px; max-height: 300px; overflow-y: auto; white-space: pre-wrap; line-height: 1.5;">
+# 🚨 비상계엄 컨텍스트 패킷 v2.0 (Self-Explanatory)
+
+═══════════════════════════════════════════════════════════════
+## 1. 프로젝트 개요: THE GOLDEN CAGE
+═══════════════════════════════════════════════════════════════
+- **논문 제목**: "How Early Funding Suppresses Venture Growth"
+- **저자**: Angie Moon
+- **핵심 역설**: 초기 자금(F)이 많을수록 성장(G)이 억제됨
+- **수식**: dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−)
+  - 자금↑ → 재포지셔닝↓ (Golden Cage에 갇힘)
+  - 재포지셔닝↑ → 성장↑ (Mover Advantage)
+
+═══════════════════════════════════════════════════════════════
+## 2. RoT (Ring of Truth) 설명
+═══════════════════════════════════════════════════════════════
+**정의**: Charlie Fine 교수의 논문 신뢰도 평가 지표
+- "이 주장이 진실처럼 들리는가?" (Practitioner가 고개를 끄덕이는가?)
+
+**점수 체계**:
+- Baseline 60%: 그럴듯하지만 의심 여지 있음
+- Target 85%: Committee defense 가능 수준
+- 100%: 완벽한 진실 (달성 불가)
+
+**현재 상태**: 67% (Gap: 18%)
+- ✅ +7% 획득: Alternative Story (Selection vs Treatment DGP 명시)
+
+**남은 Levers**:
+| Lever | Issue IDs | +% | 방법 |
+|-------|-----------|-----|------|
+| TR-02 Survival Bias | #043, #044 | +10% | Year 3+ 조건부 분석 |
+| TR-03 Heterogeneity | #045, #046 | +8% | 산업×단계×창업자 테이블 |
+| TR-01 Magnitude | #041, #042 | +5% | 효과크기 맥락화 |
+
+═══════════════════════════════════════════════════════════════
+## 3. 전장 위치
+═══════════════════════════════════════════════════════════════
+**현재 작업 디렉토리**:
+/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/
+
+**핵심 파일 (전체 경로)**:
+- Thesis_Master.md: 본문 (29개 문단)
+  → papers_v7_sail/Thesis_Master.md
+- Action_Items.md: 이슈 추적 (P0/P1 정의)
+  → papers_v7_sail/Action_Items.md
+- .thesis_stats.json: 정규 통계 (ρ, N 등)
+  → /tolzul/.../empirics/.thesis_stats.json
+- eval_📝chap1234_sail.md: RoT 평가 기준
+  → papers_v7_sail/eval_📝chap1234_sail.md
+- syntax-master.md / semantic-master.md
+  → /tolzul/.claude/agents/
+
+**정규 숫자 (절대 변경 금지)**:
+- ρ(F,G) = −0.196*** | N = 180,994 | Mover Adv = 1.81×
+
+═══════════════════════════════════════════════════════════════
+## 4. Agent 역할 및 임무
+═══════════════════════════════════════════════════════════════
+| Agent | 플랫폼 | 핵심 임무 | 강점 |
+|-------|--------|----------|------|
+| 정운 | ChatGPT | 초안 생성, 아이디어 | 빠른 반복, 광범위 지식 |
+| 권준 | Claude CLI1 | 파일 R/W, Git | 코드베이스 직접 접근 |
+| 나대용 | Claude CLI2 | 병렬 작업, 분석 | 대장선, 선두 돌격 |
+| 김완 | Claude Web | 전략 조언, 검수 | 긴 문서 검토, 품질 |
+
+**통제사**: 이순신 (Angie Moon) - 최종 결정권
+
+═══════════════════════════════════════════════════════════════
+## 5. Claude Agent 호출법 (syntax-master, semantic-master)
+═══════════════════════════════════════════════════════════════
+**위치**: /tolzul/.claude/agents/
+
+### syntax-master.md (구조적 품질)
+- 기준: Jiayu Zhao 논문 구조 (Dantzig Award Winner)
+- 평가: Chapter 구조, Section 흐름, 제목 패턴
+
+**호출 예시**:
+```
+@syntax-master를 기준으로 Ch.4를 평가해줘
+```
+
+### semantic-master.md (의미적 품질)
+- 기준: Ring of Truth 60%→85%, LTE Framework
+- 평가: 주장의 신뢰도, 메커니즘 명확성, 문체
+
+**호출 예시**:
+```
+@semantic-master로 ¶22 robustness 섹션 RoT 점검해줘
+```
+
+**두 Agent 동시 활용**:
+```
+syntax-master로 구조 검토 후, semantic-master로 내용 검토
+→ 구조(How) + 내용(What) 모두 최적화
+```
+
+═══════════════════════════════════════════════════════════════
+## 6. 현재 작전: 비상계엄 3시간 집중공략
+═══════════════════════════════════════════════════════════════
+**목표**: RoT 67% → 85% (+18%)
+**시간**: 3시간
+**대장선**: 이순신(통제사) + 나대용(CLI2)
+
+**공략 순서**:
+1. [00:00-01:00] P0 TR-02 (#043,#044) Survival Bias (+10%)
+2. [01:00-02:00] P0 TR-03 (#045,#046) Heterogeneity (+8%)
+3. [02:00-02:30] P1 TR-01 (#041,#042) Magnitude (+5%)
+4. [02:30-03:00] Gate: G-01 (H₀), G-05 (Methodology)
+
+═══════════════════════════════════════════════════════════════
+*必死卽生 - Commit to Reposition, Not to Position*
+*尚有十二 - 아직 12척이 남아있다*
+═══════════════════════════════════════════════════════════════</div>
+    </div>
+
+    <!-- Agent 배치 현황 -->
+    <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
+      <div style="padding: 12px; background: rgba(112,161,255,0.1); border: 1px solid rgba(112,161,255,0.3); border-radius: 8px; text-align: center;">
+        <div style="font-size: 24px;">⚡</div>
+        <div style="font-weight: 600; margin: 4px 0;">정운</div>
+        <div style="font-size: 11px; color: var(--blue);">ChatGPT | 초안 생성</div>
+      </div>
+      <div style="padding: 12px; background: rgba(162,155,254,0.1); border: 1px solid rgba(162,155,254,0.3); border-radius: 8px; text-align: center;">
+        <div style="font-size: 24px;">🛡️</div>
+        <div style="font-weight: 600; margin: 4px 0;">권준</div>
+        <div style="font-size: 11px; color: var(--purple);">CLI1 | 파일 동기화</div>
+      </div>
+      <div style="padding: 12px; background: rgba(255,71,87,0.15); border: 2px solid rgba(255,71,87,0.5); border-radius: 8px; text-align: center; box-shadow: 0 0 12px rgba(255,71,87,0.3);">
+        <div style="font-size: 24px;">⚓</div>
+        <div style="font-weight: 600; margin: 4px 0;">이순신 / 나대용</div>
+        <div style="font-size: 11px; color: var(--bad);">통제사 + CLI2 | 대장선</div>
+      </div>
+      <div style="padding: 12px; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3); border-radius: 8px; text-align: center;">
+        <div style="font-size: 24px;">👁️</div>
+        <div style="font-weight: 600; margin: 4px 0;">김완</div>
+        <div style="font-size: 11px; color: var(--gold);">Web | 품질 검수</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="motto">尚有十二 — 아직 12척이 남아있다</div>
+    <div>Execute: 執經達權 | Refine: 去蕪存菁 | Verify: 言行一致</div>
+    <div style="margin-top: 8px; opacity: 0.7;">
+      "When uncertain, commit to reposition, rather than to position."
+    </div>
+  </div>
+</div>
+
+<script>
+// 시뮬레이터 상태
+let timerInterval = null;
+let remainingSeconds = 3 * 60 * 60; // 3시간
+let isRunning = false;
+let currentRoT = 67;
+const targetRoT = 85;
+
+// 마일스톤 정의 (초 단위)
+const milestones = [
+  { time: 0, task: 0, rot: 67 },
+  { time: 60*60, task: 1, rot: 72 },      // 1시간: TR-02 완료 (+5%)
+  { time: 2*60*60, task: 2, rot: 76 },    // 2시간: TR-03 완료 (+4%)
+  { time: 2.5*60*60, task: 3, rot: 78 },  // 2.5시간: TR-01 완료 (+2%)
+  { time: 3*60*60, task: 4, rot: 85 }     // 3시간: Gate 완료
+];
+
+function formatTime(seconds) {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
+function updateDisplay() {
+  // 타이머 업데이트
+  document.getElementById('timer').textContent = formatTime(remainingSeconds);
+
+  // 경과 시간 계산
+  const elapsed = 3*60*60 - remainingSeconds;
+
+  // 현재 RoT 계산 (선형 보간)
+  let prevMilestone = milestones[0];
+  let nextMilestone = milestones[milestones.length - 1];
+
+  for (let i = 0; i < milestones.length - 1; i++) {
+    if (elapsed >= milestones[i].time && elapsed < milestones[i+1].time) {
+      prevMilestone = milestones[i];
+      nextMilestone = milestones[i+1];
+      break;
+    }
+  }
+
+  // 선형 보간으로 RoT 계산
+  const progress = (elapsed - prevMilestone.time) / (nextMilestone.time - prevMilestone.time);
+  currentRoT = prevMilestone.rot + (nextMilestone.rot - prevMilestone.rot) * Math.min(progress, 1);
+
+  // RoT 바 업데이트
+  document.getElementById('rot-bar').style.width = currentRoT + '%';
+  document.getElementById('rot-display').textContent = `${currentRoT.toFixed(1)}% → ${targetRoT}%`;
+
+  // 타이머 색상 업데이트
+  const timer = document.getElementById('timer');
+  if (remainingSeconds < 30*60) {
+    timer.style.color = 'var(--bad)';
+  } else if (remainingSeconds < 60*60) {
+    timer.style.color = 'var(--warn)';
+  } else {
+    timer.style.color = 'var(--good)';
+  }
+
+  // 타임라인 상태 업데이트
+  updateTimelineStatus(elapsed);
+}
+
+function updateTimelineStatus(elapsed) {
+  const items = document.querySelectorAll('.timeline-item');
+
+  items.forEach((item, index) => {
+    const hour = parseFloat(item.dataset.hour);
+    const targetTime = hour * 60 * 60;
+    const statusEl = document.getElementById(`status-${index}`);
+
+    if (elapsed >= targetTime && index < items.length - 1) {
+      // 완료
+      item.style.background = 'rgba(46,213,115,0.15)';
+      item.style.borderLeftColor = 'var(--good)';
+      statusEl.textContent = '완료';
+      statusEl.style.background = 'rgba(46,213,115,0.3)';
+      statusEl.style.color = 'var(--good)';
+    } else if (elapsed >= (index > 0 ? milestones[index-1]?.time || 0 : 0) && elapsed < targetTime) {
+      // 진행중
+      item.style.background = 'rgba(255,165,2,0.15)';
+      item.style.borderLeftColor = 'var(--warn)';
+      statusEl.textContent = '진행중';
+      statusEl.style.background = 'rgba(255,165,2,0.3)';
+      statusEl.style.color = 'var(--warn)';
+    }
+  });
+}
+
+function startSimulation() {
+  if (isRunning) return;
+  isRunning = true;
+
+  timerInterval = setInterval(() => {
+    if (remainingSeconds > 0) {
+      remainingSeconds--;
+      updateDisplay();
+    } else {
+      clearInterval(timerInterval);
+      isRunning = false;
+      alert('🏆 비상계엄 작전 완료! RoT 85% 달성!');
+    }
+  }, 1000);
+}
+
+function resetSimulation() {
+  clearInterval(timerInterval);
+  isRunning = false;
+  remainingSeconds = 3 * 60 * 60;
+  currentRoT = 67;
+
+  // 모든 상태 리셋
+  document.querySelectorAll('.timeline-item').forEach((item, index) => {
+    if (index === 0) {
+      item.style.background = 'rgba(255,165,2,0.15)';
+      item.style.borderLeftColor = 'var(--warn)';
+    } else if (index === 4) {
+      item.style.background = 'rgba(255,215,0,0.1)';
+      item.style.borderLeftColor = 'var(--gold)';
+    } else {
+      item.style.background = 'rgba(255,255,255,0.03)';
+      item.style.borderLeftColor = 'var(--muted)';
+    }
+  });
+
+  document.getElementById('status-0').textContent = '진행중';
+  document.getElementById('status-0').style.background = 'rgba(255,165,2,0.3)';
+  document.getElementById('status-0').style.color = 'var(--warn)';
+
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById(`status-${i}`).textContent = '대기';
+    document.getElementById(`status-${i}`).style.background = 'rgba(255,255,255,0.1)';
+    document.getElementById(`status-${i}`).style.color = 'var(--muted)';
+  }
+
+  document.getElementById('status-4').textContent = '목표';
+  document.getElementById('status-4').style.background = 'rgba(255,215,0,0.2)';
+  document.getElementById('status-4').style.color = 'var(--gold)';
+
+  updateDisplay();
+}
+
+// 빠른 시뮬레이션 (테스트용)
+function fastForward(minutes) {
+  remainingSeconds = Math.max(0, remainingSeconds - minutes * 60);
+  updateDisplay();
+}
+
+// 초기화
+updateDisplay();
+
+// 컨텍스트 패킷 복사 기능
+function copyContextPacket() {
+  const packet = document.getElementById('context-packet').innerText;
+  navigator.clipboard.writeText(packet).then(() => {
+    const btn = document.getElementById('copy-btn');
+    const text = document.getElementById('copy-text');
+    const originalText = text.innerText;
+
+    btn.style.background = 'var(--good)';
+    text.innerText = 'Copied!';
+
+    setTimeout(() => {
+      btn.style.background = 'var(--purple)';
+      text.innerText = originalText;
+    }, 2000);
+  }).catch(err => {
+    alert('복사 실패: ' + err);
+  });
+}
+
+// 패킷 내용 동적 업데이트 (RoT 반영)
+function updateContextPacket() {
+  const packetEl = document.getElementById('context-packet');
+  if (!packetEl) return;
+
+  const now = new Date();
+  const timestamp = now.toISOString().slice(0, 16).replace('T', ' ');
+
+  packetEl.innerHTML = `# 🚨 비상계엄 컨텍스트 패킷 v1.0
+## 생성시각: ${timestamp}
+
+## 프로젝트: THE GOLDEN CAGE
+- **논문**: "How Early Funding Suppresses Venture Growth"
+- **핵심 주장**: dG/dF = (dG/dR) × (dR/dF) = (+) × (−) = (−)
+- **의미**: 초기 자금이 많을수록 성장이 억제됨 (역설)
+
+## 정규 숫자 (Canonical Numbers)
+- ρ(Funding, Growth) = −0.196***
+- N = 180,994 ventures
+- Mover Advantage = 1.81× (17.8% vs 9.9%)
+- ρ(Funding, Repositioning) = −0.087***
+
+## 현재 상태
+- RoT (Ring of Truth): ${currentRoT.toFixed(1)}% → 85% 목표
+- 남은 Gap: ${(85 - currentRoT).toFixed(1)}%
+- 남은 시간: ${formatTime(remainingSeconds)}
+
+## P0 이슈 (Existential) - 총 +18%
+1. TR-02 (#043, #044): Survival Bias Defense (+10%) - Year 3+ 조건부 분석
+2. TR-03 (#045, #046): Industry Heterogeneity (+8%) - 산업별 이질성 테이블
+
+## P1 이슈 (Committee Defense) - 총 +5% + Gate
+3. TR-01 (#041, #042): Magnitude Context (+5%) - 효과크기 맥락화
+4. G-01: H-Check - H₀ 명시 (Gate)
+5. G-05: E-Check - Methodology 심화 (Gate)
+
+## 6장 체제
+Ch.1 Introduction | Ch.2 Golden Cage Mechanism | Ch.3 Data & ID
+Ch.4 Funding & Rigidity | Ch.5 Strategic Ambiguity | Ch.6 Conclusion
+
+## 핵심 파일 위치
+- Thesis_Master.md: 본문
+- Action_Items.md: 이슈 추적
+- .thesis_stats.json: 통계 데이터
+- papers_v7_sail/: 현재 작업 디렉토리
+
+## Agent 역할
+- 정운(ChatGPT): 초안 생성, 브레인스토밍
+- 권준(CLI1): 파일 읽기/쓰기, Git
+- 나대용(CLI2): 병렬 작업, 코드 실행
+- 김완(Web): 전략 조언, 품질 검수
+
+## 현재 작전
+비상계엄 3시간 집중공략 - P0/P1 이슈 독파
+대장선: 이순신(통제사) + 나대용(CLI2)
+
+---
+*"必死卽生 - Commit to Reposition, Not to Position"*`;
+}
+
+// 30초마다 패킷 업데이트
+setInterval(updateContextPacket, 30000);
+
+// 🔔 30분 간격 종소리 기능
+let bellEnabled = true;
+const bellTimes = ['08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30'];
+let lastBellTime = '';
+
+function playBell() {
+  // 브라우저 알림음 (Web Audio API)
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const oscillator = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+
+  // 종소리 패턴: 3번 울림
+  oscillator.frequency.value = 800;
+  oscillator.type = 'sine';
+  gainNode.gain.value = 0.3;
+
+  oscillator.start();
+
+  // 페이드 아웃
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+  oscillator.stop(audioCtx.currentTime + 0.5);
+
+  // 2번째 종
+  setTimeout(() => {
+    const osc2 = audioCtx.createOscillator();
+    const gain2 = audioCtx.createGain();
+    osc2.connect(gain2);
+    gain2.connect(audioCtx.destination);
+    osc2.frequency.value = 1000;
+    osc2.type = 'sine';
+    gain2.gain.value = 0.3;
+    osc2.start();
+    gain2.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+    osc2.stop(audioCtx.currentTime + 0.5);
+  }, 300);
+
+  // 3번째 종
+  setTimeout(() => {
+    const osc3 = audioCtx.createOscillator();
+    const gain3 = audioCtx.createGain();
+    osc3.connect(gain3);
+    gain3.connect(audioCtx.destination);
+    osc3.frequency.value = 1200;
+    osc3.type = 'sine';
+    gain3.gain.value = 0.3;
+    osc3.start();
+    gain3.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+    osc3.stop(audioCtx.currentTime + 0.5);
+  }, 600);
+}
+
+function checkBellTime() {
+  if (!bellEnabled) return;
+
+  const now = new Date();
+  const currentTime = now.toTimeString().slice(0, 5); // HH:MM
+
+  if (bellTimes.includes(currentTime) && lastBellTime !== currentTime) {
+    lastBellTime = currentTime;
+    playBell();
+
+    // 화면에 알림 표시
+    const timer = document.getElementById('timer');
+    const originalColor = timer.style.color;
+    timer.style.color = 'var(--gold)';
+    timer.style.textShadow = '0 0 20px var(--gold)';
+
+    setTimeout(() => {
+      timer.style.color = originalColor;
+      timer.style.textShadow = 'none';
+    }, 3000);
+
+    // 브라우저 알림 (권한 있을 경우)
+    if (Notification.permission === 'granted') {
+      new Notification('🔔 30분 경과', {
+        body: `현재 시각: ${currentTime} | RoT: ${currentRoT.toFixed(1)}%`,
+        icon: '⚓'
+      });
+    }
+
+    console.log(`🔔 ${currentTime} - 30분 종소리!`);
+  }
+}
+
+// 알림 권한 요청
+if ('Notification' in window && Notification.permission === 'default') {
+  Notification.requestPermission();
+}
+
+// 매 초마다 종 시간 체크
+setInterval(checkBellTime, 1000);
+
+// 종소리 테스트 함수
+function testBell() {
+  playBell();
+  console.log('🔔 종소리 테스트');
+}
+
+console.log('🔔 30분 간격 종소리 활성화: ' + bellTimes.join(', '));
+</script>
+</body>
+</html>
