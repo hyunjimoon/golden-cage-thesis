@@ -25,7 +25,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T08:37:21-05:00
+  - 2026-01-13T10:37:01-05:00
 ---
 
 
@@ -45,7 +45,7 @@ Draft for Committee Review — January 2026
 The $330 billion U.S. venture capital industry rests on a simple premise: capital fuels growth. Yet analyzing 180,994 ventures from PitchBook (2021–2025), I document a paradox: early-stage funding correlates *negatively* with later-stage survival (ρ = −0.196, p < 0.001). Startups die not for lack of resources, but for lack of mobility. Capital is oxygen—but oxygen in a sealed chamber becomes a cage.
 
 **¶2 — Part I: The Cage (Chapters 1–4).**
-I identify a second-order mechanism consistent with this paradox. Funding is associated with lower repositioning (ρ = −0.087), yet repositioning is associated with growth—Movers outperform Stayers by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−). I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
+The effect operates through a mediated pathway: funding is associated with lower repositioning (ρ = −0.087), yet repositioning is associated with growth—Movers outperform Stayers by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−). I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
 
 **¶3 — Part II: Escaping the Cage (Chapters 5–6).**
 The contribution is threefold. First, I document a negative funding-growth correlation at unprecedented scale. Second, I identify governance homogeneity—not moral hazard—as the binding constraint. Third, I distinguish vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095). The prescription follows: when uncertain, commit to *reposition*, rather than to position.
@@ -779,13 +779,13 @@ The statistical patterns acquire meaning through concrete examples. I present th
 
 **Sky Engine** exemplifies the broadening mover trajectory. At founding (2021), the company positioned narrowly in aerial surveying technology (V₀ = 28). By 2025, the company had repositioned toward a broader autonomous systems platform (V_T = 89), yielding a repositioning magnitude of R = 61.
 
-This expansion—from a single vertical application to a platform architecture—enabled Sky Engine to pursue multiple market opportunities while maintaining technological coherence. The company achieved 215× growth, consistent with the mover advantage documented above.
+This expansion—from a single vertical application to a platform architecture—enabled Sky Engine to pursue multiple market opportunities while maintaining technological coherence. The company successfully reached later-stage financing (Series B+), consistent with the mover advantage documented above.
 
 **Key insight:** Sky Engine's repositioning did not represent strategic confusion. Rather, the company preserved vision-level commitment (autonomous systems) while expanding operational flexibility (multiple applications). This pattern exemplifies the golden cage escape: maintaining governance diversity through broad vision while adapting to market feedback.
 
 ### 4.5.2 Surestar: The Stayer
 
-**Surestar** represents the stable positioning alternative. The company maintained constant strategic breadth throughout the observation period (V₀ = V_T = 87), yielding R = 0. Despite substantial funding and operational excellence, Surestar achieved 26× growth—respectable by absolute standards, but lower than repositioning peers.
+**Surestar** represents the stable positioning alternative. The company maintained constant strategic breadth throughout the observation period (V₀ = V_T = 87), yielding R = 0. Despite substantial early-stage funding and operational excellence, Surestar did not reach later-stage financing within the observation window—an outcome consistent with the 7.0% base rate for Stayers.
 
 **Key insight:** Surestar's stability reflects either (a) a market environment requiring no adaptation, or (b) governance constraints preventing adaptation despite market signals. The golden cage mechanism suggests the latter is more common: funding attracts like-minded investors who reinforce initial positioning, making pivot advocacy scarce even when warranted.
 
