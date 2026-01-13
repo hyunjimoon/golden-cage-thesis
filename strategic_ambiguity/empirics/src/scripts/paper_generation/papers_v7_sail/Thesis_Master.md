@@ -25,7 +25,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T10:37:01-05:00
+  - 2026-01-13T12:11:21-05:00
 ---
 
 
@@ -128,7 +128,7 @@ The data reveal a paradox. Analyzing 180,994 ventures from PitchBook (2021–202
 
 $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
-![Figure 1: The Funding-Growth Paradox](figures/Fig-I_capital_paradox.png)
+[Figure 1: The Funding-Growth Paradox](figures/Fig-I_capital_paradox.png)
 
 **Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
@@ -144,7 +144,7 @@ $$\frac{dG}{dF} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \t
 
 The product of a positive and a negative is negative. Funding is associated with reduced mobility—not because capital is harmful, but because commitment attracts like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires.
 
-![Figure 2: Mediation Structure](figures/Fig-I_mediation_dag.png)
+[Figure 2: Mediation Structure](figures/Fig-I_mediation_dag.png)
 
 **Figure 2:** The Mediation Structure. Early Cash and Growth are measured variables; Commitment and Flexibility are latent. Commitment increases Early Cash but decreases Flexibility. Flexibility increases Growth. The negative correlation between Early Cash and Growth (dashed line) emerges from this multiplicative mediation: (+) × (−) = (−).
 
@@ -265,7 +265,7 @@ $$C \rightarrow E \rightarrow A\downarrow \rightarrow R\downarrow \rightarrow G\
 
 Where C = Commitment, E = Early funding, A = Adaptability (governance-permitted change capacity), R = Repositioning, G = Growth.
 
-![Figure 3: The Golden Cage Mechanism](figures/Fig-CFR1_golden_cage.png)
+[Figure 3: The Golden Cage Mechanism](figures/Fig-CFR1_golden_cage.png)
 
 **Figure 3:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
@@ -561,9 +561,9 @@ The data confirm H2: funding is associated with lower repositioning.
 
 The negative correlation is robust across specifications. Well-funded ventures reposition less.
 
-![Figure 5: CER Pattern](figures/Fig-GC_golden_cage_canary.png)
+[Figure 5: CER Pattern](figures/Fig-I_capital_paradox.png)
 
-**Figure 5:** CER Pattern. As early funding (E) increases, repositioning (R) decreases, controlling for industry fixed effects.
+**Figure 5:** CER Pattern. As early funding (E) increases, repositioning (R) decreases, controlling for industry fixed effects (ρ = −0.087***).
 
 ### 4.1.2 Interpretation
 
@@ -614,7 +614,7 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 
 **Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—explains the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the primary identification.
 
-![Figure 6: Mover vs. Stayer Success Rates](figures/Fig_growth_by_R.png)
+[Figure 6: Mover vs. Stayer Success Rates](figures/Fig_growth_by_R.png)
 
 **Figure 6:** Mover vs. Stayer Success Rates. Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
 
@@ -655,7 +655,7 @@ The golden cage binds tighter in capital-intensive industries where switching co
 
 *Note: E = first_financing_size (M USD), G = growth (binary: Series B+ achievement). Data verified from PitchBook (2021-2025).*
 
-![Figure 7: Industry ρ(E,G) Correlations](figures/Fig_4_industry_heterogeneity_rho.png)
+[Figure 7: Industry ρ(E,G) Correlations](figures/Fig_4_industry_heterogeneity_rho.png)
 
 **Figure 7:** Industry-level ρ(E,G) correlations. Capital-intensive sectors (Hardware, Transportation) show strongest negative correlations consistent with the multiplicative model. Quantum is the sole positive outlier—under extreme uncertainty, learning value dominates rigidity costs.
 
@@ -719,7 +719,7 @@ The deep tech exception also illuminates a distinction between two forms of earl
 
 Paradoxically, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger golden cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
 
-![Figure 8: Mobility - Where the Cage Bites Hardest](figures/Fig-Ch4_mobility_failure.png)
+[Figure 8: Mobility - Where the Cage Bites Hardest](figures/Fig-Ch4_mobility_failure.png)
 
 **Figure 8:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
@@ -749,7 +749,7 @@ These three vulnerabilities interact: capital intensity demands commitment, but 
 
 All specifications yield consistent results. The golden cage is not a COVID artifact or cohort effect.
 
-![Figure 9: Temporal Robustness](figures/R1_robustness_timeseries.png)
+[Figure 9: Temporal Robustness](figures/R1_robustness_timeseries.png)
 
 **Figure 9:** Temporal Robustness. The funding-repositioning relationship remains stable across cohort years and market conditions.
 
@@ -829,7 +829,7 @@ The golden cage forms when operational commitment attracts homogeneous believers
 
 Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
 
-![Figure 10: The Strategic Ambiguity Sweet Spot](figures/Fig-Ch5_capitalize_evaluate.png)
+[Figure 10: The Strategic Ambiguity Sweet Spot](figures/Fig-Ch5_capitalize_evaluate.png)
 
 **Figure 10:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
 
