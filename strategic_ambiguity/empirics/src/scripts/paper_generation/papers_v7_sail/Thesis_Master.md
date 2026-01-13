@@ -25,7 +25,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T13:10:30-05:00
+  - 2026-01-13T13:18:59-05:00
 ---
 
 
@@ -265,21 +265,41 @@ This thesis makes three contributions to the literature on entrepreneurial strat
 
 ## 2.1 Introduction
 
-**The funding process creates a golden cage—a structural constraint that prevents adaptation regardless of founder intent.** The conventional explanation for why funding suppresses growth invokes moral hazard: well-capitalized founders, insulated from failure's consequences, exert less effort to adapt (Jensen & Meckling, 1976). This chapter develops an alternative explanation rooted in governance structure rather than founder motivation.
+Strategic flexibility is one of the fundamental topics in entrepreneurship and operations management. As an operational concept, it classically applies to a range of settings including (1) the ability of a plant to process multiple types of products in a manufacturing system (Jordan & Graves, 1995), (2) the ability of a firm to pivot between market segments when demand shifts (Ries, 2011), or (3) the capacity of a startup to reposition its value proposition based on customer feedback (Camuffo et al., 2020). In these applications, flexibility is widely recognized for its value in hedging against market uncertainty and improving venture survival.
 
-The mechanism operates through belief homogeneity. Securing capital requires specific operational commitments that attract investors who share the founder's thesis. Skeptics—those who might later champion pivoting—self-select out of deals they doubt. The resulting governance structure contains only believers, which is efficient for execution but destructive for learning. When market signals suggest the current strategy is failing, no board member advocates for alternatives. The venture cannot pivot—not because founders lack motivation, but because governance lacks diversity.
+(a) Flexibility in Manufacturing (b) Flexibility in Ventures
 
-This structural explanation carries distinct implications for intervention. If founders *will not* pivot (moral hazard), the prescription is intensified monitoring and stronger incentives. If founders *cannot* pivot (golden cage), the prescription is governance redesign—preserving skeptical voices before funding eliminates them. The evidence favors the structural explanation: founders of failed well-funded ventures frequently express regret at not pivoting earlier, suggesting motivation was present but governance support was absent.
+**Figure 3a: Process Flexibility vs. Venture Flexibility.** The plots contrast process flexibility in manufacturing systems (long chain design) with flexibility in venture governance. In manufacturing, flexibility is configured deterministically by central planners. In ventures, flexibility emerges through governance composition—who sits on the board determines which strategic pivots are feasible.
+
+Many modern venture-backed startups face similar uncertainty on both the product and market sides, which motivates the natural question whether flexibility can also be leveraged in their operations. For instance, the strategic positioning problem solved by founders has a two-sided structure, with investors on the funding side and customers on the market side. As illustrated in Figure 3a, the connections between stakeholders represent their compatibility (here, whether an investor supports a given strategic direction), and the founder navigates these available connections when raising capital. Though the problems in manufacturing and venture strategy share a similar need for flexibility, there are fundamental differences in how flexibility is created.
+
+In a manufacturing system, additional compatibility is configured deterministically by a central planner who invests in equipment for the corresponding plants. In contrast, the impact of flexibility in venture governance is better modeled through selection dynamics. For instance, the "strategic ambiguity" approach (Eisenberg, 1984) illustrates how founders maintain flexibility—by positioning broadly enough to attract diverse stakeholders. A founder choosing this approach accepts that some investors will interpret the vision differently, but this allows the company to pivot without losing governance support. However, the number of investors supporting any particular pivot is stochastic. Therefore, a founder with strategic ambiguity will likely have more pivot options, but not always.
+
+| Industry | Example Platforms | Flexibility Mechanism | Constraint Mechanism |
+|:---------|:------------------|:----------------------|:---------------------|
+| Mobility | Tesla, Better Place | Vision vs. operational commitment | Board composition |
+| Software | Slack, Flickr | Product pivot capacity | Investor thesis alignment |
+| Hardware | Nest, Dropcam | Technology redeployment | Sunk cost in manufacturing |
+
+**Table 2.1: Examples of ventures that face flexibility constraints through governance.** These constraints arise when operational commitments attract like-minded investors who filter skeptics from governance.
+
+The examples illustrate that flexibility constraints can simultaneously arise from multiple sources, which raises the question of how governance composition interacts with commitment type. Specifically, what commitment structure is best for survival? Is it more effective to commit at the vision level (preserving pivot options), or is it better to commit at the operational level (attracting aligned investors)? Despite the significant capital through which founders make commitments on both technology and market sides, the interaction of commitment type and governance composition is not well-understood. Indeed, we know of no work in the literature that examines the interaction of these two flexibility mechanisms in venture governance. And, in practice, founders usually make commitment decisions without visibility into how those commitments shape board composition—a one-sided approach that neither reveals nor exploits the interaction of different flexibility levers, and we will show that it can come at a great cost.
+
+Motivated by this gap in the literature, this chapter studies how the funding process creates a *golden cage*—a structural constraint that prevents adaptation regardless of founder intent. Our focus on the governance mechanism differs from traditional studies that usually attribute venture failure to moral hazard or resource constraints, rather than their interactions. Since Table 2.1 shows that governance-based flexibility constraints can arise in a variety of settings, we focus on highlighting general effects that are likely relevant to any venture. We develop a parsimonious theoretical model to identify how commitment type shapes governance composition. Our model represents the venture as a founder-investor matching problem, where specific commitments (operational) attract narrow coalitions while vague commitments (vision-level) attract diverse coalitions. The venture's objective is to maximize survival probability, which depends on both resource acquisition and pivot capacity. We study how a given commitment level should be structured, and whether and when founders should commit at the vision versus operational level.
+
+Our results show that the choice of commitment level has a significant impact on venture survival. Even with fixed commitment credibility, the pivot capacity (and consequently the survival probability) can vary significantly depending on how commitment is structured (see Figure 3). Moreover, by comparing two natural commitment strategies: (1) the operational commitment, which specifies technology and market, and (2) the vision commitment, which specifies direction but not destination, we find that either strategy can improve survival by more than 2× compared to the other, depending on industry and stage. Hence, founders who optimize their commitment level but not its structure may pay a high price.
+
+Despite the impact of commitment structure, optimizing it poses nontrivial difficulties. Even in a simple and symmetric governance model, the geometry of pivot capacity (as a function of commitment structure) reveals traps in which a venture might get stuck. In particular, the current practice of many founders—wherein commitments are made to secure near-term funding without considering long-term governance implications—might converge to such traps. Near these traps, founders mistakenly perceive themselves to be optimally positioned, as commitment should neither be increased nor decreased; however, the venture would benefit from restructuring commitment from operational to vision level or vice versa. These structural insights are unique to our study of commitment-governance interaction, and our empirical results show that they generalize beyond our particular model.
 
 ### 2.1.1 Contributions
 
-This chapter makes three theoretical contributions:
+This chapter initiates the study of commitment-governance interaction in venture strategy. It characterizes the mechanisms through which funding constrains flexibility and allows us to study different questions regarding the optimal structure of commitment.
 
-1. **The Golden Cage Mechanism**: I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism explaining why well-funded ventures cannot adapt.
+**Optimal commitment structures.** Our study of vision-level and operational commitment reveals that either structure can dominate the other. In Sections 2.3 and 2.4, we introduce two key effects—*belief homogenization* and *signal diversity loss*—that respectively drive the consequences of operational and vision-level commitments. Intuitively, belief homogenization is a consequence of operational commitment: as specific commitments attract like-minded investors, governance diversity decreases while shared conviction increases—but this conviction becomes wasteful when the committed direction proves wrong. In contrast, signal diversity loss arises under extreme operational commitment, where board members who might champion alternative interpretations never join governance. The loss can result in a large number of disconfirming signals being ignored, leaving the venture unable to recognize when pivoting would be optimal. In Sections 2.3 and 2.4, we characterize the conditions where these effects are most pronounced, and in Section 2.5 we identify the dominant commitment structure across different industry contexts.
 
-2. **Structural vs. Motivational Constraint**: I distinguish "cannot pivot" (structural) from "will not pivot" (moral hazard), with distinct implications for intervention design.
+**Synthesis of sorting and ambiguity theories.** Our main theoretical contribution lies in synthesizing Van den Steen's (2010) sorting equilibrium with Eisenberg's (1984) strategic ambiguity into a unified mechanism. Characterizing how commitment shapes governance is a long-studied but notoriously challenging area in entrepreneurship. To compare the survival rates of different commitment structures, we develop three distinct analytical approaches. In Section 2.3 we design a careful mapping between commitment type and governance composition and show, for certain parameters, that belief homogenization leads to lower survival for operational commitment. Then, in Section 2.4 we apply the flexibility premium analysis for conditions where strategic ambiguity produces high governance diversity. Finally, in Section 2.5 we formalize the Caged Learning condition (Theorem 1) to explicitly characterize when organizational learning ceases endogenously.
 
-3. **Caged Learning Formalization**: I derive formal conditions under which organizational learning ceases endogenously through the funding process itself.
+**Structural vs. motivational constraint.** We distinguish "cannot pivot" (structural) from "will not pivot" (moral hazard), with distinct implications for intervention design. If founders *will not* pivot due to reduced incentives, the prescription is intensified monitoring. If founders *cannot* pivot due to structural constraints (the cage), the prescription is governance redesign—preserving skeptical voices before funding eliminates them.
 
 ### 2.1.2 Analytic Structure: Patterns vs. Mechanisms
 
@@ -314,7 +334,15 @@ This chapter develops the theoretical mechanisms (Layers 2-3). Chapter 4 tests w
 
 ### 2.1.3 Related Work
 
-This work builds on three research streams. First, the commitment literature (Porter, 1996; Ghemawat, 1991) establishes that strategic positioning requires trade-offs. Second, the organizational learning literature (March, 1991; Levinthal & March, 1993) identifies tensions between exploration and exploitation. Third, the entrepreneurship literature (Camuffo et al., 2020; Kirtley & O'Mahony, 2023) examines how ventures adapt through pivoting. I integrate these streams to explain why funding—despite providing resources for experimentation—suppresses the adaptation that experimentation enables.
+**Commitment in strategy.** Commitment has a long history in strategy with early works, dating back to Schelling (1960) and Ghemawat (1991), focusing on the value of irreversible choices. Most early works in this literature have focused on determining the optimal *level* of commitment (Porter, 1996; Ghemawat, 1991), thus optimizing over a single dimension. In contrast, our decision also involves commitment *structure*—vision versus operational. More importantly, we identify not just the optimal commitment level, but also structural properties that arise from the interplay of commitment type and governance composition and can cause potential pitfalls in practice.
+
+In our focus on structural insights, our study relates more closely to those works in flexibility that aim to identify the optimal commitment *design* rather than the optimal *amount* of commitment. The seminal work of Sanchez (1995) first introduced "strategic flexibility," which enables a small amount of uncommitted resources to yield almost all the benefits of a perfectly flexible system. Since then, a vast literature has studied commitment-flexibility trade-offs (Adner & Levinthal, 2004; McGrath, 1999; Dixit & Pindyck, 1994). A key distinction between our work and this stream lies in the *structure* of our flexibility mechanism: as venture governance involves stochastically formed coalitions that connect founders with investors, we cannot model flexibility as a fixed strategic design. Instead, founders use commitment choices to shape the *probability* of attracting diverse governance voices.
+
+**Organizational learning.** Our work also relates to papers that study flexibility in organizational adaptation, though they focus on flexibility within a single organization. Prior works study exploration-exploitation trade-offs (March, 1991), competency traps (Levinthal & March, 1993), and Bayesian entrepreneurship (Gans, Stern, & Wu, 2019). More explicitly focused on venture adaptation, some works study pivoting (Ries, 2011; Camuffo et al., 2020) and strategic experimentation (Kirtley & O'Mahony, 2023). Our work differs from all of these in that we focus on the interplay of two different flexibility mechanisms—commitment structure and governance composition.
+
+**Governance and venture capital.** A reasonable interpretation of our structural results is that founders are unlikely to find the optimal commitment structure if they optimize without considering governance implications (see Section 2.6). This relates to a stream of literature that identifies conflicts between founder and investor incentives (Jensen & Meckling, 1976; Hellmann & Puri, 2002). There, ventures may face inefficiencies due to moral hazard. In our work, the inefficiency arises not from misaligned incentives but from *structural constraints*—without governance diversity, founders cannot pivot even when they want to.
+
+**Plans for the subsequent sections.** In Sections 2.3 and 2.4 we describe two key effects—belief homogenization (which constrains pivoting) and signal diversity loss (which prevents learning). Together, they guide the search for optimal commitment structure. In Section 2.5 we synthesize these effects into the Caged Learning theorem. Section 2.6 discusses real options foundations, and Section 2.7 derives testable hypotheses.
 
 ## 2.2 Commitment as Double-Edged Sword
 
@@ -324,30 +352,39 @@ But Ghemawat also identifies the flip side: commitment forecloses alternatives. 
 
 The tension intensifies in nascent markets. Under technological and demand uncertainty, commitment becomes a bet on incomplete information. Dixit and Pindyck (1994) formalize this through real options reasoning: when uncertainty is high (σ↑), waiting becomes more valuable because the option to learn dominates the benefit of early commitment. Sanchez (1995) extends this to strategic flexibility: firms facing environmental uncertainty should maintain "strategic flexibility"—the capacity to respond to unforeseen contingencies.
 
-## 2.3 Force (+): Why Flexibility Creates Value
-### The Flexibility Premium — dG/dR > 0
+## 2.3 Belief Homogenization
 
-Van den Steen (2010) provides the theoretical foundation for understanding how commitment creates governance homogeneity. His sorting equilibrium model demonstrates that entrepreneurs who pursue a venture are, by definition, more optimistic about it—a selection effect, not bias. Crucially, investors who choose to fund also share this optimism, because pessimistic investors self-select out.
+In governance that results from operational commitment, investors who fund a venture share the founder's specific thesis, despite such alignment likely being wasteful when the committed direction proves wrong: we call this the *belief homogenization* effect. To understand it, recall that a diverse board can advocate for pivoting when market signals suggest problems. As such, governance structures should strive to avoid having all board members believe the same thesis, many of whose convictions would be wasteful when adaptation is needed. And, as the total governance capacity is fixed given a funding round, concentrating conviction in one direction can lead to fewer pivot options.
 
-The result is belief homogeneity without any party behaving irrationally. Everyone is Bayesian; everyone updates on available signals. But the selection process ensures that founder and investor beliefs converge. The board contains no skeptics—not because skeptics were expelled, but because they never joined.
+This intuition is confirmed through Van den Steen's (2010) sorting equilibrium. His model demonstrates that entrepreneurs who pursue a venture are, by definition, more optimistic about it—a selection effect, not bias. Crucially, investors who choose to fund also share this optimism, because pessimistic investors self-select out. The result is belief homogeneity without any party behaving irrationally. Everyone is Bayesian; everyone updates on available signals. But the selection process ensures that founder and investor beliefs converge. The board contains no skeptics—not because skeptics were expelled, but because they never joined.
 
-This sorting mechanism has profound implications for organizational learning. March (1991) identifies the fundamental tension between exploration and exploitation: "Reason inhibits foolishness; learning and imitation inhibit experimentation." Belief convergence is efficient for exploitation (executing a known strategy) but destructive for exploration (discovering whether the strategy is correct).
+Consider the example of Better Place from the introduction. The company employed operational commitment to battery swapping—a specific technology choice that attracted investors who believed in that specific approach. Belief homogenization occurs when all board members share conviction in swapping infrastructure, which happens naturally through Van den Steen's sorting. The company then has no governance voice advocating for charging when market signals favor that alternative. In our framework, this is analogous to governance structures where all investors believe the same thesis, leaving disconfirming signals without champions.
 
-## 2.4 Force (−): Why Funding Destroys Flexibility
-### The Commitment Trap — dR/dE < 0
+This sorting mechanism has profound implications for organizational learning. March (1991) identifies the fundamental tension between exploration and exploitation: "Reason inhibits foolishness; learning and imitation inhibit experimentation." Belief convergence is efficient for exploitation (executing a known strategy) but destructive for exploration (discovering whether the strategy is correct). The following proposition characterizes when homogenization becomes consequential:
 
-Eisenberg (1984) completes the mechanism through "strategic ambiguity." Early-stage ventures necessarily communicate with some vagueness—the future is genuinely uncertain. This ambiguity enables "unified diversity": stakeholders project their own interpretations onto vague visions.
+**Proposition 1.** *For any commitment level C ∈ (0, 1), the asymptotic fraction of skeptics on the board (as N investors → ∞) is minimized under operational commitment and maximized under vision commitment.*
 
-Initial ambiguity attracts diverse believers who each see their preferred interpretation. Tesla's "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition—each projecting their thesis onto the same vision. But this same mechanism traps the venture later: any pivot threatens *someone's* projected interpretation, and that someone now sits on the board.
+This shows that there may be an issue with operational commitment, as skeptics are necessary for recognizing pivot opportunities, and that this issue arises when commitment is specific (operational) rather than abstract (vision-level).
 
-The cage is structural, not motivational. Founders do not lack the will to pivot; they lack the governance support. Every board member believes in the current direction—by construction. Disconfirming signals have no champion.
+## 2.4 Signal Diversity Loss
 
-## 2.5 The Collision: (+) × (−) = (−)
-### How the Net Effect Becomes Negative
+Moving away from the conditions in Proposition 1, we now study when vision-level commitment may dominate operational commitment. This dominance is driven by a second effect, which we refer to as *signal diversity loss* and which is particularly strong when market uncertainty is high.
 
-I synthesize these theoretical threads into a unified mechanism—the *golden cage*. The cage forms through a four-step sequence:
+Unlike homogenization, signal diversity loss is an effect that focuses on disconfirming signals. When market uncertainty is high (i.e., many possible outcomes exist), any commitment structure faces signals that suggest pivoting. When commitment is operational rather than visionary, signals advocating for alternatives systematically lack board advocates. This is most pronounced under full operational commitment: pivoting signals supporting the committed direction have many board advocates, while signals supporting alternatives have near-zero advocate density.
 
-**Step 1: Commitment Attracts Believers.** Securing capital requires specific operational commitments—production architecture choices, go-to-market sequences, milestone definitions (Gompers & Lerner, 2001; Hellmann & Puri, 2002). Investors who fund a venture believe these specific commitments will succeed.
+Eisenberg (1984) completes the mechanism through "strategic ambiguity." Early-stage ventures necessarily communicate with some vagueness—the future is genuinely uncertain. This ambiguity enables "unified diversity": stakeholders project their own interpretations onto vague visions. Initial ambiguity attracts diverse believers who each see their preferred interpretation. Tesla's "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition—each projecting their thesis onto the same vision.
+
+But this same mechanism traps the venture later: any pivot threatens *someone's* projected interpretation, and that someone now sits on the board. The following theorem formalizes this intuition:
+
+**Theorem 2.** *If (i) belief heterogeneity σ_θ ≥ σ* (sufficient investor diversity), (ii) market uncertainty U ∈ [U_min, U_max], and (iii) commitment specificity C > C*, then vision commitment survival > operational commitment survival.*
+
+We can prove that vision commitment dominates in a parameter regime where signal diversity is particularly valuable: (i) diverse board members must be available to recruit; (ii) market uncertainty should be non-trivial so that pivoting signals matter; (iii) commitment should be beyond a threshold C* where operational choices foreclose too many alternatives. In particular, the cage is structural, not motivational. Founders do not lack the will to pivot; they lack the governance support. Every board member believes in the current direction—by construction. Disconfirming signals have no champion.
+
+## 2.5 Identifying the Optimal Commitment Structure
+
+In this section, we synthesize belief homogenization (Section 2.3) and signal diversity loss (Section 2.4) into a unified framework—the *golden cage*. The cage forms through a four-step sequence that we formalize with increasing precision.
+
+**Step 1: Commitment Attracts Believers.** Securing capital requires operational commitments—production architecture choices, go-to-market sequences, milestone definitions (Gompers & Lerner, 2001; Hellmann & Puri, 2002). Investors who fund a venture believe these specific commitments will succeed.
 
 **Step 2: Believers Filter Skeptics.** Once commitment attracts believers, those believers systematically exclude skeptics who see alternative paths. The resulting board composition reflects shared belief in the committed direction.
 
@@ -359,7 +396,7 @@ The causal chain is:
 
 $$C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\downarrow$$
 
-Where C = [Commitment](#commitment), E = Early funding, F = [Flexibility](#flexibility) (governance-permitted change capacity), R = [Repositioning](#repositioning), G = [Growth](#growth). See [Glossary](#appendix-c-glossary) for formal definitions.
+Where C = Commitment, E = Early funding, F = Flexibility (governance-permitted change capacity), R = Repositioning, G = Growth. See [Glossary](#appendix-c-glossary) for formal definitions.
 
 [Figure 3: The Golden Cage Mechanism](figures/Fig-CFR1_golden_cage.png)
 
@@ -367,15 +404,23 @@ Where C = [Commitment](#commitment), E = Early funding, F = [Flexibility](#flexi
 
 ### 2.5.1 Formal Condition for Caged Learning
 
-Building on Levinthal and March's (1993) insight that successful organizations become "myopic" through competency traps, I formalize when learning ceases:
+Building on Levinthal and March's (1993) insight that successful organizations become "myopic" through competency traps, we formalize when learning ceases. The main result follows from combining belief homogenization (high μ) and operational commitment (low B):
 
-**Theorem 1 (Caged Learning):** *Learning ceases when*
+**Theorem 1 (Caged Learning).** *Learning ceases when*
 
 $$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
 
-*where μ = probability of success (belief), ε = expected belief shift from a signal, and B = strategic breadth.*
+*where: (i) μ = belief probability (approaches 1 through Van den Steen sorting), (ii) ε = expected belief shift from a signal, and (iii) B = strategic breadth (narrowed by operational commitment).*
 
-Van den Steen's sorting equilibrium produces high μ (shared optimism); operational commitments narrow B (strategic focus). Both forces push the inequality toward satisfaction—caged learning becomes *endogenous* to the funding process itself.
+**Proof sketch.** Our proof leverages the two effects characterized above. Below, we state the key steps and defer the formal construction to Appendix A.
+
+*Step 1: Lower bound on μ from belief homogenization.* For operational commitment, the sorting equilibrium drives μ toward 1 as board homogeneity increases, because investors who doubt the specific commitment self-select out of the deal.
+
+*Step 2: Upper bound on B from operational commitment.* Specific technology and market choices narrow the viable pivot space. As commitment specificity increases, B decreases proportionally.
+
+*Step 3: Combining the bounds.* When μ > 0.5 (majority belief in committed direction) AND B < B* (commitment has narrowed breadth below threshold), the Caged Learning condition is satisfied. Both conditions are *endogenous* to the funding process itself—which completes the proof.
+
+Van den Steen's sorting equilibrium produces high μ; operational commitments narrow B. Both forces push the inequality toward satisfaction—caged learning becomes an emergent consequence of how ventures raise capital.
 
 ## 2.6 Real Options Foundation
 
