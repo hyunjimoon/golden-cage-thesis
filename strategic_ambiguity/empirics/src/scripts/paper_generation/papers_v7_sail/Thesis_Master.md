@@ -25,7 +25,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T08:13:48-05:00
+  - 2026-01-13T08:22:38-05:00
 ---
 
 
@@ -110,6 +110,7 @@ The contribution is threefold. First, I document a negative funding-growth corre
 | 6 | Industry Breakdown: Survival Rates by Sector | Ch.4 |
 | 7 | Robustness Tests: Alternative Specifications | Ch.4 |
 | 8 | Governance Design Recommendations | Ch.5 |
+| 9 | Governance Levers for Signal Diversity | Ch.5 |
 
 ---
 
@@ -128,7 +129,7 @@ $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
 ![Figure 1: The Funding-Growth Paradox](figures/Fig-I_capital_paradox.png)
 
-**Figure 1:** The Capital Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
+**Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
 This pattern echoes across sectors. In ride-hailing, Uber's early investors demanded specific market expansion commitments that later constrained pivoting when unit economics proved unsustainable in certain cities. In electric vehicles, Better Place raised $850 million for battery-swapping infrastructure, only to liquidate when market feedback favored charging—its governance lacked advocates for alternatives. In enterprise software, heavily-funded startups locked into product roadmaps that investors had approved, unable to respond when customer needs shifted. The puzzle is not "why is capital bad?" but "what strings come attached, and when do they bind?"
 
@@ -656,6 +657,32 @@ The Mover advantage attenuates but persists under survival conditioning, suggest
 - **Product category changes:** Similar pattern (ρ(R,G) = +0.015)
 - **Customer segment shifts:** Consistent results (ρ(R,G) = +0.011)
 
+## 4.5 Illustrative Cases
+
+The statistical patterns acquire meaning through concrete examples. I present three cases drawn from the sample, representing the three strategic types: a Broadening Mover, a Stayer, and a Narrowing Mover.
+
+### 4.5.1 Sky Engine: The Broadening Mover
+
+**Sky Engine** exemplifies the broadening mover trajectory. At founding (2021), the company positioned narrowly in aerial surveying technology (V₀ = 28). By 2025, the company had repositioned toward a broader autonomous systems platform (V_T = 89), yielding a repositioning magnitude of R = 61.
+
+This expansion—from a single vertical application to a platform architecture—enabled Sky Engine to pursue multiple market opportunities while maintaining technological coherence. The company achieved 215× growth, consistent with the mover advantage documented above.
+
+**Key insight:** Sky Engine's repositioning did not represent strategic confusion. Rather, the company preserved vision-level commitment (autonomous systems) while expanding operational flexibility (multiple applications). This pattern exemplifies the golden cage escape: maintaining governance diversity through broad vision while adapting to market feedback.
+
+### 4.5.2 Surestar: The Stayer
+
+**Surestar** represents the stable positioning alternative. The company maintained constant strategic breadth throughout the observation period (V₀ = V_T = 87), yielding R = 0. Despite substantial funding and operational excellence, Surestar achieved 26× growth—respectable by absolute standards, but lower than repositioning peers.
+
+**Key insight:** Surestar's stability reflects either (a) a market environment requiring no adaptation, or (b) governance constraints preventing adaptation despite market signals. The golden cage mechanism suggests the latter is more common: funding attracts like-minded investors who reinforce initial positioning, making pivot advocacy scarce even when warranted.
+
+### 4.5.3 Narrowing Movers: The Zoom-in Strategy
+
+The sample includes 15,902 zoom-in movers (ΔB < 0)—companies that narrowed their strategic scope during the observation period. These companies achieve 17.1% success rate, demonstrating that *directional clarity* matters more than direction itself.
+
+Narrowing can succeed when initial positioning was too broad. A company that begins with "AI-powered solutions for enterprise" (high B) and narrows to "AI-powered supply chain optimization" (lower B) may improve execution focus without sacrificing market fit. The mover advantage accrues to repositioning regardless of direction.
+
+**Summary:** All three trajectories demonstrate that R > 0 associates with higher growth than R = 0. The golden cage binds not those who move in the wrong direction, but those who cannot move at all.
+
 ## 4.6 Conclusion
 
 The evidence supports all three hypotheses:
@@ -669,7 +696,7 @@ The golden cage binds tightest in:
 - High-uncertainty environments (nascent markets, regulatory flux)
 - First-time founders (who lack credibility for flexibility)
 
-*Section IV has demonstrated where the commitment-flexibility paradox becomes lethal. The next section addresses how founders and investors might design commitment structures to navigate this constraint.*
+*Section IV has demonstrated where the golden cage mechanism becomes lethal. The next section addresses how founders and investors might design commitment structures to navigate this constraint.*
 
 ---
 
@@ -744,11 +771,29 @@ They calibrate segment expansion to capability development, and vice versa.
 
 | Principle | Implementation | Rationale |
 |:----------|:---------------|:----------|
-| **Preserve Skeptics** | Reserve board seat for contrarian view | Maintains signal diversity |
+| **Preserve Skeptics** | See Table 9 for operationalization | Maintains signal diversity |
 | **Vision vs. Operations** | Commit to direction, not destination | Preserves pivot capacity |
 | **Milestone Flexibility** | Define outcomes, not methods | Allows learning from experiments |
 | **Information Rights** | Share disconfirming signals | Enables belief updating |
 | **Exit Options** | Build in pivot triggers | Creates licensed moments to reassess |
+
+### 5.4.1 Operationalizing "Preserve Skeptics"
+
+The golden cage forms when governance lacks advocates for alternative paths. The "Preserve Skeptics" principle requires concrete implementation across three dimensions:
+
+**Table 9: Governance Levers for Signal Diversity**
+
+| Lever | Mechanism | Practical Implementation |
+|:------|:----------|:-------------------------|
+| **Syndicate Composition** | Include investors with diverse thesis views | Minimum one investor from different sector focus or stage preference; avoid syndicates where all investors share identical thesis |
+| **Board Structure** | Reserve seat for independent perspective | Appoint one board member without financial stake in current direction; consider rotating "devil's advocate" role |
+| **Decision Rules** | Require explicit dissent consideration | Before major pivots/commitments: (1) Document strongest argument against current path, (2) Assign board member to defend alternative, (3) Vote only after hearing counterarguments |
+
+**Syndicate Composition.** The sorting equilibrium predicts that lead investors attract co-investors who share their thesis. To break this homogeneity, founders should actively recruit at least one syndicate member with a distinct investment thesis. A deep-tech investor building a syndicate of fellow deep-tech funds creates belief lock-in; adding a generalist investor or one focused on market applications introduces productive tension.
+
+**Board Structure.** Standard board composition (founder, lead investor, independent) often produces homogeneity because the "independent" member is typically nominated by the lead investor. True independence requires appointing a director who (a) has no financial relationship with existing investors, and (b) brings domain expertise that challenges rather than reinforces the current strategy.
+
+**Dissent-Friendly Decision Rules.** Homogeneity emerges not only from who sits at the table, but from how decisions are made. Explicitly structuring deliberation to surface counterarguments—through assigned advocacy roles, written devil's advocate memos, or mandatory "red team" sessions before major commitments—can maintain signal diversity even when belief homogeneity exists.
 
 ## 5.5 Boundary Conditions
 

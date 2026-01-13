@@ -57,12 +57,12 @@ modified:
 | #046 | Deep Tech & Commitment Types | 1 | TODO | CLI1 |
 | #047 | Measurement Validity (Breadth) | 0 | TODO | CLI1 |
 | #048 | Data Transparency (Figure 4) | 0 | TODO | CLI1 |
-| #049 | Example Extraction | 2 | TODO | CLI2 |
-| #050 | Concrete Governance Levers | 2 | TODO | CLI2 |
-| #051 | Word Choice Sweep | 3 | PARTIAL | CLI2 |
+| #049 | Example Extraction | 2 | DONE | CLI2 |
+| #050 | Concrete Governance Levers | 2 | DONE | CLI2 |
+| #051 | Word Choice Sweep | 3 | DONE | CLI2 |
 | #052 | Figure Consistency | 3 | DONE | - |
-| #053 | Linpowave Replacement | 2 | TODO | CLI2 |
-| #054 | Academic Tone Polish | 3 | TODO | CLI2 |
+| #053 | Linpowave Replacement | 2 | DONE | CLI2 |
+| #054 | Academic Tone Polish | 3 | DONE | CLI2 |
 
 ---
 

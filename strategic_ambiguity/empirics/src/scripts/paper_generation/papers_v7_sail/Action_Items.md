@@ -57,12 +57,12 @@ modified:
 | #046 | Deep Tech & Commitment Types | 1 | TODO | CLI1 |
 | #047 | Measurement Validity (Breadth) | 0 | TODO | CLI1 |
 | #048 | Data Transparency (Figure 4) | 0 | TODO | CLI1 |
-| #049 | Example Extraction | 2 | TODO | CLI2 |
-| #050 | Concrete Governance Levers | 2 | TODO | CLI2 |
-| #051 | Word Choice Sweep | 3 | PARTIAL | CLI2 |
+| #049 | Example Extraction | 2 | DONE | CLI2 |
+| #050 | Concrete Governance Levers | 2 | DONE | CLI2 |
+| #051 | Word Choice Sweep | 3 | DONE | CLI2 |
 | #052 | Figure Consistency | 3 | DONE | - |
-| #053 | Linpowave Replacement | 2 | TODO | CLI2 |
-| #054 | Academic Tone Polish | 3 | TODO | CLI2 |
+| #053 | Linpowave Replacement | 2 | DONE | CLI2 |
+| #054 | Academic Tone Polish | 3 | DONE | CLI2 |
 
 ---
 
@@ -190,6 +190,11 @@ modified:
 | #TR-02 | Survival Bias Defense | Year 3+ conditioning | 2026-01-13 |
 | #TR-03 | Industry Universality | 6 sectors verified | 2026-01-12 |
 | #TR-04 | Alternative Story (DGP) | Selection as mechanism | 2026-01-11 |
+| **#049** | Example Extraction | §4.5 Sky Engine, Surestar, Narrowing Movers | 2026-01-13 |
+| **#053** | Linpowave Replacement | §4.5.3 zoom-in pattern (no specific company) | 2026-01-13 |
+| **#050** | Concrete Governance Levers | §5.4.1 Table 9 + 3 levers operationalized | 2026-01-13 |
+| #051d | Paradox → Funding Paradox | Capital Paradox → Funding-Growth Paradox | 2026-01-13 |
+| **#054** | Academic Tone Polish | Verified no unearned superlatives | 2026-01-13 |
 
 ---
 
@@ -203,11 +208,11 @@ modified:
 5. **#046** Deep Tech (Staged vs Partial Commitment)
 
 ### CLI2 (Narrative) - Next Actions
-1. **#049** Example Extraction (Sky Engine, Surestar)
-2. **#053** Linpowave Replacement (find zoom-in success)
-3. **#050** Governance Levers (operationalize)
-4. **#051** Paradox restriction (remaining items)
-5. **#054** Academic Tone (final polish)
+1. ~~**#049** Example Extraction (Sky Engine, Surestar)~~ DONE
+2. ~~**#053** Linpowave Replacement (find zoom-in success)~~ DONE
+3. ~~**#050** Governance Levers (operationalize)~~ DONE
+4. ~~**#051** Paradox restriction (remaining items)~~ DONE
+5. ~~**#054** Academic Tone (final polish)~~ DONE - verified no unearned superlatives
 
 ---
 
