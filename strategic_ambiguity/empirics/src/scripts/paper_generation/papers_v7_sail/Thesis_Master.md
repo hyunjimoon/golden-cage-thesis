@@ -25,7 +25,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T13:29:59-05:00
+  - 2026-01-13T13:39:22-05:00
 ---
 
 
@@ -459,55 +459,13 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
 | **R** | [Repositioning](#repositioning) | Action | \|B_T − B_0\|, magnitude of strategic change |
 | **G** | [Growth](#growth-g) | Outcome | Later-stage survival/funding (binary: reached Later Stage VC) |
 
-### 3.3.1 Strategic Breadth (B)
+### 3.3.1 Variable Operationalization
 
-I measure strategic breadth using dictionary-based vague terminology density applied to company descriptions. The dictionary includes terms signaling broad scope ("platform," "ecosystem," "solutions") versus narrow focus ("device," "application," "tool").
+**Strategic Breadth (B).** I measure strategic breadth using dictionary-based vague terminology density applied to company descriptions. The dictionary includes terms signaling broad scope ("platform," "ecosystem," "solutions") versus narrow focus ("device," "application," "tool"). B_i = 100 × (Vague terms / Total descriptive terms). Higher B indicates broader positioning.
 
-$$B_i = 100 \times \frac{\text{Vague terms}_i}{\text{Total descriptive terms}_i}$$
+**Repositioning (R).** Repositioning magnitude measures the absolute change in strategic breadth: R_i = |B_T − B_0|, where B_0 is breadth at baseline (2021) and B_T at endpoint (2025). The distribution exhibits zero-inflation: 59.7% of ventures show R = 0 (Stayers), while 40.3% show R > 0 (Movers).
 
-Higher B indicates broader positioning; lower B indicates narrower focus.
-
-**Measurement Validity: Cross-Validation.**
-
-A legitimate concern is whether text-based breadth (B) reflects genuine strategic positioning or merely marketing language. I address this through cross-validation against observable non-text signals:
-
-| Validation Signal | Correlation with B | Interpretation |
-|:------------------|:------------------:|:---------------|
-| Product category count | ρ = +0.34*** | More categories → broader scope |
-| Technology tag diversity | ρ = +0.28*** | More tech domains → broader capability |
-| Customer segment breadth | ρ = +0.31*** | More segments → broader market |
-| Employee role diversity | ρ = +0.19*** | More functions → broader operations |
-
-The positive correlations between text-based B and these observable indicators suggest that our linguistic measure captures substantive strategic positioning, not merely promotional rhetoric. Ventures with high B systematically operate across more product categories, employ more diverse technologies, target more customer segments, and maintain more varied organizational functions.
-
-### 3.3.2 Repositioning (R)
-
-Repositioning magnitude measures the absolute change in strategic breadth:
-
-$$R_i = |B_{T,i} - B_{0,i}|$$
-
-Where B_0 is strategic breadth at baseline (2021) and B_T is strategic breadth at endpoint (2025).
-
-### 3.3.3 Defining Repositioning
-
-The distribution of R exhibits **zero-inflation**: 59.7% of ventures show R = 0 (no repositioning), while 40.3% show R > 0 (some repositioning). This natural boundary—repositioning versus no repositioning—provides a clean, interpretable classification.
-
-**Definition (Repositioner):**
-
-$$\text{Mover}_i = \mathbf{1}[R_i > 0]$$
-$$\text{Stayer}_i = \mathbf{1}[R_i = 0]$$
-
-**Rationale:** The R > 0 criterion captures the fundamental distinction: did the venture adapt its strategic positioning, or did it maintain its original position? This binary classification has three advantages:
-
-1. **Interpretability:** "Any repositioning" versus "no repositioning" is theoretically clean and practically meaningful. The cage hypothesis predicts that *any* strategic adaptation—regardless of magnitude—should be associated with higher growth, because repositioning itself signals governance flexibility.
-
-2. **Robustness:** The R > 0 definition avoids arbitrary threshold selection. Alternative approaches (e.g., R > median(R|R>0)) require defending a specific cutoff that may vary across samples or contexts.
-
-3. **Conservative test:** By including *all* repositioners—even those with small R—we set a high bar for the hypothesis. If even minor repositioners outperform stayers, the evidence for the cage mechanism is strengthened.
-
-*Sensitivity Analysis:* Appendix B reports results using stricter thresholds (R > median, R > 75th percentile). The Mover advantage persists across specifications, though effect sizes attenuate as the threshold increases—consistent with diminishing marginal returns to repositioning magnitude.
-
-### 3.3.4 Growth (G)
+**Growth (G).**
 
 I operationalize growth as reaching Later Stage VC financing—a milestone indicating market validation. The base rate is 11.5% across the sample.
 
@@ -530,52 +488,9 @@ I operationalize growth as reaching Later Stage VC financing—a milestone indic
 
 ## 3.5 Identification Strategy
 
-### 3.5.1 The Selection Challenge
+The central identification challenge is selection versus treatment. Van den Steen's (2010) sorting equilibrium predicts that high-conviction founders match with high-conviction investors—producing correlation between funding and rigidity without funding *causing* rigidity. I document robust correlational patterns consistent with a theoretical mechanism—not causal effects.
 
-The central identification challenge is selection versus treatment. Van den Steen's (2010) sorting equilibrium predicts that high-conviction founders match with high-conviction investors—producing correlation between funding and rigidity without funding *causing* rigidity.
-
-**Estimand and Scope of Claims.** I document robust correlational patterns consistent with a theoretical mechanism—not causal effects. The estimand is the conditional association between early funding (E), repositioning (R), and growth (G), controlling for observable confounders. I make no claim that randomizing funding would produce the observed effects.
-
-**Null Hypothesis (H0).** The conventional view predicts: *Resources enable growth* (dG/dE > 0). More capital should improve survival through expanded operational capacity, talent acquisition, and market experimentation. The alternative hypothesis (H1) that I test is: *Resources constrain growth through rigidity* (dG/dE < 0, mediated by dR/dE < 0). The data allow me to reject H0 but not to establish causality for H1.
-
-### 3.5.2 Addressing Selection: A Multi-Layer Defense
-
-**Layer 1: Selection as Mechanism, Not Confound.**
-
-One might argue that rigid founders attract more funding—the "Caged Learning." I contend this selection *is* part of the mechanism, not a confound to be eliminated. Van den Steen's (2010) sorting equilibrium predicts exactly this pattern: optimistic founders match with optimistic investors. I do not claim funding causes rigidity ex nihilo; rather, the funding process selects and amplifies pre-existing belief homogeneity. The golden cage forms through selection *and* subsequent contractual reinforcement (Bolton et al., 2024).
-
-Whether funding causes rigidity (treatment) or co-occurs with it (selection), the practical implication is identical: well-funded ventures are systematically less adaptable.
-
-**Layer 2: Mitigating Survival Bias Through Fixed-Horizon Conditioning.**
-
-A natural critique is that "firms must survive long enough to move"—movers succeed not because movement helps, but because survival enabled movement. To mitigate this survival bias, I condition on survival to a fixed horizon (Year 3) before comparing repositioners and non-repositioners.
-
-*Sample Construction for Survival-Conditioned Analysis:*
-
-1. **Cohort Definition (Year 0):** I begin with all ventures that received early-stage funding (Series A/B equivalent) in 2021.
-
-2. **Early Exit Observation (Years 1-3):** I track which ventures exit the sample before Year 3 (2024). These early exits are *observed*, not hidden—they represent ventures that failed before having opportunity to demonstrate repositioning.
-
-3. **Survival Conditioning (Year 3):** I condition on survival to Year 3, creating a comparison among ventures with *equal survival opportunity*. All ventures in this subsample had at least three years to potentially reposition.
-
-4. **Repositioner vs. Non-Repositioner Comparison:** Among Year 3+ survivors, I compare growth outcomes between those who repositioned (Movers) and those who maintained original positioning (Stayers).
-
-*Why This Mitigates Survival Bias:*
-
-The critique assumes movers succeed because they survived long enough to pivot. By conditioning on survival to Year 3, I compare ventures that *all* had equal opportunity to survive and reposition. Among these equal-survival-opportunity firms, Movers still achieve 2.60× higher success rates than Stayers. This advantage cannot be attributed to differential survival time—all firms in the comparison survived the same minimum duration.
-
-*Limitations:* This design does not eliminate all selection concerns. Ventures that survived to Year 3 may differ systematically from those that exited earlier. However, the key insight is that *among survivors with equal opportunity*, repositioning still predicts success—suggesting the Mover advantage reflects genuine benefits of adaptation rather than mere survival artifacts.
-
-**Layer 3: Conditioning on Observables.**
-
-I control for founder characteristics, industry fixed effects, cohort timing, and initial positioning. These controls absorb selection on observables.
-
-**Layer 4: Future Quasi-Experimental Approaches.**
-
-To fully disentangle selection from treatment, future work should exploit quasi-random variation in funding availability:
-- **VC fund vintage effects:** Recently-raised funds deploy capital more aggressively regardless of venture quality
-- **Geographic clustering shocks:** Anchor investor relocations create exogenous funding access changes
-- **Industry funding cycles:** Sectoral boom-bust patterns vary funding intensity independent of individual venture merit
+**Multi-Layer Defense.** (1) *Selection as Mechanism*: I contend this selection *is* part of the mechanism, not a confound. The golden cage forms through selection *and* subsequent contractual reinforcement. (2) *Fixed-Horizon Conditioning*: I condition on survival to Year 3 before comparing Movers and Stayers—all ventures had equal opportunity to reposition. Among these equal-survival-opportunity firms, Movers still achieve 2.60× higher success rates. (3) *Observable Controls*: I control for founder characteristics, industry fixed effects, cohort timing, and initial positioning. (4) *Future Work*: Quasi-experimental approaches (VC fund vintage effects, geographic shocks) could disentangle selection from treatment.
 
 ## 3.6 Conclusion
 
@@ -596,47 +511,11 @@ Key sample characteristics: 40.3% of ventures qualify as "Movers" (R > 0), while
 
 This chapter presents the empirical results testing the cage hypotheses. I document both the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that the product of these effects explains the funding-growth paradox.
 
-### 4.1.1 Contributions
+**Contributions.** (1) *Hypothesis Confirmation*: I confirm all three hypotheses—H1 (ρ(E,G) = −0.196***), H2 (ρ(E,R) = −0.087***), H3 (Mover advantage = 2.60×). (2) *Industry Heterogeneity*: The cage binds tightest in capital-intensive sectors like mobility (5.3% survival). (3) *Robustness*: Results hold across cohort years, alternative specifications, and survival conditioning.
 
-The empirical contributions are threefold:
+## 4.2 H2: Funding → Repositioning (The Commitment Trap)
 
-1. **Hypothesis Confirmation**: I confirm all three hypotheses—H1 (ρ(E,G) = −0.196***), H2 (ρ(E,R) = −0.087***), and H3 (Mover advantage = 2.60×).
-
-2. **Industry Heterogeneity**: I document where the cage binds tightest—capital-intensive sectors like mobility (5.3% survival) exhibit the strongest effects.
-
-3. **Robustness**: Results hold across cohort years, alternative specifications, and survival conditioning.
-
-### 4.1.2 Related Work
-
-Prior empirical studies of venture pivoting have documented positive effects of adaptation (Kirtley & O'Mahony, 2023) but have not linked these to funding constraints at scale. I provide the first population-level evidence connecting funding, repositioning suppression, and growth outcomes.
-
-## 4.2 CER Analysis: Commitment → Funding → Repositioning
-
-### 4.2.1 Main Finding
-
-The data confirm H2: funding is associated with lower repositioning.
-
-**Table 3: CER Analysis — Funding → Repositioning**
-
-| Specification | ρ(R, E) | SE | p-value | N |
-|:--------------|--------:|---:|--------:|--:|
-| Unconditional | −0.087 | 0.003 | < 0.001 | 180,994 |
-| + Industry FE | −0.082 | 0.003 | < 0.001 | 180,994 |
-| + Cohort FE | −0.079 | 0.004 | < 0.001 | 180,994 |
-| + Founder controls | −0.075 | 0.004 | < 0.001 | 156,234 |
-
-The negative correlation is robust across specifications. Well-funded ventures reposition less.
-
-[Figure 5: CER Pattern](figures/Fig-I_capital_paradox.png)
-
-**Figure 5:** CER Pattern. As early funding (E) increases, repositioning (R) decreases, controlling for industry fixed effects (ρ = −0.087***).
-
-### 4.2.2 Interpretation
-
-The CER pattern is consistent with the cage mechanism. Higher funding correlates with:
-- More specific initial commitments (required to secure funding)
-- More homogeneous governance (believers attracted, skeptics filtered)
-- Less capacity to recognize when pivoting is optimal
+The data confirm H2: funding is associated with lower repositioning (ρ = −0.087***, N = 180,994). The correlation is robust to industry FE (−0.082), cohort FE (−0.079), and founder controls (−0.075). Well-funded ventures reposition less—consistent with the cage mechanism where higher funding correlates with more specific commitments and more homogeneous governance.
 
 ## 4.3 FRG Analysis: Flexibility → Repositioning → Growth
 
