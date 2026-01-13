@@ -24,6 +24,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
+  - 2026-01-13T06:34:31-05:00
 ---
 
 
@@ -400,9 +401,25 @@ One might argue that rigid founders attract more funding—the "Conviction Parad
 
 Whether funding causes rigidity (treatment) or co-occurs with it (selection), the practical implication is identical: well-funded ventures are systematically less adaptable.
 
-**Layer 2: Longitudinal Fixed-Window Analysis.**
+**Layer 2: Mitigating Survival Bias Through Fixed-Horizon Conditioning.**
 
-To address survival bias, I employ a longitudinal fixed-window design. All ventures are observed for a 3-year period (2021-2024 or 2022-2025), comparing performance at similar lifecycle stages. I use subsequent funding amount as a consistent proxy for realized quality (growth), ensuring that the Mover-Stayer comparison is not confounded by differential survival time.
+A natural critique is that "firms must survive long enough to move"—movers succeed not because movement helps, but because survival enabled movement. To mitigate this survival bias, I condition on survival to a fixed horizon (Year 3) before comparing repositioners and non-repositioners.
+
+*Sample Construction for Survival-Conditioned Analysis:*
+
+1. **Cohort Definition (Year 0):** I begin with all ventures that received early-stage funding (Series A/B equivalent) in 2021.
+
+2. **Early Exit Observation (Years 1-3):** I track which ventures exit the sample before Year 3 (2024). These early exits are *observed*, not hidden—they represent ventures that failed before having opportunity to demonstrate repositioning.
+
+3. **Survival Conditioning (Year 3):** I condition on survival to Year 3, creating a comparison among ventures with *equal survival opportunity*. All ventures in this subsample had at least three years to potentially reposition.
+
+4. **Repositioner vs. Non-Repositioner Comparison:** Among Year 3+ survivors, I compare growth outcomes between those who repositioned (Movers) and those who maintained original positioning (Stayers).
+
+*Why This Mitigates Survival Bias:*
+
+The critique assumes movers succeed because they survived long enough to pivot. By conditioning on survival to Year 3, I compare ventures that *all* had equal opportunity to survive and reposition. Among these equal-survival-opportunity firms, Movers still achieve 1.81× higher success rates than Stayers. This advantage cannot be attributed to differential survival time—all firms in the comparison survived the same minimum duration.
+
+*Limitations:* This design does not eliminate all selection concerns. Ventures that survived to Year 3 may differ systematically from those that exited earlier. However, the key insight is that *among survivors with equal opportunity*, repositioning still predicts success—suggesting the Mover advantage reflects genuine benefits of adaptation rather than mere survival artifacts.
 
 **Layer 3: Conditioning on Observables.**
 
@@ -419,7 +436,7 @@ To fully disentangle selection from treatment, future work should exploit quasi-
 
 This chapter described the empirical strategy for testing the golden cage hypotheses. The sample comprises 180,994 U.S. ventures from PitchBook (2021–2025), with strategic repositioning measured through dictionary-based text analysis.
 
-The identification strategy employs four layers of defense: (1) treating selection as mechanism rather than confound, (2) longitudinal fixed-window analysis to address survival bias, (3) conditioning on observable characteristics, and (4) proposing future quasi-experimental approaches for causal identification.
+The identification strategy employs four layers of defense: (1) treating selection as mechanism rather than confound, (2) fixed-horizon conditioning to mitigate survival bias—comparing repositioners and non-repositioners among ventures with equal survival opportunity (Year 3+), (3) conditioning on observable characteristics, and (4) proposing future quasi-experimental approaches for causal identification.
 
 Key sample characteristics: 20.1% of ventures qualify as "Movers" (R > τ), while 79.9% are "Stayers" (see §3.3.3 for threshold derivation). The base success rate (reaching Later Stage VC) is 11.5%. Chapter 4 presents the empirical results.
 
