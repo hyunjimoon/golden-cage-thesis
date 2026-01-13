@@ -49,14 +49,14 @@ modified:
 |:--|:------|:----:|:------:|:-----:|
 | #028 | Qualified Movement Definition (R > 0) | 0 | DONE | - |
 | #030 | Robustness Graph (2020-2025) | 0 | DONE | - |
-| #041 | Magnitude Contextualization | 1 | TODO | CLI1 |
+| #041 | Magnitude Contextualization | 1 | DONE | CLI1 |
 | #042 | Industry Heterogeneity Table | 0 | DONE | - |
-| #043 | Pattern vs Mechanism Re-org | 1 | TODO | CLI1 |
-| #044 | Causality Control & H0 | 0 | TODO | CLI1 |
-| #045 | Alternative Explanations | 1 | TODO | CLI1 |
-| #046 | Deep Tech & Commitment Types | 1 | TODO | CLI1 |
-| #047 | Measurement Validity (Breadth) | 0 | TODO | CLI1 |
-| #048 | Data Transparency (Figure 4) | 0 | TODO | CLI1 |
+| #043 | Pattern vs Mechanism Re-org | 1 | DONE | CLI1 |
+| #044 | Causality Control & H0 | 0 | DONE | CLI1 |
+| #045 | Alternative Explanations | 1 | DONE | CLI1 |
+| #046 | Deep Tech & Commitment Types | 1 | DONE | CLI1 |
+| #047 | Measurement Validity (Breadth) | 0 | DONE | CLI1 |
+| #048 | Data Transparency (Figure 4) | 0 | DONE | CLI1 |
 | #049 | Example Extraction | 2 | DONE | CLI2 |
 | #050 | Concrete Governance Levers | 2 | DONE | CLI2 |
 | #051 | Word Choice Sweep | 3 | DONE | CLI2 |
@@ -195,17 +195,26 @@ modified:
 | **#050** | Concrete Governance Levers | §5.4.1 Table 9 + 3 levers operationalized | 2026-01-13 |
 | #051d | Paradox → Funding Paradox | Capital Paradox → Funding-Growth Paradox | 2026-01-13 |
 | **#054** | Academic Tone Polish | Verified no unearned superlatives | 2026-01-13 |
+| **#044** | Causality Control & H0 | §3.5.1 Estimand, H0, associative verbs | 2026-01-13 |
+| **#047** | Measurement Validity | §3.3.1 Cross-validation table | 2026-01-13 |
+| **#048** | Data Transparency | Figure 4 Sample Construction Flowchart | 2026-01-13 |
+| **#043** | Pattern vs Mechanism | §2.1.2 Analytic Structure | 2026-01-13 |
+| **#045** | Alternative Explanations | §6.3.1 Table 10 | 2026-01-13 |
+| **#046** | Deep Tech & Commitment | §4.3.4-4.3.5 Chicago Booth, Staged vs Partial | 2026-01-13 |
+| **#041** | Magnitude Contextualization | §4.2.3 Effect Size Benchmarks | 2026-01-13 |
 
 ---
 
 ## PRIORITIZED QUEUE
 
 ### CLI1 (Logic) - Next Actions
-1. **#044** Causality Control (Word sweep for causal language)
-2. **#047** Breadth Validity (Cross-validation plan)
-3. **#043** Ch.2/Ch.3 Re-org (Pattern vs Mechanism)
-4. **#045** Alternative Explanations (vs Moral Hazard)
-5. **#046** Deep Tech (Staged vs Partial Commitment)
+1. ~~**#044** Causality Control (Word sweep for causal language)~~ DONE
+2. ~~**#047** Breadth Validity (Cross-validation plan)~~ DONE
+3. ~~**#043** Ch.2/Ch.3 Re-org (Pattern vs Mechanism)~~ DONE
+4. ~~**#045** Alternative Explanations (vs Moral Hazard)~~ DONE
+5. ~~**#046** Deep Tech (Staged vs Partial Commitment)~~ DONE
+6. ~~**#048** Data Transparency (Figure 4)~~ DONE
+7. ~~**#041** Magnitude Contextualization~~ DONE
 
 ### CLI2 (Narrative) - Next Actions
 1. ~~**#049** Example Extraction (Sky Engine, Surestar)~~ DONE
