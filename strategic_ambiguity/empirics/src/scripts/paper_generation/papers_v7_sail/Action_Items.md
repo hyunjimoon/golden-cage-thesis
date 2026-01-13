@@ -63,6 +63,15 @@ modified:
 | #052 | Figure Consistency | 3 | DONE | - |
 | #053 | Linpowave Replacement | 2 | DONE | CLI2 |
 | #054 | Academic Tone Polish | 3 | DONE | CLI2 |
+| #055 | Commitment (C) Operationalization | 0 | TODO | CLI1 |
+| #056 | Theorem 1 Proof | 0 | TODO | CLI1 |
+| #057 | Governance Homogeneity Measurement | 0 | TODO | CLI1 |
+| #058 | Quantum Exception Streamline | 1 | TODO | CLI1 |
+| #059 | Chapter Conclusions (Ch.2, Ch.4) | 1 | TODO | CLI2 |
+| #060 | Contribution Statement Formalization | 1 | TODO | CLI2 |
+| #061 | Operational Commitment Heuristic | 2 | TODO | CLI2 |
+| #062 | Growth Metrics Clarification | 2 | TODO | CLI1 |
+| #063 | Appendix B Expansion | 2 | TODO | CLI1 |
 
 ---
 
@@ -90,6 +99,71 @@ modified:
 - **Action:**
   - **Figure 4:** Fill the placeholder (Initial DB -> US HQ -> Sample).
   - **Cleanup:** Remove empty 3.2.2. Verify "US Headquartered" filter in code.
+
+### **#055: Commitment (C) Operationalization [P0]**
+> *Source: 統·思 Evaluation 2026-01-13*
+- **Gap:** Commitment (C) is the first variable in causal chain (C→E→R→G), yet lacks operational definition. Table 1 says "operational promises" but never defines measurement.
+- **Owner:** CLI1
+- **Semantic Impact:** +2% RoT (closes L2 gap in CEF mechanism)
+- **Syntax Impact:** +5 points (completes Table 1 variable definitions)
+- **Effort:** 1 day
+- **Action:**
+  - **§3.3 Add C Measurement:**
+    ```
+    Commitment (C) operationalized as initial strategic specificity:
+    (a) Product category count (fewer = higher commitment)
+    (b) Milestone granularity in pitch materials (more specific = higher)
+    (c) Investor agreement terms (staged milestones = higher commitment)
+    → Construct 0-100 scale averaging components
+    ```
+  - **Empirical Validation:** Correlate C with E; test C moderation of E→R relationship
+  - **Table 1 Update:** Add operationalization to C row
+
+### **#056: Theorem 1 Proof (Appendix C) [P0]**
+> *Source: 統·思 Evaluation 2026-01-13*
+- **Gap:** Theorem 1 (μ(1−μ) < ε/B) stated but not derived. Reviewers will ask "where does this formula come from?"
+- **Owner:** CLI1
+- **Semantic Impact:** +3% RoT (completes L3 generative layer)
+- **Syntax Impact:** +3 points (adds Appendix C, Zhao compliance)
+- **Effort:** 2 days
+- **Action:**
+  - **Create Appendix C: Proof of Theorem 1 (Caged Learning)**
+    1. **Setup:** Bayesian updating with signal σ, prior belief μ, strategic breadth B
+    2. **Van den Steen sorting:** Show entrepreneurs/investors have μ > μ_pop (selection effect)
+    3. **Learning condition:** Belief shift ε = Δμ after observing σ
+    4. **Threshold derivation:** When μ(1−μ) < ε/B, belief shift negligible → learning ceases
+    5. **Intuition:** High μ (from sorting) + low B (from commitment) → condition satisfied
+  - **§2.5.1 Update:** Add "(Proof: Appendix C)" after Theorem 1 statement
+
+### **#057: Governance Homogeneity Measurement Limitation [P0]**
+> *Source: 統·思 Evaluation 2026-01-13*
+- **Gap:** Core claim "governance lacks skeptics" is inferred from low repositioning (behavior), not directly measured. Current §6.3 acknowledgment too brief (1 sentence).
+- **Owner:** CLI1
+- **Semantic Impact:** +1.5% RoT (elevates honesty about inference)
+- **Syntax Impact:** +2 points (strengthens §6.3 limitations)
+- **Effort:** 0.5 day
+- **Action:**
+  - **§6.3 Expansion (1¶ → 3¶):**
+    ```
+    Third—and most critically—I infer governance homogeneity from
+    behavioral outcomes (low repositioning), not direct measurement.
+
+    This inference is theoretically grounded (Van den Steen's sorting
+    equilibrium predicts belief convergence) but remains INDIRECT.
+
+    Without direct measurement of:
+    - Board belief diversity
+    - Voting records on strategic pivots
+    - Investor-founder disagreement surveys
+
+    ...the governance mechanism remains a well-supported conjecture
+    rather than established fact.
+
+    Future work MUST directly measure board composition diversity through
+    (a) surveys of founder/investor disagreement, (b) voting records,
+    (c) text analysis of investor communications.
+    ```
+  - **Abstract ¶2 Update:** Add "inferred from repositioning behavior and theoretically grounded in sorting equilibria"
 
 ---
 
@@ -124,6 +198,83 @@ modified:
   - Calculate effect size in practical terms (4-6% per SD).
   - Benchmark against comparable studies (accelerator impact ~5%).
   - Add contextualization to Abstract and Ch.4.
+
+### **#058: Quantum Exception Streamline [P1]**
+> *Source: 統·思 Evaluation 2026-01-13*
+- **Gap:** §4.3.3 provides deep theory (Anderson & Tushman) explaining Quantum exception, but disrupts Chapter 4 empirical flow (too verbose).
+- **Owner:** CLI1
+- **Semantic Impact:** +1% RoT (improves readability without losing insight)
+- **Syntax Impact:** +3 points (better chapter flow)
+- **Effort:** 0.5 day
+- **Action:**
+  - **Create Appendix D: Theoretical Foundations of the Quantum Exception**
+  - **Move §4.3.3 paragraphs 4-8** (Anderson & Tushman "Era of Ferment" through boundary conditions) to Appendix D
+  - **Retain 2-3¶ intuition in §4.3.3:**
+    ```
+    The Quantum industry's positive correlation (ρ = +0.095*) reveals
+    a boundary condition: when no dominant design exists, commitment
+    cannot foreclose unidentifiable alternatives. Under extreme
+    uncertainty, capital funds architectural search rather than path
+    commitment, reversing the rigidity trap (dR/dE > 0). The product
+    term flips from negative to positive.
+
+    (Full theoretical development: Appendix D.)
+    ```
+
+### **#059: Chapter Conclusions (Ch.2, Ch.4) [P1]**
+> *Source: 統·思 Evaluation 2026-01-13*
+- **Gap:** Zhao's 6-section template includes explicit conclusions (N.6) that summarize and bridge to next chapter. Ch.2 and Ch.4 end with hypotheses/statements rather than formal conclusions.
+- **Owner:** CLI2
+- **Semantic Impact:** +0.5% RoT (improves synthesis clarity)
+- **Syntax Impact:** +4 points (achieves full Zhao N.1-N.6 compliance)
+- **Effort:** 0.5 day
+- **Action:**
+  - **Add §2.7 Conclusion to Chapter 2:**
+    ```
+    This chapter developed the golden cage mechanism—a theoretical
+    account of how funding suppresses growth through governance
+    homogeneity rather than moral hazard. The mechanism integrates
+    Van den Steen's sorting equilibrium, Eisenberg's strategic ambiguity,
+    and Ghemawat's commitment analysis into a unified framework.
+
+    Three testable hypotheses follow: (H1) funding correlates negatively
+    with growth, (H2) funding correlates negatively with repositioning,
+    and (H3) repositioning correlates positively with growth.
+
+    The next chapter describes how to test these hypotheses at
+    population scale using 180,994 ventures from PitchBook.
+    ```
+  - **Add §4.6 Conclusion to Chapter 4:**
+    ```
+    This chapter confirmed all three hypotheses: (H1) ρ(E,G) = −0.196***,
+    (H2) ρ(E,R) = −0.087***, and (H3) Mover advantage = 2.60×.
+
+    Industry heterogeneity reveals boundary conditions: the golden cage
+    binds tightest in capital-intensive sectors (Hardware: ρ = −0.108,
+    Transportation: ρ = −0.101) but releases under extreme uncertainty
+    (Quantum: ρ = +0.095).
+
+    Having documented *where* the cage bites, the next chapter addresses
+    *how* to escape it through governance design.
+    ```
+
+### **#060: Contribution Statement Formalization [P1]**
+> *Source: 統·思 Evaluation 2026-01-13*
+- **Gap:** §1.3 lists three contributions ("First, I document... Second, I identify..."), which is clear but doesn't follow Zhao's "Chapter N initiates..." pattern.
+- **Owner:** CLI2
+- **Semantic Impact:** 0% RoT (no change to substance)
+- **Syntax Impact:** +2 points (full Zhao pattern compliance)
+- **Effort:** 0.25 day
+- **Action:**
+  - **Optional Enhancement:** Each chapter introduction add:
+    "This chapter [initiates/investigates] X: by [method], we study [question]."
+  - **Example (Ch.2):**
+    ```
+    This chapter develops the golden cage mechanism: by synthesizing
+    Van den Steen's sorting equilibrium, Eisenberg's strategic ambiguity,
+    and Ghemawat's commitment analysis, we study why funding suppresses
+    repositioning through governance homogeneity rather than moral hazard.
+    ```
 
 ---
 
