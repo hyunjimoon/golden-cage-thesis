@@ -25,7 +25,7 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T07:47:39-05:00
+  - 2026-01-13T08:13:48-05:00
 ---
 
 
@@ -152,7 +152,7 @@ This thesis addresses three interconnected questions, each corresponding to a th
 
 **Part I: The Cage — Theory and Evidence (Chapters 2-4)**
 
-1. **The Mechanism Question (Chapter 2):** *Why* does funding suppress repositioning? I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism—the *golden cage*. The main technical contribution is **Theorem 1 (Learning Trap)**, which formalizes conditions under which organizational learning ceases endogenously through the funding process.
+1. **The Mechanism Question (Chapter 2):** *Why* does funding suppress repositioning? I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism—the *golden cage*. The main technical contribution is **Theorem 1 (Caged Learning)**, which formalizes conditions under which organizational learning ceases endogenously through the funding process.
 
 2. **The Evidence Question (Chapters 3-4):** *How* do we test this mechanism at scale? Using 180,994 ventures, I operationalize repositioning through dictionary-based text analysis and document both the CER pattern (Commitment → Early funding → Repositioning↓) and the FRG pattern (Flexibility → Repositioning → Growth↑). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095).
 
@@ -252,7 +252,7 @@ Where C = Commitment, E = Early funding, A = Adaptability (governance-permitted 
 
 Building on Levinthal and March's (1993) insight that successful organizations become "myopic" through competency traps, I formalize when learning ceases:
 
-**Theorem 1 (Learning Trap):** *Learning ceases when*
+**Theorem 1 (Caged Learning):** *Learning ceases when*
 
 $$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
 
@@ -403,7 +403,7 @@ I do not claim causal identification. Rather, I document patterns consistent wit
 
 **Layer 1: Selection as Mechanism, Not Confound.**
 
-One might argue that rigid founders attract more funding—the "Conviction Paradox." I contend this selection *is* part of the mechanism, not a confound to be eliminated. Van den Steen's (2010) sorting equilibrium predicts exactly this pattern: optimistic founders match with optimistic investors. I do not claim funding causes rigidity ex nihilo; rather, the funding process selects and amplifies pre-existing belief homogeneity. The golden cage forms through selection *and* subsequent contractual reinforcement (Bolton et al., 2024).
+One might argue that rigid founders attract more funding—the "Caged Learning." I contend this selection *is* part of the mechanism, not a confound to be eliminated. Van den Steen's (2010) sorting equilibrium predicts exactly this pattern: optimistic founders match with optimistic investors. I do not claim funding causes rigidity ex nihilo; rather, the funding process selects and amplifies pre-existing belief homogeneity. The golden cage forms through selection *and* subsequent contractual reinforcement (Bolton et al., 2024).
 
 Whether funding causes rigidity (treatment) or co-occurs with it (selection), the practical implication is identical: well-funded ventures are systematically less adaptable.
 
@@ -816,7 +816,7 @@ This thesis makes three theoretical contributions:
 
 Three limitations warrant acknowledgment:
 
-**First**, I document correlation, not causation. The conviction paradox—that rigid founders attract more funding—remains an alternative explanation. I address this through three layers of defense: (1) selection is part of the mechanism; (2) conditioning on observables reduces selection; (3) future quasi-experimental approaches could provide identification.
+**First**, I document correlation, not causation. The caged learning—that rigid founders attract more funding—remains an alternative explanation. I address this through three layers of defense: (1) selection is part of the mechanism; (2) conditioning on observables reduces selection; (3) future quasi-experimental approaches could provide identification.
 
 **Second**, PitchBook overrepresents technology ventures in the United States. Generalization requires replication in other sectors and geographies.
 
