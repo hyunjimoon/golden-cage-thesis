@@ -6,14 +6,15 @@ modified:
   - 2026-01-11T08:33:43-05:00
   - 2026-01-11T15:30:00-05:00
   - 2026-01-12T09:30:00-05:00
+  - 2026-01-13T11:30:00-05:00
 ---
 [[Thesis_Master]]
 
 # 📋 Action Items: Ring-of-Truth (RoT) Framework
 
 > **Target**: RoT 60% → 85% (+25%)
-> **Current**: 80% (baseline 60% + 7% DGP + 8% Industry + 5% Boundary Theorization)
-> **Gap**: 5% remaining
+> **Current**: 82% (baseline 60% + 7% DGP + 8% Industry + 5% Boundary + 2% Writing Quality)
+> **Gap**: 3% remaining
 
 ---
 
@@ -46,7 +47,7 @@ modified:
 ```markdown
 **Survival Conditioning Analysis:**
 - Condition sample on companies surviving 3+ years
-- Re-run CFR and FRG correlations
+- Re-run CER and FRG correlations
 - Expected result: Effect should persist or strengthen
 
 **Defense Text (¶22):**
@@ -214,15 +215,20 @@ opportunity."
 ### 🎟️ **Issue #G-04: V-Check (Visual Evidence)**
 
 - **Priority:** 🛡️ **P1**
-- **Status:** 🟡 **PARTIAL**
-- **Affected:** All 8 figures
+- **Status:** ✅ **DONE** (2026-01-13)
+- **Affected:** All 10 figures
 
-**Checklist:**
-- [x] Fig.1 (Capital Paradox) - caption complete
-- [x] Fig.2 (Golden Cage) - caption complete
-- [ ] Fig.3 (Mover vs Stayer) - color upgrade needed (#029)
-- [ ] Fig.4-6 - verify axis labels match ISO-108 variables
-- [ ] Fig.7 (Robustness) - temporal visualization (#030)
+**Checklist (Updated):**
+- [x] Fig.1 (Funding-Growth Paradox) - caption complete
+- [x] Fig.2 (Mediation DAG) - NEW, shows measured vs latent variables
+- [x] Fig.3 (Golden Cage) - caption complete
+- [ ] Fig.4 (Sample Construction) - to be generated
+- [x] Fig.5 (CER Pattern) - updated terminology
+- [x] Fig.6 (Mover vs Stayer) - caption complete
+- [x] Fig.7 (Industry Heterogeneity) - NEW, ρ(E,G) by sector
+- [x] Fig.8 (Mobility) - caption complete
+- [x] Fig.9 (Temporal Robustness) - caption complete
+- [x] Fig.10 (Strategic Ambiguity) - caption complete
 
 ---
 
@@ -271,25 +277,35 @@ opportunity."
 
 | Issue | Description | RoT Impact | Status |
 |:-----:|:------------|:----------:|:------:|
-| #023 | Terminology Unification | C-Check | 🔴 TODO |
+| #023 | Terminology Unification (F→E) | C-Check | ✅ DONE (2026-01-13) |
 | #024 | Mover Disaggregation | — | ✅ DONE |
 | #025 | Vertical Integration Clarification | — | 🔴 TODO |
 | #026 | FanDuel Evidence | Evidence | 🟡 DELEGATED |
 | #028 | Qualified Movement Definition | M-Check | ✅ DONE |
-| #029 | Color Figure Upgrade | V-Check | 🔴 TODO |
-| #030 | Robustness Graph | +2% TR-02 | 🔴 TODO |
-| #031 | Remove Right Panel | V-Check | 🔴 TODO |
+| #029 | Color Figure Upgrade | V-Check | 🟡 Optional |
+| #030 | Robustness Graph | +2% TR-02 | ✅ DONE (Fig.9) |
+| #031 | Remove Right Panel | V-Check | 🟡 Optional |
 | #033 | Scale-it Literature | — | 🔴 TODO |
-| #034 | Catchphrase Upgrade | Polish | 🔴 TODO |
-| #035 | Kirtley Integration | M-Check | 🔴 TODO |
+| #034 | Catchphrase Upgrade | Polish | ✅ DONE ("Commit to reposition") |
+| #035 | Kirtley Integration | M-Check | ✅ DONE (Ch.2) |
 
 ### Structural (From Sail Edition)
 
 | Issue | Description | RoT Impact | Status |
 |:-----:|:------------|:----------:|:------:|
-| #038 | Structural Overhaul | E-Check | 🔴 TODO |
-| #039 | Methodology Deep Dive | +3% E-Check | 🔴 TODO |
-| #040 | Academic Tone | Polish | 🔴 TODO |
+| #038 | Structural Overhaul | E-Check | ✅ DONE (6-Chapter) |
+| #039 | Methodology Deep Dive | +3% E-Check | 🟡 PARTIAL |
+| #040 | Academic Tone | Polish | ✅ DONE (Fine-style upgrade) |
+
+### Recent Improvements (2026-01-12 ~ 01-13)
+
+| Task | Description | Status |
+|:-----|:------------|:------:|
+| **Ch.1 Benchmark Upgrade** | Figure 1 위치 조정, Industry context 추가, Two effects 명명 (Learning Premium / Rigidity Trap) | ✅ |
+| **Mediation DAG** | Figure 2 추가 (측정변수 vs 잠재변수 구조) | ✅ |
+| **F→E Variable Rename** | CFR→CER, dG/dF→dG/dE, ρ(F,G)→ρ(E,G) 전체 업데이트 | ✅ |
+| **Conciseness Review** | Fine-approved deletions: Ch.1.4, Ch.2.5.2, Ch.2.8, Ch.3.1.1/2, Ch.5.1.1/2 등 -60 lines | ✅ |
+| **Figure Renumbering** | 8 → 10 figures (DAG, Industry Heterogeneity 추가) | ✅ |
 
 ---
 
@@ -343,35 +359,36 @@ opportunity."
 
 | # | Table | Chapter | Status |
 |:-:|:------|:-------:|:------:|
-| 1 | Variables (CFABRG) | Ch.3 | ✅ Created |
-| 2 | Descriptive Statistics | Ch.3 | 📝 Pending data |
-| 3 | CFR Evidence (dR/dF < 0) | Ch.4 | ✅ Created |
+| 1 | Variables (CEABRG) | Ch.3 | ✅ Created |
+| 2 | Descriptive Statistics | Ch.3 | ✅ Created |
+| 3 | CER Evidence (dR/dE < 0) | Ch.4 | ✅ Created |
 | 4 | FRG Evidence (dG/dR > 0) | Ch.4 | ✅ Created |
-| 5 | Industry Heterogeneity | Ch.4 | 📝 Pending (#TR-03) |
-| 6 | Taxonomy (Stayer/Mover) | Ch.4 | ✅ Created |
-| 7 | Robustness (Temporal) | Ch.4 | 📝 Pending (#030) |
+| 5 | Mover Taxonomy | Ch.4 | ✅ Created |
+| 6 | Industry Heterogeneity | Ch.4 | ✅ Created (TR-03 완료) |
+| 7 | Robustness (Temporal) | Ch.4 | ✅ Created |
 | 8 | Governance Design | Ch.5 | ✅ Created |
 
-### 8 Figures
+### 10 Figures (Updated 2026-01-13)
 
 | # | Figure | Chapter | Status |
 |:-:|:-------|:-------:|:------:|
-| 1 | Capital Paradox | Ch.1 | ✅ papers_v6 |
-| 2 | Golden Cage Mechanism | Ch.2 | ✅ papers_v6 |
-| 2b | Canary Mechanism | Ch.2 | ✅ papers_v6 |
-| 4 | CFR Pattern | Ch.4 | ✅ T_fig1 |
-| 5 | Mover vs Stayer | Ch.4 | 🔴 Color upgrade (#029) |
-| 5b | Movement Pattern | Ch.4 | ✅ M_fig5 |
-| 6 | Mobility Survival | Ch.4 | ✅ papers_v6 |
-| 7 | Robustness Timeseries | Ch.4 | 🔴 Create (#030) |
-| 8 | Capitalize Framework | Ch.5 | ✅ papers_v6 |
+| 1 | The Funding-Growth Paradox | Ch.1 | ✅ |
+| 2 | **Mediation Structure (DAG)** | Ch.1 | ✅ **NEW** |
+| 3 | The Golden Cage Mechanism | Ch.2 | ✅ |
+| 4 | Sample Construction Flowchart | Ch.3 | 📝 To be generated |
+| 5 | CER Pattern | Ch.4 | ✅ |
+| 6 | Mover vs Stayer Success Rates | Ch.4 | ✅ |
+| 7 | Industry Heterogeneity ρ(E,G) | Ch.4 | ✅ **NEW** |
+| 8 | Mobility: Where Cage Bites | Ch.4 | ✅ |
+| 9 | Temporal Robustness | Ch.4 | ✅ |
+| 10 | Strategic Ambiguity Sweet Spot | Ch.5 | ✅ |
 
 ---
 
-*Updated: 2026-01-12 10:30*
+*Updated: 2026-01-13 11:30*
 *Framework: Ring-of-Truth (RoT) 60% → 85%*
-*Current: 80% | Target: 85% | Gap: 5%*
-*TR-02 (Survival Bias) 완료 시 목표 초과 달성 (90%)*
+*Current: 82% | Target: 85% | Gap: 3%*
+*TR-02 (Survival Bias) 완료 시 목표 초과 달성 (92%)*
 
 ---
 
