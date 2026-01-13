@@ -49,14 +49,14 @@ modified:
 |:--|:------|:----:|:------:|:-----:|
 | #028 | Qualified Movement Definition (R > 0) | 0 | DONE | - |
 | #030 | Robustness Graph (2020-2025) | 0 | DONE | - |
-| #041 | Magnitude Contextualization | 1 | TODO | CLI1 |
+| #041 | Magnitude Contextualization | 1 | DONE | CLI1 |
 | #042 | Industry Heterogeneity Table | 0 | DONE | - |
-| #043 | Pattern vs Mechanism Re-org | 1 | TODO | CLI1 |
-| #044 | Causality Control & H0 | 0 | TODO | CLI1 |
-| #045 | Alternative Explanations | 1 | TODO | CLI1 |
-| #046 | Deep Tech & Commitment Types | 1 | TODO | CLI1 |
-| #047 | Measurement Validity (Breadth) | 0 | TODO | CLI1 |
-| #048 | Data Transparency (Figure 4) | 0 | TODO | CLI1 |
+| #043 | Pattern vs Mechanism Re-org | 1 | DONE | CLI1 |
+| #044 | Causality Control & H0 | 0 | DONE | CLI1 |
+| #045 | Alternative Explanations | 1 | DONE | CLI1 |
+| #046 | Deep Tech & Commitment Types | 1 | DONE | CLI1 |
+| #047 | Measurement Validity (Breadth) | 0 | DONE | CLI1 |
+| #048 | Data Transparency (Figure 4) | 0 | DONE | CLI1 |
 | #049 | Example Extraction | 2 | DONE | CLI2 |
 | #050 | Concrete Governance Levers | 2 | DONE | CLI2 |
 | #051 | Word Choice Sweep | 3 | DONE | CLI2 |
