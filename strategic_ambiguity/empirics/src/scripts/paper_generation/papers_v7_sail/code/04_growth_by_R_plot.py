@@ -29,9 +29,9 @@ FIG_DIR = SCRIPT_DIR / 'figures'
 THESIS_FIG_DIR = SCRIPT_DIR.parent / 'figures'
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-# Colors
-MOVER_COLOR = '#27ae60'  # Green
-STAYER_COLOR = '#e74c3c'  # Red
+# Colors - Grayscale for thesis consistency
+MOVER_COLOR = '#2c3e50'   # Dark gray (Movers)
+STAYER_COLOR = '#bdc3c7'  # Light gray (Stayers)
 
 plt.rcParams.update({
     'figure.dpi': 150,
@@ -175,13 +175,15 @@ def plot_growth_by_R(df_valid, results, save_path=None):
                   edgecolor='black', linewidth=2, width=0.6)
 
     # Value labels
-    for bar, rate, n in zip(bars, success_rates, n_values):
+    for i, (bar, rate, n) in enumerate(zip(bars, success_rates, n_values)):
         ax.text(bar.get_x() + bar.get_width()/2, rate + 0.8,
                 f'{rate:.1f}%',
                 ha='center', fontsize=16, fontweight='bold')
+        # Use dark text for light bar, white text for dark bar
+        text_color = 'white' if i == 1 else '#2c3e50'
         ax.text(bar.get_x() + bar.get_width()/2, rate/2,
                 f'n = {n:,}',
-                ha='center', fontsize=11, color='white', fontweight='bold')
+                ha='center', fontsize=11, color=text_color, fontweight='bold')
 
     # Advantage annotation with arrow
     advantage = results['advantage']
@@ -190,21 +192,21 @@ def plot_growth_by_R(df_valid, results, save_path=None):
 
     # Arrow showing advantage
     ax.annotate('', xy=(1, success_rates[1]), xytext=(0, success_rates[0]),
-                arrowprops=dict(arrowstyle='->', color='black', lw=2,
+                arrowprops=dict(arrowstyle='->', color='#2c3e50', lw=2,
                               connectionstyle='arc3,rad=0.2'))
 
-    # Advantage text box
+    # Advantage text box - simple grayscale
     ax.text(mid_x, max_y * 1.15, f'{advantage:.2f}x',
-            ha='center', fontsize=24, fontweight='bold', color=MOVER_COLOR,
-            bbox=dict(boxstyle='round,pad=0.3', facecolor='lightyellow',
-                     edgecolor=MOVER_COLOR, linewidth=2))
+            ha='center', fontsize=24, fontweight='bold', color='#2c3e50',
+            bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
+                     edgecolor='#2c3e50', linewidth=2))
 
     ax.text(mid_x, max_y * 1.02, 'Mover Advantage',
             ha='center', fontsize=12, style='italic')
 
     # Labels and title
     ax.set_ylabel('Success Rate (Later Stage VC) %', fontsize=13)
-    ax.set_title('Growth by Repositioning\n"Any movement helps"',
+    ax.set_title('Growth by Repositioning',
                  fontsize=15, fontweight='bold')
     ax.set_ylim(0, max_y * 1.35)
 
@@ -220,7 +222,7 @@ def plot_growth_by_R(df_valid, results, save_path=None):
 
     # Key message at bottom
     fig.text(0.5, -0.02,
-             f'N = {results["n_total"]:,} | Definition: Mover = R > 0 (any strategic movement)',
+             f'N = {results["n_total"]:,} | Mover = R > 0 (any repositioning)',
              ha='center', fontsize=10, color='gray')
 
     plt.tight_layout()

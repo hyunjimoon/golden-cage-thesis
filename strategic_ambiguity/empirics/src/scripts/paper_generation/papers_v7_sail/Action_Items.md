@@ -6,417 +6,126 @@ modified:
   - 2026-01-11T08:33:43-05:00
   - 2026-01-11T15:30:00-05:00
   - 2026-01-12T09:30:00-05:00
-  - 2026-01-13T11:30:00-05:00
+  - 2026-01-13T08:10:00-05:00
 ---
 [[Thesis_Master]]
 
-# 📋 Action Items: Ring-of-Truth (RoT) Framework
+# Action Items: Final Integration Plan (v4.0)
 
-> **Target**: RoT 60% → 85% (+25%)
-> **Current**: 82% (baseline 60% + 7% DGP + 8% Industry + 5% Boundary + 2% Writing Quality)
-> **Gap**: 3% remaining
-
----
-
-## 🎯 ROT ACCOUNTING (Truth-Score Critical)
-
-| Lever | Δ% | Issue IDs | Status |
-|:------|:--:|:----------|:------:|
-| **#TR-01 Magnitude** | +5% | #041, #042 | 🔴 TODO |
-| **#TR-02 Survival Bias** | +10% | #043, #044 | 🔴 TODO |
-| **#TR-03 Universality** | +8% | #045, #046 | ✅ DONE |
-| **#TR-04 Alternative Story** | +7% | #011, #022 | ✅ DONE |
-| **#LR-01 Citation Quality** | +3% | 8 citations | 🔴 TODO |
-| **TOTAL** | +33% | — | 🟡 In Progress (15% earned) |
+> **Goal**: RoT 95% (Peer Review 100% Integration)
+> **Sources**: Self Feedback, Lorry & Eze Feedback, Database Examples
+> **Status**: Emergency Martial Law - Immediate Execution
 
 ---
 
-## 🚨 TIER 0: TRUTH-SCORE CRITICAL (+23% remaining)
+## TIER 0: CRITICAL DEFENSE
 
-### 🎟️ **Issue #TR-02: Survival Bias Defense (+10%)**
+### **Issue #TR-02: Survival Bias Defense [P0]**
+> *Source: Lorry #4*
+- **Gap:** "Moved because they survived?" critique.
+- **Action:**
+  - **Fixed Horizon:** Explicitly condition analysis on "Firms surviving to Year 3+".
+  - **Logic:** Argue "Among survivors, those who repositioned grew more."
+- **Status:** DONE (test_thesis_consistency.py verifies 2.60x advantage)
 
-> _Highest impact lever. Year 3+ conditioning essential._
+### **Issue #TR-04: Measurement Validity (Breadth) [P0]**
+> *Source: Lorry #3*
+- **Gap:** Is $B$ just marketing fluff?
+- **Action:**
+  - **Cross-Validation:** Validate text-based Breadth ($B$) against observable non-text signals (Product Category changes, Tech Tags, Customer Segment shifts).
 
-- **Priority:** 🚨 **P0 (Existential)**
-- **Status:** 🔴 **TODO**
-- **Affected:** ¶22 (Robustness), Ch.4 Results
+### **Issue #G-01: Causality Control & H0 [P0]**
+> *Source: Lorry #1*
+- **Gap:** Causal language risk.
+- **Action:**
+  - **Estimand:** Insert: "I document a robust correlational pattern... consistent with a mechanism."
+  - **H0:** Explicitly state Null Hypothesis (Resources -> Growth).
+  - **Word Sweep:** Replace `suppresses`/`drives` with associative verbs.
 
-**Problem:** Current analysis doesn't condition on Year 3+ survival. Committee will attack: "Are movers just survivors?"
-
-**Solution:**
-```markdown
-**Survival Conditioning Analysis:**
-- Condition sample on companies surviving 3+ years
-- Re-run CER and FRG correlations
-- Expected result: Effect should persist or strengthen
-
-**Defense Text (¶22):**
-"To address survival bias, I condition on companies with 3+ years of
-observable history. The mover advantage persists (1.6× vs 1.81×),
-suggesting the effect is not driven by survivor selection."
-```
-
-**Action Module:**
-- [ ] **Generate:** Survival-conditioned statistics from `.thesis_stats.json`
-- [ ] **Add:** Year 3+ conditioning table to Ch.4
-- [ ] **Text:** Add defense paragraph to ¶22
-
----
-
-### 🎟️ **Issue #TR-03: Universality - Industry Heterogeneity (+8%)** ✅
-
-> _Second highest impact. Show effect varies by sector._
-
-- **Priority:** 🚨 **P0 (Existential)**
-- **Status:** ✅ **DONE** (2026-01-12)
-- **Affected:** Table 6, Figure 6a, Ch.4.3
-
-**Completed:**
-- [x] **Extract:** Verified industry correlations from PitchBook data
-- [x] **Create:** Table 6 + Figure 6a (Fig_4_industry_heterogeneity_rho.png)
-- [x] **Add:** Industry interpretation to Ch.4.3
-
-**Final Results (Verified ρ(E,G)):**
-| Sector | N | ρ(E,G) | Sig |
-|:-------|--:|:------:|:---:|
-| Hardware | 50,390 | −0.108 | *** |
-| Transportation | 154,148 | −0.101 | *** |
-| Pharma | 56,947 | −0.079 | *** |
-| MedTech | 29,493 | −0.053 | *** |
-| Software | 226,896 | −0.001 | (ns) |
-| Quantum | 1,144 | +0.095 | * |
-
-**Key Finding:** Capital-intensive industries show strongest negative correlations. Quantum is sole positive outlier (learning value dominates under extreme uncertainty).
+### **Issue #G-05: Data Transparency [P0]**
+> *Source: Self*
+- **Action:**
+  - **Figure 4:** Fill the placeholder (Initial DB -> US HQ -> Sample).
+  - **Cleanup:** Remove empty 3.2.2. Verify "US Headquartered" filter in code.
 
 ---
 
-### 🎟️ **Issue #TR-01: Magnitude Contextualization (+5%)**
+## TIER 1: LOGIC & STRUCTURE
 
-> _Third highest impact. Frame effect sizes._
+### **Issue #S-01: Pattern vs Mechanism Re-org [P1]**
+> *Source: User Instruction #5*
+- **Action:**
+  - **Chapter 2 (Theory):** Focus on Observed Patterns (**EG, ER, RG**).
+  - **Chapter 3 (ID):** Focus on Causal Mechanisms (**CEF**: C -> E -> F, **FG**: F -> G).
+  - **Figure 2 Update:** Map Latent vs Measured variables to this structure.
 
-- **Priority:** 🛡️ **P1 (Committee Defense)**
-- **Status:** 🔴 **TODO**
-- **Affected:** Abstract, ¶3, ¶23
+### **Issue #T-01: Deep Tech & Commitment Types [P1]**
+> *Source: Eze #1, #2, #3, #4*
+- **Action:**
+  - **Deep Tech:** Add "Chicago Booth Approach" (Non-dilutive funding/Grants) as a survival strategy for Quantum/Deep Tech in Ch.4.
+  - **Commitment Distinction:** Contrast **"Staged Commitment"** (Milestone-based, Signal up) vs **"Partial Commitment"** (Low interest, Signal down).
 
-**Problem:** ρ = -0.196 is statistically significant but economically modest. Committee: "Is this practically meaningful?"
-
-**Solution:**
-```markdown
-**Contextualization Text:**
-"The correlation of ρ = -0.196 translates to a 4-6% difference in
-success probability per standard deviation of early funding. While
-modest in absolute terms, this effect compounds: over 5 years, a
-heavily-funded startup faces 15-20% lower repositioning probability
-than a lean counterpart—equivalent to losing one strategic pivot
-opportunity."
-
-**Benchmarking:**
-- Compare to other entrepreneurship effects (e.g., accelerator impact ~5%)
-- Frame as "second-order effect" (primary effect still positive)
-```
-
-**Action Module:**
-- [ ] **Calculate:** Effect size in practical terms
-- [ ] **Benchmark:** Against comparable studies
-- [ ] **Add:** Contextualization to Abstract and ¶23
+### **Issue #T-02: Alternative Explanations [P1]**
+> *Source: Lorry #2*
+- **Action:**
+  - Compare "Governance Homogeneity" against **Milestone Pressure**, **Burn-rate Discipline**, **Moral Hazard**.
+  - Show why data patterns favor Homogeneity.
 
 ---
 
-## 📚 TIER 0.5: LITERATURE REVIEW QUALITY (Citation Accuracy)
+## TIER 2: EXAMPLES & PRESCRIPTION
 
-### 🎟️ **Issue #LR-01: Citation Verification & Correction (+3%)**
+### **Issue #E-01: Illustrative Examples [P2]**
+> *Source: Image Analysis + User Instruction #4*
+- **Action:**
+  - **Broadening Mover:** **Sky Engine** (V: 28 -> 89, G: 215x).
+  - **Stayer:** **Surestar** (V: 87 -> 87, G: 26x).
+  - **Narrowing Mover:** **REPLACE Linpowave** (since G=N/A). Find a successful "Zoom-in" case in DB.
 
-> _8 citations verified by "author perspective" review. Corrections needed._
-
-- **Priority:** 🛡️ **P1 (Committee Defense)**
-- **Status:** 🔴 **TODO**
-- **Affected:** Ch.2 (Theory), Ch.5 (Discussion)
-
-**Background:** Parallel verification by 8 cited authors identified misattributions and framing issues.
-
-**High Priority Corrections:**
-
-| # | Citation | Issue | Fix |
-|:-:|:---------|:------|:----|
-| 1 | **Bolton et al. (2024)** | Public market paper cited for private VC context | Add qualifier: "While Bolton et al. study public markets, the governance homogeneity mechanism extends to private markets where..." |
-| 2 | **Real Options (McGrath; Adner & Levinthal)** | Logical tension: options are valuable but also constraints | Reconcile: "Real options provide value through flexibility, yet exercising them requires the very repositioning that governance rigidity constrains" |
-| 3 | **Van den Steen (2010)** | "Vision" paper extended to early-stage without qualification | Add scope note: "Van den Steen's vision coordination mechanism, originally formulated for established organizations, applies with greater intensity to resource-constrained startups" |
-
-**Medium Priority Corrections:**
-
-| # | Citation | Issue | Fix |
-|:-:|:---------|:------|:----|
-| 4 | **Ghemawat (1991)** | Overemphasis on negative aspects of commitment | Balance: Add "Commitment enables competitive advantage through lock-in; the Golden Cage concern applies when commitment lacks strategic alignment" |
-| 5 | **March (1991)** | Organization-level theory applied to firm-level | Clarify: "March's exploration-exploitation framework, originally organizational, maps to strategic breadth at the firm level" |
-| 6 | **Eisenberg (1984)** | Attribution unclear (SJ vs Eisenberg) | Credit: "Following Eisenberg (1984), strategic ambiguity in goal-setting..." |
-| 7 | **Camuffo et al. (2020)** | Methodology attribution imprecise | Correct: Specify exact methodological elements borrowed |
-| 8 | **Kirtley & O'Mahony (2023)** | Process framing vs outcome | Reframe: Emphasize process of entrepreneurial identity formation, not just "identity constraints" |
-
-**Action Module:**
-- [ ] Fix High Priority #1 (Bolton et al.) in ¶9
-- [ ] Fix High Priority #2 (Real Options) in ¶8
-- [ ] Fix High Priority #3 (Van den Steen) in ¶7
-- [ ] Fix Medium Priority #4-8 in respective paragraphs
-- [ ] Re-verify all 8 corrections with CARE framework
+### **Issue #P-01: Concrete Governance Levers [P2]**
+> *Source: Lorry #5*
+- **Action:**
+  - Operationalize "Preserve Skeptics": Define via **Syndicate Composition**, **Board Structure**, and **Dissent-friendly Decision Rules**.
 
 ---
 
-## 🛡️ TIER 1: GATE CRITICAL (5 Gates)
+## TIER 3: POLISH & TERMINOLOGY
 
-### 🎟️ **Issue #G-01: H-Check (Hypothesis Alignment)**
+### **Issue #W-01: Strict Word Choice [P3]**
+> *Source: User Instruction #1*
+- **Action:**
+  - `Movement` -> **`Repositioning`** (Global Replace). DONE
+  - `Paradox` usage -> Restricted to **"Funding Paradox"** only.
+  - `Conviction Paradox` -> Renamed to **"Caged Learning"**.
+  - `Theorem 1` -> **"Theorem 1 (Caged Learning)"**.
 
-- **Priority:** 🛡️ **P1**
-- **Status:** 🔴 **TODO**
-- **Affected:** ¶6 (H1-H3), Ch.2
-
-**Checklist:**
-- [ ] H₀ explicitly stated (conventional wisdom: funding → growth)
-- [ ] H₁, H₂, H₃ mathematically precise
-- [ ] Rejection logic data-driven
-
-**Current State:**
-- H1: dG/dF < 0 ✅
-- H2: dR/dF < 0 ✅
-- H3: dG/dR > 0 ✅
-
-**Gap:** Need explicit H₀ statement in ¶6.
+### **Issue #M-01: Methodology Change (R > 0) [P3]**
+> *Source: 2026-01-13 Update*
+- **Status:** DONE
+- **Change:** Mover definition from R > median(R|R>0) to R > 0
+- **Result:** 2.60x advantage (18.1% vs 7.0%), verified by test_thesis_consistency.py
 
 ---
 
-### 🎟️ **Issue #G-02: C-Check (Concept Consistency)**
-
-- **Priority:** 🛡️ **P1**
-- **Status:** 🟡 **PARTIAL**
-- **Affected:** All chapters
-
-**Checklist:**
-- [x] "Strategic Breadth" = B consistently
-- [x] "Repositioning" = R = |B_T - B_0|
-- [ ] "Capital" vs "Funding" vs "Resource" unified (#023)
-- [ ] "Adaptability" vs "Flexibility" distinguished
-
-**Action:** Resolve #023 (Terminology Unification)
+## PRIORITIZED QUEUE
+1. **#TR-04** Measurement Validity (Breadth cross-validation)
+2. **#G-01** Causality Control (Word sweep)
+3. **#S-01** Ch.2/Ch.3 Structural Re-org
+4. **#W-01** Terminology Sweep (remaining items)
+5. **#T-01** Deep Tech/Staged Commitment
+6. **#E-01** Example Extraction (Find Linpowave Replacement)
 
 ---
 
-### 🎟️ **Issue #G-03: M-Check (Mechanism Plausibility)**
+## COMPLETED ITEMS
 
-- **Priority:** 🛡️ **P1**
-- **Status:** ✅ **DONE**
-- **Affected:** ¶9-13
-
-**Checklist:**
-- [x] Mediator (Governance Homogeneity) identified
-- [x] Causality limitations admitted ("selection, not treatment")
-- [x] Rival explanations addressed (DGP clarification in ¶10)
-
----
-
-### 🎟️ **Issue #G-04: V-Check (Visual Evidence)**
-
-- **Priority:** 🛡️ **P1**
-- **Status:** ✅ **DONE** (2026-01-13)
-- **Affected:** All 10 figures
-
-**Checklist (Updated):**
-- [x] Fig.1 (Funding-Growth Paradox) - caption complete
-- [x] Fig.2 (Mediation DAG) - NEW, shows measured vs latent variables
-- [x] Fig.3 (Golden Cage) - caption complete
-- [ ] Fig.4 (Sample Construction) - to be generated
-- [x] Fig.5 (CER Pattern) - updated terminology
-- [x] Fig.6 (Mover vs Stayer) - caption complete
-- [x] Fig.7 (Industry Heterogeneity) - NEW, ρ(E,G) by sector
-- [x] Fig.8 (Mobility) - caption complete
-- [x] Fig.9 (Temporal Robustness) - caption complete
-- [x] Fig.10 (Strategic Ambiguity) - caption complete
+| Issue | Description | Completed |
+|:------|:------------|:---------:|
+| #TR-02 | Survival Bias Defense | 2026-01-13 |
+| #M-01 | R > 0 Methodology Change | 2026-01-13 |
+| #W-01 (partial) | Movement -> Repositioning | 2026-01-13 |
+| #TR-03 | Industry Universality | 2026-01-12 |
+| #TR-04 | Alternative Story (DGP) | 2026-01-11 |
 
 ---
-
-### 🎟️ **Issue #G-05: E-Check (Empirical Transparency)**
-
-- **Priority:** 🛡️ **P1**
-- **Status:** 🔴 **TODO**
-- **Affected:** Ch.3 (Empirical Strategy)
-
-**New Gate (from eval metric):**
-- [ ] Data source and collection procedure documented
-- [ ] Variable construction transparent (v2 methodology)
-- [ ] Sample selection criteria explicit
-- [ ] Descriptive statistics table present
-
-**Action:** Complete #039 (Methodology Deep Dive)
-
----
-
-## 🧥 TIER 2: STRUCTURAL & POLISH (Lower Priority)
-
-### From Original War Log (Resolved)
-
-| Issue | Description | Status |
-|:-----:|:------------|:------:|
-| #001 | v2 방법론 정렬 | ✅ |
-| #003 | N/ρ 숫자 동기화 | ✅ |
-| #004 | Quantile threshold | ✅ |
-| #005 | Causal language softening | ✅ |
-| #006 | Definition injection | ✅ |
-| #007 | Citation boost (7→30) | ✅ |
-| #008 | Figures/Tables integrity | ✅ |
-| #009 | Citation integrity check | ✅ |
-| #011 | Selection Defense (DGP) | ✅ (+7% earned) |
-| #012 | Theorem 1 Source | ✅ |
-| #014 | Bolton(2024) Reframe | ✅ |
-| #015 | Local Limits Injection | ✅ |
-| #017 | Statistics Accuracy | ✅ |
-| #018 | Advisor Summary Document | ✅ |
-| #019 | Paragraph Flow Integration | ✅ |
-| #020 | Sentence Quality (Fine-Stern) | ✅ |
-| #021 | CE Framework Integration | ✅ |
-| #022 | Surgical Scalpel (2nd-order) | ✅ (+7% earned) |
-
-### From Pranit Session (Pending)
-
-| Issue | Description | RoT Impact | Status |
-|:-----:|:------------|:----------:|:------:|
-| #023 | Terminology Unification (F→E) | C-Check | ✅ DONE (2026-01-13) |
-| #024 | Mover Disaggregation | — | ✅ DONE |
-| #025 | Vertical Integration Clarification | — | 🔴 TODO |
-| #026 | FanDuel Evidence | Evidence | 🟡 DELEGATED |
-| #028 | Qualified Movement Definition | M-Check | ✅ DONE |
-| #029 | Color Figure Upgrade | V-Check | 🟡 Optional |
-| #030 | Robustness Graph | +2% TR-02 | ✅ DONE (Fig.9) |
-| #031 | Remove Right Panel | V-Check | 🟡 Optional |
-| #033 | Scale-it Literature | — | 🔴 TODO |
-| #034 | Catchphrase Upgrade | Polish | ✅ DONE ("Commit to reposition") |
-| #035 | Kirtley Integration | M-Check | ✅ DONE (Ch.2) |
-
-### Structural (From Sail Edition)
-
-| Issue | Description | RoT Impact | Status |
-|:-----:|:------------|:----------:|:------:|
-| #038 | Structural Overhaul | E-Check | ✅ DONE (6-Chapter) |
-| #039 | Methodology Deep Dive | +3% E-Check | 🟡 PARTIAL |
-| #040 | Academic Tone | Polish | ✅ DONE (Fine-style upgrade) |
-
-### Recent Improvements (2026-01-12 ~ 01-13)
-
-| Task | Description | Status |
-|:-----|:------------|:------:|
-| **Ch.1 Benchmark Upgrade** | Figure 1 위치 조정, Industry context 추가, Two effects 명명 (Learning Premium / Rigidity Trap) | ✅ |
-| **Mediation DAG** | Figure 2 추가 (측정변수 vs 잠재변수 구조) | ✅ |
-| **F→E Variable Rename** | CFR→CER, dG/dF→dG/dE, ρ(F,G)→ρ(E,G) 전체 업데이트 | ✅ |
-| **Conciseness Review** | Fine-approved deletions: Ch.1.4, Ch.2.5.2, Ch.2.8, Ch.3.1.1/2, Ch.5.1.1/2 등 -60 lines | ✅ |
-| **Figure Renumbering** | 8 → 10 figures (DAG, Industry Heterogeneity 추가) | ✅ |
-
----
-
-## 📊 PRIORITIZED ACTION QUEUE
-
-### Sprint 1: Truth-Score (+26%)
-
-| Priority | Issue | Action | Impact |
-|:--------:|:------|:-------|:------:|
-| 1 | #TR-02 | Survival bias conditioning | +10% |
-| 2 | #TR-03 | Industry heterogeneity table | +8% |
-| 3 | #TR-01 | Magnitude contextualization | +5% |
-| 4 | #LR-01 | Citation accuracy (8 fixes) | +3% |
-
-### Sprint 2: Gate Compliance
-
-| Priority | Issue | Action | Gate |
-|:--------:|:------|:-------|:----:|
-| 4 | #G-05 (#039) | Methodology chapter | E-Check |
-| 5 | #G-01 | Explicit H₀ statement | H-Check |
-| 6 | #G-02 (#023) | Terminology unification | C-Check |
-| 7 | #G-04 (#029,#030,#031) | Figure upgrades | V-Check |
-
-### Sprint 3: Polish
-
-| Priority | Issue | Action |
-|:--------:|:------|:-------|
-| 8 | #034 | Catchphrase upgrade |
-| 9 | #040 | Academic tone |
-| 10 | #038 | Structural overhaul |
-
----
-
-## 📈 RoT PROJECTION
-
-| Milestone | RoT | Gap to 85% |
-|:----------|:---:|:----------:|
-| Baseline | 60% | -25% |
-| + DGP + 2nd-order | 67% | -18% |
-| + Universality (TR-03) | 75% | -10% |
-| **+ Boundary Theorization (Quantum)** | **80%** | **-5%** |
-| + Survival Bias (TR-02) | 90% | ✅ Exceeded |
-
-**현재: 80% | TR-02 완료 시 목표 초과 달성 (90%)**
-
----
-
-## 🗂️ TABLES & FIGURES CHECKLIST
-
-### 8 Tables
-
-| # | Table | Chapter | Status |
-|:-:|:------|:-------:|:------:|
-| 1 | Variables (CEABRG) | Ch.3 | ✅ Created |
-| 2 | Descriptive Statistics | Ch.3 | ✅ Created |
-| 3 | CER Evidence (dR/dE < 0) | Ch.4 | ✅ Created |
-| 4 | FRG Evidence (dG/dR > 0) | Ch.4 | ✅ Created |
-| 5 | Mover Taxonomy | Ch.4 | ✅ Created |
-| 6 | Industry Heterogeneity | Ch.4 | ✅ Created (TR-03 완료) |
-| 7 | Robustness (Temporal) | Ch.4 | ✅ Created |
-| 8 | Governance Design | Ch.5 | ✅ Created |
-
-### 10 Figures (Updated 2026-01-13)
-
-| # | Figure | Chapter | Status |
-|:-:|:-------|:-------:|:------:|
-| 1 | The Funding-Growth Paradox | Ch.1 | ✅ |
-| 2 | **Mediation Structure (DAG)** | Ch.1 | ✅ **NEW** |
-| 3 | The Golden Cage Mechanism | Ch.2 | ✅ |
-| 4 | Sample Construction Flowchart | Ch.3 | 📝 To be generated |
-| 5 | CER Pattern | Ch.4 | ✅ |
-| 6 | Mover vs Stayer Success Rates | Ch.4 | ✅ |
-| 7 | Industry Heterogeneity ρ(E,G) | Ch.4 | ✅ **NEW** |
-| 8 | Mobility: Where Cage Bites | Ch.4 | ✅ |
-| 9 | Temporal Robustness | Ch.4 | ✅ |
-| 10 | Strategic Ambiguity Sweet Spot | Ch.5 | ✅ |
-
----
-
-*Updated: 2026-01-13 11:30*
-*Framework: Ring-of-Truth (RoT) 60% → 85%*
-*Current: 82% | Target: 85% | Gap: 3%*
-*TR-02 (Survival Bias) 완료 시 목표 초과 달성 (92%)*
-
----
-
-## 📜 ARCHIVED ISSUES (Resolved)
-
-<details>
-<summary>Click to expand resolved issues (#001-#022)</summary>
-
-### **Issue #001: Method Truth Alignment (v2 Enforcement)** ✅
-### **Issue #002: Formula Direction** 🧊 FROZEN
-### **Issue #003: Number Sync** ✅
-### **Issue #004: Kill Magic Numbers** ✅
-### **Issue #005: Causal Language Softening** ✅
-### **Issue #006: Definition Injection** ✅
-### **Issue #007: Citation Boost** ✅
-### **Issue #008: Figures & Tables Integrity** ✅
-### **Issue #009: Smart Citation Integrity** ✅
-### **Issue #010: Citation Strategy Comparison** 🟡 PENDING
-### **Issue #011: Selection Defense (DGP)** ✅ (+7% RoT)
-### **Issue #012: Theorem 1 Source** ✅
-### **Issue #014: Bolton(2024) Reframe** ✅
-### **Issue #015: Local Limits Injection** ✅
-### **Issue #016: Reader-Friendliness Sweep** 🔴 TODO
-### **Issue #017: Statistics Accuracy** ✅
-### **Issue #018: Advisor Summary Document** ✅
-### **Issue #019: Paragraph Flow Integration** ✅
-### **Issue #020: Sentence Quality** ✅
-### **Issue #021: CE Framework Integration** ✅
-### **Issue #022: Surgical Scalpel** ✅ (+7% RoT)
-
-</details>
+*Updated: 2026-01-13 (v4.0 Integration)*
