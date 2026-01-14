@@ -220,7 +220,7 @@ The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from Pitc
 
 $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
-[Figure 1: The Funding-Growth Paradox](figures/Ch1_Fig1_capital_paradox.png)
+![Figure 1: The Funding-Growth Paradox](figures/Ch1_Fig1_capital_paradox.png)
 
 **Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
@@ -230,7 +230,7 @@ $$\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \t
 
 The **Flexibility Premium** (dG/dR > 0) captures the growth benefit of adaptation: ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0% later-stage survival). The **Commitment Trap** (dR/dE < 0) captures the rigidity cost of funding: early funding correlates with lower repositioning (ρ = −0.087, p < 0.001), as governance structures attached to capital constrain adaptation. The product of a positive and a negative is negative: funding correlates with reduced mobility, not because capital is harmful, but because commitment attracts like-minded investors who filter skeptics from governance.
 
-[Figure 2: Mediation Structure](figures/Ch1_Fig2_mediation_dag.png)
+![Figure 2: Mediation Structure](figures/Ch1_Fig2_mediation_dag.png)
 
 **Figure 2:** The Mediation Structure. The upper path shows measured variables: Early Funding → Repositioning → Growth. H1 (Commitment Trap, −) captures funding's suppression of repositioning; H2 (Flexibility Premium, +) captures repositioning's benefit to growth. H3 (Funding Paradox, −) is the net effect shown by the dashed arc. The lower path shows latent variables: Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables both Repositioning (+) and Growth (+).
 
@@ -354,7 +354,7 @@ But Ghemawat also identifies the flip side: commitment forecloses alternatives. 
 
 The tension intensifies in nascent markets. Under technological and demand uncertainty, commitment becomes a bet on incomplete information. Dixit and Pindyck (1994) formalize this through real options reasoning: when uncertainty is high (σ↑), waiting becomes more valuable because the option to learn dominates the benefit of early commitment. Sanchez (1995) extends this to strategic flexibility: firms facing environmental uncertainty should maintain "strategic flexibility"—the capacity to respond to unforeseen contingencies.
 
-[Figure 3: Strategic Breadth Trajectories](figures/Ch2_Fig1_B_trajectories.png)
+![Figure 3: Strategic Breadth Trajectories](figures/Ch2_Fig1_B_trajectories.png)
 
 **Figure 3:** Strategic Breadth Trajectories. The figure illustrates three archetype trajectories: Zoom-out (ΔB > 0, green), Zoom-in (ΔB < 0, blue), and Stayer (ΔB ≈ 0, gray). Strategic breadth (B) measures the scope of market positioning from company descriptions. Movers (R > 0) reposition along either direction; Stayers (R = 0) maintain position.
 
@@ -378,7 +378,7 @@ $$C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\
 
 Where C = Commitment, E = Early funding, F = Flexibility, R = Repositioning, G = Growth. See [Glossary](#appendix-c-glossary) for definitions.
 
-[Figure 4: The Golden Cage Mechanism](figures/Ch2_Fig2_golden_cage.png)
+![Figure 4: The Golden Cage Mechanism](figures/Ch2_Fig2_golden_cage.png)
 
 **Figure 4:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
@@ -639,7 +639,7 @@ The data confirm H2: repositioning enables growth.
 
 The positive correlation is consistent: ventures that reposition succeed more often.
 
-[Figure 5: The Mover Advantage](figures/Ch4_Fig1_mover_advantage.png)
+![Figure 5: The Mover Advantage](figures/Ch4_Fig1_mover_advantage.png)
 
 **Figure 5:** The Mover Advantage. Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage. The bar chart visualizes the core H2 finding: repositioning enables growth.
 
@@ -680,7 +680,7 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 >
 > Musk's first principles approach exemplifies this motion: decompose battery costs to raw materials (zoom-in), then reconstruct supply chain architecture (zoom-out). The same cognitive motion—moving between levels of abstraction—applies to strategic positioning. Entrepreneurs who can *move* between scopes outperform those who remain fixed, regardless of direction.
 
-[Figure 6: Mover vs. Stayer Success Rates](figures/Ch4_Fig3_growth_by_direction.png)
+![Figure 6: Mover vs. Stayer Success Rates](figures/Ch4_Fig3_growth_by_direction.png)
 
 **Figure 6:** Mover vs. Stayer Success Rates. Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
 
@@ -721,7 +721,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 
 *Note: E = first_financing_size (M USD), G = growth (binary: reached Later Stage VC). Sector counts reflect the broader PitchBook universe prior to excluding firms with missing longitudinal funding data, resulting in a total count exceeding the regression sample (N = 180,994). Firms may be classified into multiple secondary sectors. Quantum computing is included for completeness despite small sample size; interpretation requires caution. Data verified from PitchBook (2021-2025).*
 
-[Figure 7: Industry ρ(E,G) Correlations](figures/Ch4_Fig2_industry_rho.png)
+![Figure 7: Industry ρ(E,G) Correlations](figures/Ch4_Fig2_industry_rho.png)
 
 **Figure 7:** Industry-level ρ(E,G) correlations. Capital-intensive sectors (Hardware, Transportation) show strongest negative correlations consistent with the multiplicative model. Quantum is the sole positive outlier—under extreme uncertainty, learning value dominates rigidity costs.
 
@@ -777,7 +777,7 @@ The deep tech exception also illuminates a distinction between two forms of earl
 
 Counterintuitively, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
 
-[Figure 8: Mobility - Where the Cage Bites Hardest](figures/Ch4_Fig4_industry_survival.png)
+![Figure 8: Mobility - Where the Cage Bites Hardest](figures/Ch4_Fig4_industry_survival.png)
 
 **Figure 8:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
@@ -807,7 +807,7 @@ These three vulnerabilities interact: capital intensity demands commitment, but 
 
 All specifications yield consistent results. The cage is not a COVID artifact or cohort effect.
 
-[Figure 9: Temporal Robustness](figures/R1_robustness_timeseries.png)
+![Figure 9: Temporal Robustness](figures/R1_robustness_timeseries.png)
 
 **Figure 9:** Temporal Robustness. The funding-repositioning relationship remains stable across cohort years and market conditions.
 
@@ -903,7 +903,7 @@ The cage forms when operational commitment attracts homogeneous believers. The f
 
 Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
 
-[Figure 10: The Strategic Ambiguity Sweet Spot](figures/Ch5_Fig1_sweet_spot.png)
+![Figure 10: The Strategic Ambiguity Sweet Spot](figures/Ch5_Fig1_sweet_spot.png)
 
 **Figure 10:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
 
