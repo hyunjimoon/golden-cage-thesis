@@ -12,7 +12,7 @@ modified:
 \end{quote}
 
 \hypertarget{general-motivation}{%
-\section{1.1 General Motivation}\label{general-motivation}}
+\section{General Motivation}\label{general-motivation}}
 
 Commitment structures and investor selection \textbf{cage} founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the U.S. venture capital industry, deploying over \$330 billion globally at its 2021 peak (PitchBook, 2024), has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension by positioning ambiguously, attracting diverse stakeholders while preserving their ability to pivot.
 
@@ -29,7 +29,7 @@ Commitment decisions also affect survival vertically. A founder who commits at t
 This thesis addresses these challenges. Below I explain how each chapter tackles them, summarize the main results, and outline the organization.
 
 \hypertarget{the-funding-growth-paradox}{%
-\section{1.2 The Funding-Growth Paradox}\label{the-funding-growth-paradox}}
+\section{The Funding-Growth Paradox}\label{the-funding-growth-paradox}}
 
 The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from PitchBook (2021\textendash{}2025), I find a negative correlation between early-stage funding and later-stage survival:
 
@@ -39,7 +39,7 @@ The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from Pitc
 \hypertarget{fig:capital-paradox}{%
 \centering
 \includegraphics[width=0.85\textwidth,]{img/Ch1_Fig1_capital_paradox.png}
-\caption{The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (\(N = 180{,}994\), \(ho = -0.196\), \(p < 0.001\)).}\label{fig:capital-paradox}
+\caption{The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (\(N = 180{,}994\), \(\rho = -0.196\), \(p < 0.001\)).}\label{fig:capital-paradox}
 }
 \end{figure}
 
@@ -58,7 +58,7 @@ The \textbf{Flexibility Premium} (dG/dR \textgreater{} 0) captures the growth be
 \end{figure}
 
 \hypertarget{research-questions-and-chapter-overview}{%
-\section{1.3 Research Questions and Chapter Overview}\label{research-questions-and-chapter-overview}}
+\section{Research Questions and Chapter Overview}\label{research-questions-and-chapter-overview}}
 
 This thesis addresses three interconnected questions, each corresponding to a thesis part:
 
@@ -83,7 +83,7 @@ This thesis addresses three interconnected questions, each corresponding to a th
 \end{enumerate}
 
 \hypertarget{contribution-preview}{%
-\section{1.4 Contribution Preview}\label{contribution-preview}}
+\section{Contribution Preview}\label{contribution-preview}}
 
 This thesis makes three contributions to the literature on entrepreneurial strategy and venture governance.
 
