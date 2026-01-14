@@ -104,67 +104,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 \hypertarget{the-era-of-ferment-exception}{%
 \subsection{The Era of Ferment Exception}\label{the-era-of-ferment-exception}}
 
-Quantum's positive correlation (\ensuremath{\rho} = +0.095\emph{) represents a }boundary condition* where dR/dE reverses sign. \citet{anderson1990technological} distinguish the \textbf{Era of Ferment}, fundamental architectural uncertainty, from the \textbf{Era of Incremental Change} following dominant design emergence. Quantum remains in ferment: superconducting, trapped ion, photonic, topological, and neutral atom approaches all remain viable. When no dominant design exists, capital cannot lock ventures into architectural choices that have not crystallized.
-
-Three conditions explain the exception:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{No Dominant Design.} Without ``increasing returns'' establishing dominance \citep{arthur1989competing}, capital funds architectural search rather than path commitment. Investors understand they are funding exploration, not execution.
-\item
-  \textbf{Epistemic vs.~Operational Uncertainty.} The cage operates when investors set KPIs from market signals. Quantum faces \emph{epistemic} uncertainty, we do not know what questions to ask, so performance contracts that cage founders cannot form.
-\item
-  \textbf{Selection for Optionality.} Quantum investors select for real option value rather than operational efficiency. The investor pool self-sorts: those who would cage founders exit; those who remain encourage repositioning.
-\end{enumerate}
-
-\textbf{Formal Resolution.} Under radical uncertainty, dR/dE \textgreater{} 0 rather than \textless{} 0:
-
-\[\text{Standard: } (+) \times (-) = (-) \quad|\quad \text{Ferment: } (+) \times (+) = (+)\]
-
-The cage binds only when commitment forecloses \emph{identifiable} alternatives; under radical uncertainty, no alternatives are identifiable.
-
-\hypertarget{deep-tech-strategy-non-dilutive-alternatives}{%
-\subsection{Deep Tech Strategy: Non-Dilutive Alternatives}\label{deep-tech-strategy-non-dilutive-alternatives}}
-
-The Quantum exception suggests a strategic implication for deep tech ventures: when the cage mechanism operates, founders may benefit from \emph{non-dilutive} funding sources that avoid governance homogenization.
-
-\textbf{The "Chicago Booth Approach":} Deep tech ventures operating in eras of ferment can pursue grants, government contracts, and strategic partnerships that provide capital without attracting thesis-driven investors. This strategy, common among quantum computing and fusion energy startups, preserves governance diversity by avoiding the sorting equilibrium that dilutive funding triggers.
-
-Non-dilutive sources include: - \textbf{Government grants:} NSF, DARPA, DOE provide capital without board seats - \textbf{Strategic partnerships:} Corporate R\&D agreements fund exploration without equity - \textbf{Prize competitions:} XPRIZE-style awards reward outcomes without governance control
-
-This approach trades growth speed for strategic flexibility, a rational choice when the uncertainty premium is high and the commitment cost is severe.
-
-\hypertarget{commitment-types-staged-vs.-partial}{%
-\subsection{Commitment Types: Staged vs.~Partial}\label{commitment-types-staged-vs.-partial}}
-
-The deep tech exception also illuminates a distinction between two forms of early commitment:
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3250}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-Type
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Description
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Signal
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Cage Effect
-\end{minipage} \\
-\midrule
-\endhead
-\textbf{Staged Commitment} & Milestone-based funding with clear deliverables & Positive signal (investor confidence) & Strong (milestones constrain pivoting) \\
-\textbf{Partial Commitment} & Tentative funding reflecting investor uncertainty & Negative signal (investor doubt) & Weak (low expectations enable flexibility) \\
-\bottomrule
-\end{longtable}
-
-\textbf{Staged commitment} attracts like-minded investors who believe the milestones are achievable, creating governance homogeneity. \textbf{Partial commitment} attracts investors hedging uncertainty, preserving governance diversity through shared doubt.
-
-Paradoxically, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
+Quantum's positive correlation (\ensuremath{\rho} = +0.095*) represents a boundary condition: when no dominant design exists \citep{anderson1990technological}, capital cannot lock ventures into architectural choices that have not crystallized, so dR/dE reverses sign.
 
 \begin{figure}
 \hypertarget{fig:industry-survival}{%
@@ -195,104 +135,12 @@ These three vulnerabilities interact: capital intensity demands commitment, but 
 \hypertarget{robustness-checks}{%
 \section{Robustness Checks}\label{robustness-checks}}
 
-\hypertarget{temporal-stability}{%
-\subsection{Temporal Stability}\label{temporal-stability}}
-
-\input{table/robustness.tex}
-
-All specifications yield consistent results. The cage is not a COVID artifact or cohort effect.
-
-\hypertarget{survival-bias-conditioning-tr-02}{%
-\subsection{Survival Bias Conditioning (TR-02)}\label{survival-bias-conditioning-tr-02}}
-
-To address survival bias, I condition on Year 3+ survival:
-
-\begin{longtable}[]{@{}lcc@{}}
-\toprule
-Condition & Mover Advantage & 95\% CI \\
-\midrule
-\endhead
-Full sample & 2.60\ensuremath{\times} & {[}2.48, 2.72{]} \\
-Year 3+ survivors & 2.35\ensuremath{\times} & {[}2.21, 2.49{]} \\
-Year 5+ survivors & 2.12\ensuremath{\times} & {[}1.94, 2.30{]} \\
-\bottomrule
-\end{longtable}
-
-The Mover advantage attenuates but persists under survival conditioning, suggesting the effect is not purely a survival artifact.
-
-\hypertarget{alternative-operationalizations}{%
-\subsection{Alternative Operationalizations}\label{alternative-operationalizations}}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Continuous R measure:} Positive coefficient (\ensuremath{\beta} = 0.023, p \textless{} 0.01)
-\item
-  \textbf{Product category changes:} Similar pattern (\ensuremath{\rho}(R,G) = +0.015)
-\item
-  \textbf{Customer segment shifts:} Consistent results (\ensuremath{\rho}(R,G) = +0.011)
-\end{itemize}
+Results are robust to: (1) temporal stability across cohort years, (2) survival conditioning (Year 3+ survivors: 2.35\ensuremath{\times}, Year 5+: 2.12\ensuremath{\times}), and (3) alternative operationalizations of R. \emph{Full robustness tables are provided in Appendix E.}
 
 \hypertarget{illustrative-cases}{%
 \section{Illustrative Cases}\label{illustrative-cases}}
 
-The statistical patterns acquire meaning through concrete examples. Table 4.1 presents three ventures with G values near the median for their type, illustrating how strategic breadth (B) and repositioning (R) relate to funding growth (G).
-
-\textbf{Table 4.1: Repositioning and Growth (Median-Representative Cases)}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2093}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0930}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1163}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0930}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2791}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0698}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1395}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-Company
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\ensuremath{B_0}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-B\_T
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\ensuremath{\Delta}B
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-R = \textbar \ensuremath{\Delta}B\textbar{}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-G
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Type
-\end{minipage} \\
-\midrule
-\endhead
-\textbf{Hope Care} & 39.6 & 88.2 & +48.5 & 48.5 & 2.71\ensuremath{\times} & Broadening Mover \\
-\textbf{True Botanicals} & 81.9 & 37.5 & -44.4 & 44.4 & 2.45\ensuremath{\times} & Narrowing Mover \\
-\textbf{Leap Green Energy} & 87.5 & 87.5 & 0.0 & 0.0 & 0.80\ensuremath{\times} & Stayer \\
-\bottomrule
-\end{longtable}
-
-\emph{Notes: B = strategic breadth (0--100); R = repositioning magnitude; G = funding growth multiple = (F\_t - E) / E. Median G: Broadening = 2.57\ensuremath{\times}, Narrowing = 2.32\ensuremath{\times}, Stayer = 0.60\ensuremath{\times}.}
-
-\hypertarget{two-types-of-movers}{%
-\subsection{Two Types of Movers}\label{two-types-of-movers}}
-
-Repositioning (R \textgreater{} 0) takes two forms: \textbf{broadening} (\ensuremath{\Delta}B \textgreater{} 0) and \textbf{narrowing} (\ensuremath{\Delta}B \textless{} 0). Both exhibit elevated growth relative to Stayers.
-
-\textbf{Hope Care (Broadening Mover):} Moved from specific application ("cloud-based healthcare technology for primary care," \ensuremath{B_0} = 39.6) to a general platform ("healthcare technology company offering preventive care and chronic disease management," B\_T = 88.2). R = 48.5, G = 2.71\ensuremath{\times} (near median).
-
-\textbf{True Botanicals (Narrowing Mover):} Moved from broad scope ("natural products designed to liberate glow with clean skincare," \ensuremath{B_0} = 81.9) to specific focus ("manufacturer of natural skin care products using clinically-proven formulations," B\_T = 37.5). R = 44.4, G = 2.45\ensuremath{\times} (near median).
-
-Both Movers achieved funding growth roughly 3--4\ensuremath{\times} higher than the median Stayer. The sample contains 40,649 broadening movers and 31,028 narrowing movers, demonstrating that \emph{movement itself}, not direction, drives the mover advantage.
-
-\hypertarget{the-stayer-contrast}{%
-\subsection{The Stayer Contrast}\label{the-stayer-contrast}}
-
-\textbf{Leap Green Energy (Stayer):} Maintained identical positioning ("operator of renewable energy-based power projects across India," \ensuremath{B_0} = B\_T = 87.5) throughout the observation period. R = 0, G = 0.80\ensuremath{\times} (near median).
-
-This median Stayer achieved modest funding growth, near-doubling rather than the 2.5\ensuremath{\times} typical of Movers. The aggregate pattern holds: Movers (R \textgreater{} 0) outperform Stayers (R = 0) by 2.60\ensuremath{\times} on average.
-
-\textbf{Key insight:} The cage mechanism operates on \emph{repositioning capacity}, not initial positioning level. A venture with broad initial positioning (\ensuremath{B_0} = 88) can be as constrained as one with narrow positioning (\ensuremath{B_0} = 40) if governance homogenizes around the original thesis.
+Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71\ensuremath{\times}), True Botanicals (narrowing mover, G = 2.45\ensuremath{\times}), and Leap Green Energy (stayer, G = 0.80\ensuremath{\times}). Both mover types outperform stayers, demonstrating that \emph{movement itself}, not direction, drives the advantage. \emph{Full case descriptions are provided in Appendix F.}
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
