@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T07:04:31-05:00
+  - 2026-01-14T07:20:13-05:00
 ---
 
 
@@ -77,13 +77,12 @@ The contribution is threefold. First, I document a negative funding-growth corre
     - [2.1.2 Analytic Structure: Patterns vs. Mechanisms](#212-analytic-structure-patterns-vs-mechanisms)
     - [2.1.3 Related Work](#213-related-work)
   - [2.2 Commitment as Double-Edged Sword](#22-commitment-as-double-edged-sword)
-  - [2.3 Force (+): Why Flexibility Creates Value](#23-force--why-flexibility-creates-value)
-  - [2.4 Force (−): Why Funding Destroys Flexibility](#24-force--why-funding-destroys-flexibility)
-  - [2.5 The Collision: (+) × (−) = (−)](#25-the-collision------)
-    - [2.5.1 Formal Condition for Caged Learning](#251-formal-condition-for-caged-learning)
-  - [2.6 Real Options Foundation](#26-real-options-foundation)
-  - [2.7 Hypotheses](#27-hypotheses)
-  - [2.8 Conclusion](#28-conclusion)
+  - [2.3 The Golden Cage Mechanism](#23-the-golden-cage-mechanism)
+    - [2.3.1 Formal Condition for Caged Learning](#231-formal-condition-for-caged-learning)
+    - [2.3.2 The Cruel Optimism of Commitment](#232-the-cruel-optimism-of-commitment)
+  - [2.4 Real Options Foundation](#24-real-options-foundation)
+  - [2.5 Hypotheses](#25-hypotheses)
+  - [2.6 Conclusion](#26-conclusion)
 
 - [Chapter 3: Data and Identification](#chapter-3-data-and-identification)
   - [3.1 Introduction](#31-introduction)
@@ -402,7 +401,7 @@ The golden cage is not always forged with investor money. Sometimes founders con
 
 This suggests a diagnostic question for founders: **What's limiting your future mobility?** If the answer involves non-monetary commitments—identity, reputation, relationships—the cage may be self-constructed, not investor-imposed.
 
-## 2.6 Real Options Foundation
+## 2.4 Real Options Foundation
 
 The cage mechanism operates against the backdrop of real options theory. McGrath (1999) articulates the entrepreneurial implications: initiatives are options, not commitments. Failure enables "falling forward"—learning that informs subsequent attempts.
 
@@ -412,7 +411,7 @@ Huchzermeier and Loch (2001) distinguish uncertainty types: market uncertainty (
 
 This creates a fundamental tension in venture governance. The more uncertain the world, the more founders need flexibility—but uncertainty is precisely when governance binds tightest. Boards impose tighter controls not *despite* uncertainty, but *because* of it. When the environment is volatile, investors seek assurance through milestones and commitments; yet volatility is exactly when those commitments should remain provisional. The cage tightens when it should loosen.
 
-## 2.7 Hypotheses
+## 2.5 Hypotheses
 
 From the golden cage mechanism, I derive three testable hypotheses:
 
@@ -432,7 +431,7 @@ Together, these hypotheses complete the decomposition:
 
 $$\frac{dG}{dE} = \frac{dG}{dR} \times \frac{dR}{dE} = (+) \times (-) = (-)$$
 
-## 2.8 Conclusion
+## 2.6 Conclusion
 
 This chapter developed the golden cage mechanism—a theoretical account of how funding suppresses growth through governance homogeneity rather than moral hazard. The mechanism integrates three theoretical streams: Van den Steen's (2010) sorting equilibrium explains *why* governance converges on believers; Eisenberg's (1984) strategic ambiguity explains *what* flexibility founders sacrifice; Ghemawat's (1991) commitment analysis explains *when* these sacrifices become irreversible.
 
