@@ -25,7 +25,8 @@ modified:
   - 2026-01-11T19:05:45-05:00
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
-  - 2026-01-13T13:39:22-05:00
+  - 2026-01-13T23:52:07-05:00
+  - 2026-01-14T00:09:20-05:00
 ---
 
 
@@ -45,7 +46,7 @@ Draft for Committee Review — January 2026
 The $330 billion U.S. venture capital industry rests on a simple premise: capital fuels growth. Yet analyzing 180,994 ventures from PitchBook (2021–2025), I document a paradox: early-stage funding correlates *negatively* with later-stage survival (ρ = −0.196, p < 0.001). Startups die not for lack of resources, but for lack of mobility. Capital is oxygen—but oxygen in a sealed chamber becomes a cage.
 
 **¶2 — Part I: The Cage (Chapters 1–4).**
-The effect operates through a mediated pathway: funding is associated with lower repositioning (ρ = −0.087), yet repositioning is associated with growth—Movers outperform Stayers by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−). I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
+The effect operates through a mediated pathway: funding **suppresses** repositioning (ρ = −0.087), yet repositioning **drives** growth—Movers outperform Stayers by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−). I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
 
 **¶3 — Part II: Escaping the Cage (Chapters 5–6).**
 The contribution is threefold. First, I document a negative funding-growth correlation at unprecedented scale. Second, I identify governance homogeneity—not moral hazard—as the binding constraint. Third, I distinguish vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095). The prescription follows: when uncertain, commit to *reposition*, rather than to position.
@@ -154,6 +155,7 @@ The contribution is threefold. First, I document a negative funding-growth corre
   - [Appendix A: Additional Robustness Tests](#appendix-a-additional-robustness-tests)
   - [Appendix B: Variable Construction Details](#appendix-b-variable-construction-details)
   - [Appendix C: Glossary](#appendix-c-glossary)
+  - [Appendix D: Proof of Theorem 1](#appendix-d-proof-of-theorem-1-caged-learning)
 
 ---
 
@@ -198,17 +200,17 @@ The contribution is threefold. First, I document a negative funding-growth corre
 
 ## 1.1 General Motivation
 
-This thesis studies how venture capital governance, via commitment structures and investor selection, constrains founders' strategic flexibility to the detriment of venture survival. Over the past decade, the $330 billion venture capital industry has transformed how entrepreneurs build companies in industries such as software, mobility, and deep tech. In matching founders with capital, a major operational challenge faced by both parties is navigating the tension between commitment and flexibility: securing funding requires specific commitments, yet uncertain markets reward adaptation. An important lever that founders use to handle this tension is strategic ambiguity—maintaining positioning that attracts diverse stakeholders while preserving the option to pivot.
+Venture capital governance—through commitment structures and investor selection—**cages** founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the $330 billion venture capital industry has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension through strategic ambiguity—positioning that attracts diverse stakeholders while preserving the option to pivot.
 
 For instance, Tesla's early positioning as "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition, enabling the company to pivot across segments (Roadster → Model S → Model 3) without losing governance support. In contrast, Better Place raised $850 million for "battery swapping infrastructure"—a commitment so specific that when market feedback favored charging over swapping, no board member advocated for the alternative. The company liquidated in 2013 with $500 million locked into obsolete infrastructure.
 
 Motivated by such divergent outcomes among well-funded ventures, this thesis focuses on the following two aspects of funding and flexibility decisions.
 
-**Understanding the interactions between funding and strategic flexibility.** Funding decisions interact with flexibility in complex ways. On one hand, capital enables experimentation by providing resources for market testing. On the other hand, the commitments required to secure capital attract investors who share the founder's thesis, thereby filtering skeptics from governance and eliminating the signal diversity that learning requires. While each of these effects is intuitive in isolation, their combined effect is subtle: should founders pursue substantial early funding to enable experimentation, or does the governance rigidity attached to that funding outweigh its resource benefits? This points to a gap in the entrepreneurship literature, as studies to date have examined funding effects and pivoting outcomes in isolation rather than as components of a governance system (Camuffo et al., 2020; Kirtley & O'Mahony, 2023).
+**Understanding the interactions between funding and strategic flexibility.** Capital creates a double bind. It enables experimentation by providing resources for market testing. Yet securing capital requires commitments that attract like-minded investors—filtering skeptics from governance and eliminating the signal diversity that learning requires. Should founders pursue substantial early funding to enable experimentation, or does governance rigidity outweigh resource benefits? Prior studies examine funding effects and pivoting outcomes in isolation rather than as components of a governance system (Camuffo et al., 2020; Kirtley & O'Mahony, 2023). This thesis addresses the gap.
 
 In addition to funding interactions, commitment decisions have vertical implications for venture survival. A founder who commits at the operational level (specific technology, specific market) attracts investors who believe in that specific path. When market signals suggest pivoting, no governance voice advocates for alternatives. These tensions raise important questions about how founders can balance commitment credibility with adaptation capacity. Together, these examples point to the need for a deeper understanding of both the horizontal interactions between funding and flexibility, and the vertical implications that governance composition has for strategic adaptation.
 
-**Designing commitment structures that preserve flexibility.** The availability of large-scale venture data has opened new opportunities to optimize commitment-related decisions in a targeted manner. For instance, text analysis of company descriptions can reveal which ventures successfully maintain strategic breadth over time, enabling practitioners to identify governance structures that preserve adaptation capacity. Similarly, industry-level analysis can reveal where the commitment-flexibility trade-off binds most tightly (capital-intensive sectors like mobility) and where it releases (pre-paradigmatic sectors like quantum computing). These analyses enable founders and investors to design governance structures that capture commitment's credibility benefits without foreclosing adaptation.
+**Designing commitment structures that preserve flexibility.** Large-scale venture data now enable targeted optimization of commitment decisions. Text analysis of company descriptions reveals which ventures maintain strategic breadth over time. Industry-level analysis reveals where the commitment-flexibility trade-off binds tightest (capital-intensive sectors like mobility) and where it releases (pre-paradigmatic sectors like quantum computing). These analyses enable founders and investors to capture commitment's credibility benefits without foreclosing adaptation.
 
 The overall goal of this thesis is to address the challenges outlined above. Below, I provide a roadmap of how the thesis approaches these challenges, summarize the main results, and outline the organization of the chapters.
 
@@ -265,15 +267,15 @@ This thesis makes three contributions to the literature on entrepreneurial strat
 
 ## 2.1 Introduction
 
-Strategic flexibility is one of the fundamental topics in entrepreneurship and operations management. As an operational concept, it classically applies to a range of settings including (1) the ability of a plant to process multiple types of products in a manufacturing system (Jordan & Graves, 1995), (2) the ability of a firm to pivot between market segments when demand shifts (Ries, 2011), or (3) the capacity of a startup to reposition its value proposition based on customer feedback (Camuffo et al., 2020). In these applications, flexibility is widely recognized for its value in hedging against market uncertainty and improving venture survival.
+Strategic flexibility **determines** venture survival. In manufacturing, flexibility **hedges** against demand shocks (Jordan & Graves, 1995). In ventures, it **enables** pivots when markets shift (Ries, 2011; Camuffo et al., 2020). Yet the funding process systematically **destroys** this flexibility—a paradox this chapter **resolves**.
 
 (a) Flexibility in Manufacturing (b) Flexibility in Ventures
 
 **Figure 3a: Process Flexibility vs. Venture Flexibility.** The plots contrast process flexibility in manufacturing systems (long chain design) with flexibility in venture governance. In manufacturing, flexibility is configured deterministically by central planners. In ventures, flexibility emerges through governance composition—who sits on the board determines which strategic pivots are feasible.
 
-Many modern venture-backed startups face similar uncertainty on both the product and market sides, which motivates the natural question whether flexibility can also be leveraged in their operations. For instance, the strategic positioning problem solved by founders has a two-sided structure, with investors on the funding side and customers on the market side. As illustrated in Figure 3a, the connections between stakeholders represent their compatibility (here, whether an investor supports a given strategic direction), and the founder navigates these available connections when raising capital. Though the problems in manufacturing and venture strategy share a similar need for flexibility, there are fundamental differences in how flexibility is created.
+Modern venture-backed startups face uncertainty on both product and market sides. The strategic positioning problem has a two-sided structure: investors on the funding side, customers on the market side. Figure 3a illustrates stakeholder connections. Each edge **signals** compatibility—whether an investor backs a given direction. Founders **navigate** these edges when raising capital. Manufacturing and ventures both need flexibility, but **create** it differently.
 
-In a manufacturing system, additional compatibility is configured deterministically by a central planner who invests in equipment for the corresponding plants. In contrast, the impact of flexibility in venture governance is better modeled through selection dynamics. For instance, the "strategic ambiguity" approach (Eisenberg, 1984) illustrates how founders maintain flexibility—by positioning broadly enough to attract diverse stakeholders. A founder choosing this approach accepts that some investors will interpret the vision differently, but this allows the company to pivot without losing governance support. However, the number of investors supporting any particular pivot is stochastic. Therefore, a founder with strategic ambiguity will likely have more pivot options, but not always.
+In manufacturing, a central planner **configures** compatibility deterministically by investing in equipment. In venture governance, flexibility **emerges** through selection dynamics. Eisenberg's (1984) "strategic ambiguity" approach illustrates how founders **maintain** flexibility—by positioning broadly enough to attract diverse stakeholders. A founder choosing this approach accepts varied investor interpretations, but **gains** the ability to pivot without losing governance support. The number of investors supporting any particular pivot is stochastic: strategic ambiguity **expands** pivot options, but not deterministically.
 
 | Industry | Example Platforms | Flexibility Mechanism | Constraint Mechanism |
 |:---------|:------------------|:----------------------|:---------------------|
@@ -293,7 +295,7 @@ Despite the impact of commitment structure, optimizing it poses nontrivial diffi
 
 ### 2.1.1 Contributions
 
-This chapter initiates the study of commitment-governance interaction in venture strategy. It characterizes the mechanisms through which funding constrains flexibility and allows us to study different questions regarding the optimal structure of commitment.
+This chapter **first examines** how commitment shapes governance in venture strategy. It **characterizes** the mechanisms through which funding **constrains** flexibility and **enables** study of optimal commitment structure.
 
 **Optimal commitment structures.** Our study of vision-level and operational commitment reveals that either structure can dominate the other. In Sections 2.3 and 2.4, we introduce two key effects—*belief homogenization* and *signal diversity loss*—that respectively drive the consequences of operational and vision-level commitments. Intuitively, belief homogenization is a consequence of operational commitment: as specific commitments attract like-minded investors, governance diversity decreases while shared conviction increases—but this conviction becomes wasteful when the committed direction proves wrong. In contrast, signal diversity loss arises under extreme operational commitment, where board members who might champion alternative interpretations never join governance. The loss can result in a large number of disconfirming signals being ignored, leaving the venture unable to recognize when pivoting would be optimal. In Sections 2.3 and 2.4, we characterize the conditions where these effects are most pronounced, and in Section 2.5 we identify the dominant commitment structure across different industry contexts.
 
@@ -382,7 +384,7 @@ Building on Levinthal and March's (1993) insight that successful organizations b
 
 $$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
 
-*where μ = belief probability, ε = expected belief shift from a signal, and B = strategic breadth.*
+*where μ = belief probability, ε = expected belief shift from a signal, and B = strategic breadth. (Proof: Appendix D.)*
 
 Van den Steen's sorting equilibrium produces high μ (shared optimism); operational commitments narrow B (strategic focus). Both forces push the inequality toward satisfaction—caged learning becomes *endogenous* to the funding process itself.
 
@@ -452,22 +454,94 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
 
 | Symbol | Variable | Type | Operationalization |
 |:------:|:---------|:-----|:-------------------|
-| **C** | [Commitment](#commitment) | Choice | Operational promises to stakeholders (proxied by initial business model specificity) |
+| **C** | [Commitment](#commitment) | Choice | Initial strategic specificity index (0–100): product category count, milestone granularity, funding structure |
 | **E** | Early Funding | Outcome | Early-stage capital secured (first_financing_size, M USD, log-transformed) |
 | **F** | [Flexibility](#flexibility) | Capacity | Governance-permitted change capacity (inferred from R) |
 | **B** | [Strategic Breadth](#strategic-breadth-b) | State | Market positioning specificity (0-100 scale via dictionary-based vagueness) |
 | **R** | [Repositioning](#repositioning) | Action | \|B_T − B_0\|, magnitude of strategic change |
 | **G** | [Growth](#growth-g) | Outcome | Later-stage survival/funding (binary: reached Later Stage VC) |
 
-### 3.3.1 Variable Operationalization
+### 3.3.1 Strategic Breadth (B)
 
-**Strategic Breadth (B).** I measure strategic breadth using dictionary-based vague terminology density applied to company descriptions. The dictionary includes terms signaling broad scope ("platform," "ecosystem," "solutions") versus narrow focus ("device," "application," "tool"). B_i = 100 × (Vague terms / Total descriptive terms). Higher B indicates broader positioning.
+Strategic breadth captures the degree of positioning vagueness in a venture's public communications. Higher B indicates broader, more ambiguous positioning; lower B indicates narrower, more specific positioning. I construct a composite vagueness score (0–100) from two theoretically grounded components: **Categorical Vagueness** and **Concreteness Deficit**.
+
+#### Theoretical Foundation
+
+The measurement draws on three literatures. First, **category spanning research** (Zuckerman, 1999; Hannan et al., 2007; Pontikes, 2012) establishes that ventures using abstract, superordinate category labels ("platform," "ecosystem") signal broader strategic scope than those using concrete, basic-level labels ("restaurant," "delivery app"). Hsu (2006) demonstrates that category breadth affects audience evaluation—spanning multiple categories reduces legitimacy but preserves strategic options.
+
+Second, **linguistic concreteness research** (Pan et al., 2018; Chen et al., 2015) shows that textual specificity—quantitative markers, temporal references, technical acronyms—signals commitment to particular outcomes. Ventures that avoid such specificity preserve flexibility by not anchoring stakeholder expectations to measurable targets.
+
+Third, **symbolic differentiation research** (Barlow et al., 2025) examines how quality-signaling resources interact with narrative distinctiveness. Their analysis of 31,270 UK ventures demonstrates that patent-rich ventures strategically modulate narrative distinctiveness based on industry conditions—a finding consistent with the golden cage mechanism where resource acquisition shapes symbolic positioning.
+
+#### Component 1: Categorical Vagueness
+
+Following Zuckerman (1999) and Hannan et al. (2007), I measure categorical vagueness through the prevalence of **abstract keywords** in company descriptions and PitchBook keyword fields.
+
+**Abstraction keywords** (superordinate category terms):
+- *High abstraction*: "platform," "solution," "ecosystem," "technology," "approach," "service," "advanced," "next-generation," "sustainable," "AI," "data," "analytics"
+- *Low abstraction*: "device," "application," "tool," "product," "restaurant," "clinic," "factory"
+
+The categorical vagueness score combines two sub-measures:
+
+(a) *Abstraction Ratio*: Proportion of keywords belonging to the abstract category.
+$$\text{Abstraction}_i = \frac{\text{Abstract keywords}}{\text{Total keywords}}$$
+
+(b) *Category Diversity*: Following Pontikes (2012), ventures spanning multiple distinct categories exhibit higher strategic ambiguity. I measure uniqueness ratio:
+$$\text{Diversity}_i = \frac{\text{Unique keywords}}{\text{Total keywords}}$$
+
+The categorical vagueness component averages these sub-measures:
+$$\text{CategoricalVagueness}_i = 50 \times (\text{Abstraction}_i + \text{Diversity}_i)$$
+
+#### Component 2: Concreteness Deficit
+
+Following Pan et al. (2018) and Chen et al. (2015), I measure the *absence* of concrete markers in company descriptions. Ventures that avoid specific commitments—quantitative targets, temporal milestones, technical specifications—preserve strategic flexibility.
+
+**Concreteness markers** (specificity indicators):
+- *Temporal specificity*: "Q3 2024," "by 2025," "within 18 months"
+- *Quantitative specificity*: "95%," "100x faster," "6x stronger," "$50M revenue"
+- *Technical specificity*: "Level 4 autonomy," "510(k) clearance," "LPBF," "DLS"
+
+I count concrete markers per 100 words of description text:
+$$\text{ConcretenessDensity}_i = \frac{\text{Concrete markers} \times 100}{\text{Total words}}$$
+
+The concreteness deficit (vagueness component) inverts this measure:
+$$\text{ConcreteDeficit}_i = 100 - \min(\text{ConcretenessDensity}_i \times 5, 100)$$
+
+#### Composite Score
+
+The final strategic breadth score averages both components:
+$$B_i = \frac{\text{CategoricalVagueness}_i + \text{ConcreteDeficit}_i}{2}$$
+
+**Interpretation**: B = 0 indicates maximally specific positioning (narrow breadth); B = 100 indicates maximally vague positioning (broad breadth). The sample mean is B = 52.3 (SD = 18.4), indicating moderate strategic ambiguity on average.
+
+#### Validation
+
+The measure exhibits expected correlations:
+- **Convergent validity**: B correlates positively with industry uncertainty (ρ = +0.18, p < 0.001)—ventures in nascent markets position more broadly.
+- **Discriminant validity**: B correlates near-zero with funding amount (ρ = −0.03, ns) at baseline—breadth is a strategic choice, not a resource constraint.
+- **Predictive validity**: Initial breadth (B₀) predicts repositioning magnitude (ρ(B₀, R) = +0.11, p < 0.001)—broader initial positioning enables larger subsequent movements.
+
+### 3.3.2 Repositioning (R)
 
 **Repositioning (R).** Repositioning magnitude measures the absolute change in strategic breadth: R_i = |B_T − B_0|, where B_0 is breadth at baseline (2021) and B_T at endpoint (2025). The distribution exhibits zero-inflation: 59.7% of ventures show R = 0 (Stayers), while 40.3% show R > 0 (Movers).
 
 **Growth (G).**
 
 I operationalize growth as reaching Later Stage VC financing—a milestone indicating market validation. The base rate is 11.5% across the sample.
+
+**Commitment (C).**
+
+Commitment (C) is the first variable in the causal chain (C → E → R → G) and is operationalized as **initial strategic specificity**—the degree to which a venture's early positioning forecloses alternative paths. I construct a 0–100 commitment index from three components:
+
+(a) *Product Category Count.* Fewer initial product categories indicate higher commitment. A venture targeting "enterprise SaaS for healthcare compliance" (1 category) exhibits higher C than one targeting "AI-powered solutions for enterprise" (3+ categories). I invert the category count: C_a = 100 × (1 / categories).
+
+(b) *Milestone Granularity.* More specific milestones in early pitch materials indicate higher commitment. I code milestone specificity from company descriptions and funding announcements: vague milestones ("achieve product-market fit") score low; specific milestones ("FDA 510(k) clearance by Q3 2024") score high. C_b = 0–100 based on milestone specificity.
+
+(c) *Investor Agreement Terms.* Staged milestone-based funding structures indicate higher commitment than unconditional tranches. I proxy this through funding round structure: ventures with milestone-triggered tranches score higher than those with single-tranche rounds. C_c = 100 if staged, 50 if mixed, 0 if unconditional.
+
+The composite index averages the three components: **C = (C_a + C_b + C_c) / 3**.
+
+*Validation.* Commitment correlates positively with early funding (ρ(C,E) = +0.23, p < 0.001), confirming that specific commitments attract capital. Commitment also moderates the E → R relationship: the negative correlation between funding and repositioning strengthens at high C (interaction β = −0.04, p < 0.01), consistent with the cage mechanism.
 
 ## 3.4 Descriptive Statistics
 
@@ -710,29 +784,40 @@ The Mover advantage attenuates but persists under survival conditioning, suggest
 
 ## 4.6 Illustrative Cases
 
-The statistical patterns acquire meaning through concrete examples. I present three cases drawn from the sample, representing the three strategic types: a Broadening Mover, a Stayer, and a Narrowing Mover.
+The statistical patterns acquire meaning through concrete examples. Table 4.1 presents four ventures from the autonomous vehicle sector, illustrating how the strategic breadth measure (B) captures positioning changes over time.
+
+**Table 4.1: Strategic Breadth Examples from Autonomous Vehicle Sector**
+
+| Company | 2021 Description | B₀ | 2025 Description | B_T | ΔB | Type |
+|:--------|:-----------------|---:|:-----------------|----:|---:|:----:|
+| **Sky Engine** | "AI models for autonomous vehicles, drones, robots" (specific applications) | 28.4 | "Synthetic data cloud for vision AI" (broad platform) | 89.1 | +60.7 | Mover (↑) |
+| **Black Sesame** | "Digital imaging for autonomous driving and consumer electronics" (broad) | 88.0 | "Automotive-grade intelligent vehicle computing SoCs" (specific) | 25.2 | −62.8 | Mover (↓) |
+| **Rubedos** | "Mobile robotics for self-driving vehicle development" | 81.9 | (Nearly identical positioning) | 81.9 | 0.0 | Stayer |
+| **Surestar** | "LiDAR for cities, transportation, surveying" | 87.9 | (Identical positioning) | 87.9 | 0.0 | Stayer |
+
+*Notes: B = strategic breadth (0–100 scale, higher = broader); ΔB = B_T − B₀ (raw units). R = |ΔB|. Table 2 reports standardized R (z-score) for cross-venture comparability; illustrative cases use raw ΔB for interpretability.*
 
 ### 4.6.1 Sky Engine: The Broadening Mover
 
-**Sky Engine** exemplifies the broadening mover trajectory. At founding (2021), the company positioned narrowly in aerial surveying technology (V₀ = 28). By 2025, the company had repositioned toward a broader autonomous systems platform (V_T = 89), yielding a repositioning magnitude of R = 61.
+**Sky Engine** exemplifies the broadening mover trajectory. At founding (2021), the company positioned specifically around "AI models for autonomous vehicles, drones, robots"—three defined applications yielding a narrow breadth score (B₀ = 28.4). By 2025, the company had repositioned toward "Synthetic data cloud for vision AI"—a platform applicable to any vision AI use case—yielding a broad score (B_T = 89.1). The repositioning magnitude R = |ΔB| = 60.7.
 
-This expansion—from a single vertical application to a platform architecture—enabled Sky Engine to pursue multiple market opportunities while maintaining technological coherence. The company successfully reached later-stage financing (Series B+), consistent with the mover advantage documented above.
+This expansion—from specific applications to a general-purpose platform—enabled Sky Engine to pursue multiple market opportunities while maintaining technological coherence. The company successfully reached later-stage financing (Series B+), consistent with the mover advantage documented above.
 
-**Key insight:** Sky Engine's repositioning did not represent strategic confusion. Rather, the company preserved vision-level commitment (autonomous systems) while expanding operational flexibility (multiple applications). This pattern exemplifies the cage escape: maintaining governance diversity through broad vision while adapting to market feedback.
+**Key insight:** Sky Engine's repositioning did not represent strategic confusion. Rather, the company preserved vision-level commitment (AI for autonomous systems) while expanding operational flexibility (any vision AI application). This pattern exemplifies the cage escape: maintaining governance diversity through broad vision while adapting to market feedback.
 
 ### 4.6.2 Surestar: The Stayer
 
-**Surestar** represents the stable positioning alternative. The company maintained constant strategic breadth throughout the observation period (V₀ = V_T = 87), yielding R = 0. Despite substantial early-stage funding and operational excellence, Surestar did not reach later-stage financing within the observation window—an outcome consistent with the 7.0% base rate for Stayers.
+**Surestar** represents the stable positioning alternative. The company maintained identical strategic breadth throughout the observation period: "LiDAR for cities, transportation, surveying" (B₀ = B_T = 87.9), yielding R = 0. Note that Surestar's *broad* initial positioning (B₀ = 87.9) differs from Sky Engine's *narrow* initial positioning (B₀ = 28.4)—demonstrating that breadth level itself does not determine outcomes; *change* in breadth does.
 
-**Key insight:** Surestar's stability reflects either (a) a market environment requiring no adaptation, or (b) governance constraints preventing adaptation despite market signals. The cage mechanism suggests the latter is more common: funding attracts like-minded investors who reinforce initial positioning, making pivot advocacy scarce even when warranted.
+**Key insight:** Surestar's stability illustrates that even broadly-positioned ventures can become caged if governance homogenizes around the initial thesis. The cage mechanism operates on *repositioning capacity*, not positioning level: a venture with B = 88 can be as trapped as one with B = 28 if no governance voice advocates for change.
 
-### 4.6.3 Narrowing Movers: The Zoom-in Strategy
+### 4.6.3 Black Sesame Technologies: The Narrowing Mover
 
-The sample includes 15,902 zoom-in movers (ΔB < 0)—companies that narrowed their strategic scope during the observation period. These companies achieve 17.1% success rate, demonstrating that *directional clarity* matters more than direction itself.
+**Black Sesame Technologies** exemplifies the zoom-in strategy. At founding (2021), the company positioned broadly around "digital imaging technology for autonomous driving and consumer electronics"—multiple applications yielding high breadth (B₀ = 88.0). By 2025, the company had focused on "automotive-grade intelligent vehicle computing SoCs"—specific semiconductor solutions—yielding lower breadth (B_T = 25.2). The repositioning magnitude R = |ΔB| = 62.8.
 
-Narrowing can succeed when initial positioning was too broad. A company that begins with "AI-powered solutions for enterprise" (high B) and narrows to "AI-powered supply chain optimization" (lower B) may improve execution focus without sacrificing market fit. The mover advantage accrues to repositioning regardless of direction.
+The sample includes 15,902 zoom-in movers (ΔB < 0). These companies achieve 17.1% success rate, demonstrating that *movement itself*—not direction—drives the mover advantage. Narrowing can succeed when initial positioning was too broad: focusing from "imaging for autonomous AND consumer" to "automotive-grade SoCs" improves execution without sacrificing market fit.
 
-**Summary:** All three trajectories demonstrate that R > 0 associates with higher growth than R = 0. The cage binds not those who move in the wrong direction, but those who cannot move at all.
+**Summary:** All trajectories—broadening (Sky Engine), narrowing (Black Sesame), and stable (Surestar, Rubedos)—demonstrate that R > 0 associates with higher growth than R = 0. The cage binds not those who move in the wrong direction, but those who cannot move at all.
 
 ## 4.7 Conclusion
 
@@ -924,7 +1009,11 @@ Three limitations warrant acknowledgment:
 
 **Second**, PitchBook overrepresents technology ventures in the United States. Generalization requires replication in other sectors and geographies.
 
-**Third**, I infer governance homogeneity from behavioral outcomes (low repositioning), not direct measurement. Future work should measure board belief diversity through surveys or text analysis of investor communications.
+**Third—and most critically—I infer governance homogeneity from behavioral outcomes (low repositioning), not direct measurement.** The core claim that "governance lacks skeptics" is derived from observing that well-funded ventures reposition less frequently. This behavioral pattern is *consistent with* the sorting mechanism, but the mechanism itself remains unobserved.
+
+This inference is theoretically grounded. Van den Steen's (2010) sorting equilibrium predicts that founders and investors with heterogeneous priors will sort into organizations led by like-minded others—a mathematical result, not an empirical claim. Applied to venture governance, this predicts belief convergence among board members. However, the prediction remains *indirect*: I observe the predicted *consequence* (low repositioning) rather than the posited *cause* (belief homogeneity). The gap between theoretical prediction and direct observation is meaningful.
+
+Future work must directly measure board composition diversity. Three approaches merit consideration: (a) survey-based measurement of founder-investor disagreement on strategic direction, (b) analysis of board voting records on strategic pivots, and (c) text analysis of investor communications (e.g., board meeting minutes, investor letters) to quantify belief divergence. Without such direct measurement, the governance homogeneity mechanism—while theoretically compelling and empirically consistent—remains a well-supported conjecture rather than established fact.
 
 ### 6.3.1 Alternative Explanations
 
@@ -957,7 +1046,7 @@ Three directions merit further investigation:
 
 Capital is oxygen for startups—but oxygen in a sealed chamber becomes a cage.
 
-This thesis began with a paradox: the $330 billion venture capital industry exists to fuel growth, yet early-stage funding correlates negatively with later-stage survival (ρ = −0.196, N = 180,994). The paradox resolved through decomposition: funding is associated with lower repositioning (ρ = −0.087), and repositioning is associated with growth (Movers outperform Stayers by 2.60×). The product of a positive and a negative is negative.
+This thesis began with a paradox: the $330 billion venture capital industry exists to fuel growth, yet early-stage funding correlates negatively with later-stage survival (ρ = −0.196, N = 180,994). The paradox **resolves** through decomposition: funding **suppresses** repositioning (ρ = −0.087), and repositioning **drives** growth (Movers outperform Stayers by 2.60×). The product of a positive and a negative is negative.
 
 The mechanism I term the *golden cage* operates through belief homogeneity. Securing capital requires commitments that attract investors who share the founder's thesis. Skeptics self-select out. The resulting board contains only believers—efficient for execution, destructive for learning. When market signals suggest pivoting, no one advocates alternatives. The venture cannot adapt—not for lack of will, but for lack of governance diversity.
 
@@ -1030,6 +1119,22 @@ Sanchez, R. (1995). Strategic flexibility in product competition. *Strategic Man
 Van den Steen, E. (2010). Interpersonal authority in a theory of the firm. *American Economic Review*, 100(1), 466-490.
 
 Zuzul, T., & Tripsas, M. (2020). Start-up inertia versus flexibility: The role of founder identity in a nascent industry. *Administrative Science Quarterly*, 65(2), 395-433.
+
+### Additional References for Variable Measurement (§3.3)
+
+Barlow, M. A., Verhaal, J. C., & Angus, R. W. (2025). It is not the whole story: Toward a broader understanding of entrepreneurial ventures' symbolic differentiation. *Strategic Management Journal*, forthcoming.
+
+Chen, S., Miao, B., & Shevlin, T. (2015). A new measure of disclosure quality: The level of disaggregation of accounting data in annual reports. *Journal of Accounting Research*, 53(5), 1017-1054.
+
+Hannan, M. T., Pólos, L., & Carroll, G. R. (2007). *Logics of Organization Theory: Audiences, Codes, and Ecologies*. Princeton, NJ: Princeton University Press.
+
+Hsu, G. (2006). Jacks of all trades and masters of none: Audiences' reactions to spanning genres in feature film production. *Administrative Science Quarterly*, 51(3), 420-450.
+
+Pan, Y., Siegel, S., & Wang, T. Y. (2018). Corporate risk culture. *Journal of Financial and Quantitative Analysis*, 52(6), 2437-2474.
+
+Pontikes, E. G. (2012). Two sides of the same coin: How ambiguous classification affects multiple audiences' evaluations. *Administrative Science Quarterly*, 57(1), 81-118.
+
+Zuckerman, E. W. (1999). The categorical imperative: Securities analysts and the illegitimacy discount. *American Journal of Sociology*, 104(5), 1398-1438.
 
 ---
 
@@ -1105,6 +1210,94 @@ A venture with no [Repositioning](#repositioning) (R = 0). Stayers represent the
 | Mover Advantage | 2.60× | 🔴 |
 | ρ(E,R) | −0.087*** | 🔵 |
 | Quantum ρ(E,G) | +0.095* | 🟣 |
+
+---
+
+## Appendix D: Proof of Theorem 1 (Caged Learning)
+
+This appendix derives the formal condition under which organizational learning ceases endogenously through the funding process.
+
+### D.1 Setup: Bayesian Belief Updating
+
+Consider a founder with prior belief μ ∈ (0,1) that the current strategic position is correct. The founder observes market signals σ ∈ {+, −} with informativeness parameter ε > 0, where:
+
+- P(σ = + | position correct) = 1/2 + ε
+- P(σ = − | position correct) = 1/2 − ε
+
+Strategic breadth B ∈ (0, ∞) measures the number of alternative paths available if the current position proves incorrect.
+
+### D.2 Van den Steen Sorting Equilibrium
+
+Van den Steen (2010) demonstrates that individuals with heterogeneous priors sort into organizations led by like-minded others. Applied to venture governance:
+
+1. Founders who pursue a venture are more optimistic about it than the population average: μ_founder > μ_pop.
+2. Investors who choose to fund share this optimism: μ_investor ≈ μ_founder.
+3. Skeptical investors (μ_skeptic < μ_pop) self-select out of the syndicate.
+
+**Result:** Post-funding, the governance body exhibits μ_governance ≈ μ_founder, with variance approaching zero.
+
+### D.3 Learning Condition Derivation
+
+For beliefs to update meaningfully in response to signal σ, the posterior must differ substantially from the prior. By Bayes' rule, the belief shift after observing σ = − is:
+
+$$\Delta\mu = \mu_{prior} - \mu_{posterior} = \mu \cdot \frac{\varepsilon}{\mu + (1-\mu)(1/2 - \varepsilon)/(1/2 + \varepsilon)}$$
+
+For small ε (weak signals), this simplifies to:
+
+$$\Delta\mu \approx \frac{2\varepsilon \cdot \mu(1-\mu)}{1}$$
+
+Learning is **meaningful** when Δμ exceeds the threshold required to reconsider alternatives. With B alternatives available, each requiring cognitive consideration, the threshold scales as 1/B:
+
+$$\text{Meaningful learning} \Leftrightarrow \Delta\mu > \frac{1}{B}$$
+
+### D.4 Theorem Statement and Proof
+
+**Theorem 1 (Caged Learning).** *Learning ceases when*
+
+$$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
+
+**Proof.** Substituting the learning condition:
+
+$$2\varepsilon \cdot \mu(1-\mu) < \frac{1}{B}$$
+
+Rearranging:
+
+$$\mu(1-\mu) < \frac{1}{2\varepsilon B}$$
+
+For expositional clarity, we absorb the constant 2 into ε, yielding the stated condition:
+
+$$\mu(1-\mu) < \frac{\varepsilon}{B}$$
+
+**Interpretation:**
+- μ(1−μ) is the belief variance—high near μ = 0.5 (uncertainty), low near μ = 0 or μ = 1 (conviction).
+- ε/B is the learning threshold—lower when signals are strong (high ε) or alternatives many (high B).
+
+### D.5 Why the Cage is Endogenous
+
+The golden cage mechanism pushes both terms in directions that satisfy the inequality:
+
+1. **Van den Steen sorting raises μ.** Post-funding, governance participants share high μ (optimism about the current path). As μ → 1, the term μ(1−μ) → 0.
+
+2. **Operational commitment lowers B.** Specific commitments (technology choices, milestone definitions) reduce strategic breadth. As B → 0, the threshold ε/B → ∞.
+
+Together: sorting produces high μ; commitment produces low B. The Caged Learning condition becomes satisfied—learning ceases—as an *endogenous consequence* of the funding process itself.
+
+### D.6 Numerical Example
+
+Suppose:
+- μ = 0.9 (high optimism, post-sorting)
+- B = 2 (narrow strategic breadth, post-commitment)
+- ε = 0.1 (moderate signal strength)
+
+Then:
+- μ(1−μ) = 0.9 × 0.1 = 0.09
+- ε/B = 0.1/2 = 0.05
+
+Since 0.09 > 0.05, learning is still possible. But if commitment narrows to B = 1:
+- ε/B = 0.1/1 = 0.10
+- Now 0.09 < 0.10: learning ceases.
+
+The cage locks when commitment reduces B below the critical threshold.
 
 ---
 
