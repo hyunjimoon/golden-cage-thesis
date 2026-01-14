@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T07:42:34-05:00
+  - 2026-01-14T07:44:34-05:00
 ---
 
 
@@ -1196,7 +1196,7 @@ Standard econometric responses to causal identification—instrumental variables
 
 I propose an alternative path: **simulation-driven theory testing**. Following the Layers of Theoretical Explanation (LTE) framework (Kozlowski et al., 2025), the goal shifts from estimating causal effects to testing whether a generative mechanism (Layer 3) produces patterns consistent with observed data (Layer 1). The golden cage mechanism—commitment → sorting → homogeneity → rigidity—can be formalized as an agent-based simulation where heterogeneous founders and investors match, form boards, receive signals, and update (or fail to update) beliefs. If the simulated patterns match observed correlations (ρ(E,R) < 0, ρ(R,G) > 0, ρ(E,G) < 0), this provides *generative* evidence for the mechanism distinct from *identificational* evidence.
 
-As Gelman (2020) argues: "In 10 years, statistical theory will be mostly about gaining a deep understanding of simulation as profitable abstraction of counterfactually repeatable phenomenon." The insight applies here. Rather than seeking exogenous variation that may not exist, we can build computational models that encode the proposed mechanism and ask: does this mechanism *generate* the patterns we observe? Simulation treats theory not as something to be identified through clever instrumental strategies, but as something to be *tested* through its ability to reproduce empirical regularities.
+As O'Rourke (2020) argues: "In 10 years, statistical theory will be mostly about gaining a deep understanding of simulation as profitable abstraction of counterfactually repeatable phenomenon." The insight applies here. Rather than seeking exogenous variation that may not exist, we can build computational models that encode the proposed mechanism and ask: does this mechanism *generate* the patterns we observe? Simulation treats theory not as something to be identified through clever instrumental strategies, but as something to be *tested* through its ability to reproduce empirical regularities.
 
 ### 6.4.2 Specific Directions
 
@@ -1254,8 +1254,6 @@ Fine, C. H. (2024). Scale it: A practitioner's guide to growing a startup. MIT S
 
 Gans, J. S., Stern, S., & Wu, J. (2019). Foundations of entrepreneurial strategy. *Strategic Management Journal*, 40(5), 736-756.
 
-Gelman, A. (2020, August 5). Some things do not seem to spread easily: The role of simulation in statistical practice and perhaps theory. *Statistical Modeling, Causal Inference, and Social Science* [Blog]. https://statmodeling.stat.columbia.edu/2020/08/05/somethings-do-not-seem-to-spread-easily-the-role-of-simulation-in-statistical-practice-and-perhaps-theory/
-
 Ghemawat, P. (1991). *Commitment: The Dynamic of Strategy*. New York: The Free Press.
 
 Gompers, P. A., & Lerner, J. (2001). The venture capital revolution. *Journal of Economic Perspectives*, 15(2), 145-168.
@@ -1297,6 +1295,8 @@ Levinthal, D. A., & March, J. G. (1993). The myopia of learning. *Strategic Mana
 March, J. G. (1991). Exploration and exploitation in organizational learning. *Organization Science*, 2(1), 71-87.
 
 McGrath, R. G. (1999). Falling forward: Real options reasoning and entrepreneurial failure. *Academy of Management Review*, 24(1), 13-30.
+
+O'Rourke, K. (2020, August 5). Some things do not seem to spread easily: The role of simulation in statistical practice and perhaps theory. *Statistical Modeling, Causal Inference, and Social Science* [Blog]. https://statmodeling.stat.columbia.edu/2020/08/05/somethings-do-not-seem-to-spread-easily-the-role-of-simulation-in-statistical-practice-and-perhaps-theory/
 
 Porter, M. E. (1996). What is strategy? *Harvard Business Review*, 74(6), 61-78.
 
