@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T00:09:20-05:00
+  - 2026-01-14T00:12:59-05:00
 ---
 
 
@@ -550,10 +550,12 @@ The composite index averages the three components: **C = (C_a + C_b + C_c) / 3**
 | Variable | Mean | SD | Min | Median | Max |
 |:---------|-----:|---:|----:|-------:|----:|
 | Early Funding (E, M USD) | 4.2 | 8.7 | 0.1 | 1.5 | 250 |
-| Strategic Breadth (B_0) | 52.3 | 18.4 | 0 | 51 | 100 |
+| Strategic Breadth (B₀) | 52.3 | 18.4 | 0 | 51 | 100 |
 | Strategic Breadth (B_T) | 54.1 | 19.2 | 0 | 53 | 100 |
-| Repositioning (R) | 0.31 | 0.42 | 0 | 0.15 | 2.8 |
+| Repositioning (R, standardized) | 0.31 | 0.42 | 0 | 0.15 | 2.8 |
 | Growth (G) | 0.115 | 0.32 | 0 | 0 | 1 |
+
+*Note: R is reported in standardized units (z-score) for cross-venture comparability. Raw R = |B_T − B₀| ranges 0–100; the max standardized value of 2.8 corresponds to approximately 65 raw units. See §4.6 for illustrative cases using raw values.*
 
 **Key distributional features:**
 
@@ -622,14 +624,14 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 
 **The core finding:** Movers outperform Stayers by **2.60×** (18.1% vs. 7.0%, p < 0.001, χ² = 5,322). This binary classification is the primary taxonomy used throughout subsequent analyses.
 
-**Table 5b: Directional Decomposition — 3-Way Classification (Secondary)**
+**Table 5b: Directional Decomposition — Among Movers (R > 0)**
 
-| Direction | Criteria | N | % | Success Rate (G) |
-|:----------|:---------|--:|--:|:----------------:|
-| **Zoom-in** | ΔB < 0, R > τ | 15,902 | 8.8% | 17.1% |
-| **Zoom-out** | ΔB > 0, R > τ | 20,487 | 11.3% | 18.4% |
+| Direction | Criteria | N | % of Movers | Success Rate (G) |
+|:----------|:---------|--:|:-----------:|:----------------:|
+| **Zoom-in** | ΔB < 0 | 15,902 | 21.8% | 17.1% |
+| **Zoom-out** | ΔB > 0 | 20,487 | 28.1% | 18.4% |
 
-*Note: ΔB = change in business scope breadth. Zoom-in = narrowing focus; Zoom-out = expanding scope.*
+*Note: ΔB = B_T − B₀. Zoom-in = narrowing (ΔB < 0); Zoom-out = expanding (ΔB > 0). Remaining Movers (36,554) have minimal directional change.*
 
 **Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—explains the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the primary identification.
 
@@ -672,7 +674,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 | Software | 226,896 | −0.001 | (ns) | 6.8% |
 | **Quantum** | 1,144 | **+0.095** | * | 12.3% |
 
-*Note: E = first_financing_size (M USD), G = growth (binary: Series B+ achievement). Data verified from PitchBook (2021-2025).*
+*Note: E = first_financing_size (M USD), G = growth (binary: reached Later Stage VC). Data verified from PitchBook (2021-2025).*
 
 [Figure 7: Industry ρ(E,G) Correlations](figures/Fig_4_industry_heterogeneity_rho.png)
 
@@ -1174,7 +1176,7 @@ The organizational capacity to reposition in response to market feedback. Flexib
 Measurable strategic movement between an initial positioning (B₀) and a terminal positioning (B_T), calculated as R = |B_T − B₀|. Repositioning captures the behavioral manifestation of strategic flexibility.
 
 #### Growth (G)
-Venture survival to later developmental stages, operationalized as progression to Series C+ funding, IPO, or acquisition. Symbolized by 🟢 (green).
+Venture survival to later developmental stages, operationalized as reaching Later Stage VC financing (binary). The base rate is 11.5% across the sample. Symbolized by 🟢 (green).
 
 #### Strategic Breadth (B)
 The scope of potential markets, technologies, or applications implied by a venture's positioning, measured on a 0–100 scale using dictionary-based text analysis.
