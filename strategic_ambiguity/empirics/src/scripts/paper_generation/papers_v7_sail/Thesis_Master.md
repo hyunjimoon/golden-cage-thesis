@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T00:12:59-05:00
+  - 2026-01-14T00:33:12-05:00
 ---
 
 
@@ -200,7 +200,7 @@ The contribution is threefold. First, I document a negative funding-growth corre
 
 ## 1.1 General Motivation
 
-Venture capital governance—through commitment structures and investor selection—**cages** founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the $330 billion venture capital industry has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension through strategic ambiguity—positioning that attracts diverse stakeholders while preserving the option to pivot.
+Venture capital governance—through commitment structures and investor selection—**cages** founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the U.S. venture capital industry—which deployed over $330 billion annually at its 2021 peak—has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension through strategic ambiguity—positioning that attracts diverse stakeholders while preserving the option to pivot.
 
 For instance, Tesla's early positioning as "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition, enabling the company to pivot across segments (Roadster → Model S → Model 3) without losing governance support. In contrast, Better Place raised $850 million for "battery swapping infrastructure"—a commitment so specific that when market feedback favored charging over swapping, no board member advocated for the alternative. The company liquidated in 2013 with $500 million locked into obsolete infrastructure.
 
@@ -1066,6 +1066,10 @@ The cage need not be fatal. With deliberate governance design—committing at th
 
 Adner, R., & Levinthal, D. A. (2004). What is not a real option: Considering boundaries for the application of real options to business strategy. *Academy of Management Review*, 29(1), 74-85.
 
+Anderson, P., & Tushman, M. L. (1990). Technological discontinuities and dominant designs: A cyclical model of technological change. *Administrative Science Quarterly*, 35(4), 604-633.
+
+Arthur, W. B. (1989). Competing technologies, increasing returns, and lock-in by historical events. *The Economic Journal*, 99(394), 116-131.
+
 Barney, J. (1991). Firm resources and sustained competitive advantage. *Journal of Management*, 17(1), 99-120.
 
 Blank, S. (2013). Why the lean start-up changes everything. *Harvard Business Review*, 91(5), 63-72.
@@ -1082,11 +1086,15 @@ Dixit, A. K., & Pindyck, R. S. (1994). *Investment Under Uncertainty*. Princeton
 
 Eisenberg, E. M. (1984). Ambiguity as strategy in organizational communication. *Communication Monographs*, 51(3), 227-242.
 
+Ewens, M., Nanda, R., & Rhodes-Kropf, M. (2018). Cost of experimentation and the evolution of venture capital. *Journal of Financial Economics*, 128(3), 422-442.
+
 Fine, C. H. (1998). *Clockspeed: Winning Industry Control in the Age of Temporary Advantage*. Reading, MA: Perseus Books.
 
 Ghemawat, P. (1991). *Commitment: The Dynamic of Strategy*. New York: The Free Press.
 
 Gompers, P. A., & Lerner, J. (2001). The venture capital revolution. *Journal of Economic Perspectives*, 15(2), 145-168.
+
+Gompers, P., Kovner, A., Lerner, J., & Scharfstein, D. (2010). Performance persistence in entrepreneurship. *Journal of Financial Economics*, 96(1), 18-32.
 
 Gans, J. S., Stern, S., & Wu, J. (2019). Foundations of entrepreneurial strategy. *Strategic Management Journal*, 40(5), 736-756.
 
@@ -1094,11 +1102,21 @@ Grimes, M. G. (2018). The pivot: How founders respond to feedback through idea a
 
 Guzman, J., & Stern, S. (2020). The state of American entrepreneurship: New estimates of the quantity and quality of entrepreneurship for 32 US states, 1988–2014. *American Economic Journal: Economic Policy*, 12(4), 212-243.
 
+Hallen, B. L., Cohen, S. L., & Bingham, C. B. (2020). Do accelerators work? If so, how and for whom? *Organization Science*, 31(4), 878-907.
+
 Hayes, R. H., & Wheelwright, S. C. (1979). The dynamics of process-product life cycles. *Harvard Business Review*, 57(2), 127-136.
 
 Hellmann, T., & Puri, M. (2002). Venture capital and the professionalization of start-up firms: Empirical evidence. *Journal of Finance*, 57(1), 169-197.
 
+Hochberg, Y. V., Ljungqvist, A., & Lu, Y. (2007). Whom you know matters: Venture capital networks and investment performance. *The Journal of Finance*, 62(1), 251-301.
+
+Hsu, D. H., & Ziedonis, R. H. (2013). Resources as dual sources of advantage: Implications for valuing entrepreneurial-firm patents. *Strategic Management Journal*, 34(7), 761-781.
+
 Huchzermeier, A., & Loch, C. H. (2001). Project management under risk: Using the real options approach to evaluate flexibility in R&D. *Management Science*, 47(1), 85-101.
+
+Jensen, M. C., & Meckling, W. H. (1976). Theory of the firm: Managerial behavior, agency costs and ownership structure. *Journal of Financial Economics*, 3(4), 305-360.
+
+Jordan, W. C., & Graves, S. C. (1995). Principles on the benefits of manufacturing process flexibility. *Management Science*, 41(4), 577-594.
 
 Kerr, W. R., Nanda, R., & Rhodes-Kropf, M. (2014). Entrepreneurship as experimentation. *Journal of Economic Perspectives*, 28(3), 25-48.
 
