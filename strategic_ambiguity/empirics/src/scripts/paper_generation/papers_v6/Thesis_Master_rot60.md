@@ -3,10 +3,33 @@ modified:
   - 2026-01-09T07:11:21-05:00
   - 2026-01-09T07:30:00-05:00
   - 2026-01-09T20:47:35-05:00
-  - 2026-01-11T19:08:08-05:00
+  - 2026-01-13T07:55:28-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
+# q
+1. cash vs capital vs resource?
+2. 1. Evidence: Founders of failed well-funded ventures frequently express regret not pivoting, proving motivation was not the constraint. -> fanduel
+3. mover disaggregation
+	1. option1: stayer vs focusing vs broadening ![[Pasted image 20260109194106.png]]
+	2. option2: mover vs stayer
+4. "tesla: vertical integration" -> broadening?? pivoting vs strategic reorientation vs vertical integration (btw )
+5. include or exclude mobility case in P
+
+
+# issues
+
+1. ![[Pasted image 20260109193207.png]]
+2. ### [¶15] Case Evidence: Segway -> patented tech, losing out 
+3.  [[📜Terwiesch09_innov_tourn]]'s segway
+4. para28
+	1. add luca - disagreement predicts success
+	2. ![[Pasted image 20260109201750.png]]
+5. ![[Pasted image 20260109202006.png]]
+6. tesla: vertical integration VS wholesale to direct sale
+7. replace ![](figures/Fig-ARG_mover_vs_stayer.png)with ![[Pasted image 20260109202602.png]]
+8. par.22: add ![[Pasted image 20260109203005.png]]
+9. remove the right panel![[Pasted image 20260109204717.png]]
 # The Golden Cage: How Early Funding Suppresses Venture Growth
 
 **Hyunji Moon**
