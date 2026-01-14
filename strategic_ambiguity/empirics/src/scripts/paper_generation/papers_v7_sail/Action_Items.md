@@ -6,6 +6,7 @@ modified:
   - 2026-01-11T08:33:43-05:00
   - 2026-01-11T15:30:00-05:00
   - 2026-01-13T08:20:00-05:00
+  - 2026-01-14T06:01:33-05:00
 ---
 [[Thesis_Master]]
 
@@ -164,6 +165,97 @@ modified:
     (c) text analysis of investor communications.
     ```
   - **Abstract ¶2 Update:** Add "inferred from repositioning behavior and theoretically grounded in sorting equilibria"
+
+---
+
+## Issue #055: Update Appendix D: Proof of Theorem 1 (Caged Learning)
+
+### Original Intent (왜 만드나?)
+> Appendix D의 Caged Learning 증명이 현재 thesis의 H1/H2/H3 framework과 완전히 정렬되어야 함. Van den Steen Sorting → Commitment Trap (H1) → Flexibility Premium (H2)의 논리적 연결 강화 필요.
+
+### Acceptance Test (언제 DONE인가?)
+- [x] D.1-D.6의 notation이 본문 Ch.2 mechanism과 일치 (E, R, G, B 변수명 통일)
+- [x] Van den Steen (2010) → H1 (Commitment Trap) 연결 명확화
+- [x] Learning threshold 1/B가 Figure 2 (B Trajectories)와 연동
+- [x] Theorem 1 statement가 H3 (Funding Paradox)의 formal justification 제공
+
+### Verification Question
+> "Appendix D를 읽은 후 H1/H2/H3의 수리적 기초가 명확히 이해되는가?"
+
+**Status:** DONE (2026-01-13)
+
+---
+
+## Issue #056: Update Section 5.3 Segment × Collaborate Framework
+
+### Original Intent (왜 만드나?)
+> Section 5.3 "Evaluate: Segment × Collaborate Framework"을 **Balanced Growth** 관점으로 재구성. Hayes-Wheelwright (1979) Product-Process Matrix + Hausmann08 Growth Diagnostics + Fine24 논문을 통합하여 "Market × Ops = Parallel Growth" 프레임워크 완성.
+
+### Input Sources
+1. **Fine24 Paper**: Scale It Framework (Nail it → Scale it → Sail it)
+2. **Hausmann08 Growth Diagnostics**: Liebig's Barrel metaphor (binding constraints)
+3. **Hayes-Wheelwright (1979)**: Process-Product Life Cycles Matrix
+4. **Transcript**: Charlie Fine의 "parallel growth" 개념 (Nxstage kidney case, Skinny Girl case)
+
+### Key Theoretical Integration
+```
+Growth = Market × Ops | Only filled area represents true value
+
+TYPE A: STUNTED Growth (The Golden Cage)
+  - Ops Only, High Friction, Low Market
+
+TYPE B: HOLLOW Growth (The Mirage)
+  - Promise Only, High Market, Low Capability
+
+TYPE C: PARALLEL Growth (The Engine)
+  - Market × Ops Synchronized Expansion
+```
+
+**Liebig's Barrel Insight (Hausmann08)**:
+- Growth bound by shortest stave (binding constraint)
+- 스타트업: 모든 것이 부족해 보이지만, 실제로 binding constraint는 1-2개
+- "Which constraint, if relaxed, delivers the biggest bang for effort?"
+
+### Output Deliverables
+
+#### 1. Two-Panel Figure (Fig.9_balanced_growth.png)
+**Panel A: Anatomy of Growth (3 Types)**
+| Type | Name | Market | Ops | Result |
+|:----:|:-----|:------:|:---:|:-------|
+| A | Stunted (Golden Cage) | Low | High | Tall narrow bar |
+| B | Hollow (Mirage) | High | Low | Wide empty box |
+| C | Parallel (Engine) | High | High | Large filled square |
+
+**Panel B: Growth Diagnostics Tree**
+```
+Low Productivity / Econ Activity
+├── Low Profit (Market Attractiveness)
+│   ├── Insufficient differentiation
+│   ├── Weak competitive advantage/IP
+│   └── Regulatory challenges
+└── Challenges in Securing Funding
+    ├── Bad global finance
+    └── Bad local finance
+        ├── Insufficient internal cash
+        └── Inefficient capital allocation
+```
+
+### Acceptance Test (언제 DONE인가?)
+- [x] Fig.9_balanced_growth.png 생성 (Panel A: 3 Types, Panel B: Growth Tree) ✅ 2026-01-14
+- [x] Hayes-Wheelwright (1979) 인용 추가 (Process-Product Matrix) ✅ 이미 §5.3.3 + References에 있음
+- [x] Hausmann08 Growth Diagnostics 인용 + Liebig's Barrel 설명 ✅ 이미 §5.3.2 + References에 있음
+- [x] Fine24 "Parallel Growth" 개념 → Balanced Growth Path로 formalize ✅ §5.3.6 + References 추가
+- [x] Motional AV case 2-3 paragraphs 작성 (Segment × Collaborate 적용) ✅ 이미 §5.3.5에 있음
+
+### Verification Question
+> "Section 5.3을 읽고 'Market × Ops = Growth'의 균형 성장 원리가 명확히 전달되는가?" ✅ YES
+
+### References Added
+- Hayes & Wheelwright (1979) - Already in References
+- Hausmann et al. (2008) - Already in References
+- Fine (2024) - Added 2026-01-14
+
+**Status:** ✅ DONE (2026-01-14)
 
 ---
 
@@ -357,6 +449,7 @@ modified:
 | **#056** | Theorem 1 Proof | Appendix D created (D.1-D.6) + §2.5.1 reference | 2026-01-13 |
 | **#057** | Governance Limitation | §6.3 Third limitation expanded (1¶ → 3¶) | 2026-01-13 |
 | **#058** | Quantum Exception | SKIP - User requested to keep in main text | 2026-01-13 |
+| **#056b** | §5.3 Segment × Collaborate | Fig9_balanced_growth.png + Fine(2024) ref + Type naming update | 2026-01-14 |
 
 ---
 

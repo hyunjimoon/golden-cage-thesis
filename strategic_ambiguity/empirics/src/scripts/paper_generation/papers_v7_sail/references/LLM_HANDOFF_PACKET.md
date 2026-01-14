@@ -1,116 +1,182 @@
-# 🚀 LLM 인수인계 패킷 v2.1 (1시간 최종 전투)
-> **Purpose**: 4명 Agent가 1시간 내 RoT 87% → 95% 달성
-> **Updated**: 2026-01-13 12:30 by 나대용 (Claude CLI2)
-> **Deadline**: 1시간
-> **Location**: /Users/hyunjimoon/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
+# 🚀 LLM 인수인계 패킷 v3.0 (RoT 95% 최종 마무리)
+> **Purpose**: 후속 Agent가 남은 작업을 완료하여 RoT 95% 달성
+> **Updated**: 2026-01-14 06:30 by 🐅권준 (Claude Code)
+> **Current RoT**: 93.5% → Target 95%
+> **Location**: `/papers_v7_sail/`
 
 ---
 
 ## 🎭 Agent Identity (상단에 붙여넣기용)
 
 ```
-# 당신은 🐢정운, 느리지만 깊이 있는 초안을 짓는 거북이입니다. ChatGPT 5.2 Pro의 창의적 서술력으로 §2.7, §4.6 Chapter Conclusion과 Contribution Statement 초안을 작성하세요. 완성되면 텍스트를 권준에게 전달하세요.
+# 당신은 🐅권준입니다. 글의 논리적 전개와 엄밀한 테크닉 검증 전략을 담당합니다. Thesis_Master.md의 남은 TODO 이슈(#059-#063)를 완료하세요.
 
-# 당신은 🐅권준, 논리의 숲을 정밀하게 다듬는 호랑이입니다. Claude Code의 파일 직접 수정 능력으로 Thesis_Master.md에 TIER 0 이슈(#055 C측정, #056 Proof, #057 Limitation)를 삽입하고, 정운의 초안을 통합하세요.
-
-# 당신은 🐣나대용, 새롭게 태어나 시각을 책임지는 병아리입니다. Claude Code의 코드 실행 능력으로 figures/ 폴더의 Python 스크립트를 찾아 Color Convention(RED/GREEN/GOLD)을 일괄 적용하고, 권준과 동시에 병렬로 움직이세요.
-
-# 당신은 🐙김완, 여덟 개의 눈으로 외부를 검증하는 문어입니다. Gemini의 웹 검색으로 Citation(Anderson & Tushman 1990, Van den Steen 2010)의 정확성을 확인하고, 학술적 표현의 적절성을 검토하세요. 오류 발견 시 즉시 통제사에게 보고하세요.
+# 당신은 🐣나대용입니다. figure, narrative을 담당합니다. 문화예술부장관직이죠. 🐅권준과 병렬로, 잘 협력하는 역할입니다.
 ```
 
-### 모델별 역할 배정 근거
+## 🎯 현재 상태 (AS-IS) — 2026-01-14
 
-| Agent | Model | 장점 활용 | 담당 |
-|:------|:------|:----------|:-----|
-| 🐢정운 | ChatGPT 5.2 Pro | 창의적 서술, 긴 문맥, 자연스러운 문체 | Chapter Conclusion 초안 |
-| 🐅권준 | Claude Code | 파일 직접 수정, 정밀한 편집 | Thesis_Master.md TIER 0 |
-| 🐣나대용 | Claude Code | 코드 실행, 병렬 작업 | Figure 색상 일괄 수정 |
-| 🐙김완 | Gemini | 웹 검색, 실시간 fact-check | Citation/Term QA |
+| Metric | Value | Change |
+|:-------|:------|:-------|
+| **RoT** | **93.5%** | ↑ from 87% |
+| 완료 Issue | 21/25 | TIER 0 완료 |
+| **TODO Issue** | **5개 (#059-#063)** | ↓ from 9 |
+| Figure 생성 | Fig9_balanced_growth.png ✅ | NEW |
 
----
-
-## 🚨 현재 상태 (AS-IS)
-
-| Metric | Value |
-|:-------|:------|
-| RoT | 87% |
-| 완료 Issue | 16/25 |
-| **TODO Issue** | **9개 (#055-#063)** |
-| Figure 색상 미준수 | 8개 |
+### ✅ 금일 완료 주요 작업 (2026-01-14)
+1. **#056b** §5.3 Segment × Collaborate 재구성 (Charlie Fine 스타일)
+2. **Fig9_balanced_growth.png** 생성 (Panel A: 2×2 Matrix, Panel B: Growth Diagnostics Tree)
+3. **용어 통일**: narrowing/broadening → **zoom-in/zoom-out**
+4. **G 정의 통일**: 연속형 `G = (F_t − E) / E`
+5. **대표 기업 교체**: median 대표 (Hope Care, True Botanicals, Leap Green Energy)
+6. **Kanter (2011)** 인용 추가, **Fine (2024)** Reference 추가
 
 ---
 
-## 🎯 1시간 미션 배분
+## 🚨 남은 TODO (5개)
 
-### 🐅 권준 (Claude Code) — Logic & Proof
-| 우선순위 | Issue | 작업 | 예상 시간 |
-|:--------:|:------|:-----|:---------:|
-| 🔴 P0 | **#055** | Commitment (C) Operationalization → §3.3 | 15분 |
-| 🔴 P0 | **#056** | Theorem 1 Proof → Appendix C | 20분 |
-| 🔴 P0 | **#057** | Governance Homogeneity Limitation → §6.3 확장 | 10분 |
-| 🟠 P1 | #058 | Quantum Exception → Appendix D 이동 | 15분 |
+### TIER 1: IMPORTANT (RoT +1.5%)
 
-**Output**: Thesis_Master.md 수정 4건
+| # | Issue | 작업 | 예상 |
+|:-:|:------|:-----|:----:|
+| **#059** | Chapter 2 Conclusion | §2.6 추가 (Ch.3으로 bridge) | 10분 |
+| **#060** | Contribution Statement | 각 챕터 intro에 Zhao 패턴 적용 | 15분 |
 
----
+### TIER 2: NICE TO HAVE
 
-### 🐢 정운 (ChatGPT 5.2 Pro) — Chapter Conclusions
-| 우선순위 | Issue | 작업 | 예상 시간 |
-|:--------:|:------|:-----|:---------:|
-| 🟠 P1 | **#059** | §2.7 Chapter 2 Conclusion 초안 | 20분 |
-| 🟠 P1 | **#059** | §4.6 Chapter 4 Conclusion 초안 | 20분 |
-| 🟠 P1 | #060 | Contribution Statement 패턴화 | 15분 |
-
-**Output**: 3개 섹션 초안 (권준이 통합)
+| # | Issue | 작업 | 예상 |
+|:-:|:------|:-----|:----:|
+| #061 | Operational Commitment Heuristic | 70/30 휴리스틱 formalize | 10분 |
+| #062 | Growth Metrics Clarification | Table 2 G 통계 검증 | 10분 |
+| #063 | Appendix B Expansion | 데이터 필드 상세 | 15분 |
 
 ---
 
-### 🐣 나대용 (Claude Code) — Figure Color Fix
-| 우선순위 | Figure | 수정 내용 |
-|:--------:|:-------|:----------|
-| 🔴 CRITICAL | Fig-I_capital_paradox | 회귀선 → **RED** |
-| 🔴 CRITICAL | Fig_growth_by_R | Stayer→**RED**, Mover→**GREEN** |
-| 🔴 CRITICAL | Fig-Ch4_mobility_failure | Q3 Sweet Spot → **GOLD** |
-| 🟠 HIGH | Fig-I_mediation_dag | 화살표 색상 분리 |
-| 🟠 HIGH | Fig-ARG_mover_vs_stayer | Stayer→RED, Mover→GREEN |
+## 📋 핵심 업데이트 요약
 
-**Color Palette**:
+### 1. 용어 통일: Zoom-in / Zoom-out
+
+| Old | New | 의미 |
+|:----|:----|:-----|
+| Narrowing | **Zoom-in** | ΔB < 0, strategic focus |
+| Broadening | **Zoom-out** | ΔB > 0, strategic expansion |
+
+**문헌 근거**: Kanter, R. M. (2011). "Zoom in, zoom out." *Harvard Business Review*.
+
+**색상 표준 (Ch2_Fig1 기준)**:
 ```python
-BLUE   = '#4a90d9'  # 🔵 Commitment
-RED    = '#e74c3c'  # 🔴 Rigidity/Suppression
-GREEN  = '#2ed573'  # 🟢 Growth/Flexibility
-GOLD   = '#ffd700'  # 🟡 Key Insight
-BLACK  = '#1a1a2e'  # ⚫ Trap/Stayer
+ZOOM_OUT = '#2E8B57'  # 🟢 GREEN (Sea Green)
+ZOOM_IN  = '#4682B4'  # 🔵 BLUE (Steel Blue)
+STAYER   = '#808080'  # ⚫ GRAY
+CAGE     = '#DAA520'  # 🟡 GOLD (Golden Cage highlight)
 ```
 
-**Output**: 5개 figure 업데이트
+### 2. G 정의 통일 (연속형)
+
+```
+G = (F_t − E) / E   (Funding growth multiple)
+
+Median by Type:
+- Zoom-out: 2.57×
+- Zoom-in:  2.32×
+- Stayer:   0.60×
+```
+
+### 3. 대표 기업 (median 대표)
+
+| Company | Type | B₀ | B_T | G |
+|:--------|:-----|---:|----:|--:|
+| Hope Care | Zoom-out | 39.6 | 88.2 | 2.71× |
+| True Botanicals | Zoom-in | 81.9 | 37.5 | 2.45× |
+| Leap Green Energy | Stayer | 87.5 | 87.5 | 0.80× |
+
+### 4. §5.3 재구성 (Charlie Fine 스타일)
+
+**새 구조:**
+- §5.3.1 The Anatomy of Growth (Type A/B/C → Operational Trap/Market Mirage/Balanced Engine)
+- §5.3.2 The Binding Constraint (Liebig's Barrel)
+- §5.3.3 The Diagonal Principle (Nail-Scale-Sail ↔ Process-Product Matrix)
+- §5.3.4 Case Studies (NxStage, SkinnyGirl, Segway)
+- §5.3.5 Application: Motional AV
+- §5.3.6 The Parallel Growth Principle (Scale-it Toolkit)
+
+**새 Table (§5.3.1):**
+| Type | Name | Market Pull | Ops Capability |
+|:----:|:-----|:-----------:|:--------------:|
+| A | Operational Trap | Low | High |
+| B | Market Mirage | High | Low |
+| C | Balanced Engine | High | High |
 
 ---
 
-### 🐙 김완 (Gemini) — QA & Verification
-| 작업 | 체크 항목 |
-|:-----|:----------|
-| Canonical Numbers | ρ=-0.196, N=180,994, 2.60× 일관성 |
-| Color Convention | 모든 figure가 palette 준수하는지 |
-| Term Consistency | "Repositioning" (not "Movement"), "Caged Learning" |
-| Citation Check | Anderson & Tushman (1990), Van den Steen (2010) |
+## 🔗 핵심 파일 위치
 
-**Output**: QA Report + 오류 리스트
+```
+papers_v7_sail/
+├── Thesis_Master.md           ← AUTHORITATIVE SOURCE (v3.0)
+├── Action_Items.md            ← Issue Tracker (v4.0)
+├── figures/
+│   ├── Ch2_Fig1_B_trajectories.png  ← 색상 기준
+│   ├── Fig9_balanced_growth.png     ← NEW (Panel A+B)
+│   └── ...
+├── code/figures/
+│   └── generate_fig9_balanced_growth.py  ← Figure 9 생성 코드
+└── references/
+    ├── glossary.md
+    └── LLM_HANDOFF_PACKET.md  ← 본 파일
+```
 
 ---
 
-## 📋 System Prompt (복사용)
+## 📊 Canonical Numbers (절대 변경 금지)
+
+| Metric | Value | Location |
+|:-------|:------|:---------|
+| ρ(E,G) | **−0.196***  | Abstract, §4.2 |
+| ρ(E,R) | **−0.087***  | §4.2 |
+| N | **180,994** ventures | §3.2 |
+| Mover Advantage | **2.60×** (18.1% vs 7.0%) | §4.3.2 |
+| Zoom-out Median G | 2.57× | §4.6 |
+| Zoom-in Median G | 2.32× | §4.6 |
+| Stayer Median G | 0.60× | §4.6 |
+
+---
+
+## 🎟️ 금일 완료 Issue
+
+| # | Issue | 완료 내용 | Date |
+|:-:|:------|:----------|:-----|
+| #055 | C Operationalization | §3.3 + Table 1 | 2026-01-13 |
+| #056 | Theorem 1 Proof | Appendix D | 2026-01-13 |
+| #057 | Governance Limitation | §6.3 (3¶) | 2026-01-13 |
+| #056b | §5.3 Segment × Collaborate | Charlie Fine 스타일 재구성 | 2026-01-14 |
+| — | Fig9_balanced_growth.png | Panel A + Panel B | 2026-01-14 |
+| — | 용어 통일 | zoom-in/zoom-out | 2026-01-14 |
+| — | G 정의 통일 | 연속형 funding multiple | 2026-01-14 |
+
+---
+
+## ✅ 남은 완료 기준
+
+- [ ] §2.6 Chapter 2 Conclusion 추가 (#059)
+- [ ] Contribution Statement Zhao 패턴 적용 (#060)
+- [ ] 나대용: Figure 색상 zoom-in/zoom-out 용어 반영
+- [ ] QA: 모든 figure가 새 색상 palette 준수
+
+---
+
+## 📝 System Prompt (복사용)
 
 ```
 ═══════════════════════════════════════════════════════════════
-🚨 Golden Cage Thesis Agent — 1시간 최종 전투
+🚨 Golden Cage Thesis Agent — RoT 95% 달성
 ═══════════════════════════════════════════════════════════════
 
 【미션】
-RoT 87% → 95% (1시간 내)
+RoT 93.5% → 95% (TODO 5개 완료)
 
 【핵심 방정식】
-dG/dE = 🔴(dG/dR) × 🔵(dR/dE) = (+) × (−) = ⚫(−)
+dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−)
 
 【Canonical Numbers — 절대 변경 금지】
 • ρ(E,G) = −0.196***
@@ -118,123 +184,31 @@ dG/dE = 🔴(dG/dR) × 🔵(dR/dE) = (+) × (−) = ⚫(−)
 • Mover Advantage = 2.60× (18.1% vs 7.0%)
 • ρ(E,R) = −0.087***
 
-【Color Convention】
-🔵 #4a90d9 = Commitment (파란약)
-🔴 #e74c3c = Flexibility/Rigidity (빨간약)
-🟢 #2ed573 = Growth
-⚫ #1a1a2e = Trap/Stayer
-🟡 #ffd700 = Key Insight
-🟣 #9b59b6 = Quantum Exception
+【용어 표준】
+• Zoom-out (ΔB > 0) = strategic expansion 🟢
+• Zoom-in (ΔB < 0) = strategic focus 🔵
+• Stayer (R = 0) ⚫
+• Golden Cage 🟡
 
-【핵심 구분】
-"Cannot" not "Will Not" — 못 하는 것, 안 하는 것 아님
+【Color Convention (Ch2_Fig1 기준)】
+🟢 #2E8B57 = Zoom-out (GREEN)
+🔵 #4682B4 = Zoom-in (BLUE)
+⚫ #808080 = Stayer (GRAY)
+🟡 #DAA520 = Golden Cage (GOLD)
 
 【최소 명사 원칙】
 • Caged Learning (X Learning Cessation)
-• Mover Advantage (X Mobility Premium)
+• Zoom-in / Zoom-out (X Narrowing / Broadening)
 • Repositioning (X Movement, Pivot)
 
 【Authoritative Source】
 1. Thesis_Master.md — 모든 수정 기준
-2. glossary.md — 용어 + 코드 매핑
-
-【보고 체계】
-완료 시 → "🎟️#XXX 완료" 보고
-막힘 시 → 3회 재시도 후 통제사에게 보고
+2. Ch2_Fig1_B_trajectories.png — 색상 기준
 
 ═══════════════════════════════════════════════════════════════
 ```
 
 ---
 
-## 🎟️ TODO Issue 상세 (Priority Order)
-
-### TIER 0: CRITICAL (반드시 완료)
-
-**#055: Commitment (C) Operationalization**
-> Original Intent: "C는 인과사슬 첫 변수인데 측정 방법이 없다"
-```
-§3.3에 추가:
-Commitment (C) operationalized as initial strategic specificity:
-(a) Product category count (fewer = higher commitment)
-(b) Milestone granularity (more specific = higher)
-(c) Investor agreement terms (staged = higher)
-```
-
-**#056: Theorem 1 Proof**
-> Original Intent: "μ(1−μ) < ε/B 공식의 출처가 없다"
-```
-Appendix C 생성:
-1. Bayesian updating setup
-2. Van den Steen sorting → μ > μ_pop
-3. Learning condition derivation
-4. Threshold: μ(1−μ) < ε/B → learning ceases
-```
-
-**#057: Governance Homogeneity Limitation**
-> Original Intent: "governance lacks skeptics를 직접 측정 안 했다"
-```
-§6.3 확장 (1¶ → 3¶):
-- 행동(low R)에서 추론, 직접 측정 아님
-- Van den Steen 이론 근거 있지만 INDIRECT
-- 향후 연구: board 설문, 투표 기록, 텍스트 분석 필요
-```
-
-### TIER 1: IMPORTANT
-
-**#058: Quantum Exception Streamline**
-> §4.3.3 이론 → Appendix D로 이동, 본문에 2-3¶만 남김
-
-**#059: Chapter Conclusions**
-> §2.7, §4.6 추가 (Zhao 템플릿 N.6 준수)
-
-**#060: Contribution Statement**
-> "This chapter [initiates/investigates] X" 패턴화
-
-### TIER 2: NICE TO HAVE
-
-#061, #062, #063 — 시간 남으면
-
----
-
-## 🔗 파일 위치
-
-```
-/Users/hyunjimoon/tolzul/Front/On/love(cs)/strategic_ambiguity/
-  empirics/src/scripts/paper_generation/papers_v7_sail/
-  ├── Thesis_Master.md      ← AUTHORITATIVE SOURCE
-  ├── Action_Items.md       ← Issue Tracker
-  ├── figures/              ← 색상 수정 대상
-  │   ├── Fig-I_capital_paradox.png
-  │   ├── Fig_growth_by_R.png
-  │   └── ...
-  └── references/
-      ├── glossary.md       ← 용어집 (통합본 v2.0)
-      └── LLM_HANDOFF_PACKET.md  ← 본 파일
-```
-
----
-
-## ⏰ Timeline (1시간)
-
-| 시간 | 권준 | 정운 | 나대용 | 김완 |
-|:----:|:-----|:-----|:-------|:-----|
-| 0-15분 | #055 C측정 | #059 Ch.2결론 | Fig 3개 Critical | Numbers QA |
-| 15-35분 | #056 Proof | #059 Ch.4결론 | Fig 2개 High | Color QA |
-| 35-50분 | #057 Limitation | #060 Contribution | 잔여 작업 | Term QA |
-| 50-60분 | 통합/검수 | 권준에게 전달 | PR | Final Report |
-
----
-
-## ✅ 완료 기준
-
-- [ ] Thesis_Master.md에 §3.3(C측정), Appendix C, §6.3 확장 반영
-- [ ] §2.7, §4.6 Chapter Conclusions 추가
-- [ ] Critical 3개 Figure 색상 준수 확인
-- [ ] QA Report에 오류 0건
-
----
-
-*"必死卽生 必生卽死" — 반드시 죽고자 하면 살고, 반드시 살고자 하면 죽는다*
-
-*v2.1 Updated: 2026-01-13 by 나대용 (Claude Code) — Agent Identity 추가*
+*v3.0 Updated: 2026-01-14 06:30 by 🐅권준 (Claude Code)*
+*Major: §5.3 재구성, zoom-in/zoom-out 통일, Fig9 생성, G 연속형 통일*
