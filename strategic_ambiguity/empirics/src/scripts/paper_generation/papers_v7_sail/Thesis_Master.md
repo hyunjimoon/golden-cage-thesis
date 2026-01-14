@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T08:17:58-05:00
+  - 2026-01-14T08:33:24-05:00
 ---
 
 
@@ -74,12 +74,10 @@ The contribution is threefold. First, I document a negative funding-growth corre
 - [Chapter 2: The Golden Cage Mechanism](#chapter-2-the-golden-cage-mechanism)
   - [2.1 Introduction](#21-introduction)
     - [2.1.1 Contributions](#211-contributions)
-    - [2.1.2 Analytic Structure: Patterns vs. Mechanisms](#212-analytic-structure-patterns-vs-mechanisms)
-    - [2.1.3 Related Work](#213-related-work)
+    - [2.1.2 Related Work](#212-related-work)
   - [2.2 Commitment as Double-Edged Sword](#22-commitment-as-double-edged-sword)
   - [2.3 The Golden Cage Mechanism](#23-the-golden-cage-mechanism)
     - [2.3.1 Formal Condition for Caged Learning](#231-formal-condition-for-caged-learning)
-    - [2.3.2 The Cruel Optimism of Commitment](#232-the-cruel-optimism-of-commitment)
   - [2.4 Real Options Foundation](#24-real-options-foundation)
   - [2.5 Hypotheses](#25-hypotheses)
   - [2.6 Conclusion](#26-conclusion)
@@ -114,9 +112,8 @@ The contribution is threefold. First, I document a negative funding-growth corre
   - [4.4 Industry Heterogeneity](#44-industry-heterogeneity-where-the-cage-bites-hardest)
     - [4.4.1 Cross-Industry Comparison](#441-cross-industry-comparison)
     - [4.4.2 The Era of Ferment Exception](#442-the-era-of-ferment-exception)
-    - [4.4.3 Deep Tech Strategy: Non-Dilutive Alternatives](#443-deep-tech-strategy-non-dilutive-alternatives)
-    - [4.4.4 Commitment Types: Staged vs. Partial](#444-commitment-types-staged-vs-partial)
-    - [4.4.5 The Triple Vulnerability](#445-the-triple-vulnerability)
+    - [4.4.3 Commitment Types: Staged vs. Partial](#443-commitment-types-staged-vs-partial)
+    - [4.4.4 The Triple Vulnerability](#444-the-triple-vulnerability)
   - [4.5 Robustness Checks](#45-robustness-checks)
     - [4.5.1 Temporal Stability](#451-temporal-stability)
     - [4.5.2 Survival Bias Conditioning (TR-02)](#452-survival-bias-conditioning-tr-02)
@@ -305,38 +302,7 @@ This chapter **first examines** how commitment shapes governance in venture stra
 
 **Structural vs. motivational constraint.** We distinguish "cannot pivot" (structural) from "will not pivot" (moral hazard), with distinct implications for intervention design. If founders *will not* pivot due to reduced incentives, the prescription is intensified monitoring. If founders *cannot* pivot due to structural constraints (the cage), the prescription is governance redesign—preserving skeptical voices before funding eliminates them.
 
-### 2.1.2 Analytic Structure: Patterns vs. Mechanisms
-
-This thesis distinguishes between **observed correlational patterns** (measurable) and **theoretical mechanisms** (latent). The distinction is critical for interpreting the evidence and follows the Layers of Theoretical Explanation (LTE) framework developed by Kozlowski et al. (2025), which identifies three levels of theoretical depth:
-
-| Layer | Question | Focus | This Thesis |
-|:-----:|:---------|:------|:------------|
-| **Layer 1: Construct** | *What* relationships exist? | Observable covariation | ρ(E,G) = −0.196, ρ(E,R) = −0.087, Mover Advantage = 2.60× |
-| **Layer 2: Process** | *How* do actions unfold? | Action sequences in context | Commit → Fund → Filter → Homogenize → Cage |
-| **Layer 3: Mechanism** | *Why* do actors behave this way? | Generative drivers | μ(1−μ) < ε/B (Theorem 1: Caged Learning) |
-
-The LTE framework clarifies that construct-level findings (Layer 1) predict but do not explain. Layer 2 describes the *sequence* through which the golden cage forms: operational commitment attracts like-minded investors, who filter skeptics from governance, producing belief homogeneity that eliminates learning capacity. Layer 3 specifies the *generative mechanism* that drives this sequence: Van den Steen's (2010) sorting equilibrium produces high μ (shared optimism), while operational commitment produces low B (narrow strategic breadth), satisfying the Caged Learning condition.
-
-**Observed Patterns (Layer 1 — Measured Variables):**
-- **H1 (Commitment Trap):** ρ(Funding, Repositioning) < 0 — Funding suppresses repositioning
-- **H2 (Flexibility Premium):** ρ(Repositioning, Growth) > 0 — Repositioning enables growth
-- **H3 (Funding Paradox):** ρ(Funding, Growth) < 0 — Net negative effect (H1 × H2)
-
-**Process Sequence (Layer 2 — Action Flow):**
-- Commit → Fund → Filter → Homogenize → Signal Loss → Cage
-
-**Theoretical Mechanisms (Layer 3 — Generative Drivers):**
-- **CEF Mechanism:** Commitment → Funding → Flexibility↓ (how funding suppresses adaptation capacity)
-- **FG Mechanism:** Flexibility → Growth (why adaptation capacity enables growth)
-- **Caged Learning:** μ(1−μ) < ε/B formalizes when learning ceases endogenously
-
-The patterns are directly testable from data. The mechanisms are theoretical constructs that *explain* the patterns but require inference from observed variables. Specifically:
-- **Flexibility (F)** is latent; we proxy it through Repositioning (R)
-- **Commitment (C)** is latent; we proxy it through Strategic Breadth (B)
-
-This chapter develops the theoretical mechanisms (Layers 2-3). Chapter 4 tests whether the observed patterns (Layer 1) are consistent with these mechanisms.
-
-### 2.1.3 Related Work
+### 2.1.2 Related Work
 
 **Commitment in strategy.** Commitment has a long history in strategy with early works, dating back to Schelling (1960) and Ghemawat (1991), focusing on the value of irreversible choices. Most early works in this literature have focused on determining the optimal *level* of commitment (Porter, 1996; Ghemawat, 1991), thus optimizing over a single dimension. In contrast, our decision also involves commitment *structure*—vision versus operational. More importantly, we identify not just the optimal commitment level, but also structural properties that arise from the interplay of commitment type and governance composition and can cause potential pitfalls in practice.
 
@@ -394,13 +360,7 @@ $$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
 
 Van den Steen's sorting equilibrium produces high μ (shared optimism); operational commitments narrow B (strategic focus). Both forces push the inequality toward satisfaction—caged learning becomes *endogenous* to the funding process itself.
 
-### 2.3.2 The Cruel Optimism of Commitment
-
-The golden cage is not always forged with investor money. Sometimes founders construct their own cages through non-monetary commitments—sunk costs of time, reputation, and identity. This echoes Berlant's (2011) concept of *cruel optimism*: the attachment to a vision that actively impedes the flourishing it promises.
-
-"Falling forward"—McGrath's (1999) prescription for entrepreneurial learning—requires letting go of prior commitments. But what must be released extends beyond financial sunk costs: the identity as "the EV battery-swap company," the reputation staked on a public roadmap, the relationships built around a specific thesis. The cage binds not only through governance homogeneity but through the founder's own psychological investment.
-
-This suggests a diagnostic question for founders: **What's limiting your future mobility?** If the answer involves non-monetary commitments—identity, reputation, relationships—the cage may be self-constructed, not investor-imposed.
+Having formalized the condition under which learning ceases, we now situate this mechanism within real options theory.
 
 ## 2.4 Real Options Foundation
 
@@ -751,20 +711,7 @@ $$\text{Standard: } (+) \times (-) = (-) \quad|\quad \text{Ferment: } (+) \times
 
 The cage binds only when commitment forecloses *identifiable* alternatives; under radical uncertainty, no alternatives are identifiable.
 
-### 4.4.3 Deep Tech Strategy: Non-Dilutive Alternatives
-
-The Quantum exception suggests a strategic implication for deep tech ventures: when the cage mechanism operates, founders may benefit from *non-dilutive* funding sources that avoid governance homogenization.
-
-**The "Chicago Booth Approach":** Deep tech ventures operating in eras of ferment can pursue grants, government contracts, and strategic partnerships that provide capital without attracting thesis-driven investors. This strategy—common among quantum computing and fusion energy startups—preserves governance diversity by avoiding the sorting equilibrium that dilutive funding triggers.
-
-Non-dilutive sources include:
-- **Government grants:** NSF, DARPA, DOE provide capital without board seats
-- **Strategic partnerships:** Corporate R&D agreements fund exploration without equity
-- **Prize competitions:** XPRIZE-style awards reward outcomes without governance control
-
-This approach trades growth speed for strategic flexibility—a rational choice when the uncertainty premium is high and the commitment cost is severe.
-
-### 4.4.4 Commitment Types: Staged vs. Partial
+### 4.4.3 Commitment Types: Staged vs. Partial
 
 The deep tech exception also illuminates a distinction between two forms of early commitment:
 
@@ -781,7 +728,7 @@ Counterintuitively, ventures that receive "confident" funding (staged commitment
 
 **Figure 8:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
-### 4.4.5 The Triple Vulnerability
+### 4.4.4 The Triple Vulnerability
 
 The mobility sector exemplifies the cage mechanism:
 
@@ -876,15 +823,7 @@ The cage binds tightest in:
 - High-uncertainty environments (nascent markets, regulatory flux)
 - First-time founders (who lack credibility for flexibility)
 
-**So What — Actionable Implications:**
-
-1. **For Founders:** If you operate in a capital-intensive sector or face high uncertainty, consider non-dilutive funding (grants, strategic partnerships) before seeking equity investment. Each funding round narrows your governance diversity.
-
-2. **For Investors:** The 2.60× Mover Advantage suggests that portfolio value may increase by backing founders who preserve repositioning capacity. Ask: "Who in your syndicate would advocate for pivoting if signals turn negative?"
-
-3. **For Both:** Monitor repositioning patterns—not as failures of vision, but as signals of adaptive capacity. A founder who has never repositioned in three years is either perfectly calibrated or structurally caged.
-
-*Section IV has demonstrated where the cage becomes lethal. Section V addresses how to design commitment structures that preserve adaptation capacity.*
+The next chapter addresses how to design commitment structures that preserve adaptation capacity.
 
 ---
 
@@ -895,13 +834,11 @@ The cage binds tightest in:
 
 ## 5.1 Introduction
 
-**This chapter prescribes escape from the cage:** by distinguishing vision-level from operational commitment, we develop governance design principles that preserve adaptation capacity while capturing commitment's credibility benefits.
-
-If funding suppresses repositioning through governance homogeneity, how can founders and investors design commitment structures that preserve adaptation capacity?
+**This chapter shows how to escape the cage.** Founders who distinguish vision from operations can commit credibly *and* stay flexible. The key question: if funding attracts like-minded investors who block pivots, how can founders preserve their ability to adapt?
 
 ## 5.2 Strategic Ambiguity: Spatial Flexibility
 
-**What to commit to.** The cage forms when operational commitment attracts homogeneous believers. The first design principle preserves heterogeneity through **strategic ambiguity**—precision about direction combined with flexibility about destination. This is *spatial* flexibility: breadth in the positioning space.
+**What to commit to.** The cage forms when founders commit to *how* before *why*—and attract only investors who share that operational bet. To stay free, be precise about direction but vague about destination. This is *spatial* flexibility: room to maneuver in positioning space.
 
 Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
 
@@ -911,13 +848,13 @@ Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning ach
 
 ### 5.2.1 The Tesla-Better Place Contrast
 
-The distinction between vision-level and operational commitment explains why two well-funded electric vehicle ventures—Tesla and Better Place—experienced dramatically different fates despite operating in the same market at the same time.
+Why did Tesla survive while Better Place died? Both raised massive funding in the same EV market at the same time.
 
-**Tesla** committed at the vision level: "accelerating the world's transition to sustainable transport." This formulation attracted believers in electrification, believers in autonomy, and believers in energy transition—each projecting their own thesis onto a capacious vision. When Tesla pivoted across segments (Roadster → Model S → Model 3), shifted production strategies (outsourcing → Fremont factory), and transformed its retail model (dealerships → direct sales), governance supported these adaptations because multiple interpretations of "sustainable transport" remained valid. The vision accommodated pivots; it did not constrain them.
+**Tesla** committed to a vision: "accelerate the world's transition to sustainable transport." Investors heard different things—some bet on electrification, others on autonomy, still others on energy storage. When Tesla pivoted from Roadster to Model S to Model 3, changed production (outsourcing → Fremont), and switched retail (dealers → direct), the board supported every move. Why? "Sustainable transport" could mean all these things.
 
-**Better Place** committed at the operational level: "building battery swapping infrastructure." This formulation attracted only believers in that specific mechanism—a narrow coalition united by conviction in swapping rather than charging. When market feedback began to favor fast charging over swapping, no governance voice advocated pivoting. The board contained no skeptics of the swapping thesis, because skeptics had never invested. Better Place raised $850 million but liquidated in 2013, its assets sold for less than $1 million (Bradshaw, 2013)—infrastructure that market evolution rendered obsolete.
+**Better Place** committed to a method: "build battery swapping infrastructure." Only swapping believers invested—no one who doubted the mechanism had reason to join. When the market shifted toward fast charging, no board member championed the pivot. Skeptics had never invested. Better Place raised $850M and liquidated in 2013 for under $1M (Bradshaw, 2013).
 
-The contrast illuminates the cage mechanism. Both companies attracted true believers; only Tesla attracted *diverse* true believers. Vision-level commitment creates a coalition broad enough to contain advocates for multiple implementation paths. Operational commitment creates a coalition so narrow that alternative paths have no champions.
+Both companies attracted true believers, but only Tesla attracted *diverse* believers. Commit to vision, and your board contains advocates for multiple paths. Commit to method, and no one champions alternatives.
 
 ### 5.2.2 Practical Guidance
 
@@ -933,15 +870,15 @@ For investors:
 
 ## 5.3 Staged Commitment: Temporal Flexibility
 
-**When to commit.** The golden cage traps ventures that commit to position before validating assumptions. The second design principle—*staged commitment*—preserves adaptation capacity by sequencing operational commitments over time. This mirrors VC's own practice of **staged financing**: investors commit capital incrementally, preserving the option to withdraw if milestones fail. The symmetry is instructive: *founders should stage their operational commitments just as investors stage their financial commitments.*
+**When to commit.** The cage traps founders who lock in operations before testing assumptions. The escape: stage your commitments the way VCs stage their capital. Investors release money in tranches, keeping the option to walk away. Founders should release flexibility the same way—commit to operations only as the market validates each step.
 
 ### 5.3.1 The Symmetry Principle
 
-Rhodes-Kropf and Liu (2024) advocate staged/milestone investment as the "smart VC" approach: commit tranches conditional on demonstrated progress. This practice reveals preference for optionality—investors value the right to update beliefs as information arrives.
+Rhodes-Kropf and Liu (2024) call staged financing the "smart VC" approach: release tranches only after milestones prove out. VCs do this because they want to update their bets as they learn.
 
-Yet founders often abandon this optionality prematurely. The sorting equilibrium explains why: to attract thesis-driven capital, founders signal conviction through early operational commitment. But the same investors who demand milestones before releasing capital often pressure founders to "commit fully" to attract that capital in the first place. The asymmetry creates the cage.
+But founders often surrender this optionality too early. To attract thesis-driven money, they signal conviction by committing operationally. Ironically, the same investors who demand milestones before releasing capital also pressure founders to "commit fully" upfront. This asymmetry builds the cage.
 
-**The Symmetry Principle:** Match operational commitment timing to capital commitment timing. If investors release capital in stages, founders should release operational flexibility in stages.
+**Match your commitment timing to their capital timing.** If investors release money in stages, release your flexibility in stages.
 
 | VC Practice | Founder Analogy | Rationale |
 |:------------|:----------------|:----------|
@@ -949,11 +886,11 @@ Yet founders often abandon this optionality prematurely. The sorting equilibrium
 | Milestone-based tranches | Market-validated pivots | Update beliefs with evidence |
 | Exit rights | Reposition rights | Licensed moments to reassess |
 
-**Staged vs. Partial Commitment.** An important distinction: *staged* commitment signals investor confidence through milestone-based funding; *partial* commitment signals investor doubt through tentative small checks. Paradoxically, ventures receiving "confident" funding (staged commitment with aggressive milestones) may face stronger golden cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). Staged commitment attracts like-minded investors who believe the milestones are achievable—creating governance homogeneity.
+**Staged vs. Partial.** Not all incremental funding works the same. *Staged* funding signals confidence—investors commit large tranches tied to ambitious milestones. *Partial* funding signals doubt—small checks with vague expectations. Paradoxically, confident funding builds a stronger cage: staged investors all believe the milestones are achievable, so they all think alike. Tentative investors hedge their bets, so founders keep more room to maneuver.
 
 ### 5.3.2 Case Contrast: Segway vs. Tesla
 
-**Segway (Premature Commitment):** Segway raised $100M+ committed to gyroscopic two-wheel platform as THE solution for personal transportation. The cage formed not from vague vision—"revolutionize personal transportation" was appropriately broad—but from premature operational lock-in: $100M invested in gyroscopic manufacturing before validating market demand. Governance homogeneity (celebrity investors all believed in the form factor) produced signal blindness. When market feedback indicated warehouse logistics and campus security as viable applications requiring different form factors, no governance voice advocated pivoting (Terwiesch & Ulrich, 2009). **Segway committed operationally before the market committed financially.**
+**Segway locked in too early.** Segway raised $100M+ and bet everything on gyroscopic two-wheelers. The vision was fine—"revolutionize personal transportation"—but founders sank $100M into manufacturing before testing whether customers wanted the product. Celebrity investors all believed in the form factor, so when market feedback pointed toward warehouse logistics and campus security (applications needing different designs), no board member pushed for a pivot (Terwiesch & Ulrich, 2009). **Segway committed to operations before the market committed to them.**
 
 > **Box: Tesla's "Pivot" Was Mandate Fulfillment**
 >
@@ -965,51 +902,51 @@ Yet founders often abandon this optionality prematurely. The sorting equilibrium
 
 ### 5.3.3 Non-Dilutive Alternatives: The Chicago Booth Approach
 
-The cage binds tightest where thesis-driven capital dominates. One escape route: pursue capital sources that provide funding without governance control.
+The cage grips tightest when thesis-driven VCs dominate. One escape: get money that doesn't come with governance strings.
 
-Deep tech ventures operating in eras of ferment can pursue grants, government contracts, and strategic partnerships that provide capital without attracting thesis-driven investors. This "Chicago Booth approach" enabled quantum and hardware startups to survive the valley of death by sequencing non-dilutive funding *before* seeking VC:
+Deep tech founders can chase grants, government contracts, and corporate partnerships *before* taking VC. This "Chicago Booth approach" helped quantum and hardware startups survive the valley of death:
 
-| Non-Dilutive Source | Advantage | Limitation |
-|:--------------------|:----------|:-----------|
-| **Government grants** (NSF, DARPA, DOE) | Capital without board seats | Slow, competitive |
-| **Strategic partnerships** | R&D funding without equity | May constrain direction |
-| **Prize competitions** (XPRIZE) | Outcome rewards, no governance | Unpredictable |
+| Source | Upside | Downside |
+|:-------|:-------|:---------|
+| **Government grants** (NSF, DARPA, DOE) | Money without board seats | Slow, competitive |
+| **Strategic partnerships** | R&D funding without equity | May limit direction |
+| **Prize competitions** (XPRIZE) | Rewards outcomes, not control | Unpredictable |
 
-The approach preserves temporal flexibility: founders can stage operational commitments on *their* timeline rather than investor-driven milestones. Recognition from government agencies also signals credibility to private investors without the governance constraints that VC boards impose.
+With non-dilutive money, founders stage commitments on *their* timeline—not investor milestones. Winning a government grant also signals credibility to later VCs without handing them board control.
 
 ### 5.3.4 Balanced Growth: The Diagonal Principle
 
-Staged commitment requires knowing *what* to stage. Fine (2022) offers a diagnostic: Growth = Market × Ops. Ventures must grow market size and operational capability in parallel—off-diagonal growth creates bottlenecks (Figure 9).
+But *what* should founders stage? Fine (2022) offers a simple diagnostic: Growth = Market × Ops. Grow both in parallel—fall off the diagonal, and you hit a bottleneck (Figure 9).
 
 ![Figure 9: Balanced Growth Framework](figures/Fig9_balanced_growth.png)
 
-**Figure 9:** Balanced Growth Framework. Panel A shows the 2×2 growth anatomy; Panel B shows the diagnostic tree. Sustainable growth requires staying on the diagonal.
+**Figure 9:** Balanced Growth Framework. Panel A shows the 2×2 growth anatomy; Panel B shows the diagnostic tree. To grow sustainably, stay on the diagonal.
 
-Two bottleneck archetypes illustrate the principle:
+Two traps show what happens when you don't:
 
-- **NxStage (Operational Trap):** Developed breakthrough home hemodialysis technology with operational capability across markets—but nephrologists lacked incentives to switch patients. *Bottleneck: Market Pull.* Excellent ops serving insufficient demand.
+- **NxStage built ops but lacked market.** They developed breakthrough home hemodialysis tech and scaled operations across markets—but nephrologists had no incentive to switch patients. Great ops, no demand.
 
-- **SkinnyGirl Cocktails (Market Mirage):** Fastest-growing spirits brand with enormous demand—but fulfillment partner couldn't scale supply chain. *Bottleneck: Ops Capability.* Market traction without delivery foundation.
+- **SkinnyGirl had market but lacked ops.** The fastest-growing spirits brand in America—but their fulfillment partner couldn't scale. Massive demand, no delivery.
 
-**Application to Motional:** The AV joint venture between Hyundai and Aptiv faces the SkinnyGirl risk—potential market leadership in robotaxis without manufacturing scale to serve it. Their partnership architecture (Uber/Lyft for distribution, HMGIS for hardware) addresses this by *borrowing* ops capability rather than building it prematurely. The principle: diagnose which bottleneck threatens, then stage commitment to address it *before* locking in the other dimension.
+**Motional faces the SkinnyGirl trap.** The Hyundai-Aptiv AV joint venture could win robotaxi leadership but lack manufacturing to serve it. Their solution: *borrow* ops through partnerships (Uber/Lyft for distribution, HMGIS for hardware) rather than build prematurely. Find your bottleneck, then stage commitment to fix it—before locking in the other dimension.
 
 ## 5.4 Governance Design: Structural Flexibility
 
-**Who decides.** The cage crystallizes when governance lacks advocates for alternative paths. The third design principle—*structural flexibility*—ensures decision-making bodies preserve signal diversity. This is about **who** holds power and **how** decisions are made.
+**Who decides.** The cage locks shut when no one at the table champions a different path. To stay flexible, put diverse voices in the room—people who will argue for alternatives when signals shift.
 
-**Table 8: Governance Design Recommendations**
+**Table 8: Five Governance Rules**
 
-| Principle | Implementation | Rationale |
-|:----------|:---------------|:----------|
-| **Preserve Skeptics** | See Table 9 for operationalization | Maintains signal diversity |
-| **Vision vs. Operations** | Commit to direction, not destination | Preserves pivot capacity |
-| **Milestone Flexibility** | Define outcomes, not methods | Allows learning from experiments |
-| **Information Rights** | Share disconfirming signals | Enables belief updating |
-| **Exit Options** | Build in pivot triggers | Creates licensed moments to reassess |
+| Rule | How | Why |
+|:-----|:----|:----|
+| **Keep skeptics** | See Table 9 | Someone must argue for alternatives |
+| **Vision over operations** | Commit to direction, not destination | Leave room to pivot |
+| **Flexible milestones** | Define outcomes, not methods | Let teams experiment |
+| **Share bad news** | Surface disconfirming signals | So boards can update beliefs |
+| **Build exit ramps** | Create pivot triggers | License moments to change course |
 
-### 5.4.1 Operationalizing "Preserve Skeptics"
+### 5.4.1 How to Keep Skeptics
 
-The cage forms when governance lacks advocates for alternative paths. The "Preserve Skeptics" principle requires concrete implementation across three dimensions:
+The cage shuts when everyone at the table agrees. Here's how to keep dissenting voices alive:
 
 **Table 9: Governance Levers for Signal Diversity**
 
@@ -1019,13 +956,13 @@ The cage forms when governance lacks advocates for alternative paths. The "Prese
 | **Board Structure** | Reserve seat for independent perspective | Appoint one board member without financial stake in current direction; consider rotating "devil's advocate" role |
 | **Decision Rules** | Require explicit dissent consideration | Before major pivots/commitments: (1) Document strongest argument against current path, (2) Assign board member to defend alternative, (3) Vote only after hearing counterarguments |
 
-**Syndicate Composition.** The sorting equilibrium predicts that lead investors attract co-investors who share their thesis. To break this homogeneity, founders should actively recruit at least one syndicate member with a distinct investment thesis. A deep-tech investor building a syndicate of fellow deep-tech funds creates belief lock-in; adding a generalist investor or one focused on market applications introduces productive tension.
+**Mix your syndicate.** Lead investors attract co-investors who think like them. Break this: if you're deep tech, add a generalist or market-focused investor. Their different lens creates productive tension.
 
-**Board Structure.** Standard board composition (founder, lead investor, independent) often produces homogeneity because the "independent" member is typically nominated by the lead investor. True independence requires appointing a director who (a) has no financial relationship with existing investors, and (b) brings domain expertise that challenges rather than reinforces the current strategy.
+**Reserve a skeptic seat.** Most "independent" directors get nominated by the lead investor—so they're not truly independent. Appoint someone who (a) has no financial ties to existing investors and (b) brings expertise that *challenges* the current strategy.
 
-**Dissent-Friendly Decision Rules.** Homogeneity emerges not only from who sits at the table, but from how decisions are made. Explicitly structuring deliberation to surface counterarguments—through assigned advocacy roles, written devil's advocate memos, or mandatory "red team" sessions before major commitments—can maintain signal diversity even when belief homogeneity exists.
+**Force dissent before big calls.** Even homogeneous boards can surface alternatives if you structure the conversation right. Assign someone to argue the other side. Write devil's advocate memos. Run red team sessions before major commitments.
 
-**Designing for Disconfirmation.** When disconfirming signals arrive, founders need more than data—they need a *champion in the room*. Consider installing non-voting observers or independent directors whose explicit mandate is to voice inconvenient truths. These governance architects are not adversaries; they are strategic insurance against the cage tightening unseen. The mechanism is simple: before the sorting equilibrium eliminates skeptics entirely, founders must build institutional roles that *protect* skeptical perspectives. A designated "red team" director—one whose success metric is surfacing counterarguments rather than consensus—can maintain signal diversity even after investment has homogenized beliefs.
+**Build roles that protect bad news.** When bad signals arrive, founders need someone who will say it out loud. Install non-voting observers or directors whose job is to voice inconvenient truths. These aren't adversaries—they're insurance. Before investors filter out all the skeptics, create roles that *protect* skeptical voices.
 
 ## 5.5 Boundary Conditions
 
@@ -1045,21 +982,21 @@ The mechanism binds less tightly when:
 
 ## 5.6 Conclusion
 
-This chapter developed prescriptive implications for escaping the cage through three dimensions of flexibility:
+This chapter showed how to escape the cage. Three questions, three answers:
 
-| Dimension | Principle | Question | Key Insight |
-|:----------|:----------|:---------|:------------|
-| **Spatial** | Strategic Ambiguity | *What* to commit to | Commit to direction, not destination |
-| **Temporal** | Staged Commitment | *When* to commit | Match operational commitment to capital commitment timing |
-| **Structural** | Governance Design | *Who* decides | Preserve skeptics before funding eliminates them |
+| Question | Answer | Example |
+|:---------|:-------|:--------|
+| *What* to commit to | Stay vague on method, clear on direction | Tesla won; Better Place died |
+| *When* to commit | Stage operations like VCs stage capital | Segway locked early; Tesla staged |
+| *Who* decides | Keep skeptics at the table | Mix syndicate, reserve skeptic seats |
 
-**Spatial flexibility** (§5.2) shows that moderate strategic breadth (Q3 positioning) achieves the highest survival rates—broad enough to attract diverse believers, focused enough to signal direction. The Tesla-Better Place contrast illustrates how vision-level commitment preserves options while operational commitment forecloses them.
+**Be vague about method, clear about direction** (§5.2). Moderate breadth (Q3) survives best—broad enough to attract diverse believers, focused enough to signal direction. Tesla committed to a vision; Better Place committed to a mechanism. One attracted diverse allies; the other attracted a narrow coalition with no one to champion alternatives.
 
-**Temporal flexibility** (§5.3) introduces the symmetry principle: founders should stage operational commitments just as VCs stage financial commitments. The Segway case shows premature commitment; Tesla shows staged progression. Non-dilutive alternatives (the Chicago Booth approach) enable founders to sequence commitment on their own timeline. The diagonal principle (§5.3.4) shows *what* to stage: diagnose the bottleneck (market vs. ops) and address it before locking in the other dimension.
+**Stage your commitments like VCs stage theirs** (§5.3). VCs release capital in tranches to keep options open. Founders should release flexibility the same way. Segway sank $100M into manufacturing before testing demand. Tesla validated each phase before starting the next. The diagonal principle tells you *what* to stage: find your bottleneck (market or ops), fix it before locking in the other dimension.
 
-**Structural flexibility** (§5.4) operationalizes "preserve skeptics" through syndicate composition, board structure, and decision rules. The cage forms when governance lacks advocates for alternative paths; structural flexibility ensures those advocates survive the sorting equilibrium.
+**Keep skeptics at the table** (§5.4). Mix your syndicate. Reserve a skeptic seat on the board. Force dissent before big decisions. When bad signals arrive, someone needs to say it out loud.
 
-The prescription is clear: design for adaptation *before* funding eliminates the skeptics who make adaptation possible. Chapter 6 concludes with the thesis's contributions and implications.
+The bottom line: design for adaptation *before* funding filters out the skeptics who make adaptation possible.
 
 ---
 
@@ -1504,3 +1441,36 @@ The cage locks when commitment reduces B below the critical threshold.
 
 *Draft prepared for committee review.*
 *Core message: When uncertain, commit to reposition, rather than to position.*
+
+## Appendix E: Supplementary Theoretical Notes
+
+### E.1 The Cruel Optimism of Commitment
+
+The golden cage is not always forged with investor money. Sometimes founders construct their own cages through non-monetary commitments—sunk costs of time, reputation, and identity. This echoes Berlant's (2011) concept of *cruel optimism*: the attachment to a vision that actively impedes the flourishing it promises.
+
+"Falling forward"—McGrath's (1999) prescription for entrepreneurial learning—requires letting go of prior commitments. But what must be released extends beyond financial sunk costs: the identity as "the EV battery-swap company," the reputation staked on a public roadmap, the relationships built around a specific thesis. The cage binds not only through governance homogeneity but through the founder's own psychological investment.
+
+This suggests a diagnostic question for founders: **What's limiting your future mobility?** If the answer involves non-monetary commitments—identity, reputation, relationships—the cage may be self-constructed, not investor-imposed.
+
+### E.2 Deep Tech Strategy: Non-Dilutive Alternatives
+
+The Quantum exception (§4.4.2) suggests a strategic implication for deep tech ventures: when the cage mechanism operates, founders may benefit from *non-dilutive* funding sources that avoid governance homogenization.
+
+**The "Chicago Booth Approach":** Deep tech ventures operating in eras of ferment can pursue grants, government contracts, and strategic partnerships that provide capital without attracting thesis-driven investors. This strategy—common among quantum computing and fusion energy startups—preserves governance diversity by avoiding the sorting equilibrium that dilutive funding triggers.
+
+Non-dilutive sources include:
+- **Government grants:** NSF, DARPA, DOE provide capital without board seats
+- **Strategic partnerships:** Corporate R&D agreements fund exploration without equity
+- **Prize competitions:** XPRIZE-style awards reward outcomes without governance control
+
+This approach trades growth speed for strategic flexibility—a rational choice when the uncertainty premium is high and the commitment cost is severe.
+
+### E.3 Actionable Implications (for Chapter 6 Integration)
+
+*[Content moved from §4.7 for integration into Chapter 6: Discussion]*
+
+1. **For Founders:** If you operate in a capital-intensive sector or face high uncertainty, consider non-dilutive funding (grants, strategic partnerships) before seeking equity investment. Each funding round narrows your governance diversity.
+
+2. **For Investors:** The 2.60× Mover Advantage suggests that portfolio value may increase by backing founders who preserve repositioning capacity. Ask: "Who in your syndicate would advocate for pivoting if signals turn negative?"
+
+3. **For Both:** Monitor repositioning patterns—not as failures of vision, but as signals of adaptive capacity. A founder who has never repositioned in three years is either perfectly calibrated or structurally caged.
