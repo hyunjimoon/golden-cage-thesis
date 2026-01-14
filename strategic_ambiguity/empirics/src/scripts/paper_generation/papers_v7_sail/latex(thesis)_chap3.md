@@ -47,58 +47,16 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
 \hypertarget{strategic-breadth-b}{%
 \subsection{Strategic Breadth (B)}\label{strategic-breadth-b}}
 
-Strategic breadth measures how vaguely a venture positions itself in public communications. High B means the venture positions broadly and ambiguously; low B means it positions specifically. I construct a 0--100 vagueness score from two components: \textbf{Categorical Vagueness} and \textbf{Concreteness Deficit}.
+I operationalize \textbf{Strategic Breadth (B)} using dictionary-based text analysis of company descriptions. Drawing on category spanning research \citep{zuckerman1999the, pontikes2012two} and linguistic concreteness research \citep{pan2018corporate}, I construct a continuous measure (0--100) that captures the degree of vagueness in a venture's positioning.
 
-\hypertarget{theoretical-foundation}{%
-\subsubsection{Theoretical Foundation}\label{theoretical-foundation}}
+The measure combines two validated components:
+\begin{itemize}
+\tightlist
+\item \textbf{Categorical Vagueness}: The prevalence of superordinate terms (e.g., ``platform,'' ``ecosystem'') that span multiple market categories.
+\item \textbf{Concreteness Deficit}: The absence of specific binding markers, such as precise quantitative targets or narrow technical specifications.
+\end{itemize}
 
-I draw on three literatures. First, \textbf{category spanning research} \citep{zuckerman1999the, hannan2007logics, pontikes2012two} shows that ventures using abstract category labels ("platform," "ecosystem") signal broader scope than those using concrete labels ("restaurant," "delivery app"). \citet{hsu2006jacks} shows that category breadth affects how audiences evaluate ventures, spanning multiple categories reduces legitimacy but preserves strategic options.
-
-Second, \textbf{linguistic concreteness research} \citep{pan2018corporate, chen2015a} shows that specific text, quantitative markers, temporal references, technical acronyms, signals that ventures have committed to particular outcomes. Ventures that avoid specificity preserve flexibility by not anchoring stakeholder expectations to measurable targets.
-
-Third, \textbf{symbolic differentiation research} \citep{barlow2025it} examines how quality-signaling resources interact with narrative distinctiveness. Their analysis of 31,270 UK ventures demonstrates that patent-rich ventures strategically modulate narrative distinctiveness based on industry conditions, a finding consistent with the golden cage mechanism where resource acquisition shapes symbolic positioning.
-
-\hypertarget{component-1-categorical-vagueness}{%
-\subsubsection{Component 1: Categorical Vagueness}\label{component-1-categorical-vagueness}}
-
-Following \citet{zuckerman1999the} and \citet{hannan2007logics}, I measure categorical vagueness through the prevalence of \textbf{abstract keywords} in company descriptions and PitchBook keyword fields.
-
-\textbf{Abstraction keywords} (superordinate category terms): - \emph{High abstraction}: "platform," "solution," "ecosystem," "technology," "approach," "service," "advanced," "next-generation," "sustainable," "AI," "data," "analytics" - \emph{Low abstraction}: "device," "application," "tool," "product," "restaurant," "clinic," "factory"
-
-The categorical vagueness score combines two sub-measures:
-
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\item
-  \emph{Abstraction Ratio}: Proportion of keywords belonging to the abstract category. \[\text{Abstraction}_i = \frac{\text{Abstract keywords}}{\text{Total keywords}}\]
-\item
-  \emph{Category Diversity}: Following \citet{pontikes2012two}, ventures spanning multiple distinct categories exhibit higher strategic ambiguity. I measure uniqueness ratio: \[\text{Diversity}_i = \frac{\text{Unique keywords}}{\text{Total keywords}}\]
-\end{enumerate}
-
-The categorical vagueness component averages these sub-measures: \[\text{CategoricalVagueness}_i = 50 \times (\text{Abstraction}_i + \text{Diversity}_i)\]
-
-\hypertarget{component-2-concreteness-deficit}{%
-\subsubsection{Component 2: Concreteness Deficit}\label{component-2-concreteness-deficit}}
-
-Following \citet{pan2018corporate} and \citet{chen2015a}, I measure the \emph{absence} of concrete markers in company descriptions. Ventures that avoid specific commitments, quantitative targets, temporal milestones, technical specifications, preserve strategic flexibility.
-
-\textbf{Concreteness markers} (specificity indicators): - \emph{Temporal specificity}: "Q3 2024," "by 2025," "within 18 months" - \emph{Quantitative specificity}: "95\%," "100x faster," "6x stronger," "\$50M revenue" - \emph{Technical specificity}: "Level 4 autonomy," "510(k) clearance," "LPBF," "DLS"
-
-I count concrete markers per 100 words of description text: \[\text{ConcretenessDensity}_i = \frac{\text{Concrete markers} \times 100}{\text{Total words}}\]
-
-The concreteness deficit (vagueness component) inverts this measure: \[\text{ConcreteDeficit}_i = 100 - \min(\text{ConcretenessDensity}_i \times 5, 100)\]
-
-\hypertarget{composite-score}{%
-\subsubsection{Composite Score}\label{composite-score}}
-
-The final strategic breadth score averages both components: \[B_i = \frac{\text{CategoricalVagueness}_i + \text{ConcreteDeficit}_i}{2}\]
-
-\textbf{Interpretation}: B = 0 indicates maximally specific positioning (narrow breadth); B = 100 indicates maximally vague positioning (broad breadth). The sample mean is B = 52.3 (SD = 18.4), indicating moderate strategic ambiguity on average.
-
-\hypertarget{validation}{%
-\subsubsection{Validation}\label{validation}}
-
-The measure exhibits expected correlations: - \textbf{Convergent validity}: B correlates positively with industry uncertainty (\ensuremath{\rho} = +0.18, p \textless{} 0.001), ventures in nascent markets position more broadly. - \textbf{Discriminant validity}: B correlates near-zero with funding amount (\ensuremath{\rho} = -0.03, ns) at baseline, breadth is a strategic choice, not a resource constraint. - \textbf{Predictive validity}: Initial breadth (\ensuremath{B_0}) predicts repositioning magnitude (\ensuremath{\rho}(\ensuremath{B_0}, R) = +0.11, p \textless{} 0.001), broader initial positioning enables larger subsequent movements.
+B = 0 indicates maximally specific positioning; B = 100 indicates maximally vague positioning. The sample mean is B = 52.3 (SD = 18.4). \emph{Full variable construction details, including keyword dictionaries and scoring formulas, are provided in Appendix C.}
 
 \hypertarget{repositioning-r}{%
 \subsection{Repositioning (R)}\label{repositioning-r}}
@@ -107,7 +65,7 @@ The measure exhibits expected correlations: - \textbf{Convergent validity}: B co
 
 \textbf{Growth (G).}
 
-I operationalize growth as the funding growth multiple: G = (F\_t - E) / E, where F\_t is total funding raised and E is early-stage funding. This continuous measure captures the magnitude of capital accumulation subsequent to initial financing. The median G is 0.9\ensuremath{\times} (near-doubling); the distribution is right-skewed with mean 0.67\ensuremath{\times}.
+I operationalize growth as a \textbf{binary indicator}: G = 1 if the venture reached Later Stage VC (Series C or beyond) by the end of the observation window, G = 0 otherwise. This binary measure captures whether ventures successfully progressed through the funding lifecycle. The base success rate is 11.5\%. \emph{Robustness checks using the continuous funding growth multiple are provided in Appendix D.}
 
 \textbf{Commitment (C).}
 
@@ -132,7 +90,7 @@ The composite index averages the three components: \textbf{C = (C\_a + C\_b + C\
 
 \input{table/descriptive.tex}
 
-\emph{Note: R is reported in standardized units for cross-venture comparability; raw R = \textbar B\_T - \ensuremath{B_0}\textbar{} ranges 0--100. G is the funding growth multiple. See Section~4.6 for illustrative cases.}
+\emph{Note: R is reported in standardized units for cross-venture comparability; raw R = \textbar B\_T - \ensuremath{B_0}\textbar{} ranges 0--100. G = reached Later Stage VC (binary).}
 
 \textbf{Key distributional features:}
 
