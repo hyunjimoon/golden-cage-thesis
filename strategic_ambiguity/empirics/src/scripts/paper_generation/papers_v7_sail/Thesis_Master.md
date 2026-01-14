@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T07:20:13-05:00
+  - 2026-01-14T07:42:34-05:00
 ---
 
 
@@ -1190,11 +1190,21 @@ The governance homogeneity mechanism proposed in this thesis competes with sever
 
 ## 6.4 Future Research
 
+### 6.4.1 Beyond Traditional Econometric Identification
+
+Standard econometric responses to causal identification—instrumental variables, regression discontinuity, difference-in-differences, randomized experiments—face fundamental obstacles in this setting. No natural experiment randomizes governance composition; no discontinuity creates sharp thresholds for belief homogeneity; no valid instrument affects funding without directly affecting repositioning capacity. The search for quasi-experimental variation, while methodologically appealing, may be a dead end.
+
+I propose an alternative path: **simulation-driven theory testing**. Following the Layers of Theoretical Explanation (LTE) framework (Kozlowski et al., 2025), the goal shifts from estimating causal effects to testing whether a generative mechanism (Layer 3) produces patterns consistent with observed data (Layer 1). The golden cage mechanism—commitment → sorting → homogeneity → rigidity—can be formalized as an agent-based simulation where heterogeneous founders and investors match, form boards, receive signals, and update (or fail to update) beliefs. If the simulated patterns match observed correlations (ρ(E,R) < 0, ρ(R,G) > 0, ρ(E,G) < 0), this provides *generative* evidence for the mechanism distinct from *identificational* evidence.
+
+As Gelman (2020) argues: "In 10 years, statistical theory will be mostly about gaining a deep understanding of simulation as profitable abstraction of counterfactually repeatable phenomenon." The insight applies here. Rather than seeking exogenous variation that may not exist, we can build computational models that encode the proposed mechanism and ask: does this mechanism *generate* the patterns we observe? Simulation treats theory not as something to be identified through clever instrumental strategies, but as something to be *tested* through its ability to reproduce empirical regularities.
+
+### 6.4.2 Specific Directions
+
 Three directions merit further investigation:
 
-1. **Direct measurement of belief homogeneity:** Survey-based or text-based measurement of board belief diversity
-2. **Quasi-experimental identification:** VC fund vintage effects, geographic shocks, or industry funding cycles as instruments
-3. **Governance interventions:** Field experiments testing skeptic preservation strategies
+1. **Direct measurement of belief homogeneity:** Survey-based or text-based measurement of board belief diversity, providing Layer 1 data on the posited mechanism
+2. **Agent-based simulation:** Computational models of founder-investor matching, belief updating, and repositioning decisions that test whether the golden cage mechanism generates observed patterns
+3. **Governance interventions:** Field experiments testing skeptic preservation strategies, providing causal evidence for the prescriptive implications
 
 ## 6.5 Closing
 
@@ -1243,6 +1253,8 @@ Fine, C. H. (1998). *Clockspeed: Winning Industry Control in the Age of Temporar
 Fine, C. H. (2024). Scale it: A practitioner's guide to growing a startup. MIT Sloan School of Management Working Paper.
 
 Gans, J. S., Stern, S., & Wu, J. (2019). Foundations of entrepreneurial strategy. *Strategic Management Journal*, 40(5), 736-756.
+
+Gelman, A. (2020, August 5). Some things do not seem to spread easily: The role of simulation in statistical practice and perhaps theory. *Statistical Modeling, Causal Inference, and Social Science* [Blog]. https://statmodeling.stat.columbia.edu/2020/08/05/somethings-do-not-seem-to-spread-easily-the-role-of-simulation-in-statistical-practice-and-perhaps-theory/
 
 Ghemawat, P. (1991). *Commitment: The Dynamic of Strategy*. New York: The Free Press.
 
