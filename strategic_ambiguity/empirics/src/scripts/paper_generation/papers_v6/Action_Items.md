@@ -18,6 +18,42 @@ modified:
 
 ---
 
+## 📋 NEW ISSUE TEMPLATE
+
+새 Issue 생성 시 반드시 아래 형식 사용:
+
+```markdown
+## Issue #XXX: [제목]
+
+### Original Intent (왜 만드나?)
+> [한 문장으로 핵심 문제 — 이게 해결 안 되면 DONE 불가]
+
+### Acceptance Test (언제 DONE인가?)
+- [ ] 조건 1: [구체적 확인 항목]
+- [ ] 조건 2: [구체적 확인 항목]
+
+### Verification Question (Scott Stern & Charlie Fine의 질문)
+> "_____ 가 _____ 되었는가?"
+```
+
+**예시:**
+```markdown
+## Issue #055: Survival Bias Defense
+
+### Original Intent
+> "성공한 Mover가 일찍 exit해서 우리 패턴이 편향됐다는 공격 방어"
+
+### Acceptance Test
+- [ ] Year 3+ 조건부 분석 결과가 Section 4.5.2에 삽입됨
+- [ ] Mover Advantage가 여전히 유의함 (p < 0.05)
+- [ ] 2-3 paragraphs 작성 완료
+
+### Verification Question
+> "Year 3+ 생존 벤처만 봐도 Mover가 여전히 Stayer보다 유리한가?"
+```
+
+---
+
 ## CLI DIVISION OF LABOR
 
 | Agent | Role | Issues | Focus |
@@ -45,24 +81,26 @@ modified:
 
 ## MASTER ISSUE TRACKER
 
-| # | Issue | TIER | Status | Owner |
-|:--|:------|:----:|:------:|:-----:|
-| #028 | Qualified Movement Definition (R > 0) | 0 | DONE | - |
-| #030 | Robustness Graph (2020-2025) | 0 | DONE | - |
-| #041 | Magnitude Contextualization | 1 | DONE | CLI1 |
-| #042 | Industry Heterogeneity Table | 0 | DONE | - |
-| #043 | Pattern vs Mechanism Re-org | 1 | DONE | CLI1 |
-| #044 | Causality Control & H0 | 0 | DONE | CLI1 |
-| #045 | Alternative Explanations | 1 | DONE | CLI1 |
-| #046 | Deep Tech & Commitment Types | 1 | DONE | CLI1 |
-| #047 | Measurement Validity (Breadth) | 0 | DONE | CLI1 |
-| #048 | Data Transparency (Figure 4) | 0 | DONE | CLI1 |
-| #049 | Example Extraction | 2 | DONE | CLI2 |
-| #050 | Concrete Governance Levers | 2 | DONE | CLI2 |
-| #051 | Word Choice Sweep | 3 | DONE | CLI2 |
-| #052 | Figure Consistency | 3 | DONE | - |
-| #053 | Linpowave Replacement | 2 | DONE | CLI2 |
-| #054 | Academic Tone Polish | 3 | DONE | CLI2 |
+> **⚠️ 커밋 전 필수 확인**: "Original Intent" 컬럼을 읽고, 이 의도가 해결되었는지 자문하세요.
+
+| # | Issue | Original Intent (왜 만들었나?) | TIER | Status | Owner |
+|:--|:------|:------------------------------|:----:|:------:|:-----:|
+| #028 | Qualified Movement Definition | "R > median은 arbitrary → R > 0으로 바꿔야" | 0 | DONE | - |
+| #030 | Robustness Graph | "2020-2025에도 패턴이 유지되는지 확인" | 0 | DONE | - |
+| #041 | Magnitude Contextualization | "ρ=-0.196이 실제로 뭘 의미하는가? 4-6%/SD" | 1 | DONE | CLI1 |
+| #042 | Industry Heterogeneity Table | "산업별 차이를 한눈에 보여주는 표" | 0 | DONE | - |
+| #043 | Pattern vs Mechanism Re-org | "Ch.2=패턴, Ch.3=메커니즘으로 분리" | 1 | DONE | CLI1 |
+| #044 | Causality Control & H0 | "인과 언어 위험 → associative 동사로" | 0 | DONE | CLI1 |
+| #045 | Alternative Explanations | "Moral Hazard 등 대안 설명 방어" | 1 | DONE | CLI1 |
+| #046 | Deep Tech & Commitment Types | "Quantum 예외 + Staged vs Partial 구분" | 1 | DONE | CLI1 |
+| #047 | Measurement Validity | "Breadth(B)가 마케팅 허풍 아닌지 검증" | 0 | DONE | CLI1 |
+| #048 | Data Transparency | "Figure 4 플레이스홀더 채우기" | 0 | DONE | CLI1 |
+| #049 | Example Extraction | "Sky Engine, Surestar 등 구체적 사례" | 2 | DONE | CLI2 |
+| #050 | Concrete Governance Levers | "Preserve Skeptics를 어떻게 실행하나?" | 2 | DONE | CLI2 |
+| #051 | Word Choice Sweep | "Movement→Repositioning, Paradox 제한" | 3 | DONE | CLI2 |
+| #052 | Figure Consistency | "그래프 스타일 통일 (grayscale)" | 3 | DONE | - |
+| #053 | Linpowave Replacement | "G=N/A인 Linpowave 대체 사례 찾기" | 2 | DONE | CLI2 |
+| #054 | Academic Tone Polish | "과장된 표현 제거, 학술적 톤" | 3 | DONE | CLI2 |
 
 ---
 
