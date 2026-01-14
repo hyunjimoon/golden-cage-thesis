@@ -87,7 +87,7 @@ This chapter examines how commitment shapes governance. I characterize how fundi
 
 \textbf{Synthesis of sorting and ambiguity theories.} Our main theoretical contribution: we synthesize \citeauthor{vandensteen2010interpersonal}'s \citeyearpar{vandensteen2010interpersonal} sorting equilibrium with \citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} strategic ambiguity into a unified mechanism. Scholars have long struggled to characterize how commitment shapes governance. We develop three analytical approaches. Section 2.3 maps commitment type to governance composition and shows that belief homogenization lowers survival for operational commitment. Section 2.4 applies the flexibility premium analysis when strategic ambiguity produces high governance diversity. Section 2.5 formalizes Caged Learning (Theorem 1) to characterize when organizational learning ceases.
 
-\textbf{Structural vs.~motivational constraint.} We distinguish "cannot pivot" (structural) from "will not pivot" (moral hazard), with distinct implications for intervention design. If founders \emph{will not} pivot due to reduced incentives, the prescription is intensified monitoring. If founders \emph{cannot} pivot due to structural constraints (the cage), the prescription is governance redesign, preserving skeptical voices before funding eliminates them.
+\textbf{Ruling out moral hazard.} The critical distinction is "cannot pivot" versus "will not pivot." If founders \emph{will not} pivot due to reduced incentives (moral hazard), the prescription is intensified monitoring. If founders \emph{cannot} pivot due to governance constraints (the cage), the prescription is governance redesign---preserving skeptical voices before funding eliminates them. My evidence favors the structural explanation.
 
 \hypertarget{analytic-structure-patterns-vs.-mechanisms}{%
 \subsection{Analytic Structure: Patterns vs.~Mechanisms}\label{analytic-structure-patterns-vs.-mechanisms}}
@@ -152,7 +152,7 @@ The tension intensifies in nascent markets. Under technological and demand uncer
 \hypertarget{the-golden-cage-mechanism}{%
 \section{The Golden Cage Mechanism}\label{the-golden-cage-mechanism}}
 
-I synthesize \citeauthor{vandensteen2010interpersonal}'s \citeyearpar{vandensteen2010interpersonal} sorting equilibrium, \citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} strategic ambiguity, and \citeauthor{ghemawat1991commitment}'s \citeyearpar{ghemawat1991commitment} commitment analysis into a unified mechanism, the \emph{golden cage}. The cage forms through a four-step sequence:
+The \emph{golden cage} forms through a four-step sequence. The mechanism builds on a key insight: confident founders attract like-minded investors, producing belief homogeneity without any party behaving irrationally.
 
 \textbf{Step 1: Commitment Attracts Believers.} Securing capital requires operational commitments, production architecture choices, go-to-market sequences, milestone definitions \citep{gompers2001the, hellmann2002venture}. Investors who fund a venture believe these specific commitments will succeed.
 
@@ -169,6 +169,14 @@ The causal chain is:
 \[C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\downarrow\]
 
 Where C = Commitment, E = Early funding, F = Flexibility, R = Repositioning, G = Growth. See Glossary for definitions.
+
+\textbf{Which arrows are tested?} Chapter 4 tests three specific relationships:
+\begin{itemize}
+\item \textbf{H1: E \ensuremath{\rightarrow} R} (\ensuremath{\rho} = -0.087***) --- Funding suppresses repositioning (TESTED)
+\item \textbf{H2: R \ensuremath{\rightarrow} G} (2.60\ensuremath{\times} Mover Advantage) --- Repositioning enables growth (TESTED)
+\item \textbf{H3: E \ensuremath{\rightarrow} G} (\ensuremath{\rho} = -0.196***) --- Net negative effect of funding on growth (TESTED)
+\end{itemize}
+The arrows C \ensuremath{\rightarrow} E (commitment attracts capital) and E \ensuremath{\rightarrow} F (funding reduces flexibility) are assumed from theory, not directly tested.
 
 \begin{figure}
 \hypertarget{fig:b-trajectories}{%
