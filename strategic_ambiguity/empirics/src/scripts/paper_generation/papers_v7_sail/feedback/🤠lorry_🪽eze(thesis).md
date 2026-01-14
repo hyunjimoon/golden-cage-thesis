@@ -2,6 +2,7 @@
 modified:
   - 2026-01-13T07:34:58-05:00
   - 2026-01-13T12:45:00-05:00
+  - 2026-01-14T07:27:28-05:00
 ---
 # 🤠lorry's feedback
 
@@ -71,6 +72,7 @@ modified:
 > - Syndicate: *"actively recruit at least one syndicate member with a distinct investment thesis"*
 > - Board: *"appoint a director who brings domain expertise that challenges rather than reinforces"*
 > - Decision: *"assigned advocacy roles, written devil's advocate memos, or mandatory 'red team' sessions"*
+
 
 ---
 

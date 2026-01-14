@@ -29,7 +29,9 @@
       "Bash(cp:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\n✍️ [Style] Sainani 4-principles + B measurement methodology\n\n## Sainani Style Applied \\(Ch 1-2 서문\\)\n- Abstract ¶2: \"is associated with\" → \"suppresses\", \"drives\"\n- Ch 1.1 Opening: 긴 수동 문장 → 짧고 직접적 + \"cages\" 도입\n- Ch 2.1 Opening: \"is one of\" → \"determines venture survival\"\n- Ch 2.1 Fig 3a: 주어-동사 48단어 분리 → 문장 분리\n- Ch 2.1.1: \"initiates the study of\" → \"first examines\"\n- Ch 6.5 Closing: Power verbs 적용\n\n## Strategic Breadth \\(B\\) Measurement Expanded\n- 2-component framework: Categorical Vagueness + Concreteness Deficit\n- 8 academic citations added \\(Zuckerman 1999, Pontikes 2012, Pan et al. 2018, etc.\\)\n- Barlow et al. \\(2025\\) symbolic differentiation research included\n- Validation metrics: convergent, discriminant, predictive validity\n\n## Figure Color Convention Applied \\(5 figures\\)\n- Fig-I_capital_paradox: regression line → RED\n- Fig_growth_by_R: Stayer→RED, Mover→GREEN\n- Fig-Ch4_mobility_failure: Q3 Sweet Spot → GOLD\n- Fig-I_mediation_dag: E→R arrow RED, R→G arrow GREEN\n- Fig-ARG_mover_vs_stayer: Stayer→RED, Mover→GREEN\n\n🐣 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(wc:*)",
+      "Bash(tail:*)"
     ],
     "deny": [],
     "ask": []
