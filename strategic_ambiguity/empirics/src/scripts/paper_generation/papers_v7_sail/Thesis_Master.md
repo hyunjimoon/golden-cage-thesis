@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T08:33:24-05:00
+  - 2026-01-14T08:43:30-05:00
 ---
 
 
@@ -197,19 +197,19 @@ The contribution is threefold. First, I document a negative funding-growth corre
 
 ## 1.1 General Motivation
 
-Venture capital governance—through commitment structures and investor selection—**cages** founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the U.S. venture capital industry—which deployed over $330 billion globally at its 2021 peak (PitchBook, 2024)—has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension through strategic ambiguity—positioning that attracts diverse stakeholders while preserving the option to pivot.
+Commitment structures and investor selection **cage** founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the U.S. venture capital industry—deploying over $330 billion globally at its 2021 peak (PitchBook, 2024)—has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension by positioning ambiguously—they attract diverse stakeholders while preserving their ability to pivot.
 
-For instance, Tesla's early positioning as "accelerating sustainable transport" attracted believers in electrification, autonomy, and energy transition, enabling the company to pivot across segments (Roadster → Model S → Model 3) without losing governance support. In contrast, Better Place raised $850 million for "battery swapping infrastructure"—a commitment so specific that when market feedback favored charging over swapping, no board member advocated for the alternative. The company liquidated in 2013, its assets sold for less than $1 million (Bradshaw, 2013)—a stark illustration of value destruction through operational lock-in.
+For instance, Tesla positioned itself early as "accelerating sustainable transport"—attracting believers in electrification, autonomy, and energy transition. This let the company pivot across segments (Roadster → Model S → Model 3) without losing governance support. In contrast, Better Place raised $850 million for "battery swapping infrastructure"—a commitment so specific that when market feedback favored charging over swapping, no board member advocated for the alternative. The company liquidated in 2013, its assets sold for less than $1 million (Bradshaw, 2013)—a stark illustration of value destruction through operational lock-in.
 
 Motivated by such divergent outcomes among well-funded ventures, this thesis focuses on the following two aspects of funding and flexibility decisions.
 
-**Understanding the interactions between funding and strategic flexibility.** Capital creates a double bind. It enables experimentation by providing resources for market testing. Yet securing capital requires commitments that attract like-minded investors—filtering skeptics from governance and eliminating the signal diversity that learning requires. Should founders pursue substantial early funding to enable experimentation, or does governance rigidity outweigh resource benefits? Prior studies examine funding effects and pivoting outcomes in isolation rather than as components of a governance system (Camuffo et al., 2020; Kirtley & O'Mahony, 2023). This thesis addresses the gap.
+**How funding and flexibility interact.** Capital creates a double bind. It enables experimentation by providing resources for market testing. Yet to secure capital, founders must commit—and commitments attract like-minded investors. Skeptics filter themselves out. Signal diversity dies. Learning stops. Should founders raise substantial early money so they can experiment, or does rigid governance outweigh the resource benefits? Prior studies examine funding effects and pivoting outcomes in isolation rather than as components of a governance system (Camuffo et al., 2020; Kirtley & O'Mahony, 2023). This thesis addresses the gap.
 
-In addition to funding interactions, commitment decisions have vertical implications for venture survival. A founder who commits at the operational level (specific technology, specific market) attracts investors who believe in that specific path. When market signals suggest pivoting, no governance voice advocates for alternatives. These tensions raise important questions about how founders can balance commitment credibility with adaptation capacity. Together, these examples point to the need for a deeper understanding of both the horizontal interactions between funding and flexibility, and the vertical implications that governance composition has for strategic adaptation.
+Commitment decisions also affect survival vertically. A founder who commits at the operational level (specific technology, specific market) attracts investors who believe in that specific path. When the market signals that the venture should pivot, no board member advocates for alternatives. This raises a question: how can founders commit credibly while preserving their ability to adapt? We need to understand two things: how funding and flexibility interact horizontally, and how governance composition affects strategic adaptation vertically.
 
-**Designing commitment structures that preserve flexibility.** Large-scale venture data now enable targeted optimization of commitment decisions. Text analysis of company descriptions reveals which ventures maintain strategic breadth over time. Industry-level analysis reveals where the commitment-flexibility trade-off binds tightest (capital-intensive sectors like mobility) and where it releases (pre-paradigmatic sectors like quantum computing). These analyses enable founders and investors to capture commitment's credibility benefits without foreclosing adaptation.
+**How to commit while staying flexible.** Large-scale venture data now let founders optimize how they commit. Text analysis of company descriptions reveals which ventures maintain strategic breadth over time. Industry-level analysis shows where the tension between commitment and flexibility is tightest (capital-intensive sectors like mobility) and where it releases (pre-paradigmatic sectors like quantum computing). These analyses help founders and investors capture commitment's credibility benefits without foreclosing adaptation.
 
-The overall goal of this thesis is to address the challenges outlined above. Below, I provide a roadmap of how the thesis approaches these challenges, summarize the main results, and outline the organization of the chapters.
+This thesis addresses these challenges. Below I explain how each chapter tackles them, summarize the main results, and outline the organization.
 
 ## 1.2 The Funding-Growth Paradox
 
@@ -221,11 +221,11 @@ $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
 **Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
-This pattern resolves through decomposition. I identify two countervailing effects, formalizing their interaction as the product of component correlations:
+Decomposing the pattern resolves it. I identify two countervailing effects and formalize their interaction as the product of component correlations:
 
 $$\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{Commitment Trap }(-)} = (-)$$
 
-The **Flexibility Premium** (dG/dR > 0) captures the growth benefit of adaptation: ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0% later-stage survival). The **Commitment Trap** (dR/dE < 0) captures the rigidity cost of funding: early funding correlates with lower repositioning (ρ = −0.087, p < 0.001), as governance structures attached to capital constrain adaptation. The product of a positive and a negative is negative: funding correlates with reduced mobility, not because capital is harmful, but because commitment attracts like-minded investors who filter skeptics from governance.
+The **Flexibility Premium** (dG/dR > 0) captures the growth benefit of adaptation: ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0% later-stage survival). The **Commitment Trap** (dR/dE < 0) captures the rigidity cost of funding: early funding correlates with lower repositioning (ρ = −0.087, p < 0.001), because governance structures attached to capital constrain adaptation. A positive times a negative is negative: funding correlates with reduced mobility. Not because capital is harmful—but because commitment attracts like-minded investors who filter out skeptics.
 
 ![Figure 2: Mediation Structure](figures/Ch1_Fig2_mediation_dag.png)
 
@@ -237,13 +237,13 @@ This thesis addresses three interconnected questions, each corresponding to a th
 
 **Part I: The Cage — Theory and Evidence (Chapters 2-4)**
 
-1. **The Mechanism Question (Chapter 2):** *Why* does funding suppress repositioning? I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism—the *golden cage*. The main technical contribution is **Theorem 1 (Caged Learning)**, which formalizes conditions under which organizational learning ceases endogenously through the funding process.
+1. **Why does this happen? (Chapter 2):** I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism—the *golden cage*. The main technical contribution is **Theorem 1 (Caged Learning)**, which formalizes when organizational learning ceases through the funding process itself.
 
-2. **The Evidence Question (Chapters 3-4):** *How* do we test this mechanism at scale? Using 180,994 ventures, I operationalize repositioning through dictionary-based text analysis and document both the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095).
+2. **Does the data confirm it? (Chapters 3-4):** Using 180,994 ventures, I measure repositioning through dictionary-based text analysis and document both the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095).
 
 **Part II: Escaping the Cage (Chapters 5-6)**
 
-3. **The Design Question (Chapter 5):** *What* can founders and investors do about it? I develop a prescriptive framework distinguishing vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). The **Strategic Ambiguity Sweet Spot** (Figure 10) shows that moderate positioning breadth achieves 16.0% survival—higher than both narrow and maximally broad positioning.
+3. **What can founders do? (Chapter 5):** I develop a prescriptive framework distinguishing vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). The **Strategic Ambiguity Sweet Spot** (Figure 10) shows that moderate positioning breadth achieves 16.0% survival—higher than both narrow and maximally broad positioning.
 
 ## 1.4 Contribution Preview
 
@@ -264,17 +264,17 @@ This thesis makes three contributions to the literature on entrepreneurial strat
 
 ## 2.1 Introduction
 
-**This chapter develops the golden cage mechanism:** by synthesizing Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis, we study why funding suppresses repositioning through governance homogeneity rather than moral hazard.
+**This chapter develops the golden cage mechanism.** I synthesize three theories—Van den Steen (2010), Eisenberg (1984), and Ghemawat (1991)—to explain why funding suppresses repositioning. The cause is governance homogeneity, not moral hazard.
 
 Strategic flexibility **determines** venture survival. In manufacturing, flexibility **hedges** against demand shocks (Jordan & Graves, 1995). In ventures, it **enables** pivots when markets shift (Ries, 2011; Camuffo et al., 2020). Yet the funding process systematically **destroys** this flexibility—a tension this chapter **resolves**.
 
 (a) Flexibility in Manufacturing (b) Flexibility in Ventures
 
-**Figure 3a: Process Flexibility vs. Venture Flexibility.** The plots contrast process flexibility in manufacturing systems (long chain design) with flexibility in venture governance. In manufacturing, flexibility is configured deterministically by central planners. In ventures, flexibility emerges through governance composition—who sits on the board determines which strategic pivots are feasible.
+**Figure 3a: Process Flexibility vs. Venture Flexibility.** This figure contrasts how manufacturing systems and venture governance create flexibility. In manufacturing, central planners configure flexibility deterministically. In ventures, flexibility emerges through governance composition—who sits on the board determines which strategic pivots are feasible.
 
-Modern venture-backed startups face uncertainty on both product and market sides. The strategic positioning problem has a two-sided structure: investors on the funding side, customers on the market side. Figure 3a illustrates stakeholder connections. Each edge **signals** compatibility—whether an investor backs a given direction. Founders **navigate** these edges when raising capital. Manufacturing and ventures both need flexibility, but **create** it differently.
+Modern venture-backed startups face uncertainty from both products and markets. They must position for two audiences: investors who fund them, customers who buy from them. Figure 3a illustrates stakeholder connections. Each edge **signals** compatibility—whether an investor backs a given direction. Founders **navigate** these edges when raising capital. Manufacturing and ventures both need flexibility, but **create** it differently.
 
-In manufacturing, a central planner **configures** compatibility deterministically by investing in equipment. In venture governance, flexibility **emerges** through selection dynamics. Eisenberg's (1984) "strategic ambiguity" approach illustrates how founders **maintain** flexibility—by positioning broadly enough to attract diverse stakeholders. A founder choosing this approach accepts varied investor interpretations, but **gains** the ability to pivot without losing governance support. The number of investors supporting any particular pivot is stochastic: strategic ambiguity **expands** pivot options, but not deterministically.
+In manufacturing, central planners **configure** compatibility deterministically by investing in equipment. In venture governance, flexibility **emerges** through who founders select. Eisenberg's (1984) "strategic ambiguity" approach illustrates how founders **maintain** flexibility—by positioning broadly enough to attract diverse stakeholders. A founder choosing this approach accepts varied investor interpretations, but **gains** the ability to pivot without losing governance support. Strategic ambiguity **expands** pivot options—but stochastically, not deterministically.
 
 | Industry | Example Platforms | Flexibility Mechanism | Constraint Mechanism |
 |:---------|:------------------|:----------------------|:---------------------|
@@ -286,7 +286,7 @@ In manufacturing, a central planner **configures** compatibility deterministical
 
 The examples illustrate that flexibility constraints can simultaneously arise from multiple sources, which raises the question of how governance composition interacts with commitment type. Specifically, what commitment structure is best for survival? Is it more effective to commit at the vision level (preserving pivot options), or is it better to commit at the operational level (attracting aligned investors)? Despite the significant capital through which founders make commitments on both technology and market sides, the interaction of commitment type and governance composition is not well-understood. Indeed, we know of no work in the literature that examines the interaction of these two flexibility mechanisms in venture governance. And, in practice, founders usually make commitment decisions without visibility into how those commitments shape board composition—a one-sided approach that neither reveals nor exploits the interaction of different flexibility levers, and we will show that it can come at a great cost.
 
-Motivated by this gap in the literature, this chapter studies how the funding process creates a *golden cage*—a structural constraint that prevents adaptation regardless of founder intent. Our focus on the governance mechanism differs from traditional studies that usually attribute venture failure to moral hazard or resource constraints, rather than their interactions. Since Table 2.1 shows that governance-based flexibility constraints can arise in a variety of settings, we focus on highlighting general effects that are likely relevant to any venture. We develop a parsimonious theoretical model to identify how commitment type shapes governance composition. Our model represents the venture as a founder-investor matching problem, where specific commitments (operational) attract narrow coalitions while vague commitments (vision-level) attract diverse coalitions. The venture's objective is to maximize survival probability, which depends on both resource acquisition and pivot capacity. We study how a given commitment level should be structured, and whether and when founders should commit at the vision versus operational level.
+This chapter studies how funding creates a *golden cage*—a structural trap that prevents founders from adapting, no matter how much they want to. We focus on governance, not moral hazard or resource constraints—and on how they interact. Table 2.1 shows that governance-based flexibility constraints arise in many settings, so we highlight general effects relevant to any venture. We develop a simple model showing how commitment type shapes who joins the board. Specific commitments (operational) attract narrow coalitions; vague commitments (vision-level) attract diverse coalitions. The venture maximizes survival, which depends on both resources and pivot capacity. We study how founders should structure commitment, and when they should commit at the vision versus operational level.
 
 Our results show that the choice of commitment level has a significant impact on venture survival. Even with fixed commitment credibility, the pivot capacity (and consequently the survival probability) can vary significantly depending on how commitment is structured (see Figure 3). Moreover, by comparing two natural commitment strategies: (1) the operational commitment, which specifies technology and market, and (2) the vision commitment, which specifies direction but not destination, we find that either strategy can improve survival by more than 2× compared to the other, depending on industry and stage. Hence, founders who optimize their commitment level but not its structure may pay a high price.
 
@@ -294,11 +294,11 @@ Despite the impact of commitment structure, optimizing it poses nontrivial diffi
 
 ### 2.1.1 Contributions
 
-This chapter **first examines** how commitment shapes governance in venture strategy. It **characterizes** the mechanisms through which funding **constrains** flexibility and **enables** study of optimal commitment structure.
+This chapter examines how commitment shapes governance. I characterize how funding constrains flexibility and identify optimal commitment structures.
 
-**Optimal commitment structures.** Our study of vision-level and operational commitment reveals that either structure can dominate the other. In Sections 2.3 and 2.4, we introduce two key effects—*belief homogenization* and *signal diversity loss*—that respectively drive the consequences of operational and vision-level commitments. Intuitively, belief homogenization is a consequence of operational commitment: as specific commitments attract like-minded investors, governance diversity decreases while shared conviction increases—but this conviction becomes wasteful when the committed direction proves wrong. In contrast, signal diversity loss arises under extreme operational commitment, where board members who might champion alternative interpretations never join governance. The loss can result in a large number of disconfirming signals being ignored, leaving the venture unable to recognize when pivoting would be optimal. In Sections 2.3 and 2.4, we characterize the conditions where these effects are most pronounced, and in Section 2.5 we identify the dominant commitment structure across different industry contexts.
+**Optimal commitment structures.** Either vision-level or operational commitment can dominate the other. Sections 2.3 and 2.4 introduce two key effects: *belief homogenization* and *signal diversity loss*. Belief homogenization follows from operational commitment. Specific commitments attract like-minded investors—so governance diversity falls while shared conviction rises. But this conviction becomes wasteful when the committed direction proves wrong. Signal diversity loss arises under extreme operational commitment: board members who might champion alternatives never join governance. The venture ignores disconfirming signals and cannot recognize when it should pivot. Sections 2.3 and 2.4 characterize when these effects bind tightest; Section 2.5 identifies the dominant commitment structure across industry contexts.
 
-**Synthesis of sorting and ambiguity theories.** Our main theoretical contribution lies in synthesizing Van den Steen's (2010) sorting equilibrium with Eisenberg's (1984) strategic ambiguity into a unified mechanism. Characterizing how commitment shapes governance is a long-studied but notoriously challenging area in entrepreneurship. To compare the survival rates of different commitment structures, we develop three distinct analytical approaches. In Section 2.3 we design a careful mapping between commitment type and governance composition and show, for certain parameters, that belief homogenization leads to lower survival for operational commitment. Then, in Section 2.4 we apply the flexibility premium analysis for conditions where strategic ambiguity produces high governance diversity. Finally, in Section 2.5 we formalize the Caged Learning condition (Theorem 1) to explicitly characterize when organizational learning ceases endogenously.
+**Synthesis of sorting and ambiguity theories.** Our main theoretical contribution: we synthesize Van den Steen's (2010) sorting equilibrium with Eisenberg's (1984) strategic ambiguity into a unified mechanism. Scholars have long struggled to characterize how commitment shapes governance. We develop three analytical approaches. Section 2.3 maps commitment type to governance composition and shows that belief homogenization lowers survival for operational commitment. Section 2.4 applies the flexibility premium analysis when strategic ambiguity produces high governance diversity. Section 2.5 formalizes Caged Learning (Theorem 1) to characterize when organizational learning ceases.
 
 **Structural vs. motivational constraint.** We distinguish "cannot pivot" (structural) from "will not pivot" (moral hazard), with distinct implications for intervention design. If founders *will not* pivot due to reduced incentives, the prescription is intensified monitoring. If founders *cannot* pivot due to structural constraints (the cage), the prescription is governance redesign—preserving skeptical voices before funding eliminates them.
 
@@ -411,9 +411,7 @@ The next chapter describes how to test these hypotheses at population scale usin
 
 ## 3.1 Introduction
 
-**This chapter tests the golden cage hypotheses:** by analyzing 180,994 U.S. ventures from PitchBook (2021–2025), we operationalize repositioning through text-based measurement and develop identification strategies that address selection concerns.
-
-The empirical design constructs a panel from PitchBook, operationalizes repositioning through dictionary-based text analysis, and develops a multi-layer identification strategy addressing selection concerns.
+**This chapter tests the golden cage hypotheses.** I analyze 180,994 U.S. ventures from PitchBook (2021–2025), measure repositioning through text analysis, and address selection concerns through a multi-layer identification strategy.
 
 ## 3.2 Data Sources and Sample Construction
 
@@ -451,13 +449,13 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
 
 ### 3.3.1 Strategic Breadth (B)
 
-Strategic breadth captures the degree of positioning vagueness in a venture's public communications. Higher B indicates broader, more ambiguous positioning; lower B indicates narrower, more specific positioning. I construct a composite vagueness score (0–100) from two theoretically grounded components: **Categorical Vagueness** and **Concreteness Deficit**.
+Strategic breadth measures how vaguely a venture positions itself in public communications. High B means the venture positions broadly and ambiguously; low B means it positions specifically. I construct a 0–100 vagueness score from two components: **Categorical Vagueness** and **Concreteness Deficit**.
 
 #### Theoretical Foundation
 
-The measurement draws on three literatures. First, **category spanning research** (Zuckerman, 1999; Hannan et al., 2007; Pontikes, 2012) establishes that ventures using abstract, superordinate category labels ("platform," "ecosystem") signal broader strategic scope than those using concrete, basic-level labels ("restaurant," "delivery app"). Hsu (2006) demonstrates that category breadth affects audience evaluation—spanning multiple categories reduces legitimacy but preserves strategic options.
+I draw on three literatures. First, **category spanning research** (Zuckerman, 1999; Hannan et al., 2007; Pontikes, 2012) shows that ventures using abstract category labels ("platform," "ecosystem") signal broader scope than those using concrete labels ("restaurant," "delivery app"). Hsu (2006) shows that category breadth affects how audiences evaluate ventures—spanning multiple categories reduces legitimacy but preserves strategic options.
 
-Second, **linguistic concreteness research** (Pan et al., 2018; Chen et al., 2015) shows that textual specificity—quantitative markers, temporal references, technical acronyms—signals commitment to particular outcomes. Ventures that avoid such specificity preserve flexibility by not anchoring stakeholder expectations to measurable targets.
+Second, **linguistic concreteness research** (Pan et al., 2018; Chen et al., 2015) shows that specific text—quantitative markers, temporal references, technical acronyms—signals that ventures have committed to particular outcomes. Ventures that avoid specificity preserve flexibility by not anchoring stakeholder expectations to measurable targets.
 
 Third, **symbolic differentiation research** (Barlow et al., 2025) examines how quality-signaling resources interact with narrative distinctiveness. Their analysis of 31,270 UK ventures demonstrates that patent-rich ventures strategically modulate narrative distinctiveness based on industry conditions—a finding consistent with the golden cage mechanism where resource acquisition shapes symbolic positioning.
 
@@ -552,15 +550,15 @@ The composite index averages the three components: **C = (C_a + C_b + C_c) / 3**
 
 ## 3.5 Identification Strategy
 
-The central identification challenge is selection versus treatment. Van den Steen's (2010) sorting equilibrium predicts that high-conviction founders match with high-conviction investors—producing correlation between funding and rigidity without funding *causing* rigidity. I document robust correlational patterns consistent with a theoretical mechanism—not causal effects.
+The central challenge: distinguishing selection from treatment effects. Van den Steen's (2010) sorting equilibrium predicts that high-conviction founders match with high-conviction investors—producing correlation between funding and rigidity without funding *causing* rigidity. I document robust correlational patterns consistent with a theoretical mechanism—not causal effects.
 
 **Multi-Layer Defense.** (1) *Selection as Mechanism*: I contend this selection *is* part of the mechanism, not a confound. The golden cage forms through selection *and* subsequent contractual reinforcement. (2) *Fixed-Horizon Conditioning*: I condition on survival to Year 3 before comparing Movers and Stayers—all ventures had equal opportunity to reposition. Among these equal-survival-opportunity firms, Movers still achieve 2.60× higher success rates. (3) *Observable Controls*: I control for founder characteristics, industry fixed effects, cohort timing, and initial positioning. (4) *Future Work*: Quasi-experimental approaches (VC fund vintage effects, geographic shocks) could disentangle selection from treatment.
 
 ## 3.6 Conclusion
 
-This chapter described the empirical strategy for testing the cage hypotheses. The sample comprises 180,994 U.S. ventures from PitchBook (2021–2025), with repositioning measured through dictionary-based text analysis.
+This chapter described how I test the cage hypotheses. The sample comprises 180,994 U.S. ventures from PitchBook (2021–2025), with repositioning measured through dictionary-based text analysis.
 
-The identification strategy employs four layers of defense: (1) treating selection as mechanism rather than confound, (2) fixed-horizon conditioning to mitigate survival bias—comparing repositioners and non-repositioners among ventures with equal survival opportunity (Year 3+), (3) conditioning on observable characteristics, and (4) proposing future quasi-experimental approaches for causal identification.
+I defend against identification threats in four ways: (1) treating selection as mechanism rather than confound, (2) conditioning on fixed horizons to mitigate survival bias—comparing repositioners and non-repositioners among ventures that survived equally long (Year 3+), (3) conditioning on observables, and (4) proposing future quasi-experimental approaches for causal identification.
 
 Key sample characteristics: 40.3% of ventures qualify as "Movers" (R > 0), while 59.7% are "Stayers" (R = 0) (see §3.3.3 for definition rationale). The base success rate (reaching Later Stage VC) is 11.5%. Chapter 4 presents the empirical results.
 
@@ -573,11 +571,9 @@ Key sample characteristics: 40.3% of ventures qualify as "Movers" (R > 0), while
 
 ## 4.1 Introduction
 
-**This chapter documents where the cage bites:** by analyzing 180,994 ventures across industries, we test the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that their product explains the Funding-Growth Paradox.
+**This chapter documents where the cage bites.** I analyze 180,994 ventures across industries, test two patterns—Funding → Repositioning↓ (CER) and Repositioning → Growth↑ (FRG)—and show that their product explains the Funding-Growth Paradox. The results confirm all three hypotheses and reveal industry heterogeneity.
 
-The empirical results confirm all three hypotheses and reveal industry heterogeneity in cage effects.
-
-**Contributions.** (1) *Hypothesis Confirmation*: I confirm all three hypotheses—H1 (ρ(E,R) = −0.087***), H2 (Mover advantage = 2.60×), H3 (ρ(E,G) = −0.196***). (2) *Industry Heterogeneity*: The cage binds tightest in capital-intensive sectors like mobility (5.3% survival). (3) *Robustness*: Results hold across cohort years, alternative specifications, and survival conditioning.
+**Contributions.** (1) *I confirm all three hypotheses*—H1 (ρ(E,R) = −0.087***), H2 (Mover advantage = 2.60×), H3 (ρ(E,G) = −0.196***). (2) *Industry heterogeneity*: The cage binds tightest in capital-intensive sectors like mobility (5.3% survival). (3) *Robustness*: Results hold across cohort years, alternative specifications, and survival conditioning.
 
 ## 4.2 H1: Funding → Repositioning (The Commitment Trap)
 
@@ -605,7 +601,7 @@ The positive correlation is consistent: ventures that reposition succeed more of
 
 ### 4.3.2 The Mover Advantage: 2.60×
 
-To operationalize the repositioning-growth relationship, I classify ventures using a **primary binary taxonomy** (Mover vs. Stayer) with a **secondary directional decomposition** for interpretive depth.
+To operationalize this relationship, I classify ventures as Movers or Stayers (primary), with a secondary directional breakdown for interpretation.
 
 **Table 5a: Mover Taxonomy — Binary Classification (Primary)**
 
@@ -627,7 +623,7 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 
 *Note: ΔB = B_T − B₀. Zoom-in (ΔB < 0) = strategic focus; Zoom-out (ΔB > 0) = strategic expansion. Remaining Movers (36,554) have minimal directional change.*
 
-**Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—explains the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the primary identification.
+**Interpretive insight:** Both directions show elevated success rates (17.1% and 18.4%). This suggests that *moving clearly*—not which direction you move—explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification.
 
 > **Conceptual Note: Zoom as Cognitive Motion**
 >
@@ -658,7 +654,7 @@ The 2.60× Mover advantage represents an 11.1 percentage point difference in suc
 | Top-tier VC backing | +3–5 pp | Hochberg et al. (2007) |
 | Scientific advisory board | +2–4 pp | Hsu & Ziedonis (2013) |
 
-**Interpretation:** The Mover Advantage exceeds the effect sizes of other well-documented success factors. Repositioning associates with larger success improvements than accelerator participation (~5 pp), founder experience (~5 pp), or prestigious backing (~4 pp). This magnitude suggests strategic mobility is not a marginal factor but a first-order determinant of venture outcomes.
+**Interpretation:** The Mover Advantage exceeds other well-documented success factors. Repositioning improves success more than accelerator participation (~5 pp), founder experience (~5 pp), or prestigious backing (~4 pp). This magnitude suggests strategic mobility determines venture outcomes—it's not a marginal factor.
 
 **Standard deviation interpretation:** The correlation ρ(R,G) = +0.012 implies that one standard deviation increase in repositioning magnitude (R) associates with approximately 4–6 percentage point improvement in later-stage success. While modest in standardized terms, this translates to substantial absolute differences given the low base rate (11.5%).
 
@@ -687,7 +683,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 
 **Key findings:**
 
-1. **Capital-intensive industries show strongest negative correlations.** Hardware (ρ = −0.108***) and Transportation (ρ = −0.101***) exhibit the tightest cage binding. Infrastructure and physical asset investments lock ventures into positions that cannot adapt.
+1. **Capital-intensive industries show strongest negative correlations.** Hardware (ρ = −0.108***) and Transportation (ρ = −0.101***) face the tightest cage. Infrastructure and physical asset investments lock ventures into positions that cannot adapt.
 
 2. **Software shows near-zero correlation.** The software industry (ρ = −0.001, ns) demonstrates that low capital intensity allows Oxygen and Cage effects to approximately balance. Cheap experimentation offsets governance rigidity.
 
@@ -699,7 +695,7 @@ Quantum's positive correlation (ρ = +0.095*) represents a *boundary condition* 
 
 Three conditions explain the exception:
 
-1. **Absence of Dominant Design.** Without "increasing returns" establishing dominance (Arthur, 1989), capital funds architectural search rather than path commitment. Investors understand they are funding exploration, not execution.
+1. **No Dominant Design.** Without "increasing returns" establishing dominance (Arthur, 1989), capital funds architects who search for designs rather than commit to paths. Investors understand they fund exploration, not execution.
 
 2. **Epistemic vs. Operational Uncertainty.** The cage operates when investors set KPIs from market signals. Quantum faces *epistemic* uncertainty—we do not know what questions to ask—so performance contracts that cage founders cannot form.
 
@@ -1009,48 +1005,48 @@ The bottom line: design for adaptation *before* funding filters out the skeptics
 
 This thesis makes three theoretical contributions:
 
-**First**, I introduce the *golden cage* mechanism—a theoretical account of how funding may constrain growth through governance homogeneity rather than moral hazard. The mechanism integrates Van den Steen's sorting equilibrium, Eisenberg's strategic ambiguity, and Ghemawat's commitment analysis into a unified framework.
+**First**, I introduce the *golden cage* mechanism—explaining how funding constrains growth through governance homogeneity rather than moral hazard. The mechanism integrates Van den Steen's sorting equilibrium, Eisenberg's strategic ambiguity, and Ghemawat's commitment analysis.
 
-**Second**, I distinguish vision-level commitment from operational commitment. This distinction explains heterogeneity in outcomes among well-funded ventures: some (Tesla) preserve flexibility through vision commitment; others (Better Place) foreclose it through operational commitment.
+**Second**, I distinguish vision-level commitment from operational commitment. This explains why well-funded ventures diverge: some (Tesla) preserve flexibility through vision commitment; others (Better Place) foreclose it through operational commitment.
 
-**Third**, I formalize the caged learning condition (Theorem 1), showing how the funding process endogenously produces the conditions (high μ, low B) that prevent belief updating.
+**Third**, I formalize caged learning (Theorem 1), showing how funding endogenously produces conditions (high μ, low B) that prevent founders from updating their beliefs.
 
 ## 6.2 Practical Implications
 
 **For Founders:**
 - Commit to *reposition*, not to position
 - Design governance to preserve skeptical voices *before* funding eliminates them
-- Prioritize platform capabilities over segment-specific capabilities until market signals clarify
+- Prioritize platform capabilities over segment-specific capabilities until the market clarifies what works
 - Cultivate a "discoverer" identity that enables strategic flexibility
 
 **For Investors:**
 - Distinguish vision alignment from operational commitment
 - Fund platform capability, not product specificity
 - Expect successful ventures to reposition—design governance to enable adaptation
-- Preserve information diversity through board composition
+- Preserve diverse information sources on the board
 
 **For Scholars:**
-- The cage mechanism identifies governance—not incentives—as the binding constraint
-- Intervention should target governance design, not founder monitoring
+- The cage mechanism shows governance—not incentives—constrains ventures
+- Interventions should target governance design, not founder monitoring
 - Future research should directly measure board belief diversity
 
 ## 6.3 Limitations
 
 Three limitations warrant acknowledgment:
 
-**First**, I document correlation, not causation. The caged learning—that rigid founders attract more funding—remains an alternative explanation. I address this through three layers of defense: (1) selection is part of the mechanism; (2) conditioning on observables reduces selection; (3) future quasi-experimental approaches could provide identification.
+**First**, I document correlation, not causation. An alternative explanation remains: rigid founders attract more funding. I address this through three layers of defense: (1) selection is part of the mechanism; (2) conditioning on observables reduces selection; (3) future quasi-experimental approaches could provide identification.
 
 **Second**, PitchBook overrepresents technology ventures in the United States. Generalization requires replication in other sectors and geographies.
 
-**Third—and most critically—I infer governance homogeneity from behavioral outcomes (low repositioning), not direct measurement.** The core claim that "governance lacks skeptics" is derived from observing that well-funded ventures reposition less frequently. This behavioral pattern is *consistent with* the sorting mechanism, but the mechanism itself remains unobserved.
+**Third—and most critically—I infer governance homogeneity from behavioral outcomes (low repositioning), not direct measurement.** I derive the core claim—"governance lacks skeptics"—from observing that well-funded ventures reposition less frequently. This behavioral pattern is *consistent with* the sorting mechanism, but the mechanism itself remains unobserved.
 
-This inference is theoretically grounded. Van den Steen's (2010) sorting equilibrium predicts that founders and investors with heterogeneous priors will sort into organizations led by like-minded others—a mathematical result, not an empirical claim. Applied to venture governance, this predicts belief convergence among board members. However, the prediction remains *indirect*: I observe the predicted *consequence* (low repositioning) rather than the posited *cause* (belief homogeneity). The gap between theoretical prediction and direct observation is meaningful.
+Theory grounds this inference. Van den Steen's (2010) sorting equilibrium predicts that founders and investors with heterogeneous priors will sort into organizations led by like-minded others—a mathematical result, not an empirical claim. Applied to venture governance, this predicts belief convergence among board members. However, the prediction remains *indirect*: I observe the predicted *consequence* (low repositioning) rather than the posited *cause* (belief homogeneity). The gap matters.
 
 Future work must directly measure board composition diversity. Three approaches merit consideration: (a) survey-based measurement of founder-investor disagreement on strategic direction, (b) analysis of board voting records on strategic pivots, and (c) text analysis of investor communications (e.g., board meeting minutes, investor letters) to quantify belief divergence. Without such direct measurement, the governance homogeneity mechanism—while theoretically compelling and empirically consistent—remains a well-supported conjecture rather than established fact.
 
 ### 6.3.1 Alternative Explanations
 
-The governance homogeneity mechanism proposed in this thesis competes with several alternative explanations for the Funding-Growth Paradox. I consider three prominent alternatives and discuss why the evidence favors the governance account.
+My governance homogeneity mechanism competes with several alternative explanations for the Funding-Growth Paradox. I consider three prominent alternatives and explain why the evidence favors the governance account.
 
 **Table 10: Alternative Explanations vs. Governance Homogeneity**
 
