@@ -812,7 +812,9 @@ All specifications yield consistent results. The cage is not a COVID artifact or
 
 ### 4.5.2 Survival Bias Conditioning (TR-02)
 
-To address survival bias, I condition on Year 3+ survival:
+**The Problem.** Movers (R > 0) by definition survived long enough to change their positioning. Stayers (R = 0) include two distinct populations: (1) firms that survived but *chose* not to reposition, and (2) firms that *died* before they could reposition. Comparing Movers to all Stayers conflates "choosing to stay" with "dying before moving"—an unfair comparison that inflates the Mover advantage.
+
+**The Fix.** I condition on survival to a fixed horizon before comparing groups. By restricting to ventures that survived at least 3 years, I ensure both Movers and Stayers had *equal opportunity* to reposition. The comparison becomes: "survivors who moved" versus "survivors who chose not to move."
 
 | Condition | Mover Advantage | 95% CI |
 |:----------|:---------------:|:------:|
@@ -820,7 +822,7 @@ To address survival bias, I condition on Year 3+ survival:
 | Year 3+ survivors | 2.35× | [2.21, 2.49] |
 | Year 5+ survivors | 2.12× | [1.94, 2.30] |
 
-The Mover advantage attenuates but persists under survival conditioning, suggesting the effect is not purely a survival artifact.
+**Interpretation.** The Mover advantage attenuates from 2.60× to 2.12× under survival conditioning—a ~19% reduction. This attenuation reveals that part of the raw effect reflected survival bias (firms that died early were counted as Stayers). However, the advantage *persists* at 2.12× even among Year 5+ survivors, with confidence intervals excluding 1.0. The effect is not purely a survival artifact: among ventures with equal opportunity to reposition, those that moved still substantially outperform those that stayed.
 
 ### 4.5.3 Alternative Operationalizations
 
