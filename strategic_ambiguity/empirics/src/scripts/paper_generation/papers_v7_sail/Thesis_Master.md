@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T08:43:30-05:00
+  - 2026-01-14T08:46:17-05:00
 ---
 
 
@@ -1032,7 +1032,7 @@ This thesis makes three theoretical contributions:
 
 ## 6.3 Limitations
 
-Three limitations warrant acknowledgment:
+Four limitations warrant acknowledgment:
 
 **First**, I document correlation, not causation. An alternative explanation remains: rigid founders attract more funding. I address this through three layers of defense: (1) selection is part of the mechanism; (2) conditioning on observables reduces selection; (3) future quasi-experimental approaches could provide identification.
 
@@ -1043,6 +1043,9 @@ Three limitations warrant acknowledgment:
 Theory grounds this inference. Van den Steen's (2010) sorting equilibrium predicts that founders and investors with heterogeneous priors will sort into organizations led by like-minded others—a mathematical result, not an empirical claim. Applied to venture governance, this predicts belief convergence among board members. However, the prediction remains *indirect*: I observe the predicted *consequence* (low repositioning) rather than the posited *cause* (belief homogeneity). The gap matters.
 
 Future work must directly measure board composition diversity. Three approaches merit consideration: (a) survey-based measurement of founder-investor disagreement on strategic direction, (b) analysis of board voting records on strategic pivots, and (c) text analysis of investor communications (e.g., board meeting minutes, investor letters) to quantify belief divergence. Without such direct measurement, the governance homogeneity mechanism—while theoretically compelling and empirically consistent—remains a well-supported conjecture rather than established fact.
+
+
+**Fourth, the cage may be self-constructed, not only investor-imposed.** This thesis focuses on governance homogeneity—the filtering of skeptics through investor sorting. But founders may also construct their own cages through non-monetary commitments: sunk costs of time, reputation, and identity. This echoes Berlant's (2011) concept of *cruel optimism*—the attachment to a vision that actively impedes the flourishing it promises. A founder whose identity is "the EV battery-swap company" faces psychological barriers to pivoting that governance redesign cannot address. The diagnostic question—"What's limiting your future mobility?"—may reveal that the binding constraint is internal, not external. This psychological dimension of the cage mechanism lies beyond the scope of the current empirical analysis.
 
 ### 6.3.1 Alternative Explanations
 
@@ -1440,15 +1443,7 @@ The cage locks when commitment reduces B below the critical threshold.
 
 ## Appendix E: Supplementary Theoretical Notes
 
-### E.1 The Cruel Optimism of Commitment
-
-The golden cage is not always forged with investor money. Sometimes founders construct their own cages through non-monetary commitments—sunk costs of time, reputation, and identity. This echoes Berlant's (2011) concept of *cruel optimism*: the attachment to a vision that actively impedes the flourishing it promises.
-
-"Falling forward"—McGrath's (1999) prescription for entrepreneurial learning—requires letting go of prior commitments. But what must be released extends beyond financial sunk costs: the identity as "the EV battery-swap company," the reputation staked on a public roadmap, the relationships built around a specific thesis. The cage binds not only through governance homogeneity but through the founder's own psychological investment.
-
-This suggests a diagnostic question for founders: **What's limiting your future mobility?** If the answer involves non-monetary commitments—identity, reputation, relationships—the cage may be self-constructed, not investor-imposed.
-
-### E.2 Deep Tech Strategy: Non-Dilutive Alternatives
+### E.1 Deep Tech Strategy: Non-Dilutive Alternatives
 
 The Quantum exception (§4.4.2) suggests a strategic implication for deep tech ventures: when the cage mechanism operates, founders may benefit from *non-dilutive* funding sources that avoid governance homogenization.
 
@@ -1461,7 +1456,7 @@ Non-dilutive sources include:
 
 This approach trades growth speed for strategic flexibility—a rational choice when the uncertainty premium is high and the commitment cost is severe.
 
-### E.3 Actionable Implications (for Chapter 6 Integration)
+### E.2 Actionable Implications (for Chapter 6 Integration)
 
 *[Content moved from §4.7 for integration into Chapter 6: Discussion]*
 
