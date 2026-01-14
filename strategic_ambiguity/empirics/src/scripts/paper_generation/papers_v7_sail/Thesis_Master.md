@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T06:52:12-05:00
+  - 2026-01-14T07:00:43-05:00
 ---
 
 
@@ -43,7 +43,7 @@ Draft for Committee Review — January 2026
 # Abstract
 
 **¶1 — Phenomenon & Significance.**
-The U.S. venture capital industry—which deployed over $330 billion globally at its 2021 peak (PitchBook, 2024)—rests on a simple premise: capital fuels growth. Yet analyzing 180,994 ventures from PitchBook (2021–2025), I document a paradox: early-stage funding correlates *negatively* with later-stage survival (ρ = −0.196, p < 0.001). Startups die not for lack of resources, but for lack of mobility. Capital is oxygen—but oxygen in a sealed chamber becomes a cage.
+The U.S. venture capital industry—which deployed over $330 billion globally at its 2021 peak (PitchBook, 2024)—rests on a simple premise: capital fuels growth. Yet analyzing 180,994 ventures from PitchBook (2021–2025), I document the Funding-Growth Paradox: early-stage funding correlates *negatively* with later-stage survival (ρ = −0.196, p < 0.001). Startups die not for lack of resources, but for lack of mobility. Capital is oxygen—but oxygen in a sealed chamber becomes a cage.
 
 **¶2 — Part I: The Cage (Chapters 1–4).**
 The effect operates through a mediated pathway. Let E denote early-stage funding, R denote strategic repositioning, and G denote later-stage growth. Funding suppresses repositioning (ρ(E,R) = −0.087), yet repositioning drives growth—ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: the effect of funding on growth, dG/dE, decomposes into dG/dR (positive: repositioning helps) times dR/dE (negative: funding suppresses repositioning), yielding a net negative. I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
@@ -216,7 +216,7 @@ The overall goal of this thesis is to address the challenges outlined above. Bel
 
 ## 1.2 The Funding-Growth Paradox
 
-The data reveal a paradox. Analyzing 180,994 ventures from PitchBook (2021–2025), I find a negative correlation between early-stage funding and later-stage survival:
+The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from PitchBook (2021–2025), I find a negative correlation between early-stage funding and later-stage survival:
 
 $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
@@ -224,7 +224,7 @@ $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
 **Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
-The paradox resolves through decomposition. I identify two countervailing effects, formalizing their interaction as the product of component correlations:
+This pattern resolves through decomposition. I identify two countervailing effects, formalizing their interaction as the product of component correlations:
 
 $$\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{Commitment Trap }(-)} = (-)$$
 
@@ -269,7 +269,7 @@ This thesis makes three contributions to the literature on entrepreneurial strat
 
 **This chapter develops the golden cage mechanism:** by synthesizing Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis, we study why funding suppresses repositioning through governance homogeneity rather than moral hazard.
 
-Strategic flexibility **determines** venture survival. In manufacturing, flexibility **hedges** against demand shocks (Jordan & Graves, 1995). In ventures, it **enables** pivots when markets shift (Ries, 2011; Camuffo et al., 2020). Yet the funding process systematically **destroys** this flexibility—a paradox this chapter **resolves**.
+Strategic flexibility **determines** venture survival. In manufacturing, flexibility **hedges** against demand shocks (Jordan & Graves, 1995). In ventures, it **enables** pivots when markets shift (Ries, 2011; Camuffo et al., 2020). Yet the funding process systematically **destroys** this flexibility—a tension this chapter **resolves**.
 
 (a) Flexibility in Manufacturing (b) Flexibility in Ventures
 
@@ -354,6 +354,10 @@ But Ghemawat also identifies the flip side: commitment forecloses alternatives. 
 
 The tension intensifies in nascent markets. Under technological and demand uncertainty, commitment becomes a bet on incomplete information. Dixit and Pindyck (1994) formalize this through real options reasoning: when uncertainty is high (σ↑), waiting becomes more valuable because the option to learn dominates the benefit of early commitment. Sanchez (1995) extends this to strategic flexibility: firms facing environmental uncertainty should maintain "strategic flexibility"—the capacity to respond to unforeseen contingencies.
 
+[Figure 3: Strategic Breadth Trajectories](figures/Ch2_Fig1_B_trajectories.png)
+
+**Figure 3:** Strategic Breadth Trajectories. The figure illustrates three archetype trajectories: Zoom-out (ΔB > 0, green), Zoom-in (ΔB < 0, blue), and Stayer (ΔB ≈ 0, gray). Strategic breadth (B) measures the scope of market positioning from company descriptions. Movers (R > 0) reposition along either direction; Stayers (R = 0) maintain position.
+
 ## 2.3 The Golden Cage Mechanism
 
 I synthesize Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis into a unified mechanism—the *golden cage*. The cage forms through a four-step sequence:
@@ -374,9 +378,9 @@ $$C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\
 
 Where C = Commitment, E = Early funding, F = Flexibility, R = Repositioning, G = Growth. See [Glossary](#appendix-c-glossary) for definitions.
 
-[Figure 3: The Golden Cage Mechanism](figures/Ch2_Fig2_golden_cage.png)
+[Figure 4: The Golden Cage Mechanism](figures/Ch2_Fig2_golden_cage.png)
 
-**Figure 3:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
+**Figure 4:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
 ### 2.3.1 Formal Condition for Caged Learning
 
@@ -406,7 +410,7 @@ But real options have boundaries. Adner and Levinthal (2004) caution against tre
 
 Huchzermeier and Loch (2001) distinguish uncertainty types: market uncertainty (what customers want) differs from budget uncertainty (whether we can deliver). The cage binds tighter when both uncertainty types are high—the venture needs flexibility for market learning *and* operational learning, yet governance permits neither.
 
-**The Uncertainty Paradox.** This creates a fundamental tension in venture governance: **the more uncertain the world, the more you need flexibility—but that is precisely when governance binds you the tightest.** Boards impose tighter controls not *despite* uncertainty, but *because* of it. The very conditions that demand strategic agility trigger mechanisms that constrain it. When the environment is volatile, investors seek assurance through milestones and commitments; yet volatility is exactly when those commitments should remain provisional. The cage tightens when it should loosen.
+This creates a fundamental tension in venture governance. The more uncertain the world, the more founders need flexibility—but uncertainty is precisely when governance binds tightest. Boards impose tighter controls not *despite* uncertainty, but *because* of it. When the environment is volatile, investors seek assurance through milestones and commitments; yet volatility is exactly when those commitments should remain provisional. The cage tightens when it should loosen.
 
 ## 2.7 Hypotheses
 
@@ -434,7 +438,7 @@ This chapter developed the golden cage mechanism—a theoretical account of how 
 
 The formal condition for caged learning (Theorem 1) demonstrates that learning ceases endogenously: shared optimism (high μ) and strategic narrowing (low B) both push the system toward belief convergence. The cage is not imposed externally—it emerges from the funding process itself.
 
-Three testable hypotheses follow: (H1) funding correlates negatively with growth, (H2) funding correlates negatively with repositioning, and (H3) repositioning correlates positively with growth. Together, these decompose the paradox: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−).
+Three testable hypotheses follow: (H1) funding correlates negatively with growth, (H2) funding correlates negatively with repositioning, and (H3) repositioning correlates positively with growth. Together, these decompose the Funding-Growth Paradox: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−).
 
 The next chapter describes how to test these hypotheses at population scale using 180,994 ventures from PitchBook.
 
@@ -609,7 +613,7 @@ Key sample characteristics: 40.3% of ventures qualify as "Movers" (R > 0), while
 
 ## 4.1 Introduction
 
-**This chapter documents where the cage bites:** by analyzing 180,994 ventures across industries, we test the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that their product explains the funding-growth paradox.
+**This chapter documents where the cage bites:** by analyzing 180,994 ventures across industries, we test the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that their product explains the Funding-Growth Paradox.
 
 The empirical results confirm all three hypotheses and reveal industry heterogeneity in cage effects.
 
@@ -634,6 +638,10 @@ The data confirm H2: repositioning enables growth.
 | + Funding controls | +0.018 | 0.003 | < 0.001 | 180,994 |
 
 The positive correlation is consistent: ventures that reposition succeed more often.
+
+[Figure 5: The Mover Advantage](figures/Ch4_Fig1_mover_advantage.png)
+
+**Figure 5:** The Mover Advantage. Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage. The bar chart visualizes the core H2 finding: repositioning enables growth.
 
 ### 4.3.2 The Mover Advantage: 2.60×
 
@@ -767,7 +775,7 @@ The deep tech exception also illuminates a distinction between two forms of earl
 
 **Staged commitment** attracts like-minded investors who believe the milestones are achievable—creating governance homogeneity. **Partial commitment** attracts investors hedging uncertainty—preserving governance diversity through shared doubt.
 
-Paradoxically, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
+Counterintuitively, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
 
 [Figure 8: Mobility - Where the Cage Bites Hardest](figures/Ch4_Fig4_industry_survival.png)
 
@@ -895,7 +903,7 @@ The cage forms when operational commitment attracts homogeneous believers. The f
 
 Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
 
-[Figure 10: The Strategic Ambiguity Sweet Spot](figures/Fig7_sweet_spot.png)
+[Figure 10: The Strategic Ambiguity Sweet Spot](figures/Ch5_Fig1_sweet_spot.png)
 
 **Figure 10:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
 
@@ -1162,7 +1170,7 @@ Future work must directly measure board composition diversity. Three approaches 
 
 ### 6.3.1 Alternative Explanations
 
-The governance homogeneity mechanism proposed in this thesis competes with several alternative explanations for the funding-growth paradox. I consider three prominent alternatives and discuss why the evidence favors the governance account.
+The governance homogeneity mechanism proposed in this thesis competes with several alternative explanations for the Funding-Growth Paradox. I consider three prominent alternatives and discuss why the evidence favors the governance account.
 
 **Table 10: Alternative Explanations vs. Governance Homogeneity**
 
@@ -1191,7 +1199,7 @@ Three directions merit further investigation:
 
 Capital is oxygen for startups—but oxygen in a sealed chamber becomes a cage.
 
-This thesis began with a paradox: the venture capital industry—deploying over $330 billion globally at its 2021 peak (PitchBook, 2024)—exists to fuel growth, yet early-stage funding correlates negatively with later-stage survival (ρ = −0.196, N = 180,994). The paradox **resolves** through decomposition: funding **suppresses** repositioning (ρ = −0.087), and repositioning **drives** growth (Movers outperform Stayers by 2.60×). The product of a positive and a negative is negative.
+This thesis began with the Funding-Growth Paradox: the venture capital industry—deploying over $330 billion globally at its 2021 peak (PitchBook, 2024)—exists to fuel growth, yet early-stage funding correlates negatively with later-stage survival (ρ = −0.196, N = 180,994). This pattern **resolves** through decomposition: funding **suppresses** repositioning (ρ = −0.087), and repositioning **drives** growth (Movers outperform Stayers by 2.60×). The product of a positive and a negative is negative.
 
 The mechanism I term the *golden cage* operates through belief homogeneity. Securing capital requires commitments that attract investors who share the founder's thesis. Skeptics self-select out. The resulting board contains only believers—efficient for execution, destructive for learning. When market signals suggest pivoting, no one advocates alternatives. The venture cannot adapt—not for lack of will, but for lack of governance diversity.
 
@@ -1536,48 +1544,6 @@ Since 0.09 > 0.05, learning is still possible. But if commitment narrows to B = 
 - Now 0.09 < 0.10: learning ceases.
 
 The cage locks when commitment reduces B below the critical threshold.
-
----
-
-# FIGURES
-
-## Figure 1: The Funding-Growth Paradox
-
-![Figure 1: The Funding-Growth Paradox](figures/Ch1_Fig1_capital_paradox.png)
-
-Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
-
----
-
-## Figure 2: The Mediation Structure (DAG)
-
-![Figure 2: The Mediation Structure](figures/Ch1_Fig2_mediation_dag.png)
-
-**Upper path (measured variables):** Early Funding → Reposition → Growth. **H1 (Commitment Trap, −):** Funding suppresses repositioning. **H2 (Flexibility Premium, +):** Repositioning enables growth. **H3 (Funding Paradox, −):** Net effect shown by dashed arc—despite enabling commitment, early funding ultimately reduces growth through the mediation pathway. **Lower path (latent variables):** Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables Repositioning (+). The multiplicative structure ensures that blocking either path (H1 or H2) eliminates the indirect effect.
-
----
-
-## Figure 6: Mover vs. Stayer Success Rates
-
-![Figure 6: Mover vs. Stayer Success Rates](figures/Ch4_Fig3_growth_by_direction.png)
-
-Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
-
----
-
-## Figure 8: Mobility - Where the Cage Bites Hardest
-
-![Figure 8: Mobility Failure](figures/Ch4_Fig4_industry_survival.png)
-
-Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
-
----
-
-## Figure 10: Mover vs. Stayer Comparison
-
-![Figure 10: Mover vs Stayer Comparison](figures/Fig8_mover_vs_stayer.png)
-
-Movers achieve 2.6× relative success compared to Stayers (baseline 1.0×).
 
 ---
 
