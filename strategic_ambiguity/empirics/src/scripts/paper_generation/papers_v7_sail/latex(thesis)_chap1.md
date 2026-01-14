@@ -1,6 +1,6 @@
 ---
 modified:
-  - 2026-01-14T08:48:35-05:00
+  - 2026-01-14T10:48:18-05:00
 ---
 \hypertarget{ch:introduction}{%
 \chapter{Introduction}\label{ch:introduction}}
@@ -67,7 +67,7 @@ This thesis addresses three interconnected questions, each corresponding to a th
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Why does this happen? (Chapter 2):} I synthesize \citeauthor{vandensteen2010interpersonal}'s \citeyearpar{vandensteen2010interpersonal} sorting equilibrium, \citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} strategic ambiguity, and \citeauthor{ghemawat1991commitment}'s \citeyearpar{ghemawat1991commitment} commitment analysis into a unified mechanism: the \emph{golden cage}. The main technical contribution is \textbf{Theorem 1 (Caged Learning)}, which formalizes when organizational learning ceases through the funding process itself.
+  \textbf{Why does this happen? (Chapter 2):} Securing capital requires specific commitments. Investors who fund a venture believe those commitments will succeed---skeptics self-select out. The result is governance homogeneity: no one on the board advocates for alternatives when the market signals pivot. I call this the \emph{golden cage}. The main technical contribution is \textbf{Theorem 1 (Caged Learning)}, which formalizes when organizational learning ceases through the funding process itself.
 \item
   \textbf{Does the data confirm it? (Chapters 3-4):} Using 180,994 ventures, I measure repositioning through dictionary-based text analysis and document both the CER pattern (Funding \ensuremath{\rightarrow} Repositioning\ensuremath{\downarrow}) and the FRG pattern (Repositioning \ensuremath{\rightarrow} Growth\ensuremath{\uparrow}). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: \ensuremath{\rho} = -0.108, Transportation: \ensuremath{\rho} = -0.101) but releases under extreme uncertainty (Quantum: \ensuremath{\rho} = +0.095).
 \end{enumerate}
