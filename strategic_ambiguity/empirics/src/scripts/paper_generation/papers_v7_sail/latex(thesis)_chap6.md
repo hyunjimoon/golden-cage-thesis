@@ -23,30 +23,11 @@ This thesis makes three theoretical contributions:
 \hypertarget{practical-implications}{%
 \section{Practical Implications}\label{practical-implications}}
 
-\textbf{For Founders:}
 \begin{itemize}
 \tightlist
-\item Commit to \emph{reposition}, not to position
-\item Design governance to preserve skeptical voices \emph{before} funding eliminates them
-\item Prioritize platform capabilities over segment-specific capabilities until the market clarifies what works
-\item Cultivate a "discoverer" identity that enables strategic flexibility
-\end{itemize}
-
-\textbf{For Investors:}
-\begin{itemize}
-\tightlist
-\item Distinguish vision alignment from operational commitment
-\item Fund platform capability, not product specificity
-\item Expect successful ventures to reposition, design governance to enable adaptation
-\item Preserve diverse information sources on the board
-\end{itemize}
-
-\textbf{For Scholars:}
-\begin{itemize}
-\tightlist
-\item The cage mechanism shows governance, not incentives, constrains ventures
-\item Interventions should target governance design, not founder monitoring
-\item Future research should directly measure board belief diversity
+\item \textbf{Founders:} Commit to \emph{reposition}, not to position. Design governance to preserve skeptical voices \emph{before} funding eliminates them.
+\item \textbf{Investors:} Fund platform capability, not product specificity. Expect successful ventures to reposition.
+\item \textbf{Scholars:} The cage mechanism shows governance, not incentives, constrains ventures. Future research should directly measure board belief diversity.
 \end{itemize}
 
 \hypertarget{limitations}{%
