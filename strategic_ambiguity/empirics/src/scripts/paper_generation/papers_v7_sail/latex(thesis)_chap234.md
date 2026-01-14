@@ -12,20 +12,42 @@ modified:
 \hypertarget{introduction}{%
 \section{2.1 Introduction}\label{introduction}}
 
-Strategic flexibility \textbf{determines} venture survival. In manufacturing, flexibility \textbf{hedges} against demand shocks \citep{jordan1995principles}. In ventures, it \textbf{enables} pivots when markets shift \citep{ries2011the, camuffo2020a}. Yet the funding process systematically \textbf{destroys} this flexibility, a paradox this chapter \textbf{resolves}.
+Strategic flexibility enables ventures to operationalize the Freedom Axiom \citep{stern2023}: the capacity to pursue the ``best available alternative'' requires maintaining multiple viable paths. New ventures possess this capacity naturally---their ``blank slate'' status \citep{christensen1997innovators} permits strategic repositioning unconstrained by legacy commitments. Yet the funding process systematically \textbf{erodes} this flexibility precisely when ventures need it most to navigate uncertainty---a paradox this chapter resolves.
 
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\tightlist
-\item
-  Flexibility in Manufacturing (b) Flexibility in Ventures
-\end{enumerate}
+\textbf{Flexibility as Latent Capability.} I define strategic flexibility as the \textbf{latent capability} to pursue multiple paths within constrained resource spaces. This capability remains unobserved directly; I proxy it through \textbf{repositioning}---the observable behavioral manifestation of latent flexibility. Ventures that reposition demonstrate they possessed flexibility; those that remain static may lack the capability or choose not to exercise it. Critically, the data reveal that staying is rarely strategic: \textbf{Movers outperform Stayers by 2.60\ensuremath{\times}} (18.1\% vs.~7.0\% later-stage success, p < 0.001). This suggests that in early-stage ventures, lack of movement predominantly signals rigidity rather than perfection.
 
-\textbf{Figure 3a: Process Flexibility vs.~Venture Flexibility.} This figure contrasts how manufacturing systems and venture governance create flexibility. In manufacturing, central planners configure flexibility deterministically. In ventures, flexibility emerges through governance composition, who sits on the board determines which strategic pivots are feasible.
+\textbf{The Funding-Growth Paradox.} Funding correlates negatively with growth (\ensuremath{\rho} = -0.196, p < 0.001). The paradox resolves through decomposition:
 
-Modern venture-backed startups face uncertainty from both products and markets. They must position for two audiences: investors who fund them, customers who buy from them. Figure 3a illustrates stakeholder connections. Each edge \textbf{signals} compatibility, whether an investor backs a given direction. Founders \textbf{navigate} these edges when raising capital. Manufacturing and ventures both need flexibility, but \textbf{create} it differently.
+\begin{equation}
+\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{Commitment Trap }(-)} = (+) \times (-) = (-)
+\end{equation}
 
-In manufacturing, central planners \textbf{configure} compatibility deterministically by investing in equipment. In venture governance, flexibility \textbf{emerges} through who founders select. \citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} "strategic ambiguity" approach illustrates how founders \textbf{maintain} flexibility, by positioning broadly enough to attract diverse stakeholders. A founder choosing this approach accepts varied investor interpretations, but \textbf{gains} the ability to pivot without losing governance support. Strategic ambiguity \textbf{expands} pivot options, but stochastically, not deterministically.
+Funding \textbf{erodes} flexibility precisely when ventures need it most. \citet{camuffo2020a} document that scientific experimentation improves pivot quality, yet securing capital to fund experimentation requires commitments that attract homogeneous believers. The paradox is structural: acquiring resources to learn reduces the governance diversity necessary to act on learning.
+
+\textbf{Why Compare Manufacturing and Ventures?} The concept of strategic flexibility originates in manufacturing, where \citet{jordan1995principles} demonstrated that process flexibility hedges against demand uncertainty. I import this concept to venture governance---but the \textbf{mechanism} differs fundamentally. Understanding this difference clarifies why funding can erode flexibility in ventures while enhancing it in manufacturing.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{0.22\columnwidth}
+  >{\raggedright\arraybackslash}p{0.35\columnwidth}
+  >{\raggedright\arraybackslash}p{0.35\columnwidth}@{}}
+\toprule
+\textbf{Dimension} & \textbf{Manufacturing} & \textbf{Ventures} \\
+\midrule
+\endhead
+Execution Agent & Central planner (deterministic) & Distributed governance (stochastic) \\
+Flexibility Creation & Equipment investment & Strategic ambiguity \\
+Configuration Mode & Ex-ante design & Emergent through selection \\
+Adaptation Trigger & Demand signal (automatic) & Market feedback + \textbf{governance advocacy} \\
+\bottomrule
+\end{longtable}
+
+\textbf{Table 2.0: Manufacturing vs.~Venture Flexibility.} The critical difference lies in the adaptation trigger. In manufacturing, sensors detect demand shifts and systems adjust automatically. In ventures, adaptation requires \textbf{political consensus}---the board must advocate for change. This ``governance friction'' is the cage's essence: founders cannot pivot without board support, and homogeneous boards lack advocates for alternatives.
+
+\textbf{The Core Asymmetry.} In manufacturing, capital \textbf{buys} flexibility (more equipment investment = more production options). In ventures, capital can \textbf{erode} flexibility (more funding = more governance homogeneity = fewer pivot advocates). This asymmetry explains the Funding-Growth Paradox.
+
+\textbf{Figure 3a: Process Flexibility vs.~Venture Flexibility.} Governance composition \textbf{mediates} flexibility emergence. In manufacturing, central planners configure flexibility deterministically through equipment investment. In ventures, flexibility emerges stochastically through the sorting process that determines who joins governance. The board's belief distribution---not the founder's intention---determines which pivots receive advocacy when market signals arrive.
+
+\citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} ``strategic ambiguity'' functions as a \textbf{stochastic enabler} of flexibility. Founders who \textbf{orchestrate} ambiguous positioning attract diverse stakeholders who project their own interpretations onto capacious visions. This diversity \textbf{unlocks} future pivot capacity: when market signals suggest changing direction, at least some governance voices advocate for the alternative. Strategic ambiguity does not guarantee flexibility---it increases the \emph{probability} that flexibility survives the funding process.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1351}}
