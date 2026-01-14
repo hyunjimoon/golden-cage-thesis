@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T00:33:12-05:00
+  - 2026-01-14T05:20:54-05:00
 ---
 
 
@@ -220,7 +220,7 @@ The data reveal a paradox. Analyzing 180,994 ventures from PitchBook (2021–202
 
 $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
-[Figure 1: The Funding-Growth Paradox](figures/Fig-I_capital_paradox.png)
+[Figure 1: The Funding-Growth Paradox](figures/Fig1_capital_paradox.png)
 
 **Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
@@ -230,7 +230,7 @@ $$\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \t
 
 The **Flexibility Premium** (dG/dR > 0) captures the growth benefit of adaptation: ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0% later-stage survival). The **Commitment Trap** (dR/dE < 0) captures the rigidity cost of funding: early funding correlates with lower repositioning (ρ = −0.087, p < 0.001), as governance structures attached to capital constrain adaptation. The product of a positive and a negative is negative: funding correlates with reduced mobility, not because capital is harmful, but because commitment attracts like-minded investors who filter skeptics from governance.
 
-[Figure 2: Mediation Structure](figures/Fig-I_mediation_dag.png)
+[Figure 2: Mediation Structure](figures/Fig1b_mediation_dag.png)
 
 **Figure 2:** The Mediation Structure. The upper path shows measured variables: Early Funding → Repositioning → Growth. H1 (Commitment Trap, −) captures funding's suppression of repositioning; H2 (Flexibility Premium, +) captures repositioning's benefit to growth. H3 (Funding Paradox, −) is the net effect shown by the dashed arc. The lower path shows latent variables: Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables both Repositioning (+) and Growth (+).
 
@@ -316,9 +316,9 @@ This thesis distinguishes between **observed correlational patterns** (measurabl
 The LTE framework clarifies that construct-level findings (Layer 1) predict but do not explain. Layer 2 describes the *sequence* through which the golden cage forms: operational commitment attracts like-minded investors, who filter skeptics from governance, producing belief homogeneity that eliminates learning capacity. Layer 3 specifies the *generative mechanism* that drives this sequence: Van den Steen's (2010) sorting equilibrium produces high μ (shared optimism), while operational commitment produces low B (narrow strategic breadth), satisfying the Caged Learning condition.
 
 **Observed Patterns (Layer 1 — Measured Variables):**
-- **EG Pattern:** ρ(Funding, Growth) < 0 — Chapter 1 documents this paradox
-- **ER Pattern:** ρ(Funding, Repositioning) < 0 — Chapter 4 tests H2
-- **RG Pattern:** ρ(Repositioning, Growth) > 0 — Chapter 4 tests H3
+- **H1 (Commitment Trap):** ρ(Funding, Repositioning) < 0 — Funding suppresses repositioning
+- **H2 (Flexibility Premium):** ρ(Repositioning, Growth) > 0 — Repositioning enables growth
+- **H3 (Funding Paradox):** ρ(Funding, Growth) < 0 — Net negative effect (H1 × H2)
 
 **Process Sequence (Layer 2 — Action Flow):**
 - Commit → Fund → Filter → Homogenize → Signal Loss → Cage
@@ -372,7 +372,7 @@ $$C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\
 
 Where C = Commitment, E = Early funding, F = Flexibility, R = Repositioning, G = Growth. See [Glossary](#appendix-c-glossary) for definitions.
 
-[Figure 3: The Golden Cage Mechanism](figures/Fig-CFR1_golden_cage.png)
+[Figure 3: The Golden Cage Mechanism](figures/Fig3_golden_cage.png)
 
 **Figure 3:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
@@ -459,7 +459,7 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
 | **F** | [Flexibility](#flexibility) | Capacity | Governance-permitted change capacity (inferred from R) |
 | **B** | [Strategic Breadth](#strategic-breadth-b) | State | Market positioning specificity (0-100 scale via dictionary-based vagueness) |
 | **R** | [Repositioning](#repositioning) | Action | \|B_T − B_0\|, magnitude of strategic change |
-| **G** | [Growth](#growth-g) | Outcome | Later-stage survival/funding (binary: reached Later Stage VC) |
+| **G** | [Growth](#growth-g) | Outcome | Funding growth multiple: G = (F_t − E) / E |
 
 ### 3.3.1 Strategic Breadth (B)
 
@@ -527,7 +527,7 @@ The measure exhibits expected correlations:
 
 **Growth (G).**
 
-I operationalize growth as reaching Later Stage VC financing—a milestone indicating market validation. The base rate is 11.5% across the sample.
+I operationalize growth as the funding growth multiple: G = (F_t − E) / E, where F_t is total funding raised and E is early-stage funding. This continuous measure captures the magnitude of capital accumulation subsequent to initial financing. The median G is 0.9× (near-doubling); the distribution is right-skewed with mean 0.67×.
 
 **Commitment (C).**
 
@@ -553,9 +553,9 @@ The composite index averages the three components: **C = (C_a + C_b + C_c) / 3**
 | Strategic Breadth (B₀) | 52.3 | 18.4 | 0 | 51 | 100 |
 | Strategic Breadth (B_T) | 54.1 | 19.2 | 0 | 53 | 100 |
 | Repositioning (R, standardized) | 0.31 | 0.42 | 0 | 0.15 | 2.8 |
-| Growth (G) | 0.115 | 0.32 | 0 | 0 | 1 |
+| Growth (G = (F_t−E)/E) | 0.67 | 2.0 | −29 | 0.09 | 265 |
 
-*Note: R is reported in standardized units (z-score) for cross-venture comparability. Raw R = |B_T − B₀| ranges 0–100; the max standardized value of 2.8 corresponds to approximately 65 raw units. See §4.6 for illustrative cases using raw values.*
+*Note: R is reported in standardized units for cross-venture comparability; raw R = |B_T − B₀| ranges 0–100. G is the funding growth multiple. See §4.6 for illustrative cases.*
 
 **Key distributional features:**
 
@@ -587,17 +587,17 @@ Key sample characteristics: 40.3% of ventures qualify as "Movers" (R > 0), while
 
 This chapter presents the empirical results testing the cage hypotheses. I document both the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that the product of these effects explains the funding-growth paradox.
 
-**Contributions.** (1) *Hypothesis Confirmation*: I confirm all three hypotheses—H1 (ρ(E,G) = −0.196***), H2 (ρ(E,R) = −0.087***), H3 (Mover advantage = 2.60×). (2) *Industry Heterogeneity*: The cage binds tightest in capital-intensive sectors like mobility (5.3% survival). (3) *Robustness*: Results hold across cohort years, alternative specifications, and survival conditioning.
+**Contributions.** (1) *Hypothesis Confirmation*: I confirm all three hypotheses—H1 (ρ(E,R) = −0.087***), H2 (Mover advantage = 2.60×), H3 (ρ(E,G) = −0.196***). (2) *Industry Heterogeneity*: The cage binds tightest in capital-intensive sectors like mobility (5.3% survival). (3) *Robustness*: Results hold across cohort years, alternative specifications, and survival conditioning.
 
-## 4.2 H2: Funding → Repositioning (The Commitment Trap)
+## 4.2 H1: Funding → Repositioning (The Commitment Trap)
 
-The data confirm H2: funding is associated with lower repositioning (ρ = −0.087***, N = 180,994). The correlation is robust to industry FE (−0.082), cohort FE (−0.079), and founder controls (−0.075). Well-funded ventures reposition less—consistent with the cage mechanism where higher funding correlates with more specific commitments and more homogeneous governance.
+The data confirm H1: funding suppresses repositioning (ρ = −0.087***, N = 180,994). The correlation is robust to industry FE (−0.082), cohort FE (−0.079), and founder controls (−0.075). Well-funded ventures reposition less—consistent with the cage mechanism where higher funding correlates with more specific commitments and more homogeneous governance.
 
-## 4.3 FRG Analysis: Flexibility → Repositioning → Growth
+## 4.3 H2: Repositioning → Growth (The Flexibility Premium)
 
 ### 4.3.1 Main Finding
 
-The data confirm H3: repositioning correlates with growth.
+The data confirm H2: repositioning enables growth.
 
 **Table 4: FRG Analysis — Repositioning → Growth**
 
@@ -635,7 +635,7 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 
 **Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—explains the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the primary identification.
 
-[Figure 6: Mover vs. Stayer Success Rates](figures/Fig_growth_by_R.png)
+[Figure 6: Mover vs. Stayer Success Rates](figures/Fig4_growth_by_R.png)
 
 **Figure 6:** Mover vs. Stayer Success Rates. Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
 
@@ -676,7 +676,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 
 *Note: E = first_financing_size (M USD), G = growth (binary: reached Later Stage VC). Data verified from PitchBook (2021-2025).*
 
-[Figure 7: Industry ρ(E,G) Correlations](figures/Fig_4_industry_heterogeneity_rho.png)
+[Figure 7: Industry ρ(E,G) Correlations](figures/Fig5_industry_rho.png)
 
 **Figure 7:** Industry-level ρ(E,G) correlations. Capital-intensive sectors (Hardware, Transportation) show strongest negative correlations consistent with the multiplicative model. Quantum is the sole positive outlier—under extreme uncertainty, learning value dominates rigidity costs.
 
@@ -732,7 +732,7 @@ The deep tech exception also illuminates a distinction between two forms of earl
 
 Paradoxically, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
 
-[Figure 8: Mobility - Where the Cage Bites Hardest](figures/Fig-Ch4_mobility_failure.png)
+[Figure 8: Mobility - Where the Cage Bites Hardest](figures/Fig6_industry_survival.png)
 
 **Figure 8:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
@@ -786,48 +786,43 @@ The Mover advantage attenuates but persists under survival conditioning, suggest
 
 ## 4.6 Illustrative Cases
 
-The statistical patterns acquire meaning through concrete examples. Table 4.1 presents four ventures from the autonomous vehicle sector, illustrating how the strategic breadth measure (B) captures positioning changes over time.
+The statistical patterns acquire meaning through concrete examples. Table 4.1 presents three ventures with G values near the median for their type, illustrating how strategic breadth (B) and repositioning (R) relate to funding growth (G).
 
-**Table 4.1: Strategic Breadth Examples from Autonomous Vehicle Sector**
+**Table 4.1: Repositioning and Growth (Median-Representative Cases)**
 
-| Company | 2021 Description | B₀ | 2025 Description | B_T | ΔB | Type |
-|:--------|:-----------------|---:|:-----------------|----:|---:|:----:|
-| **Sky Engine** | "AI models for autonomous vehicles, drones, robots" (specific applications) | 28.4 | "Synthetic data cloud for vision AI" (broad platform) | 89.1 | +60.7 | Mover (↑) |
-| **Black Sesame** | "Digital imaging for autonomous driving and consumer electronics" (broad) | 88.0 | "Automotive-grade intelligent vehicle computing SoCs" (specific) | 25.2 | −62.8 | Mover (↓) |
-| **Rubedos** | "Mobile robotics for self-driving vehicle development" | 81.9 | (Nearly identical positioning) | 81.9 | 0.0 | Stayer |
-| **Surestar** | "LiDAR for cities, transportation, surveying" | 87.9 | (Identical positioning) | 87.9 | 0.0 | Stayer |
+| Company | B₀ | B_T | ΔB | R = \|ΔB\| | G | Type |
+|:--------|---:|----:|---:|-----------:|--:|:-----|
+| **Hope Care** | 39.6 | 88.2 | +48.5 | 48.5 | 2.71× | Broadening Mover |
+| **True Botanicals** | 81.9 | 37.5 | −44.4 | 44.4 | 2.45× | Narrowing Mover |
+| **Leap Green Energy** | 87.5 | 87.5 | 0.0 | 0.0 | 0.80× | Stayer |
 
-*Notes: B = strategic breadth (0–100 scale, higher = broader); ΔB = B_T − B₀ (raw units). R = |ΔB|. Table 2 reports standardized R (z-score) for cross-venture comparability; illustrative cases use raw ΔB for interpretability.*
+*Notes: B = strategic breadth (0–100); R = repositioning magnitude; G = funding growth multiple = (F_t − E) / E. Median G: Broadening = 2.57×, Narrowing = 2.32×, Stayer = 0.60×.*
 
-### 4.6.1 Sky Engine: The Broadening Mover
+### 4.6.1 Two Types of Movers
 
-**Sky Engine** exemplifies the broadening mover trajectory. At founding (2021), the company positioned specifically around "AI models for autonomous vehicles, drones, robots"—three defined applications yielding a narrow breadth score (B₀ = 28.4). By 2025, the company had repositioned toward "Synthetic data cloud for vision AI"—a platform applicable to any vision AI use case—yielding a broad score (B_T = 89.1). The repositioning magnitude R = |ΔB| = 60.7.
+Repositioning (R > 0) takes two forms: **broadening** (ΔB > 0) and **narrowing** (ΔB < 0). Both exhibit elevated growth relative to Stayers.
 
-This expansion—from specific applications to a general-purpose platform—enabled Sky Engine to pursue multiple market opportunities while maintaining technological coherence. The company successfully reached later-stage financing (Series B+), consistent with the mover advantage documented above.
+**Hope Care (Broadening Mover):** Moved from specific application ("cloud-based healthcare technology for primary care," B₀ = 39.6) to a general platform ("healthcare technology company offering preventive care and chronic disease management," B_T = 88.2). R = 48.5, G = 2.71× (near median).
 
-**Key insight:** Sky Engine's repositioning did not represent strategic confusion. Rather, the company preserved vision-level commitment (AI for autonomous systems) while expanding operational flexibility (any vision AI application). This pattern exemplifies the cage escape: maintaining governance diversity through broad vision while adapting to market feedback.
+**True Botanicals (Narrowing Mover):** Moved from broad scope ("natural products designed to liberate glow with clean skincare," B₀ = 81.9) to specific focus ("manufacturer of natural skin care products using clinically-proven formulations," B_T = 37.5). R = 44.4, G = 2.45× (near median).
 
-### 4.6.2 Surestar: The Stayer
+Both Movers achieved funding growth roughly 3–4× higher than the median Stayer. The sample contains 40,649 broadening movers and 31,028 narrowing movers—demonstrating that *movement itself*, not direction, drives the mover advantage.
 
-**Surestar** represents the stable positioning alternative. The company maintained identical strategic breadth throughout the observation period: "LiDAR for cities, transportation, surveying" (B₀ = B_T = 87.9), yielding R = 0. Note that Surestar's *broad* initial positioning (B₀ = 87.9) differs from Sky Engine's *narrow* initial positioning (B₀ = 28.4)—demonstrating that breadth level itself does not determine outcomes; *change* in breadth does.
+### 4.6.2 The Stayer Contrast
 
-**Key insight:** Surestar's stability illustrates that even broadly-positioned ventures can become caged if governance homogenizes around the initial thesis. The cage mechanism operates on *repositioning capacity*, not positioning level: a venture with B = 88 can be as trapped as one with B = 28 if no governance voice advocates for change.
+**Leap Green Energy (Stayer):** Maintained identical positioning ("operator of renewable energy-based power projects across India," B₀ = B_T = 87.5) throughout the observation period. R = 0, G = 0.80× (near median).
 
-### 4.6.3 Black Sesame Technologies: The Narrowing Mover
+This median Stayer achieved modest funding growth—near-doubling rather than the 2.5× typical of Movers. The aggregate pattern holds: Movers (R > 0) outperform Stayers (R = 0) by 2.60× on average.
 
-**Black Sesame Technologies** exemplifies the zoom-in strategy. At founding (2021), the company positioned broadly around "digital imaging technology for autonomous driving and consumer electronics"—multiple applications yielding high breadth (B₀ = 88.0). By 2025, the company had focused on "automotive-grade intelligent vehicle computing SoCs"—specific semiconductor solutions—yielding lower breadth (B_T = 25.2). The repositioning magnitude R = |ΔB| = 62.8.
-
-The sample includes 15,902 zoom-in movers (ΔB < 0). These companies achieve 17.1% success rate, demonstrating that *movement itself*—not direction—drives the mover advantage. Narrowing can succeed when initial positioning was too broad: focusing from "imaging for autonomous AND consumer" to "automotive-grade SoCs" improves execution without sacrificing market fit.
-
-**Summary:** All trajectories—broadening (Sky Engine), narrowing (Black Sesame), and stable (Surestar, Rubedos)—demonstrate that R > 0 associates with higher growth than R = 0. The cage binds not those who move in the wrong direction, but those who cannot move at all.
+**Key insight:** The cage mechanism operates on *repositioning capacity*, not initial positioning level. A venture with broad initial positioning (B₀ = 88) can be as constrained as one with narrow positioning (B₀ = 40) if governance homogenizes around the original thesis.
 
 ## 4.7 Conclusion
 
 The evidence supports all three hypotheses:
 
-- **H1 confirmed:** ρ(E,G) = −0.196***
-- **H2 confirmed:** ρ(E,R) = −0.087***
-- **H3 confirmed:** Mover advantage = 2.60×
+- **H1 (Commitment Trap) confirmed:** ρ(E,R) = −0.087*** — Funding suppresses repositioning
+- **H2 (Flexibility Premium) confirmed:** Mover advantage = 2.60× — Repositioning enables growth
+- **H3 (Funding Paradox) confirmed:** ρ(E,G) = −0.196*** — Net negative effect
 
 The cage binds tightest in:
 - Capital-intensive industries (mobility, hardware, biotech)
@@ -861,7 +856,7 @@ The cage forms when operational commitment attracts homogeneous believers. The f
 
 Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0%, outperforming both narrow positioning (Q1: 12.3%, Q2: 8.9%) and maximally broad positioning (Q4: 12.9%).
 
-[Figure 10: The Strategic Ambiguity Sweet Spot](figures/Fig-Ch5_capitalize_evaluate.png)
+[Figure 10: The Strategic Ambiguity Sweet Spot](figures/Fig7_sweet_spot.png)
 
 **Figure 10:** The Strategic Ambiguity Sweet Spot. Q3 positioning achieves 16.0% survival—higher than both narrow (Q1-Q2) and maximally broad (Q4) positioning.
 
@@ -891,25 +886,76 @@ For investors:
 
 Capitalizing attracts resources; evaluating deploys them. The **Scale-it Framework** operationalizes deployment through synchronized growth:
 
-$$\text{Scale} = \text{Segment} \times \text{Collaborate}$$
+$$\text{Growth} = \text{Market} \times \text{Ops}$$
 
-**Segment:** Market selection—which customers to serve first, second, third.
+- **Segment (Market):** Which customers to serve first, second, third.
+- **Collaborate (Ops):** Which capabilities to develop internally, acquire, or partner.
 
-**Collaborate:** Capability building—which capabilities to develop internally, acquire, or partner.
+### 5.3.1 The Anatomy of Growth
 
-### 5.3.1 The Diagonal Principle
+Growth requires synchronized expansion of market reach and operational capability. Only the filled area represents true value creation (Figure 9, Panel A):
 
-Hayes and Wheelwright (1979) formalized the process-product diagonal: ventures succeed when process maturity matches product standardization. Off-diagonal positioning creates vulnerability.
+| Type | Name | Market | Ops | Characteristic |
+|:----:|:-----|:------:|:---:|:---------------|
+| **A** | Stunted (Golden Cage) | Low | High | Operational excellence serving insufficient demand |
+| **B** | Hollow (Mirage) | High | Low | Market promise without delivery capability |
+| **C** | Parallel (Engine) | High | High | Synchronized expansion |
 
-**The cage is off-diagonal failure.** Better Place locked process (battery-swap infrastructure) while product remained fluid—a rigid process serving an unvalidated product. Tesla stayed on-diagonal: flexible processes (contract manufacturing, then Fremont) matched evolving products.
+### 5.3.2 The Binding Constraint
 
-### 5.3.2 Parallel Growth
+Hausmann, Klinger, and Wagner (2008) introduced **Liebig's Barrel** to growth diagnostics: the volume of a barrel depends entirely on the shortest stave (Figure 9, Panel B). The balanced growth path equation formalizes this:
 
-Ventures that escape the cage exhibit **Parallel Growth**:
+$$\frac{\dot{c}_t}{c_t} = \frac{\dot{k}_t}{k_t} = \sigma[r(1-\tau) - \rho]$$
+
+Value creation growth ($\dot{c}/c$) must equal resource growth ($\dot{k}/k$). Sustainable growth requires these rates to synchronize—the barrel fills only as fast as the shortest stave permits.
+
+### 5.3.3 The Diagonal Principle
+
+Hayes and Wheelwright (1979) formalized the **process-product diagonal**: ventures succeed when process maturity matches product standardization.
+
+```
+Products:     One of Kind ─────────────────── Standard, High Volume
+Processes:    ┌─────────────────────────────────────────────────────┐
+Jumbled       │  Job Shop ─── ✓ Nail It ─────── Low Productivity   │
+              │              ↘                                      │
+Linear        │                 ✓ Scale It                         │
+              │                          ↘                          │
+Rigid         │  Low Flexibility ────────── ✓ Sail It ─── Flow    │
+              └─────────────────────────────────────────────────────┘
+```
+
+**The cage is off-diagonal failure.** Better Place locked process (battery-swap infrastructure) while product remained fluid—rigid process serving unvalidated product. Tesla stayed on-diagonal: flexible processes matched evolving products.
+
+### 5.3.4 Case Studies
+
+**Type A — NxStage (Stunted Growth):** NxStage developed System One, a portable home hemodialysis device enabling kidney patients to receive care at home. The technology provided breakthrough patient experience at attractive cost, and the company developed operational capability across geographic markets. However, the company struggled because many nephrologists lacked incentives to switch patients from traditional dialysis centers. *Bottleneck: Market access—excellent ops serving insufficient demand.*
+
+**Type B — SkinnyGirl Cocktails (Hollow Growth):** Founded in 2009 by Bethenny Frankel, SkinnyGirl hit upon premixed low-calorie cocktails for women—a segment ignored by major spirits companies. SkinnyGirl became the fastest growing spirits brand in the United States. But the collaboration partner for fulfillment struggled to scale supply chain capabilities. Unable to match production to market traction, the startup sold below NPV; the acquirer fulfilled order backlog but couldn't maintain brand popularity. *Bottleneck: Production capability—enormous market, no operational foundation.*
+
+**Type C — Parallel Growth:** Ventures that synchronize market expansion with capability development. Each market segment entered only when operational capability exists to serve it; each capability built only when market validation justifies it. The goal: large filled square rather than tall narrow bar (Type A) or wide empty box (Type B).
+
+**Off-Diagonal — Segway (Premature Scaling):** Segway raised $100M+ committed to gyroscopic two-wheel platform as THE solution for personal transportation. The cage formed not from vague vision—"revolutionize personal transportation" was appropriately broad—but from premature operational lock-in: $100M invested in gyroscopic manufacturing before validating market demand. Governance homogeneity (celebrity investors all believed in the form factor) produced signal blindness. When market feedback indicated warehouse logistics and campus security as viable applications requiring different form factors, no governance voice advocated pivoting (Terwiesch & Ulrich, 2009).
+
+### 5.3.5 Application: Motional AV
+
+Motional, the autonomous vehicle joint venture between Hyundai and Aptiv, illustrates Segment × Collaborate in a high-stakes industry.
+
+| Dimension | Strategy | Binding Constraint Addressed |
+|:----------|:---------|:-----------------------------|
+| **Segment** | B2C (ride-hailing) + B2B (commercial fleets) | Diversifies demand; reduces winner-takes-all risk |
+| **Collaborate: Distribution** | Uber, Lyft (10-year partnership) | Market access without fleet ownership |
+| **Collaborate: Software** | Applied Intuition | AI capability without ML talent war |
+| **Collaborate: Hardware** | HMGIS | Manufacturing scale without capital intensity |
+
+Each partner fills a different "short stave" in Liebig's Barrel. Without this strategy, Motional risks **Type B**—winning the robot taxi market but lacking capability to serve it. The partnership architecture preserves flexibility while building capability, avoiding the cage that trapped Cruise and Argo AI.
+
+### 5.3.6 The Parallel Growth Principle
+
+Ventures that escape the cage calibrate segment expansion to capability development, and vice versa:
 - Neither over-committing to market segments (rigidity)
 - Nor over-investing in capabilities without validation (resource drain)
 
-They calibrate segment expansion to capability development, and vice versa.
+The key insight from Fine (2024): flexibility doesn't come for free, but the cost of inflexibility—the cage—is higher.
 
 ## 5.4 Governance Design Principles
 
@@ -1140,6 +1186,12 @@ Van den Steen, E. (2010). Interpersonal authority in a theory of the firm. *Amer
 
 Zuzul, T., & Tripsas, M. (2020). Start-up inertia versus flexibility: The role of founder identity in a nascent industry. *Administrative Science Quarterly*, 65(2), 395-433.
 
+### Additional References for Growth Diagnostics (§5.3)
+
+Hausmann, R., Klinger, B., & Wagner, R. (2008). *Doing Growth Diagnostics in Practice: A 'Mindbook'*. CID Working Paper No. 177, Center for International Development, Harvard University.
+
+Terwiesch, C., & Ulrich, K. T. (2009). *Innovation Tournaments: Creating and Selecting Exceptional Opportunities*. Boston, MA: Harvard Business Press.
+
 ### Additional References for Variable Measurement (§3.3)
 
 Barlow, M. A., Verhaal, J. C., & Angus, R. W. (2025). It is not the whole story: Toward a broader understanding of entrepreneurial ventures' symbolic differentiation. *Strategic Management Journal*, forthcoming.
@@ -1187,14 +1239,14 @@ This glossary provides precise definitions of key concepts used throughout the t
 #### Commitment
 The allocation of resources to a specific strategic path in ways that foreclose alternatives. Following Ghemawat (1991), commitment creates value through lock-in, lock-out, and lags, but simultaneously destroys strategic [Flexibility](#flexibility). Symbolized by 🔵 (blue).
 
-#### Flexibility
+#### Flexibility Premium (H2)
 The organizational capacity to reposition in response to market feedback. Flexibility is the capacity that [Commitment](#commitment) destroys and that [Repositioning](#repositioning) requires. The Flexibility Premium (dG/dR > 0) captures the growth benefit of maintaining adaptive capacity. Symbolized by 🔴 (red).
 
 #### Repositioning
 Measurable strategic movement between an initial positioning (B₀) and a terminal positioning (B_T), calculated as R = |B_T − B₀|. Repositioning captures the behavioral manifestation of strategic flexibility.
 
 #### Growth (G)
-Venture survival to later developmental stages, operationalized as reaching Later Stage VC financing (binary). The base rate is 11.5% across the sample. Symbolized by 🟢 (green).
+Funding growth multiple measuring venture scaling success: G = (F_t − E) / E, where F_t is total funding at observation and E is early-stage capital. Median G = 2.0× across the sample; Movers achieve higher G than Stayers (2.60× advantage). Symbolized by 🟢 (green).
 
 #### Strategic Breadth (B)
 The scope of potential markets, technologies, or applications implied by a venture's positioning, measured on a 0–100 scale using dictionary-based text analysis.
@@ -1204,7 +1256,7 @@ The scope of potential markets, technologies, or applications implied by a ventu
 #### Golden Cage
 The structural constraint that prevents adaptation regardless of founder intent, arising when operational [Commitment](#commitment) attracts investors who share the founder's thesis, thereby filtering skeptics from governance. The cage is "golden" because it forms through success—securing capital. Symbolized by 🔵⚫.
 
-#### Commitment Trap
+#### Commitment Trap (H1)
 The mechanism through which funding suppresses [Repositioning](#repositioning) (dR/dE < 0). Named "Commitment" because commitment is the *cause* of the trap. The trap is structural—embedded in stakeholder composition—rather than intentional.
 
 #### Belief Homogeneity
@@ -1221,7 +1273,7 @@ A venture with any [Repositioning](#repositioning) (R > 0). Movers outperform [S
 #### Stayer
 A venture with no [Repositioning](#repositioning) (R = 0). Stayers represent the baseline outcome when the cage binds.
 
-### Canonical Numbers {#canonical-numbers}
+### Key Numbers {#key-numbers}
 
 | Metric | Value | Symbol |
 |:-------|:------|:------:|
@@ -1235,7 +1287,11 @@ A venture with no [Repositioning](#repositioning) (R = 0). Stayers represent the
 
 ## Appendix D: Proof of Theorem 1 (Caged Learning)
 
-This appendix derives the formal condition under which organizational learning ceases endogenously through the funding process.
+This appendix derives the formal condition under which organizational learning ceases endogenously through the funding process. The proof provides the mathematical foundation for the three hypotheses:
+
+- **H1 (Commitment Trap):** E → R (−) — Early funding suppresses repositioning
+- **H2 (Flexibility Premium):** R → G (+) — Repositioning enables growth
+- **H3 (Funding Paradox):** E → G (−) — Net effect through mediation
 
 ### D.1 Setup: Bayesian Belief Updating
 
@@ -1244,7 +1300,7 @@ Consider a founder with prior belief μ ∈ (0,1) that the current strategic pos
 - P(σ = + | position correct) = 1/2 + ε
 - P(σ = − | position correct) = 1/2 − ε
 
-Strategic breadth B ∈ (0, ∞) measures the number of alternative paths available if the current position proves incorrect.
+Strategic breadth B ∈ (0, ∞) measures the number of alternative paths available if the current position proves incorrect (see Figure 2: B Trajectories).
 
 ### D.2 Van den Steen Sorting Equilibrium
 
@@ -1292,7 +1348,7 @@ $$\mu(1-\mu) < \frac{\varepsilon}{B}$$
 - μ(1−μ) is the belief variance—high near μ = 0.5 (uncertainty), low near μ = 0 or μ = 1 (conviction).
 - ε/B is the learning threshold—lower when signals are strong (high ε) or alternatives many (high B).
 
-### D.5 Why the Cage is Endogenous
+### D.5 Why the Cage is Endogenous: Connecting to H1/H2/H3
 
 The golden cage mechanism pushes both terms in directions that satisfy the inequality:
 
@@ -1301,6 +1357,17 @@ The golden cage mechanism pushes both terms in directions that satisfy the inequ
 2. **Operational commitment lowers B.** Specific commitments (technology choices, milestone definitions) reduce strategic breadth. As B → 0, the threshold ε/B → ∞.
 
 Together: sorting produces high μ; commitment produces low B. The Caged Learning condition becomes satisfied—learning ceases—as an *endogenous consequence* of the funding process itself.
+
+**Mapping to Hypotheses:**
+
+| Mechanism | Formal Effect | Hypothesis |
+|:----------|:--------------|:-----------|
+| Sorting → High μ | μ(1−μ) → 0 | **H1 (Commitment Trap)**: E↑ → R↓ |
+| Commitment → Low B | ε/B → ∞ | Learning threshold rises |
+| Learning ceases | No repositioning possible | **H2 (Flexibility Premium)**: R↓ → G↓ |
+| Net effect | E↑ → R↓ → G↓ | **H3 (Funding Paradox)**: E↑ → G↓ |
+
+The empirical finding ρ(E,G) = −0.196*** reflects the theoretical prediction that funding endogenously produces the cage that suppresses growth.
 
 ### D.6 Numerical Example
 
@@ -1325,7 +1392,7 @@ The cage locks when commitment reduces B below the critical threshold.
 
 ## Figure 1: The Funding-Growth Paradox
 
-![Figure 1: The Funding-Growth Paradox](figures/Fig-I_capital_paradox.png)
+![Figure 1: The Funding-Growth Paradox](figures/Fig1_capital_paradox.png)
 
 Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
@@ -1333,15 +1400,15 @@ Higher early funding correlates with lower later-stage success (N = 180,994, ρ 
 
 ## Figure 2: The Mediation Structure (DAG)
 
-![Figure 2: The Mediation Structure](figures/Fig-I_mediation_dag.png)
+![Figure 2: The Mediation Structure](figures/Fig1b_mediation_dag.png)
 
-The upper path shows measured variables: Early Funding → Repositioning → Growth. H1 (Commitment Trap, −) captures funding's suppression of repositioning; H2 (Flexibility Premium, +) captures repositioning's benefit to growth. H3 (Funding Paradox, −) is the net effect shown by the dashed arc. The lower path shows latent variables: Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables both Repositioning (+) and Growth (+).
+**Upper path (measured variables):** Early Funding → Reposition → Growth. **H1 (Commitment Trap, −):** Funding suppresses repositioning. **H2 (Flexibility Premium, +):** Repositioning enables growth. **H3 (Funding Paradox, −):** Net effect shown by dashed arc—despite enabling commitment, early funding ultimately reduces growth through the mediation pathway. **Lower path (latent variables):** Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables Repositioning (+). The multiplicative structure ensures that blocking either path (H1 or H2) eliminates the indirect effect.
 
 ---
 
 ## Figure 6: Mover vs. Stayer Success Rates
 
-![Figure 6: Mover vs. Stayer Success Rates](figures/Fig_growth_by_R.png)
+![Figure 6: Mover vs. Stayer Success Rates](figures/Fig4_growth_by_R.png)
 
 Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
 
@@ -1349,7 +1416,7 @@ Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60�
 
 ## Figure 8: Mobility - Where the Cage Bites Hardest
 
-![Figure 8: Mobility Failure](figures/Fig-Ch4_mobility_failure.png)
+![Figure 8: Mobility Failure](figures/Fig6_industry_survival.png)
 
 Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
@@ -1357,7 +1424,7 @@ Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of
 
 ## Figure 10: Mover vs. Stayer Comparison
 
-![Figure 10: Mover vs Stayer Comparison](figures/Fig-ARG_mover_vs_stayer.png)
+![Figure 10: Mover vs Stayer Comparison](figures/Fig8_mover_vs_stayer.png)
 
 Movers achieve 2.6× relative success compared to Stayers (baseline 1.0×).
 
