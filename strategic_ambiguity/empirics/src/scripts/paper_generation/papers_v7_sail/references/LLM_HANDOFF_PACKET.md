@@ -2,6 +2,7 @@
 > **Purpose**: 4명 Agent가 1시간 내 RoT 87% → 95% 달성
 > **Updated**: 2026-01-13 12:30 by 나대용 (Claude CLI2)
 > **Deadline**: 1시간
+> **Location**: /Users/hyunjimoon/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
 
 ---
 
