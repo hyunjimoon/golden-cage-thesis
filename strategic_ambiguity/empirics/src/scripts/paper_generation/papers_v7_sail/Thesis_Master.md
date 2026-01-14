@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T05:20:54-05:00
+  - 2026-01-14T06:18:28-05:00
 ---
 
 
@@ -83,6 +83,7 @@ The contribution is threefold. First, I document a negative funding-growth corre
     - [2.5.1 Formal Condition for Caged Learning](#251-formal-condition-for-caged-learning)
   - [2.6 Real Options Foundation](#26-real-options-foundation)
   - [2.7 Hypotheses](#27-hypotheses)
+  - [2.8 Conclusion](#28-conclusion)
 
 - [Chapter 3: Data and Identification](#chapter-3-data-and-identification)
   - [3.1 Introduction](#31-introduction)
@@ -122,9 +123,8 @@ The contribution is threefold. First, I document a negative funding-growth corre
     - [4.5.2 Survival Bias Conditioning (TR-02)](#452-survival-bias-conditioning-tr-02)
     - [4.5.3 Alternative Operationalizations](#453-alternative-operationalizations)
   - [4.6 Illustrative Cases](#46-illustrative-cases)
-    - [4.6.1 Sky Engine: The Broadening Mover](#461-sky-engine-the-broadening-mover)
-    - [4.6.2 Surestar: The Stayer](#462-surestar-the-stayer)
-    - [4.6.3 Narrowing Movers: The Zoom-in Strategy](#463-narrowing-movers-the-zoom-in-strategy)
+    - [4.6.1 Two Types of Movers: Zoom-out and Zoom-in](#461-two-types-of-movers-zoom-out-and-zoom-in)
+    - [4.6.2 The Stayer Contrast](#462-the-stayer-contrast)
   - [4.7 Conclusion](#47-conclusion)
 
 ## PART II: Escaping the Golden Cage
@@ -267,6 +267,8 @@ This thesis makes three contributions to the literature on entrepreneurial strat
 
 ## 2.1 Introduction
 
+**This chapter develops the golden cage mechanism:** by synthesizing Van den Steen's (2010) sorting equilibrium, Eisenberg's (1984) strategic ambiguity, and Ghemawat's (1991) commitment analysis, we study why funding suppresses repositioning through governance homogeneity rather than moral hazard.
+
 Strategic flexibility **determines** venture survival. In manufacturing, flexibility **hedges** against demand shocks (Jordan & Graves, 1995). In ventures, it **enables** pivots when markets shift (Ries, 2011; Camuffo et al., 2020). Yet the funding process systematically **destroys** this flexibility—a paradox this chapter **resolves**.
 
 (a) Flexibility in Manufacturing (b) Flexibility in Ventures
@@ -388,7 +390,7 @@ $$\mu(1 - \mu) < \frac{\varepsilon}{B}$$
 
 Van den Steen's sorting equilibrium produces high μ (shared optimism); operational commitments narrow B (strategic focus). Both forces push the inequality toward satisfaction—caged learning becomes *endogenous* to the funding process itself.
 
-## 2.4 Real Options Foundation
+## 2.6 Real Options Foundation
 
 The cage mechanism operates against the backdrop of real options theory. McGrath (1999) articulates the entrepreneurial implications: initiatives are options, not commitments. Failure enables "falling forward"—learning that informs subsequent attempts.
 
@@ -396,7 +398,7 @@ But real options have boundaries. Adner and Levinthal (2004) caution against tre
 
 Huchzermeier and Loch (2001) distinguish uncertainty types: market uncertainty (what customers want) differs from budget uncertainty (whether we can deliver). The cage binds tighter when both uncertainty types are high—the venture needs flexibility for market learning *and* operational learning, yet governance permits neither.
 
-## 2.5 Hypotheses
+## 2.7 Hypotheses
 
 From the golden cage mechanism, I derive three testable hypotheses:
 
@@ -416,6 +418,16 @@ Together, these hypotheses complete the decomposition:
 
 $$\frac{dG}{dE} = \frac{dG}{dR} \times \frac{dR}{dE} = (+) \times (-) = (-)$$
 
+## 2.8 Conclusion
+
+This chapter developed the golden cage mechanism—a theoretical account of how funding suppresses growth through governance homogeneity rather than moral hazard. The mechanism integrates three theoretical streams: Van den Steen's (2010) sorting equilibrium explains *why* governance converges on believers; Eisenberg's (1984) strategic ambiguity explains *what* flexibility founders sacrifice; Ghemawat's (1991) commitment analysis explains *when* these sacrifices become irreversible.
+
+The formal condition for caged learning (Theorem 1) demonstrates that learning ceases endogenously: shared optimism (high μ) and strategic narrowing (low B) both push the system toward belief convergence. The cage is not imposed externally—it emerges from the funding process itself.
+
+Three testable hypotheses follow: (H1) funding correlates negatively with growth, (H2) funding correlates negatively with repositioning, and (H3) repositioning correlates positively with growth. Together, these decompose the paradox: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−).
+
+The next chapter describes how to test these hypotheses at population scale using 180,994 ventures from PitchBook.
+
 ---
 
 # CHAPTER 3: DATA AND IDENTIFICATION
@@ -425,7 +437,9 @@ $$\frac{dG}{dE} = \frac{dG}{dR} \times \frac{dR}{dE} = (+) \times (-) = (-)$$
 
 ## 3.1 Introduction
 
-This chapter describes the empirical strategy for testing the cage hypotheses. I construct a panel of 180,994 U.S. ventures from PitchBook (2021–2025), operationalize repositioning through text-based measurement, and develop a multi-layer identification strategy that addresses selection concerns.
+**This chapter tests the golden cage hypotheses:** by analyzing 180,994 U.S. ventures from PitchBook (2021–2025), we operationalize repositioning through text-based measurement and develop identification strategies that address selection concerns.
+
+The empirical design constructs a panel from PitchBook, operationalizes repositioning through dictionary-based text analysis, and develops a multi-layer identification strategy addressing selection concerns.
 
 ## 3.2 Data Sources and Sample Construction
 
@@ -527,7 +541,7 @@ The measure exhibits expected correlations:
 
 **Growth (G).**
 
-I operationalize growth as the funding growth multiple: G = (F_t − E) / E, where F_t is total funding raised and E is early-stage funding. This continuous measure captures the magnitude of capital accumulation subsequent to initial financing. The median G is 0.9× (near-doubling); the distribution is right-skewed with mean 0.67×.
+I operationalize growth as the funding growth multiple: G = (F_t − E) / E, where F_t is total funding raised and E is early-stage funding. This continuous measure captures the magnitude of capital accumulation subsequent to initial financing. The overall median G is 0.09× (reflecting many ventures with no subsequent funding); the distribution is right-skewed with mean 0.67×. Conditional on later-stage survival, type-specific medians are higher: Zoom-out = 2.57×, Zoom-in = 2.32×, Stayer = 0.60×.
 
 **Commitment (C).**
 
@@ -555,7 +569,7 @@ The composite index averages the three components: **C = (C_a + C_b + C_c) / 3**
 | Repositioning (R, standardized) | 0.31 | 0.42 | 0 | 0.15 | 2.8 |
 | Growth (G = (F_t−E)/E) | 0.67 | 2.0 | −29 | 0.09 | 265 |
 
-*Note: R is reported in standardized units for cross-venture comparability; raw R = |B_T − B₀| ranges 0–100. G is the funding growth multiple. See §4.6 for illustrative cases.*
+*Note: R is reported in standardized units for cross-venture comparability; raw R = |B_T − B₀| ranges 0–100. G is the funding growth multiple. The overall median (0.09×) reflects the full sample including ventures with no subsequent funding; conditional on later-stage survival, type-specific medians are higher: Zoom-out = 2.57×, Zoom-in = 2.32×, Stayer = 0.60× (see §4.6 for illustrative cases).*
 
 **Key distributional features:**
 
@@ -585,7 +599,9 @@ Key sample characteristics: 40.3% of ventures qualify as "Movers" (R > 0), while
 
 ## 4.1 Introduction
 
-This chapter presents the empirical results testing the cage hypotheses. I document both the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that the product of these effects explains the funding-growth paradox.
+**This chapter documents where the cage bites:** by analyzing 180,994 ventures across industries, we test the CER pattern (Funding → Repositioning↓) and the FRG pattern (Repositioning → Growth↑), demonstrating that their product explains the funding-growth paradox.
+
+The empirical results confirm all three hypotheses and reveal industry heterogeneity in cage effects.
 
 **Contributions.** (1) *Hypothesis Confirmation*: I confirm all three hypotheses—H1 (ρ(E,R) = −0.087***), H2 (Mover advantage = 2.60×), H3 (ρ(E,G) = −0.196***). (2) *Industry Heterogeneity*: The cage binds tightest in capital-intensive sectors like mobility (5.3% survival). (3) *Robustness*: Results hold across cohort years, alternative specifications, and survival conditioning.
 
@@ -631,9 +647,20 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 | **Zoom-in** | ΔB < 0 | 15,902 | 21.8% | 17.1% |
 | **Zoom-out** | ΔB > 0 | 20,487 | 28.1% | 18.4% |
 
-*Note: ΔB = B_T − B₀. Zoom-in = narrowing (ΔB < 0); Zoom-out = expanding (ΔB > 0). Remaining Movers (36,554) have minimal directional change.*
+*Note: ΔB = B_T − B₀. Zoom-in (ΔB < 0) = strategic focus; Zoom-out (ΔB > 0) = strategic expansion. Remaining Movers (36,554) have minimal directional change.*
 
 **Interpretive insight:** Both directional subtypes exhibit elevated success rates (17.1% and 18.4%), suggesting that *directional clarity*—not direction itself—explains the mover advantage. The 3-way decomposition is secondary; the binary Mover/Stayer distinction carries the primary identification.
+
+> **Conceptual Note: Zoom as Cognitive Motion**
+>
+> The zoom-in/zoom-out terminology (Kanter, 2011) captures a fundamental entrepreneurial cognitive pattern that operates across domains:
+>
+> | Domain | Zoom-in | Zoom-out |
+> |:-------|:--------|:---------|
+> | **Epistemic** (First Principles) | Decompose to fundamental truths | Synthesize new system from atoms |
+> | **Strategic** (Market Breadth) | Focus on specific customer/application | Expand to platform/ecosystem |
+>
+> Musk's first principles approach exemplifies this motion: decompose battery costs to raw materials (zoom-in), then reconstruct supply chain architecture (zoom-out). The same cognitive motion—moving between levels of abstraction—applies to strategic positioning. Entrepreneurs who can *move* between scopes outperform those who remain fixed, regardless of direction.
 
 [Figure 6: Mover vs. Stayer Success Rates](figures/Fig4_growth_by_R.png)
 
@@ -792,21 +819,21 @@ The statistical patterns acquire meaning through concrete examples. Table 4.1 pr
 
 | Company | B₀ | B_T | ΔB | R = \|ΔB\| | G | Type |
 |:--------|---:|----:|---:|-----------:|--:|:-----|
-| **Hope Care** | 39.6 | 88.2 | +48.5 | 48.5 | 2.71× | Broadening Mover |
-| **True Botanicals** | 81.9 | 37.5 | −44.4 | 44.4 | 2.45× | Narrowing Mover |
+| **Hope Care** | 39.6 | 88.2 | +48.5 | 48.5 | 2.71× | Zoom-out |
+| **True Botanicals** | 81.9 | 37.5 | −44.4 | 44.4 | 2.45× | Zoom-in |
 | **Leap Green Energy** | 87.5 | 87.5 | 0.0 | 0.0 | 0.80× | Stayer |
 
-*Notes: B = strategic breadth (0–100); R = repositioning magnitude; G = funding growth multiple = (F_t − E) / E. Median G: Broadening = 2.57×, Narrowing = 2.32×, Stayer = 0.60×.*
+*Notes: B = strategic breadth (0–100); R = repositioning magnitude; G = funding growth multiple = (F_t − E) / E. Median G: Zoom-out = 2.57×, Zoom-in = 2.32×, Stayer = 0.60×.*
 
-### 4.6.1 Two Types of Movers
+### 4.6.1 Two Types of Movers: Zoom-out and Zoom-in
 
-Repositioning (R > 0) takes two forms: **broadening** (ΔB > 0) and **narrowing** (ΔB < 0). Both exhibit elevated growth relative to Stayers.
+Repositioning (R > 0) takes two forms: **zoom-out** (ΔB > 0, expanding strategic scope) and **zoom-in** (ΔB < 0, focusing strategic scope). Both exhibit elevated growth relative to Stayers. The terminology follows Kanter (2011): effective strategists "zoom in to examine problems and zoom out to look for patterns"—the same cognitive motion applies to market positioning.
 
-**Hope Care (Broadening Mover):** Moved from specific application ("cloud-based healthcare technology for primary care," B₀ = 39.6) to a general platform ("healthcare technology company offering preventive care and chronic disease management," B_T = 88.2). R = 48.5, G = 2.71× (near median).
+**Hope Care (Zoom-out):** Moved from specific application ("cloud-based healthcare technology for primary care," B₀ = 39.6) to a general platform ("healthcare technology company offering preventive care and chronic disease management," B_T = 88.2). R = 48.5, G = 2.71× (near median).
 
-**True Botanicals (Narrowing Mover):** Moved from broad scope ("natural products designed to liberate glow with clean skincare," B₀ = 81.9) to specific focus ("manufacturer of natural skin care products using clinically-proven formulations," B_T = 37.5). R = 44.4, G = 2.45× (near median).
+**True Botanicals (Zoom-in):** Moved from broad scope ("natural products designed to liberate glow with clean skincare," B₀ = 81.9) to specific focus ("manufacturer of natural skin care products using clinically-proven formulations," B_T = 37.5). R = 44.4, G = 2.45× (near median).
 
-Both Movers achieved funding growth roughly 3–4× higher than the median Stayer. The sample contains 40,649 broadening movers and 31,028 narrowing movers—demonstrating that *movement itself*, not direction, drives the mover advantage.
+Both Movers achieved funding growth roughly 3–4× higher than the median Stayer. The sample contains 40,649 zoom-out movers and 31,028 zoom-in movers—demonstrating that *movement itself*, not direction, drives the mover advantage.
 
 ### 4.6.2 The Stayer Contrast
 
@@ -848,7 +875,9 @@ The cage binds tightest in:
 
 ## 5.1 Introduction
 
-This chapter develops prescriptive implications from the cage mechanism. If funding suppresses repositioning through governance homogeneity, how can founders and investors design commitment structures that preserve adaptation capacity?
+**This chapter prescribes escape from the cage:** by distinguishing vision-level from operational commitment, we develop governance design principles that preserve adaptation capacity while capturing commitment's credibility benefits.
+
+If funding suppresses repositioning through governance homogeneity, how can founders and investors design commitment structures that preserve adaptation capacity?
 
 ## 5.2 Capitalize: Strategic Ambiguity as Resource
 
@@ -884,22 +913,25 @@ For investors:
 
 ## 5.3 Evaluate: Segment × Collaborate Framework
 
-Capitalizing attracts resources; evaluating deploys them. The **Scale-it Framework** operationalizes deployment through synchronized growth:
+Capitalizing attracts resources; evaluating deploys them. The **Scale-it Framework** (Fine, 2024) operationalizes deployment through synchronized growth:
 
 $$\text{Growth} = \text{Market} \times \text{Ops}$$
 
-- **Segment (Market):** Which customers to serve first, second, third.
-- **Collaborate (Ops):** Which capabilities to develop internally, acquire, or partner.
+> "Scale it = Grow in parallel your market size and your production and delivery capability." — Fine (2024)
+
+- **Segment (Market Pull):** Sequential market entry that matches customer acquisition to validated demand. Early-stage ventures develop minimum viable products for beachhead markets; as they saturate initial segments, they explore adjacent markets that their operational capabilities can serve. Segmentation adds complexity—the sales function wants to serve every customer, while operations wants standardization. Leadership must articulate which segments to say "NO" to.
+
+- **Collaborate (Ops Capability):** Build-buy-partner decisions that synchronize capability development with market expansion rate. Very few firms can do it all themselves. Collaboration extends reach to sources or customers otherwise inaccessible, but adds complexity as the organization balances multiple interests. Effective collaboration provides mutual benefits, is mission-driven, and is based on complementary skills.
 
 ### 5.3.1 The Anatomy of Growth
 
-Growth requires synchronized expansion of market reach and operational capability. Only the filled area represents true value creation (Figure 9, Panel A):
+Growth requires synchronized expansion along two dimensions: **Market Pull** (demand-side traction) and **Ops Capability** (supply-side execution). Only the filled area represents true value creation (Figure 9, Panel A):
 
-| Type | Name | Market | Ops | Characteristic |
-|:----:|:-----|:------:|:---:|:---------------|
-| **A** | Stunted (Golden Cage) | Low | High | Operational excellence serving insufficient demand |
-| **B** | Hollow (Mirage) | High | Low | Market promise without delivery capability |
-| **C** | Parallel (Engine) | High | High | Synchronized expansion |
+| Type | Name | Market Pull | Ops Capability | Characteristic |
+|:----:|:-----|:-----------:|:--------------:|:---------------|
+| **A** | Operational Trap | Low | High | Operational excellence serving insufficient demand |
+| **B** | Market Mirage | High | Low | Market promise without delivery capability |
+| **C** | Balanced Engine | High | High | Synchronized expansion: G = Market × Ops |
 
 ### 5.3.2 The Binding Constraint
 
@@ -911,28 +943,34 @@ Value creation growth ($\dot{c}/c$) must equal resource growth ($\dot{k}/k$). Su
 
 ### 5.3.3 The Diagonal Principle
 
-Hayes and Wheelwright (1979) formalized the **process-product diagonal**: ventures succeed when process maturity matches product standardization.
+Hayes and Wheelwright (1979) formalized the **process-product diagonal**: ventures succeed when process maturity matches product standardization. Fine's (2024) Nail-Scale-Sail framework maps directly onto this diagonal:
 
 ```
 Products:     One of Kind ─────────────────── Standard, High Volume
 Processes:    ┌─────────────────────────────────────────────────────┐
-Jumbled       │  Job Shop ─── ✓ Nail It ─────── Low Productivity   │
-              │              ↘                                      │
-Linear        │                 ✓ Scale It                         │
-              │                          ↘                          │
-Rigid         │  Low Flexibility ────────── ✓ Sail It ─── Flow    │
+Jumbled       │  Job Shop ─── ✓ NAIL IT ─────── Low Productivity   │
+(Flexible)    │   (Jungle)    ↘                                     │
+              │                 ✓ SCALE IT                          │
+Linear        │                  (Mountain) ↘                       │
+              │                               ✓ SAIL IT             │
+Rigid         │  Low Flexibility ─────────────(Ocean)─── Flow      │
               └─────────────────────────────────────────────────────┘
 ```
 
-**The cage is off-diagonal failure.** Better Place locked process (battery-swap infrastructure) while product remained fluid—rigid process serving unvalidated product. Tesla stayed on-diagonal: flexible processes matched evolving products.
+**Stage-Process Alignment:**
+- **Nail It (Jungle):** Jumbled, flexible processes; speed and learning dominate; "nailers" personally own problems and hack together experiments.
+- **Scale It (Mountain):** Linear processes under development; "scalers" design and refine processes with discipline; *processify before automate*.
+- **Sail It (Ocean):** Rigid, optimized flow; "sailers" run systems by exception; continuous improvement within established routines.
+
+**The cage is off-diagonal failure.** Better Place locked process (battery-swap infrastructure) while product remained fluid—rigid "Sail It" process serving unvalidated "Nail It" product. Tesla stayed on-diagonal: flexible processes matched evolving products. The warning: "Implementing [ERP] is like pouring concrete into a company" (The Economist, 2007)—premature automation freezes processes before they are understood.
 
 ### 5.3.4 Case Studies
 
-**Type A — NxStage (Stunted Growth):** NxStage developed System One, a portable home hemodialysis device enabling kidney patients to receive care at home. The technology provided breakthrough patient experience at attractive cost, and the company developed operational capability across geographic markets. However, the company struggled because many nephrologists lacked incentives to switch patients from traditional dialysis centers. *Bottleneck: Market access—excellent ops serving insufficient demand.*
+**Type A — NxStage (Operational Trap):** NxStage developed System One, a portable home hemodialysis device enabling kidney patients to receive care at home. The technology provided breakthrough patient experience at attractive cost, and the company developed operational capability across geographic markets. However, the company struggled because many nephrologists lacked incentives to switch patients from traditional dialysis centers. *Bottleneck: Low Market Pull—excellent ops serving insufficient demand.*
 
-**Type B — SkinnyGirl Cocktails (Hollow Growth):** Founded in 2009 by Bethenny Frankel, SkinnyGirl hit upon premixed low-calorie cocktails for women—a segment ignored by major spirits companies. SkinnyGirl became the fastest growing spirits brand in the United States. But the collaboration partner for fulfillment struggled to scale supply chain capabilities. Unable to match production to market traction, the startup sold below NPV; the acquirer fulfilled order backlog but couldn't maintain brand popularity. *Bottleneck: Production capability—enormous market, no operational foundation.*
+**Type B — SkinnyGirl Cocktails (Market Mirage):** Founded in 2009 by Bethenny Frankel, SkinnyGirl hit upon premixed low-calorie cocktails for women—a segment ignored by major spirits companies. SkinnyGirl became the fastest growing spirits brand in the United States. But the collaboration partner for fulfillment struggled to scale supply chain capabilities. Unable to match production to market traction, the startup sold below NPV; the acquirer fulfilled order backlog but couldn't maintain brand popularity. *Bottleneck: Low Ops Capability—enormous market pull, no operational foundation.*
 
-**Type C — Parallel Growth:** Ventures that synchronize market expansion with capability development. Each market segment entered only when operational capability exists to serve it; each capability built only when market validation justifies it. The goal: large filled square rather than tall narrow bar (Type A) or wide empty box (Type B).
+**Type C — Balanced Engine:** Ventures that synchronize market expansion with capability development. Each market segment entered only when operational capability exists to serve it; each capability built only when market validation justifies it. Liebig's Law applies: Growth = min(Market, Ops). The goal: large filled square rather than tall narrow bar (Type A) or wide empty box (Type B).
 
 **Off-Diagonal — Segway (Premature Scaling):** Segway raised $100M+ committed to gyroscopic two-wheel platform as THE solution for personal transportation. The cage formed not from vague vision—"revolutionize personal transportation" was appropriately broad—but from premature operational lock-in: $100M invested in gyroscopic manufacturing before validating market demand. Governance homogeneity (celebrity investors all believed in the form factor) produced signal blindness. When market feedback indicated warehouse logistics and campus security as viable applications requiring different form factors, no governance voice advocated pivoting (Terwiesch & Ulrich, 2009).
 
@@ -949,13 +987,37 @@ Motional, the autonomous vehicle joint venture between Hyundai and Aptiv, illust
 
 Each partner fills a different "short stave" in Liebig's Barrel. Without this strategy, Motional risks **Type B**—winning the robot taxi market but lacking capability to serve it. The partnership architecture preserves flexibility while building capability, avoiding the cage that trapped Cruise and Argo AI.
 
-### 5.3.6 The Parallel Growth Principle
+### 5.3.6 Prescription: Staged Commitment for Motional
 
-Ventures that escape the cage calibrate segment expansion to capability development, and vice versa:
-- Neither over-committing to market segments (rigidity)
-- Nor over-investing in capabilities without validation (resource drain)
+**The escape from the cage is not avoiding commitment, but staging it.** The golden cage traps ventures that commit to position (specific form factors, manufacturing processes, market segments) before validating assumptions. Staged commitment preserves adaptation capacity by committing to *direction* while deferring *destination*.
 
-The key insight from Fine (2024): flexibility doesn't come for free, but the cost of inflexibility—the cage—is higher.
+**Motional's Staged Commitment Architecture:**
+
+| Stage | Commitment Level | What is Fixed | What Remains Flexible |
+|:------|:-----------------|:--------------|:---------------------|
+| **Now** | Vision | "Autonomous mobility for all" | Form factor, geography, customer segment |
+| **Near** | Platform | L4 autonomy stack | Vehicle type, deployment model |
+| **Next** | Segment | Robotaxi in Las Vegas | Fleet size, pricing, expansion timeline |
+
+**Evaluation Metric: Usefulness for Motional's Decision-Making**
+
+The prescription succeeds if Motional can answer these operational questions:
+
+1. **When to fix vehicle form factor?** → After validating L4 stack in multiple body types
+2. **When to commit to geography?** → After demonstrating unit economics in pilot market
+3. **When to scale fleet?** → After collaboration partners (Uber, Lyft) confirm demand signals
+
+**Contrast with Failed AV Peers:**
+
+| Company | Commitment Error | Cage Mechanism |
+|:--------|:-----------------|:---------------|
+| **Cruise** | Fixed robotaxi form before validating regulatory path | $5B sunk in Origin → forced pivot |
+| **Argo AI** | Fixed L4 before validating business model | Shutdown despite $3.6B invested |
+| **Motional** | Staged: platform first, segment later | Partnership architecture preserves options |
+
+**The Staging Principle:** Commit at the vision level ("autonomous mobility") while preserving operational flexibility. Each subsequent commitment stage requires market validation from the previous stage. The partnerships with Uber, Lyft, Applied Intuition, and HMGIS allow Motional to *borrow* operational capability without *buying* irreversibility.
+
+This is how Motional can escape the cage that trapped Cruise and Argo AI: by treating each commitment as a real option rather than a sunk cost.
 
 ## 5.4 Governance Design Principles
 
@@ -986,6 +1048,21 @@ The cage forms when governance lacks advocates for alternative paths. The "Prese
 **Board Structure.** Standard board composition (founder, lead investor, independent) often produces homogeneity because the "independent" member is typically nominated by the lead investor. True independence requires appointing a director who (a) has no financial relationship with existing investors, and (b) brings domain expertise that challenges rather than reinforces the current strategy.
 
 **Dissent-Friendly Decision Rules.** Homogeneity emerges not only from who sits at the table, but from how decisions are made. Explicitly structuring deliberation to surface counterarguments—through assigned advocacy roles, written devil's advocate memos, or mandatory "red team" sessions before major commitments—can maintain signal diversity even when belief homogeneity exists.
+
+### 5.4.2 The 70/30 Commitment Heuristic
+
+Building on March's (1991) exploration-exploitation framework, I propose a practical heuristic for resource allocation that balances operational commitment with strategic flexibility:
+
+**The 70/30 Rule:** Allocate 70% of resources to validated paths (operational commitment) and 30% to exploratory options (flexibility preservation).
+
+| Allocation | Purpose | Implementation |
+|:-----------|:--------|:---------------|
+| **70% Operational** | Execute current thesis with discipline | Core team, validated market segments, proven capabilities |
+| **30% Exploratory** | Preserve pivot capacity | Adjacent experiments, alternative segments, partnership options |
+
+**Rationale:** Pure exploitation (100% operational) creates the cage—no resources for adaptation when signals suggest pivoting. Pure exploration (100% flexible) fails to build credibility with investors. The 70/30 balance captures commitment's credibility benefits while preserving the 30% "pivot reserve" that enables strategic adaptation.
+
+**Implementation:** The exploratory 30% should be governed differently—with different success metrics (learning vs. revenue), different timelines (shorter experiments), and different accountability structures (failure is informative, not punishable). This dual structure preserves governance support for both exploitation and exploration.
 
 ## 5.5 Boundary Conditions
 
@@ -1136,6 +1213,8 @@ Ewens, M., Nanda, R., & Rhodes-Kropf, M. (2018). Cost of experimentation and the
 
 Fine, C. H. (1998). *Clockspeed: Winning Industry Control in the Age of Temporary Advantage*. Reading, MA: Perseus Books.
 
+Fine, C. H. (2024). Scale it: A practitioner's guide to growing a startup. MIT Sloan School of Management Working Paper.
+
 Ghemawat, P. (1991). *Commitment: The Dynamic of Strategy*. New York: The Free Press.
 
 Gompers, P. A., & Lerner, J. (2001). The venture capital revolution. *Journal of Economic Perspectives*, 15(2), 145-168.
@@ -1163,6 +1242,8 @@ Huchzermeier, A., & Loch, C. H. (2001). Project management under risk: Using the
 Jensen, M. C., & Meckling, W. H. (1976). Theory of the firm: Managerial behavior, agency costs and ownership structure. *Journal of Financial Economics*, 3(4), 305-360.
 
 Jordan, W. C., & Graves, S. C. (1995). Principles on the benefits of manufacturing process flexibility. *Management Science*, 41(4), 577-594.
+
+Kanter, R. M. (2011). Zoom in, zoom out. *Harvard Business Review*, 89(3), 112-116.
 
 Kerr, W. R., Nanda, R., & Rhodes-Kropf, M. (2014). Entrepreneurship as experimentation. *Journal of Economic Perspectives*, 28(3), 25-48.
 
@@ -1218,15 +1299,57 @@ Zuckerman, E. W. (1999). The categorical imperative: Securities analysts and the
 
 ## Appendix B: Variable Construction Details
 
-### B.1 Vagueness Dictionary
+### B.1 PitchBook Data Fields
+
+**Table B.1: Primary Data Fields from PitchBook**
+
+| Field Name | Type | Description | Usage in Thesis |
+|:-----------|:-----|:------------|:----------------|
+| `org_uuid` | String | Unique venture identifier | Primary key |
+| `company_description` | Text | Business description (avg. 50 words) | Strategic Breadth (B) calculation |
+| `primary_industry` | Categorical | Primary industry classification | Industry heterogeneity analysis |
+| `first_financing_date` | Date | Date of initial funding round | Baseline (2021) determination |
+| `first_financing_size` | Numeric | Initial funding amount (USD) | Early Funding (E) |
+| `total_raised` | Numeric | Cumulative funding (USD) | Growth (G) numerator |
+| `last_financing_status` | Categorical | Most recent funding stage | Survival proxy |
+| `keywords` | Text | PitchBook-assigned tags | Supplementary breadth measure |
+| `hq_country` | String | Headquarters country | Sample filter (US only) |
+| `founded_date` | Date | Company founding date | Cohort assignment |
+
+### B.2 Vagueness Dictionary
 
 The dictionary contains 127 terms classified as:
-- **Vague (high breadth):** platform, ecosystem, solutions, enable, transform, optimize, leverage
-- **Specific (low breadth):** device, application, tool, product, service, system
+- **Vague (high breadth):** platform, ecosystem, solutions, enable, transform, optimize, leverage, innovative, next-generation, cutting-edge, comprehensive, integrated, scalable
+- **Specific (low breadth):** device, application, tool, product, service, system, manufacturer, operator, provider, developer
 
-### B.2 Sample Construction Code
+**Full dictionary available in code repository:** `src/data/vagueness_dictionary.json`
 
-[Code repository reference]
+### B.3 Variable Transformation
+
+**Strategic Breadth (B):**
+```
+B = 50 × (categorical_vagueness / max_vagueness) + 50 × (1 - concreteness / max_concreteness)
+```
+Where categorical_vagueness counts vague terms and concreteness counts specific markers (numbers, dates, acronyms).
+
+**Repositioning (R):**
+```
+R = |B_T - B_0|
+R_standardized = R / std(R)
+```
+
+**Growth (G):**
+```
+G = (total_raised - first_financing_size) / first_financing_size
+```
+
+### B.4 Sample Construction Code
+
+**Repository:** `src/scripts/sample_construction/`
+- `01_filter_geography.py` - US headquarters filter
+- `02_filter_stage.py` - Early-stage (Seed/A/B) filter
+- `03_compute_variables.py` - B, R, G calculation
+- `04_merge_panel.py` - Final panel construction
 
 ---
 
@@ -1246,7 +1369,7 @@ The organizational capacity to reposition in response to market feedback. Flexib
 Measurable strategic movement between an initial positioning (B₀) and a terminal positioning (B_T), calculated as R = |B_T − B₀|. Repositioning captures the behavioral manifestation of strategic flexibility.
 
 #### Growth (G)
-Funding growth multiple measuring venture scaling success: G = (F_t − E) / E, where F_t is total funding at observation and E is early-stage capital. Median G = 2.0× across the sample; Movers achieve higher G than Stayers (2.60× advantage). Symbolized by 🟢 (green).
+Funding growth multiple measuring venture scaling success: G = (F_t − E) / E, where F_t is total funding at observation and E is early-stage capital. Overall median G = 0.09× (full sample); conditional on later-stage survival, type-specific medians are: Zoom-out = 2.57×, Zoom-in = 2.32×, Stayer = 0.60×. Movers achieve higher G than Stayers (2.60× advantage). Symbolized by 🟢 (green).
 
 #### Strategic Breadth (B)
 The scope of potential markets, technologies, or applications implied by a venture's positioning, measured on a 0–100 scale using dictionary-based text analysis.
