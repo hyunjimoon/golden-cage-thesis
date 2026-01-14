@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T06:47:54-05:00
+  - 2026-01-14T06:52:12-05:00
 ---
 
 
@@ -46,7 +46,7 @@ Draft for Committee Review — January 2026
 The U.S. venture capital industry—which deployed over $330 billion globally at its 2021 peak (PitchBook, 2024)—rests on a simple premise: capital fuels growth. Yet analyzing 180,994 ventures from PitchBook (2021–2025), I document a paradox: early-stage funding correlates *negatively* with later-stage survival (ρ = −0.196, p < 0.001). Startups die not for lack of resources, but for lack of mobility. Capital is oxygen—but oxygen in a sealed chamber becomes a cage.
 
 **¶2 — Part I: The Cage (Chapters 1–4).**
-The effect operates through a mediated pathway: funding **suppresses** repositioning (ρ = −0.087), yet repositioning **drives** growth—Movers outperform Stayers by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: dG/dE = (dG/dR) × (dR/dE) = (+) × (−) = (−). I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
+The effect operates through a mediated pathway. Let E denote early-stage funding, R denote strategic repositioning, and G denote later-stage growth. Funding suppresses repositioning (ρ(E,R) = −0.087), yet repositioning drives growth—ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0%). The product of a positive and a negative is negative: the effect of funding on growth, dG/dE, decomposes into dG/dR (positive: repositioning helps) times dR/dE (negative: funding suppresses repositioning), yielding a net negative. I term this the *golden cage*: operational commitments attract like-minded investors who filter skeptics from governance, eliminating the signal diversity that learning requires. The constraint is structural—founders *cannot* pivot because their boards lack advocates for alternatives.
 
 **¶3 — Part II: Escaping the Cage (Chapters 5–6).**
 The contribution is threefold. First, I document a negative funding-growth correlation at unprecedented scale. Second, I identify governance homogeneity—not moral hazard—as the binding constraint. Third, I distinguish vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: ρ = −0.108, Transportation: ρ = −0.101) but releases under extreme uncertainty (Quantum: ρ = +0.095). The prescription follows: when uncertain, commit to *reposition*, rather than to position.
@@ -220,7 +220,7 @@ The data reveal a paradox. Analyzing 180,994 ventures from PitchBook (2021–202
 
 $$\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)$$
 
-[Figure 1: The Funding-Growth Paradox](figures/Fig1_capital_paradox.png)
+[Figure 1: The Funding-Growth Paradox](figures/Ch1_Fig1_capital_paradox.png)
 
 **Figure 1:** The Funding-Growth Paradox. Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
@@ -230,7 +230,7 @@ $$\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \t
 
 The **Flexibility Premium** (dG/dR > 0) captures the growth benefit of adaptation: ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60× (18.1% vs. 7.0% later-stage survival). The **Commitment Trap** (dR/dE < 0) captures the rigidity cost of funding: early funding correlates with lower repositioning (ρ = −0.087, p < 0.001), as governance structures attached to capital constrain adaptation. The product of a positive and a negative is negative: funding correlates with reduced mobility, not because capital is harmful, but because commitment attracts like-minded investors who filter skeptics from governance.
 
-[Figure 2: Mediation Structure](figures/Fig1b_mediation_dag.png)
+[Figure 2: Mediation Structure](figures/Ch1_Fig2_mediation_dag.png)
 
 **Figure 2:** The Mediation Structure. The upper path shows measured variables: Early Funding → Repositioning → Growth. H1 (Commitment Trap, −) captures funding's suppression of repositioning; H2 (Flexibility Premium, +) captures repositioning's benefit to growth. H3 (Funding Paradox, −) is the net effect shown by the dashed arc. The lower path shows latent variables: Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables both Repositioning (+) and Growth (+).
 
@@ -374,7 +374,7 @@ $$C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\
 
 Where C = Commitment, E = Early funding, F = Flexibility, R = Repositioning, G = Growth. See [Glossary](#appendix-c-glossary) for definitions.
 
-[Figure 3: The Golden Cage Mechanism](figures/Fig3_golden_cage.png)
+[Figure 3: The Golden Cage Mechanism](figures/Ch2_Fig2_golden_cage.png)
 
 **Figure 3:** The Golden Cage Mechanism. Operational commitment attracts believers who filter skeptics, producing governance homogeneity that eliminates signal diversity.
 
@@ -672,7 +672,7 @@ To operationalize the repositioning-growth relationship, I classify ventures usi
 >
 > Musk's first principles approach exemplifies this motion: decompose battery costs to raw materials (zoom-in), then reconstruct supply chain architecture (zoom-out). The same cognitive motion—moving between levels of abstraction—applies to strategic positioning. Entrepreneurs who can *move* between scopes outperform those who remain fixed, regardless of direction.
 
-[Figure 6: Mover vs. Stayer Success Rates](figures/Fig4_growth_by_R.png)
+[Figure 6: Mover vs. Stayer Success Rates](figures/Ch4_Fig3_growth_by_direction.png)
 
 **Figure 6:** Mover vs. Stayer Success Rates. Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
 
@@ -713,7 +713,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 
 *Note: E = first_financing_size (M USD), G = growth (binary: reached Later Stage VC). Sector counts reflect the broader PitchBook universe prior to excluding firms with missing longitudinal funding data, resulting in a total count exceeding the regression sample (N = 180,994). Firms may be classified into multiple secondary sectors. Quantum computing is included for completeness despite small sample size; interpretation requires caution. Data verified from PitchBook (2021-2025).*
 
-[Figure 7: Industry ρ(E,G) Correlations](figures/Fig5_industry_rho.png)
+[Figure 7: Industry ρ(E,G) Correlations](figures/Ch4_Fig2_industry_rho.png)
 
 **Figure 7:** Industry-level ρ(E,G) correlations. Capital-intensive sectors (Hardware, Transportation) show strongest negative correlations consistent with the multiplicative model. Quantum is the sole positive outlier—under extreme uncertainty, learning value dominates rigidity costs.
 
@@ -769,7 +769,7 @@ The deep tech exception also illuminates a distinction between two forms of earl
 
 Paradoxically, ventures that receive "confident" funding (staged commitment with aggressive milestones) may face stronger cage constraints than ventures receiving "tentative" funding (partial commitment with flexible expectations). The strategic implication: when uncertain, prefer investors who share your uncertainty over investors who resolve it prematurely.
 
-[Figure 8: Mobility - Where the Cage Bites Hardest](figures/Fig6_industry_survival.png)
+[Figure 8: Mobility - Where the Cage Bites Hardest](figures/Ch4_Fig4_industry_survival.png)
 
 **Figure 8:** Mobility: Where the Cage Bites Hardest. Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
@@ -1543,7 +1543,7 @@ The cage locks when commitment reduces B below the critical threshold.
 
 ## Figure 1: The Funding-Growth Paradox
 
-![Figure 1: The Funding-Growth Paradox](figures/Fig1_capital_paradox.png)
+![Figure 1: The Funding-Growth Paradox](figures/Ch1_Fig1_capital_paradox.png)
 
 Higher early funding correlates with lower later-stage success (N = 180,994, ρ = −0.196, p < 0.001). The relationship holds across industries and cohort years.
 
@@ -1551,7 +1551,7 @@ Higher early funding correlates with lower later-stage success (N = 180,994, ρ 
 
 ## Figure 2: The Mediation Structure (DAG)
 
-![Figure 2: The Mediation Structure](figures/Fig1b_mediation_dag.png)
+![Figure 2: The Mediation Structure](figures/Ch1_Fig2_mediation_dag.png)
 
 **Upper path (measured variables):** Early Funding → Reposition → Growth. **H1 (Commitment Trap, −):** Funding suppresses repositioning. **H2 (Flexibility Premium, +):** Repositioning enables growth. **H3 (Funding Paradox, −):** Net effect shown by dashed arc—despite enabling commitment, early funding ultimately reduces growth through the mediation pathway. **Lower path (latent variables):** Commitment enables funding (+) but destroys Flexibility (−); Flexibility enables Repositioning (+). The multiplicative structure ensures that blocking either path (H1 or H2) eliminates the indirect effect.
 
@@ -1559,7 +1559,7 @@ Higher early funding correlates with lower later-stage success (N = 180,994, ρ 
 
 ## Figure 6: Mover vs. Stayer Success Rates
 
-![Figure 6: Mover vs. Stayer Success Rates](figures/Fig4_growth_by_R.png)
+![Figure 6: Mover vs. Stayer Success Rates](figures/Ch4_Fig3_growth_by_direction.png)
 
 Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60× advantage (χ² = 5,322, p < 0.001).
 
@@ -1567,7 +1567,7 @@ Movers (R > 0) achieve 18.1% success rate versus Stayers' (R = 0) 7.0%—a 2.60�
 
 ## Figure 8: Mobility - Where the Cage Bites Hardest
 
-![Figure 8: Mobility Failure](figures/Fig6_industry_survival.png)
+![Figure 8: Mobility Failure](figures/Ch4_Fig4_industry_survival.png)
 
 Mobility exhibits the lowest survival rate (5.3%), reflecting the double bind of high commitment and high uncertainty.
 
