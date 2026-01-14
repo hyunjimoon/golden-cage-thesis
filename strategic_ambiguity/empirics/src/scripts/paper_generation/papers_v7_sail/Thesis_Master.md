@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T07:44:34-05:00
+  - 2026-01-14T07:54:48-05:00
 ---
 
 
@@ -163,14 +163,14 @@ The contribution is threefold. First, I document a negative funding-growth corre
 | Figure | Title                                         | Chapter |
 | :----: | :-------------------------------------------- | :-----: |
 |   1    | The Funding-Growth Paradox                    |  Ch.1   |
-|   2    | The Mediation Structure (DAG)                 |  Ch.1   |
-|   3    | The Golden Cage Mechanism                     |  Ch.2   |
-|   4    | Sample Construction Flowchart                 |  Ch.3   |
-|   5    | CER Pattern: Funding Suppresses Repositioning |  Ch.4   |
-|   6    | Mover vs. Stayer Success Rates (2.60×)        |  Ch.4   |
-|   7    | Industry Heterogeneity ρ(E,G)                 |  Ch.4   |
+|   2    | Mediation Structure (DAG)                     |  Ch.1   |
+|   3    | Strategic Breadth Trajectories                |  Ch.2   |
+|   4    | The Golden Cage Mechanism                     |  Ch.2   |
+|   5    | The Mover Advantage                           |  Ch.4   |
+|   6    | Mover vs. Stayer Success Rates                |  Ch.4   |
+|   7    | Industry ρ(E,G) Correlations                  |  Ch.4   |
 |   8    | Mobility: Where the Cage Bites Hardest        |  Ch.4   |
-|   9    | Temporal Robustness (2020-2025)               |  Ch.4   |
+|   9    | Temporal Robustness                           |  Ch.4   |
 |  10    | The Strategic Ambiguity Sweet Spot            |  Ch.5   |
 
 # List of Tables
@@ -179,7 +179,6 @@ The contribution is threefold. First, I document a negative funding-growth corre
 |:-----:|:------|:-------:|
 | 1 | Variable Definitions and Causal Structure | Ch.3 |
 | 2 | Descriptive Statistics (N = 180,994) | Ch.3 |
-| 3 | CER Analysis: Funding → Repositioning | Ch.4 |
 | 4 | FRG Analysis: Repositioning → Growth | Ch.4 |
 | 5 | Mover Taxonomy: Stayer / Zoom-in / Zoom-out | Ch.4 |
 | 6 | Industry Breakdown: Survival Rates by Sector | Ch.4 |
