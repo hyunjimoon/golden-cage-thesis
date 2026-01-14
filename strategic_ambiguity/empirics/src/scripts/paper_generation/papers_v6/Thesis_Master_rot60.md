@@ -4,6 +4,7 @@ modified:
   - 2026-01-09T07:30:00-05:00
   - 2026-01-09T20:47:35-05:00
   - 2026-01-13T07:55:28-05:00
+  - 2026-01-14T01:13:53-05:00
 structure: CFR-First (Option B Hybrid)
 paragraphs: 29
 ---
@@ -27,7 +28,7 @@ paragraphs: 29
 	2. ![[Pasted image 20260109201750.png]]
 5. ![[Pasted image 20260109202006.png]]
 6. tesla: vertical integration VS wholesale to direct sale
-7. replace ![](figures/Fig-ARG_mover_vs_stayer.png)with ![[Pasted image 20260109202602.png]]
+7. replace ![](figures/Fig-ARG_mover_vs_stayer.png)with ![[mover_stayer_by_growth.png]]
 8. par.22: add ![[Pasted image 20260109203005.png]]
 9. remove the right panel![[Pasted image 20260109204717.png]]
 # The Golden Cage: How Early Funding Suppresses Venture Growth
@@ -276,7 +277,7 @@ I test H2 by categorizing ventures according to observed strategic change.
 
 Movers outperform Stayers by a factor of **1.81×** (17.8% vs. 9.9%). Both zoom-in (focus narrowing) and zoom-out (scope broadening) exhibit elevated success rates relative to stayers, suggesting that *directional clarity*—not direction itself—is associated with the mover advantage. This relationship holds after controlling for initial funding levels (F), industry fixed effects, and cohort timing. **H2 is supported.**
 
-![[Pasted image 20260109202602.png]]
+![[mover_stayer_by_growth.png]]
 <a id="fig:mover_stayer_trajectories"></a>
 
 ![](figures/Fig-ARG_mover_vs_stayer.png)

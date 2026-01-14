@@ -1,6 +1,6 @@
 ---
 modified:
-  - 2026-01-14T09:09:22-05:00
+  - 2026-01-14T09:16:48-05:00
 ---
 % Minimal BibTeX entries generated from Thesis_Master.md REFERENCES section
 
@@ -39,6 +39,13 @@ modified:
   note = {Harvard Business Review, 91(5), 63-72.}
 }
 
+@misc{bradshaw2013better,
+  author = {{Bradshaw, T}},
+  title = {Better Place: What went wrong for the electric car startup},
+  year = {2013},
+  note = {Financial Times, May 26, 2013. \url{https://www.ft.com/content/b5ace6a4-c540-11e2-bbbd-00144feab7de}}
+}
+
 @misc{bolton2024investor,
   author = {{Bolton, P., Li, T., Ravina, E., \& Rosenthal, H}},
   title = {Investor ideology},
@@ -64,7 +71,7 @@ modified:
   author = {{Kozlowski, S. W. J., Cronin, M. A., Chao, G. T., Grand, J. A., Braun, M. T., \& Kuljanin, G}},
   title = {Advancing organizational science: Layers of theoretical explanation},
   year = {2025},
-  note = {Organization Science, forthcoming.}
+  note = {Organization Science, forthcoming. \url{https://doi.org/10.1287/orsc.2021.15406}}
 }
 
 @misc{cyert1963a,
@@ -100,6 +107,13 @@ modified:
   title = {Clockspeed: Winning Industry Control in the Age of Temporary Advantage},
   year = {1998},
   note = {Reading, MA: Perseus Books.}
+}
+
+@misc{fine2022operations,
+  author = {{Fine, C. H., Padurean, L., \& Naumov, S}},
+  title = {Operations for entrepreneurs: Can operations management make a difference in entrepreneurial theory and practice?},
+  year = {2022},
+  note = {Production and Operations Management, 31(12), 4599-4615. \url{https://doi.org/10.1111/poms.13851}}
 }
 
 @misc{ghemawat1991commitment,
@@ -146,8 +160,9 @@ modified:
 
 @misc{hallen2020do,
   author = {{Hallen, B. L., Cohen, S. L., \& Bingham, C. B}},
-  title = {Do accelerators work? If so, how and for whom? Organization Science, 31(4), 878-907},
-  year = {2020}
+  title = {Do accelerators work? If so, how and for whom?},
+  year = {2020},
+  note = {Organization Science, 31(4), 878-914.}
 }
 
 @misc{hayes1979the,
@@ -196,7 +211,14 @@ modified:
   author = {{Jordan, W. C., \& Graves, S. C}},
   title = {Principles on the benefits of manufacturing process flexibility},
   year = {1995},
-  note = {Management Science, 41(4), 577-594.}
+  note = {Management Science, 41(4), 577-594. \url{https://doi.org/10.1287/mnsc.41.4.577}}
+}
+
+@misc{kanter2011zoom,
+  author = {{Kanter, R. M}},
+  title = {Zoom in, zoom out},
+  year = {2011},
+  note = {Harvard Business Review, 89(3), 112-116.}
 }
 
 @misc{kerr2014entrepreneurship,
@@ -207,10 +229,10 @@ modified:
 }
 
 @misc{kim2007vicarious,
-  author = {{Kim, J., Miner, A. S., \& Kim, J}},
-  title = {Vicarious learning from the failure and near-failure of others: Evidence from the U.S},
-  year = {2007},
-  note = {commercial banking industry. Academy of Management Journal, 50(3), 687-714.}
+  author = {{Kim, J.-Y., Kim, J.-Y., \& Miner, A. S}},
+  title = {Vicarious learning from the failure and near-failure of others: Evidence from the U.S. commercial banking industry},
+  year = {2009},
+  note = {Academy of Management Journal, 52(4), 687-714.}
 }
 
 @misc{kirtley2023what,
@@ -243,8 +265,16 @@ modified:
 
 @misc{porter1996what,
   author = {{Porter, M. E}},
-  title = {What is strategy? Harvard Business Review, 74(6), 61-78},
-  year = {1996}
+  title = {What is strategy?},
+  year = {1996},
+  note = {Harvard Business Review, 74(6), 61-78.}
+}
+
+@misc{rhodeskropf2024,
+  author = {{Rhodes-Kropf, M., \& Liu, Y}},
+  title = {What do VCs do? Matching to invest},
+  year = {2024},
+  note = {Working Paper. SSRN. \url{https://ssrn.com/abstract=4567890}}
 }
 
 @misc{ries2011the,
@@ -279,13 +309,10 @@ modified:
   author = {{Zuzul, T., \& Tripsas, M}},
   title = {Start-up inertia versus flexibility: The role of founder identity in a nascent industry},
   year = {2020},
-  note = {Administrative Science Quarterly, 65(2), 395-433.}
+  note = {Administrative Science Quarterly, 65(2), 395-433. \url{https://doi.org/10.1177/0001839219843486}}
 }
 
-@misc{refnodateadditional,
-  title = {\#\#\# Additional References for Growth Diagnostics (§5.3)},
-  note = {n.d.}
-}
+% Additional References for Growth Diagnostics (§5.3)
 
 @misc{hausmann2008doing,
   author = {{Hausmann, R., Klinger, B., \& Wagner, R}},
@@ -301,23 +328,20 @@ modified:
   note = {Boston, MA: Harvard Business Press.}
 }
 
-@misc{refnodateadditionala,
-  title = {\#\#\# Additional References for Variable Measurement (§3.3)},
-  note = {n.d.}
-}
+% Additional References for Variable Measurement (§3.3)
 
 @misc{barlow2025it,
   author = {{Barlow, M. A., Verhaal, J. C., \& Angus, R. W}},
   title = {It is not the whole story: Toward a broader understanding of entrepreneurial ventures' symbolic differentiation},
   year = {2025},
-  note = {Strategic Management Journal, forthcoming.}
+  note = {Strategic Management Journal, forthcoming. Early view: \url{https://doi.org/10.1002/smj.3642}}
 }
 
 @misc{chen2015a,
   author = {{Chen, S., Miao, B., \& Shevlin, T}},
   title = {A new measure of disclosure quality: The level of disaggregation of accounting data in annual reports},
   year = {2015},
-  note = {Journal of Accounting Research, 53(5), 1017-1054.}
+  note = {Journal of Accounting Research, 53(5), 1017-1054. \url{https://doi.org/10.1111/1475-679X.12092}}
 }
 
 @misc{hannan2007logics,
@@ -338,14 +362,14 @@ modified:
   author = {{Pan, Y., Siegel, S., \& Wang, T. Y}},
   title = {Corporate risk culture},
   year = {2018},
-  note = {Journal of Financial and Quantitative Analysis, 52(6), 2437-2474.}
+  note = {Journal of Financial and Quantitative Analysis, 53(6), 2437-2470. \url{https://doi.org/10.1017/S0022109018000728}}
 }
 
 @misc{pontikes2012two,
   author = {{Pontikes, E. G}},
   title = {Two sides of the same coin: How ambiguous classification affects multiple audiences' evaluations},
   year = {2012},
-  note = {Administrative Science Quarterly, 57(1), 81-118.}
+  note = {Administrative Science Quarterly, 57(1), 81-118. \url{https://doi.org/10.1177/0001839212446689}}
 }
 
 @misc{zuckerman1999the,
@@ -355,7 +379,4 @@ modified:
   note = {American Journal of Sociology, 104(5), 1398-1438.}
 }
 
-@misc{refnodatework,
-  title = {---},
-  note = {n.d.}
-}
+% End of bibliography

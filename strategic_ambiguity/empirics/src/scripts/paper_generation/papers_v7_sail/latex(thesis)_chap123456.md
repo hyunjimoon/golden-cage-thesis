@@ -1,6 +1,6 @@
 ---
 modified:
-  - 2026-01-14T10:34:55-05:00
+  - 2026-01-14T11:10:02-05:00
 ---
 \hypertarget{ch:introduction}{%
 \chapter{Introduction}\label{ch:introduction}}
@@ -914,27 +914,14 @@ Three directions merit further investigation:
   \textbf{Governance interventions:} Field experiments testing skeptic preservation strategies
 \end{enumerate}
 
-\hypertarget{closing}{%
-\section{Closing}\label{closing}}
+\section{Closing}
 
-Capital is oxygen for startups, but oxygen in a sealed chamber becomes a cage.
+Capital is oxygen for startups, but too much early commitment turns that oxygen into a cage. This thesis resolves the \textbf{funding–growth paradox}: early funding correlates with lower survival because it suppresses strategic repositioning. While capital provides resources, it inadvertently creates a governance structure of pure believers who filter out the skeptics needed to champion a pivot. The result is the \textbf{Golden Cage}:
+\begin{itemize}
+\item \textbf{The Trap:} Funding locks a venture into a path ($E \rightarrow R \downarrow$). .
+\item \textbf{The Cost:} In changing markets, adaptability drives growth ($R \rightarrow G \uparrow$)..
+\item \textbf{The Net Effect:} Rigidity outweighs resources, leading to failure ($E \rightarrow G \downarrow$).
+\end{itemize}
 
-This thesis began with a paradox: the \$330 billion venture capital industry exists to fuel growth, yet early-stage funding correlates negatively with later-stage survival (\ensuremath{\rho} = -0.196, N = 180,994). The paradox \textbf{resolves} through decomposition: funding \textbf{suppresses} repositioning (\ensuremath{\rho} = -0.087), and repositioning \textbf{drives} growth (Movers outperform Stayers by 2.60\ensuremath{\times}). The product of a positive and a negative is negative.
+This cage binds tightest in capital-intensive sectors like Hardware but releases in high-uncertainty fields like Quantum. The solution is not to avoid capital but to design governance that preserves the option to change. \textbf{The core prescription:} When uncertain, commit to the \emph{capacity to reposition}, rather than a specific \emph{position}. Move to grow.](<\hypertarget{closing}{%
 
-The mechanism I term the \emph{golden cage} operates through belief homogeneity. Securing capital requires commitments that attract investors who share the founder's thesis. Skeptics self-select out. The resulting board contains only believers, efficient for execution, destructive for learning. When market signals suggest pivoting, no one advocates alternatives. The venture cannot adapt, not for lack of will, but for lack of governance diversity.
-
-Industry heterogeneity reveals boundary conditions. The cage binds tightest in capital-intensive sectors where switching costs are high: Hardware (\ensuremath{\rho} = -0.108), Transportation (\ensuremath{\rho} = -0.101). It releases under extreme uncertainty where no dominant design exists: Quantum (\ensuremath{\rho} = +0.095). The cage operates when commitment forecloses \emph{identifiable} alternatives; under radical uncertainty, no alternatives are identifiable, so commitment cannot foreclose them.
-
-The cage need not be fatal. With deliberate governance design, committing at the vision level, preserving skeptics, building milestone flexibility, founders and investors can capture commitment's benefits without foreclosing adaptation. The prescription reduces to four words:
-
-\textbf{Commit to reposition, not position.}
-
-\emph{Move to grow.}
-
-\begin{figure}
-\hypertarget{fig:growth-diagnostics}{%
-\centering
-\includegraphics[width=0.85\textwidth,height=\textheight]{img/Ch6_Fig1_growth_diagnostics.png}
-\caption{Growth diagnostics (placeholder figure; replace with final diagnostic plot when available).}\label{fig:growth-diagnostics}
-}
-\end{figure}
