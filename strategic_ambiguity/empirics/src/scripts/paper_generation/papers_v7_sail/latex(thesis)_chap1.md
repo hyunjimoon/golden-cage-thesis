@@ -6,9 +6,9 @@ modified:
 \chapter{Introduction}\label{ch:introduction}}
 
 \begin{quote}
-\emph{"What's the puzzle?"} \textbf{Core Equation}: dG/dE = (dG/dR) \ensuremath{\times} (dR/dE) = (+) \ensuremath{\times} (-) = (-)
+\emph{"What's the puzzle?"} Early funding correlates negatively with later success. The paradox resolves through mediation: funding suppresses repositioning, yet repositioning drives growth.
 
-\emph{Key terms are defined in Appendix C: Glossary. Canonical numbers are locked.}
+\emph{Key terms are defined in Appendix C: Glossary.}
 \end{quote}
 
 \hypertarget{general-motivation}{%
@@ -43,11 +43,15 @@ The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from Pitc
 }
 \end{figure}
 
-Decomposing the pattern resolves it. I identify two countervailing effects and formalize their interaction as the product of component correlations:
+The paradox resolves through a \textbf{mediation framework}. I identify two countervailing effects:
 
-\[\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{Flexibility Premium }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{Commitment Trap }(-)} = (-)\]
+\begin{itemize}
+\tightlist
+\item \textbf{The Commitment Trap:} Early funding negatively predicts repositioning (\ensuremath{\rho} = -0.087, p \textless{} 0.001). Governance structures attached to capital constrain adaptation.
+\item \textbf{The Flexibility Premium:} Repositioning positively predicts later-stage success. Ventures that reposition (``Movers'') outperform those that hold position (``Stayers'') by 2.60\ensuremath{\times} (18.1\% vs.~7.0\% reaching Later Stage VC).
+\end{itemize}
 
-The \textbf{Flexibility Premium} (dG/dR \textgreater{} 0) captures the growth benefit of adaptation: ventures that reposition ("Movers") outperform those that hold position ("Stayers") by 2.60\ensuremath{\times} (18.1\% vs.~7.0\% later-stage survival). The \textbf{Commitment Trap} (dR/dE \textless{} 0) captures the rigidity cost of funding: early funding correlates with lower repositioning (\ensuremath{\rho} = -0.087, p \textless{} 0.001), because governance structures attached to capital constrain adaptation. A positive times a negative is negative: funding correlates with reduced mobility. The reason is not that capital is harmful, but rather that commitment attracts like-minded investors who filter out skeptics.
+Thus, funding suppresses the very mechanism---strategic mobility---required for survival. The reason is not that capital is harmful, but that commitment attracts like-minded investors who filter out skeptics.
 
 \begin{figure}
 \hypertarget{fig:mediation-dag}{%
