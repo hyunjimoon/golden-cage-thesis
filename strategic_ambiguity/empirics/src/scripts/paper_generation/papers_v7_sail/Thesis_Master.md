@@ -26,7 +26,7 @@ modified:
   - 2026-01-12T09:06:59-05:00
   - 2026-01-12T11:24:57-05:00
   - 2026-01-13T23:52:07-05:00
-  - 2026-01-14T07:00:43-05:00
+  - 2026-01-14T07:04:31-05:00
 ---
 
 
@@ -1229,8 +1229,6 @@ Bolton, P., Li, T., Ravina, E., & Rosenthal, H. (2024). Investor ideology. *Jour
 
 Camuffo, A., Cordova, A., Gambardella, A., & Spina, C. (2020). A scientific approach to entrepreneurial decision making: Evidence from a randomized control trial. *Management Science*, 66(2), 564-586.
 
-Kozlowski, S. W. J., Cronin, M. A., Chao, G. T., Grand, J. A., Braun, M. T., & Kuljanin, G. (2025). Advancing organizational science: Layers of theoretical explanation. *Organization Science*, forthcoming.
-
 Cyert, R. M., & March, J. G. (1963). *A Behavioral Theory of the Firm*. Englewood Cliffs, NJ: Prentice-Hall.
 
 Dixit, A. K., & Pindyck, R. S. (1994). *Investment Under Uncertainty*. Princeton, NJ: Princeton University Press.
@@ -1243,13 +1241,13 @@ Fine, C. H. (1998). *Clockspeed: Winning Industry Control in the Age of Temporar
 
 Fine, C. H. (2024). Scale it: A practitioner's guide to growing a startup. MIT Sloan School of Management Working Paper.
 
+Gans, J. S., Stern, S., & Wu, J. (2019). Foundations of entrepreneurial strategy. *Strategic Management Journal*, 40(5), 736-756.
+
 Ghemawat, P. (1991). *Commitment: The Dynamic of Strategy*. New York: The Free Press.
 
 Gompers, P. A., & Lerner, J. (2001). The venture capital revolution. *Journal of Economic Perspectives*, 15(2), 145-168.
 
 Gompers, P., Kovner, A., Lerner, J., & Scharfstein, D. (2010). Performance persistence in entrepreneurship. *Journal of Financial Economics*, 96(1), 18-32.
-
-Gans, J. S., Stern, S., & Wu, J. (2019). Foundations of entrepreneurial strategy. *Strategic Management Journal*, 40(5), 736-756.
 
 Grimes, M. G. (2018). The pivot: How founders respond to feedback through idea and identity work. *Academy of Management Journal*, 61(5), 1692-1717.
 
@@ -1278,6 +1276,8 @@ Kerr, W. R., Nanda, R., & Rhodes-Kropf, M. (2014). Entrepreneurship as experimen
 Kim, J., Miner, A. S., & Kim, J. (2007). Vicarious learning from the failure and near-failure of others: Evidence from the U.S. commercial banking industry. *Academy of Management Journal*, 50(3), 687-714.
 
 Kirtley, J., & O'Mahony, S. (2023). What is a pivot? Explaining when and how entrepreneurial firms decide to make strategic change and pivot. *Strategic Management Journal*, 44(1), 197-230.
+
+Kozlowski, S. W. J., Cronin, M. A., Chao, G. T., Grand, J. A., Braun, M. T., & Kuljanin, G. (2025). Advancing organizational science: Layers of theoretical explanation. *Organization Science*, forthcoming.
 
 Levinthal, D. A., & March, J. G. (1993). The myopia of learning. *Strategic Management Journal*, 14(S2), 95-112.
 
