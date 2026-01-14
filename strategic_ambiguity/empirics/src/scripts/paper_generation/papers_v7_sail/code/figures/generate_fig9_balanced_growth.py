@@ -1,7 +1,7 @@
 """
-Figure 9: Balanced Growth Framework (Fine/Hausmann)
+Figure 9: Balanced Growth Framework (Fine 2022)
 Panel A: Growth Anatomy (2×2 Matrix)
-Panel B: Growth Diagnostics Tree
+Panel B: The Diagonal Principle
 """
 
 import matplotlib.pyplot as plt
@@ -9,15 +9,15 @@ import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch, Rectangle
 import numpy as np
 
-# Color scheme (consistent with Ch2_Fig1_B_trajectories.png)
+# Grayscale color scheme (no red, gold, blue)
 COLORS = {
-    'green': '#2E8B57',      # Balanced Engine (Zoom-out)
-    'blue': '#4682B4',       # Zoom-in
-    'gray': '#808080',       # Stayer / Dead Zone
-    'red': '#CD5C5C',        # Operational Trap
-    'gold': '#DAA520',       # Market Mirage / Golden Cage
-    'light_gray': '#E8E8E8', # Background
-    'text': '#333333'
+    'dark': '#333333',       # Dark gray for text
+    'medium': '#666666',     # Medium gray
+    'light': '#999999',      # Light gray
+    'lighter': '#CCCCCC',    # Lighter gray
+    'lightest': '#E8E8E8',   # Background
+    'white': '#FFFFFF',
+    'black': '#000000'
 }
 
 def create_panel_a(ax):
@@ -26,53 +26,58 @@ def create_panel_a(ax):
     ax.set_ylim(0, 10)
     ax.set_aspect('equal')
 
-    # Draw quadrants
+    # Draw quadrants - all in grayscale
     # Type A: Operational Trap (Low Market, High Ops) - top left
     rect_a = FancyBboxPatch((0.5, 5.5), 4, 4,
                              boxstyle="round,pad=0.05",
-                             facecolor=COLORS['red'], alpha=0.7,
+                             facecolor=COLORS['light'], alpha=0.8,
                              edgecolor='white', linewidth=2)
     ax.add_patch(rect_a)
 
-    # Type C: Balanced Engine (High Market, High Ops) - top right
+    # Type C: Balanced Engine (High Market, High Ops) - top right (diagonal = success)
     rect_c = FancyBboxPatch((5.5, 5.5), 4, 4,
                              boxstyle="round,pad=0.05",
-                             facecolor=COLORS['green'], alpha=0.8,
+                             facecolor=COLORS['dark'], alpha=0.9,
                              edgecolor='white', linewidth=2)
     ax.add_patch(rect_c)
 
     # Dead Zone (Low Market, Low Ops) - bottom left
     rect_dead = FancyBboxPatch((0.5, 0.5), 4, 4,
                                 boxstyle="round,pad=0.05",
-                                facecolor=COLORS['gray'], alpha=0.4,
+                                facecolor=COLORS['lightest'], alpha=0.8,
                                 edgecolor='white', linewidth=2)
     ax.add_patch(rect_dead)
 
     # Type B: Market Mirage (High Market, Low Ops) - bottom right
     rect_b = FancyBboxPatch((5.5, 0.5), 4, 4,
                              boxstyle="round,pad=0.05",
-                             facecolor=COLORS['gold'], alpha=0.7,
+                             facecolor=COLORS['light'], alpha=0.8,
                              edgecolor='white', linewidth=2)
     ax.add_patch(rect_b)
 
     # Labels for quadrants
     ax.text(2.5, 8.2, 'OPERATIONAL\nTRAP', ha='center', va='center',
             fontsize=11, fontweight='bold', color='white')
-    ax.text(2.5, 6.5, '(Type A)', ha='center', va='center',
-            fontsize=9, color='white', alpha=0.9)
+    ax.text(2.5, 6.3, 'NxStage', ha='center', va='center',
+            fontsize=9, color='white', style='italic')
 
     ax.text(7.5, 8.2, 'BALANCED\nENGINE', ha='center', va='center',
             fontsize=11, fontweight='bold', color='white')
-    ax.text(7.5, 6.5, '(Type C)', ha='center', va='center',
-            fontsize=9, color='white', alpha=0.9)
+    ax.text(7.5, 6.3, '★ Diagonal', ha='center', va='center',
+            fontsize=9, color='white', style='italic')
 
     ax.text(2.5, 2.5, 'DEAD\nZONE', ha='center', va='center',
-            fontsize=11, fontweight='bold', color=COLORS['text'], alpha=0.7)
+            fontsize=11, fontweight='bold', color=COLORS['medium'])
 
     ax.text(7.5, 3.2, 'MARKET\nMIRAGE', ha='center', va='center',
             fontsize=11, fontweight='bold', color='white')
-    ax.text(7.5, 1.5, '(Type B)', ha='center', va='center',
-            fontsize=9, color='white', alpha=0.9)
+    ax.text(7.5, 1.3, 'SkinnyGirl', ha='center', va='center',
+            fontsize=9, color='white', style='italic')
+
+    # Draw diagonal arrow (success path)
+    ax.annotate('', xy=(8.5, 8.5), xytext=(1.5, 1.5),
+                arrowprops=dict(arrowstyle='->', color=COLORS['dark'],
+                               lw=2, ls='--'))
 
     # Axis labels
     ax.set_xlabel('Market Pull →', fontsize=12, fontweight='bold')
@@ -94,136 +99,49 @@ def create_panel_a(ax):
 
 
 def create_panel_b(ax):
-    """Panel B: Growth Diagnostics Tree (Hausmann08)"""
+    """Panel B: The Diagonal Principle - simplified"""
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 10)
     ax.axis('off')
 
-    # Tree structure coordinates
-    # Level 0: Root
-    root_y = 9.5
-    root_x = 5
+    # Simple diagonal visualization
+    # Draw coordinate system
+    ax.arrow(1, 1, 0, 7, head_width=0.2, head_length=0.2, fc=COLORS['dark'], ec=COLORS['dark'])
+    ax.arrow(1, 1, 7, 0, head_width=0.2, head_length=0.2, fc=COLORS['dark'], ec=COLORS['dark'])
 
-    # Level 1: Demand-side vs Supply-side
-    l1_y = 7.5
-    demand_x = 2.5
-    supply_x = 7.5
+    ax.text(0.5, 8.5, 'Ops\nCapability', ha='center', va='center', fontsize=10, fontweight='bold')
+    ax.text(8.5, 0.5, 'Market\nPull', ha='center', va='center', fontsize=10, fontweight='bold')
 
-    # Level 2: Sub-categories
-    l2_y = 5.5
-    # Demand side
-    pmf_x = 1.5
-    crowded_x = 3.5
-    # Supply side
-    execution_x = 6.5
-    resource_x = 8.5
+    # Draw diagonal (success path)
+    ax.plot([1.5, 7.5], [1.5, 7.5], color=COLORS['dark'], lw=3, ls='-')
+    ax.text(7.8, 7.8, 'Diagonal\n(Success)', ha='left', va='center', fontsize=9, fontweight='bold')
 
-    # Level 3: Execution breakdown
-    l3_y = 3.5
-    team_x = 5.8
-    cage_x = 7.2
+    # Off-diagonal examples
+    # NxStage: High Ops, Low Market (above diagonal)
+    ax.scatter([3], [6], s=200, c=COLORS['medium'], marker='o', zorder=5)
+    ax.text(3, 6.8, 'NxStage', ha='center', va='bottom', fontsize=9, style='italic')
+    ax.annotate('', xy=(4.5, 4.5), xytext=(3, 6),
+                arrowprops=dict(arrowstyle='->', color=COLORS['light'], lw=1.5))
+    ax.text(2.2, 5.2, '↓ Need\nMarket', ha='center', va='center', fontsize=8, color=COLORS['medium'])
 
-    # Draw connections (lines)
-    line_color = COLORS['gray']
-    lw = 1.5
+    # SkinnyGirl: High Market, Low Ops (below diagonal)
+    ax.scatter([6], [3], s=200, c=COLORS['medium'], marker='s', zorder=5)
+    ax.text(6, 2.2, 'SkinnyGirl', ha='center', va='top', fontsize=9, style='italic')
+    ax.annotate('', xy=(4.5, 4.5), xytext=(6, 3),
+                arrowprops=dict(arrowstyle='->', color=COLORS['light'], lw=1.5))
+    ax.text(6.8, 4.2, '↑ Need\nOps', ha='center', va='center', fontsize=8, color=COLORS['medium'])
 
-    # Root to Level 1
-    ax.plot([root_x, demand_x], [root_y - 0.3, l1_y + 0.5], color=line_color, lw=lw)
-    ax.plot([root_x, supply_x], [root_y - 0.3, l1_y + 0.5], color=line_color, lw=lw)
-
-    # Demand side to Level 2
-    ax.plot([demand_x, pmf_x], [l1_y - 0.5, l2_y + 0.4], color=line_color, lw=lw)
-    ax.plot([demand_x, crowded_x], [l1_y - 0.5, l2_y + 0.4], color=line_color, lw=lw)
-
-    # Supply side to Level 2
-    ax.plot([supply_x, execution_x], [l1_y - 0.5, l2_y + 0.4], color=line_color, lw=lw)
-    ax.plot([supply_x, resource_x], [l1_y - 0.5, l2_y + 0.4], color=line_color, lw=lw)
-
-    # Execution to Level 3
-    ax.plot([execution_x, team_x], [l2_y - 0.4, l3_y + 0.5], color=line_color, lw=lw)
-    ax.plot([execution_x, cage_x], [l2_y - 0.4, l3_y + 0.5], color=COLORS['gold'], lw=2.5)
-
-    # Draw nodes
-    node_height = 0.8
-
-    # Root node
-    root_box = FancyBboxPatch((root_x - 1.8, root_y - 0.3), 3.6, node_height,
-                               boxstyle="round,pad=0.02",
-                               facecolor=COLORS['light_gray'],
-                               edgecolor=COLORS['text'], linewidth=1.5)
-    ax.add_patch(root_box)
-    ax.text(root_x, root_y + 0.1, 'Low Startup Growth\n(G < median)',
-            ha='center', va='center', fontsize=9, fontweight='bold')
-
-    # Level 1 nodes
-    # Demand-side
-    demand_box = FancyBboxPatch((demand_x - 1.3, l1_y - 0.3), 2.6, node_height,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='#FFE4E1',  # Light red
-                                 edgecolor=COLORS['red'], linewidth=1.5)
-    ax.add_patch(demand_box)
-    ax.text(demand_x, l1_y + 0.1, 'DEMAND-SIDE\n(Low Market Pull)',
-            ha='center', va='center', fontsize=8, fontweight='bold', color=COLORS['red'])
-
-    # Supply-side
-    supply_box = FancyBboxPatch((supply_x - 1.3, l1_y - 0.3), 2.6, node_height,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='#E6E6FA',  # Light blue
-                                 edgecolor=COLORS['blue'], linewidth=1.5)
-    ax.add_patch(supply_box)
-    ax.text(supply_x, l1_y + 0.1, 'SUPPLY-SIDE\n(Low Ops Capability)',
-            ha='center', va='center', fontsize=8, fontweight='bold', color=COLORS['blue'])
-
-    # Level 2 nodes
-    # PMF
-    ax.add_patch(FancyBboxPatch((pmf_x - 0.7, l2_y - 0.2), 1.4, 0.6,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='white', edgecolor=COLORS['gray'], linewidth=1))
-    ax.text(pmf_x, l2_y + 0.1, 'Weak\nPMF', ha='center', va='center', fontsize=7)
-
-    # Crowded Market
-    ax.add_patch(FancyBboxPatch((crowded_x - 0.7, l2_y - 0.2), 1.4, 0.6,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='white', edgecolor=COLORS['gray'], linewidth=1))
-    ax.text(crowded_x, l2_y + 0.1, 'Crowded\nMarket', ha='center', va='center', fontsize=7)
-
-    # Execution Failure
-    ax.add_patch(FancyBboxPatch((execution_x - 0.8, l2_y - 0.2), 1.6, 0.6,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='white', edgecolor=COLORS['gray'], linewidth=1))
-    ax.text(execution_x, l2_y + 0.1, 'Execution\nFailure', ha='center', va='center', fontsize=7)
-
-    # Resource Constraint
-    ax.add_patch(FancyBboxPatch((resource_x - 0.8, l2_y - 0.2), 1.6, 0.6,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='white', edgecolor=COLORS['gray'], linewidth=1))
-    ax.text(resource_x, l2_y + 0.1, 'Resource\nConstraint', ha='center', va='center', fontsize=7)
-
-    # Level 3 nodes
-    # Team Gap
-    ax.add_patch(FancyBboxPatch((team_x - 0.6, l3_y - 0.2), 1.2, 0.6,
-                                 boxstyle="round,pad=0.02",
-                                 facecolor='white', edgecolor=COLORS['gray'], linewidth=1))
-    ax.text(team_x, l3_y + 0.1, 'Team\nGap', ha='center', va='center', fontsize=7)
-
-    # Golden Cage (highlighted!)
-    cage_box = FancyBboxPatch((cage_x - 0.9, l3_y - 0.4), 1.8, 1.0,
-                               boxstyle="round,pad=0.02",
-                               facecolor=COLORS['gold'], alpha=0.9,
-                               edgecolor='#B8860B', linewidth=2.5)
-    ax.add_patch(cage_box)
-    ax.text(cage_x, l3_y + 0.3, 'GOLDEN\nCAGE', ha='center', va='center',
-            fontsize=8, fontweight='bold', color='white')
-    ax.text(cage_x, l3_y - 0.15, 'E↑ → R↓', ha='center', va='center',
-            fontsize=7, color='white', style='italic')
+    # Motional (on diagonal, staged)
+    ax.scatter([4.5], [4.5], s=250, c=COLORS['dark'], marker='D', zorder=5)
+    ax.text(4.5, 3.7, 'Motional\n(staged)', ha='center', va='top', fontsize=9, fontweight='bold')
 
     # Title
-    ax.set_title("Panel B: Growth Diagnostics Tree\nLiebig's Law: Growth = min(Market, Ops)",
+    ax.set_title("Panel B: The Diagonal Principle\nStay on the diagonal through staged commitment",
                  fontsize=13, fontweight='bold', pad=10)
 
-    # Legend note
-    ax.text(5, 1.5, '★ Golden Cage = Funding Trap under Supply-side Constraint',
-            ha='center', va='center', fontsize=9, style='italic', color=COLORS['gold'])
+    # Key message
+    ax.text(5, 0.8, 'Diagnose bottleneck → Stage commitment to address it',
+            ha='center', va='center', fontsize=10, style='italic', color=COLORS['dark'])
 
 
 def main():
@@ -238,7 +156,7 @@ def main():
     create_panel_b(ax2)
 
     # Main title
-    fig.suptitle('Figure 9: Balanced Growth Framework (Fine 2024; Hausmann et al. 2008)',
+    fig.suptitle('Figure 9: Balanced Growth Framework (Fine 2022)',
                  fontsize=14, fontweight='bold', y=0.98)
 
     plt.tight_layout(rect=[0, 0, 1, 0.95])
