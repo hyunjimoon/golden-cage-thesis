@@ -1,6 +1,6 @@
 ---
 modified:
-  - 2026-01-15T08:02:10-05:00
+  - 2026-01-15T11:11:26-05:00
 ---
 % =========================================================
 % APPENDICES
@@ -23,7 +23,7 @@ modified:
         \texttt{company\_description} & Text & Business description & Strategic Breadth ($B$) \\
         \texttt{primary\_industry} & Categorical & Industry classification & Heterogeneity analysis \\
         \texttt{first\_financing\_size} & Numeric & Initial funding (USD) & Early Funding ($E$) \\
-        \texttt{last\_financing\_deal\_type} & Categorical & Most recent stage & Success ($L$) \\
+        \texttt{last\_financing\_deal\_type} & Categorical & Most recent stage & Growth ($G$) \\
         \texttt{total\_raised} & Numeric & Cumulative funding & Growth Scale ($G$) \\
         \bottomrule
     \end{tabular}
@@ -51,8 +51,8 @@ R = \lvert B_T - B_0 \rvert
 
 \subsection*{Outcomes}
 \begin{itemize}
-    \item \textbf{Success ($L$)}: Binary = 1 if reached Later Stage VC (Series C+). Base rate: 11.5\%.
-    \item \textbf{Growth Scale ($G$)}: Continuous funding multiple = $(F_t - E) / E$.
+    \item \textbf{Growth ($G$)}: Binary = 1 if reached Later Stage VC (Series C+). Base rate: 11.5\%.
+    \item \textbf{Growth Multiple}: Continuous funding scale = $F_t / E$ (total subsequent funding / early funding). Used for illustrative cases only.
 \end{itemize}
 
 
@@ -146,8 +146,7 @@ Under rank normalization:
     \item \textbf{$F$}: Strategic Flexibility (latent capability to keep multiple paths viable)
     \item \textbf{$B$}: Strategic Breadth (0--100 vagueness scale); $B_0$ = baseline, $B_T$ = endpoint
     \item \textbf{$R$}: Repositioning $= |B_T - B_0|$ (observable proxy for $F$)
-    \item \textbf{$L$}: Success (binary = 1 if reached Later Stage VC, Series C+)
-    \item \textbf{$G$}: Growth Scale (continuous funding multiple)
+    \item \textbf{$G$}: Growth (binary = 1 if reached Later Stage VC, Series C+)
     \item \textbf{$\mu$}: Belief probability (shared optimism in governance)
     \item \textbf{$\varepsilon$}: Expected belief shift from a signal
 \end{itemize}
@@ -163,10 +162,10 @@ Under rank normalization:
         $N$ & 180,994 \\
         $\rho(E,G)$ & $-0.196^{***}$ (Funding-Growth Paradox) \\
         $\rho(E,R)$ & $-0.087^{***}$ (Commitment Cage) \\
-        Mover Advantage & $2.60\times$ ($P(L=1)$: 18.1\% vs 7.0\%) \\
+        Mover Advantage & $2.60\times$ ($P(G=1)$: 18.1\% vs 7.0\%) \\
         Stayers / Movers & 59.7\% / 40.3\% \\
-        Base success rate ($L=1$) & 11.5\% \\
-        Sweet Spot (Q3) survival & 16.0\% \\
+        Base growth rate ($G=1$) & 11.5\% \\
+        Sweet Spot (Q3) survival & 15.0\% \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -191,9 +190,10 @@ Under rank normalization:
 
 \begin{itemize}
     \item \textbf{Golden Cage}: Structural constraint preventing adaptation due to governance homogeneity; forms through $C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\downarrow$
-    \item \textbf{Funding-Growth Paradox}: $\rho(E,G) < 0$; early funding correlates negatively with later-stage success (H1)
-    \item \textbf{Commitment Cage}: $dR/dE < 0$; funding suppresses repositioning (H2)
-    \item \textbf{Flexibility Flex}: $dL/dR > 0$; repositioning predicts success (H3)
+    \item \textbf{Funding-Growth Paradox (H3)}: $\rho(E,G) < 0$; early funding correlates negatively with later-stage growth
+    \item \textbf{Commitment Cage (H1)}: $dR/dE < 0$; funding suppresses repositioning
+    \item \textbf{Flexibility Flex (H2)}: $dG/dR > 0$; repositioning predicts growth
+    \item \textbf{Decomposition}: $dG/dE = (dG/dR) \times (dR/dE) = (+) \times (-) = (-)$; H3 = H2 $\times$ H1
     \item \textbf{Van den Steen Sorting}: Optimists attract optimists; skeptics self-select out, producing belief homogeneity
     \item \textbf{Strategic Ambiguity}: Precision about direction combined with flexibility about destination; attracts diverse believers
     \item \textbf{Belief Homogeneity}: Convergence of beliefs among governance members through sorting
@@ -211,14 +211,14 @@ Under rank normalization:
     \item \textbf{Operational Commitment}: Specific technology/market choice; forecloses alternatives (e.g., Better Place: ``battery swapping infrastructure'')
 \end{itemize}
 
-\section{Design Principles}
+\section{Design Principles (Chapter~\ref{ch:design})}
 
 \begin{itemize}
-    \item \textbf{Spatial Flexibility}: Strategic ambiguity---commit to direction, not destination (\S5.2)
-    \item \textbf{Temporal Flexibility}: Staged commitment---match operational commitment to capital commitment timing (\S5.3)
-    \item \textbf{Structural Flexibility}: Governance design---preserve skeptics before funding eliminates them (\S5.4)
-    \item \textbf{Symmetry Principle}: Founders should stage operational commitments as VCs stage financial commitments
-    \item \textbf{Diagonal Principle}: Growth = Market $\times$ Ops; diagnose bottleneck before locking in the other dimension
+    \item \textbf{Strategic Ambiguity} (\S\ref{sec:strategic-ambiguity}): Commit to direction, not destination. Vision-level commitment attracts diverse believers; operational commitment attracts homogeneous believers.
+    \item \textbf{Balanced Growth} (\S\ref{sec:balanced-growth}): Growth = Market $\times$ Ops. Diagnose which bottleneck threatens and fix it before locking in the other dimension. (Diagonal Principle)
+    \item \textbf{Financial Vehicle} (\S\ref{sec:financial-vehicle}): Sequence funding sources. Climb the Funding Ladder (government grants $\rightarrow$ matching grants $\rightarrow$ thesis-driven VCs) so flexibility survives until market signals clarify.
+    \item \textbf{Symmetry Principle}: Founders should stage operational commitments as VCs stage financial commitments.
+    \item \textbf{Preserving Skeptics}: Actively recruit investors with distinct theses; reserve board seats for independent directors; institute red-team decision rules.
 \end{itemize}
 
 

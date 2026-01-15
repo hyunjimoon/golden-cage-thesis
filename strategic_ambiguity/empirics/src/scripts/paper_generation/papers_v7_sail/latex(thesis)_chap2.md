@@ -79,11 +79,11 @@ In plain language: the theorem says that learning stops when everyone agrees too
 
 If flexibility allows ventures to escape the cage, and repositioning is the behavior of escaping, then repositioning should predict success.
 
-\textbf{Hypothesis 2 (Flexibility Flex):} \emph{Strategic repositioning correlates positively with later-stage success.}
+\textbf{Hypothesis 2 (Flexibility Flex):} \emph{Strategic repositioning correlates positively with later-stage growth.}
 
-\[H_2: \frac{dL}{dR} > 0\]
+\[H_2: \frac{dG}{dR} > 0\]
 
-where $L$ denotes binary success (reaching Later Stage VC). Empirical preview (Chapter~\ref{ch:results}): Movers outperform Stayers by $2.60\times$ ($P(L=1)$: 18.1\% vs.\ 7.0\%).
+where $G$ denotes binary growth (1 if reached Later Stage VC, Series C+). Empirical preview (Chapter~\ref{ch:results}): Movers outperform Stayers by $2.60\times$ ($P(G=1)$: 18.1\% vs.\ 7.0\%).
 
 %% ============================================================
 \hypertarget{sec:conclusion-hypotheses}{%
@@ -95,7 +95,7 @@ The Golden Cage theory synthesizes two established theories into a unified mecha
 
 We can now resolve the Funding-Growth Paradox through formal decomposition. The observed negative relationship between funding and growth is the product of two forces:
 
-\[\frac{dG}{dE} = \underbrace{\frac{dL}{dR}}_{\text{H2: Flex }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{H1: Cage }(-)} = (+) \times (-) = (-)\]
+\[\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{H2: Flex }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{H1: Cage }(-)} = (+) \times (-) = (-)\]
 
 \textbf{Hypothesis 3 (Funding-Growth Paradox):} \emph{Early-stage funding correlates negatively with later-stage growth, mediated by lost flexibility.}
 
@@ -105,4 +105,4 @@ Empirical preview (Chapter~\ref{ch:results}): $\rho(E,G) = -0.196^{***}$ ($N = 1
 
 \subsection{Structural vs.\ Motivational Constraint}
 
-A key distinction: founders \emph{cannot} pivot (structural constraint), not that they \emph{will not} pivot (moral hazard). This has intervention implications: if founders will not pivot due to reduced incentives, the prescription is intensified monitoring; if founders cannot pivot due to structural constraints, the prescription is governance redesign---preserving skeptical voices before funding eliminates them. Chapters~\ref{ch:data}--\ref{ch:results} test these hypotheses using 180,994 ventures from PitchBook (2021--2025), revealing boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: $\rho = -0.108$, Transportation: $\rho = -0.101$) but releases under extreme uncertainty (Quantum: $\rho = +0.095$). Chapter~\ref{ch:data} operationalizes the theory by developing measures for strategic breadth and repositioning from company descriptions.
+A key distinction: founders \emph{cannot} pivot (structural constraint), not that they \emph{will not} pivot (moral hazard). This has intervention implications: if founders will not pivot due to reduced incentives, the prescription is intensified monitoring; if founders cannot pivot due to structural constraints, the prescription is governance redesign, preserving skeptical voices before funding eliminates them. Chapters~\ref{ch:data}--\ref{ch:results} test these hypotheses using 180,994 ventures from PitchBook (2021--2025), revealing boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: $\rho = -0.108$, Transportation: $\rho = -0.101$) but releases under extreme uncertainty (Quantum: $\rho = +0.095$). Chapter~\ref{ch:data} operationalizes the theory by developing measures for strategic breadth and repositioning from company descriptions.

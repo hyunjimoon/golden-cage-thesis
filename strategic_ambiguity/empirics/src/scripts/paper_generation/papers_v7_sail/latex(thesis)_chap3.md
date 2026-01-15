@@ -110,11 +110,11 @@ The resulting score ranges from 0 to 100. A score of 0 means maximally specific 
 \hypertarget{repositioning-r}{%
 \subsection{Repositioning (R)}\label{repositioning-r}}
 
-\textbf{Repositioning (R).} Repositioning magnitude measures the absolute change in strategic breadth: $R_i = |B_T - B_0|$, where $B_0$ is breadth at baseline (2021) and $B_T$ at endpoint (2025). Importantly, most ventures do not reposition at all: 59.7\% show R = 0 (I call these ``Stayers''), while only 40.3\% show R \textgreater{} 0 (``Movers''). This pattern---most ventures holding position---is consistent with the golden cage theory: governance constraints make repositioning difficult.
+\textbf{Repositioning (R).} Repositioning magnitude measures the absolute change in strategic breadth: $R_i = |B_T - B_0|$, where $B_0$ is breadth at baseline (2021) and $B_T$ at endpoint (2025). Importantly, most ventures do not reposition at all: 59.7\% show R = 0 (I call these ``Stayers''), while only 40.3\% show R \textgreater{} 0 (``Movers''). This pattern (most ventures holding position) is consistent with the golden cage theory: governance constraints make repositioning difficult.
 
-\textbf{Success (L) and Growth Multiple.}
+\textbf{Growth (G) and Growth Multiple.}
 
-I use two outcome measures. \textbf{Success (L)} is a binary indicator: $L = 1$ if the venture reached Later Stage VC (Series C or beyond) by the end of the observation window, $L = 0$ otherwise. The base success rate is 11.5\%. The \textbf{Mover Advantage} (2.60$\times$) compares success rates: $P(L=1|\text{Mover}) / P(L=1|\text{Stayer})$. Separately, the \textbf{Growth Multiple} $= F_t/E$ measures continuous funding scale for illustrative cases. \emph{Robustness checks using alternative threshold definitions are provided in Appendix C.}
+I use two outcome measures. \textbf{Growth (G)} is a binary indicator: $G = 1$ if the venture reached Later Stage VC (Series C or beyond) by the end of the observation window, $G = 0$ otherwise. The base growth rate is 11.5\%. The \textbf{Mover Advantage} (2.60$\times$) compares growth rates: $P(G=1|\text{Mover}) / P(G=1|\text{Stayer})$. Separately, the \textbf{Growth Multiple} $= F_t/E$ measures continuous funding scale for illustrative cases. \emph{Robustness checks using alternative threshold definitions are provided in Appendix C.}
 
 \hypertarget{descriptive-statistics}{%
 \section{Descriptive Statistics}\label{descriptive-statistics}}
