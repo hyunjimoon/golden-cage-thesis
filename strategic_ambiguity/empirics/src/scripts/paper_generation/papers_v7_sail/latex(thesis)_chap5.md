@@ -82,11 +82,7 @@ Capital is not just fuel; it is a governance contract. Different sources of capi
 
 \subsection{The Symmetry Principle}
 
-Venture capitalists manage risk through staged financing. They commit capital in tranches, releasing funds only when milestones are met. This preserves their option value. \citet{rhodeskropf2024} advocate this ``smart VC'' approach: commit capital in tranches conditional on demonstrated progress.
-
-Founders should apply the same logic: stage operational commitments just as investors stage financial commitments.
-
-Founders often abandon this optionality prematurely to signal conviction. They commit fully to a specific product roadmap to secure the first tranche of capital. This creates an asymmetry: the investor retains the option to leave, but the founder has sold the option to pivot.
+Venture capitalists manage risk through staged financing: they commit capital in tranches, releasing funds only when milestones are met, preserving their option value. \citet{rhodeskropf2024} advocate this ``smart VC'' approach. Founders should apply the same logic---stage operational commitments just as investors stage financial commitments. Yet founders often abandon this optionality prematurely to signal conviction, committing fully to a specific product roadmap to secure the first tranche of capital. This creates an asymmetry: the investor retains the option to leave, but the founder has sold the option to pivot.
 
 \subsection{Case Contrast: Timing of Commitment}
 
@@ -96,39 +92,17 @@ Founders often abandon this optionality prematurely to signal conviction. They c
 
 \subsection{The Funding Ladder}
 
-One of the most effective ways to preserve flexibility is to sequence non-dilutive capital before taking thesis-driven venture capital.
-
-The first rung is federal grants from agencies like NSF, DARPA, and DOE. These provide capital without board seats. More importantly, winning a competitive government grant signals technical credibility to everyone who sees it later.
-
-The second rung is state and local matching grants. Many municipalities offer programs that match federal awards. This additional validation compounds the credibility signal and extends runway without adding governance constraints.
-
-The third rung is private investors. By this point, government recognition has reduced perceived technical risk. Market signals have had time to clarify. The venture can attract thesis-driven capital from a position of strength rather than desperation.
-
-This sequencing enables ventures to survive the ``valley of death'' while building the track record that first-time founders lack.
+One of the most effective ways to preserve flexibility is to sequence non-dilutive capital before taking thesis-driven venture capital. The first rung is federal grants from agencies like NSF, DARPA, and DOE---these provide capital without board seats, and winning a competitive government grant signals technical credibility to future investors. The second rung is state and local matching grants that compound the credibility signal and extend runway without adding governance constraints. The third rung is private investors, who by this point face reduced perceived risk because government recognition and clarified market signals allow the venture to attract thesis-driven capital from a position of strength rather than desperation. This sequencing enables ventures to survive the ``valley of death'' while building the track record that first-time founders lack.
 
 \subsection{Case: Fast Ion Battery}
 
-Fast Ion Battery illustrates both the power and the limits of the Funding Ladder---and why sequence matters \citep{nanda2015fastionbattery}.
+Fast Ion Battery illustrates both the power and the limits of the Funding Ladder---and why sequence matters \citep{nanda2015fastionbattery}. Fast Ion developed a breakthrough battery technology at MIT. In 2008, three venture capital firms invested \$10 million in a Series A round, all sharing the same investment thesis: cleantech was the next big opportunity. This created a governance structure where everyone believed in the same future. The company made slow progress and by late 2009 had not met all its milestones. However, it won a \$2 million ARPA-E grant from the Department of Energy. This government recognition changed the investors' calculus---as one board member noted, the ARPA-E award provided ``certification'' and would serve as ``validation'' for future investors. The existing investors released the next tranche of funding.
 
-Fast Ion developed a breakthrough battery technology at MIT. In 2008, three venture capital firms invested \$10 million in a Series A round. All three shared the same investment thesis: cleantech was the next big opportunity. This created a governance structure where everyone believed in the same future.
-
-The company made slow progress. By late 2009, it had not met all its milestones. However, it won a \$2 million ARPA-E grant from the Department of Energy. This government recognition changed the investors' calculus. As one board member noted, the ARPA-E award provided ``certification and non-dilutive capital'' and would serve as ``validation'' for future investors. The existing investors released the next tranche of funding.
-
-The ARPA-E grant worked exactly as the Funding Ladder predicts. Government recognition reduced perceived risk and signaled technical credibility. But there was a critical flaw in the sequence. Fast Ion received the grant \emph{after} the thesis-driven VCs had already populated the board. By the time government validation arrived, the governance was already homogeneous.
-
-When the cleantech investment climate shifted in 2011, all three investors faced identical pressure to reduce exposure to the sector. Because they shared a homogeneous thesis, they reacted homogeneously. One investor withdrew entirely. The remaining investors faced a difficult choice: provide bridge financing or let the company fail. The board contained no cognitive diversity to argue for alternatives.
-
-The lesson is about sequence. If Fast Ion had climbed the Funding Ladder in order---government grants first, then private capital---it could have built credibility and clarified market signals before thesis-driven investors shaped governance. The ARPA-E grant was valuable, but it came too late to preserve flexibility.
+The ARPA-E grant worked exactly as the Funding Ladder predicts: government recognition reduced perceived risk and signaled technical credibility. But there was a critical flaw in the sequence---Fast Ion received the grant \emph{after} the thesis-driven VCs had already populated the board. When the cleantech investment climate shifted in 2011, all three investors faced identical pressure to reduce exposure to the sector. Because they shared a homogeneous thesis, they reacted homogeneously: one investor withdrew entirely, and the board contained no cognitive diversity to argue for alternatives. The lesson is about sequence. If Fast Ion had climbed the Funding Ladder in order---government grants first, then private capital---it could have built credibility before thesis-driven investors shaped governance. The ARPA-E grant was valuable, but it came too late to preserve flexibility.
 
 \subsection{Preserving Skeptics in Governance}
 
-Even with dilutive funding, governance design can preserve signal diversity. The cage crystallizes when governance lacks advocates for alternative paths. Founders must actively design to preserve skeptics.
-
-Syndicate composition matters. Actively recruit at least one investor with a distinct investment thesis. A deep-tech investor building a syndicate of fellow deep-tech funds creates belief lock-in. Adding a generalist investor introduces productive tension.
-
-Board structure matters. Reserve a seat for an independent director who holds no financial stake in the current direction. True independence requires someone who brings domain expertise that challenges rather than reinforces the current strategy.
-
-Decision rules matter. Institute requirements to document the strongest argument against the current path before major capital deployments. A designated ``red team'' director---one whose role is to surface counterarguments rather than build consensus---can maintain signal diversity even after investment has homogenized beliefs.
+Even with dilutive funding, governance design can preserve signal diversity. The cage crystallizes when governance lacks advocates for alternative paths, so founders must actively design to preserve skeptics. Syndicate composition matters: actively recruit at least one investor with a distinct investment thesis, because a deep-tech investor building a syndicate of fellow deep-tech funds creates belief lock-in while adding a generalist introduces productive tension. Board structure matters: reserve a seat for an independent director who holds no financial stake in the current direction and brings domain expertise that challenges rather than reinforces the current strategy. Decision rules matter: institute requirements to document the strongest argument against the current path before major capital deployments, and consider a designated ``red team'' director whose role is to surface counterarguments rather than build consensus.
 
 %% ============================================================
 \hypertarget{sec:ch5-conclusion}{%
