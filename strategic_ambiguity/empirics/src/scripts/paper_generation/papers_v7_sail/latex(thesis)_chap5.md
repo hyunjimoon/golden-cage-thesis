@@ -1,13 +1,9 @@
 ---
 modified:
-  - 2026-01-14T10:35:01-05:00
+  - 2026-01-14T11:44:17-05:00
 ---
 \hypertarget{ch:design}{%
 \chapter{Designing for Strategic Flexibility}\label{ch:design}}
-
-\begin{quote}
-\emph{"How to design around it?"} \textbf{Key Insight}: Vision commitment preserves flexibility; operational commitment forecloses it.
-\end{quote}
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -21,7 +17,7 @@ If funding suppresses repositioning through governance homogeneity, how can foun
 
 \textbf{What to commit to.} The cage forms when operational commitment attracts homogeneous believers. The first design principle preserves heterogeneity through \textbf{strategic ambiguity}, precision about direction combined with flexibility about destination. This is \emph{spatial} flexibility: breadth in the positioning space.
 
-Figure 10 illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0\%, outperforming both narrow positioning (Q1: 12.3\%, Q2: 8.9\%) and maximally broad positioning (Q4: 12.9\%).
+Figure~\ref{fig:sweet-spot} illustrates the empirical pattern: Q3 (Moderate Broad) positioning achieves the highest survival rate at 16.0\%, outperforming both narrow positioning (Q1: 12.3\%, Q2: 8.9\%) and maximally broad positioning (Q4: 12.9\%).
 
 \begin{figure}
 \centering
@@ -133,14 +129,9 @@ The approach preserves temporal flexibility: founders can stage operational comm
 \hypertarget{balanced-growth-the-diagonal-principle}{%
 \subsection{Balanced Growth: The Diagonal Principle}\label{balanced-growth-the-diagonal-principle}}
 
-Staged commitment requires knowing \emph{what} to stage. \citet{fine2022clockspeed} offers a diagnostic: Growth = Market \ensuremath{\times} Ops. Ventures must grow market size and operational capability in parallel, off-diagonal growth creates bottlenecks (Figure 9).
+Staged commitment requires knowing \emph{what} to stage. \citet{fine2022clockspeed} offers a diagnostic: Growth = Market \ensuremath{\times} Ops. Ventures must grow market size and operational capability in parallel; off-diagonal growth creates bottlenecks.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.85\textwidth]{img/Ch5_Fig2_balanced_growth.png}
-\caption{Balanced Growth Framework. Panel A shows the 2\ensuremath{\times}2 growth anatomy; Panel B shows the diagnostic tree. Sustainable growth requires staying on the diagonal.}
-\label{fig:balanced-growth}
-\end{figure}
+\emph{See Appendix G for the Balanced Growth Framework visualization.}
 
 Two bottleneck archetypes illustrate the principle:
 
@@ -166,7 +157,7 @@ Two bottleneck archetypes illustrate the principle:
 \textbf{Principle} & \textbf{Implementation} & \textbf{Rationale} \\
 \midrule
 \endhead
-\textbf{Preserve Skeptics} & See Table 9 for operationalization & Maintains signal diversity \\
+\textbf{Preserve Skeptics} & See \S\ref{operationalizing-preserve-skeptics} for operationalization & Maintains signal diversity \\
 \textbf{Vision vs. Operations} & Commit to direction, not destination & Preserves pivot capacity \\
 \textbf{Milestone Flexibility} & Define outcomes, not methods & Allows learning from experiments \\
 \textbf{Information Rights} & Share disconfirming signals & Enables belief updating \\

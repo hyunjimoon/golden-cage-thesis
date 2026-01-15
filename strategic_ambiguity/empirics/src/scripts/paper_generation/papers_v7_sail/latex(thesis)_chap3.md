@@ -1,14 +1,10 @@
 \hypertarget{ch:data}{%
 \chapter{Data and Identification}\label{ch:data}}
 
-\begin{quote}
-\emph{"How do we test it?"} \textbf{Key Numbers}: N = 180,994, Mover Rate = 40.3\%, Base Success Rate = 11.5\%
-\end{quote}
-
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\textbf{This chapter tests the golden cage hypotheses.} I analyze 180,994 U.S. ventures from PitchBook (2021--2025), measure repositioning through text analysis, and address selection concerns through a multi-layer identification strategy.
+\textbf{This chapter describes the data and identification strategy for the golden cage hypotheses.} I analyze 180,994 U.S. ventures from PitchBook (2021--2025), measure repositioning through text analysis, and address selection concerns through a multi-layer identification strategy.
 
 \hypertarget{data-sources-and-sample-construction}{%
 \section{Data Sources and Sample Construction}\label{data-sources-and-sample-construction}}
@@ -30,14 +26,7 @@ I construct a panel of 180,994 ventures from PitchBook, covering the period 2021
   \textbf{Data completeness:} Non-missing values for core variables (reduces to 180,994)
 \end{enumerate}
 
-\textbf{Figure 4: Sample Construction}
-
-\begin{verbatim}
-488,381 \ensuremath{\rightarrow} [US only] \ensuremath{\rightarrow} 312,456 \ensuremath{\rightarrow} [Early-stage] \ensuremath{\rightarrow} 245,892 \ensuremath{\rightarrow} [24mo+] \ensuremath{\rightarrow} 198,234 \ensuremath{\rightarrow} [Complete] \ensuremath{\rightarrow} 180,994
-  All      (-36%)       US        (-14%)       Seed/A/B    (-10%)    Window     (-4%)      Final
-\end{verbatim}
-
-\emph{Retention: 37.1\%. Primary exclusions: non-US (36\%), late-stage (14\%), insufficient window (10\%), missing data (4\%).}
+The sample construction retained 37.1\% of the initial universe: non-US exclusions (36\%), late-stage (14\%), insufficient observation window (10\%), and missing data (4\%).
 
 \hypertarget{variable-operationalization}{%
 \section{Variable Operationalization}\label{variable-operationalization}}
@@ -57,6 +46,38 @@ The measure combines two validated components:
 \end{itemize}
 
 B = 0 indicates maximally specific positioning; B = 100 indicates maximally vague positioning. The sample mean is B = 52.3 (SD = 18.4). \emph{Full variable construction details, including keyword dictionaries and scoring formulas, are provided in Appendix C.}
+
+\textbf{Illustrative Examples.} Table~\ref{tab:breadth-examples} demonstrates how the vagueness measure (B) captures strategic positioning breadth. Movers (Hope Care, True Botanicals) repositioned substantially between 2021--2025; Stayers (Leap Green Energy) maintained consistent positioning.
+
+\begin{table}[h]
+\centering
+\caption{Vagueness Measure: Illustrative Examples from Sample}
+\label{tab:breadth-examples}
+\small
+\begin{tabular}{p{2.5cm}p{4.5cm}p{4.5cm}cc}
+\toprule
+\textbf{Company} & \textbf{2021 Description} & \textbf{2025 Description} & $\Delta B$ & \textbf{G} \\
+\midrule
+\multicolumn{5}{l}{\emph{Panel A: Movers}} \\
+\addlinespace
+\textbf{Hope Care} & ``Cloud-based healthcare technology for primary care'' & ``Healthcare technology company offering preventive care and chronic disease management'' & +48.5 & \\
+ & (Specific: named segment) & (Broad: platform for multiple conditions) & & \\
+ & $B_0 = 39.6$ (precise) & $B_T = 88.2$ (vague) & & $G = 2.71\times$ \\
+\addlinespace
+\textbf{True Botanicals} & ``Natural products designed to liberate glow with clean skincare'' & ``Manufacturer of natural skin care products using clinically-proven formulations'' & $-44.4$ & \\
+ & (Broad: abstract benefits) & (Specific: defined product category) & & \\
+ & $B_0 = 81.9$ (vague) & $B_T = 37.5$ (precise) & & $G = 2.45\times$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Panel B: Stayers}} \\
+\addlinespace
+\textbf{Leap Green Energy} & ``Operator of renewable energy-based power projects across India'' & ``Operator of renewable energy-based power projects across India'' & 0.0 & \\
+ & (Nearly identical positioning) & & & \\
+ & $B_0 = 87.5$ & $B_T = 87.5$ & & $G = 0.80\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Notes: B = vagueness score (0--100 scale); $\Delta B = B_T - B_0$; $G = F_t/E$ (total subsequent funding / early funding). Hope Care exemplifies successful broadening: pivoting from specific primary care to a general preventive health platform. True Botanicals exemplifies focusing: narrowing from broad wellness aspirations to specific skincare formulations. Both Movers achieved repositioning; direction differed but movement itself distinguished them from Stayers.}
 
 \hypertarget{repositioning-r}{%
 \subsection{Repositioning (R)}\label{repositioning-r}}
@@ -88,11 +109,7 @@ The composite index averages the three components: \textbf{C = (C\_a + C\_b + C\
 \hypertarget{descriptive-statistics}{%
 \section{Descriptive Statistics}\label{descriptive-statistics}}
 
-\input{table/descriptive.tex}
-
-\emph{Note: R is reported in standardized units for cross-venture comparability; raw R = \textbar B\_T - \ensuremath{B_0}\textbar{} ranges 0--100. G = reached Later Stage VC (binary).}
-
-\textbf{Key distributional features:}
+\textbf{Key distributional features} (full descriptive statistics in Appendix C):
 
 \begin{itemize}
 \tightlist
@@ -116,4 +133,4 @@ This chapter described how I test the cage hypotheses. The sample comprises 180,
 
 I defend against identification threats in four ways: (1) treating selection as mechanism rather than confound, (2) conditioning on fixed horizons to mitigate survival bias, comparing repositioners and non-repositioners among ventures that survived equally long (Year 3+), (3) conditioning on observables, and (4) proposing future quasi-experimental approaches for causal identification.
 
-Key sample characteristics: 40.3\% of ventures qualify as "Movers" (R \textgreater{} 0), while 59.7\% are "Stayers" (R = 0) (see Section~3.3.3 for definition rationale). The base success rate (reaching Later Stage VC) is 11.5\%. Chapter 4 presents the empirical results.
+Key sample characteristics: 40.3\% of ventures qualify as "Movers" (R \textgreater{} 0), while 59.7\% are "Stayers" (R = 0) (see Section~3.3.2 for definition rationale). The base success rate (reaching Later Stage VC) is 11.5\%. Chapter 4 presents the empirical results.
