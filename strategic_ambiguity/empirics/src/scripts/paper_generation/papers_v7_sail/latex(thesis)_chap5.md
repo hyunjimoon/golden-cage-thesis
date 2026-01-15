@@ -58,7 +58,7 @@ For investors, the prescription is to fund platform capabilities rather than pro
 \hypertarget{sec:balanced-growth}{%
 \section{Balanced Growth}\label{sec:balanced-growth}}
 
-The cage often snaps shut when a venture scales one dimension of its business before the other dimension catches up. \citet{fine2022clockspeed} offers a diagnostic framework: Growth $=$ Market $\times$ Ops. Ventures must grow market size and operational capability in parallel. Growth that occurs exclusively on one axis creates a bottleneck that traps the venture.
+The cage often snaps shut when a venture scales one dimension of its business before the other dimension catches up. \citet{fine2022operations} offers a diagnostic framework: Growth $=$ Market $\times$ Ops. Ventures must grow market size and operational capability in parallel. Growth that occurs exclusively on one axis creates a bottleneck that traps the venture.
 
 \subsection{The Diagonal Principle}
 

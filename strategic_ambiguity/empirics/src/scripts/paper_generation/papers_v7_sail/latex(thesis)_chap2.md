@@ -46,9 +46,7 @@ The ``Golden Cage'' is not a result of moral hazard or founder incompetence; it 
 
 The cage forms through a four-step sequence grounded in \citeauthor{vandensteen2010interpersonal}'s \citeyearpar{vandensteen2010interpersonal} sorting equilibrium.
 
-\textbf{Step 1: Commitment Attracts Believers.} Securing capital requires operational commitments: production architecture choices, go-to-market sequences, milestone definitions \citep{gompers2001the, hellmann2002venture}. Investors who fund a venture do so because they believe these specific commitments will succeed.
-
-\textbf{Step 2: Believers Filter Skeptics.} People with different beliefs naturally sort into different organizations. Optimists join ventures led by optimists; skeptics stay away. \citet{vandensteen2010interpersonal} shows that entrepreneurs who pursue a venture are more optimistic about it (selection, not bias), and investors who fund share this optimism because pessimists self-select out. The result is belief homogeneity without any party behaving irrationally. The board contains no skeptics---not because skeptics were expelled, but because they never joined.
+The sequence proceeds in four steps. First, securing capital requires operational commitments---production architecture choices, go-to-market sequences, milestone definitions \citep{gompers2001the, hellmann2002venture}---and investors who fund a venture do so because they believe these specific commitments will succeed. Second, people with different beliefs naturally sort into different organizations: \citet{vandensteen2010interpersonal} shows that entrepreneurs who pursue a venture are more optimistic about it (selection, not bias), and investors who fund share this optimism because pessimists self-select out, producing belief homogeneity without any party behaving irrationally. Third, without skeptics, disconfirming signals lack advocates \citep{cyert1963a}---market feedback indicating problems with the committed approach has no champion in governance discussions, and as \citet{march1991exploration} notes, belief convergence is efficient for exploitation but destructive for exploration. Fourth, the venture cannot recognize when it should pivot: learning stops not because founders lack motivation, but because the structure prevents it. The cage is structural---founders want to pivot but lack governance support.
 
 \begin{figure}[htbp]
 \centering
@@ -56,10 +54,6 @@ The cage forms through a four-step sequence grounded in \citeauthor{vandensteen2
 \caption{Commitment Cage (Tile 1). The $C \rightarrow E \rightarrow F$ path: funding suppresses flexibility.}
 \label{fig:commitment-cage}
 \end{figure}
-
-\textbf{Step 3: Homogeneity Eliminates Signals.} Without skeptics, disconfirming signals lack advocates \citep{cyert1963a}. Market feedback indicating problems with the committed approach has no champion in governance discussions. \citet{march1991exploration} identifies this tension: belief convergence is efficient for exploitation (executing a known strategy) but destructive for exploration (discovering whether the strategy is correct).
-
-\textbf{Step 4: Signal Loss Prevents Learning.} The venture cannot recognize when it should pivot. Learning stops---not because founders lack motivation, but because the structure prevents it. The cage is structural: founders want to pivot but lack governance support.
 
 \subsection{Hypothesis 1: The Commitment Cage}
 
@@ -150,10 +144,4 @@ Figure~\ref{fig:complete-model} integrates all three hypotheses into the complet
 
 \subsection{Structural vs.\ Motivational Constraint}
 
-A key distinction: founders \emph{cannot} pivot (structural constraint), not that they \emph{will not} pivot (moral hazard). This has intervention implications. If founders will not pivot due to reduced incentives, the prescription is intensified monitoring. If founders cannot pivot due to structural constraints, the prescription is governance redesign---preserving skeptical voices before funding eliminates them.
-
-\subsection{Preview of Empirical Tests}
-
-Chapters~\ref{ch:data}--\ref{ch:results} test these hypotheses using 180,994 ventures from PitchBook (2021--2025). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: $\rho = -0.108$, Transportation: $\rho = -0.101$) but releases under extreme uncertainty (Quantum: $\rho = +0.095$).
-
-Chapter~\ref{ch:data} operationalizes the theory by developing measures for strategic breadth and repositioning from company descriptions.
+A key distinction: founders \emph{cannot} pivot (structural constraint), not that they \emph{will not} pivot (moral hazard). This has intervention implications: if founders will not pivot due to reduced incentives, the prescription is intensified monitoring; if founders cannot pivot due to structural constraints, the prescription is governance redesign---preserving skeptical voices before funding eliminates them. Chapters~\ref{ch:data}--\ref{ch:results} test these hypotheses using 180,994 ventures from PitchBook (2021--2025), revealing boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: $\rho = -0.108$, Transportation: $\rho = -0.101$) but releases under extreme uncertainty (Quantum: $\rho = +0.095$). Chapter~\ref{ch:data} operationalizes the theory by developing measures for strategic breadth and repositioning from company descriptions.
