@@ -3,7 +3,7 @@ modified:
   - 2026-01-15T06:35:50-05:00
 ---
 \hypertarget{ch:results}{%
-\chapter{Where the Cage Bites}\label{ch:results}}
+\chapter{Where the Cage Binds}\label{ch:results}}
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{sec:ch4-introduction}}
@@ -71,8 +71,8 @@ Three median-representative cases illustrate the pattern: Hope Care (broadening 
 
 Results are robust to: (1) temporal stability across cohort years, (2) survival conditioning (Year 3+ survivors: 2.35\ensuremath{\times}, Year 5+: 2.12\ensuremath{\times}), and (3) alternative operationalizations of R. \emph{Full robustness tables are provided in Appendix C.}
 
-\hypertarget{industry-heterogeneity-where-the-cage-bites-hardest}{%
-\section{Industry Heterogeneity: Where the Cage Bites Hardest}\label{sec:industry-heterogeneity}}
+\hypertarget{industry-heterogeneity-where-the-cage-binds-tightest}{%
+\section{Industry Heterogeneity: Where the Cage Binds Tightest}\label{sec:industry-heterogeneity}}
 
 The funding-growth paradox introduced in Section~\ref{sec:funding-growth-paradox} is not uniform---it varies systematically across industries. This section unpacks that heterogeneity.
 

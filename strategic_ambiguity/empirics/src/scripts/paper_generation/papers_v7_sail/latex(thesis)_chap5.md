@@ -9,7 +9,7 @@ version: v4_synthesized (selected)
 \hypertarget{sec:ch5-introduction}{%
 \section{Introduction}\label{sec:ch5-introduction}}
 
-Chapter~\ref{ch:results} documented where the cage bites: early funding suppresses repositioning ($\rho = -0.087^{***}$), yet repositioning drives success ($2.60\times$ Mover Advantage). This creates a dilemma. To succeed, founders need resources to experiment. Yet acquiring those resources often eliminates the governance capacity to act on what experiments reveal.
+Chapter~\ref{ch:results} documented where the cage binds: early funding suppresses repositioning ($\rho = -0.087^{***}$), yet repositioning drives success ($2.60\times$ Mover Advantage). This creates a dilemma. To succeed, founders need resources to experiment. Yet acquiring those resources often eliminates the governance capacity to act on what experiments reveal.
 
 This chapter prescribes how to escape the cage. The solution is not to avoid funding, but to design commitment structures that preserve adaptation capacity while capturing commitment's credibility benefits.
 
