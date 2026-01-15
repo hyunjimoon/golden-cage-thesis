@@ -10,9 +10,7 @@ modified:
 
 Chapter~\ref{ch:theory} theorized that funding creates a golden cage through governance homogenization. Chapter~\ref{ch:data} described how I measure repositioning from company descriptions. This chapter tests whether the patterns exist in the data.
 
-I test three hypotheses. First, the Commitment Cage (H1): does funding suppress repositioning? Second, the Flexibility Flex (H2): does repositioning predict success? Third, the Funding-Growth Paradox (H3): does early funding correlate negatively with later success? The theory predicts that H3 arises because H1 and H2 combine: funding suppresses the very mechanism (repositioning) that drives success.
-
-The results confirm all three hypotheses. Funding suppresses repositioning ($\rho = -0.087$, p \textless{} 0.001). Repositioning predicts success---Movers outperform Stayers by 2.60$\times$. And the overall funding-growth correlation is negative ($\rho = -0.196$, p \textless{} 0.001). I also document industry heterogeneity: the cage binds tightest in capital-intensive sectors like Hardware and Transportation, but loosens in pre-paradigmatic sectors like Quantum where no dominant design has emerged.
+I test three hypotheses. First, the Commitment Cage (H1): does funding suppress repositioning? Second, the Flexibility Flex (H2): does repositioning predict success? Third, the Funding-Growth Paradox (H3): does early funding correlate negatively with later success? The theory predicts that H3 arises because H1 and H2 combine: funding suppresses the very mechanism (repositioning) that drives success. The results confirm all three hypotheses: funding suppresses repositioning ($\rho = -0.087^{***}$), repositioning predicts success (Movers outperform Stayers by 2.60$\times$), and the overall funding-growth correlation is negative ($\rho = -0.196^{***}$). I also document where the paradox is strongest: the cage binds tightest in capital-intensive sectors like Hardware and Transportation, but loosens in pre-paradigmatic sectors like Quantum.
 
 \begin{figure}
 \hypertarget{fig:mover-advantage}{%
@@ -22,20 +20,15 @@ The results confirm all three hypotheses. Funding suppresses repositioning ($\rh
 }
 \end{figure}
 
-\hypertarget{h1-funding-growth-the-funding-growth-paradox}{%
-\section{H1: Funding \ensuremath{\rightarrow} Growth (The Funding-Growth Paradox)}\label{h1-funding-growth-the-funding-growth-paradox}}
+\hypertarget{h1-commitment-cage}{%
+\section{H1: Commitment Cage}\label{sec:h1-commitment-cage}}
 
-The data confirm H1: early-stage funding correlates negatively with later-stage success ($\rho(E,G) = -0.196^{***}$, $N = 180{,}994$). This is the aggregate paradox introduced in Chapter~\ref{ch:introduction}. Chapters~\ref{ch:data}--\ref{ch:results} unpack the paradox by testing two component relationships: funding suppresses repositioning ($E \rightarrow R$) and repositioning predicts growth ($R \rightarrow G$).
+As theorized in Chapter~\ref{ch:theory}, funding should suppress repositioning through governance homogenization. The data confirm H1: funding suppresses repositioning ($\rho = -0.087^{***}$, $N = 180{,}994$). The correlation is robust to industry FE ($-0.082$), cohort FE ($-0.079$), and founder controls ($-0.075$). Well-funded ventures reposition less, consistent with the cage mechanism where higher funding correlates with more specific commitments and more homogeneous governance.
 
-\hypertarget{h2-funding-repositioning-the-commitment-trap}{%
-\section{H2: Funding \ensuremath{\rightarrow} Repositioning (\cage{Commitment Cage})}\label{sec:h2-commitment-cage}}
+\hypertarget{h2-flexibility-flex}{%
+\section{H2: Flexibility Flex}\label{sec:h2-flexibility-flex}}
 
-As theorized in Chapter~\ref{ch:theory}, funding should suppress repositioning through governance homogenization. The data confirm H2: funding suppresses repositioning (\ensuremath{\rho} = -0.087***, N = 180,994). The correlation is robust to industry FE (-0.082), cohort FE (-0.079), and founder controls (-0.075). Well-funded ventures reposition less, consistent with the cage mechanism where higher funding correlates with more specific commitments and more homogeneous governance.
-
-\hypertarget{h3-repositioning-growth-the-flexibility-premium}{%
-\section{H3: Repositioning \ensuremath{\rightarrow} Growth (\flex{Flexibility Flex})}\label{sec:h3-flexibility-flex}}
-
-The data confirm H3: repositioning enables growth. Ventures that reposition succeed more often, as shown in Table~\ref{tab:frg-analysis}.
+The data confirm H2: repositioning enables growth. Ventures that reposition succeed more often, as shown in Table~\ref{tab:frg-analysis}.
 
 \input{table/frg_analysis.tex}
 
@@ -54,13 +47,10 @@ To operationalize this relationship, I classify ventures as Movers or Stayers (p
 
 \textbf{Interpretive insight:} Both directions show elevated success rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71$\times$), True Botanicals (narrowing mover, G = 2.45$\times$), and Leap Green Energy (stayer, G = 0.80$\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
 
-\hypertarget{industry-heterogeneity-where-the-cage-binds-tightest}{%
-\section{Industry Heterogeneity: Where the Cage Binds Tightest}\label{sec:industry-heterogeneity}}
+\hypertarget{h3-paradox-heterogeneity}{%
+\section{H3: Paradox Heterogeneity}\label{sec:h3-paradox-heterogeneity}}
 
-The funding-growth paradox introduced in Section~\ref{sec:funding-growth-paradox} is not uniform---it varies systematically across industries. This section unpacks that heterogeneity.
-
-\hypertarget{cross-industry-comparison}{%
-\subsection{Cross-Industry Comparison}\label{cross-industry-comparison}}
+The funding-growth paradox ($\rho(E,G) = -0.196^{***}$) is not uniform---it varies systematically across industries along two dimensions: capital intensity (Hardware vs.\ Software) and technological maturity (Mobility vs.\ Quantum).
 
 The cage binds tighter in capital-intensive industries where switching costs are high. The following table presents verified correlations between early funding (E) and growth (G) across six industries.
 
