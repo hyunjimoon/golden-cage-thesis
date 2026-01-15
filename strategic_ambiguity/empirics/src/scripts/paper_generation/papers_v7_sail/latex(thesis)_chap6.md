@@ -1,14 +1,15 @@
 ---
 modified:
   - 2026-01-14T11:56:09-05:00
+  - 2026-01-15T06:36:08-05:00
 ---
 \hypertarget{ch:conclusion}{%
 \chapter{Conclusion}\label{ch:conclusion}}
 
 \hypertarget{theoretical-contributions}{%
-\section{Theoretical Contributions}\label{theoretical-contributions}}
+\section{Theoretical Contributions}\label{sec:theoretical-contributions}}
 
-This thesis makes three theoretical contributions:
+As previewed in Section~\ref{sec:contribution-preview}, this thesis makes three contributions. Having now traversed the full arc---phenomenon identification (Chapter~1), mechanism theorization (Chapter~2), empirical operationalization (Chapter~3), hypothesis testing (Chapter~4), and design principles (Chapter~5)---I review each contribution with the precision that evidence affords:
 
 \textbf{First}, I introduce the \emph{golden cage} mechanism, explaining how funding constrains growth through governance homogeneity rather than moral hazard. The mechanism integrates \citeauthor{vandensteen2010interpersonal}'s sorting equilibrium, \citeauthor{eisenberg1984ambiguity}'s strategic ambiguity, and \citeauthor{ghemawat1991commitment}'s commitment analysis.
 
@@ -19,12 +20,13 @@ This thesis makes three theoretical contributions:
 \hypertarget{practical-implications}{%
 \section{Practical Implications}\label{practical-implications}}
 
-\begin{itemize}
-\tightlist
-\item \textbf{Founders:} Commit to \emph{reposition}, not to position. Design governance to preserve skeptical voices \emph{before} funding eliminates them.
-\item \textbf{Investors:} Fund platform capability, not product specificity. Expect successful ventures to reposition.
-\item \textbf{Scholars:} The cage mechanism shows governance, not incentives, constrains ventures. Future research should directly measure board belief diversity.
-\end{itemize}
+The golden cage mechanism has distinct implications for founders, investors, and scholars.
+
+For founders, the prescription is to design for adaptation before funding eliminates the skeptics who make adaptation possible. This means articulating vision at the direction level (``sustainable transport'') rather than the operational level (``battery swapping''). It means recruiting board members who share your view on \emph{why} but differ on \emph{how}. And it means sequencing capital sources so that flexibility survives long enough for market signals to clarify.
+
+For investors, the prescription is to fund platform capability rather than product specificity. The ventures that succeed are those that reposition when market signals change. A founder who has never changed direction in three years may be perfectly calibrated---or structurally trapped. The question to ask: ``Who in your governance would advocate for pivoting if signals turn negative?''
+
+For scholars, the prescription is to measure governance directly. This thesis documents behavioral patterns consistent with governance homogeneity, but the mechanism remains inferred rather than observed. Future research must measure board belief diversity through surveys, voting records, or text analysis of investor communications.
 
 \hypertarget{limitations}{%
 \section{Limitations}\label{limitations}}
@@ -50,38 +52,26 @@ The governance homogeneity mechanism proposed in this thesis competes with sever
 
 \textbf{Moral Hazard} predicts reduced founder effort after funding. Yet founders of failed well-funded ventures frequently express regret at not pivoting earlier, suggesting motivation was present but governance support was absent. If moral hazard drove the pattern, founders would report satisfaction with their strategic persistence, not regret about rigidity.
 
-\textbf{Milestone Pressure} predicts that ventures deviating from milestones (i.e., Movers) should face capital constraints and underperform. The opposite obtains: Movers achieve 2.60\ensuremath{\times} higher success rates than Stayers. This suggests that the benefit of strategic adaptation outweighs the cost of milestone deviation, inconsistent with milestone pressure as the binding constraint.
+\textbf{Milestone Pressure} predicts that ventures deviating from milestones (i.e., Movers) should face capital constraints and underperform. The opposite obtains: Movers achieve 2.60\ensuremath{\times} higher success rates ($L$) than Stayers. This suggests that the benefit of strategic adaptation outweighs the cost of milestone deviation, inconsistent with milestone pressure as the binding constraint.
 
 \textbf{Burn-rate Discipline} predicts the cage should weaken in capital-light sectors where experimentation is cheap. Software's near-zero correlation (\ensuremath{\rho} = -0.001) is consistent with this account. However, Quantum's positive correlation (\ensuremath{\rho} = +0.095) is inconsistent, if burn-rate were decisive, capital-intensive Quantum should show the strongest cage, not the weakest. The uncertainty-contingent pattern favors governance homogeneity over burn-rate as the primary mechanism.
 
 \hypertarget{future-research}{%
 \section{Future Research}\label{future-research}}
 
-Three directions merit further investigation:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Direct measurement of belief homogeneity:} Survey-based or text-based measurement of board belief diversity
-\item
-  \textbf{Quasi-experimental identification:} VC fund vintage effects, geographic shocks, or industry funding cycles as instruments
-\item
-  \textbf{Governance interventions:} Field experiments testing skeptic preservation strategies
-\end{enumerate}
+Three directions merit investigation. First, directly measure belief homogeneity through surveys or text analysis of board communications. Second, pursue quasi-experimental identification using VC fund vintage effects, geographic shocks, or industry funding cycles as instruments. Third, test governance interventions through field experiments on skeptic preservation strategies.
 
 \hypertarget{closing}{%
 \section{Closing}\label{closing}}
 
-Capital is oxygen for startups, but oxygen in a sealed chamber becomes a cage.
+This thesis began with a paradox: the venture capital industry deploys over \$330 billion annually to fuel startup growth, yet early-stage funding correlates negatively with later-stage success. The paradox resolves through a simple mechanism. To secure capital, founders must commit to specific strategies. These commitments attract investors who believe in those strategies. Skeptics never join. The resulting board contains only believers. When market signals suggest pivoting, no one advocates for change. The venture is trapped---not for lack of capital, but for lack of diverse perspectives.
 
-This thesis began with a paradox: the \$330 billion venture capital industry exists to fuel growth, yet early-stage funding correlates negatively with later-stage survival (\ensuremath{\rho} = -0.196, N = 180,994). The paradox \textbf{resolves} through decomposition: funding \textbf{suppresses} repositioning (\ensuremath{\rho} = -0.087), and repositioning \textbf{drives} growth (Movers outperform Stayers by 2.60\ensuremath{\times}). The product of a positive and a negative is negative.
+I call this the golden cage. It operates through governance homogeneity, not moral hazard. Founders want to pivot but lack governance support. The evidence confirms this: funding suppresses repositioning, repositioning predicts success, and the cage binds tightest in capital-intensive sectors where switching costs are high.
 
-The mechanism I term the \emph{golden cage} operates through belief homogeneity. Securing capital requires commitments that attract investors who share the founder's thesis. Skeptics self-select out. The resulting board contains only believers: efficient for execution, destructive for learning. When market signals suggest pivoting, no one advocates alternatives. The venture cannot adapt, not for lack of will, but for lack of governance diversity.
+The cage need not be fatal. Founders can escape by committing at the vision level (preserving diverse believers), diagnosing bottlenecks before scaling (avoiding off-diagonal traps), and sequencing capital sources (building credibility before homogenizing governance). These design principles do not eliminate the paradox; they navigate it.
 
-Industry heterogeneity reveals boundary conditions. The cage binds tightest in capital-intensive sectors where switching costs are high: Hardware (\ensuremath{\rho} = -0.108), Transportation (\ensuremath{\rho} = -0.101). It releases under extreme uncertainty where no dominant design exists: Quantum (\ensuremath{\rho} = +0.095). The cage operates when commitment forecloses \emph{identifiable} alternatives; under radical uncertainty, no alternatives are identifiable, so commitment cannot foreclose them.
+The central insight is simple: resources and flexibility are not substitutes. Raising money does not buy the ability to change direction. If anything, it reduces that ability by filtering out the skeptics who would advocate for change. The ventures that survive are not those with the most resources, but those that preserve the governance diversity to act on what they learn.
 
-The cage need not be fatal. With deliberate governance design, committing at the vision level, preserving skeptics, building milestone flexibility, founders and investors can capture commitment's benefits without foreclosing adaptation. The prescription reduces to four words:
+For founders facing uncertainty, the prescription is counterintuitive: commit to the capacity to reposition, not to any particular position. Build governance that can challenge your assumptions. Design for adaptation before funding eliminates the skeptics who make adaptation possible.
 
-\textbf{Move to grow. When uncertain, commit to reposition, not to position.}
-
+\textbf{Move to grow.}

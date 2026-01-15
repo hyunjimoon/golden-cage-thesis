@@ -9,17 +9,13 @@ version: synthesized_final_v2 (claude+gemini+chatgpt+deepseek feedback)
 \hypertarget{sec:ch2-introduction}{%
 \section{Introduction}\label{sec:ch2-introduction}}
 
-Strategic flexibility enables ventures to operationalize the Freedom Axiom \citep{stern2023}: the capacity to pursue the ``best available alternative'' requires maintaining multiple viable paths. New ventures possess this capacity naturally. Their ``blank slate'' status \citep{christensen1997innovators} permits strategic repositioning unconstrained by legacy commitments. Yet the funding process systematically \textbf{erodes} this flexibility precisely when ventures need it most to navigate uncertainty.
+Strategic flexibility enables ventures to pursue the best available alternative as circumstances change \citep{stern2023}. This capacity requires maintaining multiple viable paths. New ventures possess this capacity naturally---unlike established firms burdened by legacy commitments, startups can reposition freely. Yet the funding process systematically erodes this flexibility precisely when ventures need it most to navigate uncertainty.
 
 \textbf{The Strategy Orthodoxy.} Traditional strategy literature views commitment as an asset, not a liability. \citet{porter1996what} argues that competitive advantage requires choosing a unique position and making trade-offs that competitors cannot easily imitate. \citet{ghemawat1991commitment} provides the definitive treatment: commitment creates value through lock-in (sunk costs), lock-out (competitor exclusion), and inertia (organizational momentum). The prescription follows: choose a defensible position, then commit. However, under the high uncertainty of nascent markets, \citet{dixit1994investment} and \citet{sanchez1995strategic} argue that the option value of waiting---retaining the capacity to respond to unforeseen contingencies---often dominates the benefits of early commitment.
 
 \textbf{The Funding-Growth Paradox.} This chapter resolves a fundamental tension in the data: early-stage funding correlates negatively with later-stage success ($\rho = -0.196$, $p < 0.001$). This presents a structural paradox: acquiring resources to learn reduces the governance diversity necessary to act on learning.
 
-\textbf{Definitions.} To resolve this paradox, I distinguish between latent capability and observable behavior:
-\begin{itemize}
-\item \textbf{Flexibility ($F$):} The latent governance capacity to keep multiple paths viable under uncertainty.
-\item \textbf{Repositioning ($R$):} Observable changes in a venture's strategic breadth over time---the behavioral manifestation of $F$. Operationally, $R = |B_T - B_0|$, where $B$ is strategic breadth measured via dictionary-based text analysis of company descriptions (Chapter~\ref{ch:data}).
-\end{itemize}
+\textbf{Definitions.} To resolve this paradox, I distinguish between latent capability and observable behavior. \emph{Flexibility} ($F$) is the latent governance capacity to keep multiple paths viable under uncertainty---it lives in the composition of the board and the diversity of perspectives represented there. \emph{Repositioning} ($R$) is the observable manifestation of flexibility: changes in a venture's strategic breadth over time. I measure repositioning as $R = |B_T - B_0|$, where $B$ is strategic breadth computed from company descriptions (Chapter~\ref{ch:data}).
 
 The core argument: funding creates a \emph{golden cage}. As founders trade equity for resources, they import a governance sorting effect that homogenizes beliefs. Unlike a machine that remains flexible regardless of usage, a board loses its capacity to advocate for alternatives as it becomes populated solely by believers.
 
@@ -34,15 +30,11 @@ The core argument: funding creates a \emph{golden cage}. As founders trade equit
 
 \subsection{Contributions}
 
-This chapter makes three theoretical contributions:
+This chapter makes three theoretical contributions. The first is a synthesis of two established theories. Van den Steen's sorting equilibrium explains \emph{who} joins a venture's governance: investors who believe in the current strategy fund it, while skeptics stay away. Eisenberg's strategic ambiguity explains \emph{how many} join: broader visions attract more diverse believers. Neither theory alone predicts the funding-flexibility relationship; their synthesis does.
 
-\begin{enumerate}
-\item \textbf{Synthesis of sorting and ambiguity theories.} I integrate \citeauthor{vandensteen2010interpersonal}'s \citeyearpar{vandensteen2010interpersonal} sorting equilibrium (explaining \emph{who} joins governance) with \citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} strategic ambiguity (explaining \emph{how many} join). Neither theory alone predicts the funding-flexibility relationship; their synthesis does.
+The second contribution is a formalization of when learning ceases. Theorem~1 specifies the boundary condition under which a venture can no longer recognize signals to pivot. The key insight is that as funding increases, belief homogeneity rises and strategic breadth narrows---both forces push the venture toward the cage.
 
-\item \textbf{Formalization of caged learning.} Theorem~1 provides the boundary condition ($\mu(1-\mu) < \varepsilon/B$) under which organizational learning ceases, showing that the cage becomes \emph{endogenous} to the funding process.
-
-\item \textbf{Structural vs.\ motivational distinction.} I distinguish ``cannot pivot'' (structural) from ``will not pivot'' (moral hazard), with distinct implications: governance redesign vs.\ intensified monitoring.
-\end{enumerate}
+The third contribution distinguishes structural from motivational constraints. The cage is structural: founders \emph{cannot} pivot because governance lacks advocates for alternatives. This differs from moral hazard, where founders \emph{will not} pivot due to misaligned incentives. The distinction matters for intervention: moral hazard requires monitoring; structural constraint requires governance redesign.
 
 %% ============================================================
 \hypertarget{sec:commitment-cage}{%
@@ -87,7 +79,7 @@ If the Commitment Cage explains why ventures get stuck, the Flexibility Flex exp
 
 \subsection{Strategic Ambiguity as Flexibility Enabler}
 
-\citeauthor{eisenberg1984ambiguity}'s \citeyearpar{eisenberg1984ambiguity} ``strategic ambiguity'' functions as a \textbf{stochastic enabler} of flexibility. Founders who orchestrate ambiguous positioning attract diverse stakeholders who project their own interpretations onto capacious visions. This diversity is the governance fuel for pivots.
+Strategic ambiguity \citep{eisenberg1984ambiguity} enables flexibility by attracting diverse believers. Founders who articulate broad visions---rather than narrow operational commitments---attract stakeholders who project their own interpretations onto the vision. This diversity becomes the governance fuel for pivots: when market signals suggest changing direction, at least some board members will advocate for alternatives.
 
 Tesla's ``accelerating sustainable transport'' attracted believers in electrification, autonomy, and energy transition---each projecting their thesis onto the same vision. When market signals suggested changing direction, this diversity ensured that at least some governance voices advocated for alternatives. In contrast, Better Place's commitment to ``battery swapping infrastructure'' attracted only believers in that specific mechanism. When market feedback favored charging over swapping, no governance voice advocated pivoting. The company liquidated in 2013, its assets sold for less than \$1 million.
 
@@ -101,7 +93,7 @@ Building on \citeauthor{levinthal1993the}'s \citeyearpar{levinthal1993the} insig
 
 \emph{where $\mu$ = belief probability (shared conviction), $\varepsilon$ = expected belief shift from a signal, and $B$ = strategic breadth. (Proof: Appendix~\ref{app:b}.)}
 
-Van den Steen's sorting equilibrium produces high $\mu$ (shared optimism); operational commitments narrow $B$ (strategic focus). Both forces push the inequality toward satisfaction. Thus, caged learning becomes \emph{endogenous} to the funding process itself: as funding increases, $\mu$ rises and $B$ falls, ensuring the venture ceases to learn.
+In plain language: the theorem says that learning stops when everyone agrees too strongly ($\mu$ near 1) on a narrow path ($B$ small). Van den Steen's sorting produces high agreement (investors who fund share the founder's optimism); operational commitments narrow the path. Both forces are consequences of raising capital. Thus, the cage is not an accident---it is built into the funding process itself.
 
 \begin{figure}[htbp]
 \centering
@@ -163,3 +155,5 @@ A key distinction: founders \emph{cannot} pivot (structural constraint), not tha
 \subsection{Preview of Empirical Tests}
 
 Chapters~\ref{ch:data}--\ref{ch:results} test these hypotheses using 180,994 ventures from PitchBook (2021--2025). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: $\rho = -0.108$, Transportation: $\rho = -0.101$) but releases under extreme uncertainty (Quantum: $\rho = +0.095$).
+
+Chapter~\ref{ch:data} operationalizes the theory by developing measures for strategic breadth and repositioning from company descriptions.
