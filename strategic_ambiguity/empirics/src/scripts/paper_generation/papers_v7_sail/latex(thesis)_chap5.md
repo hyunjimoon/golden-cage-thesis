@@ -4,7 +4,7 @@ modified:
 version: v4_synthesized (selected)
 ---
 \hypertarget{ch:design}{%
-\chapter{Designing for Strategic Flexibility}\label{ch:design}}
+\chapter{Escaping the Cage}\label{ch:design}}
 
 \hypertarget{sec:ch5-introduction}{%
 \section{Introduction}\label{sec:ch5-introduction}}
