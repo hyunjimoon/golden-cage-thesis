@@ -1,7 +1,7 @@
 ---
 modified:
   - 2026-01-14T10:48:18-05:00
-  - 2026-01-15T06:35:00-05:00
+  - 2026-01-15T11:18:27-05:00
 ---
 \hypertarget{ch:introduction}{%
 \chapter{Introduction}\label{ch:introduction}}
@@ -11,7 +11,7 @@ modified:
 
 Startups die not for lack of resources, but for lack of \emph{strategic flexibility}---the capacity to change direction when markets shift. Over the past decade, venture capital has deployed over \$330 billion annually to fuel startup growth. Yet a puzzle emerges from the data: ventures that raise more early funding are \emph{less} likely to succeed later. Why would resources hurt?
 
-The answer lies in governance. To secure funding, founders must commit to specific strategies. These commitments attract investors who believe in those strategies. Skeptics---investors who might advocate for alternatives---never join. The resulting board contains only believers. When market signals suggest pivoting, no one advocates for change. The venture is trapped: not for lack of capital, but for lack of diverse perspectives. I call this the \emph{golden cage}.
+The answer lies in governance. To secure funding, founders must commit to specific strategies. These commitments attract investors who believe in those strategies. Skeptics (investors who might advocate for alternatives) never join. The resulting board contains only believers. When market signals suggest pivoting, no one advocates for change. The venture is trapped: not for lack of capital, but for lack of diverse perspectives. I call this the \emph{golden cage}.
 
 Two electric vehicle ventures illustrate the contrast. Tesla positioned itself as ``accelerating sustainable transport''---a vision broad enough to attract believers in electrification, autonomy, and energy storage. When Tesla pivoted from Roadster to Model 3, diverse board perspectives supported the shift. Better Place raised \$850 million for ``battery swapping infrastructure''---a commitment so specific that when charging technology advanced, no governance voice advocated pivoting. Better Place liquidated in 2013; its assets sold for less than \$1 million.
 

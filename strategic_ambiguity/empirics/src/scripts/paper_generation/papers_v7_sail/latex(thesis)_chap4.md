@@ -41,11 +41,11 @@ To operationalize this relationship, I classify ventures as Movers or Stayers (p
 
 \emph{Note: R \textgreater{} 0 = any repositioning. See Section~3.3.3 for definition rationale.}
 
-\textbf{The core finding:} Movers outperform Stayers by \textbf{2.60\ensuremath{\times}} in success rate ($P(L=1)$: 18.1\% vs.~7.0\%, p \textless{} 0.001, \ensuremath{\chi^2} = 5,322). This binary classification is the primary taxonomy used throughout subsequent analyses.
+\textbf{The core finding:} Movers outperform Stayers by \textbf{2.60$\times$} in growth rate ($P(G=1)$: 18.1\% vs.~7.0\%, p \textless{} 0.001, $\chi^2 = 5{,}322$). This binary classification is the primary taxonomy used throughout subsequent analyses.
 
 \emph{Note: \ensuremath{\Delta}B = B\_T - \ensuremath{B_0}. Zoom-in = narrowing (\ensuremath{\Delta}B \textless{} 0); Zoom-out = expanding (\ensuremath{\Delta}B \textgreater{} 0). Remaining Movers (36,554) have minimal directional change.}
 
-\textbf{Interpretive insight:} Both directions show elevated success rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71$\times$), True Botanicals (narrowing mover, G = 2.45$\times$), and Leap Green Energy (stayer, G = 0.80$\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
+\textbf{Interpretive insight:} Both directions show elevated growth rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71$\times$), True Botanicals (narrowing mover, G = 2.45$\times$), and Leap Green Energy (stayer, G = 0.80$\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
 
 \hypertarget{h3-paradox-heterogeneity}{%
 \section{H3: Paradox Heterogeneity}\label{sec:h3-paradox-heterogeneity}}
