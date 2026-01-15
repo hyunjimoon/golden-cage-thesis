@@ -19,13 +19,6 @@ Strategic flexibility enables ventures to pursue the best available alternative 
 
 The core argument: funding creates a \emph{golden cage}. As founders trade equity for resources, they import a governance sorting effect that homogenizes beliefs. Unlike a machine that remains flexible regardless of usage, a board loses its capacity to advocate for alternatives as it becomes populated solely by believers.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.5\textwidth]{img/Ch2_Fig1_full_puzzle.png}
-\caption{The Full Puzzle. Causal structure: $C \rightarrow E \rightarrow F \rightarrow G$. The paradox resolves through mediation: Funding ($E$) suppresses Flexibility ($F$), yet Flexibility drives Growth ($G$).}
-\label{fig:full-puzzle}
-\end{figure}
-
 \textbf{Chapter Roadmap.} Section~\ref{sec:commitment-cage} develops the \emph{Commitment Cage}: how funding suppresses flexibility through belief homogenization. Section~\ref{sec:flexibility-flex} establishes the \emph{Flexibility Flex}: why flexibility enables growth. Section~\ref{sec:conclusion-hypotheses} synthesizes these into the Funding-Growth Paradox.
 
 \subsection{Contributions}
@@ -47,13 +40,6 @@ The ``Golden Cage'' is not a result of moral hazard or founder incompetence; it 
 The cage forms through a four-step sequence grounded in \citeauthor{vandensteen2010interpersonal}'s \citeyearpar{vandensteen2010interpersonal} sorting equilibrium.
 
 The sequence proceeds in four steps. First, securing capital requires operational commitments---production architecture choices, go-to-market sequences, milestone definitions \citep{gompers2001the, hellmann2002venture}---and investors who fund a venture do so because they believe these specific commitments will succeed. Second, people with different beliefs naturally sort into different organizations: \citet{vandensteen2010interpersonal} shows that entrepreneurs who pursue a venture are more optimistic about it (selection, not bias), and investors who fund share this optimism because pessimists self-select out, producing belief homogeneity without any party behaving irrationally. Third, without skeptics, disconfirming signals lack advocates \citep{cyert1963a}---market feedback indicating problems with the committed approach has no champion in governance discussions, and as \citet{march1991exploration} notes, belief convergence is efficient for exploitation but destructive for exploration. Fourth, the venture cannot recognize when it should pivot: learning stops not because founders lack motivation, but because the structure prevents it. The cage is structural---founders want to pivot but lack governance support.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.45\textwidth]{img/Ch2_Fig2_commitment_cage.png}
-\caption{Commitment Cage (Tile 1). The $C \rightarrow E \rightarrow F$ path: funding suppresses flexibility.}
-\label{fig:commitment-cage}
-\end{figure}
 
 \subsection{Hypothesis 1: The Commitment Cage}
 
@@ -89,13 +75,6 @@ Building on \citeauthor{levinthal1993the}'s \citeyearpar{levinthal1993the} insig
 
 In plain language: the theorem says that learning stops when everyone agrees too strongly ($\mu$ near 1) on a narrow path ($B$ small). Van den Steen's sorting produces high agreement (investors who fund share the founder's optimism); operational commitments narrow the path. Both forces are consequences of raising capital. Thus, the cage is not an accident---it is built into the funding process itself.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.45\textwidth]{img/Ch2_Fig3_flexibility_flex.png}
-\caption{Flexibility Flex (Tile 2). The $F \rightarrow G$ path: repositioning enables growth.}
-\label{fig:flexibility-flex}
-\end{figure}
-
 \subsection{Hypothesis 2: The Flexibility Flex}
 
 If flexibility allows ventures to escape the cage, and repositioning is the behavior of escaping, then repositioning should predict success.
@@ -123,24 +102,6 @@ We can now resolve the Funding-Growth Paradox through formal decomposition. The 
 \[H_3: \frac{dG}{dE} < 0\]
 
 Empirical preview (Chapter~\ref{ch:results}): $\rho(E,G) = -0.196^{***}$ ($N = 180{,}994$).
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.45\textwidth]{img/Ch2_Fig4_paradox.png}
-\caption{The Paradox (Tile 3). The net effect $E \rightarrow G$: H3 $=$ H1 $\times$ H2 $= (-) \times (+) = (-)$.}
-\label{fig:paradox}
-\end{figure}
-
-\subsection{Complete Model}
-
-Figure~\ref{fig:complete-model} integrates all three hypotheses into the complete theoretical model.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.65\textwidth]{img/Ch2_Fig5_complete_model.png}
-\caption{Complete Model. The Golden Cage mechanism: $C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\downarrow$. Red path (H1): Commitment Cage. Blue path (H2): Flexibility Flex. Dashed path (H3): Net paradox.}
-\label{fig:complete-model}
-\end{figure}
 
 \subsection{Structural vs.\ Motivational Constraint}
 
