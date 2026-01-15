@@ -35,14 +35,9 @@ As theorized in Chapter~\ref{ch:theory}, funding should suppress repositioning t
 \hypertarget{h3-repositioning-growth-the-flexibility-premium}{%
 \section{H3: Repositioning \ensuremath{\rightarrow} Growth (\flex{Flexibility Flex})}\label{sec:h3-flexibility-flex}}
 
-\hypertarget{main-finding}{%
-\subsection{Main Finding}\label{main-finding}}
-
-The data confirm H3: repositioning enables growth.
+The data confirm H3: repositioning enables growth. Ventures that reposition succeed more often, as shown in Table~\ref{tab:frg-analysis}.
 
 \input{table/frg_analysis.tex}
-
-The positive correlation is consistent: ventures that reposition succeed more often.
 
 \hypertarget{the-mover-advantage-2.60}{%
 \subsection{The Mover Advantage: 2.60\ensuremath{\times}}\label{the-mover-advantage-2.60}}
@@ -57,19 +52,7 @@ To operationalize this relationship, I classify ventures as Movers or Stayers (p
 
 \emph{Note: \ensuremath{\Delta}B = B\_T - \ensuremath{B_0}. Zoom-in = narrowing (\ensuremath{\Delta}B \textless{} 0); Zoom-out = expanding (\ensuremath{\Delta}B \textgreater{} 0). Remaining Movers (36,554) have minimal directional change.}
 
-\textbf{Interpretive insight:} Both directions show elevated success rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification.
-
-\emph{See Appendix C for detailed mover vs. stayer anatomy visualization.}
-
-\hypertarget{illustrative-cases-h3}{%
-\subsection{Illustrative Cases}\label{illustrative-cases-h3}}
-
-Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71\ensuremath{\times}), True Botanicals (narrowing mover, G = 2.45\ensuremath{\times}), and Leap Green Energy (stayer, G = 0.80\ensuremath{\times}). Both mover types outperform stayers, demonstrating that \emph{movement itself}, not direction, drives the advantage.
-
-\hypertarget{robustness-h3}{%
-\subsection{Robustness}\label{robustness-h3}}
-
-Results are robust to: (1) temporal stability across cohort years, (2) survival conditioning (Year 3+ survivors: 2.35\ensuremath{\times}, Year 5+: 2.12\ensuremath{\times}), and (3) alternative operationalizations of R. \emph{Full robustness tables are provided in Appendix C.}
+\textbf{Interpretive insight:} Both directions show elevated success rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71$\times$), True Botanicals (narrowing mover, G = 2.45$\times$), and Leap Green Energy (stayer, G = 0.80$\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
 
 \hypertarget{industry-heterogeneity-where-the-cage-binds-tightest}{%
 \section{Industry Heterogeneity: Where the Cage Binds Tightest}\label{sec:industry-heterogeneity}}
@@ -93,21 +76,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 }
 \end{figure}
 
-Three patterns emerge. Capital-intensive industries show the strongest negative correlations: Hardware (\ensuremath{\rho} = -0.108) and Transportation (\ensuremath{\rho} = -0.101) face the tightest cage because infrastructure and physical asset investments lock ventures into positions that cannot adapt. Software shows near-zero correlation (\ensuremath{\rho} = -0.001, ns), demonstrating that low capital intensity allows the Oxygen and Cage effects to approximately balance---cheap experimentation offsets governance rigidity. Quantum is the sole positive outlier (\ensuremath{\rho} = +0.095*): under extreme uncertainty, the learning value of capital dominates rigidity costs, representing a boundary condition for the multiplicative model.
-
-\hypertarget{the-era-of-ferment-exception}{%
-\subsection{The Quantum Exception}\label{the-era-of-ferment-exception}}
-
-Quantum computing shows a positive correlation ($\rho = +0.095$*)---the only industry where more funding associates with more success. Why? In technology evolution, industries pass through an ``era of ferment'' \citep{anderson1990technological} before a dominant design emerges. During this phase, multiple technical approaches compete and no architecture has proven superior. Quantum computing is in this phase: superconducting qubits, trapped ions, photonic approaches, and topological qubits all remain viable.
-
-When no dominant design exists, capital cannot lock ventures into specific architectural choices because those choices have not yet crystallized. The learning value of capital (experimentation) dominates its rigidity cost (governance homogenization). This is a boundary condition for the golden cage theory: the cage mechanism assumes that commitment narrows options, but in pre-paradigmatic industries, there may be no options to narrow.
-
-\emph{See Appendix C for industry survival baseline visualization.}
-
-\hypertarget{the-triple-vulnerability}{%
-\subsection{The Triple Vulnerability}\label{the-triple-vulnerability}}
-
-The mobility sector exemplifies the cage mechanism through three vulnerabilities. Capital intensity requires massive upfront infrastructure investment. Regulatory uncertainty means policy landscapes shift unpredictably. Technology path uncertainty means multiple viable architectures compete. These vulnerabilities interact: capital intensity demands commitment, but uncertainty types multiply the cost of wrong commitment.
+Three patterns emerge. Capital-intensive industries show the strongest negative correlations: Hardware ($\rho = -0.108$) and Transportation ($\rho = -0.101$) face the tightest cage because infrastructure and physical asset investments lock ventures into positions that cannot adapt---the mobility sector exemplifies this through triple vulnerability where capital intensity, regulatory uncertainty, and technology path uncertainty interact to multiply the cost of wrong commitment. Software shows near-zero correlation ($\rho = -0.001$, ns), demonstrating that low capital intensity allows cheap experimentation to offset governance rigidity. Quantum is the sole positive outlier ($\rho = +0.095$*): in technology evolution, industries pass through an ``era of ferment'' \citep{anderson1990technological} before a dominant design emerges, and quantum computing remains in this phase with superconducting qubits, trapped ions, photonic approaches, and topological qubits all viable. When no dominant design exists, capital cannot lock ventures into specific architectural choices because those choices have not yet crystallized---the learning value of capital dominates its rigidity cost. This is a boundary condition for the golden cage theory: the cage mechanism assumes that commitment narrows options, but in pre-paradigmatic industries, there may be no options to narrow. \emph{See Appendix C for industry survival baseline visualization.}
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}

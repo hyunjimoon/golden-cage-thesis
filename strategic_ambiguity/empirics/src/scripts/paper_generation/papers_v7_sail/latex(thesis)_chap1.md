@@ -26,13 +26,7 @@ This thesis investigates why funding creates this cage and how founders can esca
 \hypertarget{the-funding-growth-paradox}{%
 \section{The Funding-Growth Paradox}\label{sec:funding-growth-paradox}}
 
-Conventional wisdom holds that more resources mean better outcomes. A startup that raises \$10 million should outperform one that raises \$1 million---more runway for experimentation, more capacity for talent acquisition, more cushion for mistakes. Yet the data tell a different story.
-
-Analyzing 180,994 ventures from PitchBook (2021--2025), I find that early-stage funding correlates \emph{negatively} with later-stage success:
-
-\[\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)\]
-
-Ventures that raise more money early are less likely to reach Series C or beyond. This is the \textbf{Funding-Growth Paradox}.
+Conventional wisdom holds that more resources mean better outcomes---a startup that raises \$10 million should outperform one that raises \$1 million through more runway for experimentation, more capacity for talent acquisition, and more cushion for mistakes. Yet the data tell a different story. Analyzing 180,994 ventures from PitchBook (2021--2025), I find that early-stage funding correlates \emph{negatively} with later-stage success: $\rho = -0.196$ (p \textless{} 0.001). Ventures that raise more money early are less likely to reach Series C or beyond. This is the \textbf{Funding-Growth Paradox}.
 
 \begin{figure}
 \hypertarget{fig:capital-paradox}{%
@@ -42,11 +36,7 @@ Ventures that raise more money early are less likely to reach Series C or beyond
 }
 \end{figure}
 
-The paradox resolves through a mediating variable: \emph{repositioning}---the observable shift in a venture's strategic positioning over time. I measure repositioning as changes in the breadth of company descriptions between funding rounds. Ventures that shift their positioning (``Movers'') can be compared to those that hold steady (``Stayers'').
-
-The data reveal two patterns. First, early funding negatively predicts repositioning (\ensuremath{\rho} = -0.087, p \textless{} 0.001). I call this the \textbf{Commitment Cage}: governance structures attached to capital constrain adaptation. Second, repositioning positively predicts later-stage success. Movers outperform Stayers by 2.60\ensuremath{\times} (18.1\% vs.~7.0\% reaching Later Stage VC). I call this the \textbf{Flexibility Flex}: ventures that can reposition are more likely to survive.
-
-Together, these patterns explain the paradox. Funding suppresses the very mechanism---repositioning---required for survival. Capital itself is not harmful; the problem is that commitment attracts like-minded investors who filter out skeptics.
+The paradox resolves through a mediating variable: \emph{repositioning}---the observable shift in a venture's strategic positioning over time, measured as changes in the breadth of company descriptions between funding rounds. The data reveal two patterns: early funding negatively predicts repositioning ($\rho = -0.087$, p \textless{} 0.001)---the \textbf{Commitment Cage} where governance structures attached to capital constrain adaptation---and repositioning positively predicts later-stage success, with Movers outperforming Stayers by 2.60$\times$ (18.1\% vs.~7.0\%)---the \textbf{Flexibility Flex}. Together, these patterns explain the paradox: funding suppresses the very mechanism (repositioning) required for survival. Capital itself is not harmful; the problem is that commitment attracts like-minded investors who filter out skeptics.
 
 \begin{figure}
 \hypertarget{fig:mediation-dag}{%

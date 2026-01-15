@@ -19,30 +19,7 @@ A key identification concern is selection: high-conviction founders may both rai
 
 I construct a panel of 180,994 ventures from PitchBook, covering the period 2021--2025. PitchBook provides comprehensive coverage of U.S. venture-backed companies, including funding rounds, company descriptions, and outcome data.
 
-\textbf{Sample Construction.} The initial universe contains 488,381 ventures. I apply the following filters:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-
-\textbf{Geography:} U.S.-headquartered ventures (reduces to 312,456)
-
-\item
-
-\textbf{Stage:} Early-stage (Seed, Series A, Series B) at baseline (reduces to 245,892)
-
-\item
-
-\textbf{Observation window:} Minimum 24 months observable history (reduces to 198,234)
-
-\item
-
-\textbf{Data completeness:} Non-missing values for core variables (reduces to 180,994)
-
-\end{enumerate}
-
-The sample construction retained 37.1\% of the initial universe: non-US exclusions (36\%), late-stage (14\%), insufficient observation window (10\%), and missing data (4\%).
+\textbf{Sample Construction.} The initial universe contains 488,381 ventures. I filter to U.S.-headquartered ventures at early stage (Seed through Series B) with at least 24 months of observable history and complete data on core variables, yielding 180,994 ventures (37.1\% retention).
 
 \hypertarget{variable-operationalization}{%
 \section{Variable Operationalization}\label{variable-operationalization}}
@@ -142,9 +119,7 @@ I use two outcome measures. \textbf{Success (L)} is a binary indicator: $L = 1$ 
 \hypertarget{descriptive-statistics}{%
 \section{Descriptive Statistics}\label{descriptive-statistics}}
 
-The sample divides into two groups. Stayers (107,917 ventures, 59.7\%) show no strategic movement---their company descriptions remained essentially unchanged over the observation window. Movers (72,943 ventures, 40.3\%) exhibited repositioning, shifting their strategic breadth by a measurable amount.
-
-Overall, 11.5\% of ventures reach Later Stage VC (Series C or beyond) by the end of the observation window. This is the baseline success rate. The average strategic breadth at baseline is B = 52.3 on the 0--100 scale, with substantial variation (SD = 18.4). Full descriptive statistics appear in Appendix A.
+The sample divides into Stayers (107,917 ventures, 59.7\%) who show no strategic movement, and Movers (72,943 ventures, 40.3\%) who shifted their strategic breadth by a measurable amount. Overall, 11.5\% of ventures reach Later Stage VC by the end of the observation window, with average strategic breadth at baseline of B = 52.3 (SD = 18.4). Full descriptive statistics appear in Appendix A.
 
 \hypertarget{identification-strategy}{%
 \section{Identification Strategy}\label{identification-strategy}}
@@ -158,10 +133,4 @@ I address identification in three ways. First, I condition on survival: all vent
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-This chapter described how I test the cage hypotheses. The sample comprises 180,994 U.S. ventures from PitchBook (2021--2025), with repositioning measured through dictionary-based text analysis.
-
-I defend against identification threats in four ways: (1) treating selection as mechanism rather than confound, (2) conditioning on fixed horizons to mitigate survival bias, comparing repositioners and non-repositioners among ventures that survived equally long (Year 3+), (3) conditioning on observables, and (4) proposing future quasi-experimental approaches for causal identification.
-
-The key finding from this chapter is that repositioning is rare: only 40\% of ventures change their strategic positioning. This is consistent with the golden cage theory---governance constraints make movement difficult. The base success rate is 11.5\%, but this masks substantial heterogeneity between Movers and Stayers.
-
-Chapter~\ref{ch:results} tests whether funding suppresses repositioning (H1), whether repositioning predicts success (H2), and where these patterns vary across industries.
+This chapter described how I test the cage hypotheses using 180,994 U.S. ventures from PitchBook (2021--2025), with repositioning measured through dictionary-based text analysis. The key finding is that repositioning is rare---only 40\% of ventures change their strategic positioning, consistent with the golden cage theory that governance constraints make movement difficult. The base success rate is 11.5\%, but this masks substantial heterogeneity between Movers and Stayers. Chapter~\ref{ch:results} tests whether funding suppresses repositioning (H1), whether repositioning predicts success (H2), and where these patterns vary across industries.
