@@ -1,6 +1,7 @@
 ---
 modified:
   - 2026-01-14T10:48:18-05:00
+  - 2026-01-15T06:35:00-05:00
 ---
 \hypertarget{ch:introduction}{%
 \chapter{Introduction}\label{ch:introduction}}
@@ -8,26 +9,30 @@ modified:
 \hypertarget{general-motivation}{%
 \section{General Motivation}\label{general-motivation}}
 
-Commitment structures and investor selection \textbf{cage} founders' strategic flexibility. Startups die not for lack of resources, but for lack of mobility. Over the past decade, the U.S. venture capital industry, deploying over \$330 billion globally at its 2021 peak (PitchBook, 2024), has transformed how entrepreneurs build companies in software, mobility, and deep tech. Yet a fundamental tension persists: securing funding requires specific commitments, while uncertain markets reward adaptation. Founders navigate this tension by positioning ambiguously, attracting diverse stakeholders while preserving their ability to pivot.
+Startups die not for lack of resources, but for lack of \emph{strategic flexibility}---the capacity to change direction when markets shift. Over the past decade, venture capital has deployed over \$330 billion annually to fuel startup growth. Yet a puzzle emerges from the data: ventures that raise more early funding are \emph{less} likely to succeed later. Why would resources hurt?
 
-For instance, Tesla positioned itself early as "accelerating sustainable transport," attracting believers in electrification, autonomy, and energy transition. This let the company pivot across segments (Roadster \ensuremath{\rightarrow} Model S \ensuremath{\rightarrow} Model 3) without losing governance support. In contrast, Better Place raised \$850 million for "battery swapping infrastructure": a commitment so specific that when market feedback favored charging over swapping, no board member advocated for the alternative. The company liquidated in 2013, its assets sold for less than \$1 million (Bradshaw, 2013), a stark illustration of value destruction through operational lock-in.
+The answer lies in governance. To secure funding, founders must commit to specific strategies. These commitments attract investors who believe in those strategies. Skeptics---investors who might advocate for alternatives---never join. The resulting board contains only believers. When market signals suggest pivoting, no one advocates for change. The venture is trapped: not for lack of capital, but for lack of diverse perspectives. I call this the \emph{golden cage}.
 
-Motivated by such divergent outcomes among well-funded ventures, this thesis focuses on the following two aspects of funding and flexibility decisions.
+Two electric vehicle ventures illustrate the contrast. Tesla positioned itself as ``accelerating sustainable transport''---a vision broad enough to attract believers in electrification, autonomy, and energy storage. When Tesla pivoted from Roadster to Model 3, diverse board perspectives supported the shift. Better Place raised \$850 million for ``battery swapping infrastructure''---a commitment so specific that when charging technology advanced, no governance voice advocated pivoting. Better Place liquidated in 2013; its assets sold for less than \$1 million.
 
-\textbf{How funding and flexibility interact.} Capital creates a double bind. It enables experimentation by providing resources for market testing. Yet to secure capital, founders must commit, and commitments attract like-minded investors. Skeptics filter themselves out, reducing signal diversity and impeding learning. Should founders raise substantial early money so they can experiment, or does rigid governance outweigh the resource benefits? Prior studies examine funding effects and pivoting outcomes in isolation rather than as components of a governance system \citep{camuffo2020a, kirtley2023what}. This thesis addresses the gap.
+This thesis investigates why funding creates this cage and how founders can escape it.
 
-Commitment decisions also affect survival vertically. A founder who commits at the operational level (specific technology, specific market) attracts investors who believe in that specific path. When the market signals that the venture should pivot, no board member advocates for alternatives. This raises a question: how can founders commit credibly while preserving their ability to adapt? We need to understand two things: how funding and flexibility interact horizontally, and how governance composition affects strategic adaptation vertically.
+\textbf{Two Research Questions.} This thesis addresses two questions:
 
-\textbf{How to commit while staying flexible.} Large-scale venture data now let founders optimize how they commit. Text analysis of company descriptions reveals which ventures maintain strategic breadth over time. Industry-level analysis shows where the tension between commitment and flexibility is tightest (capital-intensive sectors like mobility) and where it releases (pre-paradigmatic sectors like quantum computing). These analyses help founders and investors capture commitment's credibility benefits without foreclosing adaptation.
+\emph{First, why does funding suppress flexibility?} Capital creates a double bind. It enables experimentation by providing resources. Yet to secure capital, founders must commit, and commitments attract like-minded investors. Skeptics filter themselves out. Prior studies examine funding effects and pivoting outcomes in isolation \citep{camuffo2020a, kirtley2023what}. This thesis treats them as components of a single governance system.
 
-This thesis addresses these challenges. Below I explain how each chapter tackles them, summarize the main results, and outline the organization.
+\emph{Second, how can founders commit credibly while preserving flexibility?} The level of commitment matters. A founder who commits at the operational level (``battery swapping infrastructure'') attracts only believers in that mechanism. A founder who commits at the vision level (``sustainable transport'') attracts believers in multiple mechanisms. Large-scale data reveal where the tension is tightest (capital-intensive sectors) and where it releases (pre-paradigmatic sectors like quantum). These patterns help founders design commitment structures that preserve adaptation capacity.
 
 \hypertarget{the-funding-growth-paradox}{%
-\section{The Funding-Growth Paradox}\label{the-funding-growth-paradox}}
+\section{The Funding-Growth Paradox}\label{sec:funding-growth-paradox}}
 
-The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from PitchBook (2021\textendash{}2025), I find a negative correlation between early-stage funding and later-stage survival:
+Conventional wisdom holds that more resources mean better outcomes. A startup that raises \$10 million should outperform one that raises \$1 million---more runway for experimentation, more capacity for talent acquisition, more cushion for mistakes. Yet the data tell a different story.
+
+Analyzing 180,994 ventures from PitchBook (2021--2025), I find that early-stage funding correlates \emph{negatively} with later-stage success:
 
 \[\rho(\text{Funding}, \text{Growth}) = -0.196 \quad (p < 0.001)\]
+
+Ventures that raise more money early are less likely to reach Series C or beyond. This is the \textbf{Funding-Growth Paradox}.
 
 \begin{figure}
 \hypertarget{fig:capital-paradox}{%
@@ -37,58 +42,36 @@ The data reveal a counterintuitive pattern. Analyzing 180,994 ventures from Pitc
 }
 \end{figure}
 
-The paradox resolves through a \textbf{mediation framework}. I identify two countervailing effects:
+The paradox resolves through a mediating variable: \emph{repositioning}---the observable shift in a venture's strategic positioning over time. I measure repositioning as changes in the breadth of company descriptions between funding rounds. Ventures that shift their positioning (``Movers'') can be compared to those that hold steady (``Stayers'').
 
-\begin{itemize}
-\tightlist
-\item \textbf{The Commitment Trap:} Early funding negatively predicts repositioning (\ensuremath{\rho} = -0.087, p \textless{} 0.001). Governance structures attached to capital constrain adaptation.
-\item \textbf{The Flexibility Premium:} Repositioning positively predicts later-stage success. Ventures that reposition (``Movers'') outperform those that hold position (``Stayers'') by 2.60\ensuremath{\times} (18.1\% vs.~7.0\% reaching Later Stage VC).
-\end{itemize}
+The data reveal two patterns. First, early funding negatively predicts repositioning (\ensuremath{\rho} = -0.087, p \textless{} 0.001). I call this the \textbf{Commitment Cage}: governance structures attached to capital constrain adaptation. Second, repositioning positively predicts later-stage success. Movers outperform Stayers by 2.60\ensuremath{\times} (18.1\% vs.~7.0\% reaching Later Stage VC). I call this the \textbf{Flexibility Flex}: ventures that can reposition are more likely to survive.
 
-Thus, funding suppresses the very mechanism (strategic mobility) required for survival. The reason is not that capital is harmful, but that commitment attracts like-minded investors who filter out skeptics.
+Together, these patterns explain the paradox. Funding suppresses the very mechanism---repositioning---required for survival. Capital itself is not harmful; the problem is that commitment attracts like-minded investors who filter out skeptics.
 
 \begin{figure}
 \hypertarget{fig:mediation-dag}{%
 \centering
 \includegraphics[width=0.85\textwidth,]{img/Ch1_Fig2_mediation_dag.png}
-\caption{Mediation structure. \textbf{Upper path (measured):} Early Funding (\(E\)) suppresses Repositioning (\(R\)) (Commitment Trap, \(-\)). \textbf{Lower path (unmeasured):} Commitment both increases funding and reduces flexibility. \textbf{Middle path:} Repositioning increases Growth (Flexibility Premium, \(+\)). Overall, \(E\) negatively correlates with \(G\) (Funding Paradox, \(-\)).}\label{fig:mediation-dag}
+\caption{The mediation structure explaining the paradox. Early Funding (\(E\)) suppresses Repositioning (\(R\)), which in turn drives Growth (\(G\)). The negative overall correlation between funding and growth arises because funding blocks the path to adaptation.}\label{fig:mediation-dag}
 }
 \end{figure}
 
-\hypertarget{research-questions-and-chapter-overview}{%
-\section{Research Questions and Chapter Overview}\label{research-questions-and-chapter-overview}}
+\hypertarget{chapter-overview}{%
+\section{Chapter Overview}\label{chapter-overview}}
 
-This thesis addresses three interconnected questions, each corresponding to a thesis part:
+The thesis proceeds in two parts. The first part (Chapters 2--4) develops and tests the theory. Chapter~\ref{ch:theory} explains why funding creates the cage: securing capital requires specific commitments, investors who fund believe those commitments will succeed, and skeptics self-select out. The resulting governance homogeneity prevents learning---no one advocates for alternatives when market signals suggest pivoting. I formalize this logic as \textbf{Theorem 1 (Caged Learning)}, which specifies the conditions under which organizational learning ceases. Chapters~\ref{ch:data} and \ref{ch:results} test the theory using 180,994 ventures. The data confirm both patterns: funding suppresses repositioning (the Commitment Cage) and repositioning enables growth (the Flexibility Flex). Industry heterogeneity reveals boundary conditions---the cage binds tightest in capital-intensive sectors like Hardware and Transportation, but releases under extreme uncertainty in pre-paradigmatic sectors like Quantum.
 
-\textbf{Part I: The Cage (Theory and Evidence, Chapters 2-4)}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{Why does this happen? (Chapter 2):} Securing capital requires specific commitments. Investors who fund a venture believe those commitments will succeed, and skeptics self-select out. The result is governance homogeneity: no one on the board advocates for alternatives when the market signals pivot. I call this the \emph{golden cage}. The main technical contribution is \textbf{Theorem 1 (Caged Learning)}, which formalizes when organizational learning ceases through the funding process itself.
-\item
-  \textbf{Does the data confirm it? (Chapters 3-4):} Using 180,994 ventures, I measure repositioning through dictionary-based text analysis and document both patterns: funding suppresses repositioning (Funding \ensuremath{\rightarrow} Repositioning\ensuremath{\downarrow}) and repositioning enables growth (Repositioning \ensuremath{\rightarrow} Growth\ensuremath{\uparrow}). Industry heterogeneity reveals boundary conditions: the cage binds tightest in capital-intensive sectors (Hardware: \ensuremath{\rho} = -0.108, Transportation: \ensuremath{\rho} = -0.101) but releases under extreme uncertainty (Quantum: \ensuremath{\rho} = +0.095).
-\end{enumerate}
-
-\textbf{Part II: Escaping the Cage (Chapters 5-6)}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  \textbf{What can founders do? (Chapter 5):} I develop a prescriptive framework distinguishing vision-level commitment (which preserves flexibility) from operational commitment (which forecloses it). The \textbf{Strategic Ambiguity Sweet Spot} (Figure~\ref{fig:sweet-spot}) shows that moderate positioning breadth achieves 16.0\% survival, higher than both narrow and maximally broad positioning.
-\end{enumerate}
+The second part (Chapters 5--6) turns prescriptive. Chapter~\ref{ch:design} addresses what founders can do. The key insight is that the \emph{level} of commitment matters: vision-level commitment (``sustainable transport'') preserves flexibility, while operational commitment (``battery swapping'') forecloses it. Empirically, ventures with moderate positioning breadth achieve 15.0\% survival---higher than both narrow and maximally broad positioning. Chapter~\ref{ch:conclusion} synthesizes contributions, discusses limitations (especially the challenge of directly measuring governance belief diversity), and outlines a research agenda for testing governance interventions.
 
 \hypertarget{contribution-preview}{%
-\section{Contribution Preview}\label{contribution-preview}}
+\section{Contribution Preview}\label{sec:contribution-preview}}
 
 This thesis makes three contributions to the literature on entrepreneurial strategy and venture governance.
 
-\textbf{First, I document the funding-growth paradox at unprecedented scale.} With N = 180,994 ventures, this study provides population-level evidence of a negative correlation between early-stage funding and later-stage survival. Prior work has examined funding effects in smaller samples \citep[N = 116]{camuffo2020a} or specific contexts \citep{ewens2018cost}. I demonstrate that the paradox generalizes across industries and cohort years, establishing an empirical regularity that demands theoretical explanation.
+The first contribution is empirical: I establish the funding-growth paradox as a robust regularity. Using 180,994 ventures from PitchBook (2021--2025), I document that higher early-stage funding correlates with a lower probability of later-stage success. This pattern is surprising because it contradicts the resource-based logic that more funding should enable more experimentation and better outcomes.
 
-\textbf{Second, I identify governance homogeneity, not moral hazard, as the binding constraint on venture adaptation.} This distinction carries implications for intervention design. If founders \emph{will not} pivot due to reduced incentives (moral hazard), the prescription is intensified monitoring. If founders \emph{cannot} pivot due to structural constraints (the golden cage), the prescription is governance redesign. My evidence favors the structural explanation: founders of failed well-funded ventures frequently express regret at not pivoting earlier, suggesting motivation was present but governance support was absent.
+The second contribution is theoretical: I explain why the paradox arises. The golden cage mechanism shows how funding induces governance homogeneity through belief-based sorting. Investors who fund a venture believe its current strategy will succeed; skeptics never join. The resulting board lacks the cognitive diversity to advocate for pivots when market signals change. I formalize this logic as Theorem~1 (Caged Learning) and show empirically where the cage binds tightest---in capital-intensive sectors---and where it releases---in pre-paradigmatic sectors like quantum computing.
 
-\textbf{Third, I introduce a theoretical distinction between vision-level and operational commitment.} Vision commitment ("accelerating sustainable transport") preserves flexibility by accommodating multiple implementation paths. Operational commitment ("battery swapping infrastructure") forecloses alternatives by binding resources to specific mechanisms. This distinction explains heterogeneity among well-funded ventures: Tesla's vision commitment enabled pivots across segments and business models, while Better Place's operational commitment prevented adaptation when market feedback favored charging over swapping. The practical implication is that founders can capture commitment's credibility benefits while preserving flexibility, but only by committing at the right level of abstraction.
+The third contribution is prescriptive: I provide a framework for founders to commit credibly while preserving flexibility. The key is to distinguish what to commit to (vision vs.~operations), how to grow (diagnosing market vs.~operational bottlenecks), and how to fund (sequencing capital sources to preserve governance diversity). These principles help founders escape the cage without sacrificing the credibility required to attract resources.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+Chapter~\ref{ch:theory} begins by developing the theoretical foundations of the golden cage.
