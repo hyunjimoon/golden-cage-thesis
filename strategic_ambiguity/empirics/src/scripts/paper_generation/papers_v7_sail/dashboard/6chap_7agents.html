@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thesis 29-Section Matrix | 7 Agents Structure</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #181b21;
+      --border: #2d333b;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      /* Default Blue */
+
+      /* Agent Colors */
+      --intro: #f08c00;
+      /* Orange - Introduction */
+      --concl: #fa5252;
+      /* Red - Conclusion */
+      --cc: #eebefa;
+      /* Pink - Commitment Cage (Theory/Test) */
+      --ff: #51cf66;
+      /* Green - Flexibility Flexing (Theory/Test) */
+      --para: #be4bdb;
+      /* Purple - Paradox */
+      --fig: #228be6;
+      /* Blue - Figures/Plots */
+      --var: #fab005;
+      /* Yellow - Variables/Data */
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', monospace, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--text);
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #8b949e;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 80px repeat(6, 1fr);
+      /* 6 Chapters */
+      gap: 4px;
+    }
+
+    .header-cell {
+      background: var(--card);
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    .row-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #8b949e;
+    }
+
+    .cell {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 8px;
+      min-height: 80px;
+      position: relative;
+      font-size: 0.7rem;
+      transition: 0.2s;
+    }
+
+    .cell:hover {
+      background: #21262d;
+      border-color: #8b949e;
+    }
+
+    .cell-id {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-weight: bold;
+      opacity: 0.5;
+      font-size: 0.6rem;
+    }
+
+    .cell-title {
+      margin-top: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .cell-note {
+      margin-top: 4px;
+      color: #8b949e;
+      font-size: 0.6rem;
+    }
+
+    /* Agent Tags */
+    .tag {
+      display: inline-block;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-size: 0.55rem;
+      font-weight: bold;
+      color: #0f1115;
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+    }
+
+    .tag.intro {
+      background: var(--intro);
+    }
+
+    .tag.concl {
+      background: var(--concl);
+    }
+
+    .tag.cc {
+      background: var(--cc);
+    }
+
+    .tag.ff {
+      background: var(--ff);
+    }
+
+    .tag.para {
+      background: var(--para);
+    }
+
+    .tag.fig {
+      background: var(--fig);
+    }
+
+    .tag.var {
+      background: var(--var);
+    }
+
+    .gap {
+      background: repeating-linear-gradient(45deg, #181b21, #181b21 10px, #1c2128 10px, #1c2128 20px);
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Thesis Structure: 29 Sections | 7 Functional Agents</h1>
+  <span class="subtitle">Logic Source: 6chap_29section_7agents_delegation_otter_ai.txt</span>
+
+  <div class="matrix">
+    <div></div>
+    <div class="header-cell">Ch 1: Intro<br><small>(4 Sec)</small></div>
+    <div class="header-cell">Ch 2: Theory<br><small>(4 Sec)</small></div>
+    <div class="header-cell">Ch 3: Data<br><small>(6 Sec)</small></div>
+    <div class="header-cell">Ch 4: Results<br><small>(5 Sec)</small></div>
+    <div class="header-cell">Ch 5: Design<br><small>(5 Sec)</small></div>
+    <div class="header-cell">Ch 6: End<br><small>(5 Sec)</small></div>
+
+    <div class="header-cell row-header" style="color:var(--intro)">INTRO<br>Agent</div>
+    <div class="cell">
+      <span class="cell-id">§1</span>
+      <div class="cell-title">Motivation</div>
+      <div class="cell-note">Hook & Context</div>
+      <span class="tag intro">Intro</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§5</span>
+      <div class="cell-title">Mechanism Intro</div>
+      <div class="cell-note">Causal Diagram</div>
+      <span class="tag intro">Intro</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§9</span>
+      <div class="cell-title">Data Sources</div>
+      <div class="cell-note">PitchBook 2021-25</div>
+      <span class="tag intro">Intro</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§15</span>
+      <div class="cell-title">Results Intro</div>
+      <div class="cell-note">Overview of H1-H3</div>
+      <span class="tag intro">Intro</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§20</span>
+      <div class="cell-title">Design Intro</div>
+      <div class="cell-note">Prescriptive shift</div>
+      <span class="tag intro">Intro</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§25</span>
+      <div class="cell-title">Summary</div>
+      <div class="cell-note">Thesis Synthesis</div>
+      <span class="tag intro">Intro</span>
+    </div>
+
+    <div class="header-cell row-header" style="color:var(--para)">PARADOX<br>Agent</div>
+    <div class="cell">
+      <span class="cell-id">§2</span>
+      <div class="cell-title">The Paradox</div>
+      <div class="cell-note">E vs G Correlation</div>
+      <span class="tag para">Paradox</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§18</span>
+      <div class="cell-title">Heterogeneity</div>
+      <div class="cell-note">Quantum vs Mobility</div>
+      <span class="tag para">Paradox</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell gap"></div>
+
+    <div class="header-cell row-header" style="color:var(--cc)">CC<br>Agent</div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§6</span>
+      <div class="cell-title">Commitment Trap</div>
+      <div class="cell-note">Theory: E → R↓</div>
+      <span class="tag cc">CC</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§16</span>
+      <div class="cell-title">H1: Trap Test</div>
+      <div class="cell-note">Empirics: dR/dE</div>
+      <span class="tag cc">CC</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell gap"></div>
+
+    <div class="header-cell row-header" style="color:var(--ff)">FF<br>Agent</div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§7</span>
+      <div class="cell-title">Flexibility Premium</div>
+      <div class="cell-note">Theory: R → G↑</div>
+      <span class="tag ff">FF</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§17</span>
+      <div class="cell-title">H2: Flex Test</div>
+      <div class="cell-note">Mover Advantage</div>
+      <span class="tag ff">FF</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell gap"></div>
+
+    <div class="header-cell row-header" style="color:var(--var)">FIG/VAR<br>Agent</div>
+    <div class="cell">
+      <span class="cell-id">§3</span>
+      <div class="cell-title">Research Qs</div>
+      <div class="cell-note">Roadmap</div>
+      <span class="tag var">Structure</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§11, §12, §13</span>
+      <div class="cell-title">Variables & Plots</div>
+      <div class="cell-note">Flexibility Def moved here</div>
+      <span class="tag var">Var/Fig</span>
+    </div>
+    <div class="cell gap"></div>
+    <div class="cell">
+      <span class="cell-id">§21, §22, §23</span>
+      <div class="cell-title">Solution Triad</div>
+      <div class="cell-note">Time, Space (Theorem 1), Stakeholders</div>
+      <span class="tag fig">Fig/Thm</span>
+    </div>
+    <div class="cell gap"></div>
+
+    <div class="header-cell row-header" style="color:var(--concl)">CONCL<br>Agent</div>
+    <div class="cell">
+      <span class="cell-id">§4</span>
+      <div class="cell-title">Contrib Preview</div>
+      <div class="cell-note">Identify, Explain, Solve</div>
+      <span class="tag concl">Concl</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§8</span>
+      <div class="cell-title">Theory Concl</div>
+      <div class="cell-note">Hypotheses Set</div>
+      <span class="tag concl">Concl</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§14</span>
+      <div class="cell-title">Data Concl</div>
+      <div class="cell-note">Summary</div>
+      <span class="tag concl">Concl</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§19</span>
+      <div class="cell-title">Results Concl</div>
+      <div class="cell-note">Synthesis</div>
+      <span class="tag concl">Concl</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§24</span>
+      <div class="cell-title">Design Concl</div>
+      <div class="cell-note">Synthesis</div>
+      <span class="tag concl">Concl</span>
+    </div>
+    <div class="cell">
+      <span class="cell-id">§26-29</span>
+      <div class="cell-title">Thesis End</div>
+      <div class="cell-note">Impl, Limits, Future</div>
+      <span class="tag concl">Concl</span>
+    </div>
+  </div>
+
+</body>
+
+</html>

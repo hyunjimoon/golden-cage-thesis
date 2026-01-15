@@ -1,10 +1,6 @@
 \hypertarget{ch:results}{%
 \chapter{Where the Cage Bites}\label{ch:results}}
 
-\begin{quote}
-\emph{"Where does it bite?"} \textbf{Key Numbers}: \ensuremath{\rho} = -0.196***, Mover Advantage = 2.60\ensuremath{\times}, Mobility Survival = 5.3\%
-\end{quote}
-
 \begin{figure}
 \hypertarget{fig:mover-advantage}{%
 \centering
@@ -52,13 +48,7 @@ To operationalize this relationship, I classify ventures as Movers or Stayers (p
 
 \textbf{Interpretive insight:} Both directions show elevated success rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification.
 
-\begin{figure}
-\hypertarget{fig:mover-vs-stayer}{%
-\centering
-\includegraphics[width=0.95\textwidth]{img/Ch4_Fig5_mover_vs_stayer.png}
-\caption{Anatomy of growth: movers vs.~stayers and the implied success multiple (figure values shown in plot).}\label{fig:mover-vs-stayer}
-}
-\end{figure}
+\emph{See Appendix E for detailed mover vs. stayer anatomy visualization.}
 
 \hypertarget{effect-size-contextualization}{%
 \subsection{Effect Size Contextualization}\label{effect-size-contextualization}}
@@ -75,7 +65,7 @@ The 2.60\ensuremath{\times} Mover advantage represents an 11.1 percentage point 
 \hypertarget{cross-industry-comparison}{%
 \subsection{Cross-Industry Comparison}\label{cross-industry-comparison}}
 
-The cage binds tighter in capital-intensive industries where switching costs are high. Table 6 presents verified correlations between early funding (E) and growth (G) across six industries.
+The cage binds tighter in capital-intensive industries where switching costs are high. The following table presents verified correlations between early funding (E) and growth (G) across six industries.
 
 \input{table/industry.tex}
 
@@ -94,7 +84,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Capital-intensive industries show strongest negative correlations.} Hardware (\ensuremath{\rho} = -0.108\textbf{\emph{) and Transportation (\ensuremath{\rho} = -0.101}}) face the tightest cage. Infrastructure and physical asset investments lock ventures into positions that cannot adapt.
+  \textbf{Capital-intensive industries show strongest negative correlations.} Hardware (\ensuremath{\rho} = -0.108) and Transportation (\ensuremath{\rho} = -0.101) face the tightest cage. Infrastructure and physical asset investments lock ventures into positions that cannot adapt.
 \item
   \textbf{Software shows near-zero correlation.} The software industry (\ensuremath{\rho} = -0.001, ns) demonstrates that low capital intensity allows Oxygen and Cage effects to approximately balance. Cheap experimentation offsets governance rigidity.
 \item
@@ -106,13 +96,7 @@ The cage binds tighter in capital-intensive industries where switching costs are
 
 Quantum's positive correlation (\ensuremath{\rho} = +0.095*) represents a boundary condition: when no dominant design exists \citep{anderson1990technological}, capital cannot lock ventures into architectural choices that have not crystallized, so dR/dE reverses sign.
 
-\begin{figure}
-\hypertarget{fig:industry-survival}{%
-\centering
-\includegraphics[width=0.9\textwidth]{img/Ch4_Fig4_industry_survival.png}
-\caption{Baseline survival to Series C+ varies across industries, motivating heterogeneous returns to flexibility.}\label{fig:industry-survival}
-}
-\end{figure}
+\emph{See Appendix E for industry survival baseline visualization.}
 
 \hypertarget{the-triple-vulnerability}{%
 \subsection{The Triple Vulnerability}\label{the-triple-vulnerability}}
@@ -157,9 +141,9 @@ The evidence supports all three hypotheses:
   \textbf{H3 (Funding Paradox) confirmed:} \ensuremath{\rho}(E,G) = -0.196*** ,  Net negative effect
 \end{itemize}
 
-The cage binds tightest in: - Capital-intensive industries (mobility, hardware, biotech) - High-uncertainty environments (nascent markets, regulatory flux) - First-time founders (who lack credibility for flexibility)
+The cage binds tightest in capital-intensive industries (mobility, hardware, biotech), high-uncertainty environments (nascent markets, regulatory flux), and among first-time founders (who lack credibility for flexibility).
 
-\textbf{So What ,  Actionable Implications:}
+\textbf{Actionable Implications:}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -171,12 +155,4 @@ The cage binds tightest in: - Capital-intensive industries (mobility, hardware, 
   \textbf{For Both:} Monitor repositioning patterns, not as failures of vision, but as signals of adaptive capacity. A founder who has never repositioned in three years is either perfectly calibrated or structurally caged.
 \end{enumerate}
 
-\emph{Section IV has demonstrated where the cage becomes lethal. Section V addresses how to design commitment structures that preserve adaptation capacity.}
-
-\begin{figure}
-\hypertarget{fig:growth-by-direction}{%
-\centering
-\includegraphics[width=0.9\textwidth]{img/Ch4_Fig3_growth_by_direction.png}
-\caption{Growth by direction of change: zoom-out (\(B\uparrow\)) and zoom-in (\(B\downarrow\)) ventures exhibit different median growth trajectories and multipliers.}\label{fig:growth-by-direction}
-}
-\end{figure}
+\emph{Section IV has demonstrated where the cage becomes lethal. Section V addresses how to design commitment structures that preserve adaptation capacity. See Appendix E for growth-by-direction visualization.}
