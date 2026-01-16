@@ -105,7 +105,7 @@ The resulting score ranges from 0 to 100. A score of 0 means maximally specific 
 
 \textbf{Argo AI (Stayer, $1.0\times$):} Argo AI maintained identical positioning from 2021 through its October 2022 shutdown: ``Level 4 autonomous driving technology for robotaxis.'' Despite \$3.6B in funding from Ford and Volkswagen, Argo failed to attract new investors when both backers reduced commitment. The company's inability to reposition illustrates the cage mechanism: Ford and VW, as thesis-driven investors, had funded a specific technical approach (robotaxis). When that approach encountered headwinds, Argo's board--populated solely by believers in robotaxis--lacked advocates for alternatives like trucking or OEM licensing. The cage was structural, not motivational.
 
-\textbf{The Key Pattern:} Both Movers achieved $\sim$3$\times$ growth multiples; the Stayer achieved $1.0\times$ (capital consumed without subsequent growth). The \emph{direction} of repositioning differed--Aurora zoomed out, Cruise zoomed in--but \emph{movement itself} distinguished survivors from the caged. This pattern motivates the binary Mover/Stayer classification used throughout the empirical analysis.
+\textbf{The Key Pattern:} Both Movers achieved $\sim$3$\times$ growth multiples; the Stayer achieved $1.0\times$ (capital consumed without subsequent growth). The \emph{direction} of repositioning differed--Aurora zoomed out, Cruise zoomed in--but \emph{movement itself} distinguished survivors from the caged. This pattern motivates the binary classification---\flex{Movers} who reposition versus Stayers who hold position---used throughout the empirical analysis.
 
 \hypertarget{repositioning-r}{%
 \subsection{Repositioning (R)}\label{repositioning-r}}
