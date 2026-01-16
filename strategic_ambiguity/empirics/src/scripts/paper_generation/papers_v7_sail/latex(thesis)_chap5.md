@@ -46,7 +46,7 @@ The distinction between committing to a vision and committing to an operation ex
 
 \textbf{Better Place} committed at the operational level: ``building battery swapping infrastructure.'' This formulation attracted only believers in that specific mechanism. It built a narrow coalition united by conviction in swapping rather than charging. When market feedback began to favor fast charging over swapping, no voice in the governance room advocated for a pivot. The skeptics of swapping had never invested. Despite raising \$850 million, Better Place liquidated in 2013 \citep{bradshaw2013better} because its commitment structure left no room for the market's evolution.
 
-Both companies attracted true believers. Only Tesla attracted \emph{diverse} true believers.
+Both companies attracted true believers. Only Tesla attracted \emph{diverse} true believers---and diversity is the \flex{Flexibility Flex}.
 
 \subsection{Practical Guidance}
 
