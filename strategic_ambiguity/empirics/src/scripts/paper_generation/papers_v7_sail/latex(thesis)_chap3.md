@@ -8,7 +8,7 @@ modified:
 \hypertarget{introduction}{%
 \section{Introduction}\label{sec:ch3-introduction}}
 
-Chapter~\ref{ch:theory} argued that funding creates a golden cage by homogenizing governance beliefs. This chapter describes how I test that theory. The core challenge is measuring flexibility---a latent capability that cannot be directly observed. My solution is to measure its behavioral manifestation: repositioning, the observable shift in a venture's strategic positioning over time. Ventures that reposition reveal they had flexibility; ventures that hold position may lack it.
+Chapter~\ref{ch:theory} argued that funding creates a golden cage by homogenizing governance beliefs. This chapter describes how I test that theory. The core challenge is measuring flexibility--a latent capability that cannot be directly observed. My solution is to measure its behavioral manifestation: repositioning, the observable shift in a venture's strategic positioning over time. Ventures that reposition reveal they had flexibility; ventures that hold position may lack it.
 
 I analyze 180,994 U.S. ventures from PitchBook (2021--2025). To measure repositioning, I use dictionary-based text analysis of company descriptions, computing how much each venture's strategic breadth changed between funding rounds. The method draws on established research in category spanning \citep{zuckerman1999the} and linguistic concreteness \citep{pan2018corporate}.
 
@@ -35,14 +35,14 @@ I operationalize \textbf{Strategic Breadth (B)} using dictionary-based text anal
 
 The measure combines two components. The first is \emph{Categorical Vagueness}: how much a description uses broad, umbrella terms (``platform,'' ``ecosystem,'' ``solution'') rather than specific market categories (``mobile payments,'' ``enterprise SaaS''). A company describing itself as a ``technology platform'' spans many categories; one describing itself as ``inventory management software for small retailers'' does not. The second component is \emph{Concreteness Deficit}: whether the description lacks specific binding markers such as quantitative targets (``10,000 users'') or narrow technical specifications (``HIPAA-compliant cloud storage'').
 
-The resulting score ranges from 0 to 100. A score of 0 means maximally specific positioning---the company has committed to a narrow path. A score of 100 means maximally vague positioning---the company retains many possible directions. The sample mean is B = 52.3 (SD = 18.4). Full construction details appear in Appendix A.
+The resulting score ranges from 0 to 100. A score of 0 means maximally specific positioning--the company has committed to a narrow path. A score of 100 means maximally vague positioning--the company retains many possible directions. The sample mean is B = 52.3 (SD = 18.4). Full construction details appear in Appendix A.
 
-\textbf{Illustrative Examples.} Table~\ref{tab:breadth-examples} demonstrates how the vagueness measure (B) captures strategic positioning breadth using examples from the autonomous vehicle (AV) industry---a capital-intensive sector where the golden cage mechanism binds tightly. Movers repositioned substantially between 2021--2025; Stayers maintained consistent positioning.
+\textbf{Illustrative Examples.} Table~\ref{tab:breadth-examples} demonstrates how the breadth measure (B) captures strategic positioning using examples from the autonomous vehicle (AV) industry--a capital-intensive sector where the golden cage mechanism binds tightly. Movers repositioned substantially between 2021--2025; Stayers maintained consistent positioning.
 
 \begin{table}[h]
 
 \centering
-\caption{Vagueness Measure: Illustrative Examples from AV Industry}
+\caption{Breadth Measure: Illustrative Examples from AV Industry}
 \label{tab:breadth-examples}
 
 \small
@@ -97,15 +97,15 @@ The resulting score ranges from 0 to 100. A score of 0 means maximally specific 
 
 \emph{Notes: B = vagueness score (0--100 scale); $\Delta B = B_T - B_0$; Growth Multiple $= F_t/E$ (total subsequent funding / early funding). *Argo AI shut down in October 2022; growth multiple reflects capital consumed before shutdown.}
 
-\textbf{Why AV?} The autonomous vehicle industry provides a natural laboratory for the golden cage mechanism because it combines three conditions that amplify the cage: (1) high capital intensity---\$100M+ funding rounds create strong sunk costs, (2) regulatory uncertainty---policy landscapes shift unpredictably across jurisdictions, and (3) technology path uncertainty---viable architectures compete (lidar vs. camera-only, robotaxi vs. personal AV, trucking vs. passenger). These conditions create strong investor sorting: VCs who fund AV ventures hold firm beliefs about which approach will win.
+\textbf{Why AV?} The autonomous vehicle industry provides a natural laboratory for the golden cage mechanism because it combines three conditions that amplify the cage: (1) high capital intensity--\$100M+ funding rounds create strong sunk costs, (2) regulatory uncertainty--policy landscapes shift unpredictably across jurisdictions, and (3) technology path uncertainty--viable architectures compete (lidar vs. camera-only, robotaxi vs. personal AV, trucking vs. passenger). These conditions create strong investor sorting: VCs who fund AV ventures hold firm beliefs about which approach will win.
 
-\textbf{Aurora (Zoom-Out, $3.2\times$):} Aurora began in 2021 as a trucking-focused company: ``autonomous trucks for freight logistics.'' By 2025, Aurora had broadened to a multi-modal ``Aurora Driver'' platform powering trucking, ride-hailing, and delivery. This repositioning---from specific application to general platform---attracted new partners (PACCAR, Volvo, Uber Freight) and enabled \$820M+ in additional funding. The zoom-out preserved optionality: if trucking unit economics proved unfavorable, the platform could pivot to other applications without abandoning the core technical asset.
+\textbf{Aurora (Zoom-Out, $3.2\times$):} Aurora began in 2021 as a trucking-focused company: ``autonomous trucks for freight logistics.'' By 2025, Aurora had broadened to a multi-modal ``Aurora Driver'' platform powering trucking, ride-hailing, and delivery. This repositioning--from specific application to general platform--attracted new partners (PACCAR, Volvo, Uber Freight) and enabled \$820M+ in additional funding. The zoom-out preserved optionality: if trucking unit economics proved unfavorable, the platform could pivot to other applications without abandoning the core technical asset.
 
 \textbf{Cruise (Zoom-In, $2.9\times$):} Cruise took the opposite path. In 2021, Cruise positioned broadly as an ``urban mobility'' company operating robotaxis in San Francisco. By 2025, GM's ``Cruise 2.0'' strategy narrowed focus: exiting the robotaxi business to license autonomous technology to OEMs for personal vehicles. This zoom-in responded to market signals that robotaxi unit economics were challenging. The repositioning freed Cruise from fleet operations costs while monetizing its core technical capability through licensing.
 
-\textbf{Argo AI (Stayer, $1.0\times$):} Argo AI maintained identical positioning from 2021 through its October 2022 shutdown: ``Level 4 autonomous driving technology for robotaxis.'' Despite \$3.6B in funding from Ford and Volkswagen, Argo failed to attract new investors when both backers reduced commitment. The company's inability to reposition illustrates the cage mechanism: Ford and VW, as thesis-driven investors, had funded a specific technical approach (robotaxis). When that approach encountered headwinds, Argo's board---populated solely by believers in robotaxis---lacked advocates for alternatives like trucking or OEM licensing. The cage was structural, not motivational.
+\textbf{Argo AI (Stayer, $1.0\times$):} Argo AI maintained identical positioning from 2021 through its October 2022 shutdown: ``Level 4 autonomous driving technology for robotaxis.'' Despite \$3.6B in funding from Ford and Volkswagen, Argo failed to attract new investors when both backers reduced commitment. The company's inability to reposition illustrates the cage mechanism: Ford and VW, as thesis-driven investors, had funded a specific technical approach (robotaxis). When that approach encountered headwinds, Argo's board--populated solely by believers in robotaxis--lacked advocates for alternatives like trucking or OEM licensing. The cage was structural, not motivational.
 
-\textbf{The Key Pattern:} Both Movers achieved $\sim$3$\times$ growth multiples; the Stayer achieved $1.0\times$ (capital consumed without subsequent growth). The \emph{direction} of repositioning differed---Aurora zoomed out, Cruise zoomed in---but \emph{movement itself} distinguished survivors from the caged. This pattern motivates the binary Mover/Stayer classification used throughout the empirical analysis.
+\textbf{The Key Pattern:} Both Movers achieved $\sim$3$\times$ growth multiples; the Stayer achieved $1.0\times$ (capital consumed without subsequent growth). The \emph{direction} of repositioning differed--Aurora zoomed out, Cruise zoomed in--but \emph{movement itself} distinguished survivors from the caged. This pattern motivates the binary Mover/Stayer classification used throughout the empirical analysis.
 
 \hypertarget{repositioning-r}{%
 \subsection{Repositioning (R)}\label{repositioning-r}}
@@ -119,14 +119,30 @@ I use two outcome measures. \textbf{Growth (G)} is a binary indicator: $G = 1$ i
 \hypertarget{descriptive-statistics}{%
 \section{Descriptive Statistics}\label{descriptive-statistics}}
 
-The sample divides into Stayers (107,917 ventures, 59.7\%) who show no strategic movement, and Movers (72,943 ventures, 40.3\%) who shifted their strategic breadth by a measurable amount. Overall, 11.5\% of ventures reach Later Stage VC by the end of the observation window, with average strategic breadth at baseline of B = 52.3 (SD = 18.4). Full descriptive statistics appear in Appendix A.
+\input{table/descriptive.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{img/Ch3_Fig1_distributions_E_B0.png}
+\caption{Distributions of Early Funding ($E$) and Baseline Strategic Breadth ($B_0$). Early funding is right-skewed with median \$1.5M; strategic breadth shows bimodal distribution concentrated at high values.}
+\label{fig:distributions-E-B0}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{img/Ch3_Fig2_distributions_R_G.png}
+\caption{Distributions of Repositioning ($R$) and Growth ($G$). 59.7\% of ventures show no repositioning (Stayers); 11.5\% reach Later Stage VC (Growth = 1).}
+\label{fig:distributions-R-G}
+\end{figure}
+
+The sample divides into Stayers (107,917 ventures, 59.7\%) who show no strategic movement, and Movers (72,943 ventures, 40.3\%) who shifted their strategic breadth by a measurable amount. Overall, 11.5\% of ventures reach Later Stage VC by the end of the observation window, with average strategic breadth at baseline of B = 52.3 (SD = 18.4).
 
 \hypertarget{identification-strategy}{%
 \section{Identification Strategy}\label{identification-strategy}}
 
-The central challenge is distinguishing selection from treatment effects. High-conviction founders may both raise more capital and resist pivoting---not because funding caused rigidity, but because conviction drove both outcomes. This concern is valid, and I do not claim causal identification.
+The central challenge is distinguishing selection from treatment effects. High-conviction founders may both raise more capital and resist pivoting--not because funding caused rigidity, but because conviction drove both outcomes. This concern is valid, and I do not claim causal identification.
 
-However, I argue that selection is part of the mechanism, not a confound to be eliminated. The golden cage theory predicts that funding and rigidity correlate \emph{because} committed founders attract committed investors through sorting. The selection concern is precisely what the theory describes. The question is not whether selection exists---it does---but whether the pattern is consistent with the theoretical mechanism.
+However, I argue that selection is part of the mechanism, not a confound to be eliminated. The golden cage theory predicts that funding and rigidity correlate \emph{because} committed founders attract committed investors through sorting. The selection concern is precisely what the theory describes. The question is not whether selection exists--it does--but whether the pattern is consistent with the theoretical mechanism.
 
 I address identification in three ways. First, I condition on survival: all ventures in the comparison survived to Year 3, ensuring equal opportunity to reposition. Among these ventures, Movers still achieve 2.60$\times$ higher success rates than Stayers. Second, I control for observable characteristics: founder experience, industry fixed effects, cohort timing, and initial positioning. Third, I interpret results as robust correlational patterns consistent with theory, not as causal effects. Future work could exploit quasi-experimental variation (VC fund vintage effects, geographic funding shocks) to strengthen causal claims.
 

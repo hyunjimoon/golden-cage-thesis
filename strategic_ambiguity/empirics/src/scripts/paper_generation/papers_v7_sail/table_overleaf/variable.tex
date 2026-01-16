@@ -1,0 +1,38 @@
+ \begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1818}}
+    >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2273}}
+    >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1364}}
+    >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4545}}@{}}
+  \caption{Variable Definitions and Causal Structure }\label{tab:variables}\tabularnewline
+  \toprule
+  \begin{minipage}[b]{\linewidth}\centering
+  Symbol
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Variable
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Type
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Operationalization
+  \end{minipage} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \begin{minipage}[b]{\linewidth}\centering
+  Symbol
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Variable
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Type
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Operationalization
+  \end{minipage} \\
+  \midrule
+  \endhead
+  \textbf{C} & Commitment & Choice & Initial strategic specificity index (0--100): product category count, milestone granularity, funding structure \\
+  \textbf{E} & Early Funding & Outcome & Early-stage capital secured (first\_financing\_size, M USD, log-transformed) \\
+  \textbf{F} & Flexibility & Capacity & Governance-permitted change capacity (inferred from R) \\
+  \textbf{B} & Strategic Breadth & State & Market positioning specificity (0--100 scale via dictionary-based vagueness) \\
+  \textbf{R} & Repositioning & Action & $|B_T - B_0|$, magnitude of strategic change \\
+  \textbf{G} & Growth & Outcome & Binary: $G = 1$ if reached Later Stage VC (Series C+); base rate 11.5\% \\
+  \bottomrule
+  \end{longtable}
