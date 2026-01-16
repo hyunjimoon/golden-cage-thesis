@@ -1,1 +1,0 @@
-[[📝🌳🌊Startup Lifecycle World modeling with Program Synthesis]]
