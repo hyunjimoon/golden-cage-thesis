@@ -45,7 +45,7 @@ The sequence proceeds in four steps. First, securing capital requires operationa
 
 This mechanism implies that funding itself suppresses the venture's ability to reposition. While traditional operations management views flexibility as a purchased asset \citep{jordan1995principles}, venture governance presents a fundamental asymmetry: capital does not ``buy'' flexibility; it often erodes it.
 
-\textbf{Hypothesis 1 (Commitment Cage):} \emph{Early-stage funding correlates negatively with repositioning.}
+\textbf{Hypothesis 1 (\cage{Commitment Cage}):} \emph{Early-stage funding correlates negatively with repositioning.}
 
 \[H_1: \frac{dR}{dE} < 0\]
 
@@ -79,7 +79,7 @@ In plain language: the theorem says that learning stops when everyone agrees too
 
 If flexibility allows ventures to escape the cage, and repositioning is the behavior of escaping, then repositioning should predict success.
 
-\textbf{Hypothesis 2 (Flexibility Flex):} \emph{Strategic repositioning correlates positively with later-stage growth.}
+\textbf{Hypothesis 2 (\flex{Flexibility Flex}):} \emph{Strategic repositioning correlates positively with later-stage growth.}
 
 \[H_2: \frac{dG}{dR} > 0\]
 
@@ -95,9 +95,9 @@ The Golden Cage theory synthesizes two established theories into a unified mecha
 
 We can now resolve the Funding-Growth Paradox through formal decomposition. The observed negative relationship between funding and growth is the product of two forces:
 
-\[\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\text{H2: Flex }(+)} \times \underbrace{\frac{dR}{dE}}_{\text{H1: Cage }(-)} = (+) \times (-) = (-)\]
+\[\frac{dG}{dE} = \underbrace{\frac{dG}{dR}}_{\textcolor{FlexColor}{\text{H2: Flex }(+)}} \times \underbrace{\frac{dR}{dE}}_{\textcolor{CageColor}{\text{H1: Cage }(-)}} = (+) \times (-) = (-)\]
 
-\textbf{Hypothesis 3 (Funding-Growth Paradox):} \emph{Early-stage funding correlates negatively with later-stage growth, mediated by lost flexibility.}
+\textbf{Hypothesis 3 (\paradox{Funding-Growth Paradox}):} \emph{Early-stage funding correlates negatively with later-stage growth, mediated by lost flexibility.}
 
 \[H_3: \frac{dG}{dE} < 0\]
 
