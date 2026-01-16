@@ -45,12 +45,12 @@ To operationalize this relationship, I classify ventures as Movers or Stayers (p
 
 \emph{Note: \ensuremath{\Delta}B = B\_T - \ensuremath{B_0}. Zoom-in = narrowing (\ensuremath{\Delta}B \textless{} 0); Zoom-out = expanding (\ensuremath{\Delta}B \textgreater{} 0). Remaining Movers (36,554) have minimal directional change.}
 
-\textbf{Interpretive insight:} Both directions show elevated growth rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three median-representative cases illustrate the pattern: Hope Care (broadening mover, G = 2.71$\times$), True Botanicals (narrowing mover, G = 2.45$\times$), and Leap Green Energy (stayer, G = 0.80$\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
+\textbf{Interpretive insight:} Both directions show elevated growth rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three AV industry cases from Table~\ref{tab:breadth-examples} illustrate the pattern: Aurora (zoom-out mover, $3.2\times$), Cruise (zoom-in mover, $2.9\times$), and Argo AI (stayer, $1.0\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
 
 \hypertarget{h3-paradox-heterogeneity}{%
 \section{H3: Paradox Heterogeneity}\label{sec:h3-paradox-heterogeneity}}
 
-The funding-growth paradox ($\rho(E,G) = -0.196^{***}$) is not uniform---it varies systematically across industries along two dimensions: capital intensity (Hardware vs.\ Software) and technological maturity (Mobility vs.\ Quantum).
+The funding-growth paradox ($\rho(E,G) = -0.196^{***}$) is not uniform--it varies systematically across industries along two dimensions: capital intensity (Hardware vs.\ Software) and technological maturity (Mobility vs.\ Quantum).
 
 The cage binds tighter in capital-intensive industries where switching costs are high. The following table presents verified correlations between early funding (E) and growth (G) across six industries.
 
