@@ -9,7 +9,7 @@ version: v4_synthesized (selected)
 \hypertarget{sec:ch5-introduction}{%
 \section{Introduction}\label{sec:ch5-introduction}}
 
-Chapter~\ref{ch:results} documented where the cage binds: early funding suppresses repositioning ($\rho = -0.087^{***}$), yet repositioning drives success ($2.60\times$ Mover Advantage). This creates a dilemma. To succeed, founders need resources to experiment. Yet acquiring those resources often eliminates the governance capacity to act on what experiments reveal.
+Chapter~\ref{ch:results} documented where the cage binds: capital-intensive industries like Hardware ($\rho = -0.108$) and Transportation ($\rho = -0.101$) face the tightest constraints, where infrastructure investments and regulatory uncertainty multiply the cost of wrong commitment. This creates a dilemma. To succeed, founders need resources to experiment. Yet acquiring those resources often eliminates the governance capacity to act on what experiments reveal.
 
 This chapter prescribes how to escape the cage. The solution is not to avoid funding, but to design commitment structures that preserve adaptation capacity while capturing commitment's credibility benefits.
 
@@ -52,7 +52,7 @@ Both companies attracted true believers. Only Tesla attracted \emph{diverse} tru
 
 For founders, the prescription is to articulate the vision at the level of the problem, not the solution. ``Accelerating sustainable transport'' preserves options; ``building battery swapping infrastructure'' forecloses them. Recruit board members who share your view on \emph{why} the company exists but hold diverse views on \emph{how} to achieve it. Diversity of implementation views is the fuel for future pivots.
 
-For investors, the prescription is to fund platform capabilities rather than product specificities. Platforms can pivot; products cannot. Distinguish between alignment on vision and lock-in on operations. A founder who shares your thesis about market direction can still disagree about implementation details---and that disagreement is valuable.
+For investors, the prescription is to fund platform capabilities rather than product specificities. Platforms can pivot; products cannot. Distinguish between alignment on vision and lock-in on operations. A founder who shares your thesis about market direction can still disagree about implementation details--and that disagreement is valuable.
 
 %% ============================================================
 \hypertarget{sec:balanced-growth}{%
@@ -103,6 +103,8 @@ The ARPA-E grant worked exactly as the Funding Ladder predicts: government recog
 \subsection{Preserving Skeptics in Governance}
 
 Even with dilutive funding, governance design can preserve signal diversity. The cage crystallizes when governance lacks advocates for alternative paths, so founders must actively design to preserve skeptics. Syndicate composition matters: actively recruit at least one investor with a distinct investment thesis, because a deep-tech investor building a syndicate of fellow deep-tech funds creates belief lock-in while adding a generalist introduces productive tension. Board structure matters: reserve a seat for an independent director who holds no financial stake in the current direction and brings domain expertise that challenges rather than reinforces the current strategy. Decision rules matter: institute requirements to document the strongest argument against the current path before major capital deployments, and consider a designated ``red team'' director whose role is to surface counterarguments rather than build consensus.
+
+\input{table/governance.tex}
 
 %% ============================================================
 \hypertarget{sec:ch5-conclusion}{%
