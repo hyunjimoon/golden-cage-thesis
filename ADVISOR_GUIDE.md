@@ -15,7 +15,8 @@ Click any commit → **red** = deleted, **green** = added.
 | **Charlie** | "Present both sides" | §6.2 Alternative Explanations | Jan 13 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/543f4f5) |
 | **Lorry** | "correlation vs causality" | R&R addressed | Jan 13 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/8b40738) |
 | **Miaomiao** | "LESS IS MORE" | All chapters trimmed | Jan 14 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/aceaf88) |
-| **Angie** | Ch3/Ch4/Ch5 bugs | Terminology + examples + opener + tables/figures | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/01d433a) |
+| **Angie** | Ch3/Ch4/Ch5 bugs | Terminology + examples + opener + tables/figures | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/8aa6760) |
+| **Angie** | Visual clarity | Color system: 🟢H3 🔴H1 🔵H2 | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/d9f9996) |
 
 ---
 

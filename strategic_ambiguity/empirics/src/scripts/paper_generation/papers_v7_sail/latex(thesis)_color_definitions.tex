@@ -1,0 +1,50 @@
+% ============================================
+% COLOR DEFINITIONS FOR GOLDEN CAGE THESIS
+% ============================================
+% Usage: \input{latex(thesis)_color_definitions.tex} in preamble
+%
+% To disable colors (e.g., for thesis submission):
+%   Change \colortermstrue to \colortermsfalse
+% ============================================
+
+\usepackage{xcolor}
+
+% Color toggle switch
+\newif\ifcolorterms
+\colortermstrue  % Set to \colortermsfalse for black-only output
+
+% Define colors based on toggle
+\ifcolorterms
+  % Paradox = Green (H1: overall phenomenon)
+  \definecolor{ParadoxColor}{RGB}{40,167,69}
+  % Cage = Red (H2: constraint, suppression)
+  \definecolor{CageColor}{RGB}{220,53,69}
+  % Flex = Blue (H3: flexibility, growth)
+  \definecolor{FlexColor}{RGB}{0,123,255}
+\else
+  % All black for formal submission
+  \definecolor{ParadoxColor}{RGB}{0,0,0}
+  \definecolor{CageColor}{RGB}{0,0,0}
+  \definecolor{FlexColor}{RGB}{0,0,0}
+\fi
+
+% ============================================
+% SEMANTIC MACROS
+% ============================================
+% Use these instead of raw \textcolor for consistency
+
+% H1: Funding-Growth Paradox (green)
+\newcommand{\paradox}[1]{\textcolor{ParadoxColor}{\textbf{#1}}}
+
+% H2: Commitment Cage (red)
+\newcommand{\cage}[1]{\textcolor{CageColor}{\textbf{#1}}}
+
+% H3: Flexibility Flex (blue)
+\newcommand{\flex}[1]{\textcolor{FlexColor}{\textbf{#1}}}
+
+% ============================================
+% COLOR LEGEND (for reference)
+% ============================================
+% Green (ParadoxColor): Funding-Growth Paradox, H1, rho(E,G)
+% Red (CageColor): Commitment Cage, H2, rho(E,R), suppression
+% Blue (FlexColor): Flexibility Flex, H3, Mover Advantage, growth

@@ -10,13 +10,13 @@ modified:
 
 Chapter~\ref{ch:theory} theorized that funding creates a golden cage through governance homogenization. Chapter~\ref{ch:data} described how I measure repositioning from company descriptions. This chapter tests whether the patterns exist in the data.
 
-I test three hypotheses. First, the Commitment Cage (H1): does funding suppress repositioning? Second, the Flexibility Flex (H2): does repositioning predict success? Third, the Funding-Growth Paradox (H3): does early funding correlate negatively with later success? The theory predicts that H3 arises because H1 and H2 combine: funding suppresses the very mechanism (repositioning) that drives success. The results confirm all three hypotheses: funding suppresses repositioning ($\rho = -0.087^{***}$), repositioning predicts success (Movers outperform Stayers by 2.60$\times$), and the overall funding-growth correlation is negative ($\rho = -0.196^{***}$). I also document where the paradox is strongest: the cage binds tightest in capital-intensive sectors like Hardware and Transportation, but loosens in pre-paradigmatic sectors like Quantum.
+I test three hypotheses. First, the \cage{Commitment Cage} (H1): does funding suppress repositioning? Second, the \flex{Flexibility Flex} (H2): does repositioning predict success? Third, the \paradox{Funding-Growth Paradox} (H3): does early funding correlate negatively with later success? The theory predicts that H3 arises because H1 and H2 combine: funding suppresses the very mechanism (repositioning) that drives success. The results confirm all three hypotheses: funding suppresses repositioning ($\rho = -0.087^{***}$), repositioning predicts success (Movers outperform Stayers by 2.60$\times$), and the overall funding-growth correlation is negative ($\rho = -0.196^{***}$). I also document where the paradox is strongest: the cage binds tightest in capital-intensive sectors like Hardware and Transportation, but loosens in pre-paradigmatic sectors like Quantum.
 
 \begin{figure}
 \hypertarget{fig:mover-advantage}{%
 \centering
 \includegraphics[width=0.9\textwidth,]{img/Ch4_Fig1_G_by_R.png}
-\caption{The Mover Advantage. Ventures that reposition (Movers) achieve 18.1\% success rates; those that hold position (Stayers) achieve only 7.0\%. This 2.60$\times$ difference is the Flexibility Flex.}\label{fig:mover-advantage}
+\caption{The Mover Advantage. Ventures that reposition (Movers) achieve 18.1\% success rates; those that hold position (Stayers) achieve only 7.0\%. This 2.60$\times$ difference is the \flex{Flexibility Flex}.}\label{fig:mover-advantage}
 }
 \end{figure}
 
@@ -71,7 +71,7 @@ Three patterns emerge. Capital-intensive industries show the strongest negative 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-The evidence supports all three hypotheses. The Commitment Cage (H1) is confirmed: funding suppresses repositioning ($\rho = -0.087$***). The Flexibility Flex (H2) is confirmed: Movers achieve 2.60$\times$ higher success rates than Stayers (18.1\% vs 7.0\%). The Funding-Growth Paradox (H3) is confirmed: early funding correlates negatively with later success ($\rho = -0.196$***).
+The evidence supports all three hypotheses. The \cage{Commitment Cage} (H1) is confirmed: funding suppresses repositioning ($\rho = -0.087$***). The \flex{Flexibility Flex} (H2) is confirmed: Movers achieve 2.60$\times$ higher success rates than Stayers (18.1\% vs 7.0\%). The \paradox{Funding-Growth Paradox} (H3) is confirmed: early funding correlates negatively with later success ($\rho = -0.196$***).
 
 The cage does not bind uniformly. It is tightest in capital-intensive industries like Hardware and Transportation, where infrastructure investments create switching costs. It loosens in pre-paradigmatic sectors like Quantum, where no dominant design constrains architectural choices. This heterogeneity is consistent with the theory: the cage forms through commitment, and commitment matters more when switching costs are high.
 

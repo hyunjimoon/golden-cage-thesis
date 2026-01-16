@@ -190,9 +190,9 @@ Under rank normalization:
 
 \begin{itemize}
     \item \textbf{Golden Cage}: Structural constraint preventing adaptation due to governance homogeneity; forms through $C \rightarrow E \rightarrow F\downarrow \rightarrow R\downarrow \rightarrow G\downarrow$
-    \item \textbf{Funding-Growth Paradox (H3)}: $\rho(E,G) < 0$; early funding correlates negatively with later-stage growth
-    \item \textbf{Commitment Cage (H1)}: $dR/dE < 0$; funding suppresses repositioning
-    \item \textbf{Flexibility Flex (H2)}: $dG/dR > 0$; repositioning predicts growth
+    \item \paradox{Funding-Growth Paradox (H3)}: $\rho(E,G) < 0$; early funding correlates negatively with later-stage growth
+    \item \cage{Commitment Cage (H1)}: $dR/dE < 0$; funding suppresses repositioning
+    \item \flex{Flexibility Flex (H2)}: $dG/dR > 0$; repositioning predicts growth
     \item \textbf{Decomposition}: $dG/dE = (dG/dR) \times (dR/dE) = (+) \times (-) = (-)$; H3 = H2 $\times$ H1
     \item \textbf{Van den Steen Sorting}: Optimists attract optimists; skeptics self-select out, producing belief homogeneity
     \item \textbf{Strategic Ambiguity}: Precision about direction combined with flexibility about destination; attracts diverse believers
