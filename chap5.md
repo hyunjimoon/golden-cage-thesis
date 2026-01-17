@@ -1,10 +1,10 @@
 ::: {#ch:design}
-# Dancing with the Cage {#ch:design}
+# Architecting Commitment for Flexibility {#ch:design}
 :::
 
 ## Introduction {#sec:ch5-introduction}
 
-Chapter [\[ch:results\]](#ch:results){reference-type="ref"
+Chapter [\[ch:results\]](#ch:results){reference-type="ref"
 reference="ch:results"} documented where the cage binds:
 capital-intensive industries like Hardware ($\rho = -0.108$) and
 Transportation ($\rho = -0.101$) face the tightest constraints, where
@@ -13,84 +13,98 @@ of wrong commitment. This creates a dilemma. To succeed, founders need
 resources to experiment. Yet acquiring those resources often eliminates
 the governance capacity to act on what experiments reveal.
 
-Figure [1.1](#fig:three-solutions){reference-type="ref"
+This chapter bridges entrepreneurial operations [@fine1998clockspeed] and
+strategic commitment [@ghemawat1991commitment] to show how the temporal
+coordination of capabilities and capital preserves optionality. I introduce
+three architectural levers---**Scope**, **Synchronization**, and
+**Sequencing**---that collectively enable founders to orchestrate flexibility.
+These levers address the fundamental tension between commitment's credibility
+benefits and flexibility's adaptation benefits, treating both as design
+variables rather than exogenous constraints.
+
+Figure [5.1](#fig:three-solutions){reference-type="ref"
 reference="fig:three-solutions"} previews the three solutions developed
 in this chapter.
 
 <figure id="fig:three-solutions" data-latex-placement="htbp">
 <img src="img/Ch5_Fig2_three_solutions.png" />
-<figcaption>Three Solutions to the Golden Cage. <strong>Left:</strong>
-Strategic Ambiguity—the Q3 sweet spot where moderate positioning breadth
-maximizes survival. <strong>Middle:</strong> Balanced Growth—avoiding
-the Scale Trap (demand without delivery capacity) and the Operational
-Trap (capability without market pull) by growing along the diagonal.
-<strong>Right:</strong> The Funding Ladder—climbing from non-dilutive
-grants through matching capital to thesis-driven VC, preserving
-flexibility until market signals clarify.</figcaption>
+<figcaption>Three Architectural Levers for Flexibility. <strong>Left:</strong>
+Scope—the $Q3$ sweet spot where moderate positioning breadth maximizes
+survival. <strong>Middle:</strong> Synchronization—avoiding the Scale Trap
+(demand without delivery capacity) and the Operational Trap (capability
+without market pull) by evolving along the diagonal. <strong>Right:</strong>
+Sequencing—climbing from non-dilutive grants through matching capital to
+thesis-driven VC, preserving optionality until market signals clarify.</figcaption>
 </figure>
 
-This chapter prescribes how to dance with the cage---not to escape it
-entirely, but to work within its constraints while preserving adaptation
-capacity. The solution is not to avoid funding, but to design commitment
-structures that capture commitment's credibility benefits while
-maintaining flexibility.
+The architecture of commitment determines whether a venture can respond
+to market signals. The first lever is *Scope*: what breadth of commitment
+to make. Commit too narrowly, and the venture attracts only believers in
+one specific path. Commit too broadly, and credibility collapses.
+Section [5.2](#sec:scope-commitment){reference-type="ref"
+reference="sec:scope-commitment"} develops strategic ambiguity as a
+rigorous design choice---committing to a thesis (vision) rather than an
+architecture (solution).
 
-Dancing with the cage requires founders to address three distinct
-decisions. The first decision is *what to commit to*. A founder must
-choose how to describe the venture's direction. Commit too narrowly, and
-the venture attracts only believers in one specific path. Commit too
-broadly, and credibility collapses. Strategic Ambiguity
-(§[1.2](#sec:strategic-ambiguity){reference-type="ref"
-reference="sec:strategic-ambiguity"}) addresses this: commit to
-direction, not destination.
+The second lever is *Synchronization*: how to coordinate capability
+scaling with market evolution. A venture can have great technology but
+no customers, or huge demand but no capacity to deliver.
+Section [5.3](#sec:synchronized-scaling){reference-type="ref"
+reference="sec:synchronized-scaling"} frames this as a dynamic coupling
+problem, applying constraint theory to diagnose bottlenecks before they
+lock in suboptimal configurations.
 
-The second decision is *how to grow*. A venture can have great
-technology but no customers, or huge demand but no capacity to deliver.
-Balanced Growth (§[1.3](#sec:balanced-growth){reference-type="ref"
-reference="sec:balanced-growth"}) addresses this: diagnose whether the
-bottleneck is market pull or operational capability, and fix it before
-locking in the other dimension.
+The third lever is *Sequencing*: when to accept different forms of
+capital. Different capital sources impose different governance
+constraints. Section [5.4](#sec:sequencing-capital){reference-type="ref"
+reference="sec:sequencing-capital"} shows how the temporal ordering of
+funding sources determines whether the venture retains the option to
+pivot when market signals suggest changing direction.
 
-The third decision is *how to fund*. Different capital sources impose
-different governance constraints. Thesis-driven VCs bring expertise but
-also belief homogeneity. Government grants bring credibility but move
-slowly. The Funding Ladder
-(§[1.4](#sec:funding-ladder){reference-type="ref"
-reference="sec:funding-ladder"}) addresses this: sequence funding
-sources so that flexibility survives long enough for market signals to
-clarify direction.
-
-## Strategic Ambiguity {#sec:strategic-ambiguity}
+## The Scope of Commitment {#sec:scope-commitment}
 
 The cage forms when a founder commits to a specific operational path so
 convincingly that they attract a homogeneous coalition of believers in
-that path. Strategic ambiguity solves this problem [@eisenberg1984ambiguity;
-@bransby2025provisional]. It does not mean being vague about the mission.
-It means being precise about the *direction* while remaining flexible about
-the *destination*. This
-approach carries risks: ambiguity can undermine credibility in the short
-term even as it preserves flexibility for the long term [@abdallah2014double].
-The key is finding the level of abstraction that maintains coalition
-breadth without sacrificing the specificity needed to attract resources.
+that path. This section develops strategic ambiguity not as vagueness,
+but as a rigorous design choice to commit to a *thesis* (vision) rather
+than a specific *architecture* (solution).
 
-### The Sweet Spot
+### The Principle: Strategic Ambiguity as Design Choice {#sec:scope-principle}
 
-Figure [1.2](#fig:sweet-spot){reference-type="ref"
+Strategic ambiguity [@eisenberg1984ambiguity] enables flexibility by
+attracting diverse believers. This is not imprecision about the
+mission---it is precision about the *direction* while remaining flexible
+about the *destination*. The principle operates through coalition
+composition: founders who articulate broad visions attract stakeholders
+who project their own interpretations onto the vision. This diversity
+becomes the governance fuel for pivots: when market signals suggest
+changing direction, at least some board members will advocate for
+alternatives.
+
+The distinction maps onto @ghemawat1991commitment's framework:
+vision-level commitment creates *lock-in* (stakeholder alignment) without
+*lock-out* (competitor exclusion through narrow positioning). The founder
+secures the credibility benefits of commitment while preserving the
+option value of flexibility.
+
+### Evidence: The Survival Premium of Moderate Breadth {#sec:scope-evidence}
+
+Figure [5.2](#fig:sweet-spot){reference-type="ref"
 reference="fig:sweet-spot"} reveals the empirical pattern. Analyzing
-survival rates across positioning breadth, ventures with moderate
-breadth (Q3) achieve 15.0% survival ($n = 37{,}274$). This outperforms
-both narrow positioning (Q1: 7.1%, Q2: 11.4%) and maximally broad
-positioning (Q4: 10.7%).
+survival rates across positioning breadth, ventures in the $Q3$ "sweet
+spot" achieve a **15.0% survival rate** ($n = 37{,}274$). This
+significantly outperforms both narrow positioning ($Q1$: 7.1%, $Q2$:
+11.4%) and maximally broad positioning ($Q4$: 10.7%).
 
 <figure id="fig:sweet-spot" data-latex-placement="htbp">
 <img src="img/Ch5_Fig1_sweet_spot.png" style="width:85.0%" />
-<figcaption>The Strategic Ambiguity Sweet Spot. Q3 positioning achieves
-15.0% survival, higher than both narrow (Q1: 7.1%, Q2: 11.4%) and
-maximally broad (Q4: 10.7%) positioning.</figcaption>
+<figcaption>The Survival Premium of Moderate Breadth. $Q3$ positioning
+achieves 15.0% survival, higher than both narrow ($Q1$: 7.1%, $Q2$:
+11.4%) and maximally broad ($Q4$: 10.7%) positioning.</figcaption>
 </figure>
 
-This finding aligns with the logic of Theorem 1
-(Chapter [\[ch:theory\]](#ch:theory){reference-type="ref"
+This finding aligns with the logic of Theorem 1
+(Chapter [\[ch:theory\]](#ch:theory){reference-type="ref"
 reference="ch:theory"}). When positioning is too narrow, it attracts a
 highly concentrated set of believers. As belief homogeneity rises and
 strategic breadth narrows, the conditions for organizational learning
@@ -98,65 +112,84 @@ collapse. Moderate breadth preserves enough coalition diversity to keep
 alternative paths alive in the boardroom without sacrificing the
 credibility required to raise capital.
 
-### Vision-Level vs. Operational Commitment
+The Tesla-Better Place contrast illustrates the mechanism. **Tesla**
+committed at the thesis level: "accelerating the world's transition to
+sustainable transport." This formulation attracted believers in
+electrification, believers in autonomy, and believers in the energy
+transition. Each stakeholder projected their own thesis onto the vision.
+When Tesla needed to pivot across market segments (Roadster $\rightarrow$
+Model S $\rightarrow$ Model 3), the governance board supported these
+adaptations because multiple interpretations of "sustainable transport"
+remained valid.
 
-The distinction between committing to a vision and committing to an
-operation explains the divergent fates of two prominent electric vehicle
-ventures.
-
-**Tesla** committed at the vision level: "accelerating the world's
-transition to sustainable transport." This formulation attracted
-believers in electrification, believers in autonomy, and believers in
-the energy transition. Each stakeholder projected their own thesis onto
-the vision. When Tesla needed to pivot across market segments (Roadster
-$\rightarrow$ Model S $\rightarrow$ Model 3) or change its retail model,
-the governance board supported these adaptations because multiple
-interpretations of "sustainable transport" remained valid. The vision
-accommodated the pivot.
-
-**Better Place** committed at the operational level: "building battery
+**Better Place** committed at the architecture level: "building battery
 swapping infrastructure." This formulation attracted only believers in
-that specific mechanism. It built a narrow coalition united by
-conviction in swapping rather than charging. When market feedback began
-to favor fast charging over swapping, no voice in the governance room
-advocated for a pivot. The skeptics of swapping had never invested.
-Despite raising \$850 million, Better Place liquidated in 2013
+that specific mechanism. When market feedback began to favor fast
+charging over swapping, no voice in the governance room advocated for a
+pivot. Despite raising \$850 million, Better Place liquidated in 2013
 [@bradshaw2013better] because its commitment structure left no room for
-the market's evolution.
+the market's evolution. Both companies attracted true believers. Only
+Tesla attracted *diverse* true believers.
 
-Both companies attracted true believers. Only Tesla attracted *diverse*
-true believers.
+### Guidance: Establishing Disagreement-Preserving Visions {#sec:scope-guidance}
 
-### Practical Guidance
+The design task is to structure a vision that allows governance members
+to agree on the *why* while diverging on the *how*. This
+disagreement-preserving architecture has three components:
 
-For founders, the prescription is to articulate the vision at the level
-of the problem, not the solution. "Accelerating sustainable transport"
-preserves options; "building battery swapping infrastructure" forecloses
-them. Recruit board members who share your view on *why* the company
-exists but hold diverse views on *how* to achieve it. Diversity of
-implementation views is the fuel for future pivots.
+**For founders**: Articulate the vision at the level of the problem, not
+the solution. "Accelerating sustainable transport" preserves options;
+"building battery swapping infrastructure" forecloses them. Recruit
+board members who share your view on *why* the company exists but hold
+diverse views on *how* to achieve it. Diversity of implementation views
+is the governance fuel for future pivots.
 
-For investors, the prescription is to fund platform capabilities rather
-than product specificities. Platforms can pivot; products cannot.
-Distinguish between alignment on vision and lock-in on operations. A
-founder who shares your thesis about market direction can still disagree
-about implementation details--and that disagreement is valuable.
+**For investors**: Fund platform capabilities rather than product
+specificities. Platforms can pivot; products cannot. Distinguish between
+alignment on thesis and lock-in on architecture. A founder who shares
+your thesis about market direction can still disagree about
+implementation details---and that disagreement is valuable because it
+preserves the option to adapt.
 
-## Balanced Growth {#sec:balanced-growth}
+**For boards**: Institute decision rules that require articulating the
+strongest argument against the current path before major resource
+deployments. The goal is not consensus but *informed* consensus---ensuring
+that alternative paths have advocates before they are foreclosed.
+
+## Synchronized Capability Scaling {#sec:synchronized-scaling}
 
 The cage often snaps shut when a venture scales one dimension of its
-business before the other dimension catches up. @fine2022operations
-offers a diagnostic framework: Growth $=$ Market $\times$ Ops. Ventures
-must grow market size and operational capability in parallel. Growth
-that occurs exclusively on one axis creates a bottleneck that traps the
-venture.
+business before the other dimension catches up. This section frames
+balanced growth as a dynamic coupling problem: the temporal coordination
+of market development and operational capability determines whether
+scaling creates flexibility or constraint.
 
-### The Diagonal Principle
+### The Principle: The Diagonal of Synchronized Evolution {#sec:sync-principle}
 
-Founders must diagnose which bottleneck currently threatens the business
-and direct commitment toward that specific constraint before locking in
-the other dimension. Two archetypes illustrate the danger of
-off-diagonal growth.
+@fine2022operations offers a diagnostic framework grounded in operations
+strategy: Growth $=$ Market $\times$ Ops. Ventures must grow market size
+and operational capability in parallel. Growth that occurs exclusively
+on one axis creates a bottleneck that traps the venture.
+
+The principle can be understood through constraint theory. At any point,
+the venture faces a binding constraint---either insufficient market pull
+(demand) or insufficient operational capability (supply). The founder's
+task is to identify the binding constraint and direct commitment toward
+*that specific dimension* before locking in the other. This is the
+Diagonal Principle: evolve capabilities in synchronization with market
+demand, never committing to one dimension while the other lags.
+
+The constraint has what we might call *elasticity*---the degree to which
+relaxing one constraint enables growth in the other. When market pull is
+elastic (many potential customers await), operational investment creates
+growth. When operational capability is elastic (capacity exists to serve
+more customers), market development creates growth. Misdiagnosis leads
+to commitment in the wrong dimension, wasting resources and foreclosing
+options.
+
+### Evidence: Asymmetric Scaling Traps {#sec:sync-evidence}
+
+Two archetypes illustrate the danger of off-diagonal scaling.
 
 **NxStage** fell into the Operational Trap [@fine2022operations]. The
 company developed breakthrough home hemodialysis technology and built
@@ -164,126 +197,146 @@ operational capability that far exceeded the market's readiness.
 Nephrologists lacked incentives to prescribe home care. NxStage had
 excellent operations serving insufficient demand. The bottleneck was
 market pull, yet the company continued to commit to operational
-perfection.
+perfection. The mismatch created a cage: operational investments locked
+in a configuration that the market did not yet support.
 
-**SkinnyGirl Cocktails** fell into the opposite trap
+**SkinnyGirl Cocktails** fell into the opposite trap---the Scale Trap
 [@fine2022operations]. The brand became the fastest-growing spirits
 company with enormous consumer demand. But its fulfillment partner could
 not scale the supply chain to match. SkinnyGirl had market traction
 without the delivery foundation to capture it. The bottleneck was
-operational capability.
+operational capability. The mismatch created a different cage: demand
+commitments (marketing, distribution contracts) locked in obligations
+that operations could not fulfill.
 
-### Application
+Both companies committed to the wrong dimension. NxStage overinvested in
+operations when the binding constraint was market pull. SkinnyGirl
+overinvested in market development when the binding constraint was
+operational capacity. The cage forms not from commitment per se, but
+from *asymmetric* commitment that misaligns with the system's binding
+constraint.
 
-The prescription is to apply the Diagonal Principle. If the bottleneck
-is market pull (NxStage), commit to business development, partnerships,
-and channel validation while keeping operations flexible. If the
-bottleneck is operational capability (SkinnyGirl), commit to logistics,
-manufacturing, and quality while throttling demand generation.
+### Guidance: Bottleneck Diagnosis and Resolution {#sec:sync-guidance}
+
+The prescription is to apply the Diagonal Principle through systematic
+bottleneck diagnosis:
+
+**Diagnose the binding constraint**: At each stage, ask: "If we doubled
+our operational capacity, would revenue double? If we doubled our market
+demand, could we serve it?" The dimension where the answer is "no"
+reveals the binding constraint.
+
+**Commit to the constraint**: Direct resources toward the binding
+constraint. If the bottleneck is market pull (NxStage), commit to
+business development, partnerships, and channel validation while keeping
+operations flexible. If the bottleneck is operational capability
+(SkinnyGirl), commit to logistics, manufacturing, and quality while
+throttling demand generation.
+
+**Preserve flexibility in the non-binding dimension**: Do not lock in
+the non-binding dimension prematurely. The market may evolve, shifting
+the constraint. A venture that commits to both dimensions simultaneously
+loses the option to rebalance when the constraint shifts.
 
 The cage binds when a venture commits to scaling operations while the
-bottleneck remains the market. Commitment to one dimension while the
-other lags creates the trap.
+bottleneck remains the market---or vice versa. The founder's role is
+architectural alignment: ensuring that commitment matches constraint at
+each stage of evolution.
 
-## The Funding Ladder {#sec:funding-ladder}
+## Sequencing Capital for Optionality {#sec:sequencing-capital}
 
 Capital is not just fuel; it is a governance contract. Different sources
-of capital impose different constraints on flexibility. Escaping the
-cage requires matching the rigidity of commitment to the certainty of
-the market.
+of capital impose different constraints on flexibility. This section
+shows how the temporal ordering of funding sources---the *sequence* of
+capital---determines whether the venture retains the option to pivot
+when market signals suggest changing direction.
 
-### The Symmetry Principle
+### The Principle: Asymmetric Commitment Structuring {#sec:seq-principle}
 
 Venture capitalists manage risk through staged financing: they commit
 capital in tranches, releasing funds only when milestones are met,
-preserving their option value. @rhodeskropf2024 advocate this "smart VC"
-approach. Founders should apply the same logic---stage operational
-commitments just as investors stage financial commitments. Yet founders
-often abandon this optionality prematurely to signal conviction,
-committing fully to a specific product roadmap to secure the first
-tranche of capital. This creates an asymmetry: the investor retains the
-option to leave, but the founder has sold the option to pivot.
+preserving their option value [@rhodeskropf2024]. Founders should apply
+the same logic---stage operational commitments just as investors stage
+financial commitments. Yet founders often abandon this optionality
+prematurely to signal conviction, committing fully to a specific product
+roadmap to secure the first tranche of capital.
 
-### Case Contrast: Timing of Commitment
+This creates an asymmetry: the investor retains the option to leave, but
+the founder has sold the option to pivot. The Symmetry Principle
+corrects this: align the *rigidity* of operational commitment with the
+*certainty* of market validation. Commit operationally only when market
+signals justify foreclosing alternatives.
 
-**Segway** illustrates premature commitment [@gans2021entrepreneurship].
-The company raised over \$100 million committed to a specific gyroscopic
-form factor before validating market demand. The vision was
-appropriately broad---"revolutionize personal transportation"---but the
-operational lock-in was premature. When feedback indicated the device
-was ill-suited for sidewalks, the sunk costs forbade a pivot. Segway
-committed operationally before the market committed financially.
+The Funding Ladder operationalizes this principle through capital
+sequencing:
 
-**Tesla** illustrates the alternative. The vision---"accelerate the
-world's transition to sustainable energy"---never changed. But
-operational choices evolved as learning accumulated. The Roadster was
-Phase 1: prove EVs can be desirable. Model S was Phase 2: scale to mass
-market. Model 3 was Phase 3: democratize access. Each stage validated
-before the next began. Tesla staged commitment to match staged learning.
+1. **Non-dilutive capital** (NSF, DARPA, DOE grants): Provides resources
+   without board seats. Government recognition signals technical
+   credibility without imposing governance constraints.
+2. **Matching capital** (state and local grants): Compounds the
+   credibility signal and extends runway without adding thesis-driven
+   investors to governance.
+3. **Thesis-driven capital** (venture capital): Accepted only after
+   market signals have clarified direction, allowing the venture to
+   negotiate from strength rather than desperation.
 
-### The Funding Ladder
+This sequencing preserves flexibility by delaying governance
+homogenization until the venture has learned enough to justify
+commitment.
 
-One of the most effective ways to preserve flexibility is to sequence
-non-dilutive capital before taking thesis-driven venture capital. The
-first rung is federal grants from agencies like NSF, DARPA, and
-DOE---these provide capital without board seats, and winning a
-competitive government grant signals technical credibility to future
-investors. The second rung is state and local matching grants that
-compound the credibility signal and extend runway without adding
-governance constraints. The third rung is private investors, who by this
-point face reduced perceived risk because government recognition and
-clarified market signals allow the venture to attract thesis-driven
-capital from a position of strength rather than desperation. This
-sequencing enables ventures to survive the "valley of death" while
-building the track record that first-time founders lack. (See
-Appendix [\[app:e\]](#app:e){reference-type="ref" reference="app:e"} for
-a catalog of non-dilutive funding sources.)
+### Evidence: Path Dependence vs. Governance Lock-in {#sec:seq-evidence}
 
-### Case: Fast Ion Battery
+Two failure modes illustrate why sequence matters---and why they require
+different diagnoses.
 
-Fast Ion Battery illustrates both the power and the limits of the
-Funding Ladder---and why sequence matters [@nanda2015fastionbattery].
-Fast Ion developed a breakthrough battery technology at MIT. In 2008,
-three venture capital firms invested \$10 million in a Series A round,
-all sharing the same investment thesis: cleantech was the next big
-opportunity. This created a governance structure where everyone believed
-in the same future. The company made slow progress and by late 2009 had
-not met all its milestones. However, it won a \$2 million ARPA-E grant
-from the Department of Energy. This government recognition changed the
-investors' calculus---as one board member noted, the ARPA-E award
-provided "certification" and would serve as "validation" for future
-investors. The existing investors released the next tranche of funding.
+**Segway** failed due to *path dependence* (sunk costs). The company
+raised over \$100 million committed to a specific gyroscopic form factor
+before validating market demand [@gans2021entrepreneurship]. The vision
+was appropriately broad---"revolutionize personal transportation"---but
+the operational lock-in was premature. When feedback indicated the
+device was ill-suited for sidewalks, the sunk costs forbade a pivot.
+Segway committed operationally before the market committed financially.
+The cage was technological: physical assets that could not be redeployed.
 
-The ARPA-E grant worked exactly as the Funding Ladder predicts:
-government recognition reduced perceived risk and signaled technical
-credibility. But there was a critical flaw in the sequence---Fast Ion
-received the grant *after* the thesis-driven VCs had already populated
-the board. When the cleantech investment climate shifted in 2011, all
-three investors faced identical pressure to reduce exposure to the
-sector. Because they shared a homogeneous thesis, they reacted
-homogeneously: one investor withdrew entirely, and the board contained
-no cognitive diversity to argue for alternatives. The lesson is about
-sequence. If Fast Ion had climbed the Funding Ladder in
-order---government grants first, then private capital---it could have
-built credibility before thesis-driven investors shaped governance. The
-ARPA-E grant was valuable, but it came too late to preserve flexibility.
+**Fast Ion Battery** failed due to *governance lock-in* (homogeneous
+board) [@nanda2015fastionbattery]. In 2008, three venture capital firms
+invested \$10 million, all sharing the same investment thesis: cleantech
+was the next big opportunity. When the company won a \$2 million ARPA-E
+grant, the government recognition changed the investors' calculus---but
+came *after* thesis-driven VCs had already populated the board. When the
+cleantech investment climate shifted in 2011, all three investors faced
+identical pressure to reduce exposure. Because they shared a homogeneous
+thesis, they reacted homogeneously. The cage was governance: a board
+that could not advocate for alternatives.
 
-### Preserving Skeptics in Governance
+The distinction matters for intervention. Path dependence requires
+operational flexibility---the ability to redeploy assets. Governance
+lock-in requires cognitive diversity---the presence of board members who
+will advocate for pivots. Segway needed modular technology; Fast Ion
+needed heterogeneous investors.
 
-Even with dilutive funding, governance design can preserve signal
-diversity. The cage crystallizes when governance lacks advocates for
-alternative paths, so founders must actively design to preserve
-skeptics. Syndicate composition matters: actively recruit at least one
-investor with a distinct investment thesis, because a deep-tech investor
-building a syndicate of fellow deep-tech funds creates belief lock-in
-while adding a generalist introduces productive tension. Board structure
-matters: reserve a seat for an independent director who holds no
-financial stake in the current direction and brings domain expertise
-that challenges rather than reinforces the current strategy. Decision
-rules matter: institute requirements to document the strongest argument
-against the current path before major capital deployments, and consider
-a designated "red team" director whose role is to surface
-counterarguments rather than build consensus.
+### Guidance: Cap Table Design for Cognitive Diversity {#sec:seq-guidance}
+
+The cap table is a governance composition task. The goal is to design a
+board that retains the "right to pivot"---a real option on strategic
+change. Three levers preserve this option:
+
+**Syndicate composition**: Actively recruit at least one investor with a
+distinct investment thesis. A deep-tech investor building a syndicate of
+fellow deep-tech funds creates belief lock-in; adding a generalist
+introduces productive tension. The test: "If market signals suggest
+pivoting, who on this board would advocate for change?"
+
+**Board structure**: Reserve a seat for an independent director who
+holds no financial stake in the current direction and brings domain
+expertise that challenges rather than reinforces the current strategy.
+Consider a rotating "devil's advocate" role whose explicit task is to
+surface counterarguments.
+
+**Decision rules**: Institute requirements to document the strongest
+argument against the current path before major capital deployments.
+Require that alternative paths have explicit advocates before they are
+foreclosed. Vote only after hearing counterarguments.
 
 ::: {#tab:gov8}
 +----------------------+----------------------+----------------------+
@@ -291,15 +344,11 @@ counterarguments rather than build consensus.
 | Principle            | Implementation       | Rationale            |
 | :::                  | :::                  | :::                  |
 +:=====================+:=====================+:=====================+
-| ::: minipage         | ::: minipage         | ::: minipage         |
-| Principle            | Implementation       | Rationale            |
-| :::                  | :::                  | :::                  |
-+----------------------+----------------------+----------------------+
 | **Preserve           | See Table 9 for      | Maintains signal     |
 | Skeptics**           | operationalization   | diversity            |
 +----------------------+----------------------+----------------------+
-| **Vision             | Commit to direction, | Preserves pivot      |
-| vs. Operations**     | not destination      | capacity             |
+| **Thesis             | Commit to direction, | Preserves pivot      |
+| vs. Architecture**   | not destination      | capacity             |
 +----------------------+----------------------+----------------------+
 | **Milestone          | Define outcomes, not | Allows learning from |
 | Flexibility**        | methods              | experiments          |
@@ -321,11 +370,6 @@ counterarguments rather than build consensus.
 | :::                  | :::                  | Implementation       |
 |                      |                      | :::                  |
 +:=====================+:=====================+:=====================+
-| ::: minipage         | ::: minipage         | ::: minipage         |
-| Lever                | Mechanism            | Practical            |
-| :::                  | :::                  | Implementation       |
-|                      |                      | :::                  |
-+----------------------+----------------------+----------------------+
 | **Syndicate          | Include investors    | Minimum one investor |
 | Composition**        | with diverse thesis  | from different       |
 |                      | views                | sector focus or      |
@@ -361,42 +405,50 @@ counterarguments rather than build consensus.
 
 ## Conclusion {#sec:ch5-conclusion}
 
-This chapter developed three design principles for dancing with the
-cage. Each addresses a different decision that founders face, as
-previewed in Figure [1.1](#fig:three-solutions){reference-type="ref"
+This chapter developed three architectural levers for preserving
+flexibility within commitment structures. Each addresses a different
+design dimension, as previewed in
+Figure [5.1](#fig:three-solutions){reference-type="ref"
 reference="fig:three-solutions"}.
 
-Strategic Ambiguity answers *what to commit to*. The Tesla-Better Place
-contrast shows that vision-level commitment creates a coalition broad
-enough to support adaptation, while operational commitment creates a
-coalition so narrow that it collapses when the specific mechanism fails.
-The prescription: commit to direction, not destination. The Q3 sweet
-spot in the data confirms that moderate breadth outperforms both narrow
-and maximally broad positioning.
+**Scope** (Section [5.2](#sec:scope-commitment){reference-type="ref"
+reference="sec:scope-commitment"}) addresses *what breadth of commitment
+to make*. The Tesla-Better Place contrast shows that thesis-level
+commitment creates a coalition broad enough to support adaptation, while
+architecture-level commitment creates a coalition so narrow that it
+collapses when the specific mechanism fails. The prescription: commit to
+direction, not destination. The $Q3$ sweet spot in the data confirms
+that moderate breadth---strategic ambiguity as a design choice---outperforms
+both narrow and maximally broad positioning.
 
-Balanced Growth answers *how to grow*. NxStage had great technology but
-insufficient market pull. SkinnyGirl had enormous demand but couldn't
-deliver. The prescription: diagnose which bottleneck threatens and fix
-it before locking in the other dimension. Growth requires balance
-between market and operations.
+**Synchronization** (Section [5.3](#sec:synchronized-scaling){reference-type="ref"
+reference="sec:synchronized-scaling"}) addresses *how to coordinate
+capability scaling*. NxStage had great technology but insufficient
+market pull; SkinnyGirl had enormous demand but couldn't deliver. Both
+committed to the wrong dimension. The prescription: diagnose the binding
+constraint and resolve it before locking in the other dimension. Growth
+requires dynamic coupling between market and operations.
 
-The Funding Ladder answers *how to fund*. Fast Ion Battery shows that
-government recognition works as a credibility signal, but sequence
-matters. The ARPA-E grant came after thesis-driven VCs had already
-populated governance. The prescription: climb the Funding Ladder in
-order, so that market signals clarify before thesis-driven capital
-shapes governance.
+**Sequencing** (Section [5.4](#sec:sequencing-capital){reference-type="ref"
+reference="sec:sequencing-capital"}) addresses *when to accept different
+forms of capital*. Fast Ion Battery shows that government recognition
+works as a credibility signal, but sequence matters. The ARPA-E grant
+came after thesis-driven VCs had already populated governance,
+foreclosing the option to pivot. The prescription: climb the Funding
+Ladder in order, delaying governance homogenization until market signals
+clarify direction.
 
-**Boundary Conditions.** These principles are not universal. They matter
-most when capital intensity is high, uncertainty is high, founders lack
-track records, and investors are thesis-driven [@zuzul2020startup; @fine2022operations]. These are precisely the conditions where
-the cage binds tightest—and where the principles are hardest to implement.
-In mature markets or low-capital software sectors, the cost of the cage
-is lower and the efficiency of operational commitment may outweigh the
-benefits of flexibility [@porter1996what]. But for ventures navigating
-deep tech and new markets, designing for flexibility is not a luxury.
-It is a condition of survival.
+**Boundary Conditions.** These architectural principles are not
+universal. They matter most when capital intensity is high, uncertainty
+is high, founders lack track records, and investors are thesis-driven
+[@zuzul2020startup; @fine2022operations]. These are precisely the
+conditions where the cage binds tightest---and where the principles are
+hardest to implement. In mature markets or low-capital software sectors,
+the cost of the cage is lower and the efficiency of operational
+commitment may outweigh the benefits of flexibility [@porter1996what].
+But for ventures navigating deep tech and new markets, architecting for
+flexibility is not a luxury. It is a condition of survival.
 
-Chapter [\[ch:conclusion\]](#ch:conclusion){reference-type="ref"
+Chapter [\[ch:conclusion\]](#ch:conclusion){reference-type="ref"
 reference="ch:conclusion"} concludes with the thesis's contributions and
 implications for theory and practice.
