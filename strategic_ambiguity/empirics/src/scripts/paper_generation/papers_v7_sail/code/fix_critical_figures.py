@@ -20,7 +20,8 @@ try:
 except ImportError:
     # Fallback colors
     COLORS = {
-        'paradox': '#28A745', 'cage': '#DC3545', 'flex': '#007BFF',
+        'paradox': '#28A745', 'paradox_dark': '#28A745', 'paradox_light': '#90EE90',
+        'cage': '#DC3545', 'flex': '#007BFF',
         'text_dark': '#2D2926', 'text_mid': '#5C5652', 'text_light': '#8A847D',
         'bar_primary': '#4A4A4A', 'bg_white': '#FFFFFF', 'quantum': '#28A745',
     }
@@ -42,8 +43,8 @@ def fix_ch4_fig2():
     sample_sizes = [1144, 226896, 29493, 56947, 154148, 50390]
     significance = ['*', '', '***', '***', '***', '***']
 
-    # Colors: Green for positive (Quantum), Red for negative (Cage effect)
-    colors = [COLORS['paradox'] if r > 0 else COLORS['cage'] for r in correlations]
+    # Colors: Light green for positive (Quantum - the exception), Dark green for negative (most sectors - the paradox)
+    colors = [COLORS['paradox_light'] if r > 0 else COLORS['paradox_dark'] for r in correlations]
 
     y_pos = np.arange(len(industries))
 
@@ -81,10 +82,10 @@ def fix_ch4_fig2():
                  fontsize=12, fontweight='bold', color=COLORS['text_dark'], pad=15)
 
     # Annotations OUTSIDE plot area (no overlap)
-    ax.text(0.12, -0.8, 'Pre-paradigmatic\n(Quantum)', ha='center', va='top',
-            fontsize=8, color=COLORS['paradox'], fontstyle='italic')
-    ax.text(-0.12, -0.8, 'Capital-intensive\n(Cage binds tight)', ha='center', va='top',
-            fontsize=8, color=COLORS['cage'], fontstyle='italic')
+    ax.text(0.12, -0.8, 'ρ > 0 (Quantum)', ha='center', va='top',
+            fontsize=8, color=COLORS['paradox_light'], fontstyle='italic')
+    ax.text(-0.12, -0.8, 'ρ < 0 (Most sectors)', ha='center', va='top',
+            fontsize=8, color=COLORS['paradox_dark'], fontstyle='italic')
 
     plt.tight_layout()
     output_path = f'{IMG_DIR}/Ch4_Fig2_industry_rho.png'

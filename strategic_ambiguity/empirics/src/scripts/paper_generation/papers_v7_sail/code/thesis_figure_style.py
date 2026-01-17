@@ -18,7 +18,9 @@ import matplotlib as mpl
 
 COLORS = {
     # Semantic colors (from thesis LaTeX definitions)
-    'paradox': '#28A745',      # Green - Funding-Growth Paradox
+    'paradox': '#28A745',      # Green - Funding-Growth Paradox (legacy)
+    'paradox_dark': '#28A745', # Dark green - ρ(E,G) < 0 (most sectors - the paradox)
+    'paradox_light': '#90EE90',# Light green - ρ(E,G) > 0 (Quantum - the exception)
     'cage': '#DC3545',         # Red - Commitment Cage
     'flex': '#007BFF',         # Blue - Flexibility Flex
 
