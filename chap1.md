@@ -8,78 +8,49 @@ Startups die not for lack of resources, but for lack of *strategic
 flexibility*, the capacity to change direction when markets shift. Over
 the past decade, venture capital has deployed hundreds of billions of
 dollars annually to fuel startup growth [@nvca2024]. Yet a puzzle
-emerges from the data: analyzing 168,011 ventures, I find that those
-raising more early funding are *less* likely to succeed later
-($\rho = -0.04$, $p < 0.001$). Why would resources hurt?
+emerges from the data: ventures that raise more early funding are *less*
+likely to succeed later. Why would resources hurt?
 
-**The case for resources.** Three established frameworks predict that
-funding enables success. Signaling theory [@spence1973job] holds that
-securing capital reveals founder quality—investors screen, so funded
-ventures should outperform. Bayesian entrepreneurship [@gans2019foundations]
-models learning as belief updating—capital enables experiments that
-resolve uncertainty. Staged financing [@gompers1995optimal] prescribes
-that milestone-based investment allows ventures to fail fast and redirect
-resources. Under any of these frameworks, the relationship between early
-funding and later success should be positive, or at worst neutral.
+The answer lies in governance. To secure funding, founders must commit
+to specific strategies. These commitments attract investors who believe
+in those strategies. Skeptics (investors who might advocate for
+alternatives) never join. The resulting board contains only believers.
+When market signals suggest pivoting, no one advocates for change. The
+venture is trapped: not for lack of capital, but for lack of diverse
+perspectives. I call this the *golden cage*.
 
-**The case against resources.** Yet an alternative logic suggests funding
-could suppress success. To secure capital, founders must commit to specific
-strategies [@ghemawat1991commitment]. These commitments attract investors
-who believe those strategies will succeed; skeptics self-select out
-[@vandensteen2010interpersonal]. The resulting governance contains believers
-but lacks advocates for alternatives. When market signals suggest pivoting,
-no voice champions change. Commitment—the very quality that attracted
-resources—forecloses the adaptation that uncertain environments demand
-[@march1991exploration; @levinthal1993myopia].
-
-**Weighing the evidence.** The data favor the second interpretation. The
-negative funding-growth correlation is robust across 168,011 ventures and
-sharpens at the industry level: capital-intensive sectors show systematically
-lower success rates (Hardware: $\rho = -0.11$; Transportation: $\rho = -0.10$).
-More tellingly, the relationship operates through a mediating variable:
-*repositioning*, the observable shift in strategic positioning over time.
-Early funding negatively predicts repositioning ($\rho = -0.133$);
-repositioning positively predicts success (Movers outperform Stayers by
-2.60$\times$). Funding suppresses the very mechanism—strategic change—required
-for survival. I characterize this phenomenon as the *golden cage*: capital
-attracts like-minded investors who filter out the cognitive diversity needed
-to advocate for pivots when market signals change.
-
-Two electric vehicle ventures illustrate the contrast [@gans2020choosing].
-Tesla positioned itself as "accelerating sustainable transport," a vision
-broad enough to attract believers in electrification, autonomy, and energy
-storage. When Tesla pivoted from Roadster to Model 3, diverse board
-perspectives supported the shift [@vance2015elon]. Better Place raised
-\$850 million for "battery swapping infrastructure," a commitment so specific
-that when charging technology advanced, no governance voice advocated pivoting.
-Better Place liquidated in 2013; its assets sold for less than \$1 million
-[@bradshaw2013better]. The difference was not resources—Better Place had more.
-The difference was *what* they committed to.
+Two electric vehicle ventures illustrate the contrast. Tesla positioned
+itself as "accelerating sustainable transport," a vision broad enough to
+attract believers in electrification, autonomy, and energy storage. When
+Tesla pivoted from Roadster to Model 3, diverse board perspectives
+supported the shift. Better Place raised \$850 million for "battery
+swapping infrastructure," a commitment so specific that when charging
+technology advanced, no governance voice advocated pivoting. Better
+Place liquidated in 2013; its assets sold for less than \$1 million.
 
 This thesis investigates why funding creates this cage and how founders
-can work within its constraints while preserving adaptation capacity.
+can dance with it---working within its constraints while preserving
+adaptation capacity.
 
 **Two Research Questions.** This thesis addresses two questions:
 
 *First, why does funding suppress flexibility?* Capital creates a double
-bind. It enables experimentation by providing resources
-[@kerr2014entrepreneurship]. Yet to secure capital, founders must commit,
-and commitments attract like-minded investors [@staw1976knee]. Skeptics
-filter themselves out. Prior studies examine funding effects
-[@gompers1995optimal; @hellmann2002venture] and pivoting outcomes
-[@kirtley2023pivot; @mcgrath1999falling] in isolation. This thesis treats
-them as components of a single governance system where commitment induces
-the very homogeneity that blocks adaptation.
+bind. It enables experimentation by providing resources. Yet to secure
+capital, founders must commit, and commitments attract like-minded
+investors. Skeptics filter themselves out. Prior studies examine funding
+effects and pivoting outcomes in isolation
+[@camuffo2020a; @kirtley2023what]. This thesis treats them as components
+of a single governance system.
 
 *Second, how can founders commit credibly while preserving flexibility?*
-The level of commitment matters [@eisenberg1984ambiguity]. A founder who
-commits at the operational level ("battery swapping infrastructure")
-attracts only believers in that mechanism. A founder who commits at the
-vision level ("sustainable transport") attracts believers in multiple
-mechanisms [@teece1997dynamic]. Large-scale data reveal where the tension
-is tightest (capital-intensive sectors) and where it releases
-(pre-paradigmatic sectors like quantum). These patterns help founders
-design commitment structures that preserve adaptation capacity.
+The level of commitment matters. A founder who commits at the
+operational level ("battery swapping infrastructure") attracts only
+believers in that mechanism. A founder who commits at the vision level
+("sustainable transport") attracts believers in multiple mechanisms.
+Large-scale data reveal where the tension is tightest (capital-intensive
+sectors) and where it releases (pre-paradigmatic sectors like quantum).
+These patterns help founders design commitment structures that preserve
+adaptation capacity.
 
 ::: {#the-funding-growth-paradox}
 ## The Funding-Growth Paradox {#sec:funding-growth-paradox}
@@ -118,7 +89,7 @@ funding rounds. The data reveal two patterns: early funding negatively
 predicts repositioning ($\rho = -0.133$, p \< 0.001), the **Commitment Cage** where
 governance structures attached to capital constrain adaptation; and
 repositioning positively predicts later-stage success, with Movers
-outperforming Stayers by 2.60$\times$ (17.6% vs. 6.7%), the . Together,
+outperforming Stayers by 2.60$\times$ (17.6% vs. 6.7%), the **Flexibility Flex**. Together,
 these patterns explain the paradox: funding suppresses the very
 mechanism (repositioning) required for survival. Capital itself is not
 harmful; the problem is that commitment attracts like-minded investors

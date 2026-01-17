@@ -64,9 +64,10 @@ clarify direction.
 
 The cage forms when a founder commits to a specific operational path so
 convincingly that they attract a homogeneous coalition of believers in
-that path. Strategic ambiguity solves this problem [@eisenberg1984ambiguity].
-It does not mean being vague about the mission. It means being precise about
-the *direction* while remaining flexible about the *destination*. This
+that path. Strategic ambiguity solves this problem [@eisenberg1984ambiguity;
+@bransby2025provisional]. It does not mean being vague about the mission.
+It means being precise about the *direction* while remaining flexible about
+the *destination*. This
 approach carries risks: ambiguity can undermine credibility in the short
 term even as it preserves flexibility for the long term [@abdallah2014double].
 The key is finding the level of abstraction that maintains coalition
@@ -388,8 +389,7 @@ shapes governance.
 
 **Boundary Conditions.** These principles are not universal. They matter
 most when capital intensity is high, uncertainty is high, founders lack
-track records, and investors are thesis-driven [@tushman1986technological;
-@henderson1990architectural]. These are precisely the conditions where
+track records, and investors are thesis-driven [@zuzul2020startup; @fine2022operations]. These are precisely the conditions where
 the cage binds tightest—and where the principles are hardest to implement.
 In mature markets or low-capital software sectors, the cost of the cage
 is lower and the efficiency of operational commitment may outweigh the
