@@ -1,9 +1,29 @@
-Venture capital operates on the premise that early capital accelerates growth. Yet analyzing 168,011 startups, I document a \paradox{Funding-Growth Paradox}: early funding correlates \emph{negatively} with later-stage success. At the individual firm level, the correlation is modest ($\rho = -0.04$), reflecting high within-firm variance. At the industry level, the pattern is stark: capital-intensive sectors systematically underperform (Hardware: $\rho = -0.11$; Transportation: $\rho = -0.10$). Why would resources hurt?
+% Abstract revised per Sainani/Teja principles:
+% - Power verbs, no nominalizations
+% - Subject-verb proximity
+% - Front-load key claims
+% - Remove empty openers
 
-The answer lies in governance. To secure funding, founders commit to specific strategies. These commitments attract investors who believe in those strategies; skeptics self-select out. Extending Van den Steen's sorting equilibrium to the investor-founder context, I show that the resulting board lacks cognitive diversity. When market signals suggest pivoting, no one advocates for change. The venture is trapped---not for lack of capital, but for lack of diverse perspectives. I call this the \emph{golden cage}.
+Early funding hurts startups. Analyzing 168,011 ventures, I find that early-stage capital correlates \emph{negatively} with later success ($\rho = -0.04$, $p < 0.001$). Capital-intensive sectors suffer most: Hardware ($\rho = -0.11$) and Transportation ($\rho = -0.10$) show the steepest penalties.
 
-Methodologically, I introduce a text-based measure of \textbf{Strategic Breadth ($B$)} to quantify repositioning from company descriptions. The paradox then decomposes into two causal forces. First, the \cage{Commitment Cage}: funding suppresses repositioning ($\rho = -0.133$, $p < 0.001$) because governance homogeneity blocks adaptation. Second, the \flex{Flexibility Flex}: repositioning predicts success, with Movers outperforming Stayers by 2.60$\times$ (17.6\% vs.\ 6.7\%). Together: $dG/dE = (dG/dR) \times (dR/dE) = (+) \times (-) = (-)$. Funding suppresses the very mechanism required for survival.
+Why would resources hurt? Founders who seek capital must commit to specific strategies. Investors who fund share those beliefs; skeptics never join. Extending Van den Steen's sorting equilibrium from employee-manager matching to investor-founder contexts, I show how funding homogenizes governance. When markets shift, no board member advocates for change. I call this structural trap the \emph{golden cage}.
 
-Industry heterogeneity reveals boundary conditions. The cage binds tightest in capital-intensive sectors where infrastructure investments create switching costs. It releases in pre-paradigmatic sectors like Quantum Computing ($\rho = +0.10$) where no dominant design constrains architectural choices.
+To measure the cage, I develop a text-based \textbf{Strategic Breadth ($B$)} metric from company descriptions. The paradox decomposes into two forces:
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item \cage{Commitment Cage:} Funding suppresses repositioning ($\rho = -0.133$, $p < 0.001$).
+    \item \flex{Flexibility Flex:} Repositioning predicts survival---Movers outperform Stayers by 2.60$\times$ (17.6\% vs.\ 6.7\%).
+\end{enumerate}
+Together: $dG/dE = (dG/dR) \times (dR/dE) = (+) \times (-) = (-)$. Funding blocks the very adaptation that uncertain markets demand.
 
-To escape the cage, I prescribe three architectural levers: (1) \emph{Scope}---committing to thesis (vision) rather than architecture (solution), attracting diverse believers who agree on direction but differ on mechanisms; (2) \emph{Synchronization}---coordinating capability scaling with market evolution to avoid premature lock-in; and (3) \emph{Sequencing}---ordering capital sources to delay governance homogenization until market signals clarify. This thesis contributes a governance-based theory of venture rigidity and offers design principles for commitment structures that preserve flexibility.
+Industry patterns reveal boundary conditions. The cage binds tightest where switching costs are high (Hardware, Transportation). It releases where no dominant design exists---Quantum Computing shows a \emph{positive} funding-growth correlation ($\rho = +0.10$).
+
+Founders can escape the cage through three architectural levers:
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item \emph{Scope}: Commit to thesis (vision), not architecture (solution)---attract diverse believers who agree on \emph{why} but differ on \emph{how}.
+    \item \emph{Synchronization}: Scale capabilities with market demand---diagnose binding constraints before locking in the wrong dimension.
+    \item \emph{Sequencing}: Climb the funding ladder (grants $\rightarrow$ matching capital $\rightarrow$ thesis-driven VC)---delay governance homogenization until signals clarify.
+\end{enumerate}
+
+This thesis contributes a governance-based theory of venture rigidity and prescribes design principles that preserve flexibility within commitment structures.
