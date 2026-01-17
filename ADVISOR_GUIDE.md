@@ -17,7 +17,7 @@ Click any commit → **red** = deleted, **green** = added.
 | **Miaomiao** | "LESS IS MORE" | All chapters trimmed | Jan 14 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/aceaf88) |
 | **Angie** | Ch3/Ch4/Ch5 bugs | Terminology + examples + opener + tables/figures | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/8aa6760) |
 | **Angie** | Visual clarity | Color system: 🟢H3 🔴H1 🔵H2 | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/d9f9996) |
-| **Self-audit** | Statistical consistency | All chapters unified: N=168,011, ρ(E,R)=-0.133, Mover 2.60× | Jan 17 | *pending commit* |
+| **Self-audit** | Statistical consistency | All chapters unified: N=168,011, ρ(E,R)=-0.133, Mover 2.60× | Jan 17 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/0550ca2) |
 
 ---
 
