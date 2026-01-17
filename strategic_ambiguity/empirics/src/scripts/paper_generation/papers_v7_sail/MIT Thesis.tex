@@ -1,0 +1,245 @@
+% !TEX encoding = UTF-8 Unicode
+% !BIB TS-program = biber
+%
+% This file is MIT-Thesis.tex, a LaTeX template for formatting an MIT thesis with the mitthesis class.
+%
+% Version: 1.21, 2025/11/02
+%
+% Author: John H. Lienhard, copyright 2025. Reuse under the MIT license: https://ctan.org/license/mit 
+%
+% DOCUMENTATION is here: https://ctan.org/pkg/mitthesis
+%
+% This package requires TeX Live 2022 or later.
+
+
+%% Don't modify the \DocumentMetadata command unless you know what it does. 
+\DocumentMetadata 
+{
+	lang		= en-US, % default language
+	pdfversion  = 1.7,
+	pdfstandard = a-2b,
+}
+
+%%%%%%%%%  Documentclass and options  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[twoside]{mitthesis}
+\usepackage{tikz}
+
+%%%%%%%%  Packages used in the sample chapters (not otherwise required) %%%
+
+%% Package for code listing in Appendix A.
+\usepackage{listings}%   documentation is here https://ctan.org/pkg/listings
+
+%% Set chemical formulas nicely
+\usepackage[version=4]{mhchem}%   documentation at https://ctan.org/pkg/mhchem
+
+%% Latin filler used in Chapter 1, with a test for package version date (https://ctan.org/pkg/lipsum)
+\usepackage{lipsum}
+\IfPackageAtLeastTF{lipsum}{2021/09/20}{\setlipsum{auto-lang=false}}{} % to avoid a hyphenation warning
+
+
+%%%%%%%%%  Other optional packages used sample chapters  %%%%%%%%%%%%%%%%%%
+
+%% Table related packages  
+
+\usepackage{booktabs}% publication quality tables (https://ctan.org/pkg/booktabs)
+
+\usepackage{array}% Additional options for column formats (https://ctan.org/pkg/array)
+
+\usepackage{dcolumn}% For alignment of numbers on the decimal place (https://ctan.org/pkg/dcolumn) 
+  \newcolumntype{d}[1]{D{.}{.}{#1}}% use with dcolumn package. Note: dcolumns are set in math mode.
+  % syntax: d{x.y} where x is max number of digits before decimal and y is max number after.
+
+% Package for multipage table in Appendix B.
+\usepackage{longtable}% typeset multi-page tables (https://ctan.org/pkg/longtable)
+
+%% Package for improved typography
+\usepackage[nopatch=footnote]{microtype}% typographic fine-tuning (https://ctan.org/pkg/microtype)
+
+%% Load this package if using the two-column nomenclature format, \begin{nomenclature*}
+\usepackage{multicol}
+
+%Fix the table in one place
+\usepackage{float}
+
+% Pandoc compatibility
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%%%%%%%%%  Graphics path (to figure files)  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Can set graphicspath to point to specific directories containing figures (the current directory is searched automatically)
+%% For instance, to search a subdirectory of the current directory called "figures" and a parallel directory called "art", set:
+
+% \graphicspath{ {figures/} {../art/} }% For details see: https://latexref.xyz/dev/latex2e.html#g_t_005cgraphicspath
+
+
+%%%%%%%%%  Set-up for biblatex (APA style)  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% biblatex is very powerful, and you can customize most aspects the reference list and citations to suit your needs.
+%%   documentation is here: https://ctan.org/pkg/biblatex
+%%   cheat sheet is here:   https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf
+
+%% IMPORTANT: Using APA style with natbib compatibility
+%% This allows you to use \citep{} and \citet{} commands
+%% DO NOT load \usepackage{natbib} in any chapter files - it conflicts with biblatex!
+
+\usepackage[
+  style=numeric,
+  backend=biber,
+  natbib=true,
+  maxbibnames=99,      % CHANGED: increased to 99
+  minbibnames=1,       % NEW: added minimum
+  maxcitenames=2,      % NEW: added for citations
+  mincitenames=1,      % NEW: added for citations
+  sorting=nyt
+]{biblatex}
+
+\DeclareLanguageMapping{american}{american-apa}
+
+%% Add your bibliography file
+\addbibresource{golden_cage.bib}
+
+%% Add your bibliography files here
+%% to avoid split urls and stretched white space, you can make the bibliography ragged-right by uncommenting this:
+%\AddToHook{cmd/bibsetup/after}{\raggedright}
+
+%% To ensure citations are set, run: LaTeX --> Biber --> LaTeX --> LaTeX
+
+
+%%%%%%%%%%  Option for "double spacing" %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The setspace package provides a tool for changing line separation. Use these two commands here:
+%
+% \usepackage{setspace}%  documentation at https://ctan.org/pkg/setspace
+% \setstretch{1.1}% you can choose some other value for the stretch of space between lines
+
+
+%%%%%%%%%%%  Metadata  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{%
+	pdfsubject={Template for writing MIT theses with the mitthesis class},
+	pdfkeywords={Massachusetts Institute of Technology, MIT},
+	pdfurl={},
+	pdfcontactemail={},
+	pdfauthortitle={},
+}
+
+%%%%%%%%%%%%  Math operators %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\Erf}{erf}
+\DeclareMathOperator{\Erfc}{erfc}
+\DeclarePairedDelimiterXPP\erf[1]{\Erf\mkern1mu}(){}{#1}
+\DeclarePairedDelimiterXPP\erfc[1]{\Erfc\mkern1mu}(){}{#1}
+
+%Added this package to remove hypothesis errors
+\usepackage{amsthm}
+\newtheorem{hypothesis}{Hypothesis}
+
+%%%%%%%%%%%%%%  End preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%%% edit the following commands to match your thesis %%%%%%%%%%
+
+\title{Golden Cage: Paradox of Early Funding and Growth}
+
+\Author{Angie H. Moon}{Department of Transportation}
+
+\Degree{Master of Science in Transportation}{Department of Civil and Environmental Engineering}
+
+\Supervisor{Charles H. Fine}{Chrysler Leaders for Global Operations Professor of Management}[Department of Management]
+
+\Supervisor{Scott Stern}{David Sarnoff Professor of Management of Technology}[Professor, Technological Innovation, Entrepreneurship, and Strategic Management]
+
+% Date degree will be issued: \DegreeDate{Month}{year}
+% Valid degree months are February, May, June, or September
+\DegreeDate{February}{2026}
+
+% Date that final thesis is submitted to department
+\ThesisDate{December 2025}
+
+%Acceptor
+\Acceptor{[Graduate Officer Name]}{Professor of Civil and Environmental Engineering}{Graduate Officer, Department of Civil and Environmental Engineering}
+
+%%%%%%  Choose whether to have a CREATIVE COMMONS License  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% If you are using a cc license, uncomment the following line and insert details of your cc license here.
+%
+% \CClicense{CC BY-NC-ND 4.0}{https://creativecommons.org/licenses/by-nc-nd/4.0/}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Make titlepage
+\maketitle
+
+
+%%%%%%%%% Content that you need to write follows! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Frontmatter (write this material in the mentioned files)  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The abstract environment creates all the required headings and footers. 
+% You only need to the text of the abstract in the file abstract.tex
+\input{latex(thesis)_color_definitions.tex}
+\begin{abstract}
+	\input{abstract.tex}% use \input rather than \include because we're inside an environment
+\end{abstract}
+
+%\include{acknowledgments}% acknowledgments.tex (.tex extension is presumed by \include) 
+
+%\include{biography}% biography.tex (optional)
+
+%%% Table of contents and lists of stuff (delete unused lists) %%%%%
+
+\tableofcontents
+% Place after \tableofcontents in your main .tex file
+
+\listoffigures
+
+\listoftables
+
+% Manual list if automated commands don't work with your setup:
+%
+% \chapter*{List of Figures}
+% \addcontentsline{toc}{chapter}{List of Figures}
+% \begin{enumerate}
+%   \item[Figure~\ref{fig:capital-paradox}] The Funding-Growth Paradox (Chapter 1)
+%   \item[Figure~\ref{fig:mediation-dag}] Mediation structure (Chapter 1)
+%   \item[Figure~\ref{fig:mover-advantage}] Mover advantage (Chapter 4)
+%   \item[Figure~\ref{fig:industry-rho}] Industry heterogeneity in $\rho(E,G)$ (Chapter 4)
+%   \item[Figure~\ref{fig:sweet-spot}] Strategic Ambiguity Sweet Spot (Chapter 5)
+% \end{enumerate}
+%
+% \chapter*{List of Tables}
+% \addcontentsline{toc}{chapter}{List of Tables}
+% \begin{enumerate}
+%   \item[Table~\ref{tab:variable}] Variable definitions (Chapter 3)
+%   \item[Table~\ref{tab:frg-analysis}] Repositioning-Growth analysis (Chapter 4)
+%   \item[Table~\ref{tab:mover-taxonomy}] Mover taxonomy (Chapter 4)
+%   \item[Table~\ref{tab:industry}] Industry correlations (Chapter 4)
+%   \item[Table~\ref{tab:alternatives}] Alternative explanations (Chapter 6)
+% \end{enumerate}
+
+
+%%% Chapters of thesis  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{latex(thesis)_chap1}
+\include{latex(thesis)_chap2}
+\include{latex(thesis)_chap3}
+\include{latex(thesis)_chap4}
+\include{latex(thesis)_chap5}
+\include{latex(thesis)_chap6}
+\appendix
+\include{latex(thesis)_chap7_appendix}
+
+
+%%% Bibliography (biblatex)  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbibheading{bibintoc}{\chapter*{#1}\addcontentsline{toc}{backmatter}{\refname}} 
+
+\nocite{*}
+
+\printbibliography[title={\refname},heading=bibintoc]
+
+\end{document}

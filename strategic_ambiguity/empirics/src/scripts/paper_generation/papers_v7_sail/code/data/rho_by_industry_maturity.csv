@@ -1,0 +1,8 @@
+Industry,N,Avg_Company_Age,rho_FG,p_value,sig
+Fintech,17664,15.2,-0.0142,0.0587,
+Healthcare,58368,15.8,-0.008,0.0519,
+Software/AI,227824,16.2,0.0128,0.0,***
+CleanTech,16804,18.0,0.0143,0.0637,
+Other,374344,18.9,0.0033,0.0463,*
+Transportation,11984,23.1,-0.0219,0.0166,*
+Manufacturing,16452,27.8,-0.0123,0.1151,

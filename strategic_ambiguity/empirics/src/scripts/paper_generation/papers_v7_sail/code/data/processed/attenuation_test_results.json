@@ -1,0 +1,35 @@
+{
+  "n_restricted": 168011,
+  "n_excluded": 1870,
+  "restricted": {
+    "rho_ER": -0.13325836208328828,
+    "rho_RG": 0.18362474689671818,
+    "rho_EG": -0.0416300299371066
+  },
+  "scenarios": {
+    "Lower Bound (R=0)": {
+      "R_value": 0.0,
+      "rho_ER": -0.1313700574370435,
+      "rho_RG": 0.18595343366000636,
+      "rho_EG": -0.04076857890934869
+    },
+    "Median (R=median)": {
+      "R_value": 0.0571735347417075,
+      "rho_ER": -0.13342652797233653,
+      "rho_RG": 0.18384648931987732,
+      "rho_EG": -0.04076857890934869
+    },
+    "Upper Bound (R=max)": {
+      "R_value": 62.0,
+      "rho_ER": -0.13296831122391647,
+      "rho_RG": 0.1737270149930145,
+      "rho_EG": -0.04076857890934869
+    }
+  },
+  "verdicts": {
+    "rho_ER": "REJECTED",
+    "rho_RG": "AMBIGUOUS",
+    "rho_EG": "REJECTED"
+  },
+  "overall_verdict": "REJECTED"
+}

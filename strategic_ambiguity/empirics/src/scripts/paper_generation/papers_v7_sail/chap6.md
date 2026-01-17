@@ -1,0 +1,261 @@
+::: {#ch:conclusion}
+# Conclusion {#ch:conclusion}
+:::
+
+::: {#theoretical-contributions}
+## Theoretical Contributions {#sec:theoretical-contributions}
+:::
+
+As previewed in
+Section [\[sec:contribution-preview\]](#sec:contribution-preview){reference-type="ref"
+reference="sec:contribution-preview"}, this thesis makes three
+contributions. Having now traversed the full arc--phenomenon
+identification (Chapter 1), mechanism theorization (Chapter 2),
+empirical operationalization (Chapter 3), hypothesis testing
+(Chapter 4), and design principles (Chapter 5)--I review each
+contribution with the precision that evidence affords:
+
+**First**, I introduce the *golden cage* mechanism, explaining how
+funding constrains growth through governance homogeneity rather than
+moral hazard. The mechanism integrates @vandensteen2010interpersonal's
+sorting equilibrium, @eisenberg1984ambiguity's strategic ambiguity, and
+@ghemawat1991commitment's commitment analysis.
+
+**Second**, I distinguish vision-level commitment from operational
+commitment. This explains why well-funded ventures diverge: some (Tesla)
+preserve flexibility through vision commitment; others (Better Place)
+foreclose it through operational commitment.
+
+**Third**, I formalize caged learning (Theorem 1), showing how funding
+endogenously produces conditions (high $\mu$, low B) that prevent
+founders from updating their beliefs.
+
+## Practical Implications
+
+The golden cage mechanism has distinct implications for founders,
+investors, and scholars.
+
+For founders, the prescription is to design for adaptation before
+funding eliminates the skeptics who make adaptation possible. This means
+articulating vision at the direction level ("sustainable transport")
+rather than the operational level ("battery swapping"). It means
+recruiting board members who share your view on *why* but differ on
+*how*. And it means sequencing capital sources so that flexibility
+survives long enough for market signals to clarify.
+
+For investors, the prescription is to fund platform capability rather
+than product specificity. The ventures that succeed are those that
+reposition when market signals change. A founder who has never changed
+direction in three years may be perfectly calibrated--or structurally
+trapped. The question to ask: "Who in your governance would advocate for
+pivoting if signals turn negative?"
+
+For scholars, the prescription is to measure governance directly. This
+thesis documents behavioral patterns consistent with governance
+homogeneity, but the mechanism remains inferred rather than observed.
+Future research must measure board belief diversity through surveys,
+voting records, or text analysis of investor communications.
+
+For VCs at the portfolio level, the industry-level correlations reveal a
+structural challenge: capital-intensive sectors like Hardware
+($\rho = -0.11$) and Transportation ($\rho = -0.10$) systematically
+underperform relative to their funding levels. This pattern helps
+explain why VCs historically underweight these sectors despite their
+importance for climate, infrastructure, and industrial transformation.
+@nanda2016financing provide a complementary explanation grounded in real
+options: software ventures offer lower experimentation costs *and*
+larger step-ups in value conditional on success---a more favorable
+payoff-to-cost ratio that makes early-stage software investments more
+valuable as real options. This asymmetry shifted VC portfolio
+composition toward software, with hardware, biotech, and energy
+declining substantially as shares of VC investment over the past two
+decades [@nanda2016financing]. Even as experimentation costs have fallen
+in other sectors (gene sequencing, 3D printing), software's combination
+of cheap experiments and high step-ups persists. The cage mechanism adds
+a governance dimension to this logic: even holding experimentation costs
+constant, capital-intensive sectors bind founders to specific
+architectures that preclude pivoting when early experiments reveal the
+need to change direction. The underperformance is not inevitable; it
+reflects the cage mechanism binding tighter where switching costs are
+high. VCs seeking exposure to capital-intensive sectors should pair
+funding with governance interventions: board diversity requirements,
+staged commitment structures, and explicit pivot optionality. Without
+such interventions, overweighting Hardware and Mobility may
+systematically underperform Software portfolios where the cage barely
+binds ($\rho = -0.001$) and cheap experiments enable Bayesian updating
+[@nanda2016financing].
+
+For policy makers, the implication is that capital-intensive sectors
+need more than capital---they need *flexibility infrastructure*.
+Traditional industrial policy provides grants, subsidies, and loans to
+overcome funding gaps. But if the cage mechanism is correct, more
+capital alone may worsen outcomes by tightening governance homogeneity.
+Effective policy for Hardware, Transportation, and CleanTech should
+include: (1) *pivot grants* that reward strategic adaptation rather than
+milestone adherence; (2) *staged commitment structures* that preserve
+optionality longer; (3) *diverse board requirements* as conditions for
+public funding; and (4) *bridge programs* that allow ventures to
+reposition without losing momentum. The goal is not to replace VC
+funding but to complement it with mechanisms that counteract the cage.
+Quantum computing's positive correlation ($\rho = +0.095$) suggests that
+in pre-paradigmatic sectors, capital enables rather than
+constrains---policy should distinguish sectors where the cage binds from
+those where it releases.
+
+## Limitations
+
+Four limitations warrant acknowledgment:
+
+**First**, I document correlation, not causation. An alternative
+explanation remains: rigid founders attract more funding. I address this
+through three layers of defense: (1) selection is part of the mechanism;
+(2) conditioning on observables reduces selection; (3) future
+quasi-experimental approaches could provide identification.
+
+**Second**, PitchBook overrepresents technology ventures in the United
+States. Generalization requires replication in other sectors and
+geographies.
+
+**Third, and most critically, I infer governance homogeneity from
+behavioral outcomes (low repositioning), not direct measurement.** I
+derive the core claim, \"governance lacks skeptics\", from observing
+that well-funded ventures reposition less frequently. This behavioral
+pattern is *consistent with* the sorting mechanism, but the mechanism
+itself remains unobserved.
+
+Theory grounds this inference. @vandensteen2010interpersonal's
+[-@vandensteen2010interpersonal] sorting equilibrium predicts that
+founders and investors with heterogeneous priors will sort into
+organizations led by like-minded others, a mathematical result, not an
+empirical claim. Applied to venture governance, this predicts belief
+convergence among board members. However, the prediction remains
+*indirect*: I observe the predicted *consequence* (low repositioning)
+rather than the posited *cause* (belief homogeneity). The gap matters.
+
+Future work must directly measure board composition diversity. Three
+approaches merit consideration: (a) survey-based measurement of
+founder-investor disagreement on strategic direction, (b) analysis of
+board voting records on strategic pivots, and (c) text analysis of
+investor communications (e.g., board meeting minutes, investor letters)
+to quantify belief divergence. Without such direct measurement, the
+governance homogeneity mechanism, while theoretically compelling and
+empirically consistent, remains a well-supported conjecture rather than
+established fact.
+
+**Fourth**, the Funding-Growth Paradox (H3: $\rho(E,G) < 0$) is
+sensitive to how M&A outcomes are coded. The baseline analysis codes M&A
+exits as non-growth ($G = 0$) because the thesis studies organic scaling
+via Later Stage VC, not exit events. However, when M&A is coded as
+success ($G = 1$), the correlation reverses from $-0.041$ to $+0.146$.
+This sensitivity does not affect the Commitment Cage (H1) or Flexibility
+Flex (H2), which are robust across all coding approaches (see
+Appendix [\[app:c\]](#app:c){reference-type="ref" reference="app:c"},
+Table [\[tab:robustness-summary\]](#tab:robustness-summary){reference-type="ref"
+reference="tab:robustness-summary"}). The baseline coding is
+defensible---most M&A represent acqui-hires or asset sales rather than
+billion-dollar exits---but the sensitivity warrants acknowledgment.
+
+::: {#alternative-explanations}
+### Alternative Explanations
+:::
+
+The governance homogeneity mechanism proposed in this thesis competes
+with several alternative explanations for the funding-growth paradox. I
+consider three prominent alternatives and discuss why the evidence
+favors the governance account.
+
+::: {#tab:alternatives}
++----------------+-----------------+----------------+-------------------------+
+| ::: minipage   | ::: minipage    | ::: minipage   | ::: minipage            |
+| Mechanism      | Prediction      | Evidence       | Assessment              |
+| :::            | :::             | :::            | :::                     |
++:===============+:================+:===============+:========================+
+| ::: minipage   | ::: minipage    | ::: minipage   | ::: minipage            |
+| Mechanism      | Prediction      | Evidence       | Assessment              |
+| :::            | :::             | :::            | :::                     |
++----------------+-----------------+----------------+-------------------------+
+| **Moral        | Well-funded     | Should affect  | Inconsistent: founders  |
+| Hazard**       | founders exert  | all ventures   | report *wanting* to     |
+|                | less effort     | equally        | pivot but lacking board |
+|                |                 |                | support                 |
++----------------+-----------------+----------------+-------------------------+
+| **Milestone    | Milestone-tied  | Movers should  | Inconsistent: Movers    |
+| Pressure**     | funding forces  | underperform   | outperform 2.60$\times$ |
+|                | rigid execution | (they miss     | despite milestone       |
+|                |                 | milestones)    | deviation               |
++----------------+-----------------+----------------+-------------------------+
+| **Burn-rate    | High burn       | Capital-light  | Partially consistent:   |
+| Discipline**   | reduces runway  | sectors should | Software shows $\rho$   |
+|                | for             | show weaker    | $\approx$ 0, but        |
+|                | experimentation | cage           | pattern reverses in     |
+|                |                 |                | Quantum                 |
++----------------+-----------------+----------------+-------------------------+
+| **Governance   | Like-minded     | Cage binds     | Consistent:             |
+| Homogeneity**  | investors       | where          | Hardware/Transportation |
+|                | filter skeptics | switching      | show strongest cage     |
+|                |                 | costs are high | effects                 |
++----------------+-----------------+----------------+-------------------------+
+
+: Alternative Explanations vs. Governance Homogeneity
+:::
+
+Three alternatives warrant examination. **Moral Hazard** predicts
+reduced founder effort after funding, yet founders of failed well-funded
+ventures frequently express regret at not pivoting earlier---if moral
+hazard drove the pattern, founders would report satisfaction with their
+strategic persistence, not regret about rigidity. **Milestone Pressure**
+predicts that ventures deviating from milestones (Movers) should face
+capital constraints and underperform, but the opposite obtains: Movers
+achieve 2.60$\times$ higher success rates than Stayers, suggesting the
+benefit of strategic adaptation outweighs the cost of milestone
+deviation. **Burn-rate Discipline** predicts the cage should weaken in
+capital-light sectors, and Software's near-zero correlation
+($\rho = -0.001$) is consistent with this account---however, Quantum's
+positive correlation ($\rho = +0.095$) is inconsistent, since if
+burn-rate were decisive, capital-intensive Quantum should show the
+strongest cage, not the weakest. The uncertainty-contingent pattern
+favors governance homogeneity over these alternatives as the primary
+mechanism.
+
+## Future Research
+
+Three directions merit investigation. First, directly measure belief
+homogeneity through surveys or text analysis of board communications.
+Second, pursue quasi-experimental identification using VC fund vintage
+effects, geographic shocks, or industry funding cycles as instruments.
+Third, test governance interventions through field experiments on
+skeptic preservation strategies.
+
+## Closing
+
+This thesis began with a paradox: the venture capital industry deploys
+hundreds of billions of dollars annually to fuel startup growth
+[@nvca2024], yet early-stage funding correlates negatively with
+later-stage success. The paradox resolves through a simple
+mechanism--the golden cage. To secure capital, founders must commit to
+specific strategies. These commitments attract investors who believe in
+those strategies; skeptics never join. The resulting board contains only
+believers. When market signals suggest pivoting, no one advocates for
+change. The venture is trapped--not for lack of capital, but for lack of
+diverse perspectives. The evidence confirms this: funding suppresses
+repositioning ($\rho = -0.133$), repositioning predicts success (Movers
+outperform Stayers by 2.60$\times$), and the cage binds tightest in
+capital-intensive sectors where switching costs are high.
+
+The cage need not be fatal. Founders can dance with it by committing at
+the vision level (preserving diverse believers), diagnosing bottlenecks
+before scaling (avoiding off-diagonal traps), and sequencing capital
+sources (building credibility before homogenizing governance). These
+design principles do not eliminate the paradox; they navigate it. The
+central insight is simple: resources and flexibility are not
+substitutes. Raising money does not buy the ability to change
+direction--if anything, it reduces that ability by filtering out the
+skeptics who would advocate for change. The ventures that survive are
+not those with the most resources, but those that preserve the
+governance diversity to act on what they learn.
+
+For founders facing uncertainty, the prescription is counterintuitive:
+commit to the capacity to reposition, not to any particular position.
+Build governance that can challenge your assumptions. Design for
+adaptation before funding eliminates the skeptics who make adaptation
+possible. **Dance with the cage. Move to grow.**

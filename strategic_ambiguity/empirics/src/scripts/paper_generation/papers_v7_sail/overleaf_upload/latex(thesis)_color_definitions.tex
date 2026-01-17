@@ -1,0 +1,66 @@
+% ============================================
+% COLOR DEFINITIONS FOR GOLDEN CAGE THESIS
+% ============================================
+% Usage: \input{latex(thesis)_color_definitions.tex} in preamble
+%
+% To disable colors (e.g., for thesis submission):
+%   Change \colortermstrue to \colortermsfalse
+% ============================================
+
+\usepackage{xcolor}
+
+% Color toggle switch
+\newif\ifcolorterms
+\colortermstrue  % Set to \colortermsfalse for black-only output
+
+% Define colors based on toggle
+\ifcolorterms
+  % Cage = Red (H1: constraint, suppression)
+  \definecolor{CageColor}{RGB}{220,53,69}
+  % Flex = Blue (H2: flexibility, growth)
+  \definecolor{FlexColor}{RGB}{0,123,255}
+  % Paradox colors for figures (H3: rho(E,G))
+  \definecolor{ParadoxGreenDark}{RGB}{40,167,69}    % rho(E,G) < 0 (most sectors)
+  \definecolor{ParadoxGreenLight}{RGB}{144,238,144} % rho(E,G) > 0 (Quantum)
+  % Paradox text = BLACK (don't color the word "Paradox", only color E and G)
+  \definecolor{ParadoxColor}{RGB}{0,0,0}
+\else
+  % All black for formal submission
+  \definecolor{CageColor}{RGB}{0,0,0}
+  \definecolor{FlexColor}{RGB}{0,0,0}
+  \definecolor{ParadoxGreenDark}{RGB}{0,0,0}
+  \definecolor{ParadoxGreenLight}{RGB}{0,0,0}
+  \definecolor{ParadoxColor}{RGB}{0,0,0}
+\fi
+
+% ============================================
+% SEMANTIC MACROS
+% ============================================
+% Use these instead of raw \textcolor for consistency
+
+% H1: Commitment Cage (red) - funding suppresses repositioning
+\newcommand{\cage}[1]{\textcolor{CageColor}{\textbf{#1}}}
+
+% H2: Flexibility Flex (blue) - repositioning enables growth
+\newcommand{\flex}[1]{\textcolor{FlexColor}{\textbf{#1}}}
+
+% H3: Funding-Growth Paradox - "Paradox" stays BLACK, only E and G get green
+\newcommand{\paradox}[1]{\textbf{#1}}  % Bold only, no color for "Paradox"
+\newcommand{\fundinggreen}[1]{\textcolor{ParadoxGreenDark}{\textbf{#1}}}  % For "Early Funding"
+\newcommand{\growthgreen}[1]{\textcolor{ParadoxGreenDark}{\textbf{#1}}}   % For "Growth"
+
+% ============================================
+% COLOR LEGEND (for reference)
+% ============================================
+% Red (CageColor): Commitment Cage, H1, rho(E,R), suppression
+% Blue (FlexColor): Flexibility Flex, H2, Mover Advantage, repositioning
+% Green (ParadoxGreenDark): rho(E,G) < 0, "Early Funding", "Growth" in text
+% Light Green (ParadoxGreenLight): rho(E,G) > 0 (Quantum only)
+% Black: The word "Paradox" itself (not colored)
+
+% ============================================
+% CHECK/CROSS MARKS FOR TABLES
+% ============================================
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}  % checkmark
+\newcommand{\xmark}{\ding{55}}  % crossmark

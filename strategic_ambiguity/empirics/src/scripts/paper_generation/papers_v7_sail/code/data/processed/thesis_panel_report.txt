@@ -1,0 +1,46 @@
+============================================================
+THESIS PANEL SUMMARY REPORT
+============================================================
+Generated: 2026-01-17 05:51:03.852949
+
+[1] Sample Size
+    N = 168,011
+
+[2] Growth Rate (G = BINARY: Later Stage VC)
+    G = 1: 18,398 (11.0%)
+    (Thesis target: ~11.5%)
+
+[3] Movement Classification
+    stayer: 102,742 (61.2%)
+    zoom_out: 36,944 (22.0%)
+    zoom_in: 28,325 (16.9%)
+    (Thesis target: Movers ~40%, Stayers ~60%)
+
+[4] Growth by Mover Type (Mover Advantage)
+    Movers: 17.6%
+    Stayers: 6.7%
+    Mover Advantage: 2.60x
+    (Thesis target: 18.1% / 7.0% = 2.60x)
+
+[5] Key Correlations (n=168,011)
+    NOTE: G is BINARY (Later Stage VC), not continuous!
+    ρ(G, log(E)) = -0.0416 *** (Funding-Growth Paradox)
+      (Thesis target: -0.196***)
+    ρ(R, log(E)) = -0.1333 *** (Commitment Cage)
+      (Thesis target: -0.087***)
+    ρ(G, R)      = +0.1836 *** (Flexibility Flex)
+      (Thesis target: positive)
+
+[6] Variable Statistics
+    E: mean=40.24, median=1.04, std=376.74
+    K: mean=93.84, median=3.33, std=1073.08
+    G_multi: mean=8.28, median=1.45, std=15.80
+    B_0: mean=45.21, median=44.67, std=12.64
+    R: mean=4.02, median=0.06, std=7.79
+    G (binary): mean=0.110 (= base rate)
+
+[7] K >= E Validation (Cumulative Funding)
+    Valid: 140,813 (96.4%)
+    Violations: 5,303
+
+============================================================

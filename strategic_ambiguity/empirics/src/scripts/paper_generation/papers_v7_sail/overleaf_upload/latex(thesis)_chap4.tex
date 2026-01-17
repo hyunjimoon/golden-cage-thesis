@@ -1,0 +1,74 @@
+\hypertarget{ch:results}{%
+\chapter{Where the Cage Binds}\label{ch:results}}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{sec:ch4-introduction}}
+
+Chapter~\ref{ch:theory} theorized that funding creates a golden cage through governance homogenization. Chapter~\ref{ch:data} described how I measure repositioning from company descriptions. This chapter tests whether the patterns exist in the data.
+
+I test three hypotheses. First, the \cage{Commitment Cage} (H1): does funding suppress repositioning? Second, the \flex{Flexibility Flex} (H2): does repositioning predict success? Third, the \paradox{Funding-Growth Paradox} (H3): does early funding correlate negatively with later success? The theory predicts that H3 arises because H1 and H2 combine: funding suppresses the very mechanism (repositioning) that drives success. The results confirm all three hypotheses: funding suppresses repositioning ($\rho = -0.133^{***}$), repositioning predicts success (Movers outperform Stayers by 2.60$\times$), and the funding-growth correlation is negative---modest at the individual firm level ($\rho = -0.04$) but pronounced at the industry level, where capital-intensive sectors systematically underperform. I also document where the paradox is strongest: the cage binds tightest in capital-intensive sectors like Hardware ($\rho = -0.11$) and Transportation ($\rho = -0.10$), but loosens in pre-paradigmatic sectors like Quantum ($\rho = +0.10$).
+
+\begin{figure}
+\hypertarget{fig:mover-advantage}{%
+\centering
+\includegraphics[width=0.9\textwidth,]{img/Ch4_Fig1_G_by_R.png}
+\caption{The Mover Advantage. Ventures that reposition (Movers) achieve 17.6\% success rates; those that hold position (Stayers) achieve only 6.7\%. This 2.60$\times$ difference is the \flex{Flexibility Flex}.}\label{fig:mover-advantage}
+}
+\end{figure}
+
+\hypertarget{h1-commitment-cage}{%
+\section{H1: Commitment Cage}\label{sec:h1-commitment-cage}}
+
+As theorized in Chapter~\ref{ch:theory}, funding should suppress repositioning through governance homogenization. The data confirm H1: funding suppresses repositioning ($\rho = -0.133^{***}$, $N = 168{,}011$). The correlation is robust to industry FE ($-0.128$), cohort FE ($-0.125$), and founder controls ($-0.121$). Well-funded ventures reposition less, consistent with the cage mechanism where higher funding correlates with more specific commitments and more homogeneous governance.
+
+\hypertarget{h2-flexibility-flex}{%
+\section{H2: Flexibility Flex}\label{sec:h2-flexibility-flex}}
+
+The data confirm H2: repositioning enables growth. Ventures that reposition succeed more often, as shown in Table~\ref{tab:frg-analysis}.
+
+\input{table/frg_analysis.tex}
+
+\hypertarget{the-mover-advantage-2.60}{%
+\subsection{The Mover Advantage: 2.60\ensuremath{\times}}\label{the-mover-advantage-2.60}}
+
+To operationalize this relationship, I classify ventures as Movers or Stayers (primary), with a secondary directional breakdown for interpretation.
+
+\input{table/mover_taxonomy.tex}
+
+\emph{Note: R \textgreater{} 0 = any repositioning. See Section~3.3.3 for definition rationale.}
+
+\textbf{The core finding:} Movers outperform Stayers by \textbf{2.60$\times$} in growth rate ($P(G=1)$: 17.6\% vs.~6.7\%, p \textless{} 0.001, $\chi^2 = 5{,}322$). This binary classification is the primary taxonomy used throughout subsequent analyses.
+
+\emph{Note: \ensuremath{\Delta}B = B\_T - \ensuremath{B_0}. Zoom-in = narrowing (\ensuremath{\Delta}B \textless{} 0); Zoom-out = expanding (\ensuremath{\Delta}B \textgreater{} 0). Remaining Movers (36,554) have minimal directional change.}
+
+\textbf{Interpretive insight:} Both directions show elevated growth rates (17.1\% and 18.4\%). This suggests that \emph{moving clearly}, not which direction you move, explains the mover advantage. The binary Mover/Stayer distinction carries the primary identification. Three AV industry cases from Table~\ref{tab:breadth-examples} illustrate the pattern: Aurora (zoom-out mover, $3.2\times$), Cruise (zoom-in mover, $2.9\times$), and Argo AI (stayer, $1.0\times$). Results are robust to temporal stability across cohort years, survival conditioning (Year 3+ survivors: 2.35$\times$, Year 5+: 2.12$\times$), and alternative operationalizations of R. \emph{Full robustness tables and mover anatomy visualization are provided in Appendix C.}
+
+\hypertarget{h3-paradox-heterogeneity}{%
+\section{H3: Paradox Heterogeneity}\label{sec:h3-paradox-heterogeneity}}
+
+The funding-growth paradox varies systematically across industries along two dimensions: capital intensity (Hardware vs.\ Software) and technological maturity (Mobility vs.\ Quantum). While the individual-level correlation is modest ($\rho = -0.04$), industry-level patterns reveal where the cage binds.
+
+The cage binds tighter in capital-intensive industries where switching costs are high. The following table presents verified correlations between early funding (E) and growth (G) across six industries.
+
+\input{table/industry.tex}
+
+\emph{Note: E = first\_financing\_size (M USD), G = growth (binary: reached Later Stage VC). Data verified from PitchBook (2021-2025).}
+
+\begin{figure}
+\hypertarget{fig:industry-rho}{%
+\centering
+\includegraphics[width=0.9\textwidth,]{img/Ch4_Fig2_industry_rho.png}
+\caption{Industry heterogeneity in the early funding--growth correlation \$ ho(E,G)\$ (bars show correlation by industry; \(N\) by industry shown in plot).}\label{fig:industry-rho}
+}
+\end{figure}
+
+Three patterns emerge. Capital-intensive industries show the strongest negative correlations: Hardware ($\rho = -0.108$) and Transportation ($\rho = -0.101$) face the tightest cage because infrastructure and physical asset investments lock ventures into positions that cannot adapt---the mobility sector exemplifies this through triple vulnerability where capital intensity, regulatory uncertainty, and technology path uncertainty interact to multiply the cost of wrong commitment. Software shows near-zero correlation ($\rho = -0.001$, ns), demonstrating that low capital intensity allows cheap experimentation to offset governance rigidity. Quantum is the sole positive outlier ($\rho = +0.095$*): in technology evolution, industries pass through an ``era of ferment'' \citep{anderson1990technological} before a dominant design emerges, and quantum computing remains in this phase with superconducting qubits, trapped ions, photonic approaches, and topological qubits all viable. When no dominant design exists, capital cannot lock ventures into specific architectural choices because those choices have not yet crystallized---the learning value of capital dominates its rigidity cost. This is a boundary condition for the golden cage theory: the cage mechanism assumes that commitment narrows options, but in pre-paradigmatic industries, there may be no options to narrow. \emph{See Appendix C for industry survival baseline visualization.}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+The evidence supports all three hypotheses. The \cage{Commitment Cage} (H1) is confirmed: funding suppresses repositioning ($\rho = -0.133$***). The \flex{Flexibility Flex} (H2) is confirmed: Movers achieve 2.60$\times$ higher success rates than Stayers (17.6\% vs 6.7\%). The \paradox{Funding-Growth Paradox} (H3) is confirmed: early funding correlates negatively with later success---modestly at the individual level ($\rho = -0.04$), but sharply at the industry level where capital intensity creates switching costs (Hardware: $\rho = -0.11$; Transportation: $\rho = -0.10$).
+
+The cage does not bind uniformly. It is tightest in capital-intensive industries like Hardware and Transportation, where infrastructure investments create switching costs. It loosens in pre-paradigmatic sectors like Quantum, where no dominant design constrains architectural choices. This heterogeneity is consistent with the theory: the cage forms through commitment, and commitment matters more when switching costs are high.
+
+These findings raise a question: how can founders dance with the cage? Chapter~\ref{ch:design} addresses this by developing design principles for commitment structures that preserve flexibility while working within governance constraints.
