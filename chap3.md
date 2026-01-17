@@ -302,7 +302,6 @@ alternative threshold definitions are provided in Appendix C.*
 ::: {#tab:descriptive}
   Variable                              Mean      SD   Min   Median   Max
   ----------------------------------- ------ ------- ----- -------- -----
-  Variable                              Mean      SD   Min   Median   Max
   Early Funding (E, M USD)              40.2   376.7   0.0      1.0   ---
   Strategic Breadth ($B_0$)             45.2    12.6     0     44.7   100
   Repositioning (R = $|B_T - B_0|$)      4.0     7.8     0     0.06    62
