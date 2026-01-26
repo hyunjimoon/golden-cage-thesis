@@ -1,0 +1,9 @@
+Industry,N,Clockspeed,rho_FG,p_value,sig
+Healthcare,8155,1.578,0.437,0.0,***
+Consumer,640,1.594,0.4275,0.0,***
+Software/AI,29238,1.728,0.4425,0.0,***
+Fintech,3191,1.996,0.2506,0.0,***
+Transportation,2256,2.043,0.2492,0.0,***
+CleanTech,2188,2.157,0.1937,0.0,***
+Manufacturing,2235,2.495,0.2288,0.0,***
+Real Estate,2310,2.686,0.1031,0.0,***

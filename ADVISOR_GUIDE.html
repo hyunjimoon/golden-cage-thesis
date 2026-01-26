@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Input → Thesis Changes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 40px 28px;
+            background: #fff;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        h2 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin: 24px 0 12px 0;
+        }
+        .workflow {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 24px;
+        }
+        .workflow a { color: #0066cc; text-decoration: none; }
+        .workflow a:hover { text-decoration: underline; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        th {
+            text-align: left;
+            font-weight: 600;
+            color: #666;
+            padding: 8px 10px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        .structure-table td:first-child {
+            width: 30px;
+            color: #888;
+        }
+        .feedback-table td:first-child { width: 28%; }
+        .feedback-table td:nth-child(2) { width: 65%; }
+        .feedback-table td:last-child { width: 7%; text-align: center; }
+        .feedback-table a { color: #0066cc; text-decoration: none; font-size: 12px; }
+        .stats-table td:first-child { width: 40px; font-weight: 500; color: #666; }
+        .stats-table td:last-child { font-family: 'SF Mono', Monaco, monospace; font-size: 12px; }
+
+        .appendix-line {
+            font-size: 12px;
+            color: #888;
+            margin-top: -12px;
+            margin-bottom: 20px;
+        }
+        .sensitivity-note {
+            background: #fffae6;
+            border-left: 3px solid #e6a700;
+            padding: 10px 14px;
+            margin: 12px 0 20px 0;
+            font-size: 12px;
+        }
+        .contact {
+            font-size: 13px;
+            color: #444;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Input &rarr; Thesis Changes</h1>
+    <p class="subtitle">Angie Moon &middot; Jan 17, 2026</p>
+
+    <h2>Workflow</h2>
+    <p class="workflow">You comment &rarr; I update (same day) &rarr; <a href="https://github.com/hyunjimoon/golden-cage-thesis/commits/main/">View diffs</a></p>
+
+    <h2>Structure</h2>
+    <table class="structure-table">
+        <tr><td>1</td><td>Introduction</td></tr>
+        <tr><td>2</td><td>Theory: The Golden Cage</td></tr>
+        <tr><td>3</td><td>Data and Identification</td></tr>
+        <tr><td>4</td><td>Where the Cage Binds</td></tr>
+        <tr><td>5</td><td>Dancing with the Cage</td></tr>
+        <tr><td>6</td><td>Conclusion</td></tr>
+    </table>
+    <p class="appendix-line"><strong>Appendices:</strong> A (Variables) &middot; B (Proof) &middot; C (Robustness) &middot; D (Glossary) &middot; E (Non-dilutive Funding)</p>
+
+    <h2>Feedback Integration Examples</h2>
+    <table class="feedback-table">
+        <tr>
+            <th>Input</th>
+            <th>Response</th>
+            <th>Diff</th>
+        </tr>
+        <tr>
+            <td><strong>Charlie:</strong> "Domain-specific, not universal"</td>
+            <td>Added industry heterogeneity (Ch4): Hardware &minus;0.11, Quantum +0.10. Quantum = boundary condition.</td>
+            <td><a href="https://github.com/hyunjimoon/golden-cage-thesis/commit/3d67964">&rarr;</a></td>
+        </tr>
+        <tr>
+            <td><strong>Charlie + Lorry:</strong> "Correlation &ne; causation"</td>
+            <td>Reframed: selection IS the mechanism (Van den Steen sorting). Results = "correlational patterns," not causal.</td>
+            <td><a href="https://github.com/hyunjimoon/golden-cage-thesis/commit/8b40738">&rarr;</a></td>
+        </tr>
+        <tr>
+            <td><strong>Charlie + Lorry:</strong> "Survival bias?"</td>
+            <td>ITT logic: 97% observed (only 3% "Out of Business"). Robustness: Mover advantage holds at Yr3+ (2.35&times;), Yr5+ (2.12&times;).</td>
+            <td><a href="https://github.com/hyunjimoon/golden-cage-thesis/commit/d9b5ae8">&rarr;</a></td>
+        </tr>
+        <tr>
+            <td><strong>Charlie + Lorry:</strong> "Alternative mechanisms?"</td>
+            <td>Added &sect;6.2: Moral Hazard, Milestone Pressure, Burn-rate. Quantum exception favors governance account.</td>
+            <td><a href="https://github.com/hyunjimoon/golden-cage-thesis/commit/543f4f5">&rarr;</a></td>
+        </tr>
+        <tr>
+            <td><strong>Miaomiao:</strong> "Less is more"</td>
+            <td>Cut 94 lines. Removed Manufacturing Analogy, redundant Related Work.</td>
+            <td><a href="https://github.com/hyunjimoon/golden-cage-thesis/commit/aceaf88">&rarr;</a></td>
+        </tr>
+    </table>
+
+    <h2>Key Numbers</h2>
+    <table class="stats-table">
+        <tr><td>N</td><td>168,011 ventures (PitchBook 2021&ndash;2025)</td></tr>
+        <tr><td>H1</td><td>&rho;(E,R) = &minus;0.133***</td></tr>
+        <tr><td>H2</td><td>Movers 2.60&times; Stayers (17.6% vs 6.7%)</td></tr>
+        <tr><td>H3</td><td>&rho;(E,G) = &minus;0.04 overall; &minus;0.11 Hardware; +0.10 Quantum</td></tr>
+    </table>
+
+    <div class="sensitivity-note">
+        <strong>H3 sensitivity:</strong> Flips to +0.15 when M&amp;A = success. H1/H2 robust. (Appendix C)
+    </div>
+
+    <div class="contact">
+        +1 646-639-2497 &middot; amoon@mit.edu
+    </div>
+</body>
+</html>

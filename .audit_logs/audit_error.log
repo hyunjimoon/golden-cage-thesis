@@ -1,0 +1,44 @@
+Already on 'main'
+From https://github.com/hyunjimoon/tolzul
+ * branch              main       -> FETCH_HEAD
+Switched to a new branch 'audit/20260117_083407'
+[0;31m[ERROR][0m Claude analysis failed. Check /Users/hyunjimoon/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/issue_20260117_083407.md for details.
+Switched to branch 'main'
+Already on 'main'
+From https://github.com/hyunjimoon/tolzul
+ * branch              main       -> FETCH_HEAD
+Switched to a new branch 'audit/20260117_124439'
+[0;31m[ERROR][0m Claude analysis failed. Check /Users/hyunjimoon/tolzul/Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/issue_20260117_124439.md for details.
+Switched to branch 'main'
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+Cannot save the current worktree state
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log
+error: 'Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log' is beyond a symbolic link
+fatal: Unable to process path Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/audit.log

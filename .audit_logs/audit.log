@@ -1,0 +1,217 @@
+[0;34m[2026-01-17 08:34:07][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+Saved working directory and index state On main: audit-stash-20260117_083407
+[0;34m[2026-01-17 08:34:08][0m Creating branch: audit/20260117_083407
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+Already up to date.
+[0;34m[2026-01-17 08:34:09][0m Running Claude analysis (this may take a few minutes)...
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+Deleted branch audit/20260117_083407 (was 06a0b198).
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .claude/settings.local.json
+	modified:   .gitignore
+	modified:   "Balance/\360\237\216\265 Weekly_Melody/\353\262\2277.canvas"
+	modified:   Front/On/love(cs)/strategic_ambiguity/empirics/.thesis_stats.json
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/Action_Items.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/bib(thesis).md
+	modified:   Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/00_data_pipeline.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/compute_thesis_stats.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/mover_advantage_verification.json
+	modified:   Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/processed/thesis_panel_report.txt
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/reproducibility_report.txt
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/COLOR_PALETTE.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Ch1_G_E_paradox.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Ch2_R_E_golden_cage.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Ch4_L_archetype_mover.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Ch5_L_Q_sweet_spot.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Ch6_Fig1_growth_diagnostics.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Fig9_balanced_growth.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/Fig_growth_by_R.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/TR02_survival_bias_defense.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/generate_R1_robustness.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/generate_fig9_balanced_growth.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/figures/summary_correlations.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/fix_figure_colors.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/generate_all_figures.py
+	modified:   Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/test_thesis_consistency.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/test_variable_integrity.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/test_verify_mover_advantage.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/vagueness_v3.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/verify_3_4x_figure.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/verify_mover_advantage.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/dashboard/6chap_7agents.html
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/dashboard/Thesis Motivation Overview Dashboard.html
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/editing_120_issues.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/eval/Semantic and Syntax.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/eval/eval_syntax_semantic_agents.md
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/eval/eval_\360\237\223\235chap1234_sail.md"
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/feedback/miaomiao_response.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/feedback/simple_vs_complex.md
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/feedback/\360\237\220\261miaomiao(thesis).md"
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/feedback/\360\237\244\240lorry(thesis).md"
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/feedback/\360\237\252\275eze(thesis).md"
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/AppC_Fig1_bimodal_distribution.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/AppC_Fig2_threshold_robustness.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/Ch1_Fig1_capital_paradox.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/Ch1_Fig2_mediation_dag.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/Ch4_Fig1_mover_advantage.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/Ch4_Fig2_industry_rho.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/Ch5_Fig1_sweet_spot.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Ch2_Fig1_B_trajectories.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Ch2_Fig2_golden_cage.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Ch4_Fig3_growth_by_direction.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Ch4_Fig4_industry_survival.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Ch4_Fig5_mover_vs_stayer.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-ARG_mover_vs_stayer.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-CFR1_golden_cage.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-C_capitalize_strategic_ambig.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-C_mobility_survival.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-Ch3_survival_bias_defense.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-Ch4_mobility_failure.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-E_anatomy_of_growth.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-GC_golden_cage_canary.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-I_capital_paradox.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-I_funding_paradox.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-I_mediation_dag.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-P1.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig-P2.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig9_balanced_growth.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/Fig_growth_by_R.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/R1_robustness_timeseries.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/apply_color_convention.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/generate_fig_anatomy_of_growth.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/generate_fig_i_unified.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/generate_professional_figures.py
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/generate_worldclass_figures.py
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/figures/images_deprecated/\354\230\201\354\247\200_figure_tasks.md"
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/AppC_Fig1_bimodal_distribution.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/AppC_Fig2_threshold_robustness.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch1_Fig1_capital_paradox.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch1_Fig2_mediation_dag.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch2_Fig1_sorting_mechanism.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch3_Fig1_distributions_E_B0.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch3_Fig2_distributions_R_G.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch4_Fig1_G_by_R.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch4_Fig2_industry_rho.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img_overleaf/Ch5_Fig1_sweet_spot.png
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/iter_top5act_given50.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap1.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap2.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap3.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap4.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap5.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap6.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap7_appendix.md
+	modified:   Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_color_definitions.tex
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_frontmatter.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/orders/PROMPT_FIGURE_PLACEMENT_REVIEW.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/orders/PROMPT_FOR_LATEX_CONVERSION.md
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/orders/\352\265\260\353\240\271_v6.1_Shared_Evidence_Dual_Framing.md"
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/LLM_HANDOFF_PACKET.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/glossary.md
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/kozlowski(\360\237\222\215charlie(angie_ring_of_truth)).md"
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/moon_thesis_structure.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/syntax(thesis)_pattern.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/syntax(thesis)_zhao.md
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/\353\241\244\353\252\250\353\215\270\353\205\274\353\254\270_\355\230\204\354\203\201\354\210\230\353\260\260.md"
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/\360\237\222\215charlie(angie, ring_of_truth).md"
+	deleted:    "Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/references/\360\237\223\234synthesis26_template(chatgpt, gemini).md"
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/Thesis_Master.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/chap5_SBC_versions/latex(thesis)_chap5_SBC_prompt.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/chap5_SBC_versions/latex(thesis)_chap5_evaluation_prompt.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/chap5_SBC_versions/latex(thesis)_chap5_v1_claude.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/chap5_SBC_versions/latex(thesis)_chap5_v2_deepseek.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/chap5_SBC_versions/latex(thesis)_chap5_v3_gemini.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/spandrel/chap5_SBC_versions/latex(thesis)_chap5_v4_synthesized.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/vote/1_chapter_title_vote.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/vote/2_agent_deployment_vote.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/vote/3_emergency_declaration.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/vote/4_Table5_structure_vote.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/theory/Ring_of_Truth_Analysis.md
+	deleted:    Front/On/love(cs)/strategic_ambiguity/theory/Ring_of_Truth_Poster.svg
+	modified:   "Space/Library/1\353\205\274\353\254\270\354\232\251/acknowledgement.md"
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.claude/agents/thesis.md
+	"Balance/\360\237\216\265 Weekly_Melody/4_\354\212\271\353\252\251\355\217\211\352\260\200_\354\210\230\354\247\204/cape.md"
+	"Balance/\360\237\216\265 Weekly_Melody/4_\354\212\271\353\252\251\355\217\211\352\260\200_\354\210\230\354\247\204/newsroom.md"
+	"Balance/\360\237\216\265 Weekly_Melody/4_\354\212\271\353\252\251\355\217\211\352\260\200_\354\210\230\354\247\204/\354\271\264\354\271\264\354\230\244\355\206\241(\354\210\230\354\247\204).md"
+	Front/On/love(cs)/.claude/
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.audit_logs/
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/.github/
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/MIT Thesis.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/THESIS_VALIDATION_ISSUE.md
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/abstract.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/create_attenuation_test_plot.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/create_ch5_fig2_elegant.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/create_ch5_fig2_three_solutions.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/create_ma_sensitivity_plot.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/CENTRAL_STATISTICS.json
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/processed/attenuation_test.png
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/processed/attenuation_test_results.json
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/data/processed/ma_sensitivity_results.json
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/fix_critical_figures.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/multi_agent_critique.md
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/quick_validate.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/test_thesis_validation.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/thesis_audit_loop.sh
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/code/thesis_figure_style.py
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/golden_cage.bib
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/img/
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap1.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap2.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap3.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap4.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap5.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap6.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/latex(thesis)_chap7_appendix.tex
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/overleaf_upload.zip
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/overleaf_upload/
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/overleaf_upload_20260117_0818.zip
+	Front/On/love(cs)/strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/table/
+	"Space/Library/1\353\205\274\353\254\270\354\232\251/\354\247\201\354\227\205\354\240\225\354\271\230\352\260\200 \353\221\220 \354\234\240\355\230\225.md"
+	"Space/Library/\354\226\270\354\226\264\354\206\214\355\206\265\354\230\210\354\210\240_\350\250\200\350\252\236\350\227\235/Books/useful/Ring_of_Truth_Analysis.md"
+	"Space/Library/\354\226\270\354\226\264\354\206\214\355\206\265\354\230\210\354\210\240_\350\250\200\350\252\236\350\227\235/Books/useful/Ring_of_Truth_Poster.svg"
+	"Space/Library/\354\226\270\354\226\264\354\206\214\355\206\265\354\230\210\354\210\240_\350\250\200\350\252\236\350\227\235/Books/useless/10\354\236\220\352\270\260 \354\225\236\354\235\230 \354\203\235\354\235\264 \353\201\235\353\202\230\352\260\210 \353\225\214.md"
+	x/Images/Pasted image 20260115074556.png
+	x/Images/Pasted image 20260115092314.png
+	x/Images/Pasted image 20260115092533.png
+	x/Images/Pasted image 20260115093917.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (2ed29d63baf448668bbd628e716c4fc7c4dd4b77)
+[0;34m[2026-01-17 12:44:39][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-17 19:41:14][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-17 22:43:14][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-18 01:43:15][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-18 05:28:45][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-18 08:28:45][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-18 11:44:50][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-19 08:39:50][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-19 13:40:24][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-20 06:05:32][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-20 09:05:52][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-20 12:21:09][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...
+[0;34m[2026-01-21 07:30:40][0m Starting thesis self-audit...
+[1;33m[WARN][0m Uncommitted changes detected. Stashing...

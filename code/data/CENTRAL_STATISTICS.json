@@ -1,0 +1,52 @@
+{
+  "_comment": "CENTRAL STATISTICS - Source of truth for Golden Cage Thesis",
+  "_source": "thesis_panel_v3.nc (generated 2026-01-17)",
+  "_last_updated": "2026-01-17",
+
+  "sample": {
+    "N": 168011,
+    "source": "PitchBook 2021-2025",
+    "retention_rate": 0.344,
+    "initial_universe": 488381
+  },
+
+  "correlations": {
+    "rho_ER": {
+      "value": -0.133,
+      "label": "Commitment Cage (H1)",
+      "p_value": "<0.001"
+    },
+    "rho_RG": {
+      "value": 0.184,
+      "label": "Flexibility Flex (H2)",
+      "p_value": "<0.001"
+    },
+    "rho_EG": {
+      "value": -0.042,
+      "label": "Funding-Growth Paradox (H3) - Individual Level",
+      "p_value": "<0.001"
+    }
+  },
+
+  "industry_correlations_rho_EG": {
+    "Hardware": -0.11,
+    "Transportation": -0.10,
+    "Software": -0.001,
+    "Quantum": 0.10
+  },
+
+  "mover_stayer": {
+    "mover_pct": 38.8,
+    "stayer_pct": 61.2,
+    "mover_growth_rate": 17.6,
+    "stayer_growth_rate": 6.7,
+    "mover_advantage": 2.60,
+    "chi_square": 5322,
+    "chi_square_p": "<0.001"
+  },
+
+  "base_rate": {
+    "growth_rate": 11.0,
+    "growth_definition": "Reached Later Stage VC (Series C+)"
+  }
+}

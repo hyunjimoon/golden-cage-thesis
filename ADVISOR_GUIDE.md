@@ -1,24 +1,55 @@
-# Thesis Feedback Guide - Bottleneck Breaking & Bug Finding Mission
+# Your Input → Thesis Changes
 
-**Commit History**: https://github.com/hyunjimoon/golden-cage-thesis/commits/main/
-
-Click any commit → **red** = deleted, **green** = added.
+**Angie Moon · Jan 17, 2026**
 
 ---
 
-## Feedback → Thesis Updates
+## Workflow
 
-| Who | Feedback | What Changed | Date | See Diff |
-|:----|:---------|:-------------|:-----|:---------|
-| **Charlie** | "Survival bias is more compelling" | Year 3 conditioning defense | Jan 13 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/d9b5ae8) |
-| **Charlie** | "Domain-specific, not universal" | Industry heterogeneity (H/W vs Quantum) | Jan 12 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/3d67964) |
-| **Charlie** | "Present both sides" | §6.2 Alternative Explanations | Jan 13 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/543f4f5) |
-| **Lorry** | "correlation vs causality" | R&R addressed | Jan 13 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/8b40738) |
-| **Miaomiao** | "LESS IS MORE" | All chapters trimmed | Jan 14 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/aceaf88) |
-| **Angie** | Ch3/Ch4/Ch5 bugs | Terminology + examples + opener + tables/figures | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/8aa6760) |
-| **Angie** | Visual clarity | Color system: 🟢H3 🔴H1 🔵H2 | Jan 16 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/d9f9996) |
-| **Self-audit** | Statistical consistency | All chapters unified: N=168,011, ρ(E,R)=-0.133, Mover 2.60× | Jan 17 | [View →](https://github.com/hyunjimoon/golden-cage-thesis/commit/0550ca2) |
+You comment → I update (same day) → [View diffs](https://github.com/hyunjimoon/golden-cage-thesis/commits/main/)
 
 ---
 
-**Give feedback however you prefer.** Email works — I'll update the thesis and you can verify via the diff links above.
+## Structure
+
+| Ch | Title |
+|:--|:------|
+| 1 | Introduction |
+| 2 | Theory: The Golden Cage |
+| 3 | Data and Identification |
+| 4 | Where the Cage Binds |
+| 5 | Dancing with the Cage |
+| 6 | Conclusion |
+
+**Appendices:** A (Variables) · B (Proof) · C (Robustness) · D (Glossary) · E (Non-dilutive Funding)
+
+---
+
+## Feedback Integration Examples
+
+| Input | Response | Diff |
+|:------|:---------|:-----|
+| **Charlie:** "Domain-specific, not universal" | Added industry heterogeneity (Ch4): Hardware −0.11, Quantum +0.10. Quantum exception = boundary condition. | [→](https://github.com/hyunjimoon/golden-cage-thesis/commit/3d67964) |
+| **Charlie + Lorry:** "Correlation ≠ causation" | Reframed: selection IS the mechanism (Van den Steen sorting). Results = "correlational patterns," not causal claims. | [→](https://github.com/hyunjimoon/golden-cage-thesis/commit/8b40738) |
+| **Charlie + Lorry:** "Survival bias?" | ITT logic: 97% observed (only 3% "Out of Business"). Robustness: Mover advantage holds at Yr3+ (2.35×), Yr5+ (2.12×). | [→](https://github.com/hyunjimoon/golden-cage-thesis/commit/d9b5ae8) |
+| **Charlie + Lorry:** "Alternative mechanisms?" | Added §6.2: Moral Hazard, Milestone Pressure, Burn-rate. Quantum exception favors governance account. | [→](https://github.com/hyunjimoon/golden-cage-thesis/commit/543f4f5) |
+| **Miaomiao:** "Less is more" | Cut 94 lines. Removed Manufacturing Analogy, redundant Related Work. | [→](https://github.com/hyunjimoon/golden-cage-thesis/commit/aceaf88) |
+
+---
+
+## Key Numbers
+
+| | |
+|:--|:--|
+| N | 168,011 ventures (PitchBook 2021–2025) |
+| H1 | ρ(E,R) = −0.133*** |
+| H2 | Movers 2.60× Stayers (17.6% vs 6.7%) |
+| H3 | ρ(E,G) = −0.04 overall; −0.11 Hardware; +0.10 Quantum |
+
+> **H3 sensitivity:** Flips to +0.15 when M&A = success. H1/H2 robust. (Appendix C)
+
+---
+
+## Contact
+
++1 646-639-2497 · amoon@mit.edu

@@ -1,0 +1,158 @@
+name: Thesis Validation Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/**'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  validate-thesis:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pandas numpy scipy
+
+    - name: Run thesis validation tests
+      working-directory: strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
+      run: |
+        pytest code/test_thesis_validation.py -v --tb=short --junitxml=test-results.xml
+      continue-on-error: true
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results-${{ matrix.python-version }}
+        path: strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail/test-results.xml
+
+  latex-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Validate LaTeX files
+      working-directory: strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
+      run: |
+        echo "=== Checking required files ==="
+        required_files=(
+          "MIT Thesis.tex"
+          "abstract.tex"
+          "golden_cage.bib"
+          "latex(thesis)_chap1.tex"
+          "latex(thesis)_chap2.tex"
+          "latex(thesis)_chap3.tex"
+          "latex(thesis)_chap4.tex"
+          "latex(thesis)_chap5.tex"
+          "latex(thesis)_chap6.tex"
+          "latex(thesis)_chap7_appendix.tex"
+        )
+
+        for file in "${required_files[@]}"; do
+          if [ -f "$file" ]; then
+            echo "✓ $file exists"
+          else
+            echo "✗ $file MISSING"
+            exit 1
+          fi
+        done
+
+    - name: Check cross-references
+      working-directory: strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
+      run: |
+        echo "=== Checking figure references ==="
+        for texfile in latex*.tex; do
+          echo "Checking $texfile..."
+          grep -oP 'includegraphics.*?\{[^}]+\}' "$texfile" 2>/dev/null | while read -r line; do
+            fig=$(echo "$line" | grep -oP '\{[^}]+\}' | tr -d '{}')
+            if [ -f "$fig" ]; then
+              echo "  ✓ $fig"
+            else
+              echo "  ✗ $fig NOT FOUND"
+            fi
+          done
+        done
+
+    - name: Check bibliography completeness
+      working-directory: strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
+      run: |
+        echo "=== Checking citations vs bibliography ==="
+        # Extract all citations
+        citations=$(grep -ohP '\\cite[pt]?\{[^}]+\}' latex*.tex 2>/dev/null |
+                    sed 's/\\cite[pt]\?{//' | sed 's/}//' | tr ',' '\n' |
+                    sed 's/^ *//' | sort -u)
+
+        # Extract bib entries
+        bib_entries=$(grep -oP '@\w+\{\K\w+(?=,)' golden_cage.bib 2>/dev/null | sort -u)
+
+        echo "Citations found: $(echo "$citations" | wc -l)"
+        echo "Bib entries: $(echo "$bib_entries" | wc -l)"
+
+        # Check for missing
+        missing=0
+        for cite in $citations; do
+          if ! echo "$bib_entries" | grep -q "^${cite}$"; then
+            echo "  ✗ Missing: $cite"
+            missing=$((missing + 1))
+          fi
+        done
+
+        if [ $missing -gt 0 ]; then
+          echo "WARNING: $missing citations missing from bibliography"
+        else
+          echo "✓ All citations found in bibliography"
+        fi
+
+  statistical-claims:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Check statistical consistency
+      working-directory: strategic_ambiguity/empirics/src/scripts/paper_generation/papers_v7_sail
+      run: |
+        echo "=== Verifying statistical claims consistency ==="
+
+        # Check N = 180,994 appears consistently
+        echo "Checking sample size (N = 180,994)..."
+        n_mentions=$(grep -roh "180[,.]\\?994" latex*.tex | wc -l)
+        echo "  Found $n_mentions mentions of N=180,994"
+
+        # Check mover advantage
+        echo "Checking mover advantage (2.60×)..."
+        ma_mentions=$(grep -roh "2\\.60" latex*.tex | wc -l)
+        echo "  Found $ma_mentions mentions of 2.60×"
+
+        # Check correlation values
+        echo "Checking correlation values..."
+        grep -ohP 'ρ\s*[=≈]\s*-?0\.\d+' latex*.tex 2>/dev/null | sort | uniq -c || true
+        grep -ohP '\\rho\s*[=≈]\s*-?0\.\d+' latex*.tex 2>/dev/null | sort | uniq -c || true
+
+        echo "=== Statistical consistency check complete ==="

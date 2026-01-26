@@ -1,0 +1,28 @@
+# Large data files (exceed GitHub 100MB limit)
+*.dat
+*.parquet
+*.nc
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temp files
+*.tmp
+*.bak
+
+# Archives (keep in local only)
+*.zip
+
+# Claude Code
+.claude/
